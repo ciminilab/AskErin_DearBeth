@@ -1,4 +1,4 @@
-# AskErin_DearBeth
+# Ask Erin / Dear Beth files 
 Files related to Ask Erin/Dear Beth episodes - coming soon to a YouTube near You!
 
 | Episode with link | Links to pipelines, models, or other files | Link to images | Images are licensed |
