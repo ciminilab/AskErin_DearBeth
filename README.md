@@ -1,10 +1,10 @@
 # Ask Erin / Dear Beth files 
 Files related to Ask Erin/Dear Beth episodes - coming soon to a YouTube near You!
 
-| Episode with link | Links to pipelines, models, or other files | Link to images | Images are licensed |
-|-------------------|--------------------------------------------|----------------|---------------------|
-| Episode 1 - Segmenting Cells in Out-of-Focus Images| Coming soon! | [folder here](https://drive.google.com/drive/folders/1iGU0V7KW0AZBKOs-Hx15VAxYeNChPcln) | [CC-0](https://creativecommons.org/public-domain/cc0/) |
-| Episode 2 | N/A | [Available from the IDR](https://idr.openmicroscopy.org/webclient/?show=plate-7376) | [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/)|
-| Episode 3 | Coming soon! | Coming soon! | |
-| Episode 4 - Proprietary File Formats in Fiji and CellProfiler| [Pipelines available here](https://github.com/ciminilab/AskErin_DearBeth/tree/main/files/Ep4_5) | [folder here](https://drive.google.com/drive/folders/1HaQIRUuYD-QBYhXM31ahR4XYuOkuDcal) | [CC-BY-4.0 ](https://creativecommons.org/licenses/by/4.0/) |
-| Episode 5 | [Pipelines available here](https://github.com/ciminilab/AskErin_DearBeth/tree/main/files/Ep4_5) | [folder here](https://drive.google.com/drive/folders/1HaQIRUuYD-QBYhXM31ahR4XYuOkuDcal) | [CC-BY-4.0 ](https://creativecommons.org/licenses/by/4.0/) |
+| Episode with link | Links to pipelines, models, or other files | Link to images | Images are licensed | Links to other resources |
+|-------------------|--------------------------------------------|----------------|---------------------|--------------------------|
+| Episode 1 - [Identifying Objects in Out-of-Focus Images in CellProfiler](https://www.youtube.com/watch?v=JcfPQ44p3pc) | Coming Soon! | [folder here](https://drive.google.com/drive/folders/1iGU0V7KW0AZBKOs-Hx15VAxYeNChPcln) | [CC-0](https://creativecommons.org/public-domain/cc0/) | |
+| Episode 2 - [Downloading Data from the IDR](https://youtu.be/7LUrF3JTfV4) | | | | [Cyberduck](https://cyberduck.io), [IDR](https://idr.openmicroscopy.org) |
+| Episode 3 - QC on High Content Datasets using CellProfiler and FIJI | [Segmentation Pipeline](https://github.com/broadinstitute/imaging-platform-pipelines/blob/master/JUMP_production/JUMP_segment_LoadData_v1.cppipe), [FIJI montage script](https://github.com/broadinstitute/ImagingPlatformHelpfulScripts/blob/main/make_fiji_montages_std.py) | [Download instructions](https://broadinstitute.github.io/cellpainting-gallery/download_instructions.html) for one example: s3://cellpainting-gallery/cpg0000-jump-pilot/source_4/workspace/assaydev/2020_11_04_CPJUMP1/ | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/deed.en) | |
+| Episode 4 - Proprietary File Formats in FIJI and CellProfiler | [Pipelines available here](https://github.com/ciminilab/AskErin_DearBeth/tree/main/files/Ep4_5) | [idr0056-stojic-Incrnas/screenC](https://idr.openmicroscopy.org/webclient/?show=screen-2303), [folder here](https://drive.google.com/drive/folders/1HaQIRUuYD-QBYhXM31ahR4XYuOkuDcal) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | |
+| Episode 5 - Handling Multinucleate Cells in CellProfiler | [Pipelines available here](https://github.com/ciminilab/AskErin_DearBeth/tree/main/files/Ep4_5) | [idr0056-stojic-Incrnas/screenC](https://idr.openmicroscopy.org/webclient/?show=screen-2303), [folder here](https://drive.google.com/drive/folders/1HaQIRUuYD-QBYhXM31ahR4XYuOkuDcal) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | |
