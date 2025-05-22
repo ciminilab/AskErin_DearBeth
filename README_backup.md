@@ -9,9 +9,9 @@ Files related to Ask Erin/Dear Beth episodes - Now available on a YouTube near Y
 | Episode 4 - [Proprietary File Formats in FIJI and CellProfiler](https://youtu.be/Qsf3um87xPs)| [Pipelines available here](https://github.com/ciminilab/AskErin_DearBeth/tree/main/files/Ep4_5) | [idr0056-stojic-Incrnas/screenC](https://idr.openmicroscopy.org/webclient/?show=screen-2303), [folder here](https://drive.google.com/drive/folders/1HaQIRUuYD-QBYhXM31ahR4XYuOkuDcal) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | [CellProfiler Input Modules tutorial](https://tutorials.cellprofiler.org/#input-modules) |
 | Episode 5 - [Handling Multinucleate Cells in CellProfiler](https://youtu.be/NIuECUW_OeI)| [Pipelines available here](https://github.com/ciminilab/AskErin_DearBeth/tree/main/files/Ep4_5) | [idr0056-stojic-Incrnas/screenC](https://idr.openmicroscopy.org/webclient/?show=screen-2303), [folder here](https://drive.google.com/drive/folders/1HaQIRUuYD-QBYhXM31ahR4XYuOkuDcal) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | [Learn more about CellProfiler's plugin system](https://plugins.cellprofiler.org/overview.html) |
 | Episode 6 - [Load Data in CellProfiler](https://youtu.be/xhvZK-rCYz8)| [Example load_data.csv](https://github.com/ciminilab/AskErin_DearBeth/tree/main/files/Ep6). Many more example load_data.csv available in the [Cell Painting Gallery](https://github.com/broadinstitute/cellpainting-gallery) | | | Automatically make LoadData.csv from Perkin Elmer microscopes with [pe2loaddata](https://github.com/broadinstitute/pe2loaddata), More on [Input modules](https://tutorials.cellprofiler.org/#input-modules) (the alternative to LoadData) |
-| Episode 7 - Segmenting Speckles in CellProfiler | Coming soon! | [idr0123-mota-mifish/experimentA](https://idr.openmicroscopy.org/webclient/?show=dataset-16553), [folder here](https://drive.google.com/drive/folders/1Iq59UTGt_adWOjYUeNbIv1xVXyEdfzek) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)  | [CellProfiler example page, including a speckles example](https://cellprofiler.org/examples) |
-| Episode 8 - Using Plugins in CellProfiler | Coming soon! | Coming soon! | Coming soon! | [Learn more about CellProfiler's plugin system](https://plugins.cellprofiler.org/overview.html) |
-| Episode 9 - Measuring Percent Positive in CellProfiler | Coming soon! | [idr0139-lawson-fascin/screenB](https://idr.openmicroscopy.org/webclient/?show=well-2210471), [idr0123-mota-mifish/experimentA](https://idr.openmicroscopy.org/webclient/?show=dataset-16553), [folder here](https://drive.google.com/drive/folders/13AUhTIrNN393pJa9NRJzaaxPHC6PcS_e) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | Coming soon! |
+| Episode 7 - [Segmenting Speckles in CellProfiler]()| | [Images on IDR](https://idr.openmicroscopy.org/webclient/?show=dataset-16553) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | |
+| Episode 8 - [Using Plugins in CellProfiler]()| | | | |
+| Episode 9 - [Measuring Percent Positive in CellProfiler]()| | [Images on IDR](https://idr.openmicroscopy.org/webclient/?show=well-2210471) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | |
 
 Ask Erin/Dear Beth is partially funded by grants from both the NIH (P41 GM135019) and CZI (2023-329649) to BAC - but our funders aren't responsible for any of the cursing!
 
@@ -20,6 +20,6 @@ Ask Erin/Dear Beth is partially funded by grants from both the NIH (P41 GM135019
 Want to hang out with Erin and Beth without talking science?
 Check out our bonus episodes where we talk about *other* stuff we love, like:
 
-| Bonus episodes with link | Links to any fun things |
-|--------------------------|-------------------------|
-| Episode 6.5 - [In which we tell the story of how we know each other](https://youtu.be/9gKE9euaUJo) | N/A |
+| Episode with link |
+|-------------------|
+| Episode 6.5 - [In which we tell the story of how we know each other](https://youtu.be/9gKE9euaUJo) |
