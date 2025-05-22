@@ -13,4 +13,8 @@ Files related to Ask Erin/Dear Beth episodes - Now available on a YouTube near Y
 | Episode 8 - Coming soon!| Coming soon! | Coming soon! | Coming soon! | [Learn more about CellProfiler's plugin system](https://plugins.cellprofiler.org/overview.html) |
 | Episode 9 - Coming soon!| Coming soon! | [idr0139-lawson-fascin/screenB](https://idr.openmicroscopy.org/webclient/?show=well-2210471), [idr0123-mota-mifish/experimentA](https://idr.openmicroscopy.org/webclient/?show=dataset-16553), [folder here](https://drive.google.com/drive/folders/13AUhTIrNN393pJa9NRJzaaxPHC6PcS_e) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)  | Coming soon! |
 
+| Bonus episodes with link | Links to any fun things |
+|--------------------------|-------------------------|
+| Episode 6.5 - Coming soon! | N/A |
+
 Ask Erin/Dear Beth is partially funded by grants from both the NIH (P41 GM135019) and CZI (2023-329649) to BAC - but our funders aren't responsible for any of the cursing!
