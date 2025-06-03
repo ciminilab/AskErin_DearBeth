@@ -11,16 +11,16 @@ Files related to Ask Erin/Dear Beth episodes - Now available on a YouTube near Y
 | Episode 6 - [Load Data in CellProfiler](https://youtu.be/xhvZK-rCYz8)| [Example load_data.csv](https://github.com/ciminilab/AskErin_DearBeth/tree/main/files/Ep6). Many more example load_data.csv available in the [Cell Painting Gallery](https://github.com/broadinstitute/cellpainting-gallery) | | | Automatically make LoadData.csv from Perkin Elmer microscopes with [pe2loaddata](https://github.com/broadinstitute/pe2loaddata), More on [Input modules](https://tutorials.cellprofiler.org/#input-modules) (the alternative to LoadData) |
 | Episode 7 - Segmenting Speckles in CellProfiler - Coming Soon! | Coming soon! | [idr0123-mota-mifish/experimentA](https://idr.openmicroscopy.org/webclient/?show=dataset-16553), [folder here](https://drive.google.com/drive/folders/1Iq59UTGt_adWOjYUeNbIv1xVXyEdfzek) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)  | [CellProfiler example page, including a speckles example](https://cellprofiler.org/examples) |
 | Episode 8 - Using Plugins in CellProfiler - Coming Soon! | | | | Learn more about [CellProfiler's plugin system](https://plugins.cellprofiler.org/overview.html), [CellProfiler-plugins repository](https://github.com/CellProfiler/CellProfiler-plugins) |
-| Episode 9 - Measuring Percent Positive in CellProfiler - Coming Soon! | Coming soon! | [idr0139-lawson-fascin/screenB](https://idr.openmicroscopy.org/webclient/?show=well-2210471), [idr0123-mota-mifish/experimentA](https://idr.openmicroscopy.org/webclient/?show=dataset-16553), [folder here](https://drive.google.com/drive/folders/13AUhTIrNN393pJa9NRJzaaxPHC6PcS_e) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | Coming soon! |
+| Episode 9 - Measuring Percent Positive in CellProfiler - Coming Soon! <!-- testtesttest --> | Coming soon! | [idr0139-lawson-fascin/screenB](https://idr.openmicroscopy.org/webclient/?show=well-2210471), [idr0123-mota-mifish/experimentA](https://idr.openmicroscopy.org/webclient/?show=dataset-16553), [folder here](https://drive.google.com/drive/folders/13AUhTIrNN393pJa9NRJzaaxPHC6PcS_e) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | Coming soon! |
 
-<---!
+<!--
 Commented out text not shown on the page
 
 [Segmenting Speckles in CellProfiler](https://youtu.be/MKofdTekoss)
 [Using Plugins in CellProfiler](https://youtu.be/31iK-ETKtFM)
 [Measuring Percent Positive in CellProfiler](https://youtu.be/31iK-ETKtFM)
 
----> 
+--> 
 
 Ask Erin/Dear Beth is partially funded by grants from both the NIH (P41 GM135019) and CZI (2023-329649) to BAC - but our funders aren't responsible for any of the cursing!
 
