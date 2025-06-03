@@ -9,16 +9,15 @@ Files related to Ask Erin/Dear Beth episodes - Now available on a YouTube near Y
 | Episode 4 - [Proprietary File Formats in Fiji and CellProfiler](https://youtu.be/Qsf3um87xPs)| [Pipelines available here](https://github.com/ciminilab/AskErin_DearBeth/tree/main/files/Ep4_5) | [idr0056-stojic-Incrnas/screenC](https://idr.openmicroscopy.org/webclient/?show=screen-2303), [folder here](https://drive.google.com/drive/folders/1HaQIRUuYD-QBYhXM31ahR4XYuOkuDcal) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | [CellProfiler Input Modules tutorial](https://tutorials.cellprofiler.org/#input-modules) |
 | Episode 5 - [Handling Multinucleate Cells in CellProfiler](https://youtu.be/NIuECUW_OeI)| [Pipelines available here](https://github.com/ciminilab/AskErin_DearBeth/tree/main/files/Ep4_5) | [idr0056-stojic-Incrnas/screenC](https://idr.openmicroscopy.org/webclient/?show=screen-2303), [folder here](https://drive.google.com/drive/folders/1HaQIRUuYD-QBYhXM31ahR4XYuOkuDcal) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | [Learn more about CellProfiler's plugin system](https://plugins.cellprofiler.org/overview.html) |
 | Episode 6 - [Load Data in CellProfiler](https://youtu.be/xhvZK-rCYz8)| [Example load_data.csv](https://github.com/ciminilab/AskErin_DearBeth/tree/main/files/Ep6). Many more example load_data.csv available in the [Cell Painting Gallery](https://github.com/broadinstitute/cellpainting-gallery) | | | Automatically make LoadData.csv from Perkin Elmer microscopes with [pe2loaddata](https://github.com/broadinstitute/pe2loaddata), More on [Input modules](https://tutorials.cellprofiler.org/#input-modules) (the alternative to LoadData) |
-| Episode 7 - Segmenting Speckles in CellProfiler - Coming Soon! | Coming soon! | [idr0123-mota-mifish/experimentA](https://idr.openmicroscopy.org/webclient/?show=dataset-16553), [folder here](https://drive.google.com/drive/folders/1Iq59UTGt_adWOjYUeNbIv1xVXyEdfzek) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)  | [CellProfiler example page, including a speckles example](https://cellprofiler.org/examples) |
-| Episode 8 - Using Plugins in CellProfiler - Coming Soon! | | | | Learn more about [CellProfiler's plugin system](https://plugins.cellprofiler.org/overview.html), [CellProfiler-plugins repository](https://github.com/CellProfiler/CellProfiler-plugins) |
-| Episode 9 - Measuring Percent Positive in CellProfiler - Coming Soon! <!-- testtesttest --> | Coming soon! | [idr0139-lawson-fascin/screenB](https://idr.openmicroscopy.org/webclient/?show=well-2210471), [idr0123-mota-mifish/experimentA](https://idr.openmicroscopy.org/webclient/?show=dataset-16553), [folder here](https://drive.google.com/drive/folders/13AUhTIrNN393pJa9NRJzaaxPHC6PcS_e) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | Coming soon! |
+| Episode 7 - Segmenting Speckles in CellProfiler - Coming Soon! <!-- [Segmenting Speckles in CellProfiler](https://youtu.be/MKofdTekoss) --> | Coming soon! | [idr0123-mota-mifish/experimentA](https://idr.openmicroscopy.org/webclient/?show=dataset-16553), [folder here](https://drive.google.com/drive/folders/1Iq59UTGt_adWOjYUeNbIv1xVXyEdfzek) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)  | [CellProfiler example page, including a speckles example](https://cellprofiler.org/examples) |
+| Episode 8 - Using Plugins in CellProfiler - Coming Soon! <!-- [Using Plugins in CellProfiler](https://youtu.be/31iK-ETKtFM) --> | | | | Learn more about [CellProfiler's plugin system](https://plugins.cellprofiler.org/overview.html), [CellProfiler-plugins repository](https://github.com/CellProfiler/CellProfiler-plugins) |
+| Episode 9 - Measuring Percent Positive in CellProfiler - Coming Soon! <!-- [Measuring Percent Positive in CellProfiler](https://youtu.be/31iK-ETKtFM) --> | Coming soon! | [idr0139-lawson-fascin/screenB](https://idr.openmicroscopy.org/webclient/?show=well-2210471), [idr0123-mota-mifish/experimentA](https://idr.openmicroscopy.org/webclient/?show=dataset-16553), [folder here](https://drive.google.com/drive/folders/13AUhTIrNN393pJa9NRJzaaxPHC6PcS_e) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | Coming soon! |
 
 <!--
 Commented out text not shown on the page
 
-[Segmenting Speckles in CellProfiler](https://youtu.be/MKofdTekoss)
-[Using Plugins in CellProfiler](https://youtu.be/31iK-ETKtFM)
-[Measuring Percent Positive in CellProfiler](https://youtu.be/31iK-ETKtFM)
+TEMPLATE ROW
+| Episode X - TITLE - Coming Soon! <!-- [TITLE](link) --> | [Pipelines available here](LINK) / Coming soon! | [LINK to host](), [folder here](LINK_TO_OUR_FOLDER) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) / SOME OTHER LICENSE | [SOME_OTHER_RESOURCE]() |
 
 --> 
 
@@ -32,3 +31,11 @@ Check out our bonus episodes where we talk about *other* stuff we love, like:
 | Bonus episodes with link | Links to any fun things |
 |--------------------------|-------------------------|
 | Episode 6.5 - [In which we tell the story of how we know each other](https://youtu.be/9gKE9euaUJo) | N/A |
+
+<!--
+Commented out text not shown on the page
+
+TEMPLATE ROW
+| Episode X.5 - TITLE - Coming Soon! <!-- [TITLE](link) --> | [TITLE](LINK) / Coming soon! | 
+
+--> 
