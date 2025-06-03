@@ -14,7 +14,7 @@ Files related to Ask Erin/Dear Beth episodes - Now available on a YouTube near Y
 | Episode 9 - Measuring Percent Positive in CellProfiler - Coming Soon! <!-- [Measuring Percent Positive in CellProfiler](https://youtu.be/31iK-ETKtFM) --> | Coming soon! | [idr0139-lawson-fascin/screenB](https://idr.openmicroscopy.org/webclient/?show=well-2210471), [idr0123-mota-mifish/experimentA](https://idr.openmicroscopy.org/webclient/?show=dataset-16553), [folder here](https://drive.google.com/drive/folders/13AUhTIrNN393pJa9NRJzaaxPHC6PcS_e) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | Coming soon! |
 
 <p hidden>
-Commented out text not shown on the page
+Commented out text not shown on the page- stuff in the arrow brackets with the ! is also a hidden comment
 
 TEMPLATE ROW
 | Episode X - TITLE - Coming Soon! <!-- [TITLE](link) --> | [Pipelines available here](LINK) / Coming soon! | [LINK to host](), [folder here](LINK_TO_OUR_FOLDER) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) / SOME OTHER LICENSE | [SOME_OTHER_RESOURCE]() |
@@ -32,10 +32,10 @@ Check out our bonus episodes where we talk about *other* stuff we love, like:
 |--------------------------|-------------------------|
 | Episode 6.5 - [In which we tell the story of how we know each other](https://youtu.be/9gKE9euaUJo) | N/A |
 
-<!--
-Commented out text not shown on the page
+<p hidden>
+More commented out text not shown on the page
 
 TEMPLATE ROW
 | Episode X.5 - TITLE - Coming Soon! <!-- [TITLE](link) --> | [TITLE](LINK) / Coming soon! | 
 
---> 
+</p>
