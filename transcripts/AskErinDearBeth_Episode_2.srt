@@ -1,0 +1,564 @@
+1
+00:00:00,000 --> 00:00:05,000
+Hello, Beth.
+
+2
+00:00:05,000 --> 00:00:06,160
+Hello, Erin.
+
+3
+00:00:06,160 --> 00:00:19,160
+It is lovely to see you, as always.
+
+4
+00:00:19,160 --> 00:00:20,660
+You too.
+
+5
+00:00:20,660 --> 00:00:22,160
+And hello, dear viewer.
+
+6
+00:00:22,160 --> 00:00:26,240
+Welcome to the latest episode of Ask Erin, Dear Beth.
+
+7
+00:00:26,240 --> 00:00:29,760
+Beth, tell us about our challenge today.
+
+8
+00:00:30,520 --> 00:00:32,360
+Yeah, great question.
+
+9
+00:00:32,360 --> 00:00:35,460
+So today, we're going to look at the IDR.
+
+10
+00:00:35,460 --> 00:00:36,860
+So if you're not familiar with the IDR,
+
+11
+00:00:36,860 --> 00:00:38,360
+it's the Image Data Resource.
+
+12
+00:00:38,360 --> 00:00:41,560
+It's a great place to look for public data sets.
+
+13
+00:00:41,560 --> 00:00:44,260
+So if you care about public data,
+
+14
+00:00:44,260 --> 00:00:47,260
+because you want to be able to find data that looks like your own
+
+15
+00:00:47,260 --> 00:00:49,560
+so that you can sort of build workflows on it,
+
+16
+00:00:49,560 --> 00:00:53,060
+you just want to find data that you think is going to be comparable to your own.
+
+17
+00:00:53,060 --> 00:00:55,160
+So you can actually calculate your own metrics
+
+18
+00:00:55,160 --> 00:00:57,060
+and see if there's actually interesting biology
+
+19
+00:00:57,060 --> 00:00:59,260
+that you can find where somebody else has done all of the work
+
+20
+00:00:59,260 --> 00:01:01,760
+of doing the microscopy.
+
+21
+00:01:01,760 --> 00:01:04,160
+So we're big fans of the IDR,
+
+22
+00:01:04,160 --> 00:01:05,960
+but it can be a little bit challenging sometimes
+
+23
+00:01:05,960 --> 00:01:08,760
+to find and download the data that you want.
+
+24
+00:01:08,760 --> 00:01:11,060
+And so we're going to show you today
+
+25
+00:01:11,060 --> 00:01:14,260
+how I have done that for a particular data set.
+
+26
+00:01:14,260 --> 00:01:19,260
+Let me go ahead and share my screen.
+
+27
+00:01:19,260 --> 00:01:23,860
+So you can find the IDR at idr.openmicroscopy.org.
+
+28
+00:01:23,860 --> 00:01:25,160
+And there's two parts to it.
+
+29
+00:01:25,160 --> 00:01:28,360
+There's the cell IDR and the tissue IDR.
+
+30
+00:01:29,660 --> 00:01:32,260
+If we look at the cell IDR,
+
+31
+00:01:32,260 --> 00:01:36,360
+which is what I think it has 82 different experiments in there.
+
+32
+00:01:36,360 --> 00:01:38,560
+And if we look at the tissue IDR,
+
+33
+00:01:38,560 --> 00:01:40,960
+there are 53 different experiments in there.
+
+34
+00:01:40,960 --> 00:01:43,960
+So there's a lot of data that you can actually take a look at
+
+35
+00:01:43,960 --> 00:01:47,460
+and see how does it relate to your data.
+
+36
+00:01:47,460 --> 00:01:48,660
+So in this particular case,
+
+37
+00:01:48,660 --> 00:01:51,660
+we were looking for a particular microscopy phenotype.
+
+38
+00:01:51,660 --> 00:01:54,560
+We were really just looking for cells.
+
+39
+00:01:54,560 --> 00:01:59,760
+And so we browsed around in the IDR
+
+40
+00:01:59,760 --> 00:02:02,960
+and we came across this data set that we liked a lot,
+
+41
+00:02:02,960 --> 00:02:06,960
+which was this screen for link RNAs.
+
+42
+00:02:06,960 --> 00:02:08,460
+And if you look at the side here,
+
+43
+00:02:08,460 --> 00:02:13,060
+see a lot of information about different aspects of the screen,
+
+44
+00:02:13,060 --> 00:02:15,660
+the screen technology type, how it was made.
+
+45
+00:02:15,660 --> 00:02:19,560
+So really well annotated and metadata is one of our favorite things.
+
+46
+00:02:19,560 --> 00:02:20,760
+Is it there?
+
+47
+00:02:20,760 --> 00:02:21,660
+Oh my gosh.
+
+48
+00:02:21,660 --> 00:02:23,660
+Like, don't get me started on metadata
+
+49
+00:02:23,660 --> 00:02:25,960
+and how much I love it because then we would just run out of time
+
+50
+00:02:25,960 --> 00:02:30,560
+to record anything other than air and waxing poetic about metadata.
+
+51
+00:02:30,560 --> 00:02:34,160
+But I do think that's a really important part in terms of,
+
+52
+00:02:34,160 --> 00:02:37,960
+you know, anytime we're talking about a public data set
+
+53
+00:02:37,960 --> 00:02:41,260
+for it to be, you know, reusable,
+
+54
+00:02:41,260 --> 00:02:44,860
+it's certainly important that there is enough metadata with it
+
+55
+00:02:44,860 --> 00:02:50,360
+that like a user down the road like us is now able to go and look and see,
+
+56
+00:02:50,360 --> 00:02:58,160
+like, okay, here is information that I might need in order to understand
+
+57
+00:02:58,160 --> 00:03:00,860
+what is in this data set, what can I do with this data set,
+
+58
+00:03:00,860 --> 00:03:03,460
+how is this data set generated?
+
+59
+00:03:03,460 --> 00:03:08,060
+And the IDR is definitely a favorite of ours for many reasons,
+
+60
+00:03:08,060 --> 00:03:13,960
+but a big one being that they do require lots of metadata
+
+61
+00:03:13,960 --> 00:03:19,460
+to be published with the images themselves.
+
+62
+00:03:19,560 --> 00:03:22,360
+It makes everything so much more usable and so much more important
+
+63
+00:03:22,360 --> 00:03:25,160
+because, you know, you don't just have data but potentially the right data
+
+64
+00:03:25,160 --> 00:03:26,360
+for your question.
+
+65
+00:03:26,360 --> 00:03:27,860
+And there's lots of things that are searchable.
+
+66
+00:03:27,860 --> 00:03:30,360
+There's great things about the IDR that we don't have time to go into today
+
+67
+00:03:30,360 --> 00:03:33,260
+because today we're mostly going to look at data accession.
+
+68
+00:03:33,260 --> 00:03:35,160
+How do we actually access the data?
+
+69
+00:03:35,160 --> 00:03:38,560
+But so we found this plate of data as we were sort of browsing around
+
+70
+00:03:38,560 --> 00:03:39,960
+that we liked a lot.
+
+71
+00:03:39,960 --> 00:03:44,160
+We can take a look at it in the web client and see does it have the phenotype
+
+72
+00:03:44,160 --> 00:03:46,760
+that we want and these are some lovely cells
+
+73
+00:03:46,760 --> 00:03:53,660
+which will be great data points for other things we want to show in this podcast.
+
+74
+00:03:53,660 --> 00:03:58,260
+So how do you then actually get a bunch of data out of the IDR?
+
+75
+00:03:58,260 --> 00:04:04,960
+So if you go to their website, there's a whole page about how you download data.
+
+76
+00:04:04,960 --> 00:04:08,660
+And if you don't want to download just one image, you can do that here,
+
+77
+00:04:08,660 --> 00:04:13,760
+but I don't think the IDR makes it as nice as it could, especially in this particular case
+
+78
+00:04:13,760 --> 00:04:18,260
+where we have each image file is a whole well.
+
+79
+00:04:18,260 --> 00:04:21,960
+And so it seems like that causes some crankiness in the download procedure.
+
+80
+00:04:21,960 --> 00:04:26,160
+And some data sets in the IDR are stored as one file per plate.
+
+81
+00:04:26,160 --> 00:04:29,260
+And so for that, you certainly can't go or don't want to go in and do that
+
+82
+00:04:29,260 --> 00:04:30,260
+just from this web portal.
+
+83
+00:04:30,260 --> 00:04:33,560
+You want to use some sort of a file transfer.
+
+84
+00:04:33,560 --> 00:04:42,560
+I think that is an important thing to note about when thinking about getting the files themselves off of the IDR,
+
+85
+00:04:42,560 --> 00:04:48,660
+that different data sets, they're not actually converted to some standardized format.
+
+86
+00:04:48,660 --> 00:04:57,860
+The data is generally as it was acquired and different researchers are using different microscopes
+
+87
+00:04:57,860 --> 00:04:59,660
+are saving their data in different formats.
+
+88
+00:04:59,660 --> 00:05:07,760
+And so again, as you mentioned, here, the data set we stumbled upon and were interested in
+
+89
+00:05:07,860 --> 00:05:18,460
+has the files themselves are saved out differently from perhaps if we were to browse into another data set.
+
+90
+00:05:18,460 --> 00:05:25,560
+So that can even be, maybe you want to parse the data by like, what is the file format?
+
+91
+00:05:25,560 --> 00:05:30,260
+I want to get familiar with using a certain way that data is structured.
+
+92
+00:05:30,260 --> 00:05:35,260
+There's all sorts of different things to consider when browsing in such public repositories.
+
+93
+00:05:38,760 --> 00:05:44,760
+And because the IDR is lovely and full of lovely people, they actually provide you three different ways to do it.
+
+94
+00:05:44,760 --> 00:05:48,760
+And which one you do should be really up to you and what you're comfortable with.
+
+95
+00:05:48,760 --> 00:05:55,760
+This is the one they recommend is one called Globus, which I've never actually tried before, but it looks really easy.
+
+96
+00:05:55,760 --> 00:06:01,760
+But we're used to shipping around files by something called FTP, which is the file transfer protocol.
+
+97
+00:06:01,760 --> 00:06:09,760
+And so we have, we are pretty used to in our work using nice tools like a program here called CyberDuck
+
+98
+00:06:09,760 --> 00:06:12,760
+in order to actually ship data around.
+
+99
+00:06:12,760 --> 00:06:16,760
+And CyberDuck is nice because it's free, it's open source.
+
+100
+00:06:16,760 --> 00:06:29,760
+And so I've actually been able here to make a bookmark where I can actually, maybe I can even show the bookmark.
+
+101
+00:06:30,760 --> 00:06:33,760
+Nope, maybe I can just edit the bookmark over and over again.
+
+102
+00:06:35,760 --> 00:06:41,760
+But I can put in from IDR what they would think that the connection should be.
+
+103
+00:06:41,760 --> 00:06:51,760
+And then when I copy and paste this in and tell it that I want to connect anonymously,
+
+104
+00:06:53,760 --> 00:06:57,760
+I'm not going to do it because I'm already connected and I think it'll freak out if I try to do that.
+
+105
+00:06:57,760 --> 00:06:59,760
+That should be in theory all you need to do.
+
+106
+00:06:59,760 --> 00:07:05,760
+And then I have this where I've now bookmarked this where I can connect to the IDR and I can download any of this data that I want,
+
+107
+00:07:05,760 --> 00:07:08,760
+which is terabytes going on a petabyte.
+
+108
+00:07:08,760 --> 00:07:10,760
+So I'm not going to download all of it.
+
+109
+00:07:10,760 --> 00:07:17,760
+But then if I want to figure out what is the right data that I want, all I do is I just go back and I look at my web client.
+
+110
+00:07:17,760 --> 00:07:21,760
+I can just pull the IDR number, which is 56.
+
+111
+00:07:22,760 --> 00:07:27,760
+And then if I wanted, I could download that entire IDR project or that entire IDR screen.
+
+112
+00:07:27,760 --> 00:07:33,760
+But here I've just downloaded a couple wells of data so that I can use that for prototyping another project.
+
+113
+00:07:35,760 --> 00:07:41,760
+But absolutely, especially if you're still prototyping the microscopy that you're going to do and the imaging you're going to do,
+
+114
+00:07:41,760 --> 00:07:50,760
+it's really important to understand can you measure the thing you want to measure in the data that you have.
+
+115
+00:07:50,760 --> 00:07:55,760
+And so one way to do that and one thing you shouldn't neglect to do is by collecting pilot data.
+
+116
+00:07:55,760 --> 00:08:01,760
+But if you want to get a sense of if I had the prettiest possible version of the data that I think I'm going to have,
+
+117
+00:08:01,760 --> 00:08:07,760
+can I figure out a workflow to quantify it accurately and public data is a great way for doing that.
+
+118
+00:08:07,760 --> 00:08:11,760
+Anything else you would add today? Ask Erin.
+
+119
+00:08:11,760 --> 00:08:16,760
+Well, Beth, you mentioned that you use this to like from Cyberduck to like just download.
+
+120
+00:08:16,760 --> 00:08:19,760
+So do you mind showing us like?
+
+121
+00:08:19,760 --> 00:08:20,760
+Sure.
+
+122
+00:08:20,760 --> 00:08:25,760
+How do you even get that last couple, the last step here of the download?
+
+123
+00:08:25,760 --> 00:08:30,760
+So all I did here, so here is to just collapse out.
+
+124
+00:08:30,760 --> 00:08:41,760
+I compared with, I grabbed the first thing that was there and I said, and it said screen three and here I'm looking at screen C and I hoped that those were the same.
+
+125
+00:08:41,760 --> 00:08:47,760
+And it looks like they probably are because if I look at this number here and this number, those aren't.
+
+126
+00:08:47,760 --> 00:08:49,760
+So that's plate one.
+
+127
+00:08:49,760 --> 00:08:54,760
+But plate two matches this one and I'm looking at plate two.
+
+128
+00:08:54,760 --> 00:08:56,760
+So that should be the same.
+
+129
+00:08:56,760 --> 00:09:04,760
+There's some metadata here from the microscope, which is great if I wanted to know exactly like what the exposure times were and what settings were and things like that.
+
+130
+00:09:04,760 --> 00:09:07,760
+But in this case, again, each image is a well.
+
+131
+00:09:07,760 --> 00:09:14,760
+And all I have to do is click on a few sets of walls and hit download.
+
+132
+00:09:14,760 --> 00:09:17,760
+And Cyberduck goes ahead and downloads all that data for me.
+
+133
+00:09:17,760 --> 00:09:18,760
+Wow.
+
+134
+00:09:18,760 --> 00:09:19,760
+Awesome sauce.
+
+135
+00:09:19,760 --> 00:09:21,760
+Yeah.
+
+136
+00:09:21,760 --> 00:09:27,760
+So using these open source tools and these open data resources, you can actually get access to tons of data really quickly.
+
+137
+00:09:27,760 --> 00:09:40,760
+You can use it to build workflows that you can then transfer into your own data and make sure that you are getting your data as pretty as the public data and that that is going to help you actually be able to run the analyses you want to run.
+
+138
+00:09:40,760 --> 00:09:41,760
+Awesome.
+
+139
+00:09:42,760 --> 00:09:45,760
+Look like seeing that.
+
+140
+00:09:45,760 --> 00:09:47,760
+Thank you so much.
+
+141
+00:09:47,760 --> 00:09:49,760
+Talk later.
+

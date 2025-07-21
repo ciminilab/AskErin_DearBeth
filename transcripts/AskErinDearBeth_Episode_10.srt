@@ -1,0 +1,964 @@
+1
+00:00:00,000 --> 00:00:17,960
+Hey Beth! Erin, hey, how's it going?
+
+2
+00:00:17,960 --> 00:00:20,280
+Peechie Keen, how about yourself?
+
+3
+00:00:20,280 --> 00:00:23,840
+Great! Anytime we get to do the podcast, I'm a happy camper.
+
+4
+00:00:23,840 --> 00:00:26,280
+Word. Agreed.
+
+5
+00:00:27,240 --> 00:00:44,520
+Yeah, so today I thought I would talk through a couple cool tips or tricks to help people who have zeros in their images.
+
+6
+00:00:44,520 --> 00:00:48,400
+Black space. Oh no. Yeah.
+
+7
+00:00:48,400 --> 00:01:02,040
+So a couple things. This pipeline takes in two different images that are different channels from, you know, the same well,
+
+8
+00:01:02,040 --> 00:01:11,000
+same region of the well that have back, you know, zero as background, but then they need to be aligned.
+
+9
+00:01:11,000 --> 00:01:24,600
+So they're each bringing in slightly different zero areas. So we want to catch that, get rid of any place where there isn't actually signal in both the input images.
+
+10
+00:01:24,600 --> 00:01:36,760
+And then another sort of tricky thing that we do with those is to actually measure how far out. So these are, it's the well edge.
+
+11
+00:01:36,760 --> 00:01:45,720
+These cells weren't growing up right next to the well edge and it's the well edge and the physical well edge zeroed out in these images already.
+
+12
+00:01:45,720 --> 00:02:02,240
+So we actually have a trick in this pipeline for measuring how far away the cells are from the zeroed area, which can be really handy as you might get artifacts like over confluence,
+
+13
+00:02:02,240 --> 00:02:08,320
+or cells, you know, bunching up against each other as they are, you know, physically bumping into the well edge.
+
+14
+00:02:08,320 --> 00:02:20,280
+And so this is a way to actually measure how far away they are so that one could do some downstream filtering of, okay, it turns out everything that is right next to the well edge.
+
+15
+00:02:20,280 --> 00:02:28,920
+And, you know, 10 cell lengths in seems to be behaving very differently than the cells that are not quite quite so far.
+
+16
+00:02:29,000 --> 00:02:38,000
+So you could do some downstream filtering. I mean, you could do in pipeline filtering, but I'm assuming that sort of that would more come out during the data exploration part,
+
+17
+00:02:38,000 --> 00:02:46,200
+figuring out that you're measuring different phenotypes. And so that's what I have queued up for us today.
+
+18
+00:02:46,200 --> 00:02:56,200
+That sounds like a great set of tricks for things that in theory you never need, but in practice are actually a big part of what an image analyst spends their time banging their head against.
+
+19
+00:02:56,480 --> 00:03:12,480
+Yes, absolutely. The things that should be, yeah, shouldn't exist in the ideal world of perfect input images, but we all know that, you know, physics, reality, like those come into play when we...
+
+20
+00:03:12,480 --> 00:03:14,480
+Biology, biology always.
+
+21
+00:03:14,480 --> 00:03:18,480
+Yeah, I mean biology, yeah, I mean, man, if we could just ignore biology, our...
+
+22
+00:03:18,480 --> 00:03:20,480
+Our biology would be so much easier.
+
+23
+00:03:20,760 --> 00:03:22,760
+It's so easy. Yeah.
+
+24
+00:03:24,760 --> 00:03:36,760
+Awesome. Okay. Well, let's get started with this. So I am going to show you what we're working with.
+
+25
+00:03:36,840 --> 00:04:00,360
+All right. So this is my pipeline. And here, I will show you my two input images. They're a little large, a little bit larger than what we are often dealing with as input images.
+
+26
+00:04:00,440 --> 00:04:12,440
+So they... These steps might run, you know, just a tiny bit slower than you might expect. Just adjusting the contrast so you can see them.
+
+27
+00:04:12,440 --> 00:04:26,440
+These were actually, in this experiment, these two sets of inputs were taken at different magnifications.
+
+28
+00:04:26,520 --> 00:04:35,520
+And so the stitching, and then all those images were stitched together, but that's why they have a different pattern around the edge here.
+
+29
+00:04:35,520 --> 00:04:48,520
+As the microscope was actually using different physical objectives for this acquisition. And then to bring them together, we stitched them into a whole well and then cropped them into chunks.
+
+30
+00:04:48,600 --> 00:04:57,600
+So the pre-processing on this is long and complicated and not what I want to deal with.
+
+31
+00:04:57,600 --> 00:05:09,600
+But I think it's what we are left with is, you know, in principle, quite helpful because this could have been happening by a mask.
+
+32
+00:05:09,680 --> 00:05:18,680
+Where if you have some idea where your physical well edge is, there we go, and you toss a mask on it, you'd still have this same starting point.
+
+33
+00:05:18,680 --> 00:05:24,680
+So those are what we're working with as our input images.
+
+34
+00:05:24,680 --> 00:05:26,680
+Sounds complicated.
+
+35
+00:05:26,680 --> 00:05:38,680
+Yes. Complicated to get there. But actually, I mean, it's a lot of modules here as we step through, but each module is actually doing something quite simple.
+
+36
+00:05:38,760 --> 00:06:05,760
+I think that's one of the neat things about being a pro CellProfiler user and having the help from other amazing pros on my team that are able to help think through how can we take these simple logical steps and build them into something pretty complicated.
+
+37
+00:06:05,840 --> 00:06:07,840
+And so...
+
+38
+00:06:07,840 --> 00:06:09,840
+That kind of sounds like a future episode, doesn't it?
+
+39
+00:06:09,840 --> 00:06:13,840
+Oh man. So many ideas for future episodes.
+
+40
+00:06:16,840 --> 00:06:27,840
+So to walk you through what we're doing here, first, I'm just measuring the image intensity of the whole image.
+
+41
+00:06:27,920 --> 00:06:46,920
+This gives us lots of image intensity metrics, but I want to do that just to have this extra flag image module in here where what it is looking for is saying basically, is there some value in each of these images that we're bringing in?
+
+42
+00:06:47,000 --> 00:07:02,000
+Because it's quite possible that with however you're handling things, if you've ended up masking out or zeroing out a whole image, you don't want to proceed with that in your pipeline because overall it's zero.
+
+43
+00:07:02,000 --> 00:07:09,000
+And sometimes some CellProfiler modules get cranky if you try and tell it to do things on images that are all zeros.
+
+44
+00:07:09,080 --> 00:07:22,080
+And so here I've just, after measuring the total image intensity of the whole image, saying give me a flag if the lowest value, you know, if there's a...
+
+45
+00:07:22,080 --> 00:07:26,080
+Is not a lowest value in the image that it is at least this very tiny number.
+
+46
+00:07:26,080 --> 00:07:31,080
+So there is value somewhere in these images, so they passed this flag.
+
+47
+00:07:31,160 --> 00:07:39,160
+Then I am doing an align step where it is...
+
+48
+00:07:39,160 --> 00:07:53,160
+We've got a couple different ways of doing this in CellProfiler and you may find, depending on your data, sometimes just empirically testing which alignment method works best is the way to do it.
+
+49
+00:07:53,160 --> 00:07:56,160
+And again, this is a little bit slow because these are pretty big images.
+
+50
+00:07:56,240 --> 00:08:05,240
+I suppose for this demonstration I could have further cropped them from where I downloaded them, but hey, here we are.
+
+51
+00:08:05,240 --> 00:08:07,240
+Do it live.
+
+52
+00:08:07,240 --> 00:08:20,240
+So what we have now is the images are now aligned and what we can do when we adjust the contrast.
+
+53
+00:08:20,320 --> 00:08:28,320
+You can see this module, the alignment module, shows us in green one image and in red the other.
+
+54
+00:08:28,320 --> 00:08:34,320
+And so how they started out was not...
+
+55
+00:08:34,320 --> 00:08:37,320
+You can see the nuclei are not actually overlapping each other.
+
+56
+00:08:37,320 --> 00:08:49,320
+And then here after alignment, we have most of their overlapping area is now beautifully aligned, showing yellow with the green and red overlapping.
+
+57
+00:08:49,400 --> 00:08:58,400
+But we have both some signal on the side that is only coming from one channel as one of the images was shifted to the left.
+
+58
+00:08:58,400 --> 00:09:05,400
+And we have this stair step pattern where the stair steps are different along the edge.
+
+59
+00:09:05,400 --> 00:09:10,400
+But now we have the signal itself, how we want it to be.
+
+60
+00:09:10,400 --> 00:09:18,400
+So we then are going to just do a couple thresholding modules.
+
+61
+00:09:18,480 --> 00:09:24,480
+And this threshold I have set to...
+
+62
+00:09:24,480 --> 00:09:32,480
+So typically, I typically think of thresholds as being used for object identification.
+
+63
+00:09:32,480 --> 00:09:37,480
+But this is an example where that's actually not what we're doing.
+
+64
+00:09:37,480 --> 00:09:40,480
+We are setting a very, very...
+
+65
+00:09:40,480 --> 00:09:46,480
+Again, just this arbitrary, very low number that is saying in this input image,
+
+66
+00:09:46,560 --> 00:09:51,560
+anywhere there is some signal, I want that to be one,
+
+67
+00:09:51,560 --> 00:09:56,560
+and anywhere that is smaller than this very arbitrary number, I want that to be zero.
+
+68
+00:09:56,560 --> 00:10:02,560
+And so what we get here is the exact outline of what is...
+
+69
+00:10:02,560 --> 00:10:06,560
+Or the exact mask of what truly exists in this image.
+
+70
+00:10:06,560 --> 00:10:15,560
+And so again, this works because all of this region here has already been masked out to be zeros.
+
+71
+00:10:15,640 --> 00:10:17,640
+So it's truly zero.
+
+72
+00:10:17,640 --> 00:10:20,640
+So this would not work at...
+
+73
+00:10:20,640 --> 00:10:27,640
+One would have to perhaps maybe adjust this more or do some other tricks if this was background.
+
+74
+00:10:27,640 --> 00:10:37,640
+But it's not. It is zeros in these images, which is why this set of tricks works.
+
+75
+00:10:37,720 --> 00:10:46,720
+I do the same thing with the other image and get a slightly different stair step,
+
+76
+00:10:46,720 --> 00:10:49,720
+which looks like this.
+
+77
+00:10:49,720 --> 00:10:57,720
+And then we've got a couple little image math modules that we're doing on those...
+
+78
+00:10:57,720 --> 00:11:05,720
+Some math on these thresholded images, which is kind of fun because we're just taking zeros and ones,
+
+79
+00:11:05,800 --> 00:11:08,800
+which is pretty easy to actually intuit what the math should be.
+
+80
+00:11:08,800 --> 00:11:12,800
+Sometimes image math in microscopy images are not so intuitive,
+
+81
+00:11:12,800 --> 00:11:20,800
+but even I can add zeros and ones, add and subtract zeros and ones without...
+
+82
+00:11:20,800 --> 00:11:22,800
+I think you can do much more than that.
+
+83
+00:11:22,800 --> 00:11:29,800
+I mean, there is definitely some math I can do in my head, but this is for sure.
+
+84
+00:11:29,880 --> 00:11:37,880
+So what we have first here is looking for signal that is present in both of the input images.
+
+85
+00:11:37,880 --> 00:11:45,880
+So what I have done is take a minimum of these two inputs.
+
+86
+00:11:45,880 --> 00:11:52,880
+And so anywhere there is a zero will be a zero on my output image here,
+
+87
+00:11:52,880 --> 00:11:56,880
+and anywhere that is both ones will be one.
+
+88
+00:11:56,960 --> 00:12:04,960
+So now I have this nice mask showing the exact area that ended up in both images.
+
+89
+00:12:04,960 --> 00:12:12,960
+Then we can do the complement, which is looking at the maximum.
+
+90
+00:12:12,960 --> 00:12:19,960
+So this is going to give me a mask for signal that is present in either.
+
+91
+00:12:19,960 --> 00:12:24,960
+Sometimes you might want both either.
+
+92
+00:12:25,040 --> 00:12:30,040
+It depends on your application, but if we say maximum, anywhere there is signal,
+
+93
+00:12:30,040 --> 00:12:33,040
+I'm getting this mask out.
+
+94
+00:12:33,040 --> 00:12:42,040
+Then we can actually use these masks to mask our input images,
+
+95
+00:12:42,040 --> 00:12:52,040
+which is very handy for any downstream measuring,
+
+96
+00:12:52,120 --> 00:12:58,120
+or really anything you want to do,
+
+97
+00:12:58,120 --> 00:13:08,120
+because usually one is not interested in measuring regions
+
+98
+00:13:08,120 --> 00:13:12,120
+where you only have signal in one of your images.
+
+99
+00:13:12,120 --> 00:13:16,120
+So then why did we make the mask for that one?
+
+100
+00:13:16,120 --> 00:13:18,120
+Or are you going to show us later?
+
+101
+00:13:18,200 --> 00:13:22,200
+The mask for the, no, that,
+
+102
+00:13:22,200 --> 00:13:29,200
+the larger pipeline that I pulled this from does a whole lot of other measurements.
+
+103
+00:13:29,200 --> 00:13:33,200
+Here I left it in mostly just to show people,
+
+104
+00:13:33,200 --> 00:13:38,200
+here is another simple way that you could generate this mask and information.
+
+105
+00:13:38,200 --> 00:13:43,200
+I don't actually, do not actually use it in this little demo pipeline,
+
+106
+00:13:43,200 --> 00:13:46,200
+but one could.
+
+107
+00:13:46,280 --> 00:13:49,280
+So I apply the mask,
+
+108
+00:13:49,280 --> 00:13:54,280
+so both of these mask images, I'm applying the mask to one of the inputs,
+
+109
+00:13:54,280 --> 00:13:56,280
+I apply the mask to the other input,
+
+110
+00:13:56,280 --> 00:14:01,280
+then it's really nice to be able to measure co-localization of them.
+
+111
+00:14:01,280 --> 00:14:06,280
+So I have it running just correlation and slope metrics,
+
+112
+00:14:06,280 --> 00:14:08,280
+which are pretty,
+
+113
+00:14:08,280 --> 00:14:12,280
+pretty, you know, the correlation metric is a pretty simple metric.
+
+114
+00:14:12,360 --> 00:14:16,360
+And I do that because I also then have another image flag.
+
+115
+00:14:16,360 --> 00:14:25,360
+And so flags can be a super handy thing to toss into your pipeline.
+
+116
+00:14:25,360 --> 00:14:31,360
+There's sort of two ways, two ways that you might use it,
+
+117
+00:14:31,360 --> 00:14:34,360
+skipping your image set if flagged or not.
+
+118
+00:14:34,360 --> 00:14:38,360
+And so actually, if we look at our flags here,
+
+119
+00:14:38,440 --> 00:14:42,440
+I have them set differently for each, right?
+
+120
+00:14:42,440 --> 00:14:47,440
+So I actually turned on skip image set if flagged for the empty images,
+
+121
+00:14:47,440 --> 00:14:50,440
+because if there's truly nothing in my image,
+
+122
+00:14:50,440 --> 00:14:53,440
+I don't want to proceed with the CellProfiler pipeline,
+
+123
+00:14:53,440 --> 00:14:55,440
+because honestly, probably somewhere else in my pipeline,
+
+124
+00:14:55,440 --> 00:14:59,440
+it'll crash because it doesn't like images that are all zeros.
+
+125
+00:14:59,440 --> 00:15:03,440
+And why waste time doing things on images that are all zeros?
+
+126
+00:15:03,440 --> 00:15:04,440
+And why waste the time?
+
+127
+00:15:04,520 --> 00:15:11,520
+But here, what I'm telling it is this will output a flag column,
+
+128
+00:15:11,520 --> 00:15:15,520
+so an extra measurement column in my output measurements,
+
+129
+00:15:15,520 --> 00:15:21,520
+that says the results of this alignment flag,
+
+130
+00:15:21,520 --> 00:15:25,520
+but it's not going to skip if I don't pass this flag.
+
+131
+00:15:25,520 --> 00:15:31,520
+So this can be really helpful for any sort of downstream data analysis
+
+132
+00:15:31,520 --> 00:15:33,520
+and filtering that you might want to do.
+
+133
+00:15:33,600 --> 00:15:37,600
+Your first thing might be go look at images
+
+134
+00:15:37,600 --> 00:15:41,600
+that are poorly correlated after they've been through alignment.
+
+135
+00:15:41,600 --> 00:15:45,600
+And it's quite possible that they're poor, you know,
+
+136
+00:15:45,600 --> 00:15:48,600
+they did align nicely, but they're poorly correlated
+
+137
+00:15:48,600 --> 00:15:51,600
+because there was a piece of debris in the corner of one image
+
+138
+00:15:51,600 --> 00:15:55,600
+or something like that, and you might not want to throw out that whole image.
+
+139
+00:15:55,600 --> 00:16:00,600
+But you might, that might be a first thing to look at
+
+140
+00:16:00,680 --> 00:16:03,680
+when doing QC and trying to understand what's going on
+
+141
+00:16:03,680 --> 00:16:05,680
+with your downstream measurements.
+
+142
+00:16:05,680 --> 00:16:06,680
+Yeah.
+
+143
+00:16:06,680 --> 00:16:08,680
+Yeah, so that is...
+
+144
+00:16:08,680 --> 00:16:10,680
+I can't really see where that helps.
+
+145
+00:16:10,680 --> 00:16:11,680
+Absolutely.
+
+146
+00:16:11,680 --> 00:16:14,680
+So that's why we have this flag image in here.
+
+147
+00:16:16,680 --> 00:16:20,680
+The... oh yeah, and the one thing I want to point out is again,
+
+148
+00:16:20,680 --> 00:16:24,680
+these are done on the images that were masked to just the regions
+
+149
+00:16:24,680 --> 00:16:28,680
+where both images are, both of the input images contain signal,
+
+150
+00:16:28,760 --> 00:16:32,760
+because you will find that this fails...
+
+151
+00:16:32,760 --> 00:16:36,760
+can fail quite readily, and it's very hard to set what your threshold is
+
+152
+00:16:36,760 --> 00:16:43,760
+for actually aligned if it's taking into account the whole unmasked image,
+
+153
+00:16:43,760 --> 00:16:49,760
+because then you're adding in a bunch of signal that will not be aligned,
+
+154
+00:16:49,760 --> 00:16:51,760
+no matter how nicely the images align,
+
+155
+00:16:51,760 --> 00:16:54,760
+because the signal just isn't there in the other input image.
+
+156
+00:16:54,840 --> 00:16:57,840
+So that's a handy thing to make sure you have
+
+157
+00:16:57,840 --> 00:17:02,840
+with this kind of odd image set before you're doing these kinds of measurements.
+
+158
+00:17:03,840 --> 00:17:08,840
+Then we get into the other tricky...
+
+159
+00:17:10,840 --> 00:17:13,840
+the other sort of tricky couple of modules here
+
+160
+00:17:13,840 --> 00:17:23,840
+that give us the ability to figure out how far it is from this background area.
+
+161
+00:17:23,920 --> 00:17:25,920
+So here I've just inverted.
+
+162
+00:17:29,920 --> 00:17:33,920
+Then we have this morph module,
+
+163
+00:17:33,920 --> 00:17:41,920
+and so what this is, is it's going to create a gradient,
+
+164
+00:17:41,920 --> 00:17:45,920
+pretty here, from the...
+
+165
+00:17:45,920 --> 00:17:48,920
+like it's making it across the foreground,
+
+166
+00:17:48,920 --> 00:17:51,920
+which is our area of signal,
+
+167
+00:17:52,000 --> 00:17:58,000
+and it is morphing from this zero area.
+
+168
+00:17:58,000 --> 00:18:00,000
+So if I hover,
+
+169
+00:18:00,000 --> 00:18:04,000
+you can see as I'm hovering,
+
+170
+00:18:04,000 --> 00:18:08,000
+sort of right here is where the values of those pixels are,
+
+171
+00:18:08,000 --> 00:18:11,000
+and you see it's sort of hovering here, my intensity is zero,
+
+172
+00:18:11,000 --> 00:18:14,000
+because that's my masked region, and then as I get into,
+
+173
+00:18:14,000 --> 00:18:17,000
+like here this is 650,
+
+174
+00:18:17,000 --> 00:18:20,000
+and here up to 2300, right?
+
+175
+00:18:20,080 --> 00:18:25,080
+So this is the actual gradient of how far away in pixels these are
+
+176
+00:18:25,080 --> 00:18:28,080
+from the zero area.
+
+177
+00:18:31,080 --> 00:18:33,080
+So that's pretty cool.
+
+178
+00:18:33,080 --> 00:18:38,080
+Then what we can also do...
+
+179
+00:18:38,080 --> 00:18:41,080
+so then you can also...
+
+180
+00:18:41,080 --> 00:18:43,080
+when you have...
+
+181
+00:18:43,080 --> 00:18:47,080
+so we have that on the image level,
+
+182
+00:18:47,160 --> 00:18:51,160
+but another thing you can do is if I had objects in here,
+
+183
+00:18:51,160 --> 00:18:56,160
+I did not go through as far as identifying objects
+
+184
+00:18:56,160 --> 00:19:02,160
+and all that in here, but you can then relate these measurements
+
+185
+00:19:02,160 --> 00:19:04,160
+of the...
+
+186
+00:19:04,160 --> 00:19:10,160
+if I identify nuclei, I can measure this...
+
+187
+00:19:10,160 --> 00:19:13,160
+you know, the mean of the well edge distance
+
+188
+00:19:13,240 --> 00:19:18,240
+pre-multiply here inside every nucleus,
+
+189
+00:19:18,240 --> 00:19:21,240
+which maybe I'll toss that into...
+
+190
+00:19:21,240 --> 00:19:23,240
+I'll toss that a little bit back into this pipeline
+
+191
+00:19:23,240 --> 00:19:27,240
+before I upload it into our show notes.
+
+192
+00:19:29,240 --> 00:19:32,240
+And then...
+
+193
+00:19:32,240 --> 00:19:36,240
+finally, we have this extra bit in here,
+
+194
+00:19:36,240 --> 00:19:41,240
+because not all of our images in our dataset
+
+195
+00:19:41,320 --> 00:19:44,320
+actually had a zero and one areas.
+
+196
+00:19:44,320 --> 00:19:48,320
+Some of them were fully contained in the middle of the well,
+
+197
+00:19:48,320 --> 00:19:51,320
+and I don't have that demonstrated here in these...
+
+198
+00:19:51,320 --> 00:19:55,320
+just these two images I input, but what we didn't want to get
+
+199
+00:19:55,320 --> 00:20:00,320
+was well edge distances in images where the whole image
+
+200
+00:20:00,320 --> 00:20:02,320
+didn't actually have any well edge in it.
+
+201
+00:20:02,320 --> 00:20:07,320
+So we added in this extra module to sort of math those out
+
+202
+00:20:07,400 --> 00:20:12,400
+so that we weren't given well edge distances for objects
+
+203
+00:20:12,400 --> 00:20:15,400
+that weren't in an image that had well edge,
+
+204
+00:20:15,400 --> 00:20:18,400
+and just sort of another handy...
+
+205
+00:20:18,400 --> 00:20:22,400
+handy thing to put in there so that our filtering
+
+206
+00:20:22,400 --> 00:20:26,400
+that we might do downstream is extra easy.
+
+207
+00:20:26,400 --> 00:20:28,400
+And... yeah.
+
+208
+00:20:28,400 --> 00:20:33,400
+So those are a couple tricky, cool things one can do
+
+209
+00:20:33,480 --> 00:20:38,480
+to help you deal with images that have actually
+
+210
+00:20:38,480 --> 00:20:42,480
+zeroed areas in them, or zeroed areas with signal of zero.
+
+211
+00:20:42,480 --> 00:20:45,480
+There we go, in them.
+
+212
+00:20:45,480 --> 00:20:48,480
+It's very cool. I'm guessing it took a few tries to get
+
+213
+00:20:48,480 --> 00:20:50,480
+everything changed together and figure out what was actually
+
+214
+00:20:50,480 --> 00:20:52,480
+going to be important there.
+
+215
+00:20:52,480 --> 00:20:56,480
+Absolutely. There was definitely quite a bit of iteration
+
+216
+00:20:56,480 --> 00:20:59,480
+as we started, you know, starting with these...
+
+217
+00:20:59,480 --> 00:21:01,480
+you know, even if starting with this input image,
+
+218
+00:21:01,560 --> 00:21:04,560
+then figure out, like, as you run the pipeline,
+
+219
+00:21:04,560 --> 00:21:07,560
+oh, wait, it's giving me these weird numbers I don't know how to
+
+220
+00:21:07,560 --> 00:21:10,560
+interpret in the ones that don't have background.
+
+221
+00:21:10,560 --> 00:21:13,560
+Okay, so I need to go add in some extra filters.
+
+222
+00:21:13,560 --> 00:21:18,560
+You know, I started with measuring the alignment
+
+223
+00:21:18,560 --> 00:21:21,560
+and throwing flags based on the alignment without
+
+224
+00:21:21,560 --> 00:21:24,560
+doing the masking first, and I was getting all sorts of images
+
+225
+00:21:24,560 --> 00:21:27,560
+failing to align and wondering if, you know,
+
+226
+00:21:27,560 --> 00:21:30,560
+do I have a bunch of debris, or am I using the wrong alignment
+
+227
+00:21:30,640 --> 00:21:33,640
+method? No, actually, it's because I need to have the
+
+228
+00:21:33,640 --> 00:21:36,640
+mask to only the region that's involved before I measure
+
+229
+00:21:38,640 --> 00:21:41,640
+their overlap. So, yeah, pipelines like this that
+
+230
+00:21:41,640 --> 00:21:46,640
+even now in hindsight, I can logically nicely step you through
+
+231
+00:21:46,640 --> 00:21:49,640
+bit by bit, actually, were developed
+
+232
+00:21:49,640 --> 00:21:52,640
+painfully over many iterations of different
+
+233
+00:21:52,640 --> 00:21:55,640
+bits of data and different, you know,
+
+234
+00:21:55,640 --> 00:21:58,640
+image type inputs.
+
+235
+00:21:58,720 --> 00:22:02,720
+Seems to be a great example of keep it as simple as
+
+236
+00:22:02,720 --> 00:22:06,720
+possible, but no simpler. So you don't start out with this,
+
+237
+00:22:06,720 --> 00:22:09,720
+but eventually this is what your pipeline ends up at the end.
+
+238
+00:22:09,720 --> 00:22:11,720
+Absolutely.
+
+239
+00:22:11,720 --> 00:22:14,720
+Well, great, thanks for showing that to us. That was so cool.
+
+240
+00:22:14,720 --> 00:22:18,720
+Yeah, thanks for joining us, and we'll catch you later.
+
+241
+00:22:18,720 --> 00:22:20,720
+Bye.
+

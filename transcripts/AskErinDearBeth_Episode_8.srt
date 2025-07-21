@@ -1,0 +1,456 @@
+1
+00:00:00,000 --> 00:00:01,000
+Hello!
+
+2
+00:00:01,000 --> 00:00:02,000
+Hi!
+
+3
+00:00:02,000 --> 00:00:03,000
+How are you today?
+
+4
+00:00:03,000 --> 00:00:04,000
+I am excited for another episode of Ask Erin Dear Beth.
+
+5
+00:00:04,000 --> 00:00:05,000
+How about you?
+
+6
+00:00:05,000 --> 00:00:06,000
+What a coincidence.
+
+7
+00:00:06,000 --> 00:00:07,000
+I am too.
+
+8
+00:00:07,000 --> 00:00:08,000
+Here we are.
+
+9
+00:00:08,000 --> 00:00:29,000
+I thought I would talk about plugins today.
+
+10
+00:00:29,000 --> 00:00:37,000
+So plugins for CellProfiler.
+
+11
+00:00:37,000 --> 00:00:39,000
+Why might I want to talk about plugins today?
+
+12
+00:00:39,000 --> 00:00:42,000
+Well, let me tell you why I want to talk about plugins today.
+
+13
+00:00:42,000 --> 00:00:47,000
+So you know that CellProfiler has many, many, many, many modules.
+
+14
+00:00:47,000 --> 00:00:48,000
+About a hundred.
+
+15
+00:00:48,000 --> 00:00:49,000
+Yeah, yeah.
+
+16
+00:00:49,000 --> 00:00:50,000
+That's a lot.
+
+17
+00:00:50,000 --> 00:00:52,000
+It has a lot of things.
+
+18
+00:00:52,000 --> 00:00:53,000
+Yeah.
+
+19
+00:00:53,000 --> 00:00:54,000
+CellProfiler does a lot.
+
+20
+00:00:54,000 --> 00:00:58,000
+It turns out CellProfiler does even more than a lot because we have an entire,
+
+21
+00:00:58,000 --> 00:01:07,000
+I know, we have an entire extra repository of CellProfiler plugins that are basically
+
+22
+00:01:07,000 --> 00:01:18,000
+the idea is that it is more modules that are either experimental or like community contributed.
+
+23
+00:01:18,000 --> 00:01:24,000
+So we welcome your contributions or sort of a work in progress.
+
+24
+00:01:24,000 --> 00:01:29,000
+Like maybe we're testing it out and eventually want to move it into the main CellProfiler
+
+25
+00:01:29,000 --> 00:01:34,000
+repository, you know, to be packaged with, you know, as a regular module and CellProfiler,
+
+26
+00:01:34,000 --> 00:01:36,000
+but we're not quite ready yet.
+
+27
+00:01:36,000 --> 00:01:39,000
+Or maybe it's something that's super niche.
+
+28
+00:01:39,000 --> 00:01:42,000
+Like we know this is really important for a very specific workflow.
+
+29
+00:01:42,000 --> 00:01:51,000
+I end up being that, you know, that sort of user where, you know, like really, really important extra utility for very specific workflows,
+
+30
+00:01:51,000 --> 00:01:54,000
+but not actually something the vast majority of users would use.
+
+31
+00:01:54,000 --> 00:02:11,000
+So we keep them in the plugins repo or plugins that we think have a high likelihood of being accidentally used in a way that would be damaging to, you know, a quantitative image analysis workflow if the user didn't fully understand what they were doing.
+
+32
+00:02:11,000 --> 00:02:13,000
+So we keep them separately as well.
+
+33
+00:02:13,000 --> 00:02:15,000
+So I kind of capture.
+
+34
+00:02:15,000 --> 00:02:17,000
+Yeah.
+
+35
+00:02:17,000 --> 00:02:24,000
+I just you've used the word repository and then the word repo a couple times and I want to like ask you what you mean by that.
+
+36
+00:02:24,000 --> 00:02:26,000
+Well, let's dive right into that.
+
+37
+00:02:26,000 --> 00:02:36,000
+So here we this is the CellProfiler plugins repository also shortened to repo.
+
+38
+00:02:36,000 --> 00:02:50,000
+And this is this is on GitHub for people who are not not familiar with sort of this this more computational realm.
+
+39
+00:02:50,000 --> 00:02:55,000
+I'm going to talk you through how you actually get this code.
+
+40
+00:02:55,000 --> 00:02:58,000
+So basically this is a place where we store code.
+
+41
+00:02:58,000 --> 00:03:26,000
+And in fact, you know, CellProfiler, this is the CellProfiler organization and here is the CellProfiler repository, all of the code to run CellProfiler to make CellProfiler entirely is here in this repository so you can click through and find, you know, if you click through you will find things in like, well, that's not a very exciting Python file.
+
+42
+00:03:27,000 --> 00:03:34,000
+You know, you can click through and find and find all the code that is used to make CellProfiler likewise here with plugins.
+
+43
+00:03:34,000 --> 00:03:51,000
+What we have here is in active plugins, each of these is all of the code to run a single new plugin, aka, you know, fancy module within CellProfiler.
+
+44
+00:03:51,000 --> 00:03:54,000
+But if you are not comfortable working with code.
+
+45
+00:03:54,000 --> 00:03:57,000
+You know, what if I don't want to look at this code.
+
+46
+00:03:57,000 --> 00:04:00,000
+If you don't want to look at this, you don't need to look at this.
+
+47
+00:04:00,000 --> 00:04:03,000
+Yay, that's what I was hoping you were going to say.
+
+48
+00:04:03,000 --> 00:04:20,000
+So the only thing that you need to do is to go here to this code button, and it will give you this this URL to copy.
+
+49
+00:04:21,000 --> 00:04:25,000
+And now this is like, so here is my terminal.
+
+50
+00:04:25,000 --> 00:04:28,000
+This is a command line.
+
+51
+00:04:28,000 --> 00:04:34,000
+So this is, you have to have a tiny, tiny, tiny bit of computational comfort.
+
+52
+00:04:34,000 --> 00:04:38,000
+But if this feels overwhelming to you, go ask a friend.
+
+53
+00:04:38,000 --> 00:04:41,000
+You can also download the whole repo as a zip.
+
+54
+00:04:43,000 --> 00:04:44,000
+We can.
+
+55
+00:04:44,000 --> 00:04:45,000
+Oh, here.
+
+56
+00:04:45,000 --> 00:04:46,000
+So you don't even need to do that.
+
+57
+00:04:46,000 --> 00:04:47,000
+Okay.
+
+58
+00:04:47,000 --> 00:04:48,000
+So forget what I said.
+
+59
+00:04:48,000 --> 00:04:50,000
+You don't even need to make friends.
+
+60
+00:04:50,000 --> 00:04:52,000
+Don't make friends.
+
+61
+00:04:52,000 --> 00:05:01,000
+Friends are good, especially if you want to then grab updated versions of the plugins later, having this cloned with what is called get on your computer can be really helpful.
+
+62
+00:05:01,000 --> 00:05:08,000
+But if the terminal is just a no for you and you don't have a friend right now, you can hit downloads it.
+
+63
+00:05:08,000 --> 00:05:15,000
+Yeah, so if we do that, it then downloaded to my downloads folder.
+
+64
+00:05:15,000 --> 00:05:21,000
+And here, this is CellProfiler plugins.
+
+65
+00:05:21,000 --> 00:05:24,000
+This folder here now in my downloads folder.
+
+66
+00:05:24,000 --> 00:05:40,000
+So then from CellProfiler, let's from CellProfiler, all to be able to run plugins.
+
+67
+00:05:41,000 --> 00:05:48,000
+Open up a fresh one here, but you don't necessarily need to all you need to be able to do is in your preferences.
+
+68
+00:05:48,000 --> 00:06:07,000
+Then if you go here, you see this CellProfiler plugins directory browse to where you downloaded your downloaded your repository repository, your plugins repo.
+
+69
+00:06:07,000 --> 00:06:09,000
+And set that location.
+
+70
+00:06:09,000 --> 00:06:13,000
+So here, I already have CellProfiler plugins up and running.
+
+71
+00:06:13,000 --> 00:06:25,000
+So I'm not actually going to change that location, but I could all I would have to do right is browse into my downloads and set this here as my active plugins.
+
+72
+00:06:25,000 --> 00:06:30,000
+So the download the active plugins folder.
+
+73
+00:06:30,000 --> 00:06:31,000
+That that seems manageable.
+
+74
+00:06:31,000 --> 00:06:33,000
+I feel like I can do that.
+
+75
+00:06:33,000 --> 00:06:34,000
+Yeah.
+
+76
+00:06:34,000 --> 00:06:35,000
+Yeah.
+
+77
+00:06:35,000 --> 00:06:36,000
+I know you can.
+
+78
+00:06:36,000 --> 00:06:41,000
+And I know that any of our users are CellProfiler users watching this can too.
+
+79
+00:06:41,000 --> 00:06:50,000
+So what that means then is once that happens now all of and once you reboot CellProfiler and once you reboot CellProfiler.
+
+80
+00:06:50,000 --> 00:06:53,000
+Yes, I meant to say that that's important.
+
+81
+00:06:53,000 --> 00:06:54,000
+Thank you, Beth.
+
+82
+00:06:54,000 --> 00:07:00,000
+So once you have set your new plugins location, you need to close CellProfiler and open it back up again.
+
+83
+00:07:00,000 --> 00:07:02,000
+Very important.
+
+84
+00:07:02,000 --> 00:07:13,000
+But then any of this list of active plugins are now available in your modules here.
+
+85
+00:07:13,000 --> 00:07:26,000
+So you can see that I have, you know, there's a list of a list of plugins here that are now visible that are not what you would normally find available.
+
+86
+00:07:26,000 --> 00:07:33,000
+And so really like that's it that opens up this whole new realm of possibilities of plugins.
+
+87
+00:07:33,000 --> 00:07:46,000
+I will point out because documentation is my jam yo that we do have some some pretty nice documentation if I do say so myself so you can get there from the you know we'll link it in our show notes.
+
+88
+00:07:46,000 --> 00:08:00,000
+You can get there from the, you know, from the plugins repo page as well and this talks you through again, reminds you what are the plugins, how do you use them.
+
+89
+00:08:00,000 --> 00:08:07,000
+It has some additional information about installation for some of these plugins.
+
+90
+00:08:07,000 --> 00:08:22,000
+So most of the plugins here we have currently, you know, in our supported plugins, most of them you will notice in this column of requires installation of dependencies, most of them the answer is no.
+
+91
+00:08:22,000 --> 00:08:29,000
+So that means you do not need to do anything else to make these plugins run.
+
+92
+00:08:29,000 --> 00:08:45,000
+They're ready. Some of them say, yes, and these are most likely to be the modules that are bringing in deep learning tools like run Cellpose.
+
+93
+00:08:45,000 --> 00:08:56,000
+So that means what that means is that Cellpose needs to be downloaded and installed onto your computer.
+
+94
+00:08:56,000 --> 00:09:13,000
+So does CellProfiler in order to be able to run this, but I do want to point out that for some of ours plugins that require extra dependencies and we're working on getting to the all point, but some of them.
+
+95
+00:09:13,000 --> 00:09:31,000
+So I don't even actually have to go through the extra steps of installing that all you need to do is have an application called Docker desktop, and we're also currently working on supporting other options beyond just Docker.
+
+96
+00:09:31,000 --> 00:09:40,000
+Currently, it's very easy with Docker. So all I did was opened it up. I didn't even have to set anything in the software I just needed to make sure it was open.
+
+97
+00:09:40,000 --> 00:09:57,000
+So then if I want to use RunCellpose in my module, what I can do is select RunCellpose in Docker. So instead of saying in my Python environment, which means Cellpose needs to be actually installed in my computer, which can be challenging.
+
+98
+00:09:57,000 --> 00:10:09,000
+I mean, I will say that challenging for people who even have computational backgrounds, I don't actually currently have an environment on my laptop right now where I can run Cellpose and CellProfiler together.
+
+99
+00:10:09,000 --> 00:10:14,000
+Like, it can be messy, which is one of the reasons that we have made this work around.
+
+100
+00:10:15,000 --> 00:10:33,000
+So even fairly computationally comfortable people still like me still like this Docker work around. And what that means is that when I choose to use this plugin RunCellpose that does have extra dependencies, it needs the Cellpose software.
+
+101
+00:10:33,000 --> 00:10:54,000
+I can tell it look in my Docker and Docker, which I won't go into I'm not going to go into the details now but you can say conceptually the software is packaged in a nice box for me within Docker, and I can select the version that I want.
+
+102
+00:10:54,000 --> 00:11:13,000
+And it will then use that nicely packaged in a box version to send my image to that box, run it in Cellpose in that box and send the information back to me so that I can run Cellpose within CellProfiler without having to actually install the dependencies.
+
+103
+00:11:13,000 --> 00:11:31,000
+So that's another like cool important thing that we have done. And we are continuing to expand upon for especially, you know, deep learning and AI tools that are extra hard to install. So another like important part of our plugin ecosystem here.
+
+104
+00:11:31,000 --> 00:11:34,000
+Very hard to install sadly.
+
+105
+00:11:34,000 --> 00:11:40,000
+Yes, yes. You know, we also have a publication describing it.
+
+106
+00:11:40,000 --> 00:11:44,000
+Drop the link to that in the show notes if you want to read more.
+
+107
+00:11:44,000 --> 00:11:54,000
+But yeah, if you're the kind of person who likes to read stuff first, go read the publication and our lovely documentation if you're the kind of person who likes to dive right in.
+
+108
+00:11:54,000 --> 00:12:05,000
+Go for it, because I just showed you how to do it. And you now have opened, you know, opened up a whole new world of new modules that you can use in CellProfiler.
+
+109
+00:12:05,000 --> 00:12:12,000
+Amazing. Yeah, I think so. So that's that CellProfiler plugins.
+
+110
+00:12:12,000 --> 00:12:21,000
+I love it. That's so great. It brings so many other functionalities to CellProfiler, which already has so many functionalities but now it has even more.
+
+111
+00:12:21,000 --> 00:12:33,000
+Yeah, and really, I think helps hit home both that CellProfiler is an important tool for bio image analysis or image analysis in general but you know, we're biologists so that's what we focus on.
+
+112
+00:12:33,000 --> 00:12:48,000
+So it's an important image analysis tool but also you can think of it as a workflow manager tool as well because it has the ability to call out to other softwares, particularly through our plugins ecosystem.
+
+113
+00:12:48,000 --> 00:12:51,000
+Awesome. Thank you so much for sharing that with us. That's great.
+
+114
+00:12:51,000 --> 00:12:55,000
+Yes, my pleasure. Thanks for joining me. Bye.
+

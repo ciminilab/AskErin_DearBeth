@@ -1,0 +1,588 @@
+1
+00:00:00,000 --> 00:00:07,000
+Hey, Beth!
+
+2
+00:00:07,000 --> 00:00:09,000
+Hey, Erin!
+
+3
+00:00:09,000 --> 00:00:11,000
+Good to see you!
+
+4
+00:00:11,000 --> 00:00:13,000
+You too!
+
+5
+00:00:13,000 --> 00:00:28,000
+I was thinking about talking about how do we, possibly the most common question we get in the Cell Profiler Forum, which is how do I figure out how many of my objects are percent positive for a particular type of object?
+
+6
+00:00:28,000 --> 00:00:33,000
+Ooh, that's a nice question!
+
+7
+00:00:33,000 --> 00:00:43,000
+Yeah, people ask us that all the time because usually people spend lots of time making these lovely, like, protein fusions or optimizing antibodies and they want to figure out how many cells are positive for marker X.
+
+8
+00:00:43,000 --> 00:00:52,000
+And there's lots of ways to do it, but I have one particular that's a favorite when the marker is big and one particular that's a favorite when the objects are small.
+
+9
+00:00:53,000 --> 00:00:58,000
+And so I thought I might show that.
+
+10
+00:00:58,000 --> 00:01:02,000
+Yes, please do! I want to learn your tips and tricks!
+
+11
+00:01:02,000 --> 00:01:05,000
+All right.
+
+12
+00:01:05,000 --> 00:01:20,000
+So this is just some data that I've grabbed from the IDR, as we often do, where we have a nuclear marker, which is here in red, a cell marker, which is here in blue.
+
+13
+00:01:20,000 --> 00:01:22,000
+I just left Fiji on the default colors.
+
+14
+00:01:22,000 --> 00:01:28,000
+And as usual, I'm opening up new images in Fiji because I think it's easy to look at new images in Fiji.
+
+15
+00:01:28,000 --> 00:01:36,000
+But we also have two different fluorescent proteins that are overexpressed, one that is a cell marker and one that is a nuclear marker.
+
+16
+00:01:36,000 --> 00:01:42,000
+And we have some cells that have one and some cells that have the other and some cells that have both.
+
+17
+00:01:42,000 --> 00:01:48,000
+And so I'm sure for the biologists in question, it is super important to know, probably mostly, about what are the cells that have both.
+
+18
+00:01:48,000 --> 00:01:54,000
+So we'll make both single positives and then the double positive.
+
+19
+00:01:54,000 --> 00:02:01,000
+And then I'll quickly show what happens when you want to do this with speckles.
+
+20
+00:02:01,000 --> 00:02:16,000
+So I have pre-loaded a CellProfiler pipeline that I spent literally just about five minutes tuning, where we can make our nuclei and our cells from our cell channel.
+
+21
+00:02:17,000 --> 00:02:20,000
+These are really gorgeous images.
+
+22
+00:02:20,000 --> 00:02:23,000
+And so this was easy peasy.
+
+23
+00:02:23,000 --> 00:02:28,000
+As always, you can find the pipelines for this episode on our website.
+
+24
+00:02:28,000 --> 00:02:34,000
+So I'm going to start by showing you the thing that people often do, but that is actually a less good thing to do.
+
+25
+00:02:34,000 --> 00:02:38,000
+So this is the less good thing. Don't do this.
+
+26
+00:02:38,000 --> 00:02:48,000
+So often what people will do is do something like measure object intensity, followed by filter objects.
+
+27
+00:02:48,000 --> 00:02:52,000
+And this will work. I'm going to show you something and it will work.
+
+28
+00:02:52,000 --> 00:02:56,000
+But then I'm going to explain to you why maybe it doesn't work the best.
+
+29
+00:02:56,000 --> 00:02:58,000
+So let's use this for our cell marker.
+
+30
+00:02:58,000 --> 00:03:07,000
+So let's say we have our, I've called my channels DNA cells, cell FP for cell fluorescent protein and nuclei FB for nuclei fluorescent protein.
+
+31
+00:03:07,000 --> 00:03:13,000
+Very imaginative. So let's say I want to measure inside the cells, the amount of cell FP.
+
+32
+00:03:13,000 --> 00:03:20,000
+That would be probably a good way to figure out if the cells positive or not.
+
+33
+00:03:20,000 --> 00:03:34,000
+I'm going to take advantage of the workspace viewer, which I got from this view workspace button, which is always delightful for figuring out how I can sort of put measurements on top of things.
+
+34
+00:03:34,000 --> 00:03:54,000
+And so if I have my cells, I can put my measurements of my cells right on top of my image and I can get a sense of what's going on in terms of my cell to go with the mean intensity.
+
+35
+00:03:54,000 --> 00:04:06,000
+So it's, I bet one or two significant figures would probably have been enough, but let's zoom in and see what we see.
+
+36
+00:04:06,000 --> 00:04:09,000
+It's a little bit hard to see with everything big.
+
+37
+00:04:09,000 --> 00:04:18,000
+So it looks like in my cells that are negative, I have mean intensities that are really right around zero.
+
+38
+00:04:18,000 --> 00:04:27,000
+And in some of the other ones, I have like point point oh one almost maybe not quite everywhere.
+
+39
+00:04:27,000 --> 00:04:33,000
+Okay, so that one thing that I can do is I can say I'm going to use the filter objects module.
+
+40
+00:04:33,000 --> 00:04:42,000
+And I can sort of say I only want to keep cells that are above let's let's say point oh seven intensity. And this will work.
+
+41
+00:04:49,000 --> 00:05:07,000
+So I'm going to say I have cells, I want to limit their intensity and their mean intensity in the fluorescent protein image, such that I don't care about the maximum mean intensity.
+
+42
+00:05:07,000 --> 00:05:18,000
+But I want the minimum mean intensity to be point oh seven and I got that just from sort of looking around.
+
+43
+00:05:18,000 --> 00:05:31,000
+And so, if I do that, we end up with about half of ourselves which sort of order of magnitude seems right to me.
+
+44
+00:05:31,000 --> 00:05:37,000
+And just for fun, because I want to sort of see what's going on here.
+
+45
+00:05:37,000 --> 00:05:43,000
+I could make an overlay outlines module and I probably will eventually.
+
+46
+00:05:43,000 --> 00:05:50,000
+But if this were a real project, but for now I can just use the workspace viewer, I can turn off the font thing.
+
+47
+00:05:50,000 --> 00:06:05,000
+And I can say, show me in pink all the cells that were marked as fluorescent protein positive and all the ones that are not are still marked in green but because the pink gets drawn on top of the green, what we end up with is sort of a pink green mask.
+
+48
+00:06:05,000 --> 00:06:08,000
+Yeah, that seems to have worked fine.
+
+49
+00:06:08,000 --> 00:06:16,000
+Yeah, I can see now a few cells that maybe if I were manually annotating I would have thrown into a different bucket but
+
+50
+00:06:16,000 --> 00:06:26,000
+it seems like for a situation where you have really, really clear difference between, you know, signal or not.
+
+51
+00:06:26,000 --> 00:06:30,000
+Yeah, this is not an unreasonable thing to do.
+
+52
+00:06:30,000 --> 00:06:39,000
+Yeah, the reason I don't like this is what if tomorrow you turn up your gain on your microscope, just a very little bit.
+
+53
+00:06:39,000 --> 00:06:51,000
+Maybe point oh six isn't the right number anymore. And I have to go through that process that I just did of like going through and looking at a bunch of cells and looking at the measurements and it's just it takes a while.
+
+54
+00:06:51,000 --> 00:06:55,000
+It's not that but it takes a while.
+
+55
+00:06:55,000 --> 00:07:05,000
+So my actually preferred way of doing this so now we're going to show you the one that I do like is to start by actually thresholding the image.
+
+56
+00:07:05,000 --> 00:07:14,000
+Of the image that we're going to use to sort of call positive or negative. So here I'm going to do it for the nuclear.
+
+57
+00:07:14,000 --> 00:07:29,000
+And the reason I like this is because self-referring thresholding methods are pretty adaptable as long as the sort of shape of the distribution doesn't change as long as sort of, you know, your stuff is sort of about the same percent bright and dim.
+
+58
+00:07:29,000 --> 00:07:40,000
+You can adjust the gain on your microscope to X tomorrow, and it doesn't really matter because CellProfiler's thresholding modules just sort of deal with that.
+
+59
+00:07:40,000 --> 00:07:48,000
+Here my nuclei are super dim so I'm going to do what I often do in the situation which is change my default visualization settings.
+
+60
+00:07:48,000 --> 00:07:58,000
+So that I can be able to sort of quickly tune lots of things and see if things look good.
+
+61
+00:07:58,000 --> 00:08:09,000
+But that was apparently not the right number so maybe I should just actually try to figure out what the right number is instead of guess.
+
+62
+00:08:09,000 --> 00:08:16,000
+Okay, what if I don't do what normalize and just do regular normalized. Okay, that is better.
+
+63
+00:08:16,000 --> 00:08:20,000
+I can also make this picture better too.
+
+64
+00:08:20,000 --> 00:08:36,000
+But what we can sort of see right now in our very incorrectly thresholded image is there are actually a bunch of like dimmer things in addition to the brighter things and that's what thresholding works really well at coping with.
+
+65
+00:08:36,000 --> 00:08:52,000
+So I'm just going to change this to normalized or I'm going to stay with log. I just sort of do it way higher.
+
+66
+00:08:52,000 --> 00:08:57,000
+What can I say I'm chaotic.
+
+67
+00:08:57,000 --> 00:09:01,000
+So now we can see both our dim cells and our bright cells.
+
+68
+00:09:01,000 --> 00:09:13,000
+These have a value of point about point oh two. These have a value of like point oh one so these are literally five times brighter, but I'm going to go ahead and assume that as the biologist I care about and I want both.
+
+69
+00:09:13,000 --> 00:09:30,000
+Hopefully a way that's going to help me get both pretty easily is by using the three class OZ thresholding method and CellProfiler in this particular case because what that says is, hey, CellProfiler there's going to be three kinds of pixel intensity in this image there's going to be background is going to be dim stuff and there's going to be bright stuff.
+
+70
+00:09:30,000 --> 00:09:37,000
+And you can decide what you want to do with that middle class so here I want to keep the sort of dim stuff.
+
+71
+00:09:37,000 --> 00:09:43,000
+So I can say that I want to keep the middle channel in the foreground.
+
+72
+00:09:43,000 --> 00:09:48,000
+But if I didn't if I decided no actually I only want the super bright cells.
+
+73
+00:09:48,000 --> 00:09:50,000
+I could just set that to background.
+
+74
+00:09:50,000 --> 00:09:52,000
+Look at that.
+
+75
+00:09:52,000 --> 00:09:53,000
+Super.
+
+76
+00:09:53,000 --> 00:09:59,000
+I love when you know the theory actually works.
+
+77
+00:09:59,000 --> 00:10:04,000
+So, if you have your thing thresholded which as you can see is very adaptable.
+
+78
+00:10:04,000 --> 00:10:20,000
+Then we can use the mask objects module instead of the filter objects module in order to figure out our flesh and protein positive nuclei.
+
+79
+00:10:20,000 --> 00:10:37,000
+Just to point out in your threshold, like you didn't set any specific cutoffs right so it's dependent you know it is finding it doesn't matter if your relative intensities from one day to another are different.
+
+80
+00:10:37,000 --> 00:10:39,000
+That the.
+
+81
+00:10:39,000 --> 00:10:42,000
+Yeah, that's that's a handy tip.
+
+82
+00:10:42,000 --> 00:10:44,000
+Yeah.
+
+83
+00:10:44,000 --> 00:10:52,000
+And so what I can do with mask objects so I've said that I want to mask my nuclear image I want to do it with this thresholded image.
+
+84
+00:10:52,000 --> 00:10:54,000
+And here's the magic button.
+
+85
+00:10:54,000 --> 00:11:03,000
+The handling of objects should be set to remove depending on overlap so here you can say keep this object if it overlaps by X percent.
+
+86
+00:11:03,000 --> 00:11:07,000
+So here I'm going to just start with my default which is 50%.
+
+87
+00:11:07,000 --> 00:11:16,000
+And so any cells that are nuclei positive or that are 50% covered get kept anything else gets thrown away.
+
+88
+00:11:16,000 --> 00:11:28,000
+And just because these ones are relatively rare, and I happen to have them open side by side I can automatically see like this looks pretty good though I could have gone into the workspace here to do that also.
+
+89
+00:11:28,000 --> 00:11:30,000
+Awesome.
+
+90
+00:11:30,000 --> 00:11:39,000
+And that's not magic, Beth. Like I mean, a really fun thing to point out in that there are so many different things that CellProfiler can do.
+
+91
+00:11:39,000 --> 00:11:56,000
+And so many different settings you can tune, but that, you know, sometimes it takes having an expert who is familiar with all these different options to show you, like hey this is actually quite an easy thing, you know once you've been introduced to this anybody can replicate this in their
+
+92
+00:11:56,000 --> 00:12:13,000
+workflow, but may not you know an average biologist just starting to think about the thinking around identifying objects in a quantitative and reproducible manner might not think to piece together these tools in this way.
+
+93
+00:12:13,000 --> 00:12:15,000
+Yeah.
+
+94
+00:12:15,000 --> 00:12:30,000
+And the downside of CellProfiler having so many things that can do is it has so many things you can do and sometimes it can be hard, you know, to figure out what is the best way like this is a way that will work this is a totally reasonable way, but this is my favorite way.
+
+95
+00:12:30,000 --> 00:12:44,000
+I also like using mass objects then for figuring out our double positives. And so once we have single positives, very often what we want is our double positives. So I'm going to start with my fp positive cells.
+
+96
+00:12:44,000 --> 00:13:08,000
+And then, and I'm going to say, fp positive cells should be cells that have fp positive nuclei on them. And now I'm going to change this handling thing again so if I change this to keep overlapping region we can see what what will happen, which is, it would only keep the
+
+97
+00:13:08,000 --> 00:13:19,000
+cell that were actually overlapping, which is possibly what I want, but probably not if what I care about ourselves.
+
+98
+00:13:19,000 --> 00:13:30,000
+But I can just change it to keep. So now, if the if there's a fluorescent protein positive nuclei on top of a fluorescent protein positive cell, it will just keep the whole cell.
+
+99
+00:13:31,000 --> 00:13:32,000
+Wow.
+
+100
+00:13:33,000 --> 00:13:50,000
+Look at that. And so now I have a thing that does only my fluorescent positive cells. And if I wanted the double positive new nuclei, all I would have to do is sort of take this and reverse it, or I start with a fluorescent positive nuclei.
+
+101
+00:13:50,000 --> 00:13:55,000
+And then I mask them with the first positive cells.
+
+102
+00:13:56,000 --> 00:13:59,000
+And then I could do whatever measurements and things that I wanted.
+
+103
+00:14:00,000 --> 00:14:12,000
+And no, are my measurements coming for I could decide if I want to measure only the fluorescent positive cells in nuclei I could decide, I want to measure all of them but I then just want to see, like, are they positive or not.
+
+104
+00:14:13,000 --> 00:14:15,000
+All of these things would then be possible.
+
+105
+00:14:16,000 --> 00:14:20,000
+I just need to know exactly what's the biology that I want to measure here.
+
+106
+00:14:21,000 --> 00:14:29,000
+So, for all the questions that we get about this, it's really just a matter of knowing the right tricks. And then you're usually in really good shape.
+
+107
+00:14:30,000 --> 00:14:44,000
+That's awesome. I wouldn't even have necessarily thought or known to assemble these widgets, aka modules in this exact manner. This is this is lovely, but thank you.
+
+108
+00:14:44,000 --> 00:14:53,000
+If we've got time, I want to show you one more quick thing, which is this is great for when I can say, alright, my thing should be like 50% positive.
+
+109
+00:14:54,000 --> 00:15:01,000
+That's great. When we have things like this that fill the whole nucleus or the whole cell. But if you remember back to our sparkly episode.
+
+110
+00:15:02,000 --> 00:15:05,000
+That is not always the case and sometimes we just have a few little sparkles.
+
+111
+00:15:06,000 --> 00:15:17,000
+So, I want to quickly show what you would do in that case, because it's going to just add one module in addition to the module that we built in that episode.
+
+112
+00:15:19,000 --> 00:15:24,000
+So, if I tell CellProfiler to open my speckly project instead.
+
+113
+00:15:26,000 --> 00:15:29,000
+So here. Oh, no.
+
+114
+00:15:30,000 --> 00:15:33,000
+It doesn't seem like I saved the final thing. Oh, bummer.
+
+115
+00:15:33,000 --> 00:15:44,000
+Okay. I'm going to quickly add my speckly objects into this pipeline.
+
+116
+00:15:46,000 --> 00:15:49,000
+Do you do do do do do do do.
+
+117
+00:15:50,000 --> 00:15:52,000
+Maybe I'm not allowed to hum that the copyrighted tune.
+
+118
+00:15:53,000 --> 00:15:54,000
+Probably.
+
+119
+00:15:54,000 --> 00:15:55,000
+Probably.
+
+120
+00:15:56,000 --> 00:15:58,000
+I think I had.
+
+121
+00:15:59,000 --> 00:16:04,000
+And we definitely want to use robust background here. And if you don't know why go check out that episode.
+
+122
+00:16:05,000 --> 00:16:08,000
+The sparkles a.k.a. speckles episode.
+
+123
+00:16:09,000 --> 00:16:10,000
+Yes.
+
+124
+00:16:11,000 --> 00:16:21,000
+I'm going to use relate objects to now say I want to know for each pseudo cell how many speckles slash sparkles of Channel three that I have.
+
+125
+00:16:21,000 --> 00:16:31,000
+And so we now have in relate objects we can see that our objects are spots here are colored by the number of cells that are on top of.
+
+126
+00:16:32,000 --> 00:16:38,000
+So that mass object trick is great for when your marker covers a lot of your object.
+
+127
+00:16:38,000 --> 00:16:45,000
+If it doesn't, this is the better trick is to do relate objects. And now we are actually going to use filter objects.
+
+128
+00:16:46,000 --> 00:16:51,000
+And we're going to say I want to sort of only keep things with a certain number. So
+
+129
+00:16:53,000 --> 00:16:55,000
+And so we're going to use filter objects.
+
+130
+00:16:56,000 --> 00:16:58,000
+And we're going to use filter objects.
+
+131
+00:16:59,000 --> 00:17:01,000
+And we're going to use filter objects.
+
+132
+00:17:02,000 --> 00:17:04,000
+And we're going to use filter objects.
+
+133
+00:17:04,000 --> 00:17:05,000
+So.
+
+134
+00:17:08,000 --> 00:17:09,000
+And
+
+135
+00:17:10,000 --> 00:17:14,000
+So here I'm going to say that I have a thing called cells with lots of speckles.
+
+136
+00:17:16,000 --> 00:17:23,000
+I'm going to say I want only cells that have I don't care about the maximum here.
+
+137
+00:17:24,000 --> 00:17:27,000
+I only want ones that have at least 10 speckles.
+
+138
+00:17:28,000 --> 00:17:37,000
+And so hopefully that is also a thing that is going to be relatively sort of experiment to experiment relatively consistent. So that's two of my 19 cells.
+
+139
+00:17:38,000 --> 00:17:47,000
+So the more you can think about what's going to be consistent next month to experiment, the more you can make a pipeline that you don't have to adjust every time you do an experiment.
+
+140
+00:17:48,000 --> 00:17:58,000
+That's a great great principle to think about. Certainly for this use case, but just building building quantitative bio image analysis pipelines in general.
+
+141
+00:17:59,000 --> 00:18:03,000
+A really good thing to keep forefront in your mind as you work on any new pipeline.
+
+142
+00:18:04,000 --> 00:18:14,000
+Yeah, I want folks to generally be lazier at building pipelines and the way you make them lazy but still useful is by thinking about what's going to change each time and not building your pipelines around that.
+
+143
+00:18:15,000 --> 00:18:16,000
+Absolutely.
+
+144
+00:18:17,000 --> 00:18:20,000
+Well, thank you so much for letting me show you all my favorite tips and tricks.
+
+145
+00:18:21,000 --> 00:18:33,000
+I love it. I'm even learning new things. This is delightful. I hope this was useful for other folks as well. I'm sure it will be given how often we are asked how to do this very thing.
+
+146
+00:18:34,000 --> 00:18:36,000
+All right, see you next time.
+
+147
+00:18:37,000 --> 00:18:38,000
+Sounds good. Bye.
+

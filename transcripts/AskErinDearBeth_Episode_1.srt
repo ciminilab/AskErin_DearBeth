@@ -1,0 +1,1256 @@
+1
+00:00:00,000 --> 00:00:05,000
+Welcome to our inaugural episode of Ask Erin Dear Beth,
+
+2
+00:00:05,000 --> 00:00:10,000
+in which we tackle our first image analysis problem.
+
+3
+00:00:10,000 --> 00:00:14,000
+Phrased to us as blurry images,
+
+4
+00:00:14,000 --> 00:00:22,160
+we are going to be doing some object segmentation in some difficult images.
+
+5
+00:00:22,160 --> 00:00:26,320
+Here, I have a folder of blurred images,
+
+6
+00:00:26,320 --> 00:00:29,200
+image set one and image set two.
+
+7
+00:00:29,200 --> 00:00:37,200
+Can anybody provide more information about what the task is for these blurred images?
+
+8
+00:00:37,200 --> 00:00:45,200
+Sure, since I uploaded it, probably I can go ahead and give a context of these two folders there.
+
+9
+00:00:45,200 --> 00:00:54,200
+Yes, there were a lot of the channels DAPI and the GP channel, the Golgi and the Plasma Membrane channel,
+
+10
+00:00:54,200 --> 00:00:56,200
+had a lot of blurriness.
+
+11
+00:00:56,200 --> 00:01:04,200
+It's visible in all the channels as well, since we used DAPI and the Golgi Plasma Membrane for segmenting cells and the nuclei.
+
+12
+00:01:04,200 --> 00:01:10,200
+So the main aim is to segment cell and the nuclei eliminating all these blurriness.
+
+13
+00:01:10,200 --> 00:01:16,200
+And image set one has one set of images where we can kind of get rid of those based on size,
+
+14
+00:01:16,200 --> 00:01:23,200
+but this image set two has blurriness both in GP as well, the Golgi and Plasma Membrane as well as the DAPI channel.
+
+15
+00:01:23,200 --> 00:01:25,200
+So, yeah.
+
+16
+00:01:25,200 --> 00:01:28,200
+All right, so we are trying to segment these.
+
+17
+00:01:28,200 --> 00:01:40,200
+We need nuclei segmented, we need cells segmented, but we're facing the issue of the blurriness is getting the way of the ability to segment these images.
+
+18
+00:01:40,200 --> 00:01:43,200
+So let us...
+
+19
+00:01:43,200 --> 00:01:45,200
+Just...
+
+20
+00:01:45,200 --> 00:01:47,200
+Ooh, yeah, look at that.
+
+21
+00:01:47,200 --> 00:01:55,200
+Okay, so here we have just as a quick glance at the images.
+
+22
+00:01:55,200 --> 00:01:58,200
+It's like, here's our DAPI.
+
+23
+00:01:58,200 --> 00:02:04,200
+And this looks like mostly blurriness from just cells going on top of each other.
+
+24
+00:02:04,200 --> 00:02:08,200
+Certain cell types just really don't like to sit in pretty flat sheets.
+
+25
+00:02:08,200 --> 00:02:11,200
+They're just like all up in each other's business.
+
+26
+00:02:11,200 --> 00:02:19,200
+Yeah, which then you have the out of focus cells on top of...
+
+27
+00:02:19,200 --> 00:02:21,200
+You can sort of see...
+
+28
+00:02:21,200 --> 00:02:29,200
+Because you have too many focal planes going on here, but still all of the fluorescent signal visible from those multiple images.
+
+29
+00:02:29,200 --> 00:02:49,200
+Okay, so if we're going to do this in CellProfiler, first thing we need to do is get some information.
+
+30
+00:02:50,200 --> 00:03:01,200
+Name the channels here so we can handle them in CellProfiler.
+
+31
+00:03:01,200 --> 00:03:05,200
+I don't know if we need to metadata. I don't know if we need to go that far.
+
+32
+00:03:05,200 --> 00:03:14,200
+Well, we have two different... Okay, we can go names and types.
+
+33
+00:03:14,200 --> 00:03:18,200
+I'm just going to be contrary for the sake of being contrary now.
+
+34
+00:03:18,200 --> 00:03:21,200
+We have to generate drama.
+
+35
+00:03:21,200 --> 00:03:23,200
+Yes.
+
+36
+00:03:23,200 --> 00:03:28,200
+Okay, so we have...
+
+37
+00:03:28,200 --> 00:03:29,200
+Channel 6.
+
+38
+00:03:29,200 --> 00:03:33,200
+We said channel 6 is the DAPI.
+
+39
+00:03:33,200 --> 00:03:39,200
+So just CH6 is in the name.
+
+40
+00:03:39,200 --> 00:03:43,200
+So we can take a little bit more room to type.
+
+41
+00:03:43,200 --> 00:03:45,200
+No, no more room to type.
+
+42
+00:03:45,200 --> 00:03:48,200
+It will in a second. As soon as you type into it, the box will...
+
+43
+00:03:48,200 --> 00:03:51,200
+Like if you go now to a different module and come back, the box will get bigger.
+
+44
+00:03:51,200 --> 00:03:54,200
+It's a very frustrating refresh.
+
+45
+00:03:54,200 --> 00:03:57,200
+All right, so those are DNA.
+
+46
+00:03:57,200 --> 00:04:00,200
+And if you hit duplicate, you'll at least get boxes with the right size.
+
+47
+00:04:00,200 --> 00:04:02,200
+Oh, too late.
+
+48
+00:04:02,200 --> 00:04:04,200
+Okay, all right, all right.
+
+49
+00:04:04,200 --> 00:04:07,200
+Well, remove this image and then duplicate this one.
+
+50
+00:04:07,200 --> 00:04:10,200
+There we go.
+
+51
+00:04:10,200 --> 00:04:18,200
+Okay, and the other channel to use for segmentation.
+
+52
+00:04:18,200 --> 00:04:24,200
+So we often use RNA as a segmentation because it...
+
+53
+00:04:24,200 --> 00:04:27,200
+Like for segmenting cells, because it's sort of bright in the ins...
+
+54
+00:04:27,200 --> 00:04:30,200
+You know, more concentrated towards the interior of the cell
+
+55
+00:04:30,200 --> 00:04:32,200
+than sort of fades out towards the edges.
+
+56
+00:04:32,200 --> 00:04:36,200
+It sounds like...
+
+57
+00:04:36,200 --> 00:04:39,200
+Suganya, you were saying you were using a different channel.
+
+58
+00:04:39,200 --> 00:04:40,200
+Those look very...
+
+59
+00:04:40,200 --> 00:04:47,200
+Yeah, I was using RNA to identify the pre-cells and then use the Golgi and Plasma membrane
+
+60
+00:04:47,200 --> 00:04:52,200
+to get the boundary of the cells that were...
+
+61
+00:04:52,200 --> 00:04:55,200
+Which channel? These look so...
+
+62
+00:04:55,200 --> 00:05:00,200
+Channel 2 is Golgi and Plasma membrane.
+
+63
+00:05:00,200 --> 00:05:02,200
+Okay.
+
+64
+00:05:02,200 --> 00:05:04,200
+Hmm, all right.
+
+65
+00:05:04,200 --> 00:05:07,200
+And then channel 3 is the RNA?
+
+66
+00:05:07,200 --> 00:05:12,200
+Um, I'm not gonna say...
+
+67
+00:05:12,200 --> 00:05:14,200
+Yeah, channel 3 is the RNA.
+
+68
+00:05:14,200 --> 00:05:21,200
+Okay, so...
+
+69
+00:05:21,200 --> 00:05:24,200
+RNA, oh, we won't.
+
+70
+00:05:24,200 --> 00:05:29,200
+Oh, uh...
+
+71
+00:05:29,200 --> 00:05:33,200
+All right, that's probably enough.
+
+72
+00:05:33,200 --> 00:05:35,200
+There we go.
+
+73
+00:05:35,200 --> 00:05:41,200
+We've got our three channels with names, two different image sets.
+
+74
+00:05:41,200 --> 00:05:47,200
+Okay, so if we go into...
+
+75
+00:05:47,200 --> 00:05:53,200
+Let's just jump right into Identify Primary and see what happens.
+
+76
+00:05:53,200 --> 00:05:58,200
+So, you know, many other tricks we can do,
+
+77
+00:05:58,200 --> 00:06:02,200
+but let's just see what this looks like.
+
+78
+00:06:02,200 --> 00:06:08,200
+So, I guess another possible thing is...
+
+79
+00:06:08,200 --> 00:06:12,200
+Suganya, if you had a pipeline that got you some of the way there,
+
+80
+00:06:12,200 --> 00:06:14,200
+we could...
+
+81
+00:06:14,200 --> 00:06:16,200
+Yeah, I can share the pipeline.
+
+82
+00:06:16,200 --> 00:06:20,200
+Like, yes, that worked for the image set 1, but the image set 2,
+
+83
+00:06:20,200 --> 00:06:22,200
+I'd like to figure it out.
+
+84
+00:06:22,200 --> 00:06:25,200
+I can quickly share the bucket once again.
+
+85
+00:06:25,200 --> 00:06:28,200
+I can do the start test mode there.
+
+86
+00:06:28,200 --> 00:06:35,200
+Let's see.
+
+87
+00:06:35,200 --> 00:06:37,200
+Oh, yeah, popping up on my other screen.
+
+88
+00:06:37,200 --> 00:06:40,200
+Okay, so...
+
+89
+00:06:40,200 --> 00:06:43,200
+Here's what we get without doing...
+
+90
+00:06:43,200 --> 00:06:45,200
+You know, without tuning anything.
+
+91
+00:06:45,200 --> 00:06:51,200
+And you can see this looks awful, not helpful at all.
+
+92
+00:06:51,200 --> 00:06:54,200
+So...
+
+93
+00:06:54,200 --> 00:06:59,200
+We have very over-segmented cells,
+
+94
+00:06:59,200 --> 00:07:00,200
+and we have...
+
+95
+00:07:00,200 --> 00:07:04,200
+Or sorry, nuclei, and we have nuclei of the right sizes being filtered out.
+
+96
+00:07:04,200 --> 00:07:09,200
+So, definitely need to change things.
+
+97
+00:07:09,200 --> 00:07:20,200
+So, here, you know, I have all this, like, okay, this is...
+
+98
+00:07:20,200 --> 00:07:22,200
+Math in head.
+
+99
+00:07:22,200 --> 00:07:26,200
+Well, 60 to 1320, that's 60.
+
+100
+00:07:26,200 --> 00:07:29,200
+Yeah, there is a measure length tool.
+
+101
+00:07:29,200 --> 00:07:31,200
+There is.
+
+102
+00:07:31,200 --> 00:07:36,200
+One could do that, all right.
+
+103
+00:07:36,200 --> 00:07:40,200
+Let's see, you know, I should be able to count to 60 in my head,
+
+104
+00:07:40,200 --> 00:07:46,200
+but that's more of Beth's expertise, the whole, you know, math in head thing.
+
+105
+00:07:46,200 --> 00:07:51,200
+Yeah, again, you know, or we can...
+
+106
+00:07:52,200 --> 00:07:53,200
+No.
+
+107
+00:07:53,200 --> 00:07:57,200
+I'll have to share the pipeline if you'd like to.
+
+108
+00:07:57,200 --> 00:08:06,200
+Awesome, here we can...
+
+109
+00:08:06,200 --> 00:08:07,200
+All right.
+
+110
+00:08:07,200 --> 00:08:10,200
+So, rather than, like, tune with...
+
+111
+00:08:10,200 --> 00:08:11,200
+Start from scratch on tuning.
+
+112
+00:08:11,200 --> 00:08:13,200
+Let's...
+
+113
+00:08:13,200 --> 00:08:22,200
+Let us start with something that we know is...
+
+114
+00:08:22,200 --> 00:08:25,200
+Sort of working.
+
+115
+00:08:25,200 --> 00:08:31,200
+Okay, rather than using load data...
+
+116
+00:08:31,200 --> 00:08:33,200
+Oh, we gotta go back and do this again.
+
+117
+00:08:33,200 --> 00:08:35,200
+Okay.
+
+118
+00:08:35,200 --> 00:08:38,200
+Do-do-do, gonna do this real fast.
+
+119
+00:08:38,200 --> 00:08:48,200
+So, we have six is DNA, and then we have...
+
+120
+00:08:48,200 --> 00:08:58,200
+Channel three, RNA, and...
+
+121
+00:08:58,200 --> 00:09:02,200
+Channel two.
+
+122
+00:09:02,200 --> 00:09:03,200
+There we go.
+
+123
+00:09:03,200 --> 00:09:05,200
+Okay.
+
+124
+00:09:05,200 --> 00:09:14,200
+So...
+
+125
+00:09:14,200 --> 00:09:17,200
+Oh, GP.
+
+126
+00:09:17,200 --> 00:09:20,200
+Well, you don't have the one functions anyway, do you?
+
+127
+00:09:20,200 --> 00:09:21,200
+So...
+
+128
+00:09:21,200 --> 00:09:23,200
+No, we can just ignore that.
+
+129
+00:09:23,200 --> 00:09:24,200
+Okay.
+
+130
+00:09:24,200 --> 00:09:25,200
+Thank you.
+
+131
+00:09:25,200 --> 00:09:29,200
+My demonstrations.
+
+132
+00:09:29,200 --> 00:09:30,200
+Okay.
+
+133
+00:09:30,200 --> 00:09:35,200
+So...
+
+134
+00:09:35,200 --> 00:09:40,200
+Let's see what we've got with the first image here for IDing...
+
+135
+00:09:40,200 --> 00:09:41,200
+Nuclei.
+
+136
+00:09:41,200 --> 00:09:42,200
+Okay.
+
+137
+00:09:42,200 --> 00:09:51,200
+So, here, we're clearly at the parameters getting a good job of finding, like, good nuclei,
+
+138
+00:09:51,200 --> 00:10:03,200
+but also struggling with sort of these out-of-focus areas being identified as very large nuclei.
+
+139
+00:10:03,200 --> 00:10:14,200
+So, it looks like sort of already having here the approach of measuring the size and shape of these all nuclei,
+
+140
+00:10:14,200 --> 00:10:23,200
+then filtering them based on size, like reasonable area size, down to, you know,
+
+141
+00:10:23,200 --> 00:10:27,200
+keeping only the actual nuclei and moving forward with that.
+
+142
+00:10:27,200 --> 00:10:29,200
+I think...
+
+143
+00:10:29,200 --> 00:10:30,200
+Okay.
+
+144
+00:10:30,200 --> 00:10:34,200
+So, first, we can talk like big picture in terms of like...
+
+145
+00:10:34,200 --> 00:10:35,200
+Okay.
+
+146
+00:10:35,200 --> 00:10:42,200
+Well, first you're saying it worked here, but it's not working on your next image set.
+
+147
+00:10:42,200 --> 00:10:43,200
+Yes.
+
+148
+00:10:43,200 --> 00:10:49,200
+Like, based on what UNBET suggested, I kind of masked the objects based on the size of the nuclei.
+
+149
+00:10:49,200 --> 00:10:56,200
+So, I was able to eliminate the cells wherever it is blurred based on the bigger nuclei.
+
+150
+00:10:56,200 --> 00:11:01,200
+And I also identified the secondary cells having the bigger nuclei in and later masked the objects,
+
+151
+00:11:01,200 --> 00:11:03,200
+which had the bigger nuclei.
+
+152
+00:11:03,200 --> 00:11:09,200
+What happens in those cases is like the secondary nuclei, like, since there is this work for the first image set,
+
+153
+00:11:09,200 --> 00:11:16,200
+but the second image set, the blurriness is also super visible in the GP channel.
+
+154
+00:11:16,200 --> 00:11:20,200
+So, the secondary cells are like too big and the nuclei are not that bigger.
+
+155
+00:11:20,200 --> 00:11:22,200
+Like, the nuclei is in the normal range.
+
+156
+00:11:22,200 --> 00:11:25,200
+So, those cells are not getting eliminated.
+
+157
+00:11:25,200 --> 00:11:30,200
+If I try to eliminate based on the blurriness in the Caulkey channel,
+
+158
+00:11:30,200 --> 00:11:35,200
+then the actual cells, which are bigger with proper nuclei are also getting eliminated.
+
+159
+00:11:35,200 --> 00:11:38,200
+Okay.
+
+160
+00:11:39,200 --> 00:11:57,200
+So, if we go all the way through looking at the ID secondary.
+
+161
+00:11:57,200 --> 00:11:59,200
+Okay, so we're back to the first image set now.
+
+162
+00:11:59,200 --> 00:12:02,200
+So, you're saying we've got something that works here.
+
+163
+00:12:02,200 --> 00:12:03,200
+Okay.
+
+164
+00:12:03,200 --> 00:12:07,200
+Let's see what's working.
+
+165
+00:12:07,200 --> 00:12:14,200
+Okay.
+
+166
+00:12:14,200 --> 00:12:16,200
+We're not back to the first image set.
+
+167
+00:12:16,200 --> 00:12:18,200
+We are.
+
+168
+00:12:18,200 --> 00:12:19,200
+Oh, yeah.
+
+169
+00:12:19,200 --> 00:12:20,200
+Okay.
+
+170
+00:12:20,200 --> 00:12:21,200
+We are.
+
+171
+00:12:21,200 --> 00:12:28,200
+So, here, strategy was to ID primary.
+
+172
+00:12:28,200 --> 00:12:29,200
+Right.
+
+173
+00:12:29,200 --> 00:12:34,200
+So, we've got those big blobs in, then measure them, then use those to ID secondary.
+
+174
+00:12:34,200 --> 00:12:41,200
+So, here in the ID secondary.
+
+175
+00:12:41,200 --> 00:12:43,200
+Just this contrast.
+
+176
+00:12:43,200 --> 00:12:50,200
+Ooh, not quite that much.
+
+177
+00:12:50,200 --> 00:12:51,200
+Okay.
+
+178
+00:12:51,200 --> 00:13:02,200
+So, if we sort of zoom in, there's sort of some areas where those are, you know, reasonable
+
+179
+00:13:02,200 --> 00:13:03,200
+cells.
+
+180
+00:13:03,200 --> 00:13:11,200
+And then some areas where clearly like this is a big blob of stuff.
+
+181
+00:13:11,200 --> 00:13:14,200
+So, we need this not, not big blob of stuff.
+
+182
+00:13:14,200 --> 00:13:15,200
+Okay.
+
+183
+00:13:15,200 --> 00:13:26,200
+Then the filter objects, you are filtering out the nuclei by the shape.
+
+184
+00:13:26,200 --> 00:13:28,200
+So, this is working nicely.
+
+185
+00:13:28,200 --> 00:13:38,200
+So, you have the original all of them and then it filters into the like keeping the nuclei and then the unwanted nuclei. Totally reasonable.
+
+186
+00:13:38,200 --> 00:13:42,200
+And then masking objects here.
+
+187
+00:13:42,200 --> 00:13:53,200
+What you have done is remove the unwanted nucleus associated with the unwanted nuclei.
+
+188
+00:13:53,200 --> 00:13:54,200
+Yeah.
+
+189
+00:13:54,200 --> 00:14:01,200
+And then you can filter objects as that stupid bug in it.
+
+190
+00:14:01,200 --> 00:14:02,200
+Cool.
+
+191
+00:14:02,200 --> 00:14:05,200
+So, this is what's left.
+
+192
+00:14:05,200 --> 00:14:07,200
+So, that's reasonable.
+
+193
+00:14:07,200 --> 00:14:11,200
+Like not unhappy with that function.
+
+194
+00:14:11,200 --> 00:14:22,200
+But the idea then is in the next image set to see what is not working there.
+
+195
+00:14:22,200 --> 00:14:26,200
+And it's not working because of blurriness in the other channels.
+
+196
+00:14:26,200 --> 00:14:36,200
+So, let's check that out.
+
+197
+00:14:36,200 --> 00:14:44,200
+Beth, do you want to say more about the bug we currently have that is what, what might we do differently if there was not a specific bug happening.
+
+198
+00:14:44,200 --> 00:14:50,200
+We might not need to use mask objects to remove the cells from the nuclei.
+
+199
+00:14:50,200 --> 00:14:57,200
+If filter objects were not broken in terms of the filter other objects based on this first filtering.
+
+200
+00:14:57,200 --> 00:15:00,200
+But it is.
+
+201
+00:15:00,200 --> 00:15:02,200
+Okay.
+
+202
+00:15:02,200 --> 00:15:05,200
+So, primary objects.
+
+203
+00:15:05,200 --> 00:15:07,200
+We saw that already.
+
+204
+00:15:07,200 --> 00:15:09,200
+That's not unreasonable.
+
+205
+00:15:09,200 --> 00:15:11,200
+Then secondary objects.
+
+206
+00:15:11,200 --> 00:15:13,200
+Look at that.
+
+207
+00:15:13,200 --> 00:15:25,200
+So, this is your one thing I noticed here is your threshold correction factor is 0.4, which is almost never a good idea to have it that low.
+
+208
+00:15:25,200 --> 00:15:28,200
+So, I think that's part of your trouble.
+
+209
+00:15:28,200 --> 00:15:43,200
+The thing is like, I'm not able to get to the boundaries. If I don't have the threshold correct like boundaries are in the like normal images, if I don't have the threshold correction factor to point for and also the lower bounds to point zero one.
+
+210
+00:15:43,200 --> 00:15:51,200
+That's why I have this so that in the normal looking images, this setting kind of identifies the boundaries very well.
+
+211
+00:15:51,200 --> 00:16:01,200
+That is why I had the correction factor point for and also show you what to point zero one.
+
+212
+00:16:01,200 --> 00:16:04,200
+Yeah.
+
+213
+00:16:04,200 --> 00:16:14,200
+So the boundaries looked a little big on the other one to Aaron how how what is the number that you get when you sort of try to go in a little tighter on what should be sort of the real boundaries.
+
+214
+00:16:14,200 --> 00:16:33,200
+And a little tricky, you know, again, like definitely tricky on this image because it's so fuzzy but if we look at an area where we can sort of see like this should be, you know, should be kind of an, that's funny because it looks like the nucleus is sort of off the edge of the cell.
+
+215
+00:16:33,200 --> 00:16:47,200
+Sometimes, you know, like, there's just none of this images really actually in focus might be, you know, maybe part of part of the problem.
+
+216
+00:16:47,200 --> 00:17:01,200
+But if I, you know, seems like this should be tighter in up here so sort of intensity of point oh for something.
+
+217
+00:17:01,200 --> 00:17:18,200
+You know, would bring it in sort of closer to the edge of the cell. I mean, I guess, you know, this takes us to a sort of bigger picture philosophical question of like, is it really even worth it, trying to make measurements on cells in this image, you know, like, some of it's going to depend on how precious your
+
+218
+00:17:18,200 --> 00:17:35,200
+images are how widespread this is across your data set. Another approach could be to, you know, make measurements find find images that look like this flag them and get rid of them from your measurements.
+
+219
+00:17:35,200 --> 00:17:43,200
+And, you know, we could certainly.
+
+220
+00:17:43,200 --> 00:18:01,200
+Yeah, so I guess that's that Beth what do you like, what would you start what would you do here. I, the first thing I would do is I go back to the working image and I would get a sense of what the how different the boundaries are like.
+
+221
+00:18:01,200 --> 00:18:23,200
+And so I think that was, they were already a little loose in the other image and so it might be the point oh for as a perfectly fine minimum in both images, or it might not be but if it is that's the easiest way to fix this problem and I like easy.
+
+222
+00:18:23,200 --> 00:18:33,200
+So here looks like this is hitting the threshold minimum point oh one, but if we just try.
+
+223
+00:18:33,200 --> 00:18:36,200
+Oh four.
+
+224
+00:18:36,200 --> 00:18:40,200
+And see what it looks like.
+
+225
+00:18:40,200 --> 00:18:49,200
+Yeah, that's way too much. Yeah.
+
+226
+00:18:49,200 --> 00:19:02,200
+So one option, then would be to do a block based elimination correction and try to remove some of this out of focus nonsense. I don't know how you feel about that Aaron, I don't know what your preferred next thing would be.
+
+227
+00:19:02,200 --> 00:19:08,200
+I mean, my preferred next thing would probably be like find a way to identify these images and trash them.
+
+228
+00:19:08,200 --> 00:19:21,200
+If we're going to like go on the assumption that this is precious data and we need to like we need to figure out how to get stuff out of them. I'm, yeah, I'm fine with that.
+
+229
+00:19:21,200 --> 00:19:26,200
+Yeah, we can do we can certainly do that. And so.
+
+230
+00:19:26,200 --> 00:19:32,200
+So before we get into identifying primary objects, we would want to add.
+
+231
+00:19:32,200 --> 00:19:37,200
+I mean, you've got correct information calculate and apply right there.
+
+232
+00:19:37,200 --> 00:19:41,200
+But I've clicked on to add a new thing. Okay.
+
+233
+00:19:41,200 --> 00:19:45,200
+It looks like once upon a time somebody did that.
+
+234
+00:19:45,200 --> 00:19:50,200
+Yeah.
+
+235
+00:19:50,200 --> 00:19:54,200
+eyeballs.
+
+236
+00:19:54,200 --> 00:20:01,200
+You've got eyeballs. Yeah, your face has eyeballs.
+
+237
+00:20:01,200 --> 00:20:05,200
+Okay, so.
+
+238
+00:20:05,200 --> 00:20:13,200
+So this is sort of, you know, what it's taking taking image, dilating it and then fuzzing it out.
+
+239
+00:20:13,200 --> 00:20:17,200
+And then when we apply that.
+
+240
+00:20:17,200 --> 00:20:31,200
+So it's, you know, going to subtract this sort of dilated fuzzed image from the original image to then sort of get rid of in this case, hold that out of focus.
+
+241
+00:20:31,200 --> 00:20:46,200
+I don't know that we want it for the DAPI I think we want it for the cell image, the DAPI seems fine. Okay. All right, well, then that should hopefully bring the out of focus like more together.
+
+242
+00:20:46,200 --> 00:20:55,200
+Okay, so.
+
+243
+00:20:55,200 --> 00:21:02,200
+Do do do.
+
+244
+00:21:02,200 --> 00:21:11,200
+Okay.
+
+245
+00:21:11,200 --> 00:21:15,200
+Well,
+
+246
+00:21:16,200 --> 00:21:23,200
+the zoom in and just the contrast so it's not just a
+
+247
+00:21:23,200 --> 00:21:30,200
+late gray blob. Okay, I mean you can definitely see the difference before and after
+
+248
+00:21:30,200 --> 00:21:33,200
+might be a little over.
+
+249
+00:21:33,200 --> 00:21:37,200
+Yeah, but I work close.
+
+250
+00:21:37,200 --> 00:21:52,200
+Okay, I would say like doubling the block size and the smoothing filter size.
+
+251
+00:21:52,200 --> 00:21:58,200
+And so what does the block size and smooth like what does doubling do Beth.
+
+252
+00:21:58,200 --> 00:22:05,200
+So what I was actually doing is actually suburb is actually breaking the image into individual chunks and trying to figure out the background value in each chunk.
+
+253
+00:22:05,200 --> 00:22:19,200
+And it said subtracting that and so the bigger your chunks are the more likely you're truly going to get a piece of background, the more likely that what you're subtracting is actually really background and not some of your real signal, you can manipulate this.
+
+254
+00:22:19,200 --> 00:22:29,200
+You know, the, the, if you choose bigger ones you're going to get something that is really just more of a background just now to focus light correction but if there are cases where you're trying to sharpen things up you can actually intentionally try to set a sort of
+
+255
+00:22:29,200 --> 00:22:33,200
+smallish block size.
+
+256
+00:22:33,200 --> 00:22:41,200
+It'll help you approximate more like a local thresholding strategy.
+
+257
+00:22:41,200 --> 00:23:00,200
+All right. So here, we certainly see before and after, you know, less aggressive erosion of the you know the last time but does seem to be doing a lot of cleanup, like maybe that's the
+
+258
+00:23:00,200 --> 00:23:13,200
+Yeah, because if you needed to you could then do a sort of small expansion afterward with a second round of ID secondary, if this cleans things up too much.
+
+259
+00:23:13,200 --> 00:23:24,200
+But you'll need to now change your everything in ID secondary adjust your thresholding strategy completely presumably start by just taking your minimum off and setting your correction factor back to one.
+
+260
+00:23:31,200 --> 00:23:43,200
+There's a lot of things open right now. Okay, but here.
+
+261
+00:23:43,200 --> 00:23:50,200
+This seems right off the bat like not unreasonable.
+
+262
+00:23:50,200 --> 00:23:54,200
+But this is the good one so now we need to see.
+
+263
+00:23:54,200 --> 00:23:59,200
+But we haven't ruined anything by our ruin.
+
+264
+00:23:59,200 --> 00:24:07,200
+So it was a good starting point. Right. Because before when we tried to you know when we took off that minimum.
+
+265
+00:24:07,200 --> 00:24:21,200
+We were getting just the tiny little, you know, tiny little spots up here but but that reasonable enough ish from what one can tell in this very out of focus image anyway.
+
+266
+00:24:21,200 --> 00:24:31,200
+So, yeah, so that's hard one hard one. Okay, let's see test next image that.
+
+267
+00:24:31,200 --> 00:24:38,200
+Okay, what do we got.
+
+268
+00:24:38,200 --> 00:24:55,200
+So hopefully this should remove more of our out of focus light so that even if the threshold that needs to change is or is a little bit different there at least now in the same regime, they're close enough to each other because we're not just measuring out of focus light that we could use the same minimum in both cases.
+
+269
+00:24:55,200 --> 00:25:11,200
+Alright, so if we take a peek at our, let's see, let's say, just to see here at like what's happening in our illumination application.
+
+270
+00:25:11,200 --> 00:25:26,200
+You can see it's sort of a little bit different than the previous one where like definitely the intensity was you know they were like more smaller, more smaller bright spots where you could really see the background correction, like around those and here, sort of a lot more
+
+271
+00:25:26,200 --> 00:25:29,200
+general halo across it.
+
+272
+00:25:29,200 --> 00:25:33,200
+This certainly looks like a much nicer starting image.
+
+273
+00:25:33,200 --> 00:25:40,200
+And if we jump to the ID secondary that we get from it.
+
+274
+00:25:40,200 --> 00:25:42,200
+Better.
+
+275
+00:25:42,200 --> 00:25:52,200
+Not only better, but I wonder if now a minimum would help a little bit. I think we are in the point 003 regime on the other image so.
+
+276
+00:25:52,200 --> 00:25:55,200
+Yeah, this is.
+
+277
+00:25:55,200 --> 00:26:05,200
+So, we're just a little hover like, yeah, point 002.
+
+278
+00:26:05,200 --> 00:26:08,200
+0.003 is sort of out here.
+
+279
+00:26:08,200 --> 00:26:11,200
+We did a point 003.
+
+280
+00:26:11,200 --> 00:26:20,200
+I bet we could clean this up a lot and not affect the other image.
+
+281
+00:26:20,200 --> 00:26:24,200
+35.
+
+282
+00:26:24,200 --> 00:26:31,200
+Turn that a little bit more.
+
+283
+00:26:31,200 --> 00:26:35,200
+We're creeping there.
+
+284
+00:26:35,200 --> 00:26:43,200
+The, the art of image analysis and object segmentation.
+
+285
+00:26:43,200 --> 00:26:55,200
+You know, that that big horrible one that's a primary problem. That's not a secondary problem.
+
+286
+00:26:55,200 --> 00:27:01,200
+Because, oh wait no there is a little itty bitty nucleus there I couldn't even see it it was so small.
+
+287
+00:27:01,200 --> 00:27:05,200
+Yeah, hidden in the corner.
+
+288
+00:27:05,200 --> 00:27:07,200
+Yeah.
+
+289
+00:27:08,200 --> 00:27:22,200
+What happens.
+
+290
+00:27:22,200 --> 00:27:36,200
+I mean, some of it also is like, these are really not pretty input images so you may end up you know you may end up being in a situation where it's like, okay, I want to make sure on the best images that I'm getting.
+
+291
+00:27:36,200 --> 00:27:42,200
+I can so you do want to make sure that you haven't lost any quality and sort of your better image.
+
+292
+00:27:42,200 --> 00:27:46,200
+And then, you know, and if you went to local thresholding.
+
+293
+00:27:46,200 --> 00:27:54,200
+Hey, let's see.
+
+294
+00:27:54,200 --> 00:28:02,200
+Then you're gonna have to pick again, the hot suit three class.
+
+295
+00:28:02,200 --> 00:28:07,200
+And it's got all right we think 100 is a.
+
+296
+00:28:07,200 --> 00:28:10,200
+Starting window.
+
+297
+00:28:10,200 --> 00:28:15,200
+So tell us Beth what is it like what have we just switched to why would we do this.
+
+298
+00:28:15,200 --> 00:28:30,200
+So now we're determining the threshold independently in each block which is going to hopefully help us in the blocks where things are sort of dimmer to force it to be a little bit stricter in those areas.
+
+299
+00:28:30,200 --> 00:28:36,200
+Maybe.
+
+300
+00:28:36,200 --> 00:28:38,200
+Yeah.
+
+301
+00:28:38,200 --> 00:28:49,200
+It's definitely still not good but it's it's certainly in a more livable range than where we were before now we completely trashed our first image back to
+
+302
+00:28:49,200 --> 00:28:58,200
+That is that is always the question.
+
+303
+00:28:58,200 --> 00:29:02,200
+I love that you've made everything in CellProfiler pink.
+
+304
+00:29:02,200 --> 00:29:09,200
+It makes me happy.
+
+305
+00:29:09,200 --> 00:29:13,200
+I try and make as many things as I can pink.
+
+306
+00:29:13,200 --> 00:29:26,200
+I still, you know, get flack from most software developers for never, you know, never using dark mode.
+
+307
+00:29:26,200 --> 00:29:41,200
+But also that still looks really good. So I would say that for half an hour of time we've now done a much better job of sort of splitting the difference between the other one isn't great but it's definitely now usable.
+
+308
+00:29:41,200 --> 00:29:44,200
+Yeah.
+
+309
+00:29:44,200 --> 00:29:47,200
+Yeah.
+
+310
+00:29:47,200 --> 00:29:54,200
+Thank you so much for joining us in our inaugural episode of Ask Erin Dear Beth.
+
+311
+00:29:54,200 --> 00:29:58,200
+And I'll see you guys again in the meantime if you have any questions for us.
+
+312
+00:29:58,200 --> 00:30:06,200
+You can find us at the Cimini Lab at the Broad Institute. Cimini-Lab.BroadInstitute.org.
+
+313
+00:30:06,200 --> 00:30:22,200
+If you want to play around with the images and pipeline that we introduced in this episode, you can find the podcast files at ciminilab.github.io/AskErin_DearBeth/.
+
+314
+00:30:22,200 --> 00:30:38,200
+You can send us your own images and or questions we would love to help you with your own image analysis problems. Submit questions at broad.io/AskErinDearBeth.
+

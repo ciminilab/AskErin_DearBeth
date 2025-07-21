@@ -1,0 +1,1200 @@
+1
+00:00:00,000 --> 00:00:19,960
+Hey Beth! Erin! Hi! How's it going?
+
+2
+00:00:19,960 --> 00:00:22,120
+Peachy Keen!
+
+3
+00:00:22,120 --> 00:00:24,200
+You have fun things for us today?
+
+4
+00:00:24,200 --> 00:00:29,160
+Well, yeah, yeah. I think this fits under the definition of fun.
+
+5
+00:00:29,160 --> 00:00:31,400
+We'll see what you think.
+
+6
+00:00:31,400 --> 00:00:34,920
+I'm certain if you think it's fun, I'll think it's fun.
+
+7
+00:00:34,920 --> 00:00:36,920
+Yeah, certainly helpful.
+
+8
+00:00:36,920 --> 00:00:41,320
+So, you know, and much of the time helpful is fun.
+
+9
+00:00:41,320 --> 00:00:43,320
+It's certainly better than unhelpful.
+
+10
+00:00:43,320 --> 00:00:45,320
+Unhelpful, yeah.
+
+11
+00:00:45,320 --> 00:00:57,480
+So, what I was going to talk through quickly here is how to get object outlines into, that
+
+12
+00:00:57,480 --> 00:01:01,720
+have been made and exported by a CellProfiler pipeline, how you might get them back into
+
+13
+00:01:01,720 --> 00:01:05,320
+CellProfiler to be able to find those same objects.
+
+14
+00:01:05,320 --> 00:01:14,320
+So the reason, along with this just being sort of generally helpful, is that our, right
+
+15
+00:01:14,320 --> 00:01:26,240
+now our default analysis pipeline that we have used on many, many of our publicly available
+
+16
+00:01:26,240 --> 00:01:35,560
+cell painting data sets, particularly those within the cell painting gallery, we have,
+
+17
+00:01:35,560 --> 00:01:42,760
+so this is a folder looking at the files that were output for a single, single site, single
+
+18
+00:01:42,760 --> 00:01:50,440
+field of view, and we get the object measurements made on these objects that we've identified
+
+19
+00:01:50,440 --> 00:01:52,800
+within the image.
+
+20
+00:01:52,800 --> 00:01:55,800
+We identify cell, cytoplasm, nuclei, make measurements.
+
+21
+00:01:55,800 --> 00:01:56,800
+But we also...
+
+22
+00:01:56,800 --> 00:02:00,720
+I think we might learn more about the cell painting gallery in another episode.
+
+23
+00:02:00,720 --> 00:02:02,720
+I think that's a great idea.
+
+24
+00:02:02,720 --> 00:02:04,720
+We should do that.
+
+25
+00:02:04,720 --> 00:02:05,720
+Yeah.
+
+26
+00:02:05,720 --> 00:02:15,800
+So, the other thing that we output is these object outlines, and this is not something
+
+27
+00:02:15,800 --> 00:02:19,120
+that is unique to our data.
+
+28
+00:02:19,120 --> 00:02:23,960
+You too can output your objects as object outlines.
+
+29
+00:02:23,960 --> 00:02:30,560
+There are multiple ways that if you have identified an object in a CellProfiler pipeline that
+
+30
+00:02:30,560 --> 00:02:41,760
+you could save out those objects in image format to be able to then retrieve those objects
+
+31
+00:02:41,760 --> 00:02:43,600
+at a later date.
+
+32
+00:02:43,600 --> 00:02:44,600
+I believe...
+
+33
+00:02:44,600 --> 00:02:53,720
+So, a label matrix is probably one of the easier ones to take in, and in that you end
+
+34
+00:02:53,720 --> 00:03:02,160
+up with every object has its own intensity that corresponds to its object number.
+
+35
+00:03:02,160 --> 00:03:04,240
+But I believe we ended up...
+
+36
+00:03:04,240 --> 00:03:06,440
+Can you explain that a little bit more in detail?
+
+37
+00:03:06,440 --> 00:03:08,720
+I'm not sure I totally got that.
+
+38
+00:03:08,720 --> 00:03:09,720
+Yes.
+
+39
+00:03:09,720 --> 00:03:17,200
+Normally, I had an example readily available that would be super helpful.
+
+40
+00:03:17,200 --> 00:03:18,200
+How about...
+
+41
+00:03:18,200 --> 00:03:19,200
+Sorry.
+
+42
+00:03:19,200 --> 00:03:20,200
+What?
+
+43
+00:03:20,200 --> 00:03:21,200
+Sorry.
+
+44
+00:03:21,200 --> 00:03:22,200
+That's okay.
+
+45
+00:03:22,200 --> 00:03:24,200
+How about I import when...
+
+46
+00:03:24,200 --> 00:03:31,080
+Hold that thought, Beth.
+
+47
+00:03:31,080 --> 00:03:35,200
+I will show you in this pipeline as we go, let's import these objects, and then I can show
+
+48
+00:03:35,200 --> 00:03:39,600
+you the options for saving them out and what that looks like and how you might handle those.
+
+49
+00:03:40,480 --> 00:03:42,040
+We'll come back to it.
+
+50
+00:03:42,040 --> 00:03:43,040
+Okay.
+
+51
+00:03:43,040 --> 00:03:45,360
+Since you're making me think on the fly here.
+
+52
+00:03:45,360 --> 00:03:48,760
+I knew you can handle it.
+
+53
+00:03:48,760 --> 00:03:49,760
+I think so.
+
+54
+00:03:49,760 --> 00:03:53,000
+I think we'll get there.
+
+55
+00:03:53,000 --> 00:04:04,560
+These images, I believe we settled on outlines because these are much smaller in file size
+
+56
+00:04:04,560 --> 00:04:11,360
+than many other options for saving out images because they are zeros and ones, black and
+
+57
+00:04:11,360 --> 00:04:13,360
+white of just...
+
+58
+00:04:13,360 --> 00:04:22,560
+Here we go, where you see most of the image is black and then the objects are outlined
+
+59
+00:04:22,560 --> 00:04:25,680
+here in little white outlines.
+
+60
+00:04:26,680 --> 00:04:39,520
+I have downloaded just a random example of the two corresponding cells and nuclei images
+
+61
+00:04:39,520 --> 00:04:41,200
+and I put them in a pipeline here.
+
+62
+00:04:41,200 --> 00:04:47,080
+So I have cell outlines and nuclei outlines.
+
+63
+00:04:47,080 --> 00:04:48,640
+It's really easy.
+
+64
+00:04:48,640 --> 00:04:55,480
+This is the whole pipeline for getting them in because we have a CellProfiler plugin.
+
+65
+00:04:55,480 --> 00:05:00,040
+We already have another Ask Erin Dear Beth episode about CellProfiler plugins.
+
+66
+00:05:00,040 --> 00:05:05,120
+So go check that out for more information about CellProfiler plugins, how to use them,
+
+67
+00:05:05,120 --> 00:05:06,120
+how to find them.
+
+68
+00:05:06,120 --> 00:05:07,120
+The show notes.
+
+69
+00:05:07,120 --> 00:05:09,160
+We'll add it to the show notes.
+
+70
+00:05:09,160 --> 00:05:10,160
+The link, yeah.
+
+71
+00:05:10,160 --> 00:05:14,680
+So go check that out if you're not familiar with CellProfiler plugins system.
+
+72
+00:05:14,680 --> 00:05:20,640
+But this is a plugin that is available in our repo and the plugin is called convert outlines
+
+73
+00:05:20,640 --> 00:05:22,200
+to objects.
+
+74
+00:05:22,200 --> 00:05:27,440
+And so quite handily what it does is converts outlines to objects.
+
+75
+00:05:27,440 --> 00:05:28,440
+Go figure.
+
+76
+00:05:28,440 --> 00:05:39,920
+So here in test mode, I can show you what this does here.
+
+77
+00:05:39,920 --> 00:05:45,600
+All I did was say this nuclei outlines image.
+
+78
+00:05:45,600 --> 00:05:49,560
+I want you to input that and name the output object nuclei.
+
+79
+00:05:49,560 --> 00:05:56,080
+So it defaults to say the typical diameter of objects goes from zero to infinity, which
+
+80
+00:05:56,080 --> 00:06:01,640
+that's quite a range for big nucleus.
+
+81
+00:06:01,640 --> 00:06:10,120
+And what we can see is that it has done a mostly brilliant job.
+
+82
+00:06:10,120 --> 00:06:17,840
+But what we have, so what we have here in the colors are the nuclei that it figured
+
+83
+00:06:17,840 --> 00:06:21,160
+out from these object outlines.
+
+84
+00:06:21,160 --> 00:06:27,240
+So what we would hope for is that these nuclei objects would be on a black background because
+
+85
+00:06:27,240 --> 00:06:35,100
+we don't want this giant green infinite sized or the rest of the image sized object.
+
+86
+00:06:35,100 --> 00:06:41,080
+So what we can easily do is say, okay, here's the biggest nucleus that I'm seeing on this
+
+87
+00:06:41,080 --> 00:06:42,160
+image.
+
+88
+00:06:42,160 --> 00:06:45,160
+It has a length of about 96.
+
+89
+00:06:45,160 --> 00:06:53,760
+And so I'm going to triple that and say my typical object diameter goes from zero to
+
+90
+00:06:53,760 --> 00:06:57,160
+300 and bam, there we go.
+
+91
+00:06:57,160 --> 00:06:58,160
+Done.
+
+92
+00:06:58,160 --> 00:06:59,160
+How many nuclei?
+
+93
+00:06:59,160 --> 00:07:05,760
+Nuclei, nuclei, anything are generally the easiest object to the identification tasks
+
+94
+00:07:05,760 --> 00:07:11,360
+for compartments within a cell because they're generally pretty round and generally fairly
+
+95
+00:07:11,360 --> 00:07:17,560
+separated because there's usually the rest of the cell keeping them from bumping up next
+
+96
+00:07:17,560 --> 00:07:19,160
+to each other when cells are next to each other.
+
+97
+00:07:19,160 --> 00:07:25,120
+So this is a pretty easy task, but really lovely that it just kind of works.
+
+98
+00:07:25,120 --> 00:07:34,240
+So then we can do the next step of the cells.
+
+99
+00:07:34,240 --> 00:07:42,920
+And I already added in here typical diameter of cell objects because it was doing the same
+
+100
+00:07:42,920 --> 00:07:48,400
+thing as the nuclei initially in identifying the whole background.
+
+101
+00:07:48,400 --> 00:07:59,360
+And you can see there are probably some regions that get identified as, okay, so if I go back
+
+102
+00:07:59,360 --> 00:08:06,440
+to zero, there's probably some regions here that are...
+
+103
+00:08:06,440 --> 00:08:13,040
+No, actually, that did pretty good.
+
+104
+00:08:13,040 --> 00:08:19,280
+One could expect, right, if we zoomed in here, it might think this is an object, this little
+
+105
+00:08:19,280 --> 00:08:25,560
+object here, it might think this is an object here, but it actually did a great job of just
+
+106
+00:08:25,560 --> 00:08:28,040
+figuring that out.
+
+107
+00:08:28,040 --> 00:08:30,040
+But playing around with these...
+
+108
+00:08:30,040 --> 00:08:32,040
+I pressed O instead of zero.
+
+109
+00:08:32,040 --> 00:08:34,040
+I was about to...
+
+110
+00:08:34,040 --> 00:08:35,040
+Yeah.
+
+111
+00:08:35,040 --> 00:08:36,040
+I pressed O instead of zero.
+
+112
+00:08:36,040 --> 00:08:37,040
+There we go.
+
+113
+00:08:37,040 --> 00:08:39,040
+I shouldn't allow you to put the letter O in there.
+
+114
+00:08:39,040 --> 00:08:40,040
+Somebody fix that.
+
+115
+00:08:40,040 --> 00:08:41,040
+Maybe I'll go file a bug report.
+
+116
+00:08:41,040 --> 00:08:42,040
+And there we go.
+
+117
+00:08:42,040 --> 00:08:44,040
+This is what I was expecting to show here.
+
+118
+00:08:44,040 --> 00:08:46,040
+So it thinks this is all these tiny regions.
+
+119
+00:08:46,040 --> 00:08:47,040
+It thinks this is a cell.
+
+120
+00:08:47,040 --> 00:08:48,040
+It thinks these little gaps are cells.
+
+121
+00:08:48,040 --> 00:08:49,040
+These tiny little gaps are cells.
+
+122
+00:08:49,040 --> 00:08:54,040
+These tiny little pixels, you know, blank pixels in between, and that we don't want.
+
+123
+00:08:54,040 --> 00:09:01,040
+So if you input a number instead of a letter to be fixed, live demos, right?
+
+124
+00:09:01,040 --> 00:09:08,040
+That is why I had set the typical object diameter of minimum of 20, and then it nicely sees
+
+125
+00:09:08,040 --> 00:09:09,040
+the number.
+
+126
+00:09:09,040 --> 00:09:11,040
+And then I had set the number.
+
+127
+00:09:11,040 --> 00:09:19,040
+And then I had set the typical object diameter of minimum of 20, and then it nicely sees
+
+128
+00:09:19,040 --> 00:09:27,040
+that, oh, these tiny little bits in between are not actually cells and doesn't identify
+
+129
+00:09:27,040 --> 00:09:29,040
+them.
+
+130
+00:09:29,040 --> 00:09:40,040
+One thing that sort of an extra thing that we could do now...
+
+131
+00:09:40,040 --> 00:09:45,040
+According to these nuclei and cells, where did you go?
+
+132
+00:09:45,040 --> 00:09:46,040
+You closed it.
+
+133
+00:09:46,040 --> 00:09:48,040
+I closed it.
+
+134
+00:09:48,040 --> 00:09:49,040
+Yeah.
+
+135
+00:09:49,040 --> 00:09:53,040
+I sort of unfortunately default too much to just automatically cleaning up after myself,
+
+136
+00:09:53,040 --> 00:09:56,040
+and then I clean up probably more than I should.
+
+137
+00:09:56,040 --> 00:09:59,040
+I think cleaning up is bad.
+
+138
+00:09:59,040 --> 00:10:00,040
+Yeah.
+
+139
+00:10:00,040 --> 00:10:08,040
+So if we look at this, I can still see at a glance regions like I doubt that's a cell.
+
+140
+00:10:08,040 --> 00:10:15,040
+I bet that is blank space that is not supposed to be there.
+
+141
+00:10:15,040 --> 00:10:29,040
+But there are a couple different things that we could do now to clean this up further.
+
+142
+00:10:29,040 --> 00:10:33,040
+So if we...
+
+143
+00:10:33,040 --> 00:10:40,040
+One option is in our output measurements, this would be something downstream.
+
+144
+00:10:40,040 --> 00:10:45,040
+So if I wanted to take these objects that I found and use them to do some additional
+
+145
+00:10:45,040 --> 00:10:53,040
+measurements, one thing that could happen is if we look at our cells, there are columns
+
+146
+00:10:53,040 --> 00:11:06,040
+that have area-shaped bounding boxes or information about the center, the x, y values of the center
+
+147
+00:11:06,040 --> 00:11:08,040
+of the objects.
+
+148
+00:11:08,040 --> 00:11:14,040
+And so if I took these cells as we identified here and made a bunch of measurements on them,
+
+149
+00:11:14,040 --> 00:11:22,040
+if I wanted to be sure that they matched perfectly with existing measurements I had made here
+
+150
+00:11:22,040 --> 00:11:31,040
+that I was importing them, I could use the bounding boxes or the cell centers to perfectly
+
+151
+00:11:31,040 --> 00:11:37,040
+match and filter them out on my downstream data.
+
+152
+00:11:37,040 --> 00:11:49,040
+Another option, and this is another plugin that we have, there's an enforce objects one-to-one.
+
+153
+00:11:49,040 --> 00:11:56,040
+And so this is another option if you want to get all experimental because plugins are deemed
+
+154
+00:11:56,040 --> 00:11:59,040
+experimental and not guaranteed to work.
+
+155
+00:11:59,040 --> 00:12:01,040
+I mean, we hope they do.
+
+156
+00:12:01,040 --> 00:12:05,040
+So if they don't work for you, file a bug report and we'll get there to fixing them.
+
+157
+00:12:05,040 --> 00:12:09,040
+But plugins are our experimental area.
+
+158
+00:12:09,040 --> 00:12:14,040
+So this is something new, fairly new that we've been working on developing.
+
+159
+00:12:14,040 --> 00:12:19,040
+And you can say, okay, these nuclei are my pre-primary objects.
+
+160
+00:12:19,040 --> 00:12:24,040
+These cells are my pre-secondary objects.
+
+161
+00:12:24,040 --> 00:12:33,040
+And what we can do then is run this module and we should see...
+
+162
+00:12:40,040 --> 00:12:42,040
+There we go.
+
+163
+00:12:43,040 --> 00:12:55,040
+What we see here in this current output view is that the nuclei and the cells have been forced to have a one-to-one
+
+164
+00:12:55,040 --> 00:13:08,040
+relationship so that we then, in this way, are getting rid of any of the secondary objects that don't nicely have
+
+165
+00:13:08,040 --> 00:13:09,040
+their own nucleus.
+
+166
+00:13:09,040 --> 00:13:13,040
+And so you can see this number of pre-primary objects.
+
+167
+00:13:13,040 --> 00:13:16,040
+So the input nuclei, there were 66 objects.
+
+168
+00:13:16,040 --> 00:13:26,040
+The secondary objects, we actually had 86 cells found in our image, but the number of enforced objects that came out is
+
+169
+00:13:26,040 --> 00:13:32,040
+66 so that managed to filter out 20 of the...
+
+170
+00:13:32,040 --> 00:13:37,040
+Right, so if we zoom in here, this little bit was not supposed to be a cell.
+
+171
+00:13:37,040 --> 00:13:42,040
+And you can see in our output objects here, it has been filtered out.
+
+172
+00:13:42,040 --> 00:13:45,040
+It is no longer identified as a cell.
+
+173
+00:13:45,040 --> 00:13:57,040
+So that is a handy way to force these to play nicely, to quickly and easily clean up these secondary objects
+
+174
+00:13:57,040 --> 00:14:06,040
+if you have this parent-child relationship, particularly, again, nuclei and cells where nuclei are really easy
+
+175
+00:14:06,040 --> 00:14:09,040
+to identify those objects coming in.
+
+176
+00:14:09,040 --> 00:14:14,040
+And cells can be a bit trickier because of the way the objects are touching and might have tiny gaps in between them.
+
+177
+00:14:14,040 --> 00:14:16,040
+That's a very smart way to do that.
+
+178
+00:14:16,040 --> 00:14:18,040
+I really like that idea.
+
+179
+00:14:18,040 --> 00:14:20,040
+Yeah, it's pretty fun.
+
+180
+00:14:20,040 --> 00:14:28,040
+This is a fairly new module to CellProfiler plugins that have been having quite a bit of fun with.
+
+181
+00:14:28,040 --> 00:14:35,040
+Yeah, so then one other thing I said full circle, and I said I would show you now.
+
+182
+00:14:35,040 --> 00:14:43,040
+If we add another module of...
+
+183
+00:14:43,040 --> 00:14:44,040
+Oh, okay.
+
+184
+00:14:44,040 --> 00:14:49,040
+So here, actually, we need to make...
+
+185
+00:14:49,040 --> 00:14:51,040
+Wait.
+
+186
+00:14:51,040 --> 00:14:52,040
+Yeah, we have to make...
+
+187
+00:14:52,040 --> 00:14:54,040
+Make our label matrix image.
+
+188
+00:14:54,040 --> 00:14:58,040
+And then...
+
+189
+00:14:58,040 --> 00:15:02,040
+So we need convert objects to image.
+
+190
+00:15:02,040 --> 00:15:04,040
+There we go.
+
+191
+00:15:04,040 --> 00:15:06,040
+Look at me just doing this on the fly.
+
+192
+00:15:06,040 --> 00:15:08,040
+No stress, I swear.
+
+193
+00:15:08,040 --> 00:15:10,040
+I'm not stressed.
+
+194
+00:15:10,040 --> 00:15:12,040
+You don't seem stressed.
+
+195
+00:15:12,040 --> 00:15:13,040
+Yeah.
+
+196
+00:15:13,040 --> 00:15:19,040
+So in this example, we can take our cells, or here we...
+
+197
+00:15:19,040 --> 00:15:23,040
+I don't know, our secondary objects with our nicely filtered ones.
+
+198
+00:15:23,040 --> 00:15:29,040
+We select an output image name here, cell image will work.
+
+199
+00:15:29,040 --> 00:15:41,040
+And then these are different ways that we can output those images to be able to save them.
+
+200
+00:15:41,040 --> 00:15:46,040
+So I can actually just show you really quickly what those look like.
+
+201
+00:15:46,040 --> 00:15:55,040
+So if we had this color map, if we wanted to output this as our cell image,
+
+202
+00:15:55,040 --> 00:16:00,040
+it looks much like the module, our module display,
+
+203
+00:16:00,040 --> 00:16:03,040
+that we can use to save out.
+
+204
+00:16:03,040 --> 00:16:07,040
+And one could change the color map.
+
+205
+00:16:07,040 --> 00:16:09,040
+So there's probably...
+
+206
+00:16:09,040 --> 00:16:10,040
+Oh, let's see a brief...
+
+207
+00:16:10,040 --> 00:16:15,040
+The pink-green is always my favorite, but I don't remember the exact...
+
+208
+00:16:15,040 --> 00:16:17,040
+I won't...
+
+209
+00:16:17,040 --> 00:16:18,040
+I knew it.
+
+210
+00:16:18,040 --> 00:16:19,040
+I figured it out.
+
+211
+00:16:19,040 --> 00:16:21,040
+Look at that.
+
+212
+00:16:21,040 --> 00:16:24,040
+So one could change the color map and make it look like they want...
+
+213
+00:16:24,040 --> 00:16:27,040
+This is maybe not the most actually helpful or informative color map,
+
+214
+00:16:27,040 --> 00:16:30,040
+but it is fun because it is pink and green.
+
+215
+00:16:30,040 --> 00:16:35,040
+The jet haters in the audience will appreciate you changing away from jet.
+
+216
+00:16:35,040 --> 00:16:37,040
+Yes.
+
+217
+00:16:37,040 --> 00:16:41,040
+Other options here, this binary.
+
+218
+00:16:41,040 --> 00:16:47,040
+This is just going to output as zeros and ones,
+
+219
+00:16:47,040 --> 00:16:54,040
+leaving these single pixel gaps in between our objects.
+
+220
+00:16:54,040 --> 00:17:01,040
+So this is another way that this could be output.
+
+221
+00:17:01,040 --> 00:17:11,040
+If we go to grayscale, so this is what is often referred to as a label matrix.
+
+222
+00:17:11,040 --> 00:17:13,040
+So if we start...
+
+223
+00:17:13,040 --> 00:17:15,040
+So we have...
+
+224
+00:17:15,040 --> 00:17:18,040
+So right down here where I'm currently moving my mouse,
+
+225
+00:17:18,040 --> 00:17:21,040
+when we hover, that is the pixel intensity where it shows up.
+
+226
+00:17:21,040 --> 00:17:25,040
+So in the background, we have a value of zero,
+
+227
+00:17:25,040 --> 00:17:31,040
+but as we hover over different cell objects...
+
+228
+00:17:31,040 --> 00:17:36,040
+5, 7, 5, 8, wait.
+
+229
+00:17:36,040 --> 00:17:38,040
+I just got confused.
+
+230
+00:17:38,040 --> 00:17:42,040
+What are the values scaled by, Beth?
+
+231
+00:17:42,040 --> 00:17:45,040
+So in grayscales, it's going to be zero to 55.
+
+232
+00:17:45,040 --> 00:17:48,040
+So grayscale is great for when you have up to 255 images,
+
+233
+00:17:48,040 --> 00:17:51,040
+but cell profiles, I assume you want as a literal grayscale,
+
+234
+00:17:51,040 --> 00:17:53,040
+which in cell profiles world is zero to one.
+
+235
+00:17:53,040 --> 00:17:56,040
+If you want to make it the actual integer numbers,
+
+236
+00:17:56,040 --> 00:17:59,040
+so say all the pixels of object one are labeled one,
+
+237
+00:17:59,040 --> 00:18:02,040
+you're going to need the last option.
+
+238
+00:18:02,040 --> 00:18:04,040
+Yes.
+
+239
+00:18:04,040 --> 00:18:09,040
+So the increments here are from zero to 255,
+
+240
+00:18:09,040 --> 00:18:12,040
+scaled zero to one, whatever those...
+
+241
+00:18:12,040 --> 00:18:15,040
+So that's why we're getting non...
+
+242
+00:18:15,040 --> 00:18:20,040
+sort of what seems like an odd number of this has a value of 0.618, right?
+
+243
+00:18:20,040 --> 00:18:22,040
+So...
+
+244
+00:18:22,040 --> 00:18:24,040
+Although it seems like maybe the...
+
+245
+00:18:24,040 --> 00:18:26,040
+So here it might just be evenly scaled.
+
+246
+00:18:26,040 --> 00:18:29,040
+So I would have to check, but I think it might just be evenly scaled,
+
+247
+00:18:29,040 --> 00:18:32,040
+which I mean, it's going to be a great picture,
+
+248
+00:18:32,040 --> 00:18:35,040
+but not actually helpful for making a label matrix.
+
+249
+00:18:35,040 --> 00:18:37,040
+Importing objects, right.
+
+250
+00:18:37,040 --> 00:18:39,040
+So we have...
+
+251
+00:18:39,040 --> 00:18:45,040
+So the number of cells are scaled across the gray,
+
+252
+00:18:45,040 --> 00:18:49,040
+the gray tones is zero to 255, that makes sense.
+
+253
+00:18:49,040 --> 00:18:54,040
+So again, this would be one that might be helpful for visualizations,
+
+254
+00:18:54,040 --> 00:19:01,040
+but not as helpful for actually data exportable images.
+
+255
+00:19:01,040 --> 00:19:03,040
+So the data...
+
+256
+00:19:03,040 --> 00:19:06,040
+Exportable data that you can then import easily.
+
+257
+00:19:06,040 --> 00:19:11,040
+So the final here is this gives us...
+
+258
+00:19:11,040 --> 00:19:20,040
+So CellProfiler, almost all the pipelines default to having everything scaled zero to one.
+
+259
+00:19:20,040 --> 00:19:26,040
+But here, this will output an image...
+
+260
+00:19:26,040 --> 00:19:29,040
+where it's still showing us intent...
+
+261
+00:19:29,040 --> 00:19:31,040
+Again, do-do-do...
+
+262
+00:19:31,040 --> 00:19:33,040
+Yep, here we go.
+
+263
+00:19:33,040 --> 00:19:36,040
+You have to tell it to make a change and then tell it to apply that change.
+
+264
+00:19:36,040 --> 00:19:38,040
+Okay, no longer confused.
+
+265
+00:19:38,040 --> 00:19:44,040
+So here, this is no longer using the zero to one scale
+
+266
+00:19:44,040 --> 00:19:49,040
+that CellProfiler typically enforces for gray scale anything,
+
+267
+00:19:49,040 --> 00:19:51,040
+for most of what it does.
+
+268
+00:19:51,040 --> 00:19:55,040
+But here, this would be what we would actually consider a label matrix,
+
+269
+00:19:55,040 --> 00:20:00,040
+where each cell has its own integer value.
+
+270
+00:20:00,040 --> 00:20:04,040
+So this is cell number 20, because when I hover on it, it has an intensity of 20.
+
+271
+00:20:04,040 --> 00:20:10,040
+This is cell number 42, because when I hover on it, it has an intensity of 42.
+
+272
+00:20:10,040 --> 00:20:14,040
+So this is the label matrix that I was mentioning in the beginning,
+
+273
+00:20:14,040 --> 00:20:20,040
+and Beth was forcing me to show you because that's helpful and a good suggestion.
+
+274
+00:20:20,040 --> 00:20:30,040
+And so one could make this image here as my cell image or my label matrix,
+
+275
+00:20:30,040 --> 00:20:38,040
+and then have a save images module where I am saving my label matrix.
+
+276
+00:20:38,040 --> 00:20:42,040
+The one thing that you want to pay close attention to here,
+
+277
+00:20:42,040 --> 00:20:50,040
+is that depending on your number of objects that you may need,
+
+278
+00:20:50,040 --> 00:20:57,040
+if there are many, many objects, you may need something larger than 8-bit.
+
+279
+00:20:57,040 --> 00:21:07,040
+So something to bear in mind, because you may max out if you have lots of objects in your image.
+
+280
+00:21:07,040 --> 00:21:13,040
+But that would not be a problem for this 65 cells that we have in this image.
+
+281
+00:21:13,040 --> 00:21:20,040
+But for example, if you were identifying small foci in a large image,
+
+282
+00:21:20,040 --> 00:21:24,040
+and you have lots of them, that would be something where you would want to double check
+
+283
+00:21:24,040 --> 00:21:31,040
+that your actual image export, your saving of your image is in the format that will retain all of your data.
+
+284
+00:21:31,040 --> 00:21:40,040
+And this U at 16 I think is also going to be better for making sure that object 3 always has the values of 3,
+
+285
+00:21:40,040 --> 00:21:42,040
+no matter how many objects originally started.
+
+286
+00:21:42,040 --> 00:21:46,040
+I didn't realize that about grayscale, so you taught me something new about CellProfilerprofiler today.
+
+287
+00:21:46,040 --> 00:21:52,040
+That's awesome. I taught me something new. We stumbled into something new!
+
+288
+00:21:52,040 --> 00:22:03,040
+Yeah, well, that's what I had to show about getting those objects into a pipeline and doing something with them.
+
+289
+00:22:03,040 --> 00:22:08,040
+That seems great, because then you can make sure that when somebody tries to compare how they measured something
+
+290
+00:22:08,040 --> 00:22:12,040
+and how you measured something, that we're all measuring the same thing, and that's really important.
+
+291
+00:22:12,040 --> 00:22:20,040
+Yes, absolutely. And a really handy thing, I think, you know, hopefully pipelines themselves don't get lost,
+
+292
+00:22:20,040 --> 00:22:30,040
+because if you have the same CellProfiler pipeline, we'll always output, we'll always identify the same cells in the same order.
+
+293
+00:22:30,040 --> 00:22:36,040
+So if you run the exact same pipeline on the exact same images, you will get out the exact same cell objects.
+
+294
+00:22:36,040 --> 00:22:46,040
+But sometimes pipelines themselves get lost to history, and so if you have the object saved out,
+
+295
+00:22:46,040 --> 00:22:54,040
+that is a really nice way to make sure that you can still, you know, still have the existing data as a starting point
+
+296
+00:22:54,040 --> 00:22:59,040
+and build upon it in whatever you're working on, even if the original pipeline is gone.
+
+297
+00:22:59,040 --> 00:23:02,040
+Awesome. Well, thank you so much. That was so informative.
+
+298
+00:23:02,040 --> 00:23:04,040
+My pleasure.
+
+299
+00:23:04,040 --> 00:23:06,040
+Have an awesome day.
+
+300
+00:23:06,040 --> 00:23:08,040
+Thanks, you too, hun. Bye.
+

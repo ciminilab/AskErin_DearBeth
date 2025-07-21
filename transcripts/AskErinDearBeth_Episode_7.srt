@@ -1,0 +1,1040 @@
+1
+00:00:00,000 --> 00:00:05,000
+Erin, hello!
+
+2
+00:00:05,000 --> 00:00:06,000
+Hello, Beth!
+
+3
+00:00:06,000 --> 00:00:08,000
+It's always good to see you.
+
+4
+00:00:08,000 --> 00:00:22,000
+Yeah, good to see you.
+
+5
+00:00:22,000 --> 00:00:24,000
+I was going to talk today about speckles.
+
+6
+00:00:24,000 --> 00:00:26,000
+How do you feel about that?
+
+7
+00:00:26,000 --> 00:00:28,000
+Ooh, that sounds exciting.
+
+8
+00:00:28,000 --> 00:00:30,000
+Like, sparkles?
+
+9
+00:00:30,000 --> 00:00:32,000
+Do we can do sparkles?
+
+10
+00:00:32,000 --> 00:00:34,000
+It can be sparkles.
+
+11
+00:00:34,000 --> 00:00:36,000
+I love sparkles.
+
+12
+00:00:36,000 --> 00:00:38,000
+Yes.
+
+13
+00:00:38,000 --> 00:00:40,000
+CellProfiler and sparkles are speckles, and I have a long history,
+
+14
+00:00:40,000 --> 00:00:44,000
+because the first thing I started using CellProfiler for in graduate school
+
+15
+00:00:44,000 --> 00:00:46,000
+was trying to find telomeres,
+
+16
+00:00:46,000 --> 00:00:48,000
+which are little bright dots in the nucleus.
+
+17
+00:00:48,000 --> 00:00:56,000
+And so I have a lot of history of figuring out how to try to make speckles nice in CellProfiler.
+
+18
+00:00:56,000 --> 00:00:58,000
+I would share a few tips and tricks.
+
+19
+00:00:58,000 --> 00:01:00,000
+Yay! Can't wait.
+
+20
+00:01:00,000 --> 00:01:02,000
+Yeah.
+
+21
+00:01:02,000 --> 00:01:06,000
+All right. So I pulled this data from the IDR,
+
+22
+00:01:06,000 --> 00:01:10,000
+one of our favorite places to find publicly available data.
+
+23
+00:01:10,000 --> 00:01:12,000
+And this is an experiment where they have nuclei,
+
+24
+00:01:12,000 --> 00:01:16,000
+and they actually have four different colors of speckles.
+
+25
+00:01:16,000 --> 00:01:18,000
+So if I change these to grayscale,
+
+26
+00:01:18,000 --> 00:01:20,000
+speckle channel one,
+
+27
+00:01:20,000 --> 00:01:22,000
+this is nuclei,
+
+28
+00:01:22,000 --> 00:01:24,000
+another speckle channel,
+
+29
+00:01:24,000 --> 00:01:26,000
+another speckle channel,
+
+30
+00:01:26,000 --> 00:01:28,000
+another speckle channel.
+
+31
+00:01:28,000 --> 00:01:30,000
+Not necessarily all the same speckles.
+
+32
+00:01:30,000 --> 00:01:34,000
+Yeah. I didn't mean to do that.
+
+33
+00:01:34,000 --> 00:01:40,000
+So here we have like these three dots that are right there.
+
+34
+00:01:40,000 --> 00:01:44,000
+Looks like we do have those same three dots in the next one,
+
+35
+00:01:44,000 --> 00:01:46,000
+but it's very different here.
+
+36
+00:01:46,000 --> 00:01:50,000
+So we have spots sort of in different things.
+
+37
+00:01:50,000 --> 00:01:56,000
+But it turns out that spots of something CellProfiler can do actually quite well.
+
+38
+00:01:56,000 --> 00:02:01,000
+So I have that data downloaded, just a sort of small subset of it,
+
+39
+00:02:01,000 --> 00:02:06,000
+and let me pop in the CellProfiler project that I've already sort of precooked.
+
+40
+00:02:06,000 --> 00:02:10,000
+Except this is not the one for this episode.
+
+41
+00:02:10,000 --> 00:02:14,000
+Speckles. We're on speckles right now.
+
+42
+00:02:14,000 --> 00:02:18,000
+We believe in being prepared around here.
+
+43
+00:02:18,000 --> 00:02:20,000
+So...
+
+44
+00:02:20,000 --> 00:02:22,000
+You're giving the illusion of it.
+
+45
+00:02:22,000 --> 00:02:26,000
+Yes. So here is my sort of pre-baked CellProfiler pipeline.
+
+46
+00:02:26,000 --> 00:02:30,000
+All I've done ahead of time is to set up my names and types modules,
+
+47
+00:02:30,000 --> 00:02:32,000
+and we'll put this pipeline up as we always do,
+
+48
+00:02:32,000 --> 00:02:34,000
+as well as the images that I'm using here.
+
+49
+00:02:34,000 --> 00:02:37,000
+And I've just thrown in a gray to color module,
+
+50
+00:02:37,000 --> 00:02:42,000
+not because we actually need it, but just to show you that, yep, there's our thing.
+
+51
+00:02:42,000 --> 00:02:45,000
+Here's all of our stuff. That's what it would all look like together,
+
+52
+00:02:45,000 --> 00:02:47,000
+but we don't actually need this. This is just for visualization.
+
+53
+00:02:47,000 --> 00:02:51,000
+But if we wanted to, say, put some outlines on things later, we could do that.
+
+54
+00:02:51,000 --> 00:02:57,000
+Yeah. I will point out to another place that one couldn't do that is in the Workspace viewer.
+
+55
+00:02:57,000 --> 00:03:03,000
+That is also a really handy way, you know, much like you just showed us in Fiji,
+
+56
+00:03:03,000 --> 00:03:05,000
+being able to toggle on and off the channels.
+
+57
+00:03:05,000 --> 00:03:07,000
+It's certainly...
+
+58
+00:03:07,000 --> 00:03:10,000
+I think both of us always just start in...
+
+59
+00:03:10,000 --> 00:03:13,000
+Like, you have a new image, like we always just start in Fiji,
+
+60
+00:03:13,000 --> 00:03:15,000
+because that's really what it's meant for.
+
+61
+00:03:15,000 --> 00:03:22,000
+Yeah. But just pointing out that CellProfiler does have the Workspace viewer
+
+62
+00:03:22,000 --> 00:03:25,000
+and be handy for, especially as you're going through a pipeline,
+
+63
+00:03:25,000 --> 00:03:28,000
+if you already have images loaded in and you're working on them,
+
+64
+00:03:28,000 --> 00:03:34,000
+being able to toggle that as a workspace and not just in the modules as you go.
+
+65
+00:03:34,000 --> 00:03:39,000
+Yeah. I like having gray to color, though, because what we can then do is
+
+66
+00:03:39,000 --> 00:03:42,000
+we can make overlays that we can save out.
+
+67
+00:03:42,000 --> 00:03:44,000
+And whenever you're doing something in CellProfiler,
+
+68
+00:03:44,000 --> 00:03:48,000
+I'm always going to recommend that if you are identifying objects of any kind,
+
+69
+00:03:48,000 --> 00:03:50,000
+that you...
+
+70
+00:03:50,000 --> 00:03:55,000
+What you go through is you go through and you actually save those outlines out,
+
+71
+00:03:55,000 --> 00:03:58,000
+because it's a really sad day when you have to go to your boss and tell them
+
+72
+00:03:58,000 --> 00:04:01,000
+that you've been chasing a segmentation error for three months,
+
+73
+00:04:01,000 --> 00:04:04,000
+because you didn't actually look at the segmentations you were doing,
+
+74
+00:04:04,000 --> 00:04:06,000
+because you had too many images. It's a bad day.
+
+75
+00:04:06,000 --> 00:04:07,000
+Yes.
+
+76
+00:04:07,000 --> 00:04:08,000
+Don't be me.
+
+77
+00:04:08,000 --> 00:04:17,000
+So I'm going to just make some quick nuclei and cells here.
+
+78
+00:04:17,000 --> 00:04:20,000
+I'm going to drag this down, and I'm going to just turn it off for now,
+
+79
+00:04:20,000 --> 00:04:22,000
+because we don't actually need it now.
+
+80
+00:04:22,000 --> 00:04:26,000
+We don't probably need these, but it's nice to have them.
+
+81
+00:04:26,000 --> 00:04:31,000
+And how big are my nuclei?
+
+82
+00:04:31,000 --> 00:04:36,000
+Should also change my visualization settings, which is a helpful thing to do.
+
+83
+00:04:36,000 --> 00:04:39,000
+So CellProfiler has these visualization settings,
+
+84
+00:04:39,000 --> 00:04:43,000
+where you can set what the default thing is in terms of being able to see.
+
+85
+00:04:43,000 --> 00:04:45,000
+The last project I was working on was really dark,
+
+86
+00:04:45,000 --> 00:04:51,000
+and so log normalization was helpful to make it so the images were actually visible.
+
+87
+00:04:51,000 --> 00:04:53,000
+Normalize the CellProfiler's default, though,
+
+88
+00:04:53,000 --> 00:04:57,000
+and for most things, it works pretty well.
+
+89
+00:04:57,000 --> 00:04:58,000
+There we go.
+
+90
+00:04:58,000 --> 00:05:01,000
+Oh, look at that.
+
+91
+00:05:01,000 --> 00:05:05,000
+So if I want to get a sense of how big my objects are,
+
+92
+00:05:05,000 --> 00:05:08,000
+I'm going to just grab CellProfiler's length measurement tool,
+
+93
+00:05:08,000 --> 00:05:11,000
+and I'm going to click and drag across this nucleus
+
+94
+00:05:11,000 --> 00:05:13,000
+and get an idea of about how big it is.
+
+95
+00:05:13,000 --> 00:05:17,000
+So it's about 100-ish pixels in diameter.
+
+96
+00:05:17,000 --> 00:05:19,000
+So that is going to help me.
+
+97
+00:05:19,000 --> 00:05:22,000
+This should be pretty easy to segment, I'm guessing,
+
+98
+00:05:22,000 --> 00:05:32,000
+because these are sort of gorgeous nuclei.
+
+99
+00:05:32,000 --> 00:05:33,000
+Yeah, gorgeous.
+
+100
+00:05:33,000 --> 00:05:35,000
+I'm going to just change this bottom number a little bit,
+
+101
+00:05:35,000 --> 00:05:40,000
+because it's oversegmenting them a little bit.
+
+102
+00:05:40,000 --> 00:05:41,000
+Beautiful.
+
+103
+00:05:41,000 --> 00:05:42,000
+Look at that.
+
+104
+00:05:42,000 --> 00:05:43,000
+Wow.
+
+105
+00:05:43,000 --> 00:05:45,000
+Nuclear is so nice.
+
+106
+00:05:45,000 --> 00:05:46,000
+So lovely.
+
+107
+00:05:46,000 --> 00:05:48,000
+And I mean, look at CellProfiler,
+
+108
+00:05:48,000 --> 00:05:52,000
+just by taking in a couple little settings,
+
+109
+00:05:52,000 --> 00:05:57,000
+it's able to output default parameters that find your nuclei.
+
+110
+00:05:57,000 --> 00:05:58,000
+Yeah.
+
+111
+00:05:58,000 --> 00:06:02,000
+And just so that then we could associate spots with cells or something like cells,
+
+112
+00:06:02,000 --> 00:06:04,000
+we don't have a whole cell channel here.
+
+113
+00:06:04,000 --> 00:06:07,000
+I mean, some of these you can kind of like squint
+
+114
+00:06:07,000 --> 00:06:09,000
+and maybe see the cytoplasm.
+
+115
+00:06:09,000 --> 00:06:12,000
+I don't know if I'd trust it that much though.
+
+116
+00:06:12,000 --> 00:06:17,000
+But what I can do real fast is if I want to make some sort of pseudo cells,
+
+117
+00:06:17,000 --> 00:06:20,000
+and maybe in fact I'll even name them that,
+
+118
+00:06:20,000 --> 00:06:24,000
+I can use CellProfiler's distance B method,
+
+119
+00:06:24,000 --> 00:06:26,000
+which involves saying, I'm going to make an object
+
+120
+00:06:26,000 --> 00:06:31,000
+and then I'm going to draw a donut around it.
+
+121
+00:06:32,000 --> 00:06:34,000
+And...
+
+122
+00:06:40,000 --> 00:06:42,000
+Why did that not work?
+
+123
+00:06:45,000 --> 00:06:48,000
+Oh, because I want a distance and not distance B.
+
+124
+00:06:48,000 --> 00:06:51,000
+So distance B is make donuts,
+
+125
+00:06:51,000 --> 00:06:54,000
+but also threshold into areas that are threshold positive.
+
+126
+00:06:54,000 --> 00:06:56,000
+And CellProfiler quite rightly was like,
+
+127
+00:06:56,000 --> 00:07:00,000
+there's nothing threshold positive outside of what you've already identified.
+
+128
+00:07:01,000 --> 00:07:03,000
+Touche CellProfiler, Touche.
+
+129
+00:07:03,000 --> 00:07:07,000
+So here are my expanded pseudo cells.
+
+130
+00:07:07,000 --> 00:07:08,000
+Easy peasy.
+
+131
+00:07:08,000 --> 00:07:10,000
+These should be good enough.
+
+132
+00:07:10,000 --> 00:07:12,000
+All right.
+
+133
+00:07:12,000 --> 00:07:19,000
+A couple things about making speckle images.
+
+134
+00:07:19,000 --> 00:07:23,000
+The first thing that is super helpful for you to know when you do this
+
+135
+00:07:23,000 --> 00:07:26,000
+is that there is a module called Enhance or Suppress Features.
+
+136
+00:07:26,000 --> 00:07:29,000
+Enhance or Suppress Features allows you to either enhance
+
+137
+00:07:29,000 --> 00:07:32,000
+or suppress features in your images.
+
+138
+00:07:32,000 --> 00:07:34,000
+Whoa.
+
+139
+00:07:34,000 --> 00:07:37,000
+Crazy naming system you've got here, Beth.
+
+140
+00:07:37,000 --> 00:07:42,000
+So what you can do amongst various different kinds of things
+
+141
+00:07:42,000 --> 00:07:46,000
+is Enhanced Speckles, which is what we're going to do here.
+
+142
+00:07:46,000 --> 00:07:49,000
+And we can tell it, hey, my speckles are about this size.
+
+143
+00:07:49,000 --> 00:07:52,000
+Anything that's bigger than that, I don't want.
+
+144
+00:07:52,000 --> 00:07:55,000
+And now this looks like nothing.
+
+145
+00:07:55,000 --> 00:08:06,000
+Because it is very dim, which is why we should reset our normalization settings again.
+
+146
+00:08:06,000 --> 00:08:17,000
+So let's figure out what those might be, what are some good normalization settings here.
+
+147
+00:08:17,000 --> 00:08:20,000
+Normalization with a parameter of five.
+
+148
+00:08:20,000 --> 00:08:21,000
+That sounds great.
+
+149
+00:08:21,000 --> 00:08:39,000
+And if I apply to both of them, that should hopefully work.
+
+150
+00:08:39,000 --> 00:08:45,000
+So you can see already even just a little bit, but now let's try to make it much more obvious.
+
+151
+00:08:45,000 --> 00:08:49,000
+So it's not uncommon, at least in my workflow, to be changing this.
+
+152
+00:08:49,000 --> 00:08:55,000
+What is my default display setting several times throughout the course of building pipeline.
+
+153
+00:08:55,000 --> 00:08:57,000
+And it just makes life faster.
+
+154
+00:08:57,000 --> 00:09:04,000
+Anything that makes a step that you're going to do a bunch of times faster, like configuring things,
+
+155
+00:09:04,000 --> 00:09:08,000
+the better your life will get.
+
+156
+00:09:08,000 --> 00:09:18,000
+So now we can see that we have this spot that was previously on the background of a whole bunch of stuff that now we can barely even see anything because all of that background has gone away and we just have to do it.
+
+157
+00:09:18,000 --> 00:09:22,000
+So we have this spot that has gone away and we just have our lovely little spot.
+
+158
+00:09:22,000 --> 00:09:30,000
+It looks like we now don't have anything, but in fact we do have things. We just mostly have lovely little spots.
+
+159
+00:09:30,000 --> 00:09:44,000
+I suspect that that is going to be good, but we'll take advantage here of the workspace viewer and the fact that the workspace viewer has a property that the rest of CellProfiler does not have, which is when you
+
+160
+00:09:44,000 --> 00:09:54,000
+rerun a module, CellProfiler will default to just showing you go back to sort of the zoomed out view.
+
+161
+00:09:54,000 --> 00:09:57,000
+What if you want to stay on the zoomed in view?
+
+162
+00:09:57,000 --> 00:10:00,000
+The workspace viewer is actually really helpful for that.
+
+163
+00:10:00,000 --> 00:10:06,000
+And so here's what the sort of very zoomed out version looks like with our current settings.
+
+164
+00:10:06,000 --> 00:10:12,000
+I want to just sort of change my feature size just to get a quick sense of if this got better or worse.
+
+165
+00:10:12,000 --> 00:10:21,000
+I now have to go back and find that same thing over here, which would be hard, but in the workspace viewer it stays in the same place.
+
+166
+00:10:21,000 --> 00:10:28,000
+That looks worse to me if I go to 15.
+
+167
+00:10:28,000 --> 00:10:30,000
+That's an interesting bug.
+
+168
+00:10:37,000 --> 00:10:39,000
+All right.
+
+169
+00:10:39,000 --> 00:10:41,000
+Ten was working.
+
+170
+00:10:41,000 --> 00:10:43,000
+It's funny.
+
+171
+00:10:43,000 --> 00:10:54,000
+I feel like you and I both have used enhancer suppressed features a lot, but that's the beauty of live demonstrations, like finding bugs that we've never found before.
+
+172
+00:10:54,000 --> 00:10:55,000
+Ten seems good.
+
+173
+00:10:55,000 --> 00:10:56,000
+We're going to go with ten.
+
+174
+00:10:56,000 --> 00:10:58,000
+Okay.
+
+175
+00:10:58,000 --> 00:11:17,000
+So if I then wanted, I could do the exact same thing by just using sub-profilers to duplicate functionality and just make spots the same size of all of my channels.
+
+176
+00:11:17,000 --> 00:11:26,000
+Now, it might be, I don't actually know the biology here that we would expect that some of these RNA foci would be bigger in some cases than others.
+
+177
+00:11:26,000 --> 00:11:34,000
+I don't know why we would expect that, but if we did, I could go through and I could adjust this feature size.
+
+178
+00:11:34,000 --> 00:11:36,000
+And yeah, we can definitely see in some of these brighter ones.
+
+179
+00:11:36,000 --> 00:11:40,000
+Seems like one was our dimmest one to start with.
+
+180
+00:11:40,000 --> 00:11:47,000
+Just how much, like we are keeping our real signal, but everything else just sort of like goes away in a way that is super lovely.
+
+181
+00:11:47,000 --> 00:11:54,000
+And that is also something, again, with here we're sort of guessing at the biology because that's not really what matters for this demonstration.
+
+182
+00:11:54,000 --> 00:12:07,000
+We're demonstrating proof of principle here, but in any situation you want a biologist with actual domain knowledge that can tell you about what they're looking for because perhaps some of that tiny, tiny graininess,
+
+183
+00:12:07,000 --> 00:12:23,000
+maybe there are spots that are only one or two pixels wide in those images that actually do matter to capture, or maybe it's really only the bright, hunkin' 20 pixel wide foci that are way fewer and that are actually what we want to find.
+
+184
+00:12:23,000 --> 00:12:36,000
+And so being able to talk to the biologist or get more information about the biology we actually want is an important thing when you're extracting actual information.
+
+185
+00:12:36,000 --> 00:12:40,000
+Yeah.
+
+186
+00:12:40,000 --> 00:12:44,000
+I now want to sort of talk about, that was all incredibly good point.
+
+187
+00:12:44,000 --> 00:12:51,000
+The one other thing I want to sort of point out in regards to speckles, it's going to be helpful for me to show you what the image histograms look like.
+
+188
+00:12:51,000 --> 00:12:54,000
+So here's the image histogram from our nuclear channel.
+
+189
+00:12:54,000 --> 00:13:01,000
+You can see that we have low pixel intensity, which is our background, we have lots of pixels, and then we have the sort of second bump.
+
+190
+00:13:01,000 --> 00:13:02,000
+Cool.
+
+191
+00:13:02,000 --> 00:13:03,000
+Great.
+
+192
+00:13:03,000 --> 00:13:10,000
+What does it look like, especially once we have speckle adjusted our images?
+
+193
+00:13:10,000 --> 00:13:12,000
+Yeah, we don't have that here.
+
+194
+00:13:12,000 --> 00:13:20,000
+So most thresholding algorithms operate on the principle of that you're going to have two or sometimes more of these peaks.
+
+195
+00:13:20,000 --> 00:13:24,000
+And what they're trying to do is to figure out, you know, where do these peaks cross.
+
+196
+00:13:24,000 --> 00:13:29,000
+If you don't have that, how do you actually properly threshold your image?
+
+197
+00:13:29,000 --> 00:13:37,000
+So so profiler has a neat little thing that anchorpenter actually invented the start holding method true story.
+
+198
+00:13:37,000 --> 00:13:40,000
+I didn't realize that.
+
+199
+00:13:40,000 --> 00:13:41,000
+Yeah.
+
+200
+00:13:41,000 --> 00:13:51,000
+Where it has a special thresholding method called robust background, which is great for when your image is mostly background.
+
+201
+00:13:51,000 --> 00:13:55,000
+So,
+
+202
+00:13:55,000 --> 00:13:58,000
+I did not realize that for a long time either.
+
+203
+00:13:58,000 --> 00:14:02,000
+So I think our speckles are probably going to be between sort of like two and 10 pixels.
+
+204
+00:14:02,000 --> 00:14:04,000
+That's going to be my initial guess.
+
+205
+00:14:04,000 --> 00:14:06,000
+And actually, I'm going to start with like one brighter ones.
+
+206
+00:14:06,000 --> 00:14:09,000
+I'm going to start with channel three because why not?
+
+207
+00:14:09,000 --> 00:14:16,000
+So the way robust background works is it says, all right, I'm going to clip off the very dimmest pixels and the very brightest pixels.
+
+208
+00:14:16,000 --> 00:14:26,000
+And I'm going to figure out sort of then after that, like, what is the mean and of that distribution that is left.
+
+209
+00:14:26,000 --> 00:14:31,000
+And then say how many standard deviations above the mean would you like to say is your threshold.
+
+210
+00:14:31,000 --> 00:14:40,000
+And so if your stuff is super bright, sometimes I've set this as high as like 10 standard deviations and start with something more reasonable like four.
+
+211
+00:14:40,000 --> 00:14:48,000
+But hopefully this is going to do a lovely job of picking out just our speckles and nothing else.
+
+212
+00:14:48,000 --> 00:14:51,000
+All right.
+
+213
+00:14:51,000 --> 00:15:05,000
+So here we actually do really have super lovely signal where even four standard deviations above the mean of the background is still picking up a lot of cred because our spots are just so so bright.
+
+214
+00:15:05,000 --> 00:15:11,000
+So for standard deviations above the mean is giving us about 0.008.
+
+215
+00:15:11,000 --> 00:15:15,000
+Our actual pixels are like 0.06.
+
+216
+00:15:15,000 --> 00:15:20,000
+They're way they're 0.1 in some cases they are way brighter than that.
+
+217
+00:15:20,000 --> 00:15:23,000
+And all I have to do is say more standard deviations.
+
+218
+00:15:23,000 --> 00:15:28,000
+So let's say 10.
+
+219
+00:15:28,000 --> 00:15:35,000
+And would you ever bump the outlier fraction.
+
+220
+00:15:35,000 --> 00:15:36,000
+Yes, potentially.
+
+221
+00:15:36,000 --> 00:15:46,000
+So if you know that your image has like some auto fluorescence or some crud in it that you really want to sort of work around, you can change that outlier fraction.
+
+222
+00:15:46,000 --> 00:16:10,000
+More often than not though what I have found is if you're changing if you're in regime where you're changing the outlier fraction that means that enough of your image is signal such that you should probably just switch their shoulder methods so sometimes I will play around with that if it seems like we're pretty close to sort of having something where we have a single peak after clipping that is only our background.
+
+223
+00:16:10,000 --> 00:16:15,000
+But I with time and experience I have done that less and less.
+
+224
+00:16:15,000 --> 00:16:19,000
+All right, this looks great.
+
+225
+00:16:19,000 --> 00:16:26,000
+Again, if we sort of really understood the biology we're studying here we would know if we want these sort of bigger things or not.
+
+226
+00:16:26,000 --> 00:16:35,000
+I'm just going to err on the side of assuming that we do and I'm actually just going to turn off the discard objects outside the diameter range.
+
+227
+00:16:35,000 --> 00:16:40,000
+But yeah, we now have our gorgeous little speckles.
+
+228
+00:16:40,000 --> 00:17:05,000
+And so what usually we will want is some kind of, you know, measurement of our speckles maybe so in our speckles channel three I might want to get all of my different unprocessed want to clarify always want sort of unprocessed when we're doing measurements.
+
+229
+00:17:05,000 --> 00:17:17,000
+And then what I can do is I can use the relate objects module to say I have these cells and they're going to have speckles inside them.
+
+230
+00:17:17,000 --> 00:17:26,000
+And I want to know how many speckles and what is the average speckle intensity or whatever measurements I've made for each cell.
+
+231
+00:17:26,000 --> 00:17:36,000
+So that way I can know if there's something about my cell like maybe big cells have brighter speckles or maybe there's something about ones that have super bright speckles in channel three.
+
+232
+00:17:36,000 --> 00:17:44,000
+And so to just sort of show you in the workspace viewer what that looks like.
+
+233
+00:17:44,000 --> 00:17:49,000
+I now just pull up my DNA image.
+
+234
+00:17:49,000 --> 00:17:54,000
+I can show you my pseudo cells.
+
+235
+00:17:54,000 --> 00:18:04,000
+I can show you my channel three speckles and I can throw the that other speckle channel on here.
+
+236
+00:18:04,000 --> 00:18:08,000
+Just so that we can sort of see what that looks like.
+
+237
+00:18:08,000 --> 00:18:18,000
+But then I can also do things like say, hey for each cell show me how many speckles are in it.
+
+238
+00:18:18,000 --> 00:18:28,000
+And I probably don't need that to for significant digits.
+
+239
+00:18:28,000 --> 00:18:39,000
+Yeah, now I know for every cell how many speckles it has and if I zoom in.
+
+240
+00:18:39,000 --> 00:18:43,000
+Yeah, that looks to me like I've caught things.
+
+241
+00:18:43,000 --> 00:18:44,000
+Awesome.
+
+242
+00:18:44,000 --> 00:19:00,000
+So if this were really my biology, all I would basically then do is sort of duplicate this module three more times, duplicate this module three more times, address my objects here, and then make some outline channels so that I could go through and actually take a look to see.
+
+243
+00:19:00,000 --> 00:19:15,000
+But in the interest of time, you can see that in many of our other videos, those sorts of things, but this, the sort of tricks around how do you do speckle enhancement, and what is the best kind of thresholding for speckle enhancement or what is really special about this workflow in particular.
+
+244
+00:19:15,000 --> 00:19:28,000
+You can also check out our example speckles pipeline on self or rather or slash examples, which has a speckle example that you can download and try but you can always download this pipeline in these images from our website.
+
+245
+00:19:28,000 --> 00:19:29,000
+And add here.
+
+246
+00:19:29,000 --> 00:19:40,000
+No, I mean, I think very sparkly. I mean, just, you know, I, I happen to like workflows where you identify a lot of objects, especially the outlines because you can give each of them a different color.
+
+247
+00:19:40,000 --> 00:19:56,000
+And then you have these like, I mean, I think you like, I had a workflow or basically told me it was too psychedelic you couldn't interpret any of my object outlines because there were too many objects and too many colors and you've never guessed that that was the thing I liked.
+
+248
+00:19:56,000 --> 00:20:07,000
+But, but again, a handy thing to remember that it can be really helpful for interpreting after the fact what your outputs are and what you're seeing.
+
+249
+00:20:07,000 --> 00:20:21,000
+Yeah, realistically, with this many channels, what I would probably do is rather than putting the object overlays on a color image, I would make four different overlays one for each channel, just so that I could then really interpret them, especially because it seems like we have bleed between some of them.
+
+250
+00:20:21,000 --> 00:20:22,000
+Yeah.
+
+251
+00:20:22,000 --> 00:20:33,000
+Yeah, but definitely something you can, you know, you can play with depending on what your, what your biology is right like your question can inform what you're doing if really what matters to you is just count.
+
+252
+00:20:33,000 --> 00:20:41,000
+Then that may be a very different, very different sort of object overlays that you would look for.
+
+253
+00:20:41,000 --> 00:20:49,000
+If you were looking for more complex relationships, more, you know, intensity based relationships.
+
+254
+00:20:49,000 --> 00:20:57,000
+And, and so your biologist knowledge, again, it would be very important for for the final choices that you make in such a pipeline.
+
+255
+00:20:57,000 --> 00:20:59,000
+Great.
+
+256
+00:20:59,000 --> 00:21:02,000
+Great. Thanks for hanging out with me Erin while I did this.
+
+257
+00:21:02,000 --> 00:21:05,000
+Going back to old times and thinking about speckles again.
+
+258
+00:21:05,000 --> 00:21:09,000
+Yeah, thanks for bringing sparkles into Ask Erin Dear Beth.
+
+259
+00:21:09,000 --> 00:21:12,000
+Always. See you later.
+
+260
+00:21:12,000 --> 00:21:13,000
+Bye.
+

@@ -1,0 +1,1428 @@
+1
+00:00:00,000 --> 00:00:05,000
+Hey Beth!
+
+2
+00:00:05,000 --> 00:00:18,200
+Hey Erin! Lovely to see you as always.
+
+3
+00:00:18,200 --> 00:00:19,800
+You too!
+
+4
+00:00:19,800 --> 00:00:24,120
+Welcome everyone to another episode of Ask Erin, Dear Beth, where we talk through your
+
+5
+00:00:24,120 --> 00:00:29,280
+common image analysis problems and try to teach you how we do stuff and how we make our own
+
+6
+00:00:29,280 --> 00:00:35,280
+lives easier and hopefully make your lives easier as well.
+
+7
+00:00:35,280 --> 00:00:37,280
+Welcome to the docket for today!
+
+8
+00:00:37,280 --> 00:00:42,480
+Yeah, so today we're going to take a look at some images that are in proprietary file
+
+9
+00:00:42,480 --> 00:00:43,480
+formats.
+
+10
+00:00:43,480 --> 00:00:48,400
+So some microscopes just give you things like a TIP file or even a JPEG files that you're
+
+11
+00:00:48,400 --> 00:00:51,960
+used to seeing, files that maybe come off the digital camera that you have or your phone's
+
+12
+00:00:51,960 --> 00:00:52,960
+camera.
+
+13
+00:00:52,960 --> 00:00:54,840
+Some microscopes don't do that.
+
+14
+00:00:54,840 --> 00:00:59,240
+Some microscopes make these proprietary file formats that are specific to that microscope.
+
+15
+00:00:59,240 --> 00:01:01,920
+And they can be a little bit scary if you don't know how to handle them.
+
+16
+00:01:01,920 --> 00:01:06,640
+So we're going to actually look at doing two different things with these file formats today.
+
+17
+00:01:06,640 --> 00:01:11,320
+One of them is putting them in image.js and actually just turning them into TIFs that
+
+18
+00:01:11,320 --> 00:01:14,720
+are then more portable and easier to move around.
+
+19
+00:01:14,720 --> 00:01:19,680
+And the other one is actually using the same library that image.js uses a library called
+
+20
+00:01:19,680 --> 00:01:23,480
+Bioformats to read those directly into CellProfiler and then you can skip that intermediate
+
+21
+00:01:23,480 --> 00:01:26,320
+step where you're making copies of the data.
+
+22
+00:01:26,320 --> 00:01:27,320
+Nice.
+
+23
+00:01:28,320 --> 00:01:29,800
+All right.
+
+24
+00:01:29,800 --> 00:01:30,800
+Shall we do it?
+
+25
+00:01:30,800 --> 00:01:31,800
+Let's do it.
+
+26
+00:01:32,800 --> 00:01:34,520
+All right.
+
+27
+00:01:34,520 --> 00:01:38,440
+So here I have two files.
+
+28
+00:01:38,440 --> 00:01:43,240
+These are proprietary files that are called dot flex that have come off a microscope.
+
+29
+00:01:43,240 --> 00:01:44,800
+And I got this data from the IDR.
+
+30
+00:01:44,800 --> 00:01:49,320
+If you check out our episode on downloading data from the IDR, these are the data that
+
+31
+00:01:49,320 --> 00:01:52,400
+we downloaded.
+
+32
+00:01:52,400 --> 00:01:55,600
+And we love using public data wherever we can because it's great.
+
+33
+00:01:55,600 --> 00:01:58,560
+People have said that they want to share it and it's usually also really good, really
+
+34
+00:01:58,560 --> 00:02:00,440
+clean data.
+
+35
+00:02:00,440 --> 00:02:02,960
+People tend not to share their absolute ugliest data.
+
+36
+00:02:02,960 --> 00:02:05,040
+Maybe they should.
+
+37
+00:02:05,040 --> 00:02:10,760
+Nobody wants to show off their dirty laundry.
+
+38
+00:02:10,760 --> 00:02:13,280
+So here we have two wells.
+
+39
+00:02:13,280 --> 00:02:21,040
+So this is well H10 and this is well J9 from one particular plate of data.
+
+40
+00:02:21,040 --> 00:02:25,440
+And the reason I'm showing first that opening this in image.js is because that is always
+
+41
+00:02:26,280 --> 00:02:27,280
+what I do when I get new data.
+
+42
+00:02:27,280 --> 00:02:30,040
+I don't know about you, Erin, but the very first thing I do when I get new data is I
+
+43
+00:02:30,040 --> 00:02:32,400
+just go to Image.js because Image.js is wonderful.
+
+44
+00:02:32,400 --> 00:02:33,400
+It is lovely.
+
+45
+00:02:33,400 --> 00:02:35,720
+It is so great.
+
+46
+00:02:35,720 --> 00:02:38,120
+And I never really want to do anything else.
+
+47
+00:02:38,120 --> 00:02:39,120
+Yeah.
+
+48
+00:02:39,120 --> 00:02:44,440
+I mean, I think that is so many good principles there.
+
+49
+00:02:44,440 --> 00:02:46,760
+First thing you do when you get any data is look at it.
+
+50
+00:02:46,760 --> 00:02:52,960
+We are biologists at heart and we want to see the pictures first.
+
+51
+00:02:53,960 --> 00:03:02,480
+And then yeah, Image.js is a very usable tool for looking at images.
+
+52
+00:03:02,480 --> 00:03:06,720
+So here we are looking at images.
+
+53
+00:03:06,720 --> 00:03:10,080
+So we can see some of the metadata which Image.js has so helpfully loaded for us.
+
+54
+00:03:10,080 --> 00:03:13,200
+And it says that we have four channels here and 20 time points.
+
+55
+00:03:13,200 --> 00:03:19,520
+I also have some like random metadata has been added here by the microscope manufacturer.
+
+56
+00:03:19,560 --> 00:03:20,560
+And I was surprised.
+
+57
+00:03:20,560 --> 00:03:24,280
+I kind of thought that this was going to then change into field number, whatever, because
+
+58
+00:03:24,280 --> 00:03:27,960
+these are clearly not actually different time points.
+
+59
+00:03:27,960 --> 00:03:34,080
+These are clearly different sites in the world, but sometimes metadata reading is not perfect.
+
+60
+00:03:34,080 --> 00:03:35,080
+Yeah.
+
+61
+00:03:35,080 --> 00:03:43,320
+So even one of the challenges of proprietary file format, I mean of any file format that
+
+62
+00:03:43,320 --> 00:03:51,600
+has metadata saved into it, like here Bioformats is doing its very best to parse the metadata.
+
+63
+00:03:51,600 --> 00:04:00,040
+But as biologists with some level of intuition, again, like we can't rely strictly on what
+
+64
+00:04:00,040 --> 00:04:01,440
+the computer can do for us.
+
+65
+00:04:01,440 --> 00:04:02,440
+It's doing its best.
+
+66
+00:04:02,440 --> 00:04:03,440
+It tried.
+
+67
+00:04:03,440 --> 00:04:05,280
+It found 28 different things.
+
+68
+00:04:05,280 --> 00:04:11,960
+But we have a level of intuition here where we can say, well, actually, I can look at those
+
+69
+00:04:11,960 --> 00:04:16,720
+and tell you that those, you know, each image is too disparate from the one next to it.
+
+70
+00:04:16,720 --> 00:04:19,560
+Those are clearly not the same cells imaged over time.
+
+71
+00:04:19,560 --> 00:04:22,200
+Those are clearly different, you know, images of different cells.
+
+72
+00:04:22,200 --> 00:04:25,200
+And so maybe that doesn't actually matter for your experiment.
+
+73
+00:04:25,200 --> 00:04:28,920
+Like whatever, you know, whatever it's parsing, as long as it says there's 28 different things
+
+74
+00:04:28,920 --> 00:04:31,280
+you can just proceed with there.
+
+75
+00:04:31,280 --> 00:04:37,560
+But sometimes it does matter, you know, how it's parsing, parsing different bits of metadata.
+
+76
+00:04:37,560 --> 00:04:43,560
+So that's just something to keep in mind, to like to double check it and change it if
+
+77
+00:04:43,560 --> 00:04:44,560
+you need to.
+
+78
+00:04:44,560 --> 00:04:50,520
+And if you don't, don't worry about it, but a good thing just to keep in mind.
+
+79
+00:04:50,520 --> 00:04:51,520
+And this is pretty common.
+
+80
+00:04:51,520 --> 00:04:57,640
+A lot of programs for doing microscopy image analysis assume that there are five dimensions
+
+81
+00:04:57,640 --> 00:04:59,840
+XYZ channel and time.
+
+82
+00:04:59,840 --> 00:05:05,240
+They don't really take into account multiple fields of view, because it's not really something
+
+83
+00:05:05,240 --> 00:05:10,000
+you would usually look at in a single file, except for that those are easier to port around.
+
+84
+00:05:10,000 --> 00:05:16,920
+And so this is a really common mistake in that there was only one dimension left.
+
+85
+00:05:16,920 --> 00:05:20,080
+And so it used it for that.
+
+86
+00:05:20,080 --> 00:05:22,000
+So here I've opened up my channels tool.
+
+87
+00:05:22,000 --> 00:05:26,560
+These are also the things that I always do when I have new data is I go to image, color,
+
+88
+00:05:26,560 --> 00:05:28,800
+I do the channels tool.
+
+89
+00:05:28,800 --> 00:05:32,480
+And then I also go to image, adjust brightness contrast.
+
+90
+00:05:32,480 --> 00:05:37,800
+And with those two windows open, you can do just about anything.
+
+91
+00:05:37,800 --> 00:05:42,920
+So I'm going to change this from grayscale to composite max so I can see all of my channels
+
+92
+00:05:42,920 --> 00:05:45,480
+out once.
+
+93
+00:05:45,480 --> 00:05:50,680
+And because it's going to automatically min max the data, I'm going to then also just
+
+94
+00:05:50,680 --> 00:05:56,360
+go through and hit this auto button here, you know, it's blowing out some of the channels,
+
+95
+00:05:56,360 --> 00:06:01,360
+but I'm just trying to really get a sense of what's going on in this data.
+
+96
+00:06:01,360 --> 00:06:07,880
+And so we clearly have a cytoskeletal marker here in this fourth channel.
+
+97
+00:06:07,880 --> 00:06:12,280
+This first channel is some sort of a nuclear marker.
+
+98
+00:06:12,280 --> 00:06:15,280
+And we could go back and we could look at the metadata that the people have uploaded
+
+99
+00:06:15,280 --> 00:06:19,640
+in order to sort of, if we needed to know more specifically than that, but for our purposes
+
+100
+00:06:19,640 --> 00:06:22,800
+here, we're just kind of exploring and seeing what's going on.
+
+101
+00:06:22,800 --> 00:06:27,840
+Some sort of cytosolic marker.
+
+102
+00:06:27,840 --> 00:06:31,360
+And some marker that I'm not quite sure what it is.
+
+103
+00:06:31,360 --> 00:06:33,280
+It's really bright here.
+
+104
+00:06:33,280 --> 00:06:34,280
+It's really bright here.
+
+105
+00:06:34,280 --> 00:06:36,600
+It's really bright here in some of these speckly places.
+
+106
+00:06:36,600 --> 00:06:41,560
+So those could be debris or those could be mitosis that could be like some sort of a
+
+107
+00:06:41,560 --> 00:06:46,720
+mitotic marker.
+
+108
+00:06:46,720 --> 00:06:49,160
+And this is from the same plate.
+
+109
+00:06:49,160 --> 00:06:55,200
+So it should hopefully have all the same channels, but we can convince ourselves that what's
+
+110
+00:06:55,320 --> 00:06:59,160
+how similar the data is or is not going to be when we then actually start trying to do
+
+111
+00:06:59,160 --> 00:07:03,280
+our analysis again by just doing the same thing.
+
+112
+00:07:03,280 --> 00:07:07,360
+And we could even transfer the settings if we wanted across from one to the other.
+
+113
+00:07:07,360 --> 00:07:10,600
+But here again, we're just going for vibes.
+
+114
+00:07:10,600 --> 00:07:11,600
+Yeah.
+
+115
+00:07:11,600 --> 00:07:16,440
+And I think an important thing to point out here is we're not changing the data, the underlying
+
+116
+00:07:16,440 --> 00:07:17,440
+data itself.
+
+117
+00:07:17,440 --> 00:07:18,440
+Super important point.
+
+118
+00:07:18,440 --> 00:07:23,400
+What we're doing is just changing how it is being shown to our eyes.
+
+119
+00:07:23,440 --> 00:07:29,640
+So, you know, our eyes can see now clearly the patterns that are happening in these cells,
+
+120
+00:07:29,640 --> 00:07:36,640
+but the underlying data has not been changed by adjusting this right here.
+
+121
+00:07:36,640 --> 00:07:38,640
+Yeah, absolutely.
+
+122
+00:07:38,640 --> 00:07:40,160
+I can change it if I want.
+
+123
+00:07:40,160 --> 00:07:44,280
+If I hit this apply button, it will apply it, but it will warn me before I do that.
+
+124
+00:07:44,280 --> 00:07:46,920
+But I don't want to do that because again, we're really just trying to get a sense of
+
+125
+00:07:46,920 --> 00:07:50,600
+our data here.
+
+126
+00:07:50,600 --> 00:07:55,200
+So there's nothing wrong with having data in this format, but if for whatever reason,
+
+127
+00:07:55,200 --> 00:07:59,480
+I was dealing with something downstream where I didn't want the data in this format either
+
+128
+00:07:59,480 --> 00:08:04,600
+because I don't want it in the dot flex proprietary format, which requires a special reader, imagery
+
+129
+00:08:04,600 --> 00:08:09,640
+and CellProfiler, I both use bio formats, which is an open source thing for doing reading.
+
+130
+00:08:09,640 --> 00:08:12,240
+But for whatever reason, you didn't want to deal with that.
+
+131
+00:08:12,240 --> 00:08:17,000
+Or if just you wanted to not have the data broken one thing per well, maybe you just
+
+132
+00:08:17,000 --> 00:08:20,360
+want to send one site of images.
+
+133
+00:08:20,360 --> 00:08:23,280
+And so you don't actually want that big of a data.
+
+134
+00:08:23,280 --> 00:08:27,320
+You just want everything by itself.
+
+135
+00:08:27,320 --> 00:08:38,400
+What you can actually do is go to file, save as image sequence.
+
+136
+00:08:38,400 --> 00:08:44,440
+And that will actually let you then say, all right, I need I want a two digit number or
+
+137
+00:08:44,440 --> 00:08:48,120
+a three digit number here, but you could change the number of digits for like channel time
+
+138
+00:08:48,120 --> 00:08:52,640
+point should make everything be at least two digits.
+
+139
+00:08:52,640 --> 00:08:55,880
+Because you know, for one thing I have 28.
+
+140
+00:08:55,880 --> 00:08:59,520
+So if I try to make that one digit, I expect Fiji will yell at me, but I usually try not
+
+141
+00:08:59,520 --> 00:09:03,040
+to make Fiji mad if I can avoid it.
+
+142
+00:09:03,040 --> 00:09:08,520
+And so that is just going to then very quickly fill that folder up.
+
+143
+00:09:08,520 --> 00:09:13,120
+And so we have our original image, which is this string here that indicates that we're
+
+144
+00:09:13,120 --> 00:09:14,120
+in well Jane nine.
+
+145
+00:09:14,560 --> 00:09:20,360
+We have time point zero zero one and we have channel zero zero one and so on and so forth.
+
+146
+00:09:20,360 --> 00:09:24,440
+So I'm just going to quickly do the same thing.
+
+147
+00:09:24,440 --> 00:09:27,120
+It's not export it's save as.
+
+148
+00:09:27,120 --> 00:09:35,120
+And I'm going to put my data in the right place because staying organized is nice.
+
+149
+00:09:35,120 --> 00:09:41,120
+Look at that.
+
+150
+00:09:41,120 --> 00:09:42,120
+Yeah.
+
+151
+00:09:42,120 --> 00:09:48,760
+So, Beth, I before we leave Fiji, I've got one question when you very first like opened
+
+152
+00:09:48,760 --> 00:09:55,480
+up those images, you drag and you just dragged and dropped them to the toolbar and something
+
+153
+00:09:55,480 --> 00:09:57,520
+popped up when you did that.
+
+154
+00:09:57,520 --> 00:09:58,520
+Yeah.
+
+155
+00:09:58,520 --> 00:10:01,400
+Great thing that I completely breezed over.
+
+156
+00:10:01,400 --> 00:10:03,560
+So this is the bioformat loader.
+
+157
+00:10:03,560 --> 00:10:09,200
+So that's actually how you know that this is using bioformats to load that data.
+
+158
+00:10:09,200 --> 00:10:15,120
+And again, bioformats fantastic open source project, you know, that is adds incredible
+
+159
+00:10:15,120 --> 00:10:17,080
+value to the community.
+
+160
+00:10:17,080 --> 00:10:18,520
+And it gives you a lot of different options.
+
+161
+00:10:18,520 --> 00:10:22,640
+If you want, you could say that you only want you want each thing with its own channel
+
+162
+00:10:22,640 --> 00:10:23,640
+or its own time point.
+
+163
+00:10:23,640 --> 00:10:29,400
+So if I wanted all of those files individual, I wanted like each thing I could do that.
+
+164
+00:10:29,400 --> 00:10:36,080
+I can also ask it to show me some of the metadata, Erin's favorite thing metadata.
+
+165
+00:10:36,080 --> 00:10:40,760
+If there were ROI's that had been saved off of your microscope or when you saved the data
+
+166
+00:10:40,760 --> 00:10:41,960
+last, you could open those.
+
+167
+00:10:41,960 --> 00:10:45,440
+So a lot of things you can do with the bioformats loader.
+
+168
+00:10:45,440 --> 00:10:48,920
+But that is showing you that it's not just sort of opening a random image, it's opening
+
+169
+00:10:48,920 --> 00:10:53,920
+an image using bioformats and Fiji is really smart about it will usually try to open things
+
+170
+00:10:53,920 --> 00:10:55,440
+with a regular loader.
+
+171
+00:10:55,440 --> 00:10:58,800
+And then if it can't, it'll ask bioformats like, Hey, can you handle this data?
+
+172
+00:10:58,800 --> 00:11:01,960
+And bioformats can handle hundreds of different kinds of file formats.
+
+173
+00:11:01,960 --> 00:11:02,960
+It's so great.
+
+174
+00:11:02,960 --> 00:11:03,960
+Awesome.
+
+175
+00:11:03,960 --> 00:11:08,680
+So you didn't, when you opened up these images, you didn't change anything away from default.
+
+176
+00:11:08,680 --> 00:11:09,680
+Nope.
+
+177
+00:11:09,680 --> 00:11:12,400
+I just left everything exactly the same.
+
+178
+00:11:12,400 --> 00:11:15,320
+You write that like I could have, I could have since I've eventually put everything
+
+179
+00:11:15,320 --> 00:11:19,200
+into composite, I could have moved everything into composite, or I could have sort of changed
+
+180
+00:11:19,200 --> 00:11:22,520
+some things about the order or again, split out the channels and things.
+
+181
+00:11:22,520 --> 00:11:28,200
+But it's nice to just keep one file, one sort of window per well, and then be able to sort
+
+182
+00:11:28,200 --> 00:11:30,200
+of scroll back and forth.
+
+183
+00:11:30,200 --> 00:11:31,200
+Awesome.
+
+184
+00:11:31,200 --> 00:11:32,200
+Great.
+
+185
+00:11:32,640 --> 00:11:35,200
+Thank you for pointing that out that I totally missed that.
+
+186
+00:11:35,200 --> 00:11:36,200
+Cool.
+
+187
+00:11:36,200 --> 00:11:41,280
+So what happens when you want to put this data into CellProfiler?
+
+188
+00:11:41,280 --> 00:11:43,680
+So sub profiler, like I said, also uses bioformats.
+
+189
+00:11:43,680 --> 00:11:47,320
+So it can actually open those dot flex files.
+
+190
+00:11:47,320 --> 00:11:53,600
+And it's pretty simple, but because it's often a little bit easier to do it with individual
+
+191
+00:11:53,600 --> 00:11:57,200
+files, at least in sort of walking you through how CellProfiler it's open data, I'm going
+
+192
+00:11:57,200 --> 00:12:07,240
+to actually start from these individual files that we've made.
+
+193
+00:12:07,240 --> 00:12:09,320
+So here I've dragged and dropped these in.
+
+194
+00:12:09,320 --> 00:12:11,200
+We now have all of our individual things.
+
+195
+00:12:11,200 --> 00:12:14,120
+I can click on each one.
+
+196
+00:12:14,120 --> 00:12:21,240
+And there's our channel one, our nuclei, channel two, our sort of marker that we said was kind
+
+197
+00:12:21,240 --> 00:12:24,320
+of cytosolic, but we weren't quite sure.
+
+198
+00:12:24,320 --> 00:12:29,000
+This is the one we said might be mitotic, and this is the one that we said was definitely
+
+199
+00:12:29,000 --> 00:12:32,040
+cytoskeletal.
+
+200
+00:12:32,040 --> 00:12:39,120
+So if I wanted to say load just the nuclear and the cytoskeletal ones just so that I
+
+201
+00:12:39,120 --> 00:12:43,760
+could get a quick sense of like I want to identify cells, this is what I would do.
+
+202
+00:12:43,760 --> 00:12:45,480
+I've loaded all of my data.
+
+203
+00:12:45,480 --> 00:12:48,360
+I know the way that it's telling the difference between the different channels.
+
+204
+00:12:48,360 --> 00:12:53,160
+It's with the C thing that we told image J to make.
+
+205
+00:12:53,160 --> 00:12:58,800
+So if I go to my names and types module, all I need to do in order to tell names and types
+
+206
+00:12:58,800 --> 00:13:07,280
+what my different channels are is I can say if a file has C001 in it, it's a DNA image.
+
+207
+00:13:07,280 --> 00:13:11,040
+So I change this from all images to images matching rules because we have multiple kinds
+
+208
+00:13:11,040 --> 00:13:14,640
+of images here.
+
+209
+00:13:14,640 --> 00:13:26,160
+And then I can say add another image and I can say if it has C004 in it that this is
+
+210
+00:13:26,160 --> 00:13:31,920
+our cytoskeletal.
+
+211
+00:13:31,920 --> 00:13:36,520
+If I hit update, what will hopefully happen here is I will now see we had 28 sites per
+
+212
+00:13:36,520 --> 00:13:37,720
+well and we did two wells.
+
+213
+00:13:37,720 --> 00:13:43,600
+So I will hopefully get a message from CellProfiler here that is giving me 56 image sets.
+
+214
+00:13:43,720 --> 00:13:44,720
+Let's find out.
+
+215
+00:13:44,720 --> 00:13:50,200
+56 image sets.
+
+216
+00:13:50,200 --> 00:13:53,000
+So I've only loaded those two channels here.
+
+217
+00:13:53,000 --> 00:13:57,240
+If I wanted to load more channels, I could just keep hitting add more images and add
+
+218
+00:13:57,240 --> 00:13:59,280
+in our other images.
+
+219
+00:13:59,280 --> 00:14:04,640
+But all I had to do was figure out what is the thing that makes that channel unique.
+
+220
+00:14:04,640 --> 00:14:08,000
+And so allow that to be a moment where we plug for the importance of having a consistent
+
+221
+00:14:08,000 --> 00:14:10,280
+naming structure for your data.
+
+222
+00:14:10,360 --> 00:14:15,120
+So if you have a naming structure, doing a step like this where you say, hey CellProfiler,
+
+223
+00:14:15,120 --> 00:14:19,560
+the way you can tell which images are my DNA marker and which are my cytoskeletal is just
+
+224
+00:14:19,560 --> 00:14:23,760
+by looking for this in the file name, your life will get a lot simpler.
+
+225
+00:14:23,760 --> 00:14:27,960
+If your files all are named slightly differently, you're going to have a much harder time.
+
+226
+00:14:27,960 --> 00:14:28,960
+Yeah.
+
+227
+00:14:28,960 --> 00:14:29,960
+Yeah.
+
+228
+00:14:29,960 --> 00:14:37,480
+And this is something that we, like, we help teach collaborators sort of all the time.
+
+229
+00:14:37,480 --> 00:14:43,840
+I think, especially as we are in the more computational realm, I think biologists who
+
+230
+00:14:43,840 --> 00:14:49,640
+don't have computational training and who are used to perhaps just opening up every
+
+231
+00:14:49,640 --> 00:14:53,320
+picture and looking by eye and writing down notes.
+
+232
+00:14:53,320 --> 00:14:59,080
+Even if you're in the early stages of data exploration, data generation, it doesn't matter
+
+233
+00:14:59,080 --> 00:15:00,080
+so much.
+
+234
+00:15:00,080 --> 00:15:02,000
+And so it's not something that you're used to thinking about.
+
+235
+00:15:02,040 --> 00:15:12,200
+But as you move into the realm of computation, the realm of reproducible analyses, that is
+
+236
+00:15:12,200 --> 00:15:15,040
+sort of a frame shift is required in thinking about it.
+
+237
+00:15:15,040 --> 00:15:21,280
+We're like, oh, actually, when I've got handfuls of images and I'm doing stuff by hand, it
+
+238
+00:15:21,280 --> 00:15:22,280
+doesn't really matter.
+
+239
+00:15:22,280 --> 00:15:28,440
+But when you start to scale and when you start to do things where a computer is parsing things
+
+240
+00:15:28,440 --> 00:15:31,880
+instead of you going and clicking on your files, then it really does actually start
+
+241
+00:15:31,880 --> 00:15:33,360
+to matter a lot.
+
+242
+00:15:33,360 --> 00:15:39,760
+And this is something that we help teach collaborators moving into this space all the time.
+
+243
+00:15:39,760 --> 00:15:46,040
+And in the defense of biologists, including both you and me, Erin, this is not something
+
+244
+00:15:46,040 --> 00:15:50,920
+that was generally, I didn't learn, you know, get to grad school day one, like file naming
+
+245
+00:15:50,920 --> 00:15:51,920
+structures.
+
+246
+00:15:51,920 --> 00:15:52,920
+I wish.
+
+247
+00:15:52,920 --> 00:15:53,920
+I wish that was what had happened.
+
+248
+00:15:53,920 --> 00:15:55,960
+But totally it was not what happened.
+
+249
+00:15:55,960 --> 00:15:58,840
+I mean, I'm sure that when I first got trained at the microscope, they were like, you should
+
+250
+00:15:58,840 --> 00:16:01,600
+have consistent file naming, but I didn't understand why it mattered.
+
+251
+00:16:01,840 --> 00:16:04,560
+And once you start doing this, then you understand why it mattered.
+
+252
+00:16:04,560 --> 00:16:07,120
+And then you wish you'd started doing it a year or two before.
+
+253
+00:16:07,120 --> 00:16:08,120
+Absolutely.
+
+254
+00:16:08,120 --> 00:16:09,120
+Absolutely.
+
+255
+00:16:09,120 --> 00:16:12,600
+No, I mean, you know, as Beth said, like she and I are both wet lab biology trained before
+
+256
+00:16:12,600 --> 00:16:13,720
+moving into this space.
+
+257
+00:16:13,720 --> 00:16:16,160
+So these are all lessons that we learned the hard way.
+
+258
+00:16:16,160 --> 00:16:19,360
+We would like you to learn the easy way.
+
+259
+00:16:19,360 --> 00:16:20,360
+Yeah.
+
+260
+00:16:22,600 --> 00:16:23,400
+All right.
+
+261
+00:16:23,400 --> 00:16:26,160
+So what if I hadn't split these things apart?
+
+262
+00:16:26,160 --> 00:16:28,080
+What if I had kept them all together?
+
+263
+00:16:29,080 --> 00:16:32,680
+I'm going to clear file list, such a useful thing in CellProfiler.
+
+264
+00:16:34,120 --> 00:16:37,760
+And instead, I'm going to drag in these files.
+
+265
+00:16:39,760 --> 00:16:45,800
+I'm now going to have to do one extra step that I completely skipped when I was doing
+
+266
+00:16:45,800 --> 00:16:49,080
+everything being an individual file, which is I'm going to have to extract metadata.
+
+267
+00:16:50,200 --> 00:16:53,640
+Now, this is one of the modules in CellProfiler that people find the scariest and I don't blame
+
+268
+00:16:53,640 --> 00:16:57,480
+them because when it first comes up, it shows you all of this horrible regular expression
+
+269
+00:16:57,680 --> 00:17:02,920
+stuff, which is about trying to get information from the file name.
+
+270
+00:17:02,920 --> 00:17:07,640
+So if, especially if you use a high content microscope, where you're generating scans
+
+271
+00:17:07,640 --> 00:17:11,880
+of a plate, you will, you might have something where things like the well position are encoded
+
+272
+00:17:11,880 --> 00:17:12,880
+in your file name.
+
+273
+00:17:12,880 --> 00:17:14,400
+That's in fact, exactly what we have here.
+
+274
+00:17:15,600 --> 00:17:17,760
+But if you're not used to looking at computers, this is horrifying.
+
+275
+00:17:19,800 --> 00:17:23,520
+And in fact, probably the thing you will use more often, certainly if you have proprietary
+
+276
+00:17:23,520 --> 00:17:26,480
+file formats is this extract from image file headers.
+
+277
+00:17:27,160 --> 00:17:30,760
+So what this is saying is, hey, we know that there's a whole bunch of files in here.
+
+278
+00:17:30,760 --> 00:17:35,120
+In fact, we know from opening these in Fiji, there's 112 files in each file.
+
+279
+00:17:36,280 --> 00:17:39,560
+So probably could you just go look at that and, you know, figure that out for me.
+
+280
+00:17:40,240 --> 00:17:41,680
+So I hit the extract button.
+
+281
+00:17:42,840 --> 00:17:44,720
+And I hit update and hurray.
+
+282
+00:17:44,880 --> 00:17:46,920
+So profiler has in fact found it for me.
+
+283
+00:17:48,840 --> 00:17:56,360
+So it's showing here that my four channels, I have now learned something about when
+
+284
+00:17:56,360 --> 00:17:57,480
+this experiment was done.
+
+285
+00:17:58,880 --> 00:18:01,320
+There are apparently three cameras on this microscope.
+
+286
+00:18:01,320 --> 00:18:04,000
+And for the first exposure, they used cameras one and three.
+
+287
+00:18:04,040 --> 00:18:05,520
+And the second and third, they used camera two.
+
+288
+00:18:05,680 --> 00:18:06,320
+That's pretty cool.
+
+289
+00:18:07,840 --> 00:18:10,440
+And we have lots of information that was encoded in the metadata.
+
+290
+00:18:10,440 --> 00:18:14,320
+So profiler doesn't pull every piece of metadata, but it pulls a bunch of them.
+
+291
+00:18:14,840 --> 00:18:17,560
+And we have our same well information that we had over an image.
+
+292
+00:18:17,560 --> 00:18:17,880
+Shay.
+
+293
+00:18:18,440 --> 00:18:21,320
+And we have our four channels and our 20 time points.
+
+294
+00:18:21,760 --> 00:18:26,040
+So we got the exact same answer either way, which is what we hope.
+
+295
+00:18:26,040 --> 00:18:29,920
+Because we're using the same software under the hood.
+
+296
+00:18:31,960 --> 00:18:34,320
+So that's all well and good.
+
+297
+00:18:34,440 --> 00:18:39,080
+But so profiler before was using the file names to sort of tell the difference
+
+298
+00:18:39,080 --> 00:18:39,800
+between the channels.
+
+299
+00:18:39,800 --> 00:18:41,760
+So we're going to have to do something different here.
+
+300
+00:18:42,880 --> 00:18:46,040
+So the things that are different between the channels, if we just look at what
+
+301
+00:18:46,040 --> 00:18:49,600
+metadata we have, are this C and this channel name.
+
+302
+00:18:51,480 --> 00:18:53,760
+C goes zero one, two, three.
+
+303
+00:18:54,320 --> 00:18:58,040
+So profiler is written in Python, which is what's called a zero counted language.
+
+304
+00:18:58,320 --> 00:19:00,200
+It doesn't count one, two, three, four.
+
+305
+00:19:00,200 --> 00:19:01,800
+It counts zero, one, two, three.
+
+306
+00:19:02,320 --> 00:19:05,840
+I'm sure there's a reason I don't know what it is, but that's how they decided to do it.
+
+307
+00:19:07,000 --> 00:19:12,640
+So I could use this zero, one, two, three, or I could use these different channel names.
+
+308
+00:19:13,240 --> 00:19:13,880
+I know me.
+
+309
+00:19:13,880 --> 00:19:15,560
+I will have a harder time remembering these.
+
+310
+00:19:15,560 --> 00:19:18,240
+So I'm going to use this C parameter instead.
+
+311
+00:19:19,840 --> 00:19:22,720
+But I could have used the other one if this had been named something like
+
+312
+00:19:23,040 --> 00:19:24,440
+nuclei and cytoskeleton.
+
+313
+00:19:24,440 --> 00:19:25,920
+It would have been easy for me to remember.
+
+314
+00:19:26,360 --> 00:19:27,280
+I could do that too.
+
+315
+00:19:28,760 --> 00:19:33,560
+So all I need to do when I go over to the names and types modules now, it's not based on file anymore.
+
+316
+00:19:34,320 --> 00:19:35,440
+It's based on metadata.
+
+317
+00:19:35,680 --> 00:19:40,400
+So I just click that file that drop down next to file and I click metadata.
+
+318
+00:19:41,320 --> 00:19:45,320
+And it actually defaults to asking, is it C that you want to use?
+
+319
+00:19:45,320 --> 00:19:48,240
+Because that is the thing that people most commonly want to use for channel.
+
+320
+00:19:49,080 --> 00:19:51,640
+And I'm going to tell it I want zero, which is our previous one.
+
+321
+00:19:53,680 --> 00:19:57,320
+And instead of four here, I'm going to have to change it to three, because again,
+
+322
+00:19:57,320 --> 00:19:58,920
+we're changing counting schemes.
+
+323
+00:20:00,280 --> 00:20:04,560
+But now again, hopefully I hit update and I continue to have 56.
+
+324
+00:20:07,000 --> 00:20:07,960
+We still do.
+
+325
+00:20:10,600 --> 00:20:13,960
+And so we've now taught cell par filer in a couple of different ways,
+
+326
+00:20:13,960 --> 00:20:17,640
+how to open these proprietary file formats with different metadata structures.
+
+327
+00:20:17,840 --> 00:20:19,720
+We've explored them with ImageShay.
+
+328
+00:20:19,800 --> 00:20:23,120
+And now we would be ready to actually build our pipeline and do a real experiment.
+
+329
+00:20:24,760 --> 00:20:25,440
+Awesome.
+
+330
+00:20:25,640 --> 00:20:26,400
+Look at that.
+
+331
+00:20:26,560 --> 00:20:27,560
+Good to go.
+
+332
+00:20:28,760 --> 00:20:32,080
+It felt a little scary at first, but once you kind of understand like
+
+333
+00:20:32,320 --> 00:20:35,040
+CellProfilers internal logic, we got through it.
+
+334
+00:20:35,080 --> 00:20:36,120
+It's not so bad.
+
+335
+00:20:36,720 --> 00:20:37,880
+Definitely not so bad.
+
+336
+00:20:37,920 --> 00:20:42,760
+And I love the thing about, you know, just made me think here where you're saying like,
+
+337
+00:20:42,760 --> 00:20:47,520
+oh, we've got a, you know, a default of C matching, like a sort of a big picture thing
+
+338
+00:20:47,520 --> 00:20:54,760
+about CellProfiler is, you know, it is biologists, us biologists that are heavily
+
+339
+00:20:54,760 --> 00:20:59,520
+involved in the creation and maintenance and, you know, updating of CellProfiler.
+
+340
+00:20:59,520 --> 00:21:05,680
+And so all of these defaults that you find within CellProfiler all over the place
+
+341
+00:21:05,680 --> 00:21:11,720
+are actually considered, you know, we have very opinionated biologists in our team,
+
+342
+00:21:11,800 --> 00:21:16,960
+you know, and, and we weigh in very much.
+
+343
+00:21:16,960 --> 00:21:20,240
+I'm like, Hey, actually, this is what I, you know, this is what I think is the most
+
+344
+00:21:20,240 --> 00:21:22,640
+common. This is what I'm encountering all the time.
+
+345
+00:21:22,640 --> 00:21:25,080
+This is so my collaborators are encountering all the time.
+
+346
+00:21:25,920 --> 00:21:32,960
+And so, you know, the default things throughout CellProfiler are actually, you know, even
+
+347
+00:21:32,960 --> 00:21:38,400
+if they're not what you want necessarily, they're often pretty informative about sort
+
+348
+00:21:38,400 --> 00:21:42,760
+of a way of thinking about any given thing that like this is the most common use case
+
+349
+00:21:42,960 --> 00:21:45,200
+for whatever you're filling in that has a default.
+
+350
+00:21:47,000 --> 00:21:48,160
+In defense of CellProfiler.
+
+351
+00:21:50,400 --> 00:21:52,560
+In defense of opinionated biologists.
+
+352
+00:21:52,560 --> 00:21:56,840
+I think that's that's we certainly defend and support those wherever we can.
+
+353
+00:21:57,360 --> 00:21:58,200
+Absolutely.
+
+354
+00:21:59,520 --> 00:22:01,480
+All right. Well, thank you so much for joining us.
+
+355
+00:22:01,480 --> 00:22:02,280
+Hope this helped.
+
+356
+00:22:02,280 --> 00:22:03,200
+See you next time.
+
+357
+00:22:03,800 --> 00:22:04,520
+Bye.
+

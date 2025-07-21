@@ -1,0 +1,600 @@
+1
+00:00:00,000 --> 00:00:05,000
+Hey Beth!
+
+2
+00:00:05,000 --> 00:00:07,000
+Erin, hello!
+
+3
+00:00:07,000 --> 00:00:09,000
+Good to see you.
+
+4
+00:00:09,000 --> 00:00:11,000
+You too!
+
+5
+00:00:11,000 --> 00:00:25,000
+And welcome viewer to another episode of Ask Erin Dear Beth.
+
+6
+00:00:25,000 --> 00:00:36,000
+So today, I thought I would talk through sort of a big picture question that we get often.
+
+7
+00:00:36,000 --> 00:00:42,000
+So the big picture question that we often get is like, how do you tell if your pipeline is working?
+
+8
+00:00:42,000 --> 00:00:44,000
+Like how do you tell if you have QC?
+
+9
+00:00:44,000 --> 00:00:49,000
+Like what's a, you know, how confident can you be in this analysis workflow?
+
+10
+00:00:49,000 --> 00:00:51,000
+Wow, that's a big picture question.
+
+11
+00:00:51,000 --> 00:00:53,000
+It's big, right?
+
+12
+00:00:53,000 --> 00:00:59,000
+But so rather than, I'm not going to solve the whole thing, but I'm going to give a specific example that we...
+
+13
+00:00:59,000 --> 00:01:01,000
+Good, we'd be out of jobs if you solve the whole thing.
+
+14
+00:01:01,000 --> 00:01:03,000
+I know.
+
+15
+00:01:03,000 --> 00:01:13,000
+A specific example that we use in basically all of our, you know, high content workflows.
+
+16
+00:01:13,000 --> 00:01:24,000
+So this is for data when it's been acquired in a plate format.
+
+17
+00:01:24,000 --> 00:01:34,000
+Generally, you know, generally the data that we get is 384, but it can be 96 wells up to 15 math.
+
+18
+00:01:34,000 --> 00:01:39,000
+You know, it can be many, many wells per plate.
+
+19
+00:01:39,000 --> 00:01:52,000
+And so when you are working with 384 different wells of images and you want to know, okay, I've come up with some segmentation parameters.
+
+20
+00:01:52,000 --> 00:01:56,000
+Are they working across my data?
+
+21
+00:01:56,000 --> 00:02:05,000
+What do we do rather than downloading, you know, all of your data and going through a test pipeline sort of one well at a time?
+
+22
+00:02:05,000 --> 00:02:15,000
+I thought I would quickly show you sort of how we think in this sort of like high content plate based space.
+
+23
+00:02:15,000 --> 00:02:34,000
+And so this workflow both helps us check segmentation parameters and also has the side benefit of helping us catch a number of different sort of QC flags based on, you know, based on what we see by eyes.
+
+24
+00:02:34,000 --> 00:02:36,000
+So jumping right here.
+
+25
+00:02:36,000 --> 00:02:47,000
+I think it's useful and something that, you know, personally I run a lot, especially because I do a lot of the sort of high content image analysis in our lab.
+
+26
+00:02:47,000 --> 00:02:55,000
+So let me share my screen here and we'll get started.
+
+27
+00:02:55,000 --> 00:03:08,000
+So here, I have already opened up a pipeline. And so this will put the links in the show notes.
+
+28
+00:03:08,000 --> 00:03:24,000
+This is a pipeline that came from our, this is from our jump, which was a very large scale collaboration dealing with very, very large amounts of data.
+
+29
+00:03:24,000 --> 00:03:30,000
+And so this particular version of this workflow, I pulled right from that repository.
+
+30
+00:03:30,000 --> 00:03:43,000
+And then I just did for the joint undertaking for morphological profiling, which just illustrates how big a consortium this was like there were 10 different companies and two different nonprofits all making data to work together, which is crazy and amazing.
+
+31
+00:03:43,000 --> 00:03:49,000
+Yes, absolutely. And so, you know, part of that was really standardizing.
+
+32
+00:03:49,000 --> 00:04:01,000
+These are sort of pipelines that perform a specific task that will work across, you know, like these were coming off of different microscopes they were coming from different labs.
+
+33
+00:04:01,000 --> 00:04:14,000
+And these workflows were meant to help catch, you know, catch things in all of these different settings for all of these these different collaborators.
+
+34
+00:04:14,000 --> 00:04:28,000
+So I've already downloaded a plate of images and opened up the pipeline here. And I've given it load data, which is telling it.
+
+35
+00:04:28,000 --> 00:04:37,000
+This is where the images are and based on these image paths. These are the channel channel names I want you to be able to parse from these images.
+
+36
+00:04:37,000 --> 00:04:46,000
+And I thought I would first start by showing you like what this pipeline does. So if we enter test mode.
+
+37
+00:04:46,000 --> 00:04:58,000
+Then I am going to step you through step by step. So first load data, right reads in.
+
+38
+00:04:58,000 --> 00:05:12,000
+This is, you know, this is the file information that you are passing in and gives it, you know, corresponding corresponding information about channel names and that sort of thing.
+
+39
+00:05:12,000 --> 00:05:27,000
+In this first step, it's going to load in load in the images for here I have it grouped by plate and well and it's saying okay I'm going to for this first plate and well I'm loading in I'm going to
+
+40
+00:05:27,000 --> 00:05:51,000
+load in those images. Then this flag image is actually saying, and so this is, this is kind of a little tricky thing and is sort of a trick that we use for again like this is high content images that we're thinking of and so when we're running this pipeline, we're telling it we don't
+
+41
+00:05:51,000 --> 00:06:08,000
+know a little bit more about what you mean about high content. Yeah, yeah that's a good question. So, um, okay hard to define right like high content can mean lots of different things which is part of why I glossed right over that initially so thanks Beth.
+
+42
+00:06:08,000 --> 00:06:28,000
+Yeah, so what we, the way it usually applies to sort of how we're thinking about things is like something where I can tell you sort of two extremes right where a researcher, a biologist has cells or a tissue sample or something on a slide and is sitting down in front of a microscope and manually
+
+43
+00:06:28,000 --> 00:06:48,000
+focusing on regions in a slide and taking you know manually selecting like okay here's this region or you know this cell of a certain morphology I was looking for or like here's the you know the part of the tissue that I wanted to take a picture of takes a picture types in the file name saves that out.
+
+44
+00:06:48,000 --> 00:06:55,000
+That is not high content. In this instance, sort of what we're thinking about when we talk about high content.
+
+45
+00:06:55,000 --> 00:07:04,000
+Lots of robots are often involved I mean you know humans have to drive the robots right we're not we're not totally out of the loop yet.
+
+46
+00:07:04,000 --> 00:07:23,000
+We think of like automation being a key part of this where you know the again the cells are grown in many many well plates so instead of just one slide you have a plate that has perhaps 384 different wells.
+
+47
+00:07:23,000 --> 00:07:34,000
+And in this instance, like often we have a different perturbation in each well, whether that is a genetic perturbation or we put a different drug in each well.
+
+48
+00:07:34,000 --> 00:07:52,000
+Then the microscope itself often has will have lots of automation to make this happen so it will be programmed in, you know these are the number of fields of view or sites that I want you to acquire in each well.
+
+49
+00:07:52,000 --> 00:08:06,000
+These are the you know these are the channels that I want you to acquire. It will often have autofocus so you don't even have a researcher there, you know dialing in dialing in the focus on on the thing you're interested in.
+
+50
+00:08:06,000 --> 00:08:16,000
+So it is then acquiring the entire plate worth of images for you, generally in a very automated manner and so.
+
+51
+00:08:16,000 --> 00:08:34,000
+And what this ends up with is right so I have 384 wells, each with perhaps nine fields of view, each of those with five channels, five to eight channels to you know depending on the experiment.
+
+52
+00:08:34,000 --> 00:08:39,000
+And then, you know by the time you I can't do that math in my head, you probably can.
+
+53
+00:08:39,000 --> 00:08:51,000
+By the time you multiply those together, it is just way too many images for one human to sensibly click through on their own.
+
+54
+00:08:51,000 --> 00:09:14,000
+So that that you know, by example those are sort of different extremes and even you know different levels of of what high content and high throughput can mean from, you know, an academic lab where we feel pretty fancy pretty darn fancy to, you know, put a plate on and have the microscope do the imaging on a 384 well plate.
+
+55
+00:09:14,000 --> 00:09:41,000
+And you know there are certainly within pharma within biotech perhaps you know 1536 and machines that are doing all of the handling of the you know not even a human putting the plate on the microscope, you know machine automation can be putting on innumerable 1536 well plates, moving them around from incubator to microscope to acquiring them and and taking things back
+
+56
+00:09:41,000 --> 00:09:42,000
+to the microscope.
+
+57
+00:09:42,000 --> 00:10:00,000
+You know, certainly what what high content means can be very different from one setting to another but in this case would say anything that just doesn't quite make sense for a human to sit down and click through all the images themselves and themselves that's what this workflow is great for.
+
+58
+00:10:00,000 --> 00:10:01,000
+Awesome.
+
+59
+00:10:01,000 --> 00:10:02,000
+Okay.
+
+60
+00:10:02,000 --> 00:10:04,000
+Yeah, that was a long answer.
+
+61
+00:10:04,000 --> 00:10:07,000
+But you know, that's that's how I roll.
+
+62
+00:10:07,000 --> 00:10:10,000
+No, no getting quick and easy explanations out of me.
+
+63
+00:10:10,000 --> 00:10:11,000
+We love it.
+
+64
+00:10:11,000 --> 00:10:12,000
+Yeah.
+
+65
+00:10:12,000 --> 00:10:35,000
+So this flag image is in here as one way to pass metadata to use metadata here we're using metadata site information and saying to cell profiler I don't want you to do analysis on this image if the site is below.
+
+66
+00:10:35,000 --> 00:10:51,000
+1.9 or above 2.1, which is basically saying only if the site is site to do I want you to proceed with this pipeline and that's just a way of. So we're assuming that if you know when we when we run through this if we have a well.
+
+67
+00:10:51,000 --> 00:11:00,000
+That looking at one representative image from each well is going to be sufficient because we are also again looking at a large number of wells.
+
+68
+00:11:00,000 --> 00:11:04,000
+And so this is just to save time.
+
+69
+00:11:04,000 --> 00:11:20,000
+So we're going to be using a representative image. So then correct to whom apply this is where in our generally in our high content microscopy.
+
+70
+00:11:20,000 --> 00:11:38,000
+So here's the example of the input images. Then these are the illumination correction images and these we generate and apply to the images to do flat field correction and so generally this is because you know in this situation.
+
+71
+00:11:38,000 --> 00:11:46,000
+There's a lot of vignetting in these images where the center is brighter than the edge of the images.
+
+72
+00:11:46,000 --> 00:12:04,000
+And so we so here, you know, in the corner with the value of one in the center, the value is about two so that means that the center is actually like twice as bright as the very edge and when we take quantitative measurements.
+
+73
+00:12:04,000 --> 00:12:16,000
+We don't want to have those measurements because you know not dependent on where the cell is within the image. So we're applying this correction to flatten out this differences in illumination.
+
+74
+00:12:16,000 --> 00:12:30,000
+And so by I, you don't actually really see much difference from, you know, the input to the final image but when if you look carefully at the quantitation that's happening this helps us get more accurate quantitation.
+
+75
+00:12:30,000 --> 00:12:37,000
+And depending on your microscope setup, this may be more or less necessary.
+
+76
+00:12:37,000 --> 00:12:57,000
+Then what happens is we are doing just a quick cleanup of our of our DNA image that just sort of helps get rid of some some background.
+
+77
+00:12:57,000 --> 00:13:10,000
+Yeah, so, so this correct illuminate calculate. This is different than the flat field illumination correction this is meant to get sort of out of focal plane brightness.
+
+78
+00:13:10,000 --> 00:13:23,000
+That's happening and it's sort of it is then applied here to the image and you can see in this in this image that there was this sort of bright out of focus blob here.
+
+79
+00:13:23,000 --> 00:13:34,000
+And once this is subtracted from the image, like it's actually easier to see, you know, individual nuclei within this image after applying this correction.
+
+80
+00:13:34,000 --> 00:13:51,000
+Then we then use this image to identify nuclei to be clear, we are not doing making measurements on this image we would never make measurements on an image where we've done this level of cleanup this is sort of, you know, anything goes.
+
+81
+00:13:51,000 --> 00:14:16,000
+This is when you are modifying an image in order to do object detection, but then once we've detected objects, those objects can only then we will only make measurements from those objects on the flat field corrected images or original images if you're not doing a flat field correction, again, depending on your setup.
+
+82
+00:14:16,000 --> 00:14:27,000
+So we can see here, this is my default parameters for nuclei segmentation. I'm not going to take the time right now to tweak these and make them better.
+
+83
+00:14:27,000 --> 00:14:40,000
+The idea would be that when running this pipeline, you don't have to do the tweaking you can start with I'm running default parameters I'm running them and getting a view across my plate.
+
+84
+00:14:40,000 --> 00:14:47,000
+And then, then one would go back and say, oh great my default parameters worked nicely across my whole plate.
+
+85
+00:14:47,000 --> 00:14:59,000
+Or perhaps what we are going to discover is like, oh actually, I didn't get the best of segmentation. Maybe I do need to go iterate on those on those parameters.
+
+86
+00:14:59,000 --> 00:15:15,000
+So we have, you know, an ID primary which is finding the nuclei and ID secondary, which is then finding cells based on those primary inputs the nuclei.
+
+87
+00:15:15,000 --> 00:15:28,000
+Tertiary is using secondary and primary as inputs. What do I get for my cytoplasm here. So cells minus nuclei is cytoplasm.
+
+88
+00:15:28,000 --> 00:15:43,000
+And then these modules here are to create a visualization that we can then output like the major output of this pipeline is actually a new image.
+
+89
+00:15:43,000 --> 00:15:53,000
+So what we're doing is we're rescaling the DNA image to make it brighter. We're rescaling this AGP image to make it brighter.
+
+90
+00:15:53,000 --> 00:16:13,000
+Then I'm making a gray to color image where I have made my DNA objects pink and my AG or my DNA image pink my AGP image green, and I've put them into the same image here.
+
+91
+00:16:13,000 --> 00:16:24,000
+So that this is easy to see at a glance what's happening in those different images. This image math rescaled it.
+
+92
+00:16:24,000 --> 00:16:37,000
+So that we're scaling it a second time even I am even a second time blowing this all that you know blowing this out this is not you know these are definitely this is no longer quantitative information again this is just for visualization.
+
+93
+00:16:37,000 --> 00:16:46,000
+Just because it makes it much easier to see at a glance what's happening in these channels I mean, I think you.
+
+94
+00:16:46,000 --> 00:17:04,000
+It's pretty clear right here, like I can see like this has information and I can see it but when I really like scale things up, it's just a lot easier to see just at a glance again this is, this is to help us just be able to glance at everything and get sort of that just thought we want like that you know
+
+95
+00:17:04,000 --> 00:17:09,000
+all that gut feeling vibes right like that's what we're going for.
+
+96
+00:17:09,000 --> 00:17:24,000
+And I think one thing that that a lot of times people don't appreciate when they're moving from sort of low throughput to high throughput certainly I didn't when I first made that was how how important it is to get the amount of sort of time and decision making like down per thing because if you're
+
+97
+00:17:24,000 --> 00:17:40,000
+spending 10 minutes per per pipeline which is a totally reasonable amount of time, you know, but you're spending 10 minutes looking each plate that's fine if you have one plate or three plate or even you know, for 10 plates but like when you have 100 plates, things that you used to do no longer scale and so spending
+
+98
+00:17:40,000 --> 00:17:55,000
+10 or 20 hours making a system that makes it easy for you to take the time to make a decision from 10 minutes to five minutes doesn't feel like a good time investment up front but it really is when you start actually crunching those numbers.
+
+99
+00:17:55,000 --> 00:17:59,000
+Absolutely. Absolutely. Yeah.
+
+100
+00:17:59,000 --> 00:18:16,000
+And the final step in this pipeline here is we are overlaying the objects that helps if I show you overlaying the objects that we identified those outlines on to the image.
+
+101
+00:18:16,000 --> 00:18:37,000
+And that little I does is it allows you to see the display. Absolutely yep, you know, this. That is this this column here and so what I also could have done, you know, show all windows on run would have turned them all on maybe that would have been faster saved us some time from clicking on every individual
+
+102
+00:18:37,000 --> 00:18:38,000
+step.
+
+103
+00:18:38,000 --> 00:18:59,000
+And so here this is this like final product output where I can see at a glance, both, you know, the two important channels that I'm interested in, and I can see the objects that have been identified here.
+
+104
+00:18:59,000 --> 00:19:15,000
+So that's this pipeline and it's outputting then this image for site to have every single, you know, of every single well in your pipeline.
+
+105
+00:19:15,000 --> 00:19:26,000
+So, yeah, so that that is this it's then saving them out so that's the cell profiler pipeline that we use.
+
+106
+00:19:26,000 --> 00:19:48,000
+Then we actually take the outputs of cell profiler, and we run them in a Fiji pipeline. So, what Fiji is great here for our purposes is
+
+107
+00:19:48,000 --> 00:20:17,000
+what we do is we go to file new script. And in the script, we then run make Fiji montages. And what this does, by setting this top der, which is like where we have saved these saved these cell profiler images out so we use a tool called distributed
+
+108
+00:20:17,000 --> 00:20:39,000
+profiler to run to run cell profiler in a distributed manner in the cloud. If you have HPC, you know, you can run it in a cluster locally. I mean, if you're got a big enough, you know, laptop and enough time, I mean, you could run it all on your
+
+109
+00:20:39,000 --> 00:20:50,000
+own. And so when we're again when we're getting into the, you know, high content space you probably don't want to download all the images to a single computer and try and run them there.
+
+110
+00:20:50,000 --> 00:21:02,000
+And so there's different ways to sort of distribute this task but once we have run the cell profiler pipeline, those image outputs. This is just a little Python script that runs within Fiji.
+
+111
+00:21:02,000 --> 00:21:25,000
+And so once you know, go through these images that are in your folders saved out in the manner that that we that our cell profiler pipeline outputs them has a little bit of like file handling to figure out the the files that we want stitched into a
+
+112
+00:21:25,000 --> 00:21:44,000
+file. And then says like for each plate, run these, you know, run these commands to stitch these images into a plate. And so after running this Fiji script.
+
+113
+00:21:44,000 --> 00:22:05,000
+And so what they are, what it will output for us is a little montage that looks like this. So this is, yeah, so this is a montage of, you know, of the site to across this 384 well plate.
+
+114
+00:22:05,000 --> 00:22:22,000
+So, again, this is really helpful for a couple things. So first of all, we can go check our segmentation. So if I'm zooming in here, I can say like, Oh, oh boy, okay, my segmentation is not working great. If I want to use these images.
+
+115
+00:22:22,000 --> 00:22:28,000
+I'm going to need to change some things.
+
+116
+00:22:28,000 --> 00:22:34,000
+Because that looks that bad to be totally honest, but it's not it is not awful, right like for, you know, again for like,
+
+117
+00:22:34,000 --> 00:22:53,000
+starting from a completely default pipeline that was tuned on an absolutely very separate project very separate batch like this is really not a bad starting point. But again, depending on your task, you may want to spend some more time iterating, you know, I can see that there are
+
+118
+00:22:53,000 --> 00:23:14,000
+certainly regions where there are a number of nuclei in here. Yeah. And I am not catching those as separate nuclei, we can also see zoomed in, you know, really far that in some places, my the edge of my cells being identified doesn't fully match the actual edge of the cell.
+
+119
+00:23:14,000 --> 00:23:27,000
+So perhaps I want to do some tweaking there too. Maybe not like it's pretty good again for default parameters on a brand new batch of data like this is actually not a bad starting point.
+
+120
+00:23:27,000 --> 00:23:43,000
+You know, it's nice to show here right like so there is some debris in this channel, and it is not being confused by this background kind of mess so that's another like a good thing.
+
+121
+00:23:43,000 --> 00:23:54,000
+So, so nice to have this to like check on my segmentation. The other thing that I love about this right is that we get kind of like, QC vibes.
+
+122
+00:23:54,000 --> 00:24:08,000
+So I've noticed here right like I'm like, Oh, okay, so over here. I see that there's a piece of debris piece of string or something hair fluff who knows, but there is something here some piece of pink debris.
+
+123
+00:24:08,000 --> 00:24:20,000
+Now, it's up to, you know, it's going to be oh, and here's some more sort of over here too. So this is this is, oh, and maybe maybe even across there so like this is a
+
+124
+00:24:20,000 --> 00:24:22,000
+Ooh, yeah, lots of debris here.
+
+125
+00:24:22,000 --> 00:24:40,000
+You know, a systematic thing that is affecting much, much of this plate. And so I oh yeah, you have some more over here and there's there's actually when you start to look for it, you know, and quite a bit of debris so
+
+126
+00:24:40,000 --> 00:24:49,000
+that is certainly something that I would go back to the the wet or wet lab collaborators that took this and say hey, you might want to check your reagent bottles.
+
+127
+00:24:49,000 --> 00:24:58,000
+You know, we got some debris in this in this set of images, like, you know, you might want to track down where that came in.
+
+128
+00:24:58,000 --> 00:25:15,000
+And also to note for whoever's going to be looking downstream at the metrics that we have, you know, the measurements we have made from this, like, I'll put in a flag in the notes that we're communicating downstream like, okay, like I got to a point I felt pretty good about
+
+129
+00:25:15,000 --> 00:25:31,000
+I don't know what you're saying, but like, there was some debris. So either we would make sure that you see if we could build a debris checker into our analysis pipeline to catch those and like mask out regions that have debris, or flag wells that have
+
+130
+00:25:31,000 --> 00:25:49,000
+debris, or images that have debris, remove the image entirely, or depending on the experiment, you know, this one was just a very initial pilot. And so we said like, Okay, doesn't really matter, like, I know it's in there. This was really just to see like what's the level of right level of
+
+131
+00:25:49,000 --> 00:26:05,000
+confluency for these cells. But like the actual metrics that we measured aren't super important, good to note. And so, you know, whatever your experiment is can very much affect and define like what it is you want to do with whatever you find here.
+
+132
+00:26:05,000 --> 00:26:08,000
+You know, there's no clear easy answer.
+
+133
+00:26:08,000 --> 00:26:16,000
+No, no, if only if only, I mean, then again, we'd probably be out of a job if this was clear and easy and always knew what to do.
+
+134
+00:26:16,000 --> 00:26:32,000
+You know, with this I'm also able to say like, Hey, there are regions where the cells are too confluent, you know, these cells are like growing on top of each other making it just too hard to define what is the end of one cell where does one start and stop because they're actually on top of each other.
+
+135
+00:26:32,000 --> 00:26:47,000
+You know, and I communicated to the collaborators like hey, some regions are coming in out of focus and that can certainly happen when you have confluent cells and especially in situations right where we're using with this automation like they're using an auto focuser.
+
+136
+00:26:47,000 --> 00:27:08,000
+So it can get confused when there are many layers of cells. It doesn't always pick the right, you know, the right field, the right plane for catching everything but you know within this one pipeline, we're able to check for a number of QC things, right?
+
+137
+00:27:08,000 --> 00:27:23,000
+So I get the I get the vibes, but I'm also able to check carefully for for segmentation for debris for confluency for focus.
+
+138
+00:27:23,000 --> 00:27:45,000
+And I'm able to do this really quickly. Once you sort of get the hang of this, you know, it's it's open this up, skim around and close it all within a minute or two, which is real fast, especially when you think about, you know, working in batches of dozens of plates.
+
+139
+00:27:45,000 --> 00:28:01,000
+So that is our, you know, that's our QC workflow and we get asked, you know, it won't go won't go too much farther in the tangent, you know, we get asked a lot like, well, can't we just find some metric to measure so I don't have to look at these pictures.
+
+140
+00:28:01,000 --> 00:28:04,000
+And the short answer is no.
+
+141
+00:28:04,000 --> 00:28:06,000
+No.
+
+142
+00:28:06,000 --> 00:28:09,000
+We've got much more answers.
+
+143
+00:28:09,000 --> 00:28:33,000
+We've tried. We really have tried, you know, it would be lovely to cut down even further on the time that we spend and we've really tried, but have found repeatedly that just getting a biologist, taking a look at the pictures is actually the best and therefore the fastest,
+
+144
+00:28:33,000 --> 00:28:40,000
+because it's reliable, you don't have to go back, you don't have to tune QC parameters.
+
+145
+00:28:40,000 --> 00:28:49,000
+You know, that's it really is the best at this point in time. So, yeah. Anything you would add back.
+
+146
+00:28:49,000 --> 00:29:10,000
+No, I think that that's a super useful thing to know again, especially as you're transitioning from maybe I did one plate to now maybe I have 10 plates or 20 plates and that's such a scary transition it's hard to know how to how to figure out how to operate at that scale so that's a seems like a very useful workflow.
+
+147
+00:29:10,000 --> 00:29:14,000
+Absolutely. Well, thank you for joining.
+
+148
+00:29:14,000 --> 00:29:15,000
+Yeah.
+
+149
+00:29:15,000 --> 00:29:18,000
+Thank you so much for hanging out with us. We'll see you next time.
+
+150
+00:29:18,000 --> 00:29:19,000
+Bye.
+

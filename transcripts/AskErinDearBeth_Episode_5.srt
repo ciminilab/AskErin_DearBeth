@@ -1,0 +1,1828 @@
+1
+00:00:00,000 --> 00:00:05,000
+Hey Beth!
+
+2
+00:00:05,000 --> 00:00:06,000
+Hey Erin!
+
+3
+00:00:06,000 --> 00:00:07,000
+How's it going?
+
+4
+00:00:07,000 --> 00:00:08,000
+It's good.
+
+5
+00:00:08,000 --> 00:00:21,600
+Welcome to another episode of Ask Erin and Dear Beth.
+
+6
+00:00:21,600 --> 00:00:22,600
+Here we go.
+
+7
+00:00:22,600 --> 00:00:23,800
+What do we got?
+
+8
+00:00:23,800 --> 00:00:28,640
+We got today, we're going to look at binucleation and what makes it hard to look at in CellProfiler
+
+9
+00:00:28,640 --> 00:00:34,800
+and therefore what can we do to make it a little bit better in CellProfiler?
+
+10
+00:00:34,800 --> 00:00:35,800
+Awesome sauce.
+
+11
+00:00:35,800 --> 00:00:43,040
+Yeah, definitely something that is not something you would necessarily expect to be hard but
+
+12
+00:00:43,040 --> 00:00:47,680
+because of some weird things about how what CellProfiler makes in terms of assumptions
+
+13
+00:00:47,680 --> 00:00:49,440
+can be unexpectedly a challenge.
+
+14
+00:00:49,440 --> 00:00:52,360
+All right, well let's dive right in.
+
+15
+00:00:52,360 --> 00:00:57,040
+What is CellProfiler expecting and how do we hack CellProfiler?
+
+16
+00:00:57,040 --> 00:01:00,800
+I mean we hack CellProfiler in lots of ways.
+
+17
+00:01:00,800 --> 00:01:01,800
+I know, I know.
+
+18
+00:01:01,800 --> 00:01:07,120
+That is probably much too big of a question for us but like how are we going to specifically
+
+19
+00:01:07,120 --> 00:01:11,840
+hack CellProfiler in this exact circumstance to help us deal with these multi-nucleate
+
+20
+00:01:11,840 --> 00:01:13,840
+cells?
+
+21
+00:01:13,840 --> 00:01:14,840
+Yeah.
+
+22
+00:01:14,840 --> 00:01:20,760
+So CellProfiler sort of has the assumption under the hood that cells and nuclei belong
+
+23
+00:01:20,760 --> 00:01:21,760
+together.
+
+24
+00:01:21,760 --> 00:01:26,920
+And the reason it has that assumption is generally because when you're looking at cells, cells
+
+25
+00:01:26,920 --> 00:01:31,520
+might be hard to figure out where one ends and the next one begins especially if they
+
+26
+00:01:31,520 --> 00:01:37,200
+sort of get up on each other and they're touching each other and you know here we have some
+
+27
+00:01:37,200 --> 00:01:45,280
+cells that are actually pretty nicely behaved but still we zoom in sort of right in this
+
+28
+00:01:45,280 --> 00:01:48,600
+particularly crowded region.
+
+29
+00:01:48,600 --> 00:01:56,200
+I'm not sure I could say the exact pixel where this cell you know stops and this cell starts.
+
+30
+00:01:56,200 --> 00:01:59,160
+And you're going to run into that situation a lot with cells.
+
+31
+00:01:59,160 --> 00:02:03,520
+Cell culture you know those are somewhat contact inhibited most of the time but they definitely
+
+32
+00:02:03,520 --> 00:02:07,120
+do like to sort of get pretty close to each other.
+
+33
+00:02:07,120 --> 00:02:12,960
+Yeah and again that's also a thing that's very dependent on cell type.
+
+34
+00:02:12,960 --> 00:02:19,080
+But most of the time what we try to do when you're working with images of cells like this
+
+35
+00:02:19,080 --> 00:02:23,160
+is get cells that behave nicely and don't grow on top of each other.
+
+36
+00:02:23,160 --> 00:02:26,760
+So these are actually like pretty nicely behaved cells.
+
+37
+00:02:26,760 --> 00:02:33,280
+You know there are definitely cell lines that are even much harder to parse than this where
+
+38
+00:02:33,280 --> 00:02:39,920
+they like to start growing on top of each other and you know you might be in like here
+
+39
+00:02:39,920 --> 00:02:46,600
+there probably is a single pixel that is the transition point from one cell to the other
+
+40
+00:02:46,600 --> 00:02:51,320
+that we just don't you know can't tell enough from the image ourselves to figure out what
+
+41
+00:02:51,320 --> 00:02:52,320
+that is.
+
+42
+00:02:52,320 --> 00:02:57,600
+And we're not even addressing the regime where there actually isn't a single pixel because
+
+43
+00:02:57,600 --> 00:02:59,240
+cells are growing on top of each other.
+
+44
+00:02:59,240 --> 00:03:02,600
+Like that's not even what we're talking about in this instance.
+
+45
+00:03:02,600 --> 00:03:09,200
+Like these are nicely behaved cells for image analysis like this.
+
+46
+00:03:09,200 --> 00:03:11,720
+Yeah exactly.
+
+47
+00:03:11,720 --> 00:03:17,880
+On the other hand nuclei tend to be much nicer and much better behaved.
+
+48
+00:03:17,880 --> 00:03:21,320
+So let's also adjust the contrast on these guys.
+
+49
+00:03:21,320 --> 00:03:26,480
+And I'm doing this just by control clicking.
+
+50
+00:03:26,480 --> 00:03:32,160
+And you can see we've got a couple cases where things are touching but overall the number
+
+51
+00:03:32,160 --> 00:03:37,240
+of cases where we wouldn't be sure exactly which pixel goes with exactly which nucleus
+
+52
+00:03:37,240 --> 00:03:41,440
+are a lot less and in general things are much more well defined.
+
+53
+00:03:41,440 --> 00:03:47,680
+So when you can get away with it, Subprofiler recommends just sort of by its existing structure
+
+54
+00:03:47,920 --> 00:03:52,200
+that you start by identifying nuclei and you build the cells around them.
+
+55
+00:03:52,200 --> 00:03:56,280
+So here's what that looks like in practice.
+
+56
+00:03:56,280 --> 00:04:01,720
+In our object processing, we always start with identify primary objects and what primary
+
+57
+00:04:01,720 --> 00:04:07,400
+objects means in this case is we're building an object based on only one piece of information
+
+58
+00:04:07,400 --> 00:04:08,400
+the image.
+
+59
+00:04:08,400 --> 00:04:12,200
+We're not using any other information.
+
+60
+00:04:12,200 --> 00:04:15,400
+Become more clear in a second when we look at identify secondary objects and we have a
+
+61
+00:04:15,440 --> 00:04:16,920
+second piece of information.
+
+62
+00:04:16,920 --> 00:04:22,560
+If I go into test mode and I just leave the default settings on for now, this is probably
+
+63
+00:04:22,560 --> 00:04:25,560
+not going to work for, that actually worked pretty well.
+
+64
+00:04:25,560 --> 00:04:27,600
+Level for default settings.
+
+65
+00:04:27,600 --> 00:04:31,320
+Yeah, it's almost like we tuned those for a reason.
+
+66
+00:04:31,320 --> 00:04:36,800
+These aren't perfect but they're not terrible.
+
+67
+00:04:36,800 --> 00:04:40,840
+One of the things I'm specifically looking for here is I'm tuning things are these diameter
+
+68
+00:04:40,840 --> 00:04:45,600
+settings and it says that in general things are ranging between at the 10th percentile
+
+69
+00:04:45,600 --> 00:04:50,600
+16.5 pixels across at the 90th, 26.5.
+
+70
+00:04:50,600 --> 00:04:55,600
+And so the reason I'm looking at that is in general it looks like the right things are
+
+71
+00:04:55,600 --> 00:04:56,600
+being identified.
+
+72
+00:04:56,600 --> 00:04:58,200
+They're just being broken down wrong.
+
+73
+00:04:58,200 --> 00:05:02,960
+And the easiest way to change that, if Subprofiler wasn't picking up on what is a nucleus and
+
+74
+00:05:02,960 --> 00:05:05,760
+what isn't, I would need to change my thresholding settings.
+
+75
+00:05:05,760 --> 00:05:11,280
+But if all I need to do is change how the nuclear stuff is broken down into discrete
+
+76
+00:05:11,280 --> 00:05:16,960
+nuclei, sometimes I don't even have to do anything away from the default settings.
+
+77
+00:05:16,960 --> 00:05:22,240
+I can just adjust the object size.
+
+78
+00:05:22,240 --> 00:05:23,240
+Lovely.
+
+79
+00:05:23,240 --> 00:05:25,120
+There we go.
+
+80
+00:05:25,120 --> 00:05:28,600
+So pretty.
+
+81
+00:05:28,600 --> 00:05:31,920
+Now it's not doing a great job here when the objects are touching so maybe I'll try
+
+82
+00:05:31,920 --> 00:05:36,280
+and go down a little bit further and see if I can see if I can split the difference between
+
+83
+00:05:36,280 --> 00:05:37,280
+10 and 15.
+
+84
+00:05:37,280 --> 00:05:41,360
+Otherwise we'll take a quick look at the advanced settings.
+
+85
+00:05:41,360 --> 00:05:43,560
+And hey look, 15 did the trick.
+
+86
+00:05:43,560 --> 00:05:44,560
+Magical.
+
+87
+00:05:44,560 --> 00:05:45,560
+Wow.
+
+88
+00:05:45,560 --> 00:05:46,560
+Yeah.
+
+89
+00:05:46,560 --> 00:05:51,280
+So now we have all of our objects, even this one which looks like it is actually two different
+
+90
+00:05:51,280 --> 00:05:52,280
+things.
+
+91
+00:05:52,280 --> 00:05:53,960
+They're just very similar in the color scheme.
+
+92
+00:05:53,960 --> 00:05:57,440
+This one says it's object 52 and that one's object 53.
+
+93
+00:05:57,440 --> 00:05:58,440
+Awesome.
+
+94
+00:05:58,440 --> 00:05:59,440
+Nice.
+
+95
+00:05:59,440 --> 00:06:08,760
+But one thing to note here is that by changing here in our easy mode, the simple mode, changing
+
+96
+00:06:08,760 --> 00:06:17,680
+the typical diameter, there are things happening under the hood that default assumption cell
+
+97
+00:06:17,680 --> 00:06:21,640
+profiler is making to help segment those apart.
+
+98
+00:06:21,640 --> 00:06:27,840
+We could go to advanced settings and find two and lots of those things on our own.
+
+99
+00:06:27,840 --> 00:06:28,840
+But just...
+
+100
+00:06:29,040 --> 00:06:30,040
+We don't have to.
+
+101
+00:06:30,040 --> 00:06:38,120
+Here, just changing that diameter, CellProfiler knows enough to figure out those objects.
+
+102
+00:06:38,120 --> 00:06:39,120
+Great.
+
+103
+00:06:39,120 --> 00:06:44,560
+So now that we have our nuclei and they're lovely and beautiful, we can add a second
+
+104
+00:06:44,560 --> 00:06:45,560
+object.
+
+105
+00:06:45,560 --> 00:06:54,240
+We can say, hey CellProfiler, use the cytoskeleton image and the nuclei and build cells around
+
+106
+00:06:54,240 --> 00:06:57,080
+the nuclei.
+
+107
+00:06:57,080 --> 00:07:01,680
+And again, when you have a mononucleot image, that works.
+
+108
+00:07:01,680 --> 00:07:04,480
+And hey look, this is beautiful.
+
+109
+00:07:04,480 --> 00:07:09,000
+We now get things that look like cells.
+
+110
+00:07:09,000 --> 00:07:13,880
+They're a little on the sort of underside, so we might change our thresholding method
+
+111
+00:07:13,880 --> 00:07:15,800
+to try to pick up a few more things.
+
+112
+00:07:15,800 --> 00:07:18,440
+But again, the goal here is not to have things perfect.
+
+113
+00:07:18,440 --> 00:07:26,360
+The goal here is just to get some things that are plausible cells.
+
+114
+00:07:26,360 --> 00:07:31,160
+Okay, that didn't do a whole heck of a lot.
+
+115
+00:07:31,160 --> 00:07:32,160
+I could tune it more.
+
+116
+00:07:32,160 --> 00:07:33,760
+I don't really need to.
+
+117
+00:07:33,760 --> 00:07:35,160
+You get the idea.
+
+118
+00:07:35,160 --> 00:07:37,600
+We had nuclei, we made them into cells.
+
+119
+00:07:37,600 --> 00:07:38,600
+Great.
+
+120
+00:07:38,600 --> 00:07:42,840
+I'm going to actually just change the default scaling here as we're looking at stuff, which
+
+121
+00:07:42,840 --> 00:07:47,840
+I can find in these settings and MAC, it's called preferences.
+
+122
+00:07:47,840 --> 00:07:52,920
+And that's just going to make it so that things generally look prettier and it's a little
+
+123
+00:07:52,920 --> 00:07:55,920
+easier to follow along with what we're doing here.
+
+124
+00:07:55,920 --> 00:07:58,640
+How does that now look?
+
+125
+00:07:58,640 --> 00:08:02,120
+That looks worse.
+
+126
+00:08:02,120 --> 00:08:04,120
+All right.
+
+127
+00:08:04,120 --> 00:08:05,120
+So.
+
+128
+00:08:05,120 --> 00:08:24,800
+80 was okay.
+
+129
+00:08:24,800 --> 00:08:32,200
+We'll go with 99, just because that seems like a fun number.
+
+130
+00:08:32,200 --> 00:08:36,680
+One thing to point out, this isn't doing anything about changing the underlying data.
+
+131
+00:08:36,680 --> 00:08:43,520
+This is just how it's being shown to us here as we're looking at these.
+
+132
+00:08:43,520 --> 00:08:46,560
+We can now see the cell boundaries a little bit more easily and just in general get a
+
+133
+00:08:46,560 --> 00:08:48,280
+better sense of what's going on.
+
+134
+00:08:48,280 --> 00:08:49,280
+Yes.
+
+135
+00:08:49,280 --> 00:08:50,480
+This is just a display visualization.
+
+136
+00:08:50,480 --> 00:08:53,080
+And yes, now we can see these much more easily too.
+
+137
+00:08:53,080 --> 00:08:54,080
+Great.
+
+138
+00:08:54,080 --> 00:08:55,080
+And here, sorry.
+
+139
+00:08:55,080 --> 00:09:02,160
+Just want to also point out that depending on your task, you may be spending more time
+
+140
+00:09:02,160 --> 00:09:07,840
+or less time in your ID secondary to get perfectly the very edges of your cells.
+
+141
+00:09:07,840 --> 00:09:12,840
+Here we're just not spending the time fine tuning because our task right now is just
+
+142
+00:09:12,840 --> 00:09:15,840
+to explain to you about multi-nucleate cells.
+
+143
+00:09:15,840 --> 00:09:20,560
+So we just need to find edges that sort of make enough sense that we can go through this
+
+144
+00:09:20,560 --> 00:09:21,560
+demonstration.
+
+145
+00:09:21,560 --> 00:09:28,600
+If you were to be doing quantitative image analysis on the cell objects, perhaps you
+
+146
+00:09:28,600 --> 00:09:31,120
+would be iterating more at this point.
+
+147
+00:09:31,120 --> 00:09:34,480
+For sure.
+
+148
+00:09:34,480 --> 00:09:38,520
+Now let's get a sense of what this is going to look like in the case of multi-nucleation.
+
+149
+00:09:38,520 --> 00:09:42,760
+So I'm going to tell CellProfiler to let me pick an image set.
+
+150
+00:09:42,760 --> 00:09:49,720
+Now I'm going to go down to the ones from our positive control image and get some cells
+
+151
+00:09:49,720 --> 00:09:52,640
+from there.
+
+152
+00:09:52,640 --> 00:09:54,640
+Okay.
+
+153
+00:09:54,640 --> 00:09:59,080
+Whoa, that's bad.
+
+154
+00:09:59,080 --> 00:10:05,360
+So CellProfiler has, in some cases, it has messed up and sort of put two nuclei into
+
+155
+00:10:05,360 --> 00:10:06,360
+one.
+
+156
+00:10:06,360 --> 00:10:10,400
+In some cases, the nuclei are so big, there are so many of them that this has now turned
+
+157
+00:10:10,400 --> 00:10:12,600
+pink, which means it says this thing is too big.
+
+158
+00:10:12,600 --> 00:10:14,160
+I think it's all one thing.
+
+159
+00:10:14,160 --> 00:10:15,440
+And I think it's too big of a thing.
+
+160
+00:10:15,440 --> 00:10:18,320
+It's a thing that's bigger than what you told me you want.
+
+161
+00:10:18,320 --> 00:10:23,080
+I'm throwing it away.
+
+162
+00:10:23,080 --> 00:10:29,760
+And in some cases, it's doing kind of the right thing, though those cases are pretty
+
+163
+00:10:29,760 --> 00:10:30,760
+rare, to be honest.
+
+164
+00:10:30,760 --> 00:10:36,520
+So here we have what I would count as five, and we have one, one, and three.
+
+165
+00:10:36,520 --> 00:10:38,480
+So not great.
+
+166
+00:10:38,480 --> 00:10:44,400
+But potentially even more not great is when we look at our cell calling.
+
+167
+00:10:44,400 --> 00:10:48,800
+So the fact that these, that we sometimes have cases where two, what is clearly two
+
+168
+00:10:48,800 --> 00:10:53,920
+nuclei have been stuck into one actually helps us get the right cell mask because CellProfiler
+
+169
+00:10:53,920 --> 00:10:58,440
+is still assuming that nuclei and cells are one to one.
+
+170
+00:10:58,440 --> 00:11:03,040
+But in this case, where it actually did do a good job of splitting some nuclei off, now
+
+171
+00:11:03,040 --> 00:11:09,600
+we're in a terrible position in that this cell is now broken into chunks, which is definitely
+
+172
+00:11:09,600 --> 00:11:11,600
+not what we wanted.
+
+173
+00:11:11,600 --> 00:11:13,800
+Yes.
+
+174
+00:11:13,800 --> 00:11:18,760
+That does not, you know, that does not look like the cells we want.
+
+175
+00:11:18,760 --> 00:11:24,720
+So I think cell chunks anytime you're just like not a descriptor that we generally want
+
+176
+00:11:24,720 --> 00:11:28,080
+in our biology.
+
+177
+00:11:28,080 --> 00:11:34,240
+So I really have kind of three choices here.
+
+178
+00:11:34,240 --> 00:11:42,480
+One of them is I can try to force CellProfiler to make all of the nuclei that touch be one
+
+179
+00:11:42,480 --> 00:11:43,880
+thing.
+
+180
+00:11:43,880 --> 00:11:47,640
+So all of these nuclei would be one thing.
+
+181
+00:11:47,640 --> 00:11:50,360
+This cell wouldn't get broken up.
+
+182
+00:11:50,360 --> 00:11:55,360
+But in cases like this big chunk here where there are multiple nuclei that we're touching
+
+183
+00:11:55,360 --> 00:11:59,280
+that are actually part of multiple different cells, those things are now going to be stuck
+
+184
+00:11:59,280 --> 00:12:00,280
+together.
+
+185
+00:12:00,280 --> 00:12:05,880
+I'm also not going to be able to count for multi-nucleation because multi-nucleation,
+
+186
+00:12:05,880 --> 00:12:11,320
+the nuclei are being detected sort of intentionally and correctly.
+
+187
+00:12:11,320 --> 00:12:15,080
+But if cell boundaries are important, that might be the best thing to do.
+
+188
+00:12:15,080 --> 00:12:16,080
+Yeah.
+
+189
+00:12:16,080 --> 00:12:22,880
+So one thing to really consider at the beginning of building your pipeline is what is your
+
+190
+00:12:22,880 --> 00:12:24,320
+output that you're looking for?
+
+191
+00:12:24,320 --> 00:12:25,320
+What is your downstream task?
+
+192
+00:12:25,320 --> 00:12:26,960
+What are you trying to measure?
+
+193
+00:12:26,960 --> 00:12:34,800
+In this situation, maybe you don't actually care about any measurements of the nuclei.
+
+194
+00:12:34,800 --> 00:12:39,760
+Maybe what you're really concerned about is something happening in the cell.
+
+195
+00:12:39,760 --> 00:12:43,680
+So all you really need is the cell boundaries.
+
+196
+00:12:43,680 --> 00:12:48,000
+And then we don't actually care to identify the individual nuclei parts.
+
+197
+00:12:48,000 --> 00:12:52,320
+But maybe that's actually really important if your downstream task is to measure the
+
+198
+00:12:52,320 --> 00:12:59,960
+number of nuclei or something related to a measurement in the nuclei themselves.
+
+199
+00:12:59,960 --> 00:13:08,480
+And so strategy of any workflow is definitely very dependent on the output that you want.
+
+200
+00:13:08,480 --> 00:13:09,480
+Absolutely.
+
+201
+00:13:10,480 --> 00:13:14,920
+Which is why we want, even though we are professional bio-image analysts, we're good
+
+202
+00:13:14,920 --> 00:13:16,520
+at doing bio-image analysis.
+
+203
+00:13:16,520 --> 00:13:20,680
+We want people who are just biologists who want to answer bio-image analysis questions
+
+204
+00:13:20,680 --> 00:13:22,720
+to understand how to do it.
+
+205
+00:13:22,720 --> 00:13:27,080
+Because you understand ultimately if it's more important to know more about the cells
+
+206
+00:13:27,080 --> 00:13:29,320
+or more about the nuclei.
+
+207
+00:13:29,320 --> 00:13:32,920
+And so you are the best person to design your image analysis workflow.
+
+208
+00:13:32,920 --> 00:13:33,920
+Absolutely.
+
+209
+00:13:33,920 --> 00:13:35,400
+We're always happy to help.
+
+210
+00:13:35,400 --> 00:13:38,560
+But your input is not optional.
+
+211
+00:13:38,560 --> 00:13:41,640
+It is essential to us designing the right workflow, even if we are the ones designing
+
+212
+00:13:41,640 --> 00:13:42,640
+it.
+
+213
+00:13:42,640 --> 00:13:46,640
+So I said that was one option.
+
+214
+00:13:46,640 --> 00:13:51,720
+The second option is to, instead of trying to force CellProfiler further into the direction
+
+215
+00:13:51,720 --> 00:13:55,000
+of sort of stick stuff together, we can try to force CellProfiler more into the direction
+
+216
+00:13:55,000 --> 00:13:56,240
+of split stuff apart.
+
+217
+00:13:56,240 --> 00:13:59,960
+It's going to get our nuclei correct.
+
+218
+00:13:59,960 --> 00:14:04,440
+But it's going to mean that if we keep using this ID primary and ID secondary, that we
+
+219
+00:14:04,440 --> 00:14:06,360
+end up with cell chunks.
+
+220
+00:14:06,360 --> 00:14:08,200
+Which again, maybe is fine.
+
+221
+00:14:08,200 --> 00:14:14,600
+Because if what you want to say is are the multinucleate cells different phenotypically
+
+222
+00:14:14,600 --> 00:14:16,480
+than the other ones, they sure are.
+
+223
+00:14:16,480 --> 00:14:24,440
+They sure are different if this cell is only a piece of a cell as opposed to a whole cell.
+
+224
+00:14:24,440 --> 00:14:28,600
+So if what you care about is just detecting phenotypic difference, that might be the right
+
+225
+00:14:28,600 --> 00:14:32,640
+way to go is to just have cell chunks.
+
+226
+00:14:32,640 --> 00:14:40,120
+The other third option is to abandon this ID primary, ID secondary sort of workflow entirely
+
+227
+00:14:40,120 --> 00:14:45,240
+and just use completely separate identifications for our nuclei and our cells.
+
+228
+00:14:45,240 --> 00:14:47,800
+Then we can try to get the best nuclear segmentation we can.
+
+229
+00:14:47,800 --> 00:14:50,440
+We can try to get the best cell segmentation we can.
+
+230
+00:14:50,440 --> 00:14:54,160
+But if the cells are really clumpy, that might not be very good cell segmentation.
+
+231
+00:14:54,160 --> 00:14:56,600
+There's a reason we do this in the first place.
+
+232
+00:14:56,600 --> 00:15:00,680
+And it's that cell segmentation is typically kind of hard.
+
+233
+00:15:00,680 --> 00:15:10,360
+In the interest of what we really hope you get here more are the concepts.
+
+234
+00:15:10,360 --> 00:15:13,560
+The cells segmentation here actually, now that you understand how it works, doesn't really
+
+235
+00:15:13,560 --> 00:15:16,080
+matter.
+
+236
+00:15:16,080 --> 00:15:24,560
+If I wanted to force the nuclei that are all touching to be all the same object, that's
+
+237
+00:15:24,560 --> 00:15:27,680
+one very easy setting and identify primary objects.
+
+238
+00:15:27,680 --> 00:15:30,680
+Let's just method to distinguish clumped objects.
+
+239
+00:15:30,680 --> 00:15:31,680
+None.
+
+240
+00:15:31,680 --> 00:15:33,160
+Do not distinguish clumped objects.
+
+241
+00:15:33,160 --> 00:15:37,360
+If nuclei are touching, just call them all the same thing.
+
+242
+00:15:37,360 --> 00:15:42,600
+I'm now going to have to adjust my sizing amounts because now these really big things
+
+243
+00:15:42,600 --> 00:15:50,080
+are being told that they're too big and CellProfiler doesn't want to count them anymore.
+
+244
+00:15:50,080 --> 00:15:51,640
+But I could do that.
+
+245
+00:15:51,640 --> 00:15:53,360
+That would be one way to go.
+
+246
+00:15:53,360 --> 00:15:54,360
+That's so easy.
+
+247
+00:15:54,520 --> 00:15:56,760
+Good thing to notice here.
+
+248
+00:15:56,760 --> 00:16:04,080
+We don't actually think that there are nuclei that are 500 pixels in diameter.
+
+249
+00:16:04,080 --> 00:16:09,880
+That was just throw out a large number because we have filter the objects outside of the
+
+250
+00:16:09,880 --> 00:16:10,880
+diameter range.
+
+251
+00:16:10,880 --> 00:16:14,320
+If we just pick a really large number, then we don't have to worry about it using it to
+
+252
+00:16:14,320 --> 00:16:15,320
+filter.
+
+253
+00:16:15,320 --> 00:16:23,960
+But because we have this in advanced settings mode especially, it's not using that to approximate
+
+254
+00:16:23,960 --> 00:16:29,520
+anything else or affect anything else.
+
+255
+00:16:29,520 --> 00:16:34,120
+The other things we could do are a little bit harder to walk through in a short thing.
+
+256
+00:16:34,120 --> 00:16:35,720
+We will have a future episode.
+
+257
+00:16:35,720 --> 00:16:43,480
+Erin remind me to have a future episode on declumping when things are really crowded.
+
+258
+00:16:43,480 --> 00:16:49,920
+But we can certainly do things that would push CellProfiler towards forcing the nuclei
+
+259
+00:16:49,920 --> 00:16:53,920
+to be smaller and more separate.
+
+260
+00:16:54,080 --> 00:16:57,840
+There's preprocessing tricks we could go to push this even further.
+
+261
+00:16:57,840 --> 00:17:05,160
+We've now at least gone further than we were before and we have smaller nuclear chunks.
+
+262
+00:17:05,160 --> 00:17:06,560
+This one is a little bit better.
+
+263
+00:17:06,560 --> 00:17:09,600
+This one is a little bit better.
+
+264
+00:17:09,600 --> 00:17:11,200
+But this is hard.
+
+265
+00:17:11,200 --> 00:17:14,920
+Especially if we zoom in on some of these ones that aren't doing a good job.
+
+266
+00:17:14,920 --> 00:17:17,800
+I think there are four nuclei here.
+
+267
+00:17:17,800 --> 00:17:18,800
+One, two, three, four.
+
+268
+00:17:18,800 --> 00:17:22,440
+But even I'm not totally sure.
+
+269
+00:17:22,440 --> 00:17:26,360
+One could be three.
+
+270
+00:17:26,360 --> 00:17:28,960
+Maybe it's one horizontal.
+
+271
+00:17:28,960 --> 00:17:30,280
+I don't know.
+
+272
+00:17:30,280 --> 00:17:31,280
+That's tricky.
+
+273
+00:17:31,280 --> 00:17:32,800
+I think that's a ridge.
+
+274
+00:17:32,800 --> 00:17:33,800
+I think there's four.
+
+275
+00:17:33,800 --> 00:17:36,920
+It's hard to say.
+
+276
+00:17:36,920 --> 00:17:38,560
+But if you are thinking of...
+
+277
+00:17:38,560 --> 00:17:39,560
+Sorry.
+
+278
+00:17:39,560 --> 00:17:47,280
+I was just going to say, I think that's a reminder about basic principles of image analysis.
+
+279
+00:17:47,600 --> 00:17:54,160
+Here, we are two expert biologists and we are having a very hard time saying where is
+
+280
+00:17:54,160 --> 00:17:55,680
+the line on this nucleus?
+
+281
+00:17:55,680 --> 00:17:59,840
+The computer can only do what we tell it to do.
+
+282
+00:17:59,840 --> 00:18:08,640
+When we get into this computational regime of thinking, it still relies on...
+
+283
+00:18:08,640 --> 00:18:13,520
+You still rely on expert biologist input to this task.
+
+284
+00:18:13,520 --> 00:18:14,640
+It will only do what we tell it.
+
+285
+00:18:14,640 --> 00:18:21,320
+We need to be able to tell it, to tune it to the regime that we think matches biology
+
+286
+00:18:21,320 --> 00:18:22,320
+best.
+
+287
+00:18:22,320 --> 00:18:28,800
+Sometimes, you can only get what you can get out of the image.
+
+288
+00:18:28,800 --> 00:18:35,560
+Maybe it's just not possible to tell.
+
+289
+00:18:35,560 --> 00:18:44,600
+You can't do better because you have no ground truth or expert biologist vision to compare
+
+290
+00:18:44,840 --> 00:18:47,840
+it to.
+
+291
+00:18:47,840 --> 00:18:51,400
+If we really cared, we could probably do things like look at the other channels and try to
+
+292
+00:18:51,400 --> 00:18:52,400
+get a sense.
+
+293
+00:18:52,400 --> 00:18:55,600
+I was saying before that I thought this clump was five and then when I looked at the cytoskeleton,
+
+294
+00:18:55,600 --> 00:18:56,600
+I thought it was six.
+
+295
+00:18:56,600 --> 00:19:00,040
+There are things we could try to do.
+
+296
+00:19:00,040 --> 00:19:05,960
+For now, I think we shouldn't because this is the case where we really want to turn to
+
+297
+00:19:05,960 --> 00:19:06,960
+deep learning.
+
+298
+00:19:06,960 --> 00:19:10,560
+We don't always want to turn to deep learning for everything because deep learning, it's
+
+299
+00:19:10,560 --> 00:19:14,000
+harder to understand when it will fail.
+
+300
+00:19:14,640 --> 00:19:17,720
+There are really good deep learning models for segmentation now.
+
+301
+00:19:17,720 --> 00:19:21,360
+Our very, very favorite is a tool called Cellpose.
+
+302
+00:19:21,360 --> 00:19:24,200
+If you haven't tried Cellpose yet, you absolutely should.
+
+303
+00:19:24,200 --> 00:19:29,000
+It is wonderful made by the folks at Janalia.
+
+304
+00:19:29,000 --> 00:19:32,400
+Great free open source tool.
+
+305
+00:19:32,400 --> 00:19:38,400
+Here we're running it in CellProfiler using a tool called Docker, which allows it to run
+
+306
+00:19:38,400 --> 00:19:42,600
+in its own little container, which means I didn't have to do any difficult installation
+
+307
+00:19:42,720 --> 00:19:46,160
+to install Cellpose on my machine instead of having to go to my terminal and try and
+
+308
+00:19:46,160 --> 00:19:50,080
+do things, which many of us do not want to do anything in our terminal.
+
+309
+00:19:50,080 --> 00:19:55,320
+I opened up the Docker desktop program and I searched for Cellpose and then I looked
+
+310
+00:19:55,320 --> 00:19:58,560
+for the one that was said CellProfiler RunCellpose.
+
+311
+00:19:58,560 --> 00:20:00,800
+That was all I did.
+
+312
+00:20:00,800 --> 00:20:05,480
+Then I added the RunCellpose, CellProfiler plugin.
+
+313
+00:20:05,480 --> 00:20:12,320
+You can check out, I believe it's Weisbart et al., 2023 to learn more about CellProfiler plugins
+
+314
+00:20:13,040 --> 00:20:15,040
+and how to use those.
+
+315
+00:20:15,040 --> 00:20:18,240
+Maybe that's a good future episode idea there too.
+
+316
+00:20:18,240 --> 00:20:22,760
+Maybe we should go deep dive into the plug-ins ecosystem.
+
+317
+00:20:22,760 --> 00:20:26,560
+Another one to add to the list.
+
+318
+00:20:26,560 --> 00:20:30,440
+Here I'm telling CellProfiler that I'm going to be using Cellpose with Docker, which means
+
+319
+00:20:30,440 --> 00:20:33,200
+I need Docker open and all, which I have.
+
+320
+00:20:33,200 --> 00:20:38,080
+I wanted to detect nuclei and I'm going to tell it that I think my nuclei are about 15
+
+321
+00:20:38,080 --> 00:20:41,520
+pixels across because that worked pretty well before.
+
+322
+00:20:41,720 --> 00:20:45,160
+I'm not going to try and tune any of the other parameters right now.
+
+323
+00:20:45,160 --> 00:20:50,040
+There's lots of other parameters in Cellpose like any CellProfiler module.
+
+324
+00:20:50,040 --> 00:20:54,440
+There are help functions next to each one of these things and you can get the help about
+
+325
+00:20:54,440 --> 00:20:58,360
+what is going on with each parameter by checking the help.
+
+326
+00:20:58,360 --> 00:21:00,800
+Always the most important button in CellProfiler.
+
+327
+00:21:00,800 --> 00:21:03,800
+Why are you unhappy?
+
+328
+00:21:03,800 --> 00:21:06,320
+I think you aren't unhappy.
+
+329
+00:21:06,320 --> 00:21:07,560
+I think you're just pretending.
+
+330
+00:21:07,560 --> 00:21:08,720
+I think it's just pretending.
+
+331
+00:21:08,720 --> 00:21:09,720
+I think that's ...
+
+332
+00:21:09,720 --> 00:21:10,720
+Yeah.
+
+333
+00:21:10,920 --> 00:21:17,200
+An outstanding issue that is not affecting functionality at the moment, but affecting what it's ...
+
+334
+00:21:17,200 --> 00:21:22,360
+It's a little cranky, but it does actually work.
+
+335
+00:21:22,360 --> 00:21:24,360
+Yeah.
+
+336
+00:21:24,360 --> 00:21:30,680
+Cellpose is really good at figuring out when stuff is clumped how to actually split it apart.
+
+337
+00:21:30,680 --> 00:21:35,680
+Often when we are doing multi-nucleation workflows these days and by these days, I mean in the
+
+338
+00:21:35,680 --> 00:21:42,320
+past five years since Cellpose was first proposed, that is the case where we don't
+
+339
+00:21:42,320 --> 00:21:48,320
+try to do things with classical CellProfiler anymore, but we actually leverage these deep
+
+340
+00:21:48,320 --> 00:21:52,000
+learning modules because the fact that they're a little harder to install and that they're
+
+341
+00:21:52,000 --> 00:21:56,120
+a little bit harder to predict when they will fail is outweighed by the fact that they just
+
+342
+00:21:56,120 --> 00:21:59,280
+work better at these tasks.
+
+343
+00:21:59,280 --> 00:22:03,240
+We're not never deep learning people and we're not always deep learning people.
+
+344
+00:22:03,280 --> 00:22:09,720
+You're deep learning when you weigh the factors and the factors balance.
+
+345
+00:22:09,720 --> 00:22:13,280
+This is unfortunately pretty slow in Docker in CellProfiler four.
+
+346
+00:22:13,280 --> 00:22:18,840
+When we put out CellProfiler five, this will be much faster, at least the second time.
+
+347
+00:22:18,840 --> 00:22:22,320
+On the first time, it's always going to be a tiny bit slow because it has to actually
+
+348
+00:22:22,320 --> 00:22:27,280
+make a whole system for running Cellpose.
+
+349
+00:22:27,320 --> 00:22:34,520
+The downside of installing really quickly is that it is not actually going to run super
+
+350
+00:22:34,520 --> 00:22:36,520
+quickly.
+
+351
+00:22:39,520 --> 00:22:40,520
+Okay, there we go.
+
+352
+00:22:40,520 --> 00:22:45,560
+As soon as I navigated away, it finished.
+
+353
+00:22:45,560 --> 00:22:49,960
+Here that input image looks terrible because of the normalization stuff.
+
+354
+00:22:49,960 --> 00:22:53,040
+Let's just put that back to normalized.
+
+355
+00:22:53,040 --> 00:22:58,360
+You can see with literally zero parameter tuning other than saying what is the approximate
+
+356
+00:22:58,360 --> 00:23:04,960
+size of the objects, Cellpose has done a way better job than our initial things did
+
+357
+00:23:04,960 --> 00:23:09,160
+and certainly better than I think even if Erin and I spent a bunch of time doing it,
+
+358
+00:23:09,160 --> 00:23:13,400
+I think Cellpose would probably do better in the long run.
+
+359
+00:23:13,400 --> 00:23:21,000
+This super big chunk that we were never able to split apart, it hasn't perfectly split
+
+360
+00:23:21,000 --> 00:23:22,000
+apart.
+
+361
+00:23:22,000 --> 00:23:24,680
+I still think there's a couple things that are stuck together, but it is way, way better
+
+362
+00:23:24,680 --> 00:23:29,920
+and there's more stuff we could do to tune things.
+
+363
+00:23:29,920 --> 00:23:34,160
+If you have a multi-nucleation workflow and things are super clumpy and it's really important
+
+364
+00:23:34,160 --> 00:23:41,840
+for you to be able to detect the bi-nucleation, using Cellpose and using Cellpose even sometimes
+
+365
+00:23:41,840 --> 00:23:52,360
+twice, once to be able to identify the nuclei and once to be able to identify the cells
+
+366
+00:23:52,360 --> 00:23:59,800
+is actually the way to go because when things are likely to be clumpy and weird looking,
+
+367
+00:23:59,800 --> 00:24:05,120
+then Cellpose is probably going to do the better job.
+
+368
+00:24:05,120 --> 00:24:09,720
+Again, this will probably take about a minute to run.
+
+369
+00:24:09,720 --> 00:24:13,440
+What are the things you just tuned in this module, Beth, as you were chatting?
+
+370
+00:24:13,440 --> 00:24:15,720
+Yeah, that's a great question.
+
+371
+00:24:15,720 --> 00:24:17,720
+I tuned which Cellpose model to run.
+
+372
+00:24:17,720 --> 00:24:25,320
+I changed it from nuclei before to cytohere, which is their cytoskeleton model.
+
+373
+00:24:25,320 --> 00:24:27,920
+Because we now want to find the cells, I switched which image to use.
+
+374
+00:24:27,920 --> 00:24:34,120
+I told it to use the cytoskeleton image instead of the DNA image.
+
+375
+00:24:34,120 --> 00:24:38,840
+Cellpose has actually been trained to assume that cells have nuclei.
+
+376
+00:24:39,840 --> 00:24:43,040
+I might be tuned to have cells one nuclei, so that might actually hurt.
+
+377
+00:24:43,040 --> 00:24:49,360
+What I just did might actually make it worse by turning the supply nuclei image as well
+
+378
+00:24:49,360 --> 00:24:51,680
+on or maybe not.
+
+379
+00:24:51,680 --> 00:24:54,160
+I'm not actually sure.
+
+380
+00:24:54,160 --> 00:24:57,120
+That's the sort of question where you could try and read the documentation or you could
+
+381
+00:24:57,120 --> 00:24:58,800
+just look and see what happens.
+
+382
+00:24:58,800 --> 00:25:01,680
+I always like to look and see what happens.
+
+383
+00:25:01,680 --> 00:25:02,680
+Nothing against documentation.
+
+384
+00:25:02,680 --> 00:25:07,000
+I read and write lots of documentation, but sometimes you just want to see in this exact
+
+385
+00:25:07,000 --> 00:25:09,680
+circumstance what's going to happen.
+
+386
+00:25:09,680 --> 00:25:13,200
+With deep learning, it can be really hard to tell, which is why we don't always go to
+
+387
+00:25:13,200 --> 00:25:17,600
+deep learning first.
+
+388
+00:25:17,600 --> 00:25:21,760
+But I did tell it that it could have a nuclear image as well.
+
+389
+00:25:21,760 --> 00:25:23,920
+I also changed the expected diameter.
+
+390
+00:25:23,920 --> 00:25:28,440
+We said nuclei were about 15 pixels across.
+
+391
+00:25:28,440 --> 00:25:32,200
+I said, let cells be about 25 pixels across.
+
+392
+00:25:32,200 --> 00:25:35,200
+That was vibes-based.
+
+393
+00:25:35,400 --> 00:25:44,600
+I think Cellpose is normalizing the image itself.
+
+394
+00:25:44,600 --> 00:25:51,360
+It hasn't detected our super big cell because it's super big and it has actually broken
+
+395
+00:25:51,360 --> 00:25:52,920
+things to where the nuclei are.
+
+396
+00:25:52,920 --> 00:25:57,600
+I'm going to try running this one more time and I'm going to not give it the nuclear image.
+
+397
+00:25:57,600 --> 00:25:59,600
+We're going to see if it'll do a better job.
+
+398
+00:25:59,600 --> 00:26:04,040
+I think it's still not going to pick up this cell because the cell is just so big.
+
+399
+00:26:04,080 --> 00:26:07,280
+There's stuff we could play with, but that's another episode.
+
+400
+00:26:07,280 --> 00:26:11,360
+Let's see if we don't give a nuclear image if some of these things, it gets a little
+
+401
+00:26:11,360 --> 00:26:14,480
+better, like this cluster.
+
+402
+00:26:14,480 --> 00:26:19,080
+When we give it the cell diameter, do you think there'd be a situation where bumping
+
+403
+00:26:19,080 --> 00:26:21,840
+up the cell diameter in this setting?
+
+404
+00:26:21,840 --> 00:26:22,840
+A bit?
+
+405
+00:26:22,840 --> 00:26:26,800
+Because I think 25 seems to be on the smaller end of things.
+
+406
+00:26:26,800 --> 00:26:29,920
+Maybe that will also help.
+
+407
+00:26:30,000 --> 00:26:33,680
+We're going to be using the same thing here.
+
+408
+00:26:33,680 --> 00:26:38,560
+In our identify secondary module, identify primary and identify secondary, when we're
+
+409
+00:26:38,560 --> 00:26:45,760
+putting the object diameters, in those examples, we were using them as hard cutoffs saying,
+
+410
+00:26:45,760 --> 00:26:50,440
+don't give me an object that is outside of this range that we put here.
+
+411
+00:26:50,440 --> 00:26:53,600
+In Cellpose, this RunCellpose module, this is different.
+
+412
+00:26:53,680 --> 00:26:58,320
+This isn't a hard cutoff for object diameter.
+
+413
+00:26:58,320 --> 00:27:02,520
+There is also a hard cutoff.
+
+414
+00:27:02,520 --> 00:27:04,200
+It's this minimum size parameter.
+
+415
+00:27:04,200 --> 00:27:07,160
+But yes, the expected object parameter isn't.
+
+416
+00:27:07,160 --> 00:27:10,320
+It's a guiding fact.
+
+417
+00:27:10,320 --> 00:27:12,920
+We want to be careful about setting that too big, though, because we want to make sure
+
+418
+00:27:12,920 --> 00:27:19,120
+that this pipeline also works for the ones where we still have little individual cells.
+
+419
+00:27:19,120 --> 00:27:20,120
+We don't want to go crazy.
+
+420
+00:27:20,120 --> 00:27:21,480
+We don't want to make it too big.
+
+421
+00:27:21,840 --> 00:27:24,200
+But yes, we can see if those changes help.
+
+422
+00:27:24,200 --> 00:27:30,080
+That's a good principle for when you are building a pipeline.
+
+423
+00:27:30,080 --> 00:27:32,960
+You always want to make sure that you are testing it on.
+
+424
+00:27:32,960 --> 00:27:36,680
+If you have positive and negative controls, great.
+
+425
+00:27:36,680 --> 00:27:38,960
+Make sure you're testing it on both of those.
+
+426
+00:27:38,960 --> 00:27:43,920
+As Beth mentioned, any parameter that we're setting up here to work on these cells, we
+
+427
+00:27:43,920 --> 00:27:48,400
+need to make sure it's also going to work on our negative control population, where
+
+428
+00:27:48,400 --> 00:27:50,680
+the cells look a lot different.
+
+429
+00:27:50,880 --> 00:27:58,280
+Having a broad enough test during your pipeline development is essential.
+
+430
+00:28:00,280 --> 00:28:05,720
+It doesn't look like actually those changes made a whole lot of difference, which is not
+
+431
+00:28:05,720 --> 00:28:06,960
+the answer I would have expected.
+
+432
+00:28:06,960 --> 00:28:10,040
+But again, deep learning can be a little bit hard to predict when things go well and when
+
+433
+00:28:10,040 --> 00:28:11,040
+they don't.
+
+434
+00:28:11,040 --> 00:28:13,920
+There's a lot of other cell post parameters we could test and we could tune.
+
+435
+00:28:13,920 --> 00:28:17,480
+There's a lot of other CellProfiler ones we could.
+
+436
+00:28:17,480 --> 00:28:22,040
+What we really wanted to do here is illustrate to you what things you might try in terms
+
+437
+00:28:22,040 --> 00:28:24,440
+of thinking through the problem.
+
+438
+00:28:24,440 --> 00:28:27,600
+Do we want to prioritize nuclear correct?
+
+439
+00:28:27,600 --> 00:28:30,800
+Do we want to prioritize cell boundary correct?
+
+440
+00:28:30,800 --> 00:28:35,720
+Or do we want to go to this deep learning situation, which is a little harder to predict,
+
+441
+00:28:35,720 --> 00:28:37,720
+but may work better?
+
+442
+00:28:37,720 --> 00:28:42,360
+All of those are valid pathways, potentially depending on the biology you want to measure.
+
+443
+00:28:42,360 --> 00:28:47,800
+All of those could then be further tuned to get the exact best answer for your data.
+
+444
+00:28:47,800 --> 00:28:52,960
+I don't think the tuning will teach you as much as the principles, because the tuning
+
+445
+00:28:52,960 --> 00:28:55,600
+will be specific to the data you have.
+
+446
+00:28:55,600 --> 00:28:56,600
+Absolutely.
+
+447
+00:28:56,600 --> 00:28:59,120
+Any closing thoughts, Erin?
+
+448
+00:28:59,120 --> 00:29:01,120
+No, no.
+
+449
+00:29:01,120 --> 00:29:04,320
+I mean, I think this is, you know, it's a fun challenge.
+
+450
+00:29:04,320 --> 00:29:12,080
+And again, I think an interesting thought exercise in remembering that like there are
+
+451
+00:29:12,120 --> 00:29:19,000
+many very valid approaches that will give you very different measurements in the end.
+
+452
+00:29:19,000 --> 00:29:26,800
+And so paying attention to what is my task and what do I need to, you know, what am I
+
+453
+00:29:26,800 --> 00:29:34,440
+prioritizing in accuracy is definitely something to keep in mind that has, I mean, I think
+
+454
+00:29:34,440 --> 00:29:38,320
+for any workflow, but it has a major impact on this particular example.
+
+455
+00:29:39,320 --> 00:29:42,840
+Let's go sticking out and sticking around and hanging out with us.
+
+456
+00:29:42,840 --> 00:29:45,320
+It was great to see you and hope to see you next time.
+
+457
+00:29:45,320 --> 00:29:47,320
+Bye.
+
