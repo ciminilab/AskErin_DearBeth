@@ -1,0 +1,333 @@
+CellProfiler Pipeline: http://www.cellprofiler.org
+Version:5
+DateRevision:426
+GitHash:
+ModuleCount:20
+HasImagePlaneDetails:False
+
+Images:[module_num:1|svn_version:'Unknown'|variable_revision_number:2|show_window:True|notes:['To begin creating your project, use the Images module to compile a list of files and/or folders that you want to analyze. You can also specify a set of rules to include only the desired files in your selected folders.']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    :
+    Filter images?:Images only
+    Select the rule criteria:and (extension does isimage) (directory doesnot containregexp "[\\\\/]\\.")
+
+Metadata:[module_num:2|svn_version:'Unknown'|variable_revision_number:6|show_window:True|notes:['The Metadata module optionally allows you to extract information describing your images (i.e, metadata) which will be stored along with your measurements. This information can be contained in the file name and/or location, or in an external file.']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Extract metadata?:No
+    Metadata data type:Text
+    Metadata types:{}
+    Extraction method count:1
+    Metadata extraction method:Extract from file/folder names
+    Metadata source:File name
+    Regular expression to extract from file name:^(?P<Plate>.*)_(?P<Well>[A-P][0-9]{2})_s(?P<Site>[0-9])_w(?P<ChannelNumber>[0-9])
+    Regular expression to extract from folder name:(?P<Date>[0-9]{4}_[0-9]{2}_[0-9]{2})$
+    Extract metadata from:All images
+    Select the filtering criteria:and (file does contain "")
+    Metadata file location:Elsewhere...|
+    Match file and image metadata:[]
+    Use case insensitive matching?:No
+    Metadata file name:None
+    Does cached metadata exist?:No
+
+NamesAndTypes:[module_num:3|svn_version:'Unknown'|variable_revision_number:8|show_window:True|notes:['The NamesAndTypes module allows you to assign a meaningful name to each image by which other modules will refer to it.']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Assign a name to:Images matching rules
+    Select the image type:Grayscale image
+    Name to assign these images:DNA
+    Match metadata:[]
+    Image set matching method:Order
+    Set intensity range from:Image metadata
+    Assignments count:2
+    Single images count:0
+    Maximum intensity:255.0
+    Process as 3D?:No
+    Relative pixel spacing in X:1.0
+    Relative pixel spacing in Y:1.0
+    Relative pixel spacing in Z:1.0
+    Select the rule criteria:and (file does contain "DNA")
+    Name to assign these images:CorrDNA
+    Name to assign these objects:Cell
+    Select the image type:Grayscale image
+    Set intensity range from:Image metadata
+    Maximum intensity:255.0
+    Select the rule criteria:and (file does contain "DAPI")
+    Name to assign these images:Cycle01_DAPI
+    Name to assign these objects:Nucleus
+    Select the image type:Grayscale image
+    Set intensity range from:Image metadata
+    Maximum intensity:255.0
+
+Groups:[module_num:4|svn_version:'Unknown'|variable_revision_number:2|show_window:True|notes:['The Groups module optionally allows you to split your list of images into image subsets (groups) which will be processed independently of each other. Examples of groupings include screening batches, microtiter plates, time-lapse movies, etc.']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Do you want to group your images?:No
+    grouping metadata count:1
+    Metadata category:None
+
+MeasureImageIntensity:[module_num:5|svn_version:'Unknown'|variable_revision_number:4|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select images to measure:CorrDNA, Cycle01_DAPI
+    Measure the intensity only from areas enclosed by objects?:No
+    Select input object sets:
+    Calculate custom percentiles:No
+    Specify percentiles to measure:10,90
+
+FlagImage:[module_num:6|svn_version:'Unknown'|variable_revision_number:5|show_window:True|notes:['Flag and remove images that are empty in either Paint or BC']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Hidden:2
+    Hidden:1
+    Name the flag's category:Metadata
+    Name the flag:EmptyFlag_BC
+    How should measurements be linked?:Flag if any fail
+    Skip image set if flagged?:Yes
+    Flag is based on:Whole-image measurement
+    Select the object to be used for flagging:None
+    Which measurement?:Intensity_MaxIntensity_CorrDNA
+    Flag images based on low values?:Yes
+    Minimum value:0.000001
+    Flag images based on high values?:No
+    Maximum value:1.0
+    Rules file location:Elsewhere...|
+    Rules file name:rules.txt
+    Class number:
+    Allow fuzzy feature matching?:No
+    Hidden:1
+    Name the flag's category:Metadata
+    Name the flag:EmptyFlag_Paint
+    How should measurements be linked?:Flag if any fail
+    Skip image set if flagged?:Yes
+    Flag is based on:Whole-image measurement
+    Select the object to be used for flagging:None
+    Which measurement?:Intensity_MaxIntensity_Cycle01_DAPI
+    Flag images based on low values?:Yes
+    Minimum value:0.000001
+    Flag images based on high values?:No
+    Maximum value:1.0
+    Rules file location:Elsewhere...|
+    Rules file name:rules.txt
+    Class number:
+    Allow fuzzy feature matching?:No
+    Ignore flag skips on last cycle?:No
+
+Align:[module_num:7|svn_version:'Unknown'|variable_revision_number:3|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select the alignment method:Normalized Cross Correlation
+    Crop mode:Keep size
+    Select the first input image:Cycle01_DAPI
+    Name the first output image:AlignedRed
+    Select the second input image:CorrDNA
+    Name the second output image:DAPI_Painting
+
+Threshold:[module_num:8|svn_version:'Unknown'|variable_revision_number:12|show_window:True|notes:['Identifies actual image area ']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select the input image:Cycle01_DAPI
+    Name the output image:NonPaddedAreas_Barcode
+    Threshold strategy:Global
+    Thresholding method:Manual
+    Threshold smoothing scale:0.0
+    Threshold correction factor:1.0
+    Lower and upper bounds on threshold:0.0,1.0
+    Manual threshold:0.00001
+    Select the measurement to threshold with:None
+    Two-class or three-class thresholding?:Two classes
+    Log transform before thresholding?:No
+    Assign pixels in the middle intensity class to the foreground or the background?:Foreground
+    Size of adaptive window:50
+    Lower outlier fraction:0.05
+    Upper outlier fraction:0.05
+    Averaging method:Mean
+    Variance method:Standard deviation
+    # of deviations:2.0
+    Thresholding method:Minimum Cross-Entropy
+
+Threshold:[module_num:9|svn_version:'Unknown'|variable_revision_number:12|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select the input image:DAPI_Painting
+    Name the output image:NonPaddedAreas_Paint
+    Threshold strategy:Global
+    Thresholding method:Manual
+    Threshold smoothing scale:0.0
+    Threshold correction factor:1.0
+    Lower and upper bounds on threshold:0.0,1.0
+    Manual threshold:0.00001
+    Select the measurement to threshold with:None
+    Two-class or three-class thresholding?:Two classes
+    Log transform before thresholding?:No
+    Assign pixels in the middle intensity class to the foreground or the background?:Foreground
+    Size of adaptive window:50
+    Lower outlier fraction:0.05
+    Upper outlier fraction:0.05
+    Averaging method:Mean
+    Variance method:Standard deviation
+    # of deviations:2.0
+    Thresholding method:Minimum Cross-Entropy
+
+ImageMath:[module_num:10|svn_version:'Unknown'|variable_revision_number:5|show_window:True|notes:['Signal that is present in both BC and Paint']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Operation:Minimum
+    Raise the power of the result by:1.0
+    Multiply the result by:1.0
+    Add to result:0.0
+    Set values less than 0 equal to 0?:Yes
+    Set values greater than 1 equal to 1?:Yes
+    Replace invalid values with 0?:Yes
+    Ignore the image masks?:No
+    Name the output image:NonPaddedAreas_Both
+    Image or measurement?:Image
+    Select the first image:NonPaddedAreas_Barcode
+    Multiply the first image by:1.0
+    Measurement:
+    Image or measurement?:Image
+    Select the second image:NonPaddedAreas_Paint
+    Multiply the second image by:1.0
+    Measurement:
+
+ImageMath:[module_num:11|svn_version:'Unknown'|variable_revision_number:5|show_window:True|notes:['Signal that is present in either BC or Paint']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Operation:Maximum
+    Raise the power of the result by:1.0
+    Multiply the result by:1.0
+    Add to result:0.0
+    Set values less than 0 equal to 0?:Yes
+    Set values greater than 1 equal to 1?:Yes
+    Replace invalid values with 0?:Yes
+    Ignore the image masks?:No
+    Name the output image:NonPaddedAreas_Any
+    Image or measurement?:Image
+    Select the first image:NonPaddedAreas_Barcode
+    Multiply the first image by:1.0
+    Measurement:
+    Image or measurement?:Image
+    Select the second image:NonPaddedAreas_Paint
+    Multiply the second image by:1.0
+    Measurement:
+
+MaskImage:[module_num:12|svn_version:'Unknown'|variable_revision_number:3|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select the input image:DAPI_Painting
+    Name the output image:DAPI_Painting_EdgeMasked
+    Use objects or an image as a mask?:Image
+    Select object for mask:PaddedObjects_Both
+    Select image for mask:NonPaddedAreas_Both
+    Invert the mask?:No
+
+MaskImage:[module_num:13|svn_version:'Unknown'|variable_revision_number:3|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select the input image:Cycle01_DAPI
+    Name the output image:Cycle01_DAPI_EdgeMasked
+    Use objects or an image as a mask?:Image
+    Select object for mask:None
+    Select image for mask:NonPaddedAreas_Both
+    Invert the mask?:No
+
+MeasureColocalization:[module_num:14|svn_version:'Unknown'|variable_revision_number:5|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:False|wants_pause:False]
+    Select images to measure:Cycle01_DAPI_EdgeMasked, DAPI_Painting_EdgeMasked
+    Set threshold as percentage of maximum intensity for the images:15.0
+    Select where to measure correlation:Across entire image
+    Select objects to measure:
+    Run all metrics?:No
+    Calculate correlation and slope metrics?:Yes
+    Calculate the Manders coefficients?:No
+    Calculate the Rank Weighted Colocalization coefficients?:No
+    Calculate the Overlap coefficients?:No
+    Calculate the Manders coefficients using Costes auto threshold?:No
+    Method for Costes thresholding:Faster
+
+FlagImage:[module_num:15|svn_version:'Unknown'|variable_revision_number:5|show_window:True|notes:['Flag and remove image set if not aligned well']|batch_state:array([], dtype=uint8)|enabled:False|wants_pause:False]
+    Hidden:1
+    Hidden:1
+    Name the flag's category:Metadata
+    Name the flag:AlignmentFlag
+    How should measurements be linked?:Flag if any fail
+    Skip image set if flagged?:No
+    Flag is based on:Whole-image measurement
+    Select the object to be used for flagging:None
+    Which measurement?:Correlation_Correlation_Cycle01_DAPI_EdgeMasked_DAPI_Painting_EdgeMasked
+    Flag images based on low values?:Yes
+    Minimum value:0.7
+    Flag images based on high values?:No
+    Maximum value:1.0
+    Rules file location:Elsewhere...|
+    Rules file name:rules.txt
+    Class number:
+    Allow fuzzy feature matching?:No
+    Ignore flag skips on last cycle?:No
+
+ImageMath:[module_num:16|svn_version:'Unknown'|variable_revision_number:5|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Operation:Invert
+    Raise the power of the result by:1.0
+    Multiply the result by:1.0
+    Add to result:0.0
+    Set values less than 0 equal to 0?:Yes
+    Set values greater than 1 equal to 1?:Yes
+    Replace invalid values with 0?:Yes
+    Ignore the image masks?:No
+    Name the output image:PaddedAreas_Barcode
+    Image or measurement?:Image
+    Select the first image:NonPaddedAreas_Any
+    Multiply the first image by:1.0
+    Measurement:
+    Image or measurement?:Image
+    Select the second image:None
+    Multiply the second image by:1.0
+    Measurement:
+
+Morph:[module_num:17|svn_version:'Unknown'|variable_revision_number:5|show_window:True|notes:['Creates gradient of distance from foreground (actual image) to background (zero padding).', 'In images without foreground/background (i.e. images without well edge present) it morphs from 0,0 corner which is not what we want so we use subsequent math to remove that spurious data.']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select the input image:NonPaddedAreas_Barcode
+    Name the output image:WellEdgeDistancePreMultiply
+    Select the operation to perform:distance
+    Number of times to repeat operation:Once
+    Repetition number:2
+    Rescale values from 0 to 1?:No
+
+MeasureImageIntensity:[module_num:18|svn_version:'Unknown'|variable_revision_number:4|show_window:True|notes:['Measures image intensity in binary PaddedAreas.', 'Max intensity in images with padding is 1, max intesnity in images without padding is 0.']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select images to measure:PaddedAreas_Barcode
+    Measure the intensity only from areas enclosed by objects?:No
+    Select input object sets:
+    Calculate custom percentiles:No
+    Specify percentiles to measure:10,90
+
+ImageMath:[module_num:19|svn_version:'Unknown'|variable_revision_number:5|show_window:True|notes:['Multiplies WellEdgeDistance created by morph by maxintensity of PaddedAreas so that morphs with well edge are unaffected (x1) but spurious data in morphs without well edges are zeroed (x0)']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Operation:Multiply
+    Raise the power of the result by:1.0
+    Multiply the result by:1.0
+    Add to result:0.0
+    Set values less than 0 equal to 0?:No
+    Set values greater than 1 equal to 1?:No
+    Replace invalid values with 0?:Yes
+    Ignore the image masks?:No
+    Name the output image:WellEdgeDistance
+    Image or measurement?:Image
+    Select the first image:WellEdgeDistancePreMultiply
+    Multiply the first image by:1.0
+    Measurement:
+    Image or measurement?:Measurement
+    Select the second image:None
+    Multiply the second image by:1.0
+    Measurement:Intensity_MaxIntensity_PaddedAreas_Barcode
+
+ExportToSpreadsheet:[module_num:20|svn_version:'Unknown'|variable_revision_number:13|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:True]
+    Select the column delimiter:Comma (",")
+    Add image metadata columns to your object data file?:No
+    Add image file and folder names to your object data file?:No
+    Select the measurements to export:No
+    Calculate the per-image mean values for object measurements?:No
+    Calculate the per-image median values for object measurements?:No
+    Calculate the per-image standard deviation values for object measurements?:No
+    Output file location:Default Output Folder|
+    Create a GenePattern GCT file?:No
+    Select source of sample row name:Image filename
+    Select the image to use as the identifier:Barcodes_Barcodes
+    Select the metadata to use as the identifier:None
+    Export all measurement types?:Yes
+    Press button to select measurements:
+    Representation of Nan/Inf:NaN
+    Add a prefix to file names?:No
+    Filename prefix:MyExpt_
+    Overwrite existing files without warning?:No
+    Data to export:Image
+    Combine these object measurements with those of the previous object?:No
+    File name:DATA.csv
+    Use the object name for the file name?:Yes
+    Data to export:Experiment
+    Combine these object measurements with those of the previous object?:No
+    File name:DATA.csv
+    Use the object name for the file name?:Yes
+    Data to export:Cells
+    Combine these object measurements with those of the previous object?:No
+    File name:Object.csv
+    Use the object name for the file name?:No
+    Data to export:Cytoplasm
+    Combine these object measurements with those of the previous object?:Yes
+    File name:DATA.csv
+    Use the object name for the file name?:Yes
+    Data to export:Nuclei
+    Combine these object measurements with those of the previous object?:No
+    File name:DATA.csv
+    Use the object name for the file name?:Yes
