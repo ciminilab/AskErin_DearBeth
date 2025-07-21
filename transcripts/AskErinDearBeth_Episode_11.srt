@@ -1,0 +1,1220 @@
+1
+00:00:00,000 --> 00:00:07,000
+Hey Beth!
+
+2
+00:00:07,000 --> 00:00:18,280
+Erin, it's so good to see you!
+
+3
+00:00:18,280 --> 00:00:20,400
+You too!
+
+4
+00:00:20,400 --> 00:00:21,880
+How are things?
+
+5
+00:00:21,880 --> 00:00:22,880
+Lovely!
+
+6
+00:00:22,880 --> 00:00:26,480
+We've got some sunshine here right now, which is always nice.
+
+7
+00:00:27,480 --> 00:00:32,480
+Sunny and maybe a bit too sunshiny here today.
+
+8
+00:00:32,480 --> 00:00:38,280
+What I wanted to talk to you about today is a tool called ilastik, and more in general
+
+9
+00:00:38,280 --> 00:00:41,320
+the idea of pixel classification.
+
+10
+00:00:41,320 --> 00:00:44,560
+What that is, why that is, why it might be helpful.
+
+11
+00:00:44,560 --> 00:00:49,040
+Because ilastik is one of our favorite tools, and we end up using it a lot, especially for
+
+12
+00:00:49,040 --> 00:00:51,000
+projects that are a little bit trickier.
+
+13
+00:00:51,000 --> 00:00:54,840
+So I wanted to sort of let everybody know that this resource exists.
+
+14
+00:00:54,840 --> 00:00:55,840
+Awesome.
+
+15
+00:00:55,840 --> 00:00:56,840
+I love new tools.
+
+16
+00:00:56,840 --> 00:00:57,840
+All right.
+
+17
+00:00:57,840 --> 00:01:02,000
+Let me go ahead and share my screen.
+
+18
+00:01:02,000 --> 00:01:08,600
+And I think something worth double pointing out that despite, as image analysts, despite
+
+19
+00:01:08,600 --> 00:01:15,440
+being the team who maintains CellProfiler, we use lots of different tools.
+
+20
+00:01:15,440 --> 00:01:18,680
+And any image analyst, you may have your favorite tool.
+
+21
+00:01:18,680 --> 00:01:22,320
+I think we've shown in lots of episodes that we often, the very first thing we do is look
+
+22
+00:01:22,320 --> 00:01:27,000
+at images in Fiji, even before moving into a CellProfiler pipeline.
+
+23
+00:01:27,000 --> 00:01:34,440
+And just something to point out that you may be an expert in a given tool, but that doesn't
+
+24
+00:01:34,440 --> 00:01:35,880
+mean it's the best.
+
+25
+00:01:35,880 --> 00:01:40,680
+And there's lots of awesome tools out there, and ilastik is one that we love and use all
+
+26
+00:01:40,680 --> 00:01:42,640
+the time in our lab as well.
+
+27
+00:01:42,640 --> 00:01:43,640
+Yeah.
+
+28
+00:01:43,640 --> 00:01:48,080
+CellProfiler might even be our favorite multi-tool, but sometimes you need just a really darn
+
+29
+00:01:48,080 --> 00:01:49,080
+good screwdriver.
+
+30
+00:01:49,560 --> 00:01:54,720
+Sometimes you need another tool that's better at what you need to do than the thing that
+
+31
+00:01:54,720 --> 00:01:57,800
+is your go-to standard.
+
+32
+00:01:57,800 --> 00:02:05,080
+And we love ilastik for things where doing segmentation can get a little bit complicated.
+
+33
+00:02:05,080 --> 00:02:08,600
+Absolutely.
+
+34
+00:02:08,600 --> 00:02:13,880
+So here's one example.
+
+35
+00:02:13,880 --> 00:02:19,440
+So these are some cells that were taken with phase contrast imaging, where we're using
+
+36
+00:02:19,440 --> 00:02:21,160
+just white light.
+
+37
+00:02:21,160 --> 00:02:24,440
+We're not doing any fluorescence.
+
+38
+00:02:24,440 --> 00:02:30,240
+And by eye, I can really confidently say, you know, this is the boundary of this cell.
+
+39
+00:02:30,240 --> 00:02:34,760
+This is the boundary of this cell, because our brains evolved over millions and billions
+
+40
+00:02:34,760 --> 00:02:36,400
+of years to do that.
+
+41
+00:02:36,400 --> 00:02:41,480
+A program like CellProfiler that's used to dealing with fluorescence images is going
+
+42
+00:02:41,480 --> 00:02:45,520
+to get really confused because it's going to say, like, hey, you told me to look for
+
+43
+00:02:45,520 --> 00:02:50,280
+bright things on dark backgrounds, and that's not this.
+
+44
+00:02:50,280 --> 00:02:55,880
+We may, in a future episode, talk more about how what are the ways that you could make an
+
+45
+00:02:55,880 --> 00:02:57,200
+image look more like this.
+
+46
+00:02:57,200 --> 00:03:01,800
+But one of the tools that makes it really easy to make these cells look bright on a dark
+
+47
+00:03:01,800 --> 00:03:05,680
+background is ilastik, and this idea of pixel classification.
+
+48
+00:03:05,680 --> 00:03:09,320
+Ooh.
+
+49
+00:03:09,320 --> 00:03:11,160
+So there's a lot of different things you can do with ilastik.
+
+50
+00:03:11,200 --> 00:03:15,760
+I'm just going to be, like, skimming the surface here.
+
+51
+00:03:21,440 --> 00:03:27,320
+But this is a set of things that we generally find really helpful.
+
+52
+00:03:29,760 --> 00:03:31,760
+Oh, no.
+
+53
+00:03:31,760 --> 00:03:36,440
+I think I can just drag it around rather than having to spend five minutes sort of exploring
+
+54
+00:03:36,440 --> 00:03:37,440
+my whole.
+
+55
+00:03:37,560 --> 00:03:40,560
+I can.
+
+56
+00:03:40,560 --> 00:03:41,560
+Thank you, ilastik.
+
+57
+00:03:41,560 --> 00:03:45,320
+So I've brought in a bunch of these different images.
+
+58
+00:03:45,320 --> 00:03:50,840
+And ilastik is going to ask us to pick some features.
+
+59
+00:03:50,840 --> 00:03:54,440
+This isn't going to mean anything or it's going to mean more once I actually start working
+
+60
+00:03:54,440 --> 00:03:55,440
+with ilastik.
+
+61
+00:03:55,440 --> 00:03:58,760
+So I'm going to go ahead and just select these and then come back to telling you what they
+
+62
+00:03:58,760 --> 00:03:59,760
+are and why.
+
+63
+00:03:59,760 --> 00:04:02,560
+I'm going to hold you to that.
+
+64
+00:04:02,560 --> 00:04:03,560
+Okay.
+
+65
+00:04:03,560 --> 00:04:04,560
+You do, please.
+
+66
+00:04:04,560 --> 00:04:05,560
+Okay.
+
+67
+00:04:05,560 --> 00:04:06,560
+All right.
+
+68
+00:04:06,680 --> 00:04:11,280
+So here I'm given this idea of two labels.
+
+69
+00:04:11,280 --> 00:04:13,560
+Two labels doesn't mean that much to me.
+
+70
+00:04:13,560 --> 00:04:19,880
+Let's say I would rather call these background and cells.
+
+71
+00:04:19,880 --> 00:04:25,080
+Because there's two kinds of things in this image.
+
+72
+00:04:25,080 --> 00:04:26,480
+There's background in their cells.
+
+73
+00:04:26,480 --> 00:04:29,960
+Depending on how pedantic you want to be, there are more kinds.
+
+74
+00:04:29,960 --> 00:04:32,960
+There's little bits of shadow and things like that.
+
+75
+00:04:32,960 --> 00:04:35,160
+But there's two major kinds of things that I want to know.
+
+76
+00:04:35,160 --> 00:04:39,200
+I want to know is this part of the background or part of the cell?
+
+77
+00:04:39,200 --> 00:04:44,560
+And so the way I'm going to teach ilastik to do that is I'm going to drop my brush size
+
+78
+00:04:44,560 --> 00:04:46,800
+down to one.
+
+79
+00:04:46,800 --> 00:04:50,600
+And in a feature episode, we'll explain why it's important to drop your brush size down
+
+80
+00:04:50,600 --> 00:04:51,600
+to one.
+
+81
+00:04:51,600 --> 00:04:53,280
+But it's really important to drop your brush size down to one.
+
+82
+00:04:53,280 --> 00:04:56,080
+Just take my word for it.
+
+83
+00:04:56,080 --> 00:05:01,720
+It's not usually that we say, like, this is a rule and follow this rule and it, you know,
+
+84
+00:05:02,160 --> 00:05:03,680
+we'll explain why later, right?
+
+85
+00:05:03,680 --> 00:05:05,360
+Or not explain why, but this is a rule.
+
+86
+00:05:05,360 --> 00:05:09,760
+Like very rarely do we have moratorium or mandates.
+
+87
+00:05:09,760 --> 00:05:10,280
+There we go.
+
+88
+00:05:10,280 --> 00:05:14,720
+Very, very rarely do we have mandates without sufficient explanation because we love teaching
+
+89
+00:05:14,720 --> 00:05:15,640
+and training.
+
+90
+00:05:15,640 --> 00:05:16,960
+But this is just this is a mandate.
+
+91
+00:05:16,960 --> 00:05:19,760
+Just trust us or episode.
+
+92
+00:05:19,760 --> 00:05:22,600
+Keep an eye out for the next, you know, for a future episode where we explain why.
+
+93
+00:05:25,480 --> 00:05:30,800
+So I'm going to ask ilastik, what is the difference between background and cells?
+
+94
+00:05:30,800 --> 00:05:32,360
+And so I have to teach it.
+
+95
+00:05:32,360 --> 00:05:33,720
+What is it differently in background cells?
+
+96
+00:05:33,720 --> 00:05:35,560
+And so the way I'm going to do that is I'm going to annotate it.
+
+97
+00:05:35,560 --> 00:05:40,800
+I'm going to start literally by just annotating one pixel in each cell.
+
+98
+00:05:40,800 --> 00:05:44,200
+I'm now going to hit this magic live update button and magic is going to happen.
+
+99
+00:05:44,200 --> 00:05:45,520
+You ready?
+
+100
+00:05:45,520 --> 00:05:46,600
+Ready for magic?
+
+101
+00:05:46,600 --> 00:05:48,000
+I don't know.
+
+102
+00:05:48,000 --> 00:05:48,840
+Let's do it.
+
+103
+00:05:48,840 --> 00:05:51,760
+Let's do it.
+
+104
+00:05:51,760 --> 00:05:54,280
+What?
+
+105
+00:05:54,280 --> 00:06:00,720
+So ilastik has turned all of the pixels of the background yellow and all of the things
+
+106
+00:06:00,720 --> 00:06:02,640
+that it thinks are cells, it's turned blue.
+
+107
+00:06:02,640 --> 00:06:05,040
+I'm going to add just a second one.
+
+108
+00:06:05,040 --> 00:06:06,760
+Okay, hold the phone Beth.
+
+109
+00:06:06,760 --> 00:06:09,800
+That was with literally two pixels.
+
+110
+00:06:09,800 --> 00:06:10,640
+Yeah.
+
+111
+00:06:10,640 --> 00:06:11,760
+Yep, it was.
+
+112
+00:06:11,760 --> 00:06:13,000
+Literally two pixels.
+
+113
+00:06:13,000 --> 00:06:14,240
+It already.
+
+114
+00:06:14,240 --> 00:06:14,560
+Yeah.
+
+115
+00:06:14,560 --> 00:06:17,240
+And if I turn on my segmentation, it's pretty good.
+
+116
+00:06:17,240 --> 00:06:17,640
+Wow.
+
+117
+00:06:17,640 --> 00:06:18,960
+What actually happened?
+
+118
+00:06:18,960 --> 00:06:20,880
+How does the magic work?
+
+119
+00:06:20,880 --> 00:06:27,480
+So if I turn off live update and go back to the feature selection mode, I told you I would explain.
+
+120
+00:06:27,480 --> 00:06:28,600
+Okay.
+
+121
+00:06:28,600 --> 00:06:36,200
+What ilastik said is, okay, you gave me two and then later a third pixel for each one
+
+122
+00:06:36,200 --> 00:06:39,560
+of the things that you told me to measure.
+
+123
+00:06:39,560 --> 00:06:46,240
+So little circles around that pixel, very small pixels, 0.3 pixel diameter, including
+
+124
+00:06:46,240 --> 00:06:54,320
+big pixels, 10 pixel circle diameter, measure things about the color of the pixels in that
+
+125
+00:06:54,320 --> 00:06:58,400
+area, measure things about the edges that are around that pixel, measure things that
+
+126
+00:06:58,760 --> 00:07:04,200
+about the texture of that part of the image, and then make a classifier.
+
+127
+00:07:04,200 --> 00:07:07,360
+So this is why we call pixel classification.
+
+128
+00:07:07,360 --> 00:07:14,560
+So if it says, hey, the texture here is really different than the texture in the background,
+
+129
+00:07:14,560 --> 00:07:21,080
+which by my eye, I'm pretty sure is true, then it will use something like the texture
+
+130
+00:07:21,080 --> 00:07:29,080
+to say, I can classify if this pixel and this pixel versus this pixel have different properties
+
+131
+00:07:29,080 --> 00:07:32,120
+and I can learn to split those things apart.
+
+132
+00:07:33,800 --> 00:07:37,600
+And in fact, it will actually suggest what are the most important features and I bet
+
+133
+00:07:37,600 --> 00:07:40,080
+they're going to come up as texture features, but we can kind of see.
+
+134
+00:07:41,880 --> 00:07:46,440
+So it's going to ask what the features it should use are.
+
+135
+00:07:46,880 --> 00:07:50,080
+And I'm just going to hit run feature selection and see what happens.
+
+136
+00:07:51,120 --> 00:07:52,880
+Live demo. So who knows, but.
+
+137
+00:08:00,320 --> 00:08:03,400
+So actually, it's about different smoothing things.
+
+138
+00:08:03,400 --> 00:08:04,200
+So there you go.
+
+139
+00:08:04,200 --> 00:08:09,400
+It wasn't exactly what I predicted, but how the image changes when you smooth it.
+
+140
+00:08:10,120 --> 00:08:10,760
+Interesting.
+
+141
+00:08:11,520 --> 00:08:15,200
+Yeah, I imagine has some relationship to texture.
+
+142
+00:08:16,200 --> 00:08:21,000
+But, you know, a different way of mathematically approaching that.
+
+143
+00:08:21,360 --> 00:08:25,160
+Yeah, I also have only given it a very small number of pixels to learn from,
+
+144
+00:08:25,160 --> 00:08:26,840
+possibly if I gave it more pixels.
+
+145
+00:08:27,240 --> 00:08:30,120
+I'm going to, for example, it said that this was, it thought was a cell.
+
+146
+00:08:32,640 --> 00:08:38,280
+Change that and put a background label there and now see if, oh, I have to turn out
+
+147
+00:08:38,280 --> 00:08:39,720
+my update for magic to happen.
+
+148
+00:08:41,920 --> 00:08:42,760
+Magic happened.
+
+149
+00:08:43,600 --> 00:08:46,120
+And so there's a couple of little holes in here.
+
+150
+00:08:46,120 --> 00:08:49,960
+I could spend more time, but with just a couple of pixels, literally four.
+
+151
+00:08:51,040 --> 00:08:55,360
+If I zoom out, you can see I've done a pretty good job on this image.
+
+152
+00:08:56,480 --> 00:08:59,360
+And if I switch to some of the other images in my data set.
+
+153
+00:09:00,520 --> 00:09:01,480
+Oh my gosh.
+
+154
+00:09:02,000 --> 00:09:03,480
+Those are looking pretty good too.
+
+155
+00:09:03,880 --> 00:09:06,520
+Four pixels, completely different images.
+
+156
+00:09:07,160 --> 00:09:08,360
+Like that's us.
+
+157
+00:09:08,360 --> 00:09:17,240
+I want to show you actually even a more fun example of so both of these image sets
+
+158
+00:09:17,240 --> 00:09:23,840
+are actually things that I found in the bird bio image benchmark collection,
+
+159
+00:09:23,840 --> 00:09:24,840
+or the BBBC.
+
+160
+00:09:27,720 --> 00:09:28,240
+So.
+
+161
+00:09:30,000 --> 00:09:32,680
+Go ahead and restart ilastik.
+
+162
+00:09:32,760 --> 00:09:38,600
+So here we can see why CellProfiler might not do a good job because it wants
+
+163
+00:09:38,600 --> 00:09:40,600
+things to be bright in the background dark.
+
+164
+00:09:40,600 --> 00:09:41,760
+And that's not what we have here.
+
+165
+00:09:42,760 --> 00:09:49,240
+Here, our background is dark, but what we have here are actually, these are
+
+166
+00:09:49,240 --> 00:09:54,360
+synthetically made cells, but they're cells of lots of different shapes and colors.
+
+167
+00:09:55,360 --> 00:10:00,360
+The nuclei are always blue, but I think that's a good idea.
+
+168
+00:10:01,360 --> 00:10:07,080
+But the authors here computationally made a bunch of cells with lots of different
+
+169
+00:10:07,080 --> 00:10:11,080
+colors so that they could test how well classification algorithms worked to
+
+170
+00:10:11,080 --> 00:10:13,080
+classify a cell as red, green or blue.
+
+171
+00:10:15,720 --> 00:10:17,800
+So I thought that was a cool data set.
+
+172
+00:10:17,800 --> 00:10:21,560
+And you can imagine that, especially if I care about the difference between the
+
+173
+00:10:21,560 --> 00:10:26,360
+nucleus and these cytoplasms, that it might not be super easy to tell cell
+
+174
+00:10:26,360 --> 00:10:29,800
+profiler maybe the difference between where what parts of the image are cell
+
+175
+00:10:29,800 --> 00:10:33,160
+and which parts are background, but maybe not the boundaries of individual cells
+
+176
+00:10:33,160 --> 00:10:34,760
+because there are lots of different colors.
+
+177
+00:10:37,400 --> 00:10:40,200
+So again, I'm going to make a pixel classification project.
+
+178
+00:10:46,520 --> 00:10:50,600
+And as always, we will put the links to our data sets in the show notes
+
+179
+00:10:51,720 --> 00:10:55,240
+because we love to share good data.
+
+180
+00:10:55,320 --> 00:11:01,240
+All right. So again, I'm going to turn on my feature selection.
+
+181
+00:11:05,000 --> 00:11:08,840
+And so the last time I had two classes, now I'm going to have three classes.
+
+182
+00:11:08,840 --> 00:11:14,440
+I'm still going to call this background.
+
+183
+00:11:16,680 --> 00:11:20,440
+I'm going to actually change the color also just because I don't
+
+184
+00:11:20,600 --> 00:11:25,720
+kind of actually don't want to see the background.
+
+185
+00:11:25,720 --> 00:11:27,560
+I'm going to display very much.
+
+186
+00:11:29,320 --> 00:11:32,360
+We're going to call this nuclei.
+
+187
+00:11:33,640 --> 00:11:37,480
+We're going to call this cell.
+
+188
+00:11:39,880 --> 00:11:43,800
+All right. So we still have our super small brush.
+
+189
+00:11:44,360 --> 00:11:46,520
+Going to do a pixel of background.
+
+190
+00:11:47,640 --> 00:11:48,600
+Let me zoom in a little.
+
+191
+00:11:48,920 --> 00:11:57,560
+Let's do a pixel of nuclei and let's do a pixel of cell.
+
+192
+00:11:58,680 --> 00:12:00,520
+And then let's watch the magic happen.
+
+193
+00:12:06,600 --> 00:12:07,560
+Show us the magic.
+
+194
+00:12:08,520 --> 00:12:10,600
+All right. What did we get?
+
+195
+00:12:13,400 --> 00:12:15,160
+So it definitely knows background.
+
+196
+00:12:19,080 --> 00:12:23,080
+And for some of the cells, it knows cells.
+
+197
+00:12:23,080 --> 00:12:25,160
+And for some of the cells, it's really not sure.
+
+198
+00:12:25,160 --> 00:12:27,960
+If I turn on ilastik's uncertainty view,
+
+199
+00:12:30,440 --> 00:12:34,840
+it's kind of, so here uncertainty is marked as teal.
+
+200
+00:12:34,840 --> 00:12:40,520
+It is pretty certain or more certain anyway in the cell that we marked as part of a cell.
+
+201
+00:12:40,520 --> 00:12:45,960
+It's really uncertain in the green cell because we haven't actually annotated it with anything green.
+
+202
+00:12:46,680 --> 00:12:47,160
+Yeah.
+
+203
+00:12:47,160 --> 00:12:50,120
+This is where our discussion about overfitting and stuff comes in,
+
+204
+00:12:51,400 --> 00:12:54,120
+which we're going to talk mostly about in another episode.
+
+205
+00:12:56,120 --> 00:12:59,640
+But let's see if I can get something to work.
+
+206
+00:12:59,640 --> 00:13:00,680
+So I'm going to break my rule.
+
+207
+00:13:00,680 --> 00:13:04,680
+I'm going to try to make my cell here.
+
+208
+00:13:04,680 --> 00:13:10,920
+I'm going to turn on the big brush and I'm going to give it lots of cell pixels that are red.
+
+209
+00:13:11,640 --> 00:13:14,360
+What happens to our segmentation guess now?
+
+210
+00:13:14,360 --> 00:13:16,280
+It actually did pretty well.
+
+211
+00:13:16,280 --> 00:13:22,360
+And I'm pretty sure the reason that it did pretty well is because we have texture features here
+
+212
+00:13:22,360 --> 00:13:26,200
+that are similar, I mean red and green.
+
+213
+00:13:27,400 --> 00:13:35,800
+I suspect that if we set this to only use intensity features and not some of the texture or smoothing
+
+214
+00:13:35,880 --> 00:13:41,480
+features, we actually wouldn't get such a good result.
+
+215
+00:13:42,920 --> 00:13:47,480
+What you're saying is it's probably actually just ignoring the color now when you've added
+
+216
+00:13:47,480 --> 00:13:54,200
+many of those other pixels and focusing on what is similar between the two.
+
+217
+00:13:54,200 --> 00:13:55,720
+Yeah, which we can check.
+
+218
+00:13:56,280 --> 00:14:10,040
+Yeah, so these are now definitely getting into some very texturing features.
+
+219
+00:14:10,040 --> 00:14:11,720
+It's kind of ignoring the colors.
+
+220
+00:14:17,240 --> 00:14:23,720
+If it had had a hard time learning this green, the more that I sort of annotated red,
+
+221
+00:14:23,720 --> 00:14:27,400
+the more green I would have had to add in order to get it to go well.
+
+222
+00:14:30,680 --> 00:14:35,880
+One way I still might be able to show you that is the nuclei I haven't annotated very much yet.
+
+223
+00:14:35,880 --> 00:14:40,520
+If I put, and it's not doing a very good job because it's now seen so many cell pixels,
+
+224
+00:14:40,520 --> 00:14:41,880
+it thinks most things are cells.
+
+225
+00:14:42,760 --> 00:14:45,400
+See if I drop just a couple more nuclei pixels.
+
+226
+00:14:45,400 --> 00:14:47,960
+So now I maybe have like five nuclei pixels.
+
+227
+00:14:48,920 --> 00:14:49,560
+What do I get?
+
+228
+00:14:49,560 --> 00:14:55,000
+All right, it didn't take very many this time.
+
+229
+00:14:55,640 --> 00:15:01,720
+And that's probably because this is a pretty easy task and the nuclei are a different texture.
+
+230
+00:15:03,320 --> 00:15:07,320
+So I wasn't able to get it to overfit this time because ilastik just has so many useful
+
+231
+00:15:07,320 --> 00:15:13,880
+features that it does such a good job that I'm not actually able to demonstrate overfitting.
+
+232
+00:15:13,880 --> 00:15:21,800
+But we will have another episode where we talk about the importance of being able to actually say
+
+233
+00:15:24,440 --> 00:15:29,160
+that the number of annotations that you make in each kind of phenotype that you're looking at
+
+234
+00:15:29,160 --> 00:15:29,960
+actually matter.
+
+235
+00:15:31,160 --> 00:15:32,120
+But I think we can.
+
+236
+00:15:32,120 --> 00:15:33,640
+Oh, sorry.
+
+237
+00:15:33,640 --> 00:15:39,640
+I just one thing I'm noticing is with this latest prediction, it looks like it's predicting
+
+238
+00:15:39,640 --> 00:15:44,760
+nuclei in the middle and then cells around it, but then sort of a layer of nuclei again.
+
+239
+00:15:45,720 --> 00:15:46,920
+Yeah, I noticed that too.
+
+240
+00:15:46,920 --> 00:15:52,280
+I suspect why is because it thinks that nuclei are things surrounded by cells.
+
+241
+00:15:53,960 --> 00:16:04,360
+So if we and so if we put a bunch of annotations in the background just far from the cell,
+
+242
+00:16:04,360 --> 00:16:05,800
+I'm not sure if that'll fix it.
+
+243
+00:16:05,800 --> 00:16:06,840
+We can figure that out.
+
+244
+00:16:07,080 --> 00:16:08,920
+So that didn't do much to fix it.
+
+245
+00:16:08,920 --> 00:16:16,280
+But I suspect if we put examples right there sort of close to the cell.
+
+246
+00:16:17,160 --> 00:16:18,680
+And that was just one more pixel.
+
+247
+00:16:19,480 --> 00:16:25,240
+But one pixel in the right place made that huge difference when a whole bunch of pixels
+
+248
+00:16:26,440 --> 00:16:32,200
+in a place it was already doing well actually change anything appreciably.
+
+249
+00:16:32,200 --> 00:16:33,080
+Yeah.
+
+250
+00:16:34,200 --> 00:16:35,560
+And that's a really great point.
+
+251
+00:16:35,640 --> 00:16:40,440
+So let me let me demonstrate that now even a little more, which is let me erase all those
+
+252
+00:16:40,440 --> 00:16:41,160
+pixels.
+
+253
+00:16:41,160 --> 00:16:42,840
+Let me turn on the uncertainty view.
+
+254
+00:16:45,000 --> 00:16:51,320
+Right now, the places that I put those pixels initially are pretty already darn certain.
+
+255
+00:16:51,560 --> 00:16:56,840
+So it doesn't matter if I sort of draw out here all day.
+
+256
+00:16:56,840 --> 00:17:01,960
+The things aren't going to change much because, you know, I've now made this uncertainty even
+
+257
+00:17:01,960 --> 00:17:04,760
+less, but I haven't actually fixed my segmentation.
+
+258
+00:17:05,560 --> 00:17:06,280
+Problem at all.
+
+259
+00:17:07,560 --> 00:17:09,800
+But if I go to where the uncertainty is high,
+
+260
+00:17:12,840 --> 00:17:20,840
+then I can fix my segmentation much more easily with many fewer pixels and fewer pixels is
+
+261
+00:17:20,840 --> 00:17:23,000
+always better as we'll talk about in a future episode.
+
+262
+00:17:23,640 --> 00:17:24,040
+Lovely.
+
+263
+00:17:26,040 --> 00:17:27,960
+But yeah, ilastik is really great.
+
+264
+00:17:27,960 --> 00:17:31,400
+You can see it's robust to all kinds of shenanigans that we can try to throw at it,
+
+265
+00:17:31,400 --> 00:17:32,920
+even when we're trying to throw at things.
+
+266
+00:17:33,480 --> 00:17:41,080
+But it's a great way to make your image into sort of the thing I care about is found specifically
+
+267
+00:17:41,080 --> 00:17:45,080
+even if the thing is not is all the same color or as many different colors,
+
+268
+00:17:45,720 --> 00:17:47,720
+both of which sub profiler struggles with.
+
+269
+00:17:47,720 --> 00:17:51,160
+And so those are there are many use cases for using ilastik.
+
+270
+00:17:51,160 --> 00:17:52,360
+Definitely check out their website.
+
+271
+00:17:52,360 --> 00:17:55,000
+We'll put it in the show notes, but those are some of our favorites.
+
+272
+00:17:55,640 --> 00:17:56,680
+Absolutely.
+
+273
+00:17:56,680 --> 00:18:00,920
+I think one thing too, and maybe this is for a future episode is that,
+
+274
+00:18:01,480 --> 00:18:07,480
+you know, often we are using multiple tools in a single analysis task.
+
+275
+00:18:08,040 --> 00:18:13,000
+So here ilastik has done a brilliant job of getting these objects for us.
+
+276
+00:18:13,000 --> 00:18:17,960
+And then we may take these objects and bring them into a CellProfiler pipeline
+
+277
+00:18:18,760 --> 00:18:23,400
+and make the measurements that we're interested in in a cell pro in a CellProfiler pipeline,
+
+278
+00:18:24,200 --> 00:18:25,400
+bringing in these objects.
+
+279
+00:18:25,400 --> 00:18:27,880
+And then even within the CellProfiler pipeline,
+
+280
+00:18:27,880 --> 00:18:31,880
+you can do the things that you're familiar with, perhaps familiar with already in cell
+
+281
+00:18:31,880 --> 00:18:36,920
+profiler about, you know, around object identification, we could fill the holes there
+
+282
+00:18:36,920 --> 00:18:42,520
+or smooth it out or, you know, add or subtract a bit of, you know,
+
+283
+00:18:42,520 --> 00:18:45,000
+some number of pixels to the edge of the objects.
+
+284
+00:18:45,000 --> 00:18:47,160
+So lots of lots of extra things.
+
+285
+00:18:47,880 --> 00:18:52,600
+And the holes are definitely there more in the green than they are in any other color,
+
+286
+00:18:52,600 --> 00:18:54,600
+because it knows the least about green.
+
+287
+00:18:55,160 --> 00:18:56,760
+Yeah, we moved a little bit.
+
+288
+00:18:57,880 --> 00:19:01,960
+And here we would have a lot of uncertainty just because it never saw a blue cell.
+
+289
+00:19:01,960 --> 00:19:06,600
+So the red cells definitely perform much better than the green and blue ones.
+
+290
+00:19:06,600 --> 00:19:08,120
+Yeah, absolutely.
+
+291
+00:19:08,120 --> 00:19:15,160
+So that'd be something you could either continue to improve your pixel classification here in
+
+292
+00:19:15,160 --> 00:19:20,520
+this pipeline, or if this was the best you had, bring it into another tool like CellProfiler to,
+
+293
+00:19:21,480 --> 00:19:24,200
+I mean, already one more pixel and it's so much better.
+
+294
+00:19:25,080 --> 00:19:30,600
+But, you know, you can bring those into CellProfiler to then do further work with.
+
+295
+00:19:33,480 --> 00:19:35,640
+Couldn't have summed it up better myself.
+
+296
+00:19:36,680 --> 00:19:37,960
+Sorry if I took the words wrong.
+
+297
+00:19:37,960 --> 00:19:39,080
+No, no, it was beautiful.
+
+298
+00:19:39,080 --> 00:19:40,680
+You put on air and I jumped ahead.
+
+299
+00:19:40,680 --> 00:19:41,640
+I just got excited.
+
+300
+00:19:43,560 --> 00:19:45,800
+Good image analysis is always exciting.
+
+301
+00:19:45,800 --> 00:19:46,280
+Of course.
+
+302
+00:19:47,560 --> 00:19:49,240
+All right, so good to see you.
+
+303
+00:19:49,240 --> 00:19:50,440
+See you next time.
+
+304
+00:19:50,440 --> 00:19:51,800
+All right, sounds good.
+
+305
+00:19:51,800 --> 00:19:52,280
+Bye.
+
