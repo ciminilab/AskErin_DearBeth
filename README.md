@@ -1,6 +1,12 @@
 # Ask Erin / Dear Beth files 
 Files related to Ask Erin/Dear Beth episodes - Now available on a YouTube near You!
 
+## Got a question for Erin and Beth?
+
+Want to see Erin and Beth explain or demo your (least) favorite image analysis conundrum? [Submit a question here!](broad.io/AskErinDearBeth)
+
+## Episode List
+
 | Episode with link | Links to pipelines, models, or other files | Link to images | Images are licensed | Links to other resources |
 |-------------------|--------------------------------------------|----------------|---------------------|--------------------------|
 | Episode 1 - [Identifying Objects in Out-of-Focus Images in CellProfiler](https://www.youtube.com/watch?v=JcfPQ44p3pc) | | [folder here](https://drive.google.com/drive/folders/1iGU0V7KW0AZBKOs-Hx15VAxYeNChPcln) | [CC-0](https://creativecommons.org/public-domain/cc0/) | |
