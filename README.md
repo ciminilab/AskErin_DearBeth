@@ -22,6 +22,10 @@ Want to see Erin and Beth explain or demo your (least) favorite image analysis c
 | Episode 11 - [Intro to Pixel Classification in ilastik](https://youtu.be/XwjZpAHZ9SM) |  | [BBBC030](https://bbbc.broadinstitute.org/BBBC030), [BBBC031](https://bbbc.broadinstitute.org/BBBC031) | Both [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/) | [ilastik website](https://www.ilastik.org/), [Tutorial for combining ilastik and CellProfiler](https://tutorials.cellprofiler.org/#pixel-based-classification) |
 | Episode 12 - [Importing Object from Outline Images in CellProfiler](https://youtu.be/qWYyp_a0IHM) | [Pipeline available here](https://github.com/ciminilab/AskErin_DearBeth/tree/main/files/Ep12) | [Images available here](https://github.com/ciminilab/AskErin_DearBeth/tree/main/files/Ep12) | [CC-0](https://creativecommons.org/public-domain/cc0/) | [Learn more about CellProfiler's plugin system](https://plugins.cellprofiler.org/overview.html) |
 | Episode 13 - [How to Train a Pixel Classifier](https://youtu.be/0cLZVKUJGNw) |  |  |  | [Interactive Random Forest visualizer](https://ciminilab.github.io/developing-intuitions/apps/Machine_Learning_Intutions.html) |
+| Episode 14 - [Illumination Correction in CellProfiler](https://youtu.be/4CKl-6TAAS4) | [Pipelines available here](https://github.com/ciminilab/AskErin_DearBeth/tree/main/files/Ep14) |  |  |  |
+| Episode 15 - [Why Do My Scientific Images Look Bad?](https://youtu.be/GsSAImH6zq0) |  |  |  |  |
+| Episode 16 - [The Cell Painting Gallery, an Overview](https://youtu.be/5CtNWt0_FLk) |  |  |  | [CPG landing page](https://github.com/broadinstitute/cellpainting-gallery), [CPG documentation](http://broadinstitute.github.io/cellpainting-gallery/), [CPG on NAIRR](https://nairrpilot.org/pilotresources) |
+| Episode 17 - [How to Write a Great Post on the Forum](https://youtu.be/jLBaZHO-iXw) |  |  |  | [The Scientific Community Imaging Forum](https://forum.image.sc) |
 
 
 <p hidden>
@@ -42,6 +46,7 @@ Check out our bonus episodes where we talk about *other* stuff we love, like:
 | Bonus episodes with link | Links to any fun things |
 |--------------------------|-------------------------|
 | Episode 6.5 - [In which we tell the story of how we know each other](https://youtu.be/9gKE9euaUJo) | N/A |
+| Episode 13.5 - [In which we talk about our love of GBBO - The Great British Bake Off](https://youtu.be/hKEO9UeP1yw) | [Erin's favorite Devonshire Splits recipe](https://thegreatbritishbakeoff.co.uk/recipes/all/paul-hollywoods-devonshire-splits/), [Beth's favorite Smoked Salmon Soda Bread recipe](https://thegreatbritishbakeoff.co.uk/recipes/all/hermine-smoked-salmon-and-chive-soda-bread/) |
 
 <p hidden>
 More commented out text not shown on the page

@@ -1,0 +1,804 @@
+1
+00:00:00,000 --> 00:00:07,000
+Hey, how's it going?
+
+2
+00:00:07,000 --> 00:00:19,800
+Hello, uh, lovely to see you, Mediar.
+
+3
+00:00:19,800 --> 00:00:23,240
+Yeah, all things a pleasure.
+
+4
+00:00:23,240 --> 00:00:27,440
+I thought today it would be fun to talk about images that look bad.
+
+5
+00:00:27,440 --> 00:00:28,440
+Oh!
+
+6
+00:00:28,440 --> 00:00:29,440
+Oh!
+
+7
+00:00:29,440 --> 00:00:33,040
+That's an interesting take, because usually we're all about the pretty pictures.
+
+8
+00:00:33,040 --> 00:00:35,560
+Okay, what do you got for me?
+
+9
+00:00:35,560 --> 00:00:38,400
+I mean, I love when the pictures are pretty.
+
+10
+00:00:38,400 --> 00:00:43,960
+The fact of the matter is, just like sometimes the pictures are not pretty or just like,
+
+11
+00:00:43,960 --> 00:00:46,680
+you don't understand what they look like at all.
+
+12
+00:00:46,680 --> 00:00:53,000
+And so, um, I wanted to talk about what are some of the cases we've come across the most,
+
+13
+00:00:53,000 --> 00:00:58,320
+where people are like, why does the picture look like that?
+
+14
+00:00:58,320 --> 00:01:01,200
+And actually explain why the picture looks like that.
+
+15
+00:01:01,200 --> 00:01:02,720
+Sounds great.
+
+16
+00:01:02,720 --> 00:01:03,720
+Let's do it.
+
+17
+00:01:03,720 --> 00:01:04,720
+Okay.
+
+18
+00:01:04,720 --> 00:01:09,480
+I'm going to go ahead and share my screen.
+
+19
+00:01:09,480 --> 00:01:11,160
+Okey-dokey.
+
+20
+00:01:11,160 --> 00:01:15,200
+So, here's the most common one.
+
+21
+00:01:15,200 --> 00:01:21,760
+So common, in fact, I wrote a blog post back when I was a postdoc about coming across this.
+
+22
+00:01:21,760 --> 00:01:25,640
+You have your pictures, they come off the microscope, you go to look at them in your
+
+23
+00:01:25,640 --> 00:01:31,320
+computer and they are black.
+
+24
+00:01:31,320 --> 00:01:35,280
+Or sometimes you run them through your image of yourself profile or some other image in
+
+25
+00:01:35,280 --> 00:01:39,600
+also software and you get your output and it is black.
+
+26
+00:01:39,600 --> 00:01:42,400
+I know, right?
+
+27
+00:01:42,400 --> 00:01:48,320
+The initial fear or feeling is like panic, like what happened, what went wrong?
+
+28
+00:01:48,320 --> 00:01:52,880
+And thankfully this one is usually a really simple one.
+
+29
+00:01:52,880 --> 00:01:59,560
+So images are encoded in possibly two different ways.
+
+30
+00:01:59,560 --> 00:02:07,960
+There are either eight bits, so the values are between zero and 255, so 256 total values,
+
+31
+00:02:07,960 --> 00:02:12,560
+which means they're stored in two to the eight pieces of information.
+
+32
+00:02:12,560 --> 00:02:23,000
+Or they're 16, so they're encoded in 65,000 and change pieces of information.
+
+33
+00:02:23,000 --> 00:02:28,200
+And so sometimes you will have noticed this when you're taking pictures on your microscope
+
+34
+00:02:28,200 --> 00:02:31,000
+and you see what your histogram values are.
+
+35
+00:02:31,000 --> 00:02:37,440
+They might only go up as high as 250, they might go into the thousands.
+
+36
+00:02:37,440 --> 00:02:43,880
+The major reason why this matters specifically is this is a microscopy specific thing, or
+
+37
+00:02:43,880 --> 00:02:47,800
+at least a scientific imaging specific thing.
+
+38
+00:02:47,800 --> 00:02:54,000
+Most of the time for photography, they only use eight bits.
+
+39
+00:02:54,000 --> 00:02:59,280
+And the reason for that is pretty simple, it's that humans can only see about 300 different
+
+40
+00:02:59,280 --> 00:03:01,280
+light levels.
+
+41
+00:03:01,280 --> 00:03:07,400
+So there's really no value in going more than eight bits because we can't see the differences.
+
+42
+00:03:07,560 --> 00:03:11,000
+To us, they literally look the same.
+
+43
+00:03:11,000 --> 00:03:17,440
+So most image viewers are designed to support eight bit images.
+
+44
+00:03:17,440 --> 00:03:23,480
+So here are my horrible looking black images in my computer's system viewer, but if I open
+
+45
+00:03:23,480 --> 00:03:28,080
+them in Fiji, what?
+
+46
+00:03:28,080 --> 00:03:29,080
+Magic.
+
+47
+00:03:29,080 --> 00:03:31,520
+The information is totally there.
+
+48
+00:03:31,520 --> 00:03:35,840
+It's just there in 16 bit.
+
+49
+00:03:35,840 --> 00:03:41,640
+So usually what happens is your things that's optimized for photography shows you bits zero
+
+50
+00:03:41,640 --> 00:03:44,800
+to 255 and nothing else.
+
+51
+00:03:44,800 --> 00:03:48,160
+The background here is 300.
+
+52
+00:03:48,160 --> 00:03:54,800
+So if this were maybe a super, super, super dim 16 bit image, we actually would have maybe
+
+53
+00:03:54,800 --> 00:03:58,840
+been able to see it in our system viewer, but the bits between zero and 255 are nothing
+
+54
+00:03:58,840 --> 00:04:01,840
+here and so that is what our computer shows us.
+
+55
+00:04:01,840 --> 00:04:08,440
+So if you see that your images are black in your system viewer, don't worry about it.
+
+56
+00:04:08,440 --> 00:04:12,480
+Try them in Fiji or cell profile or something else first.
+
+57
+00:04:12,480 --> 00:04:14,840
+Hopefully it's just an image bit depth issue.
+
+58
+00:04:14,840 --> 00:04:15,840
+Great.
+
+59
+00:04:15,840 --> 00:04:21,720
+I mean, magic.
+
+60
+00:04:21,720 --> 00:04:27,080
+Looking at it like that, but makes a whole lot of sense that there's something fundamentally
+
+61
+00:04:27,080 --> 00:04:34,600
+different about scientific imaging and your laptop is, you know, the vast majority of
+
+62
+00:04:34,600 --> 00:04:38,920
+people who own computers are not actually working with scientific images.
+
+63
+00:04:38,920 --> 00:04:39,920
+It turns out.
+
+64
+00:04:39,920 --> 00:04:40,920
+Why?
+
+65
+00:04:40,920 --> 00:04:41,920
+Why don't they drop up?
+
+66
+00:04:41,920 --> 00:04:47,400
+Like everybody should have a microscope at home.
+
+67
+00:04:47,400 --> 00:04:48,400
+Yes.
+
+68
+00:04:48,400 --> 00:04:58,400
+And, you know, the software that software defaults don't actually support our use.
+
+69
+00:04:58,400 --> 00:04:59,400
+Indeed.
+
+70
+00:04:59,400 --> 00:05:01,400
+Maybe in the future.
+
+71
+00:05:01,400 --> 00:05:03,400
+Maybe not today.
+
+72
+00:05:03,400 --> 00:05:04,400
+Yeah.
+
+73
+00:05:04,400 --> 00:05:06,400
+All right.
+
+74
+00:05:06,400 --> 00:05:11,400
+Weird image case number two.
+
+75
+00:05:11,400 --> 00:05:27,400
+So ideally when we're talking about fluorescence, what we see is bright signal on a dark background.
+
+76
+00:05:27,400 --> 00:05:30,400
+But that's not actually always what we see.
+
+77
+00:05:30,400 --> 00:05:42,400
+I'm going to just the normalization here.
+
+78
+00:05:42,400 --> 00:05:51,400
+Sometimes what we see.
+
+79
+00:05:51,400 --> 00:06:05,400
+If I can show it correctly.
+
+80
+00:06:05,400 --> 00:06:09,400
+Is images on a background with a lot of brightness?
+
+81
+00:06:09,400 --> 00:06:13,400
+Let me actually do the next channel even because I think the green channel shows this even better.
+
+82
+00:06:13,400 --> 00:06:14,400
+Yeah.
+
+83
+00:06:14,400 --> 00:06:35,400
+The green channel is good here.
+
+84
+00:06:35,400 --> 00:06:43,400
+So let's now zoom in a tiny bit.
+
+85
+00:06:43,400 --> 00:06:50,400
+So I haven't really sort of pushed this out enough to make it really obviously different.
+
+86
+00:06:50,400 --> 00:07:00,400
+But the reason sometimes we might see what looks like our images are in fact super bright because our background looks super bright.
+
+87
+00:07:00,400 --> 00:07:03,400
+And a lot of times people then think, oh, maybe this image is saturated.
+
+88
+00:07:03,400 --> 00:07:08,400
+If they see a picture that looks like this and they see all these bright spots, like maybe this image is saturated.
+
+89
+00:07:08,400 --> 00:07:11,400
+Maybe I took my values too high or microscope.
+
+90
+00:07:11,400 --> 00:07:16,400
+But the key here to sort of notice is that it's not just your signal is bright.
+
+91
+00:07:16,400 --> 00:07:20,400
+Your background is bright.
+
+92
+00:07:20,400 --> 00:07:24,400
+And this comes down to normalization.
+
+93
+00:07:24,400 --> 00:07:34,400
+So as I'm hovering my cursor over here, if you look at the sort of bottom right part of cell profile or view window, these intensity numbers are super small.
+
+94
+00:07:34,400 --> 00:07:37,400
+Even actually when I'm in the bright part of images, they're super small.
+
+95
+00:07:37,400 --> 00:07:38,400
+Yes.
+
+96
+00:07:38,400 --> 00:07:39,400
+Thank you.
+
+97
+00:07:39,400 --> 00:07:40,400
+Beautiful.
+
+98
+00:07:40,400 --> 00:07:48,400
+And so I'm going to come back to those 300 gray levels.
+
+99
+00:07:48,400 --> 00:07:59,400
+When we're looking at our computer screens, we're picking essentially which 300 gray levels to show you or exactly how many gray levels sort of fit into those 300.
+
+100
+00:07:59,400 --> 00:08:08,400
+And so if you see that your image looks like in fact it is super bright all over, it's probably not actually that it's super bright.
+
+101
+00:08:08,400 --> 00:08:11,400
+It's probably actually that it's pretty dim.
+
+102
+00:08:11,400 --> 00:08:22,400
+And so the difference between the absolute dimmest pixel in your image, which is probably something close to zero and the brightest pixel in your image is not that much.
+
+103
+00:08:22,400 --> 00:08:27,400
+So your background actually looks high because it's high.
+
+104
+00:08:27,400 --> 00:08:28,400
+It's close in value.
+
+105
+00:08:28,400 --> 00:08:33,400
+If you divide that difference just by 300, then if these were actually thousands apart.
+
+106
+00:08:33,400 --> 00:08:38,400
+So high background actually means dim image, not bright image.
+
+107
+00:08:38,400 --> 00:09:01,400
+So again, like having to do with expectations for our eyeballs pictures that you know this rescaling to make it easy for our brains to see is what is causing this artificial brightening.
+
+108
+00:09:02,400 --> 00:09:13,400
+So if you see something where the background is this bright, I mean, it might be that maybe you've super duper duper saturated things, but more often than not, actually what the problem is is that your images are actually too dim.
+
+109
+00:09:13,400 --> 00:09:16,400
+Or at least they're not maybe not too dim, but they are dim.
+
+110
+00:09:16,400 --> 00:09:28,400
+And so before you go off and run and change or experiment settings, make sure you're changing the right one, make sure you actually understand what's going on here.
+
+111
+00:09:28,400 --> 00:09:42,400
+And the last one I want to talk to also comes down to that idea of normalization, which is, again, just that idea of what are the pixel values that I'm going to use to set between my zero and my dimmest one and my brightest one.
+
+112
+00:09:44,400 --> 00:09:50,400
+So so profiler has a module called overlay outlines, which allows you to overlay the outlines.
+
+113
+00:09:50,400 --> 00:09:51,400
+What?
+
+114
+00:09:51,400 --> 00:09:57,400
+We try to be sensible when we name these things.
+
+115
+00:09:57,400 --> 00:10:00,400
+And often people will do that on top of a color picture.
+
+116
+00:10:03,400 --> 00:10:09,400
+So if I want to say, okay, here what my here's what my things look like, and then like here are the objects that I got.
+
+117
+00:10:11,400 --> 00:10:14,400
+Then this is super helpful.
+
+118
+00:10:14,400 --> 00:10:20,400
+You should basically always do this and save these so that you can look at them real fast from your experiment is done.
+
+119
+00:10:21,400 --> 00:10:32,400
+Because it's really, really sad to have to go to your boss and say, actually, that thing that I just spent thousands of dollars and months of time like trying to try to optimize.
+
+120
+00:10:32,400 --> 00:10:37,400
+Yeah, it turns out just my segmentation was bad and there was no biology actually there.
+
+121
+00:10:37,400 --> 00:10:39,400
+I've had to be that grad student.
+
+122
+00:10:39,400 --> 00:10:40,400
+It's not a fun meeting.
+
+123
+00:10:40,400 --> 00:10:42,400
+No, no.
+
+124
+00:10:42,400 --> 00:10:44,400
+Sorry, go ahead.
+
+125
+00:10:44,400 --> 00:10:45,400
+No, please.
+
+126
+00:10:45,400 --> 00:11:04,400
+Oh, I just could say we also have we have another ask Erin dear Beth episode that we can drop the link in show notes that is a whole separate pipeline, like just for creating these overlay images, like at scale.
+
+127
+00:11:04,400 --> 00:11:11,400
+So no matter the size of your data set, you can make sure that you are actually looking at your segmentations.
+
+128
+00:11:11,400 --> 00:11:13,400
+So we'll we'll drop that in show notes.
+
+129
+00:11:13,400 --> 00:11:14,400
+Yeah.
+
+130
+00:11:15,400 --> 00:11:24,400
+But sometimes what happens is you go to make your overlay in CellProfiler and you get something that looks like this.
+
+131
+00:11:24,400 --> 00:11:27,400
+And people are like, Oh, what happened?
+
+132
+00:11:27,400 --> 00:11:30,400
+Like, here's my image that I'm trying to draw outlines on.
+
+133
+00:11:30,400 --> 00:11:31,400
+Here's this.
+
+134
+00:11:31,400 --> 00:11:35,400
+What the f this looks terrible.
+
+135
+00:11:35,400 --> 00:11:39,400
+So why does this look terrible?
+
+136
+00:11:39,400 --> 00:11:47,400
+It turns out it once again comes down to this idea of normalization and trying to smush everything into, you know, sort of 300 ish gray levels.
+
+137
+00:11:47,400 --> 00:11:51,400
+So here, the images that I have are super dim.
+
+138
+00:11:51,400 --> 00:11:58,400
+The if we look again at that bottom bar, the values are all between like zero and zero point two.
+
+139
+00:11:58,400 --> 00:12:03,400
+But our outline that we're making is just a value of one.
+
+140
+00:12:03,400 --> 00:12:09,400
+It's just a, you know, nice, bright, white circle.
+
+141
+00:12:09,400 --> 00:12:19,400
+So when we have things between where the maximum and we can actually even just look at the image histogram here, that's probably the best thing to do.
+
+142
+00:12:19,400 --> 00:12:26,400
+So our image histograms here, the absolute brightest pixels here are less than zero point five zero point zero five.
+
+143
+00:12:26,400 --> 00:12:32,400
+So zero point zero two on a scale of zero to zero point zero five is nice and bright.
+
+144
+00:12:32,400 --> 00:12:37,400
+And so when CellProfiler does its automatic normalization, everything looks great.
+
+145
+00:12:37,400 --> 00:12:47,400
+If we look at the histogram values here, we have all these pixels that are one.
+
+146
+00:12:48,400 --> 00:12:55,400
+And so what we see is actually zero point zero two is now not halfway bright.
+
+147
+00:12:55,400 --> 00:12:57,400
+It is now zero percent bright.
+
+148
+00:12:57,400 --> 00:13:00,400
+And so our thing looks like crap.
+
+149
+00:13:00,400 --> 00:13:14,400
+The other thing that you'll sometimes see is not that just the whole thing looks black, but if I pick something like this, and I'm going to pick a different color here on purpose.
+
+150
+00:13:18,400 --> 00:13:28,400
+So here I have a grayscale image of these dots that then when I do my overlay now my spots all of a sudden look teal.
+
+151
+00:13:28,400 --> 00:13:31,400
+I mean, teal is lovely, but why do they look teal?
+
+152
+00:13:31,400 --> 00:13:36,400
+They look teal because teal is the opposite of blue and green.
+
+153
+00:13:36,400 --> 00:13:44,400
+Our outlines here are super red and not super blue or green.
+
+154
+00:13:44,400 --> 00:13:55,400
+So red is being normalized zero to one and blue and green are being normalized something like zero to zero point zero five.
+
+155
+00:13:55,400 --> 00:14:04,400
+So we have what looks like and when you sort of save this and open an image shade, this will just be a gray image with a red circle.
+
+156
+00:14:04,400 --> 00:14:13,400
+But here it looks like blue, green with red and people then are usually very confused what's going on.
+
+157
+00:14:13,400 --> 00:14:14,400
+Yeah.
+
+158
+00:14:14,400 --> 00:14:15,400
+Yeah.
+
+159
+00:14:15,400 --> 00:14:25,400
+So it all like, again, you have to like thinking in terms of what you see on the screen isn't necessarily what your data is.
+
+160
+00:14:25,400 --> 00:14:29,400
+It's not, you know, it is a way of representing the numbers that are there.
+
+161
+00:14:29,400 --> 00:14:42,400
+But, you know, different, again, you just said the difference between what Fiji shows and what CellProfiler shows like different softwares will choose to show you different ways of scaling and presenting that data to your eye so that your eye can interpret it.
+
+162
+00:14:43,400 --> 00:14:46,400
+Even if the underlying numbers are completely the same.
+
+163
+00:14:46,400 --> 00:14:48,400
+Yeah, beautifully put.
+
+164
+00:14:48,400 --> 00:14:53,400
+So just to sort of let you know how do you deal with this.
+
+165
+00:14:53,400 --> 00:14:56,400
+Oh yeah, so that's nice.
+
+166
+00:14:56,400 --> 00:14:58,400
+Yeah.
+
+167
+00:14:58,400 --> 00:15:01,400
+So there are these adjust contrast things and CellProfiler.
+
+168
+00:15:01,400 --> 00:15:09,400
+So if it is showing you in raw and you want to look at normalized or you want to change the brightness, I sort of did this already and sort of didn't really explain to you what I was doing.
+
+169
+00:15:09,400 --> 00:15:14,400
+It's actually even other ways to normalize it, which are helpful sometimes your images are really, really dim.
+
+170
+00:15:14,400 --> 00:15:19,400
+You can change any of these one at a time sort of on the fly.
+
+171
+00:15:19,400 --> 00:15:30,400
+If you want your output images to be visible in your net computer's viewer, you probably want to sort of make them be eight rather than 16 bit.
+
+172
+00:15:30,400 --> 00:15:48,400
+So for this problem of making these overlays, in fact, the color version of it is actually so common that in the greater color module, we actually have a setting here that we've added that is rescale intensity yes or no.
+
+173
+00:15:48,400 --> 00:15:57,400
+So what that allows you to do is you can have your things and you can just say, okay, but this is going to be for visualization.
+
+174
+00:15:57,400 --> 00:16:06,400
+Let's just sort of make it rescaled. And so now instead of my things looking like they're being drawn on top of nothingness it looks like they're being drawn on top of the image.
+
+175
+00:16:06,400 --> 00:16:20,400
+It's just lovely and totally representative of a thing we can, you know, that you'll hear us say in many of our podcast episodes right where like, if it's for visualization purposes, anything goes.
+
+176
+00:16:20,400 --> 00:16:27,400
+If you're just trying to like see what's happening in your data scale the heck out of it do math on it like whatever you want.
+
+177
+00:16:27,400 --> 00:16:40,400
+So remember, like that is for things you're looking at by eye, and don't then keep those transformations and make quantitative measurements on them.
+
+178
+00:16:40,400 --> 00:16:48,400
+Yes, absolutely. Anything else you can think of in terms of what are what are the weirdest looking images you've seen.
+
+179
+00:16:48,400 --> 00:17:03,400
+Weird images I think I, you know, have encountered more than once the like, hey, what happened to my image like I can't it's weird and grainy looking or it's blobby, and it wasn't before.
+
+180
+00:17:03,400 --> 00:17:23,400
+That can definitely happen if you think about any time an image is being saved, you know, opened up and saved again, and somebody has been non intentional about what they have saved it out as we can without deep diving into file formats because
+
+181
+00:17:23,400 --> 00:17:40,400
+that's a whole other tangent I'm not sure I want to talk about right now like there are, you know, file formats that preserve all of your data, and then there are file formats that are meant for that that don't preserve as much data but are optimized for other things
+
+182
+00:17:40,400 --> 00:17:47,400
+like, you know, making your file as small as possible and so if you've accidentally saved in that kind of format, you can lose data.
+
+183
+00:17:47,400 --> 00:18:03,400
+And if this happens repeatedly, like it can have you know you can lose some every time and so thinking about like, is this actually my raw image that came off my microscope or is this something that has been sent to me in an email and therefore
+
+184
+00:18:03,400 --> 00:18:14,400
+I have been compressed in the email and then I try and download it in email and so and you know anything, any sort of for screenshots, it's screenshot.
+
+185
+00:18:14,400 --> 00:18:17,400
+Oh gosh screenshots for sure.
+
+186
+00:18:17,400 --> 00:18:23,400
+We end up with that, especially, especially like helping people on the forum.
+
+187
+00:18:23,400 --> 00:18:29,400
+Because again, like sometimes that's perfectly appropriate if you have, you know, it's a screenshot of like, hey, this is what I'm seeing.
+
+188
+00:18:29,400 --> 00:18:50,400
+Like, can somebody explain what what things I might change to, you know, better segment these blobs, but when it comes down to like, hey, please suggest actual parameters in a real pipeline, then we need the og data, like, we can't do, you know, we can give you vibes, based on anything
+
+189
+00:18:50,400 --> 00:18:51,400
+that we want to do.
+
+190
+00:18:51,400 --> 00:18:59,400
+But like, if it's, you know, get quantitation needs to be actual og files. So,
+
+191
+00:18:59,400 --> 00:19:02,400
+I think we're going to talk about the forum in a future episode aren't we.
+
+192
+00:19:02,400 --> 00:19:04,400
+I think we are.
+
+193
+00:19:04,400 --> 00:19:05,400
+Yeah.
+
+194
+00:19:05,400 --> 00:19:07,400
+So we should make sure to mention that when we do.
+
+195
+00:19:07,400 --> 00:19:10,400
+Absolutely.
+
+196
+00:19:10,400 --> 00:19:13,400
+All right. Thank you so much. I had a great time hanging out with you.
+
+197
+00:19:13,400 --> 00:19:14,400
+Thanks, Beth.
+
+198
+00:19:14,400 --> 00:19:15,400
+I'm just thinking that we're not so pretty.
+
+199
+00:19:15,400 --> 00:19:20,400
+I know. Just gonna say I had more fun looking at ugly images than I thought I would. So thanks for that.
+
+200
+00:19:20,400 --> 00:19:22,400
+Awesome. See you later.
+
+201
+00:19:22,400 --> 00:19:24,400
+Talk to you later.
+

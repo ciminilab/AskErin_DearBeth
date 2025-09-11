@@ -1,0 +1,720 @@
+1
+00:00:00,000 --> 00:00:05,000
+Hey Beth!
+
+2
+00:00:05,000 --> 00:00:07,000
+Erin, hi!
+
+3
+00:00:07,000 --> 00:00:10,000
+How are you?
+
+4
+00:00:10,000 --> 00:00:21,000
+Oh, delighted to see you, my dear.
+
+5
+00:00:21,000 --> 00:00:22,000
+How are you?
+
+6
+00:00:22,000 --> 00:00:23,000
+Good.
+
+7
+00:00:23,000 --> 00:00:25,000
+So much better now that we're hanging out.
+
+8
+00:00:25,000 --> 00:00:26,000
+Absolutely.
+
+9
+00:00:26,000 --> 00:00:31,000
+I thought I would talk about illumination correction.
+
+10
+00:00:31,000 --> 00:00:34,000
+Yeah, that sounds scary.
+
+11
+00:00:34,000 --> 00:00:40,000
+It's really, okay, maybe a little bit, but I'm hoping to make it less scary because it doesn't need to be.
+
+12
+00:00:40,000 --> 00:00:42,000
+I trust you.
+
+13
+00:00:42,000 --> 00:00:48,000
+It's something that we get questions about quite a bit.
+
+14
+00:00:48,000 --> 00:01:02,000
+And I think in part because there's sort of two very different ways that we use illumination correction in a lot of our different workflows.
+
+15
+00:01:02,000 --> 00:01:16,000
+And I think people not understanding what the difference is can make it hard to know how to use them and what selections to make.
+
+16
+00:01:16,000 --> 00:01:20,000
+And that's sort of what makes it a little bit scary and intimidating.
+
+17
+00:01:20,000 --> 00:01:33,000
+So I thought we would go over the different kinds, sort of two major kinds and why you would use one or the other to sort of make it less scary.
+
+18
+00:01:33,000 --> 00:01:35,000
+That sounds so helpful.
+
+19
+00:01:35,000 --> 00:01:36,000
+Awesome.
+
+20
+00:01:36,000 --> 00:01:37,000
+Well, let's do it.
+
+21
+00:01:37,000 --> 00:01:40,000
+Let's just dive right in.
+
+22
+00:01:40,000 --> 00:01:44,000
+So I will.
+
+23
+00:01:44,000 --> 00:01:52,000
+I have two different pipelines here set up for two different illumination corrections that we might do.
+
+24
+00:01:52,000 --> 00:01:59,000
+And so I'm going to start with this one, which is a flat field illumination correction.
+
+25
+00:01:59,000 --> 00:02:17,000
+And so what this means, what generally we call it flat field illumination correction, sometimes we call it just an illumination correction function, you know, sometimes just illum correct.
+
+26
+00:02:17,000 --> 00:02:22,000
+I mean, like, you know, depending on how casual we're being.
+
+27
+00:02:22,000 --> 00:02:37,000
+And the idea being is that with this kind of illumination correction, we are getting rid of illumination artifacts in the path of our microscope.
+
+28
+00:02:37,000 --> 00:02:44,000
+So this kind comes with sort of two major copyouts.
+
+29
+00:02:44,000 --> 00:02:59,000
+You can actually like we are calculating this one could actually get it on, you know, post talk, one could actually do this on your microscope.
+
+30
+00:02:59,000 --> 00:03:01,000
+And we're not like I'm not going to.
+
+31
+00:03:01,000 --> 00:03:04,000
+I'm not covering anything that would be happening in the wet lab.
+
+32
+00:03:04,000 --> 00:03:11,000
+So this is what you would do if you had a set of images post talk that you wanted to illum correct.
+
+33
+00:03:11,000 --> 00:03:18,000
+Also, this particular method requires you to have many images.
+
+34
+00:03:18,000 --> 00:03:26,000
+And it requires that your the things in your images are randomly distributed across the image.
+
+35
+00:03:26,000 --> 00:03:40,000
+So this is not good for if you have slides, and you are manually looking around your microscope and focusing in on okay this is oh look I found the cell that I'm interested in
+
+36
+00:03:40,000 --> 00:03:56,000
+and you're looking around the worm at the right stage of development and you take a photo of that object in the middle of your image and you're doing that manually what this is more for is high content where we have lots of images.
+
+37
+00:03:56,000 --> 00:04:03,000
+And in those lots of images, there has there hasn't been a human moving around to decide what's in the middle of the picture.
+
+38
+00:04:03,000 --> 00:04:09,000
+So if you have an entire like an automated microscope that doesn't care where things are distributed.
+
+39
+00:04:09,000 --> 00:04:16,000
+It just moves around your plate your sample, whatever.
+
+40
+00:04:16,000 --> 00:04:23,000
+So it's not, and it also probably shouldn't be like, oh I went and I found like the most beautiful cell and I took a picture of it. Absolutely.
+
+41
+00:04:23,000 --> 00:04:31,000
+This is so this is something that's more sort of like high content, more, much more used for like high content automated microscopy.
+
+42
+00:04:31,000 --> 00:04:38,000
+Not a manual I'm looking for the prettiest this is a thing at scale.
+
+43
+00:04:38,000 --> 00:04:52,000
+But what this is great for oh and if so if you have the you know lower content manual I'm looking at just the pretty thing that would be more an instance where you would like do things in the wet lab to get the corrections.
+
+44
+00:04:52,000 --> 00:05:21,000
+There. But what this is great for in particular, again with with high content, it's, we're basically doing math to create an average of all of the images in whatever stack we hand it and generally, we are going to hand it a different unit of images for
+
+45
+00:05:21,000 --> 00:05:26,000
+each different way the light might be going through a path.
+
+46
+00:05:26,000 --> 00:05:41,000
+So we generally think of that on a per channel basis, because depending on your particular microscope setup you might have a different laser, you might have, you know, a different set of filters and so this.
+
+47
+00:05:41,000 --> 00:05:55,000
+This is going to to figure out sort of the average of what goes through that entire path and so therefore each channel would be different.
+
+48
+00:05:55,000 --> 00:06:23,000
+And the what it does is it corrects for two very major common artifacts. So generally, the so very often images have some sort of vignetting in them and what this means is that generally the center of an image is much brighter than the edges of an image.
+
+49
+00:06:23,000 --> 00:06:44,000
+Which was just trying to pull up an example of that really quick, you know, which has to do generally with the light going through round, you know, in a round fashion, but the actual camera being a square that we are taking a picture of and so.
+
+50
+00:06:44,000 --> 00:06:57,000
+And microscope objectives are still usually made by hand and so like everybody like your microscope objective is going to be slightly imperfect. And that's still the best way to make them amazingly enough.
+
+51
+00:06:57,000 --> 00:07:03,000
+So they will be imperfect because ideal lenses don't exist except in physical class.
+
+52
+00:07:03,000 --> 00:07:20,000
+Yes, yes. And so I thought I had an example right here. The interest I guess an interesting thing to say is like here is just like browsing through the cell painting gallery which we will talk about very soon.
+
+53
+00:07:20,000 --> 00:07:41,000
+Depending on how you are viewing the image, you might not even be able to readily see the difference. But what this looks like once we once we create these illumination corrections.
+
+54
+00:07:41,000 --> 00:08:03,000
+When we take an average of the, like all of the images in a channel, this is actually sort of what that underlying, what is underlying so it is darker in the corner and brighter in the center and if you see.
+
+55
+00:08:03,000 --> 00:08:14,000
+Yeah, and so at the darkest of the dark points, we're going to get an intensity of one here we go intensity of one at the darkest of the dark. Thank you, Beth.
+
+56
+00:08:14,000 --> 00:08:27,000
+But then as we get to the brightest here so there's, you know, almost twofold difference between the darkest points in this image and the brightest having to do with the actual objective itself.
+
+57
+00:08:27,000 --> 00:08:37,000
+Well, I were trying to measure like the difference between like two different cells like giving a super different result. Absolutely. So in quantitative microscopy, this can become really important.
+
+58
+00:08:37,000 --> 00:08:53,000
+Because if I'm measuring a cell here and measuring a cell here and measuring fluorescence intensity, like, I shouldn't get a different answer based on where the cell was in the image like that's not actually a biologically relevant piece of information.
+
+59
+00:08:53,000 --> 00:09:06,000
+So that's really important. Yeah, this will also catch like if you have a piece of debris that is across the light path somewhere that will show up here and can be corrected to some extent.
+
+60
+00:09:06,000 --> 00:09:22,000
+And so that is again why we do this, you know, one other reason to do it. Well actually so the debris part in a major in a major reason is also why we do it on a plate by plate basis. So anytime we have, you know, like one acquisition round of acquisition on our microscope.
+
+61
+00:09:23,000 --> 00:09:44,000
+That we want to independently create these illumination correction files for separately from an another time because when you take the plate off, and then you go do some more science and you bring a plate back whether it's the same plate with like different reagents added this time or totally separate plate.
+
+62
+00:09:44,000 --> 00:09:57,000
+There is plenty of opportunity for Dustin debris to get into a white path for you know the club, you know, the clumsy microscopist to bump into something and make the laser a little bit off like there's.
+
+63
+00:09:57,000 --> 00:10:03,000
+And so that's why we do this on a per channel basis and a per plate basis.
+
+64
+00:10:03,000 --> 00:10:11,000
+And then we so so with this pipeline.
+
+65
+00:10:11,000 --> 00:10:23,000
+This pipeline here that I'm showing you just creates those flat field illumination correction files, they would then be applied to the images in a separate pipeline.
+
+66
+00:10:23,000 --> 00:10:32,000
+So that is one difference between this and the other, the other method I'm going to show you the other way of doing corrections.
+
+67
+00:10:32,000 --> 00:10:37,000
+So note that this is just creating them it is not actually applying them.
+
+68
+00:10:38,000 --> 00:10:43,000
+What that looks like is here.
+
+69
+00:10:43,000 --> 00:10:58,000
+We have an image, and this is just to make it go faster, and to help like fuzz this out right so we actually here generally downscale our image.
+
+70
+00:10:58,000 --> 00:11:12,000
+So this is not a particularly large image that we're this is not like working with large images or anything is just like an average, average image off an average microscope here in 2025.
+
+71
+00:11:12,000 --> 00:11:17,000
+And we rescale it down to make it smaller.
+
+72
+00:11:17,000 --> 00:11:28,000
+This uses less memory, it goes faster, and it is actually sometimes helpful for getting sort of a smoother, smoother illumination.
+
+73
+00:11:28,000 --> 00:11:43,000
+And then here is the correct illuminate calculate module, and this is where I go like go over what the settings are that are different here from over over here on the left that we'll talk about shortly.
+
+74
+00:11:43,000 --> 00:12:05,000
+So I've got an input image. I'm going to output an image you get to give it a name, then here. These are the two, the two big options that we're talking about so regular is talking about, you know, applies for this illumination sort of background
+
+75
+00:12:05,000 --> 00:12:19,000
+section and again that one of the things we're really proud of in CellProfiler just as a reminder like all of these question mark buttons. If you don't remember what the setting is click on it, and look at this documentation.
+
+76
+00:12:19,000 --> 00:12:42,000
+And it will help remind you which one am I supposed to pick. So regular refers to, you know, images that have have these objects across it even gives you some extra information about like reminding you okay what should I pick in other settings if I have picked regular
+
+77
+00:12:42,000 --> 00:12:54,000
+ones. So you can find out read the docs in CellProfiler we're really we're really proud of the docs they're very important to us. This dilate objects.
+
+78
+00:12:54,000 --> 00:13:09,000
+So we can one that basically not this is not a this is not a normal thing that that one does so you can just keep this setting off.
+
+79
+00:13:09,000 --> 00:13:14,000
+We are not. We don't have model objects.
+
+80
+00:13:14,000 --> 00:13:36,000
+What we want to do is, we do want to make sure we rescale this illumination function. And what this has to do is setting the values of the function that we create. And so when we apply, which again I will get back to it sort of hard to explain all the pieces
+
+81
+00:13:36,000 --> 00:13:51,000
+jumping ahead, like what they do, but as we as we pointed out here the darkest of the dark is set at an intensity of one. And then the brightest of the bright is 1.8 or you know it's 1.8 fold brighter.
+
+82
+00:13:51,000 --> 00:14:12,000
+And what we are doing when we apply this image in a downstream pipeline is we are actually dividing that image by here so the darkest regions are not touched, but we are scaling down the brightest regions, so that they are appropriately scaled or if you know if you
+
+83
+00:14:12,000 --> 00:14:26,000
+are doing a diagram across the image we are like flattening them flat field. So that the intensities are, are even across so that is why those why we want those values.
+
+84
+00:14:26,000 --> 00:14:34,000
+That will be different if you are not doing division as the kind of math for the application and keep that in mind for the other kind.
+
+85
+00:14:34,000 --> 00:15:00,000
+So we do want to set this to rescaling. And here this, this other tricky part is to calculate a function for each image individually or based on all the images so here, we actually want this to do all of the images across all, like all of the cycles here of our CellProfiler of what we have passed in so in this example I have a load data,
+
+86
+00:15:00,000 --> 00:15:24,000
+where each row is a different image site, and I'm telling it, I want it to pick use every image that was acquired on my plate in this channel to create this rather than, again, rather than the other pipeline where we're wanting to do it on an image by image basis.
+
+87
+00:15:24,000 --> 00:15:29,000
+So this yes here is quite important.
+
+88
+00:15:29,000 --> 00:15:35,000
+Then, we would never, we would, oh yeah, we would never want to not use that setting.
+
+89
+00:15:35,000 --> 00:15:37,000
+Yes. Yes.
+
+90
+00:15:38,000 --> 00:15:49,000
+So then here, these like smoothing methods filters and and size. This is a great place to start.
+
+91
+00:15:49,000 --> 00:16:06,000
+And I mean, even beyond manually you can set it automatically. But this would be something that you could sort of smooth that you could check empirically.
+
+92
+00:16:06,000 --> 00:16:31,000
+And basically, you want to get out something that looks like this, or a little bit smoother, or a little bit bumpier, but if there's too much too much structure, you can start to create artifacts by just by the, you know, the level of the level of structure in here if you think about it like, again,
+
+93
+00:16:31,000 --> 00:16:38,000
+it looks like this because we are averaging all of our images. So the more images you have the better.
+
+94
+00:16:38,000 --> 00:16:54,000
+But if you don't kind of like fuzz everything out, then you may by chance end up with, you know, structure in here that has to do with where your bright objects like yourselves were in the image rather than the actual illumination itself.
+
+95
+00:16:54,000 --> 00:17:04,000
+And so, you know, this looks fine. Could it be a little smoother? Sure. Could it be a little bumpier? Like, yeah, it's probably just fine.
+
+96
+00:17:04,000 --> 00:17:13,000
+But but getting in and changing these sizes are how one would handle that. And in this pipeline, we then resize it back up.
+
+97
+00:17:13,000 --> 00:17:26,000
+We scale it down. So then we scale it back up to be the correct image size. One thing trick here that I have bumped into, because with this pipeline we do a resizing.
+
+98
+00:17:26,000 --> 00:17:49,000
+If you have an odd number of pixels in your in one of your X or Y dimensions, and you scale it down and back up again, you may end up with your final illum image that is not the exact same pixel size as your original image.
+
+99
+00:17:49,000 --> 00:18:04,000
+So that is something where you might need to rather than resizing by a fraction, you can resize it to specific dimensions and input the actual X and Y dimensions for your input image.
+
+100
+00:18:04,000 --> 00:18:14,000
+Because when you try to apply it in a future pipeline, if the images are different sizes, they're off by a pixel cell, CellProfiler will yell at you and say I cannot.
+
+101
+00:18:14,000 --> 00:18:28,000
+I cannot math these together because they're different sizes. So that's a profiler always yelling at us. All is. So that's one one little thing to keep in mind here a trick for this scaling up and scaling down approach.
+
+102
+00:18:28,000 --> 00:18:39,000
+And this pipeline this is this is our standard sort of like high content pipeline that we use in all of our big high content cell painting screens.
+
+103
+00:18:39,000 --> 00:18:49,000
+And you see here I have this like resize down the loom calculate resize back up for each of the different channels.
+
+104
+00:18:49,000 --> 00:19:02,000
+So goes DNA, ER RNA. So within the same pipeline, I'm handling and making a loom correction files for each channel. I could run if I want to really want to distribute this.
+
+105
+00:19:02,000 --> 00:19:07,000
+I could run a different pipeline for each channel.
+
+106
+00:19:07,000 --> 00:19:09,000
+That could be done.
+
+107
+00:19:09,000 --> 00:19:19,000
+And then at the end, remember, anytime you're making an image you want in CellProfiler, you got to tell it to save it out. It does not automatically save anything for you.
+
+108
+00:19:19,000 --> 00:19:24,000
+Ask me how I know that one made that mistake before.
+
+109
+00:19:24,000 --> 00:19:37,000
+And so here I'm telling it, you know, please do save out this image that I made. And this is this is what we get that we can then apply to downstream images to flatten them out.
+
+110
+00:19:37,000 --> 00:19:53,000
+And again, you when you're looking at this image, depending on your viewer. And we have another ask Erin dear Beth episode about like why do my images look bad and it actually like explain some some things helpful here.
+
+111
+00:19:53,000 --> 00:20:04,000
+You may not see by I necessarily the difference between your uncorrected and your corrected depending on how big of a difference this is and what viewer you're using to look at it.
+
+112
+00:20:04,000 --> 00:20:10,000
+So there's just one thing to note that that it can be subtle.
+
+113
+00:20:10,000 --> 00:20:25,000
+And, you know, for example, like this here I'm just using this online browser to pull up this image and this is uncorrected but by I like no I can't see that that forms of that there's a vignette there in the elimination.
+
+114
+00:20:25,000 --> 00:20:29,000
+If I were to download this and open it in Fiji and scale it.
+
+115
+00:20:29,000 --> 00:20:40,000
+I could definitely like you can but again depending on how you're viewing it you may not see the difference, but mathematically, it is an important, an important correction.
+
+116
+00:20:40,000 --> 00:20:50,000
+So that's sort of the big picture behind flat field. Anything else I should say there before we go to the other use case.
+
+117
+00:20:50,000 --> 00:20:57,000
+No, other than to say, and if you don't want to worry about doing this computationally do it at the microscope, but
+
+118
+00:20:57,000 --> 00:21:05,000
+Yes, yes. If you didn't do it at the microscope and you want to do super quantitative microscopy this is a great thing to make sure that you're doing.
+
+119
+00:21:05,000 --> 00:21:06,000
+Yes.
+
+120
+00:21:06,000 --> 00:21:16,000
+So then jumping over to perhaps the like, I don't know where I should have started from the maybe easier to understand.
+
+121
+00:21:17,000 --> 00:21:30,000
+Example that's more perhaps a more common use case like again we use this one at scale always, but perhaps most microscopists, microscopists, there we go aren't actually working at scale.
+
+122
+00:21:30,000 --> 00:21:50,000
+And so here I have another pipeline where I am going to show you this is just the images that come with CellProfiler in our little example data set, and I put together this, this tiny little tiny little example.
+
+123
+00:21:50,000 --> 00:22:07,000
+And so what what we have here is I am identifying primary objects, and this has had certainly some tuning this is this is the settings that come again with our default.
+
+124
+00:22:08,000 --> 00:22:23,000
+Our default pipeline so if you if we go to help show welcome screen and try click on try example, it will load these images and an example pipeline that that has these settings for identifying these objects in the nuclei.
+
+125
+00:22:23,000 --> 00:22:30,000
+But if I notice there are.
+
+126
+00:22:30,000 --> 00:22:39,000
+So I'm going to focus here in on this region and I'm scaling the contrast a bit. And if I see these default.
+
+127
+00:22:39,000 --> 00:22:41,000
+Well, quite a bit.
+
+128
+00:22:41,000 --> 00:23:02,000
+I see it like these this what we these objects found with the settings that we pack, you know, ship with our with our example here, maybe aren't actually matching by I like where I would draw the lines for these cells like that looks like it's cutting into a cell and maybe like maybe
+
+129
+00:23:02,000 --> 00:23:04,000
+we're there.
+
+130
+00:23:04,000 --> 00:23:12,000
+I'm not really sure why this is like perhaps cutting in the middle of a cell here like, I don't, I don't hate the segmentation.
+
+131
+00:23:12,000 --> 00:23:28,000
+It's not terrible but yeah, I mean, maybe it could be improved here you know here, something a little funny going on where it's finding, you know, maybe that's a whole stuff you know should be around sell there, I don't know, but let's.
+
+132
+00:23:28,000 --> 00:23:40,000
+Let's see. So one thing that we can do is do a correct illuminate calculate, and then apply so what I have said here.
+
+133
+00:23:40,000 --> 00:23:50,000
+What is different between the other example I gave so illumination function this is background.
+
+134
+00:23:50,000 --> 00:24:14,000
+And here I have set a block size and I'll show you a couple different examples of how that how that affects this but this is just like empirically sort of at what scale do I want to like what the goal here is to sort of take areas of brightness that perhaps are then bleeding into their pixels
+
+135
+00:24:14,000 --> 00:24:38,000
+and apply and sort of subtract that out so that we get a crisper image, particularly in the bright regions. And so you can play with block size, I think it started with 60 and when I did that, I looked at this output image and like well that seems a little chunky to try and use to smooth out
+
+136
+00:24:38,000 --> 00:24:44,000
+the signal like I don't think that's going to be terribly helpful.
+
+137
+00:24:44,000 --> 00:25:01,000
+So, and something like this and like well that maybe seems a little granular like I don't know once I once I fuzz it out maybe that's maybe that smoothed out enough so some of this just comes to like empirically what do you find and does it like does this help you.
+
+138
+00:25:01,000 --> 00:25:16,000
+I'm going to rescale this because I'm not going to be dividing the images. I'm just taking this like extra bit of signal, which you see here ranges from zero in my background to point to zero to ish in my brightest areas.
+
+139
+00:25:16,000 --> 00:25:26,000
+So that is the scaling I want because I'm going to subtract this illumination correction, not divide it as we did in the other example.
+
+140
+00:25:26,000 --> 00:25:33,000
+This is about light that is added to my stuff that shouldn't be because it's maybe out of focus and so to get rid of it we're subtracting.
+
+141
+00:25:33,000 --> 00:25:36,000
+Yes, absolutely.
+
+142
+00:25:36,000 --> 00:25:49,000
+Thank you. Great way to put it. So again like empirically you can test different ways of going from this sort of blocked image to a smoothed image.
+
+143
+00:25:49,000 --> 00:26:03,000
+So starting point. And so what we then see is here, I'm applying this so I am here in my correct illuminate apply.
+
+144
+00:26:03,000 --> 00:26:14,000
+The key thing here is, I'm selecting the illumination function, and I am subtracting it from the image. If you're applying your flat field.
+
+145
+00:26:14,000 --> 00:26:19,000
+You would do a correct illumination apply and you would divide.
+
+146
+00:26:19,000 --> 00:26:38,000
+So perhaps if I'm, you know, we'll blow the signal out a bit, maybe zoom in and we see by eye like, yeah, I don't know.
+
+147
+00:26:38,000 --> 00:26:49,000
+Let's see a whole lot of difference. Maybe this is a little crisper than this one. You know, by eye it might not make that much of a difference.
+
+148
+00:26:49,000 --> 00:27:00,000
+But if I then identify primary objects in my corrected nuclei. So here I have this overlay outlines module.
+
+149
+00:27:00,000 --> 00:27:21,000
+I can also show you this in the workspace. I could open up the workspace viewer and look at different objects in the workspace viewers a tricky fun thing to do, but I had this module handy so you can see here what I've done is I have put in overlay outlines, the original nuclei and green and the corrected the nuclei coming from the corrected images in pink on top of that.
+
+150
+00:27:21,000 --> 00:27:37,000
+So I can see here, most of the nuclei, right, like most of it, the pink is overlaid on top of the green. So in most of the nuclei, it's exactly the same, like, maybe here they're off by a pixel, you know, where that if I only see pink, it's the same.
+
+151
+00:27:37,000 --> 00:27:55,000
+It's the same. But here where they're different, I can look and say, okay, I'm seeing that these are different if I scale up this brightness of it, I can say like I actually mostly like what's happening in the pink better.
+
+152
+00:27:55,000 --> 00:28:12,000
+Here, I think, like, this one was divided in two in green, and I think that should be a single object. Likewise, this one was divided in two, and I think that should be a single object.
+
+153
+00:28:12,000 --> 00:28:41,000
+And, you know, but hey, maybe like, maybe here actually I'm noticing, oh look, it's, it's now over segmenting here. So it's interesting, you know, like, again, any corrections really need to be determined empirically, like I'm seeing like I like some of the things it's doing better but here's an example of it's worse like it has divided this into two cells with a line here and like that sure doesn't look like it should be divided there to me so you want to find a balance of
+
+154
+00:28:42,000 --> 00:28:54,000
+over versus under segmentation there's always going to be a little bit of one a little bit of the other and you want to find sort of the happy medium where you're getting as little of possible of both.
+
+155
+00:28:54,000 --> 00:28:59,000
+But we've said a few times now in the podcast that I think we absolutely have.
+
+156
+00:28:59,000 --> 00:29:11,000
+I think this is never the goal just good enough. Yeah, but I think you know I think I like this a little bit better. The segmentation I'm getting with this illumination correction applied.
+
+157
+00:29:11,000 --> 00:29:27,000
+And as we have also, you know, also keep saying any anything you do to an image is fair game for object segmentation so I've made you know I've made this corrected image I'm using it to find these objects.
+
+158
+00:29:27,000 --> 00:29:37,000
+But as a reminder, when I go make measure if I want to make measurements of these objects. I want to do that in my original images.
+
+159
+00:29:37,000 --> 00:29:45,000
+Generally, you don't want to be using this sort of correction for measurements.
+
+160
+00:29:45,000 --> 00:30:06,000
+Whereas with the other type with the flat field, you do want to apply those corrections before you make any measurements so very, you know, same module and CellProfiler sort of similar idea, but like very, very different application and usage.
+
+161
+00:30:06,000 --> 00:30:21,000
+I will say that there are, I don't think we have time to talk about it today but there are there are ways you couldn't you can run this module to actually help if you know you have a high background and you're trying to make very, very precise measurements that you could actually use this to improve the
+
+162
+00:30:21,000 --> 00:30:32,000
+quant, quantifiability of your images but it's something that you would have to do with extreme caution and so therefore not planning to do it.
+
+163
+00:30:32,000 --> 00:30:35,000
+Before you quantify your images is always the safer call.
+
+164
+00:30:35,000 --> 00:30:39,000
+Yeah, yeah, that's definitely, you know, definitely an edge case.
+
+165
+00:30:39,000 --> 00:30:45,000
+Of course, like every time we tell you a rule there's always going to be an exception so.
+
+166
+00:30:45,000 --> 00:30:50,000
+Yeah, but that's a good point and maybe we could add that to the list for a future episode.
+
+167
+00:30:50,000 --> 00:30:52,000
+I bet we could.
+
+168
+00:30:52,000 --> 00:30:54,000
+Awesome. Anything else?
+
+169
+00:30:54,000 --> 00:30:57,000
+No, that was great. I'm so much less scared now.
+
+170
+00:30:57,000 --> 00:31:15,000
+Yay. Yeah, I mean I think I think it's, I don't know, I honestly like I still if I start this module from scratch, I still go open up an old pipeline where I know I've done one or the other and I make sure I copy from there because there's a lot of
+
+171
+00:31:15,000 --> 00:31:21,000
+settings that sort of don't don't work nicely.
+
+172
+00:31:21,000 --> 00:31:26,000
+If you don't have them sort of set for one path or the other.
+
+173
+00:31:26,000 --> 00:31:40,000
+But, but I also hear that, you know, maybe in an upcoming version of CellProfiler will sort of have some, some suggestions that CellProfiler some catch for you.
+
+174
+00:31:40,000 --> 00:31:57,000
+Hey, you've you've put in two settings together that don't make sense and give you a warning and and I think illumination correction is very much modules that are top of my list for that sort of warning you of like hey you are technically allowed to do this but maybe
+
+175
+00:31:57,000 --> 00:31:59,000
+double check what you've done so.
+
+176
+00:31:59,000 --> 00:32:03,000
+Keep an eye on I think that sounds like a great future improvement to CellProfiler.
+
+177
+00:32:03,000 --> 00:32:11,000
+Absolutely. Well thanks for hanging out with me and talking about some illumination correction here.
+
+178
+00:32:11,000 --> 00:32:13,000
+Of course, yeah, I learned a lot.
+
+179
+00:32:13,000 --> 00:32:15,000
+Wonderful.
+
+180
+00:32:15,000 --> 00:32:17,000
+Bye.
+

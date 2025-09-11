@@ -1,812 +1,676 @@
 1
-00:00:00,000 --> 00:00:07,000
-Hey Beth!
+00:00:00,000 --> 00:00:05,000
+Hello Beth!
 
 2
-00:00:07,000 --> 00:00:09,000
-Hello!
+00:00:05,000 --> 00:00:07,000
+Erin, hi!
 
 3
-00:00:09,000 --> 00:00:18,960
-Erin, it is always lovely to see you.
+00:00:07,000 --> 00:00:10,000
+How are you?
 
 4
-00:00:18,960 --> 00:00:20,560
-And you as well, my dear.
+00:00:10,000 --> 00:00:13,000
+Peachy keen, how are you my dear?
 
 5
-00:00:20,560 --> 00:00:23,040
-Erin, I have a confession to make.
+00:00:13,000 --> 00:00:15,000
+Good, so lovely to see you.
 
 6
-00:00:23,040 --> 00:00:27,360
-We did another episode where we talked about ilastik and how ilastik is wonderful, all
+00:00:15,000 --> 00:00:17,000
+And you as well.
 
 7
-00:00:27,360 --> 00:00:30,520
-which is true, but we told people a rule.
+00:00:17,000 --> 00:00:21,000
+Yeah, I have been worried about something though.
 
 8
-00:00:30,520 --> 00:00:32,520
-And we don't usually tell people rules.
+00:00:21,000 --> 00:00:24,000
+We told people that we were going to be doing a little bit of a tour
 
 9
-00:00:32,520 --> 00:00:34,520
-Yeah, we don't.
+00:00:24,000 --> 00:00:27,000
+and we were going to be doing a little bit of a tour
 
 10
-00:00:34,520 --> 00:00:36,520
-We don't make rules.
+00:00:27,000 --> 00:00:29,000
+and we were worried about something though.
 
 11
-00:00:36,520 --> 00:00:40,520
-I think we give a lot of guidance, but we were like, we don't usually give rules without
+00:00:29,000 --> 00:00:31,000
+We told people that we had a rule
 
 12
-00:00:40,520 --> 00:00:41,520
-explaining them.
+00:00:31,000 --> 00:00:33,000
+and we didn't tell them why we had a rule.
 
 13
-00:00:41,520 --> 00:00:43,640
-And we were like, you should always use the one pixel brush.
+00:00:33,000 --> 00:00:35,000
+We just told them they had to follow us and listen to us
 
 14
-00:00:43,640 --> 00:00:44,640
-Yeah, that's true.
+00:00:35,000 --> 00:00:37,000
+and like that never feels good.
 
 15
-00:00:44,640 --> 00:00:45,640
-That's true.
+00:00:37,000 --> 00:00:40,000
+I mean, sometimes it feels good to just be like,
 
 16
-00:00:45,640 --> 00:00:48,280
-We kind of mandate that one without explaining it.
+00:00:40,000 --> 00:00:45,000
+hey follow my rules, but I see what you're saying.
 
 17
-00:00:48,280 --> 00:00:49,280
-Yeah.
+00:00:45,000 --> 00:00:47,000
+Specifically a couple episodes ago we said,
 
 18
-00:00:49,280 --> 00:00:51,720
-So, I figured we should probably explain it.
+00:00:47,000 --> 00:00:50,000
+if you're doing ilastik, use the small brush size
 
 19
-00:00:51,720 --> 00:00:55,400
-That would be very nice of us.
+00:00:50,000 --> 00:00:52,000
+and just do it.
 
 20
-00:00:55,400 --> 00:01:01,000
-But, because it's not always intuitive in ilastik, you know, they make all those gorgeous
+00:00:52,000 --> 00:00:55,000
+We're not going to explain to you why in this video, just do it.
 
 21
-00:01:01,000 --> 00:01:02,000
-brush sizes.
+00:00:55,000 --> 00:00:59,000
+Figured probably be good to actually talk about why.
 
 22
-00:01:02,000 --> 00:01:07,160
-And there are certainly cases where, especially for electron microscopy imaging, you might
+00:00:59,000 --> 00:01:02,000
+Sounds great. Let's dig in.
 
 23
-00:01:07,160 --> 00:01:11,400
-use the bigger brush, but for fluorescence imaging and for simple cases, you always
+00:01:02,000 --> 00:01:05,000
+Alright, I have a simulator for us today.
 
 24
-00:01:11,400 --> 00:01:16,240
-want to avoid what's called overfitting.
+00:01:05,000 --> 00:01:07,000
+Ooh.
 
 25
-00:01:16,240 --> 00:01:20,080
-And so I thought I would try to give a little bit of a demonstration today about overfitting.
+00:01:07,000 --> 00:01:09,000
+Alright.
 
 26
-00:01:20,080 --> 00:01:21,080
-Delightful.
+00:01:09,000 --> 00:01:12,000
+So today let's not actually look at ilastik or talk about ilastik.
 
 27
-00:01:21,080 --> 00:01:22,080
-All right.
+00:01:12,000 --> 00:01:15,000
+Let's talk about sort of the principles that underlie ilastik.
 
 28
-00:01:22,080 --> 00:01:24,680
-Let's demonstrate this problem.
+00:01:15,000 --> 00:01:19,000
+So ilastik, at least in its sort of normal mode,
 
 29
-00:01:25,680 --> 00:01:26,840
-All right.
+00:01:19,000 --> 00:01:23,000
+relies on a form of machine learning called a random forest.
 
 30
-00:01:26,840 --> 00:01:32,320
-So this is actually a Python notebook that I made with a tool called Marimo, which is
+00:01:23,000 --> 00:01:26,000
+And I'll explain exactly what that means in a second.
 
 31
-00:01:32,320 --> 00:01:34,680
-one of my new favorite Python tools.
+00:01:26,000 --> 00:01:31,000
+Essentially a random forest is what if we make a bunch of decision trees
 
 32
-00:01:34,680 --> 00:01:36,680
-But you don't need to know anything about code to use it.
+00:01:31,000 --> 00:01:35,000
+and then we let the decision trees sort of make the decision forest.
 
 33
-00:01:36,680 --> 00:01:40,040
-And we can drop the link in the show notes.
+00:01:35,000 --> 00:01:38,000
+We have a whole bunch of trees, so it's a forest.
 
 34
-00:01:40,040 --> 00:01:45,840
-So this is using a fun plug-in for Marimo called drawData.
+00:01:38,000 --> 00:01:42,000
+And the random part of random forest means that what it does
 
 35
-00:01:45,840 --> 00:01:49,800
-And it's going to let me literally draw data.
+00:01:42,000 --> 00:01:44,000
+is actually subsamples the data
 
 36
-00:01:49,800 --> 00:01:50,800
-Wow.
+00:01:44,000 --> 00:01:47,000
+and then makes decision trees with different parts of the data.
 
 37
-00:01:50,800 --> 00:01:51,800
-I think it's fun.
+00:01:47,000 --> 00:01:49,000
+Hmm. Okay.
 
 38
-00:01:51,800 --> 00:01:52,800
-That sounds a little dangerous.
+00:01:49,000 --> 00:01:55,000
+So I have this cool notebook that is based on a plotting library
 
 39
-00:01:53,420 --> 00:01:56,880
-I mean, great for demonstration purposes, but like, wouldn't it be nice if I could just
+00:01:55,000 --> 00:01:57,000
+that actually allows you to draw in some data.
 
 40
-00:01:56,880 --> 00:01:58,380
-trust me, guys?
+00:01:57,000 --> 00:02:00,000
+And so I'm going to actually draw in some data now
 
 41
-00:01:58,380 --> 00:02:00,880
-Well, this is what my pull, this is what it looks like.
+00:02:00,000 --> 00:02:04,000
+that we can use to sort of make two classes and see how random forest works.
 
 42
-00:02:00,880 --> 00:02:03,160
-I just drew it on the graph.
+00:02:04,000 --> 00:02:05,000
+I like this.
 
 43
-00:02:03,160 --> 00:02:05,520
-Use your powers for good, not for evil.
+00:02:05,000 --> 00:02:07,000
+Draw your own data.
 
 44
-00:02:05,520 --> 00:02:08,840
-If great power comes great responsibility.
+00:02:07,000 --> 00:02:10,000
+Like easiest way to a figure, right?
 
 45
-00:02:08,840 --> 00:02:09,840
-Yes.
+00:02:10,000 --> 00:02:13,000
+Use your powers for good.
 
 46
-00:02:09,840 --> 00:02:16,040
-So what this widget gives us access to is we can have four different colors of data that
+00:02:13,000 --> 00:02:16,000
+Alright, so here I have two different classes.
 
 47
-00:02:16,040 --> 00:02:18,040
-we can draw.
+00:02:16,000 --> 00:02:18,000
+I can actually have up to four classes here,
 
 48
-00:02:19,040 --> 00:02:24,200
-And we can, I've added some stuff here, so we can say that we want to split them into
+00:02:18,000 --> 00:02:21,000
+but I have my blue points and I have my green points.
 
 49
-00:02:24,200 --> 00:02:27,720
-two different classes.
+00:02:21,000 --> 00:02:26,000
+And I've drawn in some data and I have about 50 to 60 of each.
 
 50
-00:02:27,720 --> 00:02:34,160
-And we can decide which color of dot goes into the two different classes.
+00:02:26,000 --> 00:02:32,000
+And my random forest says that it can separate those with 100% accuracy,
 
 51
-00:02:34,160 --> 00:02:39,960
-Right now, it's actually doing a surprisingly good job at splitting our two different, we
+00:02:32,000 --> 00:02:35,000
+which makes sense because, you know, these are actually really different.
 
 52
-00:02:39,960 --> 00:02:44,400
-have green and red in class two and blue and orange in class one.
+00:02:35,000 --> 00:02:39,000
+Right now my random forest is learning X position, Y position,
 
 53
-00:02:44,400 --> 00:02:46,920
-And it says it's actually doing 65% accurate.
+00:02:39,000 --> 00:02:44,000
+and then the size, which is a pretend number that we can sort of assign.
 
 54
-00:02:46,920 --> 00:02:51,400
-I think that's somewhat because we have these blue dots that are out here by themselves
+00:02:44,000 --> 00:02:47,000
+And right now the sizes are all assigned as the same.
 
 55
-00:02:51,400 --> 00:02:54,440
-and we have these green dots that are down here.
+00:02:47,000 --> 00:02:52,000
+So the sizes are not being really used by my random forest classifier.
 
 56
-00:02:54,440 --> 00:03:01,160
-I suspect if I draw some blue dots on there, I mean, 50-50 accuracy is the worst you can
+00:02:52,000 --> 00:02:54,000
+It's making all its decisions based on X and Y,
 
 57
-00:03:01,160 --> 00:03:02,160
-do, right?
+00:02:54,000 --> 00:02:56,000
+because the X is different and the Y is different.
 
 58
-00:03:02,160 --> 00:03:03,960
-Because then you're just flipping a coin.
+00:02:56,000 --> 00:02:58,000
+So that makes a lot of sense.
 
 59
-00:03:03,960 --> 00:03:07,400
-So we wouldn't expect this to get down to zero, but I was surprised it was even getting
+00:02:58,000 --> 00:03:04,000
+And so what we can do is we can actually look at what our random forest is.
 
 60
-00:03:07,400 --> 00:03:09,600
-much above 50%.
+00:03:04,000 --> 00:03:09,000
+So our random forest is actually 100 different decision trees.
 
 61
-00:03:09,600 --> 00:03:12,640
-So if I put some blue dots here.
+00:03:09,000 --> 00:03:12,000
+If I want, I can pull up any decision tree I want.
 
 62
-00:03:12,640 --> 00:03:13,640
-Yeah.
+00:03:12,000 --> 00:03:16,000
+I can pull up decision tree 30.
 
 63
-00:03:13,720 --> 00:03:22,520
-We're trending down and down towards, well, no, now it's actually getting better again.
+00:03:16,000 --> 00:03:18,000
+And I can see what that looks like.
 
 64
-00:03:22,520 --> 00:03:28,440
-But you can see that the accuracy for individual points and for the individual classes changes
+00:03:18,000 --> 00:03:23,000
+And in that one, it says if the Y value is less than a certain number,
 
 65
-00:03:28,440 --> 00:03:32,200
-as I draw data.
+00:03:23,000 --> 00:03:27,000
+call it class two, otherwise call it class one.
 
 66
-00:03:32,200 --> 00:03:36,440
-So now let's reset and then let's talk about overfitting.
+00:03:27,000 --> 00:03:33,000
+And we can look at just the first nine and we can see that some of them start with X,
 
 67
-00:03:36,440 --> 00:03:43,200
-So overfitting is just the idea that if we have multiple things within the data, some
+00:03:33,000 --> 00:03:36,000
+some of them start with Y, some of them have one level,
 
 68
-00:03:43,240 --> 00:03:48,680
-of which are differences we care about and some of which are differences that we don't.
+00:03:36,000 --> 00:03:38,000
+some of them have a couple of levels.
 
 69
-00:03:48,680 --> 00:03:52,600
-With machine learning, and here we're using a kind of machine learning called random forest,
+00:03:38,000 --> 00:03:42,000
+But essentially what this does is it then goes through for every data point.
 
 70
-00:03:52,600 --> 00:03:59,840
-which is based on decision trees, we can't always control how the machine chooses to
+00:03:42,000 --> 00:03:46,000
+And for it goes, puts it through all 100 trees and then says, okay,
 
 71
-00:03:59,840 --> 00:04:00,840
-learn.
+00:03:46,000 --> 00:03:51,000
+in 80 of these trees, it says it's class one and in 20, it says it's class two.
 
 72
-00:04:00,840 --> 00:04:05,440
-This is going to be even worse when we get to thinking about things like deep learning.
+00:03:51,000 --> 00:03:53,000
+The wisdom of the crowd must be right.
 
 73
-00:04:05,440 --> 00:04:12,440
-But the amount of data that a machine learning classifier like a random forest, which is what
+00:03:53,000 --> 00:03:58,000
+And so therefore we should call this class one.
 
 74
-00:04:12,440 --> 00:04:19,080
-ilastik uses sees, is going to essentially determine how important it thinks a particular
+00:03:58,000 --> 00:04:04,000
+So it's not using any single tree to make a decision.
 
 75
-00:04:19,080 --> 00:04:20,320
-kind of data is.
+00:04:04,000 --> 00:04:07,000
+It's saying like, let's, yeah, let's look at all of these trees.
 
 76
-00:04:20,320 --> 00:04:25,920
-It will learn to cheat if some data is common and some data is rare to only predict the
+00:04:07,000 --> 00:04:15,000
+So in your example, right, like the Y value alone gives us potentially lots of the information we need.
 
 77
-00:04:25,920 --> 00:04:31,320
-common data, because it can do really well while ignoring the rare data.
+00:04:15,000 --> 00:04:22,000
+But if we, you know, if we're looking at those points, we need both X and Y values to be able to separate them.
 
 78
-00:04:31,320 --> 00:04:33,320
-Did that make sense?
+00:04:22,000 --> 00:04:29,000
+So the decision tree, each individual decision tree contains not sufficient information.
 
 79
-00:04:33,320 --> 00:04:34,320
-I think so.
+00:04:29,000 --> 00:04:31,000
+It's the collection of the trees.
 
 80
-00:04:34,320 --> 00:04:40,840
-So we're saying that we can't rephrase this to make sure I've understood.
+00:04:31,000 --> 00:04:36,000
+That's the forest that has like all of the information that we would need to separate.
 
 81
-00:04:41,240 --> 00:04:50,240
-If we have a situation where there's a super common phenotype and more rare phenotype,
+00:04:36,000 --> 00:04:40,000
+No, I mean, so what you just said is a really good point.
 
 82
-00:04:50,240 --> 00:04:56,880
-if most of the information it has is about that common phenotype, can't tell it, oh,
+00:04:40,000 --> 00:04:50,000
+We don't in theory in this example need the X or the Y or and the Y because it could be either the X or the Y because I made a point to sort of make these on a diagonal.
 
 83
-00:04:56,880 --> 00:05:02,000
-go pay more attention to the rare one because that's what we care about finding.
+00:04:50,000 --> 00:05:02,000
+If I didn't, if say I drew this so that now it's only the X or the Y and the Y, like what if I do this?
 
 84
-00:05:02,000 --> 00:05:06,400
-It is in control of what it's paying attention to.
+00:05:02,000 --> 00:05:08,000
+And I'm going to, for reasons that I sort of explained later, just add a few more blue points here too.
 
 85
-00:05:06,480 --> 00:05:17,720
-So it may then say, hey, if only 1% of the time is this rare object, I can be 99% accurate
+00:05:08,000 --> 00:05:13,000
+So now we do need the X and the Y.
 
 86
-00:05:17,720 --> 00:05:19,640
-by just calling everything normal.
+00:05:13,000 --> 00:05:16,000
+And it still says like X and Y are both important.
 
 87
-00:05:19,640 --> 00:05:22,880
-I'm just never going to find that and I'm doing great.
+00:05:16,000 --> 00:05:21,000
+It's a little more weighted towards X now because we have a bunch of things over here.
 
 88
-00:05:22,880 --> 00:05:23,880
-Yeah.
+00:05:21,000 --> 00:05:26,000
+But you can see now our trees have gotten a lot more complicated.
 
 89
-00:05:23,880 --> 00:05:28,640
-And I think there's a great way to sort of demonstrate that.
+00:05:26,000 --> 00:05:37,000
+Because it really does need the X and the Y both in order to sort of figure out is this related to, is this part, is this a green dot or is this a blue dot?
 
 90
-00:05:28,640 --> 00:05:33,880
-So here I'm just going to draw in a few dots of class one.
+00:05:37,000 --> 00:05:54,000
+Okay, so each individual tree, like in the first instance, each individual tree, well, I guess on this one too, it's the same principle, is actually saying like this tree, I think I can distinguish between the populations using just the rules in my tree.
 
 91
-00:05:33,880 --> 00:05:40,840
-I'm going to draw now a bunch of dots from class two right on top of it.
+00:05:54,000 --> 00:06:09,000
+But we have our level of confidence, not, you know, we're making our overall rules or our overall cluster designations based on consensus between each of those different versions.
 
 92
-00:05:40,840 --> 00:05:46,600
-And this is saying that this is 99% accurate.
+00:06:09,000 --> 00:06:15,000
+Yes, exactly. And so each tree, and let me go down to a single tree now.
 
 93
-00:05:46,600 --> 00:05:55,840
-And that's because if it just guesses two all the time, it's 99% accurate because there's
+00:06:15,000 --> 00:06:18,000
+So we now have a little under 600 total data points.
 
 94
-00:05:55,840 --> 00:05:59,360
-319 green dots and four blue ones.
+00:06:18,000 --> 00:06:23,000
+So the random part comes in where each of the trees actually doesn't have the whole information.
 
 95
-00:06:00,360 --> 00:06:02,800
-Well, we can see that down there.
+00:06:23,000 --> 00:06:29,000
+So here, like, here's a random tree, it has 186, so it has about 30% of the information.
 
 96
-00:06:02,800 --> 00:06:08,280
-It's saying the per class accuracy for class C is 100%.
+00:06:29,000 --> 00:06:35,000
+And so that's part of how we get the trees to all look different is you say, each one only has a sub sample of the information.
 
 97
-00:06:08,280 --> 00:06:13,960
-So all it's guessing every single green dot correctly, but the per class accuracy for
+00:06:35,000 --> 00:06:40,000
+And so, otherwise, you would just get the same tree 100 times and it wouldn't actually be valuable.
 
 98
-00:06:13,960 --> 00:06:15,120
-class A is zero.
+00:06:40,000 --> 00:06:52,000
+But by saying, all right, we're going to sub sample the data, then we can, we can get different trees each time and we can hopefully get more robustness in our overall classifier by because we're going to get more robustness.
 
 99
-00:06:15,120 --> 00:06:20,680
-So it is literally finding no blue dots.
+00:06:52,000 --> 00:07:00,000
+And so we can get more robustness in our overall classifier by because we're calling on sort of the wisdom of crowds here.
 
 100
-00:06:20,680 --> 00:06:21,680
-Love it.
+00:07:00,000 --> 00:07:05,000
+So how does this actually relate to ilastik and what the heck does this have to do with a pixel brush.
 
 101
-00:06:21,680 --> 00:06:22,680
-Love it.
+00:07:05,000 --> 00:07:08,000
+I swear, I swear it connects.
 
 102
-00:06:22,680 --> 00:06:29,200
-Beautiful way to cheat there and not helpful to us at all if we care about those blue dots.
+00:07:08,000 --> 00:07:19,000
+All right. So, all of that is how random forest work what are nurses have to do with ilastik why are we talking about a one pixel brush like what on earth is the relevance of how does a random forest work.
 
 103
-00:06:29,200 --> 00:06:39,920
-So we can even sort of take this a step further where we have our blue dots and we have our
+00:07:19,000 --> 00:07:27,000
+And so, first because ilastik is using a random forest under the hood. And we have our if we think about our annotations here.
 
 104
-00:06:39,920 --> 00:06:41,240
-green dots.
+00:07:27,000 --> 00:07:42,000
+We can think of them just like the pixel annotations that we make in ilastik in that each one each pixel annotation we make has a certain pieces of information, you know, x, y and size, for example, here but in ilastik it's like different textures
 
 105
-00:06:41,240 --> 00:06:47,600
-And now these are 100% accurate mostly based on X rather than Y, which makes sense.
+00:07:43,000 --> 00:07:50,000
+And it matters because there's some principles about how machine learning works that are sort of important to think about.
 
 106
-00:06:47,600 --> 00:06:50,760
-I've split these on the X axis versus the Y axis.
+00:07:50,000 --> 00:07:51,000
+Here's one of them.
 
 107
-00:06:50,760 --> 00:06:56,120
-If we now take a third thing, B, which should be is part of class one.
+00:07:51,000 --> 00:08:01,000
+So, we can't control other than by turning some features on or off entirely what the machine learning algorithm uses in order to make its decisions.
 
 108
-00:06:56,120 --> 00:07:01,040
-So it should go into the class A group.
+00:08:01,000 --> 00:08:04,000
+It just makes the best decisions that can.
 
 109
-00:07:01,040 --> 00:07:08,480
-And I just drop a couple little points here.
+00:08:05,000 --> 00:08:14,000
+So, right. So I have my x and y but they're done in a way that are a little bit confusing that the have we have our trees are having to get pretty big in order for us to figure it out.
 
 110
-00:07:08,480 --> 00:07:11,240
-And I sort of scatter them equally.
+00:08:14,000 --> 00:08:23,000
+What happens if I take a different variable, like say size, and I make size super different between one of our two classes.
 
 111
-00:07:11,240 --> 00:07:16,920
-Can see as I sort of make them look more like the class C distribution, there's still a
+00:08:24,000 --> 00:08:38,000
+So, if I do this, our decision trees which before we're really using size at all because size was the same are now 50% based on size.
 
 112
-00:07:16,920 --> 00:07:19,200
-lot more A's than B's.
+00:08:38,000 --> 00:08:44,000
+And so, and if we look at the actual trees.
 
 113
-00:07:19,200 --> 00:07:22,280
-A, it's still keeping perfect.
+00:08:45,000 --> 00:08:55,000
+It's not that size is always necessarily the first one, but that if we ask it for feature importance sizes rated as by far the most important feature.
 
 114
-00:07:22,280 --> 00:07:28,160
-And it's still saying that X is by far the most important thing and just the class B is
+00:08:55,000 --> 00:09:01,000
+So if what I want to learn as x y position and size is different.
 
 115
-00:07:28,160 --> 00:07:31,440
-getting worse and worse and worse.
+00:09:01,000 --> 00:09:05,000
+Tough, tough nuggets.
 
 116
-00:07:31,440 --> 00:07:35,920
-And then plateauing down at about that 50-50 coin flip because overall there's way more
+00:09:05,000 --> 00:09:13,000
+The model is going to learn what the model wants to learn the model is going to say what is the easiest way for me to get this machine learning models whether they're deep learning or non deep learning will always.
 
 117
-00:07:35,920 --> 00:07:41,320
-data in A than B.
+00:09:13,000 --> 00:09:18,000
+cheat in that sense they will always just try to get the best answer they can.
 
 118
-00:07:41,320 --> 00:07:46,800
-I can make B even worse by just sort of adding more and more and more data to A.
+00:09:18,000 --> 00:09:35,000
+And so, if what ilastik learns is that it should only learn things that are in sort of one image versus another image because it's way easier for it to learn that that's what it will do.
 
 119
-00:07:47,800 --> 00:07:52,080
-I didn't make it worse.
+00:09:35,000 --> 00:09:43,000
+The other thing has to do with sampling. So right now I have a couple hundred points each for sort of my blue and green.
 
 120
-00:07:52,080 --> 00:07:55,520
-No, I don't understand.
+00:09:43,000 --> 00:09:52,000
+What happens if I try to sort of I'm going to add some red points they're going to be different color than the green here but they're going to belong to the same classes green.
 
 121
-00:07:55,520 --> 00:07:57,320
-I think just because now it's...
+00:09:52,000 --> 00:10:04,000
+So the model should treat these as if they were green dots, but they're different color for visualization point.
 
 122
-00:07:57,320 --> 00:08:00,880
-Yeah, I don't actually understand why.
+00:10:04,000 --> 00:10:14,000
+If I'm going to leave the size the same so that the size is a bad distinguisher but I'm going to put the red dots in the same place that the green dots are.
 
 123
-00:08:00,880 --> 00:08:09,600
-I think because we've now changed our Y distribution.
+00:10:14,000 --> 00:10:28,000
+In theory that should make the model try to care more less about size and more about x y position again, because you know I'm telling it no you have this other class of things too.
 
 124
-00:08:09,600 --> 00:08:12,160
-But you can see how...
+00:10:28,000 --> 00:10:37,000
+So let's see what happens when I do that.
 
 125
-00:08:12,160 --> 00:08:17,760
-But hopefully you can see is that how much data there is is changing the performance
+00:10:37,000 --> 00:10:47,000
+So, it has now said it's now still saying that it's 43.7% based on size.
 
 126
-00:08:17,760 --> 00:08:23,840
-between our ability to sort of say change between two different classes.
+00:10:47,000 --> 00:11:00,000
+Our trees now get super big and can eventually with enough depth figure out the difference between C and D, but they're not actually focusing on the thing that we think that we care about.
 
 127
-00:08:23,840 --> 00:08:27,960
-If there's tons of data of one kind and very little data of another kind, it makes a big
+00:11:00,000 --> 00:11:06,000
+We haven't actually trained most of our model is still all about size.
 
 128
-00:08:27,960 --> 00:08:34,240
-difference how accurate and how important that other kind becomes.
+00:11:06,000 --> 00:11:28,000
+And that's because only 10% of the things here are actually based on D. So I have 30 dots of D and 300 dots of C. So some of our trees only have a couple of red points total.
 
 129
-00:08:34,240 --> 00:08:36,080
-So how does this relate to ilastik?
+00:11:28,000 --> 00:11:37,000
+So this comes into maybe is like this fit in with the idea of them cheating right like it's ignore the red dots.
 
 130
-00:08:37,000 --> 00:08:43,480
-Well, it's super tempting in ilastik to take out that really big brush and to make it so
+00:11:37,000 --> 00:11:46,000
+And they're fine because if there's only a couple then they still perform well on the other color than like cares about those couple of red dots.
 
 131
-00:08:43,480 --> 00:08:50,240
-that you have a really big brush where you're covering lots of pixels of an individual cell.
+00:11:46,000 --> 00:11:59,000
+Exactly. That's exact. And but because it's easy to get almost always the right answer, you know, by just ignoring a really small class.
 
 132
-00:08:50,240 --> 00:09:01,080
-And if you remember back to our episode on ilastik, you might remember when we drew a
+00:11:59,000 --> 00:12:16,000
+So let me do an even more extreme example now instead of putting the dots here, I'm going to put the dots on top of the blue where they shouldn't be.
 
 133
-00:09:01,080 --> 00:09:05,280
-lot in the background and we learned a lot about the background.
+00:12:16,000 --> 00:12:24,000
+And if I only draw a few dots there I have 400 dots of green and only 10 dots of red.
 
 134
-00:09:05,280 --> 00:09:07,680
-The background became more confident.
+00:12:24,000 --> 00:12:35,000
+It doesn't try to learn this at all. It just says nope. Okay, I have 0% accuracy on red. And that's fine.
 
 135
-00:09:07,680 --> 00:09:11,800
-But the actual thing that we were trying to fix there, the error of the background close
+00:12:35,000 --> 00:12:38,000
+Machine learning model goes.
 
 136
-00:09:11,800 --> 00:09:16,120
-to a cell, didn't change at all because we didn't give it any extra information.
+00:12:38,000 --> 00:12:47,000
+Yeah. And now I have 10% as many. Still still 0% accurate.
 
 137
-00:09:16,120 --> 00:09:18,840
-Yeah, that makes sense.
+00:12:47,000 --> 00:12:59,000
+I got up to 6% accurate now with like 75 versus 400 but you can see, as long as there is mathematically more points that look like this than points that look like that.
 
 138
-00:09:18,840 --> 00:09:25,120
-So in that case, because it was such a striking thing, we were then able to fix the background
+00:12:59,000 --> 00:13:14,000
+The model is not really giving a crap about these points. It's getting 100% accurate here. Apparently that was a little slow to upload now it's up to 15% before it had been about seven but you still it is definitely 100 versus 15.
 
 139
-00:09:25,120 --> 00:09:27,200
-without too much difficulty.
+00:13:14,000 --> 00:13:19,000
+It doesn't care about these points as as managers cares about these points.
 
 140
-00:09:27,200 --> 00:09:32,120
-But what we might have accidentally done was say, hey, this part next to the cell is really
+00:13:19,000 --> 00:13:29,000
+And that is the thing about the one pixel brush. If you on your first image color in a whole bunch of stuff with a big brush.
 
 141
-00:09:32,120 --> 00:09:34,360
-unimportant.
+00:13:29,000 --> 00:13:40,000
+If you now want to go to another image and say actually, you know, nuclei look like this and image one but image two has a different noise model or just a little brighter or a little dimmer.
 
 142
-00:09:34,360 --> 00:09:39,320
-Because ilastik uses a really big random forest, it was able to actually figure out, OK, I
+00:13:40,000 --> 00:13:47,000
+And you start putting annotations if you don't put near as many annotations as you did for the first one.
 
 143
-00:09:39,320 --> 00:09:44,840
-have a bunch of pixels that are sort of like, imagine these blue pixels.
+00:13:47,000 --> 00:13:52,000
+Your modeling gonna care your model doesn't need to learn to care.
 
 144
-00:09:44,840 --> 00:09:51,000
-We can even actually sort of draw this a little bit more like a cell where if we have a nice
+00:13:52,000 --> 00:14:00,000
+Because it can still be really accurate by ignoring your second image and only caring about your first image.
 
 145
-00:09:51,000 --> 00:09:52,200
-little brush here.
+00:14:00,000 --> 00:14:17,000
+Plastic is really good does a lot of things to try to avoid this and you can see that even here we have like five or six times as many as much as see and it is now at least trying to learn the red points but it's still doing a pretty crap job at it.
 
 146
-00:09:52,200 --> 00:10:02,120
-And now we sort of go around.
+00:14:17,000 --> 00:14:27,000
+So if you use a big brush, you now have to use a big brush all the time. If you annotate a lot of points you have to annotate a lot of points all the time.
 
 147
-00:10:02,120 --> 00:10:06,160
-And our random forces deep enough because these are really simple to say, all right,
+00:14:27,000 --> 00:14:40,000
+This happens when you have like a rare pixel class where there's only 20 pixels of that thing in your whole image like maybe you'd want like a nuclear Ram or something else is like just a very small number of pixels.
 
 148
-00:10:06,160 --> 00:10:12,400
-if it's within these two things and not across this other thing, and it's doing mostly X
+00:14:40,000 --> 00:14:55,000
+If you have 400 pixels in one image and 20 in the other, you can't ever make the model care about 20 equally with 400 you just can't do models are going to learn whatever the heck they want to learn.
 
 149
-00:10:12,400 --> 00:10:16,440
-rather than Y, because we have this sort of blue class here.
+00:14:55,000 --> 00:15:06,000
+And so the only way to make your model care equally about all of the images you tell it about and all the things you tell it about is by telling them about it equally.
 
 150
-00:10:16,440 --> 00:10:21,240
-But the more pixels that we sort of put here, the more times that when our random force
+00:15:06,000 --> 00:15:16,000
+And so that could be using a huge brush if everything you want to find is big in all of your images and you don't mind spending a lot of time drawing.
 
 151
-00:10:21,240 --> 00:10:25,120
-decision trees are trying to say, is this from class one or class two, it's going to
+00:15:16,000 --> 00:15:35,000
+You can also just annotate 10 individual pixels in each of a few images and be done faster and still preserve your ability to deal with rare cases because you haven't done this thing where you have 400 examples that look like this and only 70 examples that look like that.
 
 152
-00:10:25,120 --> 00:10:27,880
-mostly end up with pixels from B here.
+00:15:35,000 --> 00:15:43,000
+I love it so our you know our rule isn't just to get people to be lazy because we love it when people are lazy.
 
 153
-00:10:27,880 --> 00:10:36,160
-So now we change the feature importance and we change our ability to change if we actually
+00:15:43,000 --> 00:15:58,000
+You know, we want work to be as lazy as possible. But like you've clearly shown us here it's not just about being lazy. It's actually what's needed to get out the result you need at the end.
 
 154
-00:10:36,160 --> 00:10:41,800
-want in a new image to be more like class A, it's going to be hard for the 50 pixels
+00:15:58,000 --> 00:16:08,000
+Yeah, so you get a better result and faster. I mean, why would you not want to do that when it's like well it could be worse and slower or better and faster.
 
 155
-00:10:41,800 --> 00:10:45,160
-in class A to compete with the 350 pixels here.
+00:16:08,000 --> 00:16:12,000
+That does seem like a pretty easy decision tree there.
 
 156
-00:10:45,160 --> 00:10:50,200
-So we have to add more pixels and more pixels and more pixels and more pixels when we didn't
-
-157
-00:10:50,200 --> 00:10:53,120
-actually need that many to get started.
-
-158
-00:10:53,120 --> 00:10:57,720
-And so we just make annotation take way longer and be harder to do and maybe be impossible
-
-159
-00:10:57,720 --> 00:11:00,440
-to do when we have super rare classes.
-
-160
-00:11:00,440 --> 00:11:06,480
-Like if there's something where there are only 50 pixels, we can't just add 500 more
-
-161
-00:11:06,480 --> 00:11:08,880
-because our data is our data.
-
-162
-00:11:08,880 --> 00:11:14,040
-So if we make it so that those 50 pixels always matter by having fewer annotations rather
-
-163
-00:11:14,040 --> 00:11:18,000
-than lots and lots of annotations, we make sure that those 50 pixels always count in
-
-164
-00:11:18,000 --> 00:11:19,000
-the end.
-
-165
-00:11:19,000 --> 00:11:22,400
-Yeah, that makes so much sense.
-
-166
-00:11:22,400 --> 00:11:28,720
-I think, the cash, this makes me think of a couple of important points that are, I don't
-
-167
-00:11:28,720 --> 00:11:36,400
-know, one thing too that we have to think about in general in science, right, is when
-
-168
-00:11:36,400 --> 00:11:40,160
-looking at your metrics, make sure your metrics are actually reporting what you think it's
-
-169
-00:11:40,160 --> 00:11:47,280
-reporting, that here we have this separation maybe absolutely lovely and giving you a very
-
-170
-00:11:47,280 --> 00:11:49,200
-high accuracy number.
-
-171
-00:11:49,200 --> 00:11:54,720
-But again, it could be not because it's performing well on the thing you care about, it's because
-
-172
-00:11:54,720 --> 00:11:57,200
-it's performing well on the stuff you don't care about.
-
-173
-00:11:57,200 --> 00:12:07,600
-And so diving into your per class accuracy rather than your separation accuracy is a super
-
-174
-00:12:07,600 --> 00:12:12,560
-important and helpful thing to think about when thinking about the metrics for your success
-
-175
-00:12:12,560 --> 00:12:16,680
-at separating and identifying whatever the objects or classes are that you're trying
-
-176
-00:12:16,680 --> 00:12:17,680
-to identify.
-
-177
-00:12:18,680 --> 00:12:19,680
+00:16:12,000 --> 00:16:13,000
 Yeah.
 
-178
-00:12:19,680 --> 00:12:25,400
-Now, thinking back to what you said when we were looking at that pipeline where you had
+157
+00:16:13,000 --> 00:16:16,000
+I see what you did there.
 
-179
-00:12:25,400 --> 00:12:29,560
-the two different things and you were saying that it was actually the correlation between
+158
+00:16:16,000 --> 00:16:30,000
+And of course, I want to make the caveat of here, my decision trees are based on three total things x y and size and they're very simple things and this is often kind of what the case is when we're doing fluorescence.
 
-180
-00:12:29,560 --> 00:12:33,640
-the two actually behaved really differently when you masked out things that were supposed
+159
+00:16:30,000 --> 00:16:51,000
+When you start getting into very complicated things like EM, which is what ilastik is originally designed for, you might need lots more features and lots more examples and then in that case sort of using a somewhat bigger brush, but still using these underlying principles of thinking about what's in your training set and trying to keep it balanced
 
-181
-00:12:33,640 --> 00:12:36,000
-to be similar versus weren't supposed to be similar.
+160
+00:16:51,000 --> 00:16:59,000
+across images and across visual appearances. Those are still good principles but maybe you can use a little bit of a bigger brush.
 
-182
-00:12:36,000 --> 00:12:41,080
-It's not something that you necessarily would have naturally come up with, but there's
+161
+00:16:59,000 --> 00:17:17,000
+But keeping the principles of how random force work in mind will still tell you to do the least annotation that you can get away with, because your model will be faster and it will be easier to retrain if you realize that there's something that it didn't account for later, which is often what happens.
 
-183
-00:12:41,080 --> 00:12:45,480
-always little nuances in what are we actually measuring that make the difference.
+162
+00:17:17,000 --> 00:17:28,000
+You know, you did it on batch one now you want to bring in data from batch two batch two is a little different. Do you want to spend the same three hours you spent in batch one or you don't spend the same 10 minutes you spent in batch one.
 
-184
-00:12:46,080 --> 00:12:49,640
-And the amount of importance that you give to different parts of the measurement when
+163
+00:17:28,000 --> 00:17:44,000
+Love it. Yeah. All right, so that was the rule there was a rat a reason behind madness. Hopefully this helps you understand random force better in general and also why we are so obsessed with ilastiks tiny as brass.
 
-185
-00:12:49,640 --> 00:12:54,000
-we get to classifiers and we get to machine learning and where we don't control who makes
+164
+00:17:44,000 --> 00:17:51,000
+I love it. And I certainly have a much stronger intuition about random forests now.
 
-186
-00:12:54,000 --> 00:13:01,640
-the decision can be really, really the difference between success and failure.
+165
+00:17:51,000 --> 00:18:12,000
+You know, I have always followed the rule because from my very first day in the lab that you know like the rule was made clear. This is the rule you follow but pretty nice to be able to develop the intuition behind you know what is actually going on in, you know, the math behind the curtain.
 
-187
-00:13:01,640 --> 00:13:03,640
-Yeah, absolutely.
+166
+00:18:12,000 --> 00:18:15,000
+To understand why we are following this rule.
 
-188
-00:13:05,640 --> 00:13:06,640
-All right.
+167
+00:18:15,000 --> 00:18:23,000
+All right. Thank you so much. Have a wonderful day. I appreciate you hanging out with me while I do math simulations.
 
-189
-00:13:06,640 --> 00:13:11,880
-Well, I hope this helped create some intuitions around why it is actually important to use
+168
+00:18:23,000 --> 00:18:34,000
+Of course. Thank you so much. This is this is delightful and you know it's it is always nice to know why we're following certain roles. So this is great. Thanks dear.
 
-190
-00:13:11,880 --> 00:13:17,240
-the number one pixel brush in ilastik as well as just how machine learning works in general.
-
-191
-00:13:17,240 --> 00:13:18,240
-Absolutely.
-
-192
-00:13:18,240 --> 00:13:20,600
-This is super helpful.
-
-193
-00:13:20,600 --> 00:13:24,240
-And I think we'll drop this link in the show notes.
-
-194
-00:13:24,240 --> 00:13:30,280
-You too can go play with this on your own and explore what happens, develop some of your
-
-195
-00:13:30,280 --> 00:13:40,120
-own further intuition because this is a great way to help think about this, to help think,
-
-196
-00:13:40,120 --> 00:13:41,520
-to help practice, to help play.
-
-197
-00:13:41,560 --> 00:13:42,560
-That's great.
-
-198
-00:13:42,560 --> 00:13:45,720
-And use your data drawing powers for good, not for evil.
-
-199
-00:13:45,720 --> 00:13:46,720
-Yes, yes.
-
-200
-00:13:46,720 --> 00:13:49,720
-Thank you so much.
-
-201
-00:13:49,720 --> 00:13:50,720
-Thank you.
-
-202
-00:13:50,720 --> 00:13:51,720
-See you next time.
-
-203
-00:13:51,720 --> 00:13:52,720
-Talk to you later.
+169
+00:18:42,000 --> 00:18:45,000
+Yeah.
 
