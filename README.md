@@ -23,9 +23,9 @@ Want to see Erin and Beth explain or demo your (least) favorite image analysis c
 | Episode 12 - [Importing Object from Outline Images in CellProfiler](https://youtu.be/qWYyp_a0IHM) | [Pipeline available here](https://github.com/ciminilab/AskErin_DearBeth/tree/main/files/Ep12) | [Images available here](https://github.com/ciminilab/AskErin_DearBeth/tree/main/files/Ep12) | [CC-0](https://creativecommons.org/public-domain/cc0/) | [Learn more about CellProfiler's plugin system](https://plugins.cellprofiler.org/overview.html) |
 | Episode 13 - [How to Train a Pixel Classifier](https://youtu.be/0cLZVKUJGNw) |  |  |  | [Interactive Random Forest visualizer](https://ciminilab.github.io/developing-intuitions/apps/Machine_Learning_Intutions.html) |
 | Episode 14 - [Illumination Correction in CellProfiler](https://youtu.be/4CKl-6TAAS4) | [Pipelines available here](https://github.com/ciminilab/AskErin_DearBeth/tree/main/files/Ep14) |  |  |  |
-| Episode 15 - [Why Do My Scientific Images Look Bad?](https://youtu.be/GsSAImH6zq0) |  |  |  |  |
+<!---| Episode 15 - [Why Do My Scientific Images Look Bad?](https://youtu.be/GsSAImH6zq0) |  |  |  |  |
 | Episode 16 - [The Cell Painting Gallery, an Overview](https://youtu.be/5CtNWt0_FLk) |  |  |  | [CPG landing page](https://github.com/broadinstitute/cellpainting-gallery), [CPG documentation](http://broadinstitute.github.io/cellpainting-gallery/), [CPG on NAIRR](https://nairrpilot.org/pilotresources) |
-| Episode 17 - [How to Write a Great Post on the Forum](https://youtu.be/jLBaZHO-iXw) |  |  |  | [The Scientific Community Imaging Forum](https://forum.image.sc) |
+| Episode 17 - [How to Write a Great Post on the Forum](https://youtu.be/jLBaZHO-iXw) |  |  |  | [The Scientific Community Imaging Forum](https://forum.image.sc) |--->
 
 
 <p hidden>
