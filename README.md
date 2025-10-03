@@ -28,7 +28,7 @@ Want to see Erin and Beth explain or demo your (least) favorite image analysis c
 <!-- 
 
 | Episode 16 - [The Cell Painting Gallery, an Overview](https://youtu.be/5CtNWt0_FLk) |  |  |  | [CPG landing page](https://github.com/broadinstitute/cellpainting-gallery), [CPG documentation](http://broadinstitute.github.io/cellpainting-gallery/), [CPG on NAIRR](https://nairrpilot.org/pilotresources) |
-| Episode 17 - [How to Write a Great Post on the Forum](https://youtu.be/jLBaZHO-iXw) |  |  |  | [The Scientific Community Imaging Forum](https://forum.image.sc) |
+| Episode 17 - [How to Write a Great Post on the Forum](https://youtu.be/jLBaZHO-iXw) | [Doc on what to do (and not do](https://docs.google.com/document/d/1Bz9Fflbat9sHAmtweCr1RfYdhSYPrONlhjYmLYVbqEA/preview?rm=demo&tab=t.0)  |  |  | [The Scientific Community Imaging Forum](https://forum.image.sc) |
 --> 
 
 <p hidden>
