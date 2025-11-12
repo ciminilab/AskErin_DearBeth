@@ -1,0 +1,422 @@
+0:00:15.000,0:00:16.000
+Hello Beth!
+
+0:00:16.000,0:00:17.000
+Erin, hi!
+
+0:00:17.000,0:00:18.000
+Hello!
+
+0:00:18.000,0:00:25.120
+Okay, so this is kind of a silly intro to record because this podcast episode, you and
+
+0:00:25.120,0:00:32.640
+I were at SBI2 conference and did sort of, you know, woman on the street interviews with
+
+0:00:32.640,0:00:39.520
+folks around the conference and then of course failed to actually get video evidence of the
+
+0:00:39.520,0:00:42.720
+two of us being in the same place at the same time.
+
+0:00:42.720,0:00:44.040
+Were we though?
+
+0:00:44.040,0:00:47.760
+I mean, has anyone ever seen the two of us together at the same time?
+
+0:00:47.760,0:00:49.600
+I don't know, I don't know.
+
+0:00:49.600,0:00:57.440
+I can neither confirm nor deny these rumors, but what I can say is this is a fun and silly
+
+0:00:57.440,0:01:04.080
+episode where we ask a couple hard-hitting questions of some of our friends and colleagues
+
+0:01:04.080,0:01:08.240
+that we ran into at SBI2 conference 2025.
+
+0:01:08.240,0:01:12.600
+And here we're going to talk about conferences in another episode.
+
+0:01:12.600,0:01:13.600
+We will, yes.
+
+0:01:13.600,0:01:18.480
+We will actually talk about, you know, conferences, you know, actual conversation, but this one's
+
+0:01:18.480,0:01:22.200
+just fun and silly, so enjoy!
+
+0:01:22.200,0:01:23.200
+Enjoy!
+
+0:01:23.200,0:01:28.000
+We have a woman on the street episode of Ask Erin Dear Beth.
+
+0:01:28.000,0:01:29.000
+Hello!
+
+0:01:29.000,0:01:31.480
+Introduce yourself, please, dear sir.
+
+0:01:31.480,0:01:33.200
+Mike Lippincott, nice to meet you.
+
+0:01:33.200,0:01:34.200
+You too!
+
+0:01:34.200,0:01:36.800
+Tell us, what is your favorite CellProfiler feature?
+
+0:01:36.800,0:01:39.720
+It would have to be texture features.
+
+0:01:39.720,0:01:42.080
+Tell me more, what do you like about texture features?
+
+0:01:42.080,0:01:51.600
+Well, primarily that they were derived from old military, like, information metrics on
+
+0:01:51.600,0:01:57.000
+where beaches, railroads, munitions stores and such, and we've adapted them for the image-based
+
+0:01:57.000,0:01:58.000
+profiling community.
+
+0:01:58.000,0:01:59.000
+I love it.
+
+0:01:59.000,0:02:00.000
+A little bit of history here.
+
+0:02:00.000,0:02:01.000
+Thanks for your input.
+
+0:02:01.000,0:02:02.000
+Hi!
+
+0:02:02.000,0:02:03.000
+Hi!
+
+0:02:03.000,0:02:06.000
+Beth Cimini here with Erin Dearbeth.
+
+0:02:06.000,0:02:07.520
+Alright, Erin, big question.
+
+0:02:07.520,0:02:09.160
+What's your favorite CellProfiler feature?
+
+0:02:09.160,0:02:14.600
+My favorite feature is CellProfiler Analyst, because a very lovely colleague of mine, David
+
+0:02:14.600,0:02:16.400
+Sterling, did a lot of great work on it.
+
+0:02:16.400,0:02:17.400
+Thank you so much!
+
+0:02:17.400,0:02:18.400
+Of course, thank you!
+
+0:02:18.400,0:02:19.400
+Hello!
+
+0:02:19.400,0:02:20.400
+Hey there!
+
+0:02:20.400,0:02:22.720
+We've got a question for you.
+
+0:02:22.720,0:02:23.720
+Introduce yourself, dear sir.
+
+0:02:23.720,0:02:25.760
+Okay, hey, I'm John.
+
+0:02:25.760,0:02:29.800
+Hello, and what is your favorite CellProfiler feature?
+
+0:02:29.800,0:02:31.880
+It's area shape.
+
+0:02:31.880,0:02:36.000
+Area? Yeah. Area shape. Alright, tell us more about that. What do you like about...
+
+0:02:37.000,0:02:39.000
+No, it's not the area.
+
+0:02:41.000,0:02:43.000
+It's cell area.
+
+0:02:43.000,0:02:46.000
+Cell area. Okay, tell me more. Why is cell area your favorite CellProfiler feature?
+
+0:02:47.000,0:02:50.000
+Because it's the first in the list.
+
+0:02:52.000,0:02:54.000
+Primacy. There we go. I love it.
+
+0:02:54.000,0:02:56.000
+Thanks for the input.
+
+0:02:56.000,0:02:59.000
+Hi, I'm here with Kate.
+
+0:02:59.000,0:03:04.000
+Kate, important question. What's your favorite CellProfiler feature and why?
+
+0:03:04.000,0:03:06.000
+Um Let's see.
+
+0:03:06.000,0:03:08.000
+The first module that comes to mind is IdentifyDeadWorms
+
+0:03:08.000,0:03:10.000
+Because it's the best name.
+
+0:03:10.000,0:03:16.000
+But, my favorite feature, I mean Intensity does a lot.
+
+0:03:22.000,0:03:27.000
+Axis length, granularity, I don't know, it's hard to choose, there's a lot of good options
+
+0:03:27.000,0:03:28.000
+Oh, thank you so much.
+
+0:03:30.000,0:03:33.000
+All right, here with my friend Angeline, I've got a question. Woman on the Street.
+
+0:03:33.000,0:03:35.160
+Widefield or confocal?
+
+0:03:35.134,0:03:40.160
+Oh, that's a tough one.
+
+0:03:41.134,0:03:43.134
+Confocal. Alright
+
+0:03:43.000,0:03:45.160
+Because I do a lot of 3D imaging.
+
+0:03:45.160,0:03:47.160
+And so confocal is important to me.
+
+0:03:47.160,0:03:50.160
+But if you do a lot 2D, wide field is a lot faster.
+
+0:03:50.160,0:03:52.160
+So it's really what you're working on.
+
+0:03:52.160,0:03:53.160
+Yeah.
+
+0:03:53.160,0:03:55.160
+Well, I asked you, I asked you.
+
+0:03:55.160,0:03:56.160
+I know.
+
+0:03:56.160,0:03:57.160
+I know. Not what other people are working on.
+
+0:03:58.160,0:03:59.160
+I do a lot of 3D.
+
+0:03:59.160,0:04:01.000
+Alright. Confocal it is. Confocal.
+
+0:04:01.000,0:04:02.101
+Thanks
+
+0:04:02.160,0:04:04.160
+Hi, I'm here with...
+
+0:04:04.160,0:04:06.160
+Introduce yourself please.
+
+0:04:06.160,0:04:08.160
+Nasim Jamali.
+
+0:04:08.160,0:04:10.160
+Alright Nasim, what is your favorite CellProfiler feature?
+
+0:04:10.160,0:04:11.160
+Texture.
+
+0:04:11.160,0:04:13.160
+Why texture?
+
+0:04:13.160,0:04:21.160
+It just shows a different layer that is not super obvious.
+
+0:04:21.160,0:04:25.160
+It's not size, it's not shape that are obvious, so it's texture.
+
+0:04:25.160,0:04:26.160
+Ah yeah.
+
+0:04:26.160,0:04:28.160
+Confocal or wide field?
+
+0:04:28.160,0:04:29.160
+Confocal.
+
+0:04:29.160,0:04:32.160
+it's wide, it's easier, it's faster.
+
+0:04:32.160,0:04:34.160
+There you go.
+
+0:04:34.160,0:04:39.160
+Alright, women on the street here, asking Jenna,
+
+0:04:39.160,0:04:42.160
+what is your favorite CellProfiler feature?
+
+0:04:42.160,0:04:45.160
+Oh, this is a good one actually.
+
+0:04:45.160,0:04:49.160
+I love solidity actually.
+
+0:04:49.160,0:04:51.160
+Area-shape solidity.
+
+0:04:51.160,0:04:57.160
+Because I just find it very fun because nuclear are weird and can be weird when perturbations happen.
+
+0:04:57.160,0:04:59.160
+It's very fun to see the different distribution where I'm like,
+
+0:04:59.160,0:05:04.160
+oh, I need to see what's going on with that guy, he's got a low solidity, what is he doing?
+
+0:05:04.160,0:05:07.160
+So, it's very fun, just a fun feature if I can guess.
+
+0:05:07.160,0:05:09.160
+I love it, great answer.
+
+0:05:09.160,0:05:11.160
+Thank you.
+
+0:05:11.160,0:05:13.160
+I'm here with...
+
+0:05:13.160,0:05:15.160
+Paula, Jenna.
+
+0:05:15.160,0:05:17.160
+Alright, how about wide field or confocal?
+
+0:05:17.160,0:05:19.160
+Ah, confocal.
+
+0:05:19.160,0:05:22.160
+What's your favorite CellProfiler feature?
+
+0:05:22.160,0:05:28.160
+I think texture or granularity because I hide so many things that I don't really get.
+
+0:05:28.160,0:05:30.160
+Thank you so much.
+
+0:05:30.160,0:05:32.160
+Hello.
+
+0:05:32.160,0:05:38.160
+Hey everyone, this is Amit and Saivi Sabatini, I'm a senior scientist at MAK with it.
+
+0:05:38.160,0:05:40.160
+Alright, and the question for you is,
+
+0:05:40.160,0:05:43.160
+Wide field or confocal?
+
+0:05:43.160,0:05:48.160
+I guess it really depends on the application and the usage of it.
+
+0:05:48.160,0:05:53.160
+So what everybody says, take a stand, Iqwan, why don't you build your confocal?
+
+0:05:53.160,0:06:00.160
+Well, I come from a screening perspective and if I am thinking about scalability and time,
+
+0:06:00.160,0:06:02.160
+probably Wide field.
+
+0:06:02.160,0:06:04.160
+Alright, I love it.
+
+0:06:04.160,0:06:10.160
+But if you can get confocal with the same scalability and time, you can do confocal, why not?
+
+0:06:10.160,0:06:12.160
+Okay.
+
+0:06:12.160,0:06:14.160
+Wide field.
+
+0:06:14.160,0:06:16.160
+I love it, thanks.
+
+0:06:16.160,0:06:18.160
+I'm here with Jamie Cheah.
+
+0:06:18.160,0:06:20.160
+Jamie, Confocal or Wide field, and why?
+
+0:06:20.160,0:06:23.160
+Wide field because it's the only thing I know as a cell biologist.
+
+0:06:23.160,0:06:25.160
+Awesome, thank you so much.
+
+0:06:25.160,0:06:31.160
+Hello, I am here with my friend Mark Bray, you might know him from Bray et al., he loves it,
+
+0:06:31.160,0:06:33.160
+loves it when I point that out.
+
+0:06:33.160,0:06:39.160
+We are asking the hard-hitting question here of what is your favorite CellProfiler feature?
+
+0:06:39.160,0:06:44.160
+So I would have to say, in terms of modules, RunCellpose.
+
+0:06:44.160,0:06:49.160
+And the reason why, if you'd asked me to say a few years ago, I would have said identify primary
+
+0:06:49.160,0:06:54.160
+because it just does so many different things, it's not just about nuclei, it can do so much.
+
+0:06:54.160,0:07:00.160
+But there are a lot of settings to fiddle with and I found explaining that to people takes a while.
+
+0:07:00.160,0:07:06.160
+But with one cell calls, just the whole plugging functionality for one,
+
+0:07:06.160,0:07:11.160
+but also there's basically like, when it gets down to it's like three settings,
+
+0:07:11.160,0:07:14.160
+and it's kind of more or less intuitive as to what they are,
+
+0:07:14.160,0:07:20.160
+and with CellProfiler you can do it at scale, so you can run it on HBC, the AWS,
+
+0:07:20.160,0:07:25.160
+and I find it super enabling because it all collaborates with the neighborhood.
+
+0:07:25.160,0:07:27.160
+So that's my tip.
+
+0:07:27.160,0:07:29.160
+Love it, thanks for the hot take.
+
+0:07:41.160,0:07:43.160
+Thanks for watching.

@@ -1,0 +1,752 @@
+1
+00:00:00,000 --> 00:00:05,000
+Hey Erin!
+
+2
+00:00:05,000 --> 00:00:06,000
+Hello Beth!
+
+3
+00:00:06,000 --> 00:00:18,400
+Good to see ya!
+
+4
+00:00:18,400 --> 00:00:19,400
+Always a pleasure.
+
+5
+00:00:19,400 --> 00:00:22,720
+Always enjoy podcast day.
+
+6
+00:00:22,720 --> 00:00:29,200
+I wanted to just quickly talk today about a resource that was made by bioimaging North
+
+7
+00:00:29,200 --> 00:00:34,520
+America as well as our team called the Bioimaging Guide that I think and hope is super helpful
+
+8
+00:00:34,520 --> 00:00:39,200
+for helping people realize what they don't know they don't know about bioimage analysis.
+
+9
+00:00:39,200 --> 00:00:41,200
+Yeah, that's a good one.
+
+10
+00:00:41,200 --> 00:00:43,200
+And bioimaging in general.
+
+11
+00:00:43,200 --> 00:00:44,200
+Yeah.
+
+12
+00:00:44,200 --> 00:00:45,200
+Yeah.
+
+13
+00:00:45,200 --> 00:00:50,800
+So obviously we'll put the links for this in the show notes but this is the Bioimaging
+
+14
+00:00:50,800 --> 00:00:52,300
+Guide.
+
+15
+00:00:52,300 --> 00:01:01,440
+So this is actually the companion to a paper that a whole bunch of fantastic people led
+
+16
+00:01:01,440 --> 00:01:07,720
+by a couple of former postdocs in the imaging platform, Rebecca and Barbara, but a ton of
+
+17
+00:01:07,720 --> 00:01:15,400
+names you've probably seen before, great folks who put this together.
+
+18
+00:01:15,400 --> 00:01:19,240
+Here's the major take home if you learn nothing else.
+
+19
+00:01:19,240 --> 00:01:22,840
+A lot of people spend a lot of time going back and forth between sample preparation
+
+20
+00:01:22,840 --> 00:01:26,760
+and image acquisition and they optimize these two things back and forth a lot.
+
+21
+00:01:26,760 --> 00:01:30,560
+And then once they're happy with this, they start thinking about image analysis and then
+
+22
+00:01:30,560 --> 00:01:35,080
+once they're happy with this, they start thinking about data interpretation.
+
+23
+00:01:35,080 --> 00:01:39,560
+And that actually makes your life a lot harder than it needs to be.
+
+24
+00:01:39,560 --> 00:01:45,840
+If you do image analysis as soon as you can, as soon as your images seem kind of reasonable,
+
+25
+00:01:45,840 --> 00:01:51,840
+you might actually pick up on artifacts or things that you could fix at the sample preparation
+
+26
+00:01:51,840 --> 00:01:55,920
+or the image acquisition stage that you didn't know were going to be a problem until you
+
+27
+00:01:55,920 --> 00:01:59,680
+started trying to put your analysis together or until you started looking at your thinking
+
+28
+00:01:59,680 --> 00:02:04,120
+about what are the statistics I'm going to present.
+
+29
+00:02:04,120 --> 00:02:09,320
+So the sooner you put this whole cycle together and the more feedback you let there be between
+
+30
+00:02:09,320 --> 00:02:14,360
+the steps, the better your experiment is going to go and the more likely that you're going
+
+31
+00:02:14,360 --> 00:02:17,960
+to get data that helps you at the end.
+
+32
+00:02:17,960 --> 00:02:20,080
+Yeah, absolutely.
+
+33
+00:02:20,080 --> 00:02:29,640
+And I think lots of people who are trained as wet lab biologists doing the sample prep
+
+34
+00:02:29,640 --> 00:02:34,400
+and the image acquisition is the thing that is most comfortable to them.
+
+35
+00:02:34,400 --> 00:02:40,920
+I think don't think about the image analysis and data interpretation part of also having
+
+36
+00:02:40,920 --> 00:02:43,880
+that same sort of iterative cycle.
+
+37
+00:02:43,880 --> 00:02:45,560
+We will do assay development.
+
+38
+00:02:45,560 --> 00:02:50,480
+We will start with a rough pipeline and then we will refine it and then we will make sure
+
+39
+00:02:50,480 --> 00:02:57,680
+it's giving the outputs that we can use to do the biological statistics that we want
+
+40
+00:02:57,680 --> 00:02:59,240
+to do.
+
+41
+00:02:59,240 --> 00:03:06,120
+But that is a place that receives just as much iteration as the image acquisition and
+
+42
+00:03:06,120 --> 00:03:07,120
+sample prep.
+
+43
+00:03:07,120 --> 00:03:13,200
+And so thinking sort of in that, expanding your framework of thought to include image
+
+44
+00:03:13,200 --> 00:03:17,040
+analysis is not just, okay, I've done all of the images.
+
+45
+00:03:17,040 --> 00:03:24,120
+Now we go make this one holy grail perfect pipeline to extract data.
+
+46
+00:03:24,120 --> 00:03:26,120
+That's not how it works.
+
+47
+00:03:26,120 --> 00:03:27,120
+Yeah.
+
+48
+00:03:27,120 --> 00:03:30,880
+And if it is how it works, then you might miss out on the chance to say, oh, if I'd
+
+49
+00:03:30,880 --> 00:03:36,680
+actually switched from wide field to confocal, I could have done my analysis really easily,
+
+50
+00:03:36,680 --> 00:03:39,400
+but now my analysis is super hard.
+
+51
+00:03:39,400 --> 00:03:43,280
+You can actually do less image analysis by doing image analysis earlier often.
+
+52
+00:03:43,280 --> 00:03:44,280
+Yeah.
+
+53
+00:03:44,280 --> 00:03:50,000
+Because you can fix things at the sample prep and the image acquisition stage.
+
+54
+00:03:50,000 --> 00:03:53,960
+So I certainly hope you read this paper.
+
+55
+00:03:53,960 --> 00:03:58,880
+It was the hard work of a lot of people, but so what we wanted to do was to provide a high
+
+56
+00:03:58,880 --> 00:04:07,080
+level overview of here are all of the sort of major things to think about ahead of time
+
+57
+00:04:07,080 --> 00:04:12,600
+because often part of the reason that people sort of don't do these steps in order is not
+
+58
+00:04:12,600 --> 00:04:14,800
+because they're malicious.
+
+59
+00:04:14,800 --> 00:04:18,400
+It's because first they get taught to do this because this happens first and then they get
+
+60
+00:04:18,400 --> 00:04:21,200
+taught to do this and then they get taught to do this.
+
+61
+00:04:21,200 --> 00:04:24,680
+And so they weren't even, they didn't even know this was a thing while they were doing
+
+62
+00:04:24,680 --> 00:04:25,680
+this.
+
+63
+00:04:25,680 --> 00:04:28,200
+Like it's not that they're trying to do bad science.
+
+64
+00:04:28,200 --> 00:04:29,320
+They're not doing bad science.
+
+65
+00:04:29,320 --> 00:04:31,440
+They just don't know what they don't know.
+
+66
+00:04:31,440 --> 00:04:32,440
+Yeah, absolutely.
+
+67
+00:04:32,560 --> 00:04:38,240
+I think this also comes into play with our, like often a lot of what we do, I mean, we
+
+68
+00:04:38,240 --> 00:04:41,320
+are strictly image analysts.
+
+69
+00:04:41,320 --> 00:04:43,200
+We are not doing any wet lab prep.
+
+70
+00:04:43,200 --> 00:04:49,040
+So we have lots of collaborators that are doing just the sample prep and image acquisition.
+
+71
+00:04:49,040 --> 00:04:50,040
+And that's fine.
+
+72
+00:04:50,040 --> 00:04:55,400
+You know, if that, you know, that's their, you know, having separate skill sets and bringing
+
+73
+00:04:55,400 --> 00:04:59,000
+in collaborators is amazing and super important part of science.
+
+74
+00:04:59,040 --> 00:05:05,280
+But also everybody is happier and more successful when there is at least constant communication.
+
+75
+00:05:05,280 --> 00:05:10,840
+So if you're not doing the image analysis yourself, if you don't want, you know, if
+
+76
+00:05:10,840 --> 00:05:15,000
+you don't have the time and space and opportunity to develop all of those skills on your own,
+
+77
+00:05:15,000 --> 00:05:20,600
+there should at the very least be a constant conversation between, you know, experts in
+
+78
+00:05:20,600 --> 00:05:26,720
+any one arm of their, you know, sometimes we even then get involved with experts in statistics
+
+79
+00:05:26,760 --> 00:05:32,400
+because we have some basic knowledge of statistics from what we do, but we're not experts in it.
+
+80
+00:05:32,400 --> 00:05:38,480
+And so, you know, likely you are more comfortable in one of these corners than the other.
+
+81
+00:05:38,480 --> 00:05:44,440
+And so having lots of communication from the beginning, lots of planning from the beginning
+
+82
+00:05:44,440 --> 00:05:49,960
+with the collaborator that is more expert in any one given area will also make this
+
+83
+00:05:49,960 --> 00:05:52,800
+all so much better, even if you're not doing it all yourself.
+
+84
+00:05:53,600 --> 00:05:54,000
+Yeah.
+
+85
+00:05:54,000 --> 00:05:57,360
+I'm sure there's someone out there who's incredibly comfortable in all four, but there's probably
+
+86
+00:05:57,360 --> 00:05:58,440
+like one person.
+
+87
+00:05:58,440 --> 00:05:58,960
+Yeah.
+
+88
+00:05:58,960 --> 00:06:00,760
+Like most people, it's like one, maybe two.
+
+89
+00:06:01,320 --> 00:06:01,680
+Yeah.
+
+90
+00:06:04,280 --> 00:06:07,280
+So anyway, this is a awesome paper.
+
+91
+00:06:08,040 --> 00:06:09,000
+Please do read it.
+
+92
+00:06:09,000 --> 00:06:13,040
+It's got sort of things of like how you might think through some stuff.
+
+93
+00:06:13,640 --> 00:06:15,000
+It's got a glossary.
+
+94
+00:06:16,400 --> 00:06:18,120
+And it has a list of resources.
+
+95
+00:06:18,120 --> 00:06:22,760
+And the major thing that we worried about, because we've written papers like this before,
+
+96
+00:06:22,760 --> 00:06:25,400
+is the second that you make a list of resources.
+
+97
+00:06:26,040 --> 00:06:31,120
+Somebody publishes a new great resource and now your resources are out of date.
+
+98
+00:06:33,400 --> 00:06:38,640
+The other thing that we weren't incredibly excited about is a paper has to have a certain
+
+99
+00:06:38,640 --> 00:06:40,760
+scholarly tone to it.
+
+100
+00:06:41,920 --> 00:06:47,720
+And sometimes we're more interested in a conversational friendly tone instead.
+
+101
+00:06:47,760 --> 00:06:50,200
+You know, there's this place for all of these things.
+
+102
+00:06:51,200 --> 00:06:56,200
+And so while we were writing the paper, we said, we don't want to just write a paper.
+
+103
+00:06:56,240 --> 00:07:02,000
+We want there to also be a website version of this, a website version where we can be
+
+104
+00:07:02,000 --> 00:07:03,320
+a little more conversational.
+
+105
+00:07:03,320 --> 00:07:07,320
+We can have a few more discussions and we can keep it up to date and keep adding new
+
+106
+00:07:07,320 --> 00:07:08,520
+things that we like.
+
+107
+00:07:09,760 --> 00:07:12,360
+And so this is bioimagingguide.org.
+
+108
+00:07:14,120 --> 00:07:16,800
+It's the companion website to this paper.
+
+109
+00:07:17,040 --> 00:07:21,880
+And what it isn't is an exhaustive list of all resources.
+
+110
+00:07:22,680 --> 00:07:29,160
+What it isn't is, you know, a three semester, you know, course sequence on here's how you
+
+111
+00:07:29,160 --> 00:07:34,400
+learn to do all of these things because people have already done great work.
+
+112
+00:07:34,720 --> 00:07:36,560
+It's a lot of great work out there.
+
+113
+00:07:37,480 --> 00:07:41,920
+But what we wanted to do is in the same thing as the paper, just give you a high level list
+
+114
+00:07:41,920 --> 00:07:45,960
+of like, here's what's out there here, the major things you probably want to know about.
+
+115
+00:07:46,840 --> 00:07:48,400
+And then give you a way to learn it.
+
+116
+00:07:52,720 --> 00:07:57,000
+And so here again is that same figure.
+
+117
+00:07:57,320 --> 00:08:00,960
+But so each section sort of starts with an introduction.
+
+118
+00:08:01,720 --> 00:08:03,200
+Why is this thing important?
+
+119
+00:08:03,200 --> 00:08:04,480
+What does this contribute?
+
+120
+00:08:04,920 --> 00:08:07,800
+And it's based around the same four quadrants that were in that figure.
+
+121
+00:08:08,240 --> 00:08:11,720
+And each section ends with resources for learning more.
+
+122
+00:08:12,800 --> 00:08:14,520
+Those resources might be papers.
+
+123
+00:08:14,640 --> 00:08:15,960
+They might be websites.
+
+124
+00:08:17,800 --> 00:08:19,680
+They might be textbooks.
+
+125
+00:08:20,040 --> 00:08:21,080
+They might be videos.
+
+126
+00:08:21,960 --> 00:08:28,080
+And so what we've really tried to do here is say, here's the overall basic idea.
+
+127
+00:08:28,280 --> 00:08:30,000
+These are the major things you should think about.
+
+128
+00:08:30,000 --> 00:08:32,320
+And here are experts you can go talk to.
+
+129
+00:08:32,320 --> 00:08:36,560
+Sometimes these are the links to sort of societies.
+
+130
+00:08:37,080 --> 00:08:40,880
+You can check out our podcast episode on some of the different societies we like
+
+131
+00:08:41,880 --> 00:08:46,880
+and the conferences that they have where you can go and learn more.
+
+132
+00:08:50,480 --> 00:08:54,560
+Because my team is an image analysis team, we've put a lot of time into the image analysis
+
+133
+00:08:54,560 --> 00:08:55,360
+part of the book.
+
+134
+00:08:56,000 --> 00:08:58,040
+And this is one of my favorite parts.
+
+135
+00:08:58,800 --> 00:09:03,840
+And so it has things like, what is this thing?
+
+136
+00:09:04,240 --> 00:09:05,600
+How do I measure it?
+
+137
+00:09:06,800 --> 00:09:09,080
+Where can things go wrong?
+
+138
+00:09:09,080 --> 00:09:11,880
+Where can I learn more about this?
+
+139
+00:09:14,880 --> 00:09:21,400
+And we try wherever we can to sort of say, oh yeah, like, here's an analogy.
+
+140
+00:09:21,400 --> 00:09:26,000
+You know, here's something to just sort of make this a little bit easier.
+
+141
+00:09:26,000 --> 00:09:31,800
+And so if you try to read a paper like that and, you know, it's just not getting through,
+
+142
+00:09:31,800 --> 00:09:35,440
+we hope this guide will be a sort of more intuitive and nice way.
+
+143
+00:09:36,440 --> 00:09:43,440
+And if you think there's something missing, we have a Google form where you can suggest
+
+144
+00:09:43,440 --> 00:09:47,600
+and say like, hey, you know what's not in here that I think would be really helpful.
+
+145
+00:09:47,600 --> 00:09:52,800
+Like either here's a particular paper I think is cool that you should add or, you know,
+
+146
+00:09:52,800 --> 00:09:54,160
+you haven't covered this.
+
+147
+00:09:54,160 --> 00:09:56,400
+And that's really confusing to me.
+
+148
+00:09:56,400 --> 00:09:58,560
+We can't promise we'll do it immediately.
+
+149
+00:09:59,360 --> 00:10:03,840
+We absolutely welcome you to actually just write stuff for the book.
+
+150
+00:10:03,840 --> 00:10:05,440
+Anyone can write for the book.
+
+151
+00:10:05,440 --> 00:10:12,240
+But you absolutely can also just say like, I really feel like this is missing.
+
+152
+00:10:12,240 --> 00:10:15,360
+I don't know it well enough to teach it, but I want to learn it.
+
+153
+00:10:16,880 --> 00:10:22,400
+And if the reason that you're having difficulty figuring out some of this stuff
+
+154
+00:10:22,400 --> 00:10:24,800
+is because maybe English isn't your first language,
+
+155
+00:10:24,800 --> 00:10:27,440
+which for the majority of the people in the world it is not.
+
+156
+00:10:28,720 --> 00:10:32,720
+We've worked with some great scientists in doing this.
+
+157
+00:10:33,360 --> 00:10:36,880
+In different parts of who are from different parts of the world originally,
+
+158
+00:10:36,880 --> 00:10:41,200
+and some of them still to start translating the guide into other languages.
+
+159
+00:10:41,200 --> 00:10:44,320
+So here is the bio-imaging guide in Spanish.
+
+160
+00:10:46,480 --> 00:10:51,200
+Right now, besides English, it's available in Spanish, Portuguese and Czech.
+
+161
+00:10:53,120 --> 00:10:54,640
+We are happy to work with folks.
+
+162
+00:10:54,640 --> 00:11:00,880
+If you think this is super cool and you want to help us correct AI translations
+
+163
+00:11:00,960 --> 00:11:05,520
+into good actual translations, we're totally happy to work with you to get this book
+
+164
+00:11:05,520 --> 00:11:06,880
+in whatever language you want it to be.
+
+165
+00:11:07,920 --> 00:11:09,440
+Just email me.
+
+166
+00:11:09,440 --> 00:11:11,840
+There's a link on the page.
+
+167
+00:11:11,840 --> 00:11:17,520
+But if nothing else, what I hope you take away from this episode is
+
+168
+00:11:19,040 --> 00:11:24,480
+it's really critical to help to come up with these sort of plans
+
+169
+00:11:24,480 --> 00:11:28,880
+and understand the whole experiment before you finish some of the parts
+
+170
+00:11:28,880 --> 00:11:31,120
+and realize that now you might actually need to redo them.
+
+171
+00:11:31,920 --> 00:11:34,720
+But you don't need to know everything right away.
+
+172
+00:11:34,720 --> 00:11:38,160
+If you just get a sense of what you don't know and who to talk to,
+
+173
+00:11:38,960 --> 00:11:43,040
+then there are resources out there to help you find the right person to talk to
+
+174
+00:11:43,040 --> 00:11:45,200
+and they can help you do the best experiment possible.
+
+175
+00:11:46,240 --> 00:11:46,880
+Absolutely.
+
+176
+00:11:47,600 --> 00:11:57,200
+Yeah, the you don't know what you don't know is such a hard thing to overcome in any field,
+
+177
+00:11:57,200 --> 00:11:58,160
+in any area.
+
+178
+00:11:58,960 --> 00:12:05,200
+And so it's so great to have a resource here built around that question of just letting
+
+179
+00:12:05,200 --> 00:12:06,800
+you understand better.
+
+180
+00:12:06,800 --> 00:12:13,200
+What don't you already know that you might need or want to become expert in or find a friend
+
+181
+00:12:13,200 --> 00:12:14,240
+who is expert in?
+
+182
+00:12:16,240 --> 00:12:17,040
+Awesome.
+
+183
+00:12:17,040 --> 00:12:17,920
+Thanks for hanging out.
+
+184
+00:12:17,920 --> 00:12:18,880
+I hope that was useful.
+
+185
+00:12:18,880 --> 00:12:19,920
+We hope you like the book.
+
+186
+00:12:19,920 --> 00:12:22,720
+We hope you give us more stuff that you want to learn in it.
+
+187
+00:12:22,720 --> 00:12:24,240
+And thanks for hanging out.
+
+188
+00:12:24,960 --> 00:12:25,360
+Thank you.
+

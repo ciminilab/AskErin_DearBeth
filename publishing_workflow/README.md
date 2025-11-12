@@ -11,5 +11,5 @@ cd auto_subtitle
 auto_subtitle --output_dir ../AskErin_DearBeth/Transcripts --srt_only True /Users/eweisbar/Documents/projects/AEDB/Episodes/AskErinDearBeth_Episode_6.mp4
 
 # Auto-clean subtitles
-sed -i '' -f replacements.sed ../AskErin_DearBeth/Transcripts/AskErinDearBeth_Episode_6.srt
+sed -i '' -f publishing_workflow/replacements.sed transcripts/AskErinDearBeth_Episode_21.srt
 ```

@@ -1,0 +1,1368 @@
+1
+00:00:00,000 --> 00:00:05,000
+Hey Beth!
+
+2
+00:00:05,000 --> 00:00:07,000
+Erin, hi!
+
+3
+00:00:07,000 --> 00:00:10,000
+Good to see ya!
+
+4
+00:00:10,000 --> 00:00:13,000
+Good to see you!
+
+5
+00:00:13,000 --> 00:00:23,000
+Always a pleasure to be on the podcast again.
+
+6
+00:00:23,000 --> 00:00:25,000
+Of course, so much fun, always.
+
+7
+00:00:25,000 --> 00:00:33,000
+So I thought today I would show folks a quick
+
+8
+00:00:33,000 --> 00:00:36,000
+cell-profiler pipeline I put together to sort of help
+
+9
+00:00:36,000 --> 00:00:42,000
+visualize common augmentations, image augmentations that are
+
+10
+00:00:42,000 --> 00:00:46,000
+done for deep learning.
+
+11
+00:00:46,000 --> 00:00:51,000
+And I am not necessarily saying that, hey, you should use
+
+12
+00:00:51,000 --> 00:00:56,000
+a cell-profiler to create these image augmentations.
+
+13
+00:00:56,000 --> 00:01:01,000
+Often they are built into whatever your deep learning
+
+14
+00:01:01,000 --> 00:01:04,000
+model or workflow is.
+
+15
+00:01:04,000 --> 00:01:08,000
+But the cool thing about cell-profiler is it is a tool
+
+16
+00:01:08,000 --> 00:01:12,000
+that will let us see what is happening to an image step-by-step.
+
+17
+00:01:12,000 --> 00:01:17,000
+So we can use it just for actually visualizing what these
+
+18
+00:01:17,000 --> 00:01:19,000
+image modifications are.
+
+19
+00:01:19,000 --> 00:01:22,000
+There are plenty of other ways this could happen.
+
+20
+00:01:22,000 --> 00:01:25,000
+This could be done in Fiji for visualization.
+
+21
+00:01:25,000 --> 00:01:28,000
+You could write a notebook using Napari.
+
+22
+00:01:28,000 --> 00:01:31,000
+There are all sorts of things, other tools.
+
+23
+00:01:31,000 --> 00:01:34,000
+But cell-profiler is my go-to.
+
+24
+00:01:34,000 --> 00:01:38,000
+And so I am showing you how you could visualize these in
+
+25
+00:01:38,000 --> 00:01:40,000
+cell-profiler.
+
+26
+00:01:40,000 --> 00:01:43,000
+So are you going to talk a little bit more about what
+
+27
+00:01:43,000 --> 00:01:45,000
+augmentation means and why you might do it?
+
+28
+00:01:45,000 --> 00:01:48,000
+Yeah, we could certainly dive into that.
+
+29
+00:01:48,000 --> 00:01:51,000
+But you want background information about this?
+
+30
+00:01:51,000 --> 00:01:54,000
+I am picky like that.
+
+31
+00:01:54,000 --> 00:01:58,000
+Before diving right into the pipeline, I just got excited.
+
+32
+00:01:58,000 --> 00:02:00,000
+It is an exciting pipeline.
+
+33
+00:02:00,000 --> 00:02:02,000
+Don't get me wrong.
+
+34
+00:02:02,000 --> 00:02:05,000
+Image augmentation for deep learning.
+
+35
+00:02:05,000 --> 00:02:10,000
+What serves a couple different purposes?
+
+36
+00:02:10,000 --> 00:02:15,000
+Generally, and Beth, feel free to chime in if you have
+
+37
+00:02:15,000 --> 00:02:19,000
+any additional clarifications or, you know,
+
+38
+00:02:19,000 --> 00:02:23,000
+because this is, I think you are even more expert on this
+
+39
+00:02:23,000 --> 00:02:24,000
+than I am.
+
+40
+00:02:24,000 --> 00:02:27,000
+I just thought it was fun to look at this, you know,
+
+41
+00:02:27,000 --> 00:02:28,000
+look at the things.
+
+42
+00:02:28,000 --> 00:02:32,000
+So augmentations, why would one do this?
+
+43
+00:02:32,000 --> 00:02:35,000
+A couple major reasons.
+
+44
+00:02:35,000 --> 00:02:40,000
+One, generally for deep learning, you need a lot of data.
+
+45
+00:02:40,000 --> 00:02:43,000
+It is a, you know, like heavy data heavy process.
+
+46
+00:02:43,000 --> 00:02:47,000
+And if you don't have enough images in a training set,
+
+47
+00:02:47,000 --> 00:02:53,000
+augmentation is a way of creating additional images that are
+
+48
+00:02:53,000 --> 00:02:56,000
+similar, very similar to, you know, that are based on your
+
+49
+00:02:56,000 --> 00:02:59,000
+input images that you already have, but does some
+
+50
+00:02:59,000 --> 00:03:03,000
+modification so you are not just feeding a model the same
+
+51
+00:03:03,000 --> 00:03:05,000
+images over and over.
+
+52
+00:03:05,000 --> 00:03:08,000
+So you're creating variations of the data that you have to
+
+53
+00:03:08,000 --> 00:03:10,000
+expand your training set.
+
+54
+00:03:10,000 --> 00:03:17,000
+Additionally, it can help to remove, to make an algorithm
+
+55
+00:03:17,000 --> 00:03:22,000
+more general, because you are doing things to mess with the
+
+56
+00:03:22,000 --> 00:03:23,000
+image of it.
+
+57
+00:03:23,000 --> 00:03:26,000
+You might be rescaling intensities.
+
+58
+00:03:26,000 --> 00:03:30,000
+You might be, you know, we'll go through this, you know,
+
+59
+00:03:30,000 --> 00:03:33,000
+like adding in noise and sort of things that might vary from
+
+60
+00:03:33,000 --> 00:03:36,000
+batch to batch of whatever data you have.
+
+61
+00:03:36,000 --> 00:03:41,000
+You are sort of boosting that into your training set here,
+
+62
+00:03:41,000 --> 00:03:46,000
+into your input data, so that it can then more readily
+
+63
+00:03:46,000 --> 00:03:49,000
+generalize to whatever future data that you have that might
+
+64
+00:03:49,000 --> 00:03:55,000
+be sort of out of distribution, you know, so more dissimilar
+
+65
+00:03:55,000 --> 00:03:58,000
+from the input data that it was trained on.
+
+66
+00:03:58,000 --> 00:04:01,000
+Yeah, there's so many things when you're talking about, you
+
+67
+00:04:01,000 --> 00:04:04,000
+know, bio-imaging, it's like, oh, it looks a little bit different
+
+68
+00:04:04,000 --> 00:04:06,000
+today, because today my noise is a little higher or a little
+
+69
+00:04:06,000 --> 00:04:09,000
+lower, or, and certainly we don't want our, in most cases, we
+
+70
+00:04:09,000 --> 00:04:12,000
+don't want a deep learning network to really care if
+
+71
+00:04:12,000 --> 00:04:14,000
+our cell is sort of growing in this direction or that
+
+72
+00:04:14,000 --> 00:04:17,000
+direction, unless you do, but in many cases we don't.
+
+73
+00:04:17,000 --> 00:04:20,000
+And so augmentations just help us teach the network to ignore
+
+74
+00:04:20,000 --> 00:04:24,000
+the things that we don't want it to care about and focus more
+
+75
+00:04:24,000 --> 00:04:26,000
+on the things that it does care about.
+
+76
+00:04:26,000 --> 00:04:28,000
+Though as we talked about in our past episodes on machine
+
+77
+00:04:28,000 --> 00:04:32,000
+learning, you definitely can't always control, even in the
+
+78
+00:04:32,000 --> 00:04:35,000
+best of cases, exactly what a machine learning network will
+
+79
+00:04:35,000 --> 00:04:36,000
+learn.
+
+80
+00:04:36,000 --> 00:04:38,000
+Yeah, absolutely.
+
+81
+00:04:38,000 --> 00:04:42,000
+And so I found as I was learning about data augmentation in
+
+82
+00:04:42,000 --> 00:04:46,000
+general, lots of the examples that you will find on, I mean,
+
+83
+00:04:46,000 --> 00:04:49,000
+there's so much information online, so many other resources
+
+84
+00:04:49,000 --> 00:04:52,000
+people have built about this, but they're often focused on
+
+85
+00:04:52,000 --> 00:04:58,000
+natural images, because there is, there has been way more time
+
+86
+00:04:58,000 --> 00:05:01,000
+and interest in money thrown in.
+
+87
+00:05:01,000 --> 00:05:03,000
+So natural images, you mean photographs?
+
+88
+00:05:03,000 --> 00:05:05,000
+Yes, thank you for clarifying.
+
+89
+00:05:05,000 --> 00:05:11,000
+So which are fundamentally often quite different than bio
+
+90
+00:05:11,000 --> 00:05:20,000
+images, for example, I mean, we, natural images often come in
+
+91
+00:05:20,000 --> 00:05:25,000
+different formats, where it's, regardless, it is a single, a
+
+92
+00:05:25,000 --> 00:05:28,000
+single image has all of the colors in it.
+
+93
+00:05:28,000 --> 00:05:35,000
+So in bio imaging, you are often acquiring, I mean, you are
+
+94
+00:05:35,000 --> 00:05:40,000
+acquiring each channel, each color separately, one can then
+
+95
+00:05:40,000 --> 00:05:42,000
+smush them together into a single image and feed it into the
+
+96
+00:05:42,000 --> 00:05:45,000
+same sort of networks used on, you know, natural images or
+
+97
+00:05:45,000 --> 00:05:47,000
+photographs.
+
+98
+00:05:47,000 --> 00:05:50,000
+But you might actually be interested in building a network
+
+99
+00:05:50,000 --> 00:05:53,000
+only on a single channel and like only on the images of
+
+100
+00:05:53,000 --> 00:05:57,000
+mitochondria, for example, so they're black and white, or
+
+101
+00:05:57,000 --> 00:05:59,000
+grey-scale, sorry.
+
+102
+00:05:59,000 --> 00:06:04,000
+And so, and so I thought I would show here examples of
+
+103
+00:06:04,000 --> 00:06:12,000
+modifications to a grey-scale biological image, because it is,
+
+104
+00:06:12,000 --> 00:06:15,000
+it just, it looks different than applying those same modifications
+
+105
+00:06:15,000 --> 00:06:18,000
+to a photograph, which is what most of the examples you'll find
+
+106
+00:06:18,000 --> 00:06:20,000
+show.
+
+107
+00:06:20,000 --> 00:06:22,000
+Yeah, I think that will help make it so much more concrete.
+
+108
+00:06:22,000 --> 00:06:24,000
+I love this idea.
+
+109
+00:06:24,000 --> 00:06:30,000
+So what I did was I just loaded in the example fly images that
+
+110
+00:06:30,000 --> 00:06:36,000
+comes as part of CellProfiler, and then I added in two extra
+
+111
+00:06:36,000 --> 00:06:42,000
+black and white PNGs, and I will, you know, these will come into
+
+112
+00:06:42,000 --> 00:06:49,000
+play in the future, but they are just binary images, black and
+
+113
+00:06:49,000 --> 00:06:54,000
+white that I put in here to be able to use them as masks.
+
+114
+00:06:54,000 --> 00:07:00,000
+And so in names and types, this is one way to load in the
+
+115
+00:07:00,000 --> 00:07:02,000
+information.
+
+116
+00:07:02,000 --> 00:07:08,000
+So this is the rules that, again, auto-populate in our demo
+
+117
+00:07:08,000 --> 00:07:10,000
+pipeline.
+
+118
+00:07:10,000 --> 00:07:15,000
+But then I added a single image for each of these two masks that I
+
+119
+00:07:15,000 --> 00:07:19,000
+wanted to bring in, named one striped mask and one random
+
+120
+00:07:19,000 --> 00:07:24,000
+squares, and I set the type as this is a binary mask.
+
+121
+00:07:24,000 --> 00:07:28,000
+So CellProfiler knows this is a mask that I can bring in and
+
+122
+00:07:28,000 --> 00:07:30,000
+apply to things.
+
+123
+00:07:30,000 --> 00:07:33,000
+It's already set to CellProfiler knows how to handle it and
+
+124
+00:07:33,000 --> 00:07:36,000
+knows that it is different than the grey-scale image that I have
+
+125
+00:07:36,000 --> 00:07:39,000
+in my image stack.
+
+126
+00:07:39,000 --> 00:07:45,000
+So with that, I will start test mode and sort of show you some
+
+127
+00:07:45,000 --> 00:07:48,000
+of the typical modifications.
+
+128
+00:07:48,000 --> 00:07:55,000
+So the first one, just cropping, pretty intuitive.
+
+129
+00:07:55,000 --> 00:08:00,000
+You can see here, we have taken this whole field of view and
+
+130
+00:08:00,000 --> 00:08:04,000
+just cropped it down into this area right over here, and this is
+
+131
+00:08:04,000 --> 00:08:08,000
+what my output image is on the right, a cropped image.
+
+132
+00:08:08,000 --> 00:08:14,000
+So one might crop at different scales.
+
+133
+00:08:14,000 --> 00:08:19,000
+One might have overlapping crops or not overlapping crops.
+
+134
+00:08:19,000 --> 00:08:22,000
+There's all sorts of different ways you can handle this, but
+
+135
+00:08:22,000 --> 00:08:25,000
+just cropping the image, fairly easy and intuitive.
+
+136
+00:08:25,000 --> 00:08:30,000
+And in CellProfiler, there are a bunch of different settings.
+
+137
+00:08:30,000 --> 00:08:37,000
+So I could make multiple copies of the crop module saying I want to
+
+138
+00:08:37,000 --> 00:08:41,000
+set things to absolute pixel values within my image.
+
+139
+00:08:41,000 --> 00:08:44,000
+I can set it to relative.
+
+140
+00:08:44,000 --> 00:08:48,000
+So I can say, like, from the edge, rather than setting exact
+
+141
+00:08:48,000 --> 00:08:53,000
+pixels, I want you to crop off 50 pixels from each edge.
+
+142
+00:08:53,000 --> 00:08:55,000
+There's all sorts of different ways that you can handle the
+
+143
+00:08:55,000 --> 00:08:57,000
+logic here.
+
+144
+00:08:57,000 --> 00:09:02,000
+Another thing that one might do is to resize the image.
+
+145
+00:09:02,000 --> 00:09:06,000
+So at a glance, well, hey, that doesn't look all that
+
+146
+00:09:06,000 --> 00:09:07,000
+different.
+
+147
+00:09:07,000 --> 00:09:08,000
+What is going on here?
+
+148
+00:09:08,000 --> 00:09:13,000
+But if we look at the x and y axes, this image is roughly
+
+149
+00:09:13,000 --> 00:09:15,000
+1000 by 1000 pixels.
+
+150
+00:09:15,000 --> 00:09:21,000
+And here I have scaled it down so that it is now 250 by 250
+
+151
+00:09:21,000 --> 00:09:22,000
+pixels.
+
+152
+00:09:22,000 --> 00:09:24,000
+I have made it a quarter of the size.
+
+153
+00:09:24,000 --> 00:09:30,000
+And so some deep learning algorithms actually require a very
+
+154
+00:09:30,000 --> 00:09:34,000
+specific size and are trained on either the specific size of image
+
+155
+00:09:34,000 --> 00:09:36,000
+or the size of the object.
+
+156
+00:09:36,000 --> 00:09:42,000
+So if you're looking for an object that needs to be a certain
+
+157
+00:09:42,000 --> 00:09:47,000
+size, so if I'm using a segmentation algorithm, it might be
+
+158
+00:09:47,000 --> 00:09:52,000
+expecting that within any image, the cell object that I'm trying to
+
+159
+00:09:52,000 --> 00:09:54,000
+segment is roughly 100 pixels.
+
+160
+00:09:54,000 --> 00:09:59,000
+And so one would need to perhaps modify their input image for
+
+161
+00:09:59,000 --> 00:10:01,000
+that to be true.
+
+162
+00:10:01,000 --> 00:10:05,000
+So that's only exactly this size and no other size because then
+
+163
+00:10:05,000 --> 00:10:07,000
+it's going to miss a lot of your cells.
+
+164
+00:10:07,000 --> 00:10:09,000
+Yeah, absolutely.
+
+165
+00:10:09,000 --> 00:10:12,000
+Okay, so noise is another thing we can add in.
+
+166
+00:10:12,000 --> 00:10:16,000
+And I have set three different noise modules here.
+
+167
+00:10:16,000 --> 00:10:20,000
+So you can see or three different ways of adding noise.
+
+168
+00:10:20,000 --> 00:10:27,000
+And so this is, this first one is Gaussian noise.
+
+169
+00:10:27,000 --> 00:10:32,000
+And so if I'm going to adjust the contrast here just a little bit
+
+170
+00:10:32,000 --> 00:10:38,000
+to make it a little bit easier to see in the image.
+
+171
+00:10:38,000 --> 00:10:43,000
+And you can see it just looks more granulated.
+
+172
+00:10:43,000 --> 00:10:46,000
+So what it's doing is adding noise.
+
+173
+00:10:46,000 --> 00:10:51,000
+So Gaussian noise, you know, Gaussian is an even distribution.
+
+174
+00:10:51,000 --> 00:10:57,000
+So it's adding sort of an even distribution of noise across the
+
+175
+00:10:57,000 --> 00:11:00,000
+image.
+
+176
+00:11:00,000 --> 00:11:05,000
+Similarly, you can do Poisson noise.
+
+177
+00:11:05,000 --> 00:11:17,000
+And interestingly, Poisson noise is adds more noise in, so Poisson
+
+178
+00:11:17,000 --> 00:11:23,000
+noise is relative to the intensity of the pixels that are already
+
+179
+00:11:23,000 --> 00:11:24,000
+there.
+
+180
+00:11:24,000 --> 00:11:27,000
+So in bright areas, it adds more noise.
+
+181
+00:11:27,000 --> 00:11:30,000
+And in darker areas, it adds less noise.
+
+182
+00:11:30,000 --> 00:11:35,000
+So there you go, variability that you can add in.
+
+183
+00:11:35,000 --> 00:11:40,000
+Again, in CellProfiler, you know, some of these are more tunable.
+
+184
+00:11:40,000 --> 00:11:46,000
+So with the Gaussian, we can add, you know, change variables.
+
+185
+00:11:46,000 --> 00:11:50,000
+That affect how much noise we're adding in.
+
+186
+00:11:50,000 --> 00:11:56,000
+And then finally, you know, here we have some salt and pepper noise,
+
+187
+00:11:56,000 --> 00:12:02,000
+which is sort of, you know, randomly adding in black and white spots that
+
+188
+00:12:02,000 --> 00:12:07,000
+are then, you know, different than a distribution of values, it is adding
+
+189
+00:12:07,000 --> 00:12:10,000
+in black and white.
+
+190
+00:12:10,000 --> 00:12:14,000
+Oh, I will say this add noise module is actually a plug-in.
+
+191
+00:12:14,000 --> 00:12:17,000
+So we have an episode about CellProfiler plug-ins.
+
+192
+00:12:17,000 --> 00:12:20,000
+So check that out for more information if you want to use a plug-in.
+
+193
+00:12:20,000 --> 00:12:24,000
+I was just about to ask, I was like, I don't remember that module.
+
+194
+00:12:24,000 --> 00:12:26,000
+Yes.
+
+195
+00:12:26,000 --> 00:12:33,000
+I think it's one where I, you know, got a wild hair and spent an afternoon
+
+196
+00:12:33,000 --> 00:12:38,000
+writing this plug-in because I wanted to do a thing.
+
+197
+00:12:38,000 --> 00:12:43,000
+And, you know, sometimes you got to do science just for the joy of it,
+
+198
+00:12:43,000 --> 00:12:47,000
+not because it's actually a thing that you really need on a project.
+
+199
+00:12:47,000 --> 00:12:51,000
+So, yeah.
+
+200
+00:12:51,000 --> 00:12:57,000
+So another thing that often happens is flipping and rotating, you know,
+
+201
+00:12:57,000 --> 00:13:02,000
+just taking the same image and flipping it left, right, up, down,
+
+202
+00:13:02,000 --> 00:13:06,000
+rotating it around a given axis.
+
+203
+00:13:06,000 --> 00:13:09,000
+Pretty, pretty intuitive.
+
+204
+00:13:09,000 --> 00:13:13,000
+And, you know, I think that's, you know,
+
+205
+00:13:13,000 --> 00:13:17,000
+interesting, you know, side note, because we think a lot about segmentation.
+
+206
+00:13:17,000 --> 00:13:20,000
+But when you're sort of evaluating quality of segmentation,
+
+207
+00:13:20,000 --> 00:13:26,000
+if you ask a human to annotate an image and then you rotate it or flip it
+
+208
+00:13:26,000 --> 00:13:29,000
+and give it back to them on the next day and ask them to, again,
+
+209
+00:13:29,000 --> 00:13:33,000
+like draw segmentation boundaries, you don't get the same answer.
+
+210
+00:13:33,000 --> 00:13:38,000
+So inter, like inter-individual human annotation is actually.
+
+211
+00:13:38,000 --> 00:13:40,000
+And even intra.
+
+212
+00:13:40,000 --> 00:13:41,000
+Sorry, intra.
+
+213
+00:13:41,000 --> 00:13:42,000
+There we go.
+
+214
+00:13:42,000 --> 00:13:44,000
+Yeah, intra and intra both are bad.
+
+215
+00:13:44,000 --> 00:13:45,000
+Oh, yeah.
+
+216
+00:13:45,000 --> 00:13:46,000
+Yeah.
+
+217
+00:13:46,000 --> 00:13:50,000
+I mean, inter-human, I think is maybe not as surprising how much variability there is,
+
+218
+00:13:50,000 --> 00:13:52,000
+but inter-human.
+
+219
+00:13:52,000 --> 00:13:54,000
+I said that backwards again.
+
+220
+00:13:54,000 --> 00:13:55,000
+Gosh darn it.
+
+221
+00:13:55,000 --> 00:13:56,000
+Inter-anyway.
+
+222
+00:13:56,000 --> 00:13:57,000
+A single person.
+
+223
+00:13:57,000 --> 00:13:59,000
+Y'all know what I mean.
+
+224
+00:13:59,000 --> 00:14:01,000
+A single person on a different day.
+
+225
+00:14:01,000 --> 00:14:05,000
+You will get 70 to 80 percent, you know,
+
+226
+00:14:05,000 --> 00:14:07,000
+of the data that you're using.
+
+227
+00:14:07,000 --> 00:14:11,000
+And so you can see that there's a lot of different ways to evaluate.
+
+228
+00:14:11,000 --> 00:14:14,000
+And so you can see that there's a lot of different ways to evaluate.
+
+229
+00:14:14,000 --> 00:14:16,000
+And so that's what we're going to do.
+
+230
+00:14:16,000 --> 00:14:19,000
+And so we're going to do a little bit of a general,
+
+231
+00:14:19,000 --> 00:14:22,000
+a little bit of a general agreement with what they did the day before on the
+
+232
+00:14:22,000 --> 00:14:24,000
+exact same image that's just been rotated.
+
+233
+00:14:24,000 --> 00:14:26,000
+So, you know, this can actually be.
+
+234
+00:14:26,000 --> 00:14:29,000
+This, this simple little tool can actually be super important and helpful.
+
+235
+00:14:29,000 --> 00:14:30,000
+In helping you.
+
+236
+00:14:30,000 --> 00:14:32,000
+I mean, in many ways.
+
+237
+00:14:33,000 --> 00:14:34,000
+I'm.
+
+238
+00:14:34,000 --> 00:14:36,000
+Masking an image.
+
+239
+00:14:36,000 --> 00:14:40,000
+So sometimes what will happen.
+
+240
+00:14:40,000 --> 00:14:43,000
+I will adjust the contrast on this one.
+
+241
+00:14:43,000 --> 00:14:45,000
+So it's a little bit easier to see.
+
+242
+00:14:45,000 --> 00:14:48,000
+Well, I blew the contrast way out, but you can see the stripes here.
+
+243
+00:14:48,000 --> 00:14:50,000
+This is an example.
+
+244
+00:14:50,000 --> 00:14:55,000
+This particularly if you are doing sort of an.
+
+245
+00:14:55,000 --> 00:15:00,000
+Image to image training where one wants to take an input image and
+
+246
+00:15:00,000 --> 00:15:06,000
+output image with, you know, whatever your algorithm is passing it in
+
+247
+00:15:06,000 --> 00:15:11,000
+images that have different areas masked out and then telling it to
+
+248
+00:15:11,000 --> 00:15:17,000
+reconstruct the full image is a great way to help train it.
+
+249
+00:15:17,000 --> 00:15:20,000
+In that it then sort of can extrapolate.
+
+250
+00:15:20,000 --> 00:15:23,000
+Oh, I have a little bit of the information and I can use it to extrapolate
+
+251
+00:15:23,000 --> 00:15:25,000
+across the whole.
+
+252
+00:15:25,000 --> 00:15:28,000
+And so one can set all sorts of different masks.
+
+253
+00:15:28,000 --> 00:15:31,000
+And again, I started by.
+
+254
+00:15:31,000 --> 00:15:34,000
+I just passed in.
+
+255
+00:15:34,000 --> 00:15:39,000
+Right this striped image that I passed in as a mask and told it to mask.
+
+256
+00:15:39,000 --> 00:15:44,000
+But one could do this with all sorts of different masks in all sorts of
+
+257
+00:15:44,000 --> 00:15:46,000
+different ways.
+
+258
+00:15:46,000 --> 00:15:50,000
+Yeah.
+
+259
+00:15:50,000 --> 00:15:52,000
+Oh, I think here.
+
+260
+00:15:52,000 --> 00:15:58,000
+For example, I was going to show also rather than the straight mask, like
+
+261
+00:15:58,000 --> 00:16:03,000
+again.
+
+262
+00:16:03,000 --> 00:16:12,000
+Another example using a different mask, you can see here where it is.
+
+263
+00:16:12,000 --> 00:16:16,000
+Again, I had, I told it to, you know, just wrote a super quick little bit of
+
+264
+00:16:16,000 --> 00:16:21,000
+code to generate an image, you know, a mask image for me that had randomly
+
+265
+00:16:21,000 --> 00:16:25,000
+placed squares, white squares on a black background.
+
+266
+00:16:25,000 --> 00:16:29,000
+And so when that mask is applied, this is a different way of masking out an
+
+267
+00:16:29,000 --> 00:16:33,000
+image so that you are passing it, you know, you have some of the information
+
+268
+00:16:33,000 --> 00:16:35,000
+is preserved.
+
+269
+00:16:35,000 --> 00:16:42,000
+But again, leaving lots of information for the algorithm to fill in on its own.
+
+270
+00:16:42,000 --> 00:16:44,000
+Very cool.
+
+271
+00:16:44,000 --> 00:16:46,000
+Yeah.
+
+272
+00:16:46,000 --> 00:16:48,000
+Pixel shuffle.
+
+273
+00:16:48,000 --> 00:16:51,000
+And then there's this also a plug in.
+
+274
+00:16:51,000 --> 00:17:03,000
+Barbara wrote, which, and this is nice for evaluation of all different kinds
+
+275
+00:17:03,000 --> 00:17:09,000
+beyond, you know, beyond deep learning, but what it does is takes these pixels,
+
+276
+00:17:09,000 --> 00:17:13,000
+the intensity values of each pixel and literally just chuckles them and creates
+
+277
+00:17:13,000 --> 00:17:15,000
+this image.
+
+278
+00:17:15,000 --> 00:17:21,000
+And so this is a nice way of, if you have sort of positive and negative
+
+279
+00:17:21,000 --> 00:17:27,000
+categories involved in your, your image or your training or your evaluation to
+
+280
+00:17:27,000 --> 00:17:34,000
+say that it is, you know, this should be, for example, marked as this is
+
+281
+00:17:34,000 --> 00:17:39,000
+Drosophila cells and this should not be marked as Drosophila cells.
+
+282
+00:17:39,000 --> 00:17:43,000
+And so you're, you know, by adding in the shuffling of the pixels, you're able to
+
+283
+00:17:43,000 --> 00:17:50,000
+see the, the, the, the, the intensities of the pixels in the, you know, just
+
+284
+00:17:50,000 --> 00:17:54,000
+across the image are not what is being read.
+
+285
+00:17:54,000 --> 00:17:58,000
+It is actual information contained in the structuring of those pixels because
+
+286
+00:17:58,000 --> 00:18:01,000
+once they're shuffled, this should no longer work.
+
+287
+00:18:01,000 --> 00:18:05,000
+Yeah, it's a great way to get it to not just learn brighter is this and darker is
+
+288
+00:18:05,000 --> 00:18:07,000
+that.
+
+289
+00:18:07,000 --> 00:18:12,000
+Yeah, absolutely. That's it. That is a nice concise way of saying that. Thank you.
+
+290
+00:18:12,000 --> 00:18:17,000
+So I have a couple of different smoothing filters I have here as an example.
+
+291
+00:18:17,000 --> 00:18:23,000
+So this is using Gaussian smoothing a Gaussian filter to smooth.
+
+292
+00:18:23,000 --> 00:18:32,000
+Again, you can tune it to be, you know, a different, different types of widths of
+
+293
+00:18:32,000 --> 00:18:39,000
+filters and here this is, sorry, the, oh yeah.
+
+294
+00:18:39,000 --> 00:18:44,000
+So smoothing method Gaussian. Yes, this is, and this is a median filter.
+
+295
+00:18:44,000 --> 00:18:49,000
+I just kept to say, sorry, I forgot to change the name here.
+
+296
+00:18:49,000 --> 00:18:54,000
+Smooth median. That's why I got confused for a moment.
+
+297
+00:18:54,000 --> 00:19:01,000
+So this, again, just a different way of smoothing things, different shape of filter,
+
+298
+00:19:01,000 --> 00:19:08,000
+and you get slightly different results, just different ways of augmenting.
+
+299
+00:19:08,000 --> 00:19:13,000
+And finally, I wanted to show some math, image math, because image math is a super,
+
+300
+00:19:13,000 --> 00:19:20,000
+super, super powerful module that can do all sorts of things to your images.
+
+301
+00:19:20,000 --> 00:19:31,000
+And here, I just want to show you three different examples of things one could do to the image.
+
+302
+00:19:31,000 --> 00:19:38,000
+So this, I took the input image and I raised it to the power of one half,
+
+303
+00:19:38,000 --> 00:19:42,000
+which means like I took the square root of this image.
+
+304
+00:19:42,000 --> 00:19:47,000
+Then here we can show. The square root of an image. That's crazy.
+
+305
+00:19:47,000 --> 00:19:54,000
+Yes, yes. Here, what I have done is taking the square of the image.
+
+306
+00:19:54,000 --> 00:20:01,000
+And here, I have just added 0.2 to the entire image.
+
+307
+00:20:01,000 --> 00:20:09,000
+So if we get these lined up next to each other, you can see they look pretty similar.
+
+308
+00:20:09,000 --> 00:20:15,000
+But the interesting thing then, I think, is to show the image histograms,
+
+309
+00:20:15,000 --> 00:20:20,000
+because that is where we really get to see information about what is it,
+
+310
+00:20:20,000 --> 00:20:29,000
+just what is it that I actually did to these images and why might this be helpful for us in image augmentation
+
+311
+00:20:29,000 --> 00:20:35,000
+and training a network. So here when I took, oh, I guess we can start with, okay.
+
+312
+00:20:35,000 --> 00:20:39,000
+So here is our OG histogram.
+
+313
+00:20:39,000 --> 00:20:45,000
+This is what happens when you take the square root.
+
+314
+00:20:45,000 --> 00:20:53,000
+So you can see, we've sort of spread the, and the axes here are fairly similar.
+
+315
+00:20:53,000 --> 00:20:58,000
+So you can see we have spread out the distribution here of these brighter pixels.
+
+316
+00:20:58,000 --> 00:21:04,000
+So it is taking up, you know, more space.
+
+317
+00:21:04,000 --> 00:21:08,000
+The histogram is taking up more space of the bright pixels that we're looking at.
+
+318
+00:21:08,000 --> 00:21:14,000
+Here when we squared it, because these are all values less than one,
+
+319
+00:21:14,000 --> 00:21:20,000
+we've condensed the histogram, and so it is taking up less of this dynamic range.
+
+320
+00:21:20,000 --> 00:21:25,000
+And here when we just added point two, this looks super similar to this original image,
+
+321
+00:21:25,000 --> 00:21:30,000
+but you can see on the x-axis, it starts above point two.
+
+322
+00:21:30,000 --> 00:21:37,000
+So this means we have increased the level of signal just in the background of our image.
+
+323
+00:21:37,000 --> 00:21:45,000
+So, so profiler, we talk about this in another episode, sort of like about why do my images look weird.
+
+324
+00:21:45,000 --> 00:21:48,000
+So for more information, go watch that episode.
+
+325
+00:21:48,000 --> 00:21:56,000
+So profiler is doing some rescaling of the image here to make it look nice to our eyes when we are looking at it in these windows,
+
+326
+00:21:56,000 --> 00:22:06,000
+but I think looking at the actual histograms of what what is going on in these pixels in the images helps to illustrate
+
+327
+00:22:06,000 --> 00:22:17,000
+the differences between these images and what that might have, how that might actually affect the data itself that you are feeding into an algorithm,
+
+328
+00:22:17,000 --> 00:22:32,000
+so that they are, you know, more or less, you know, again, like changing those, those distributions of the pixel intensities gives very different information to the algorithm to help, you know,
+
+329
+00:22:32,000 --> 00:22:36,000
+to have an image like one should be able to find the cells.
+
+330
+00:22:36,000 --> 00:22:46,000
+For example, if that's your task in each of these images without a problem, because the majority of the data is still there and preserved,
+
+331
+00:22:46,000 --> 00:22:55,000
+but it makes, it's a very different math happening behind the scenes that the algorithm needs to learn to be able to handle,
+
+332
+00:22:55,000 --> 00:23:02,000
+and so those are really dim images today, like, particularly, you know, bright background today.
+
+333
+00:23:02,000 --> 00:23:07,000
+And so those, those can be helpful. And that's all done just with image math.
+
+334
+00:23:07,000 --> 00:23:12,000
+So that is what I had to share.
+
+335
+00:23:12,000 --> 00:23:24,000
+I think fun to be able to just visualize it and really understand it in a, again, in bio images in grayscale bio images because they look really sort of fundamentally different than natural images or pictures.
+
+336
+00:23:24,000 --> 00:23:29,000
+Camera photos that you, you see for most of the examples.
+
+337
+00:23:29,000 --> 00:23:40,000
+What I take home from that is just there's so many things you have to do that a neural network could learn in your images that you have to do so much to try to get it to learn only the things that you want to learn and not the other things.
+
+338
+00:23:40,000 --> 00:23:52,000
+And so having all these kinds of augmentations is great, but just sort of emphasizes that you need to be really careful, because there's so many things that could pick up on that maybe you didn't think to sort of give it augmentations to ignore before.
+
+339
+00:23:52,000 --> 00:24:05,000
+Yeah, absolutely. Absolutely. You know, we talked about it in, you know, in an episode we'll drop in the link that, you know, the punchline being neural networks are going to learn the easiest thing they can learn.
+
+340
+00:24:05,000 --> 00:24:19,000
+So if they can just learn bright versus dark, rather than the actual task you're trying to give it, that's what it's going to learn. And so this critical to outlazy your neural network, your neural network to outlazy your neural network.
+
+341
+00:24:19,000 --> 00:24:26,000
+Yeah, absolutely. Absolutely. Well, thanks, Beth. Appreciate your for that tour through augmentations.
+
+342
+00:24:26,000 --> 00:24:28,000
+My pleasure.
+
