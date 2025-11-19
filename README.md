@@ -3,7 +3,7 @@ Files related to Ask Erin/Dear Beth episodes - Now available on a YouTube near Y
 
 ## Got a question for Erin and Beth?
 
-Want to see Erin and Beth explain or demo your (least) favorite image analysis conundrum? [Submit a question here!](broad.io/AskErinDearBeth)
+Want to see Erin and Beth explain or demo your (least) favorite image analysis conundrum? [Submit a question here!](http://broad.io/AskErinDearBeth)
 
 ## Episode List
 
