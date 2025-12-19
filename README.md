@@ -29,11 +29,12 @@ Want to see Erin and Beth explain or demo your (least) favorite image analysis c
 | Episode 18 - [Women on the Street Interviews: Hard Hitting Questions at SBI2 2025](https://youtu.be/99L2ESvAt5I) |  |  |  | [SBI2 website](https://sbi2.org/) |
 | Episode 19 - [Conferences We've Attended Recently](https://youtu.be/Ah7PBRPgQ44) |  |  |  | [SBI2 - The Society of Biomolecular Imaging and Informatics](https://sbi2.org), [ASCB - The American Society for Cell Biology](https://www.ascb.org), [SLAS - Society for Laboratory Automation and Screening](https://www.slas.org), [Cytodata Society](https://www.cytodata.org), [ABRF - Association of Biomolecular Resource Facilities](https://abrf.org), [Scipy - Scientific Python](https://www.scipy2025.scipy.org), [OME - Open Microscopy Environment](https://www.openmicroscopy.org), [I2K - Images to Knowledge](https://www.i2kconference.org), [Globias - Global BioImage Analysts' Society](https://www.globias.org), [BINA - Bioimaging North America](https://www.bioimagingnorthamerica.org) |
 | Episode 20 - [Intro to the Bioimaging Guide](https://youtu.be/Upqfn9ALXz8) |  |  |  | [The Bioimaging Guide](https://www.bioimagingguide.org/welcome.html), [The companion paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC10298797/) |
+| Episode 21 - [Visualizing Common Deep Learning Image Augmentations](https://youtu.be/3PVS4isGBoA) | [Pipeline available here](https://github.com/ciminilab/AskErin_DearBeth/tree/main/files/Ep21) |  |  |  |
 
 <!-- 
 
 
-| Episode 21 - [Visualizing Common Deep Learning Image Augmentations](https://youtu.be/3PVS4isGBoA) | [Pipeline available here](https://github.com/ciminilab/AskErin_DearBeth/tree/main/files/Ep21) |  |  |  |
+
 | Episode 22 - [Overview of CellProfiler's Input Modules](https://youtu.be/AZi18trmQhE) |  |  |  | [CellProfiler tutorials](http://tutorials.cellprofiler.org), [Full-length CellProfiler Input Modules video](https://www.youtube.com/watch?v=Z_pUWuOV06Q), [CellProfiler Input Modules written tutorial](https://carpenter-singh-lab.broadinstitute.org/blog/input-modules-tutorial) |
 
 --> 
@@ -57,6 +58,7 @@ Check out our bonus episodes where we talk about *other* stuff we love, like:
 |--------------------------|-------------------------|
 | Episode 6.5 - [In which we tell the story of how we know each other](https://youtu.be/9gKE9euaUJo) | N/A |
 | Episode 13.5 - [In which we talk about our love of GBBO - The Great British Bake Off](https://youtu.be/hKEO9UeP1yw) | [Erin's favorite Devonshire Splits recipe](https://thegreatbritishbakeoff.co.uk/recipes/all/paul-hollywoods-devonshire-splits/), [Beth's favorite Smoked Salmon Soda Bread recipe](https://thegreatbritishbakeoff.co.uk/recipes/all/hermine-smoked-salmon-and-chive-soda-bread/) |
+| Episode 20.5 - HalfwayToI2K 2025 Crossover Event (some science, some talk about pizza) - [Image Analysis Ask Us Anything - A special LIVE Ask Erin/Dear Beth event!](https://youtu.be/__dJlksUwkc?si=qhX17fh-1vzXLyCP)| [Check out the I2K conference website](https://www.i2kconference.org/) / [Check out the HalfwayToI2K YouTube playlist!](https://www.youtube.com/playlist?list=PLdA9Vgd1gxTaNwGJHTMOUU_efVOq0C8jq) | 
 
 <p hidden>
 More commented out text not shown on the page
