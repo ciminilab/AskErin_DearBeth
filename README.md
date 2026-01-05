@@ -30,12 +30,13 @@ Want to see Erin and Beth explain or demo your (least) favorite image analysis c
 | Episode 19 - [Conferences We've Attended Recently](https://youtu.be/Ah7PBRPgQ44) |  |  |  | [SBI2 - The Society of Biomolecular Imaging and Informatics](https://sbi2.org), [ASCB - The American Society for Cell Biology](https://www.ascb.org), [SLAS - Society for Laboratory Automation and Screening](https://www.slas.org), [Cytodata Society](https://www.cytodata.org), [ABRF - Association of Biomolecular Resource Facilities](https://abrf.org), [Scipy - Scientific Python](https://www.scipy2025.scipy.org), [OME - Open Microscopy Environment](https://www.openmicroscopy.org), [I2K - Images to Knowledge](https://www.i2kconference.org), [Globias - Global BioImage Analysts' Society](https://www.globias.org), [BINA - Bioimaging North America](https://www.bioimagingnorthamerica.org) |
 | Episode 20 - [Intro to the Bioimaging Guide](https://youtu.be/Upqfn9ALXz8) |  |  |  | [The Bioimaging Guide](https://www.bioimagingguide.org/welcome.html), [The companion paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC10298797/) |
 | Episode 21 - [Visualizing Common Deep Learning Image Augmentations](https://youtu.be/3PVS4isGBoA) | [Pipeline available here](https://github.com/ciminilab/AskErin_DearBeth/tree/main/files/Ep21) |  |  |  |
+| Episode 22 - [Overview of CellProfiler's Input Modules](https://youtu.be/AZi18trmQhE) |  |  |  | [CellProfiler tutorials](http://tutorials.cellprofiler.org), [Full-length CellProfiler Input Modules video](https://www.youtube.com/watch?v=Z_pUWuOV06Q), [CellProfiler Input Modules written tutorial](https://carpenter-singh-lab.broadinstitute.org/blog/input-modules-tutorial) |
 
 <!-- 
 
 
 
-| Episode 22 - [Overview of CellProfiler's Input Modules](https://youtu.be/AZi18trmQhE) |  |  |  | [CellProfiler tutorials](http://tutorials.cellprofiler.org), [Full-length CellProfiler Input Modules video](https://www.youtube.com/watch?v=Z_pUWuOV06Q), [CellProfiler Input Modules written tutorial](https://carpenter-singh-lab.broadinstitute.org/blog/input-modules-tutorial) |
+
 
 --> 
 
