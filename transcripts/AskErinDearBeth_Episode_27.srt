@@ -1,0 +1,708 @@
+1
+00:00:16,000 --> 00:00:16,000
+Is it podcast time again?
+
+2
+00:00:16,000 --> 00:00:18,680
+It is podcast time.
+
+3
+00:00:18,680 --> 00:00:24,680
+Welcome to Ask Erin, dear Beth, with your hosts Erin and Beth.
+
+4
+00:00:24,680 --> 00:00:25,680
+Oh my gosh.
+
+5
+00:00:25,680 --> 00:00:28,120
+It's good to see you, Beth.
+
+6
+00:00:28,120 --> 00:00:29,680
+Thanks for joining me.
+
+7
+00:00:29,680 --> 00:00:30,680
+Sure, as always.
+
+8
+00:00:30,680 --> 00:00:31,680
+Okay.
+
+9
+00:00:31,680 --> 00:00:33,160
+Well, today I wanted to...
+
+10
+00:00:33,160 --> 00:00:41,080
+Okay, so recently talked about CellProfiler features that we use in the Cell Painting
+
+11
+00:00:41,080 --> 00:00:42,080
+assay.
+
+12
+00:00:42,080 --> 00:00:43,080
+So got a lot of...
+
+13
+00:00:43,080 --> 00:00:45,080
+Two new things to link to.
+
+14
+00:00:45,080 --> 00:00:46,080
+Yeah.
+
+15
+00:00:46,080 --> 00:00:49,880
+Lots of links in the show notes in case you don't know what I'm talking about.
+
+16
+00:00:49,880 --> 00:00:57,360
+But the idea being that recently I was talking about morphological features, so we're doing
+
+17
+00:00:57,360 --> 00:01:03,120
+morphological profiling is pretty standard in our lab where we are making measurements
+
+18
+00:01:03,120 --> 00:01:13,560
+of cells as sort of an omics way of describing cells based on their morphology and Cell Painting
+
+19
+00:01:13,560 --> 00:01:19,520
+assay being the field standard in our field right now.
+
+20
+00:01:19,520 --> 00:01:26,680
+And I talked about the features that we get out when using CellProfiler to make measurements
+
+21
+00:01:26,680 --> 00:01:31,480
+in the Cell Painting Assay and talked about how they're interpretable, how a biologist
+
+22
+00:01:31,480 --> 00:01:36,240
+might be able to help you understand what each of those measurements are.
+
+23
+00:01:36,240 --> 00:01:44,160
+And I kind of contrasted that to a lot of deep learning ways of profiling cell morphology.
+
+24
+00:01:44,160 --> 00:01:46,760
+You're getting out totally uninterpretable features.
+
+25
+00:01:46,760 --> 00:01:49,440
+Feature name is like Feature 732.
+
+26
+00:01:49,440 --> 00:01:52,400
+You're like, I don't know what that's describing.
+
+27
+00:01:52,400 --> 00:01:53,400
+Yeah.
+
+28
+00:01:53,400 --> 00:01:55,400
+What is Feature 732?
+
+29
+00:01:56,120 --> 00:01:57,120
+Who knows?
+
+30
+00:01:57,120 --> 00:02:08,240
+But I wanted to show off a little bit of work that I helped a tiny bit with that actually
+
+31
+00:02:08,240 --> 00:02:13,120
+uses deep learning and has some of the strengths of deep learning.
+
+32
+00:02:13,120 --> 00:02:16,320
+But also, you still get interpretable features.
+
+33
+00:02:16,320 --> 00:02:17,320
+So as we're going to do like...
+
+34
+00:02:17,320 --> 00:02:18,320
+That sounds fancy.
+
+35
+00:02:18,320 --> 00:02:23,360
+Yeah, tiny, tiny little journal club here.
+
+36
+00:02:23,360 --> 00:02:32,200
+So this was a project that I sort of was looked in on the end led by Asif Zeritzky and his
+
+37
+00:02:32,200 --> 00:02:33,840
+lab.
+
+38
+00:02:33,840 --> 00:02:40,120
+And I helped sort of provide some of the biology, biology intuition in the end.
+
+39
+00:02:40,120 --> 00:02:48,600
+But I think it's a really interesting example of using deep learning but still having biological
+
+40
+00:02:48,600 --> 00:02:52,200
+interpretability of features that I wanted to highlight.
+
+41
+00:02:52,440 --> 00:02:54,640
+We don't just want to be like, you deep learning, deep learning.
+
+42
+00:02:54,640 --> 00:02:56,880
+But like, no, deep learning is good.
+
+43
+00:02:56,880 --> 00:02:57,880
+Yeah.
+
+44
+00:02:57,880 --> 00:03:02,200
+I mean, there are many wonderful things that it brings us.
+
+45
+00:03:02,200 --> 00:03:07,560
+So here in this graphical abstract, just going to start by just talking through the
+
+46
+00:03:07,560 --> 00:03:09,480
+graphical abstract.
+
+47
+00:03:09,480 --> 00:03:11,440
+So we've got the Cell Painting Assay.
+
+48
+00:03:11,440 --> 00:03:19,120
+So this is actually this paper is using published Cell Painting data sets all pulled from the
+
+49
+00:03:19,120 --> 00:03:20,120
+Cell Painting Gallery.
+
+50
+00:03:20,120 --> 00:03:23,680
+I've dropped that in show notes as well.
+
+51
+00:03:23,680 --> 00:03:34,680
+And so this is historical data that Asif's team worked to create this new way of taking
+
+52
+00:03:34,680 --> 00:03:42,200
+these original historical data sets and using deep learning to improve the strength of the
+
+53
+00:03:42,200 --> 00:03:47,720
+features so we can get more hits called more biological discovery out of these existing
+
+54
+00:03:47,720 --> 00:03:48,720
+data sets.
+
+55
+00:03:48,920 --> 00:03:51,040
+So we started with Cell Painting.
+
+56
+00:03:51,040 --> 00:03:56,440
+And this is just a setup of a Cell Painting, you know, Cell Painting plate, we think we're
+
+57
+00:03:56,440 --> 00:04:00,680
+zooming in the corner, although one should never line up their control wells all in a
+
+58
+00:04:00,680 --> 00:04:01,680
+row.
+
+59
+00:04:01,680 --> 00:04:05,160
+This was just my quick, you know, quickly illustrating it.
+
+60
+00:04:05,160 --> 00:04:11,200
+But you know, side note, this is not actually how the plates are arranged in real life.
+
+61
+00:04:11,200 --> 00:04:15,680
+But if we think usually sometimes they are, this is not how they should be arranged in
+
+62
+00:04:15,680 --> 00:04:16,680
+real life.
+
+63
+00:04:17,640 --> 00:04:25,880
+So we have these control wells and, you know, as these white and then treatment, if we think
+
+64
+00:04:25,880 --> 00:04:30,680
+of we've added different drugs to each well, and some of them are going to cause lots of
+
+65
+00:04:30,680 --> 00:04:35,480
+morphological changes and some of them will cause less.
+
+66
+00:04:35,480 --> 00:04:39,520
+And so those are, you know, here are more similar to the controls.
+
+67
+00:04:39,520 --> 00:04:44,960
+So if we then think of this in terms of feature extraction, so these are these classic features
+
+68
+00:04:45,040 --> 00:04:46,840
+are CellProfiler features.
+
+69
+00:04:46,840 --> 00:04:51,960
+So they all, you know, go back to, well, link in the show notes about CellProfiler features
+
+70
+00:04:51,960 --> 00:04:56,120
+and what those look like, but they tell you which compartment we made the measurement in,
+
+71
+00:04:56,120 --> 00:05:01,240
+what kind of measurement it is, what image we use to make those measurements.
+
+72
+00:05:01,240 --> 00:05:05,720
+So we know lots and lots of information about what each of those features actually is.
+
+73
+00:05:07,520 --> 00:05:09,040
+So this is our starting point.
+
+74
+00:05:09,120 --> 00:05:16,880
+So then the cool thing that Ossaf's group did was they trained a model, deep learning
+
+75
+00:05:16,880 --> 00:05:22,320
+model here using only the control wells.
+
+76
+00:05:22,320 --> 00:05:29,440
+So generally when you're talking about training a deep learning model, and we also have an
+
+77
+00:05:29,440 --> 00:05:35,720
+episode sort of about machine learning and some intuition about that that Beth led before.
+
+78
+00:05:35,720 --> 00:05:39,680
+So I'll drop that in show notes too, because that's some helpful, you know, helpful conceptual
+
+79
+00:05:39,680 --> 00:05:45,600
+background I know we've got so many, so many episodes, so many episodes.
+
+80
+00:05:45,600 --> 00:05:50,560
+So, so normally when you're training a deep learning of any sort of machine learning model,
+
+81
+00:05:50,560 --> 00:05:56,120
+whether it's classical machine learning or deep learning, you want to include data that
+
+82
+00:05:56,120 --> 00:06:02,800
+is representative, representative of all of the data that your model will be encountering.
+
+83
+00:06:02,800 --> 00:06:11,760
+And so, but here, they did a very interesting thing where they trained this in distribution
+
+84
+00:06:11,760 --> 00:06:15,120
+model so only on the control wells.
+
+85
+00:06:15,120 --> 00:06:23,160
+So this model is trained to take in these, take in CellProfiler features and spit out
+
+86
+00:06:23,160 --> 00:06:25,880
+the same CellProfiler features, basically.
+
+87
+00:06:25,880 --> 00:06:29,280
+So lots of simplification of what I'm doing here to describe this.
+
+88
+00:06:29,640 --> 00:06:30,920
+Read the paper.
+
+89
+00:06:30,920 --> 00:06:36,600
+If you know if you want the more technical details, but I'm simplifying things a lot.
+
+90
+00:06:36,600 --> 00:06:44,560
+So this model takes in, takes in features and spits them right back out again.
+
+91
+00:06:44,560 --> 00:06:49,240
+And the key here being it is trained only on control wells.
+
+92
+00:06:49,240 --> 00:06:56,800
+So then what we have we can then take, we can math the reconstruction and say how different
+
+93
+00:06:56,880 --> 00:07:00,840
+is this reconstruction from the original actual features.
+
+94
+00:07:00,840 --> 00:07:04,920
+And we can see that on control wells, it does a pretty good job.
+
+95
+00:07:04,920 --> 00:07:09,080
+Mostly it, you know, we did a good job of training a model here where I can, you know,
+
+96
+00:07:09,080 --> 00:07:13,040
+get put it in, get the thing in and get out what I want.
+
+97
+00:07:13,040 --> 00:07:17,160
+So we have very little signal in our reconstruction here.
+
+98
+00:07:17,160 --> 00:07:24,000
+So the reconstruction being how bad did it do at the output.
+
+99
+00:07:24,040 --> 00:07:31,800
+So then what's cool is they took that same in distribution model that is only trained
+
+100
+00:07:31,800 --> 00:07:41,080
+on control wells and said, OK, if I put in features from treated wells, what do I get out?
+
+101
+00:07:41,080 --> 00:07:48,080
+And you can see then that like some treatment conditions, it does a totally fine job of it can,
+
+102
+00:07:48,080 --> 00:07:53,960
+you know, it had enough information trained on just the controls that it is able to do
+
+103
+00:07:53,960 --> 00:07:55,400
+a good job of reconstructing.
+
+104
+00:07:55,400 --> 00:08:02,960
+But for many treatments, it's saying for this treatment here, I didn't actually learn enough
+
+105
+00:08:02,960 --> 00:08:08,160
+information when I was trained on just control wells to come up with something accurate.
+
+106
+00:08:08,160 --> 00:08:11,400
+So I have a bunch of error here in my reconstruction.
+
+107
+00:08:11,400 --> 00:08:14,240
+So this is the air, you know, the amount of error.
+
+108
+00:08:14,240 --> 00:08:22,960
+So that is saying that this treatment here is quite different from the control wells,
+
+109
+00:08:22,960 --> 00:08:24,920
+because it was not included.
+
+110
+00:08:24,920 --> 00:08:29,920
+Like it's too far out of the distribution of what this model was trained on to be able
+
+111
+00:08:29,920 --> 00:08:32,960
+to do a good job of reconstructing it.
+
+112
+00:08:32,960 --> 00:08:36,600
+It is too different from how this model was trained.
+
+113
+00:08:36,600 --> 00:08:41,560
+And I love this approach because it takes something that is a limitation of deep learning models,
+
+114
+00:08:41,560 --> 00:08:47,520
+which is they tend to only be good at exactly what they've seen and flips it around and says, OK,
+
+115
+00:08:47,520 --> 00:08:50,440
+well, what we actually want to know is what's different.
+
+116
+00:08:50,520 --> 00:08:52,960
+So let's take a weakness and make it a strength.
+
+117
+00:08:52,960 --> 00:08:54,720
+That's why I love this approach.
+
+118
+00:08:54,720 --> 00:08:57,480
+Yeah, yeah, super cool, super cool.
+
+119
+00:08:57,480 --> 00:09:04,680
+So then, you know, we can then plot, you know, if we look at the amount of error in control
+
+120
+00:09:04,680 --> 00:09:08,560
+wells, right, in terms of, you know, this is like a density here saying like, OK, there
+
+121
+00:09:08,560 --> 00:09:13,560
+is going to be some level in reconstruction because it is not perfect.
+
+122
+00:09:13,560 --> 00:09:18,160
+But in our treated wells, we're getting a lot more error at reconstructing.
+
+123
+00:09:18,200 --> 00:09:24,360
+And so then you can set a threshold and say, OK, anything like a 95% confidence limit here,
+
+124
+00:09:24,360 --> 00:09:33,000
+where we say, like, OK, if it is worse, you know, more poorly reconstructed than 95%
+
+125
+00:09:33,000 --> 00:09:37,320
+of the control wells, we can call it a hit and say that we can trust this phenotype.
+
+126
+00:09:37,320 --> 00:09:43,080
+It is strong enough that we can distinguish it from our control population and call hits.
+
+127
+00:09:43,080 --> 00:09:48,200
+And so they then did that for four different data sets.
+
+128
+00:09:48,200 --> 00:09:50,840
+Again, historical CellProfiler data sets.
+
+129
+00:09:52,520 --> 00:10:03,320
+And we're able to show that the anomaly profiles are more reproducible than CellProfiler
+
+130
+00:10:03,320 --> 00:10:07,520
+profiles, so able to call more hits.
+
+131
+00:10:07,520 --> 00:10:12,000
+So better separate, you know, better able to say like, this is a real phenotype that I can really
+
+132
+00:10:12,000 --> 00:10:16,040
+measure and distinguish it from a control population.
+
+133
+00:10:16,040 --> 00:10:26,160
+And then they actually looked at a biological task of figuring out the mechanism of action of a drug.
+
+134
+00:10:26,160 --> 00:10:30,680
+So saying we know, you know, we have some known information about the drugs that were the treatment
+
+135
+00:10:30,680 --> 00:10:31,720
+conditions here.
+
+136
+00:10:31,720 --> 00:10:39,480
+Can I classify them knowing, you know, using this biology I know and the anomaly profiles did better.
+
+137
+00:10:39,480 --> 00:10:46,640
+Batch effects are a major problem in the Cell Painting Assay and it reduced the amount of batch effects.
+
+138
+00:10:46,640 --> 00:10:53,600
+And then the cool thing, again, that I'm highlighting here is that we retained biologically
+
+139
+00:10:53,600 --> 00:10:55,920
+interpretable features.
+
+140
+00:10:55,920 --> 00:11:03,840
+So the features we get out, right, so I can say like, I had this reconstruction, I failed to reconstruct
+
+141
+00:11:03,840 --> 00:11:08,880
+the intensity level in the ER, for example, like that was very perturbed.
+
+142
+00:11:08,880 --> 00:11:16,880
+So these features that we get out in these, you know, in these anomaly profiles are actually the same feature
+
+143
+00:11:16,880 --> 00:11:18,840
+names as the CellProfiler features.
+
+144
+00:11:18,840 --> 00:11:27,640
+So we have a level of interpretability and we can use that to do some biological discovery in a way that we can't
+
+145
+00:11:27,640 --> 00:11:31,920
+if it's feature number 273, right?
+
+146
+00:11:31,920 --> 00:11:38,280
+You know, and then finally, for the sake of time, I'm not going to dive into this either, but you can
+
+147
+00:11:38,280 --> 00:11:45,440
+actually use this to identify alterations in relationships between features.
+
+148
+00:11:45,440 --> 00:11:54,480
+So one thing that is a blessing and a curse in the Cell Painting Assay, like we start with thousands of features,
+
+149
+00:11:54,480 --> 00:12:00,480
+but lots of them are very highly correlated with each other.
+
+150
+00:12:00,480 --> 00:12:07,240
+There's lots, lots of, you know, so we do some level of feature selection to drop down from thousands to hundreds of
+
+151
+00:12:07,240 --> 00:12:11,280
+features when we're like to look at the profiles that we're using for biological discovery.
+
+152
+00:12:11,280 --> 00:12:19,800
+But there's still a lot of very tight correlations between features, even after our sort of standard feature selection.
+
+153
+00:12:19,800 --> 00:12:29,360
+And you can in this situation, these reconstruction errors can actually give you information about broken
+
+154
+00:12:29,360 --> 00:12:37,080
+relationships between features, which can then lead to really cool discovery where like normally,
+
+155
+00:12:37,920 --> 00:12:41,880
+if you have more neighbors, you have more roundness, right?
+
+156
+00:12:41,880 --> 00:12:47,480
+Because cells are packed in closer together and there's just not room for them to spread out.
+
+157
+00:12:47,480 --> 00:12:57,400
+But, you know, we show an example where this broken relationship between number of neighbors and roundness might actually, you know, can suggest,
+
+158
+00:12:57,400 --> 00:13:06,240
+here's again, a biologist's biologists interpretation of what this could be, where there the cells are sort of always the same amount of round,
+
+159
+00:13:06,240 --> 00:13:08,920
+no matter how much space you give them to spread out.
+
+160
+00:13:08,920 --> 00:13:14,520
+And so that, you know, that is a change in biology, something interesting is going on there.
+
+161
+00:13:14,520 --> 00:13:18,680
+And, you know, go read the paper if you want to deep dive into more.
+
+162
+00:13:18,680 --> 00:13:28,200
+But yeah, this was a really fun project to be looped in on and a really fun, really fun way to again, like lots of strengths here,
+
+163
+00:13:28,200 --> 00:13:36,160
+we can see the strengths of using this deep learning, but also retaining the benefit of biological interpretability of these output
+
+164
+00:13:36,160 --> 00:13:44,240
+features so that you can drop a naive biologist in at the end of the project and they can give you like actual biological insight because we have these features,
+
+165
+00:13:44,240 --> 00:13:46,880
+feature names that still exist.
+
+166
+00:13:46,880 --> 00:13:52,320
+An excellent biologist, not, not, that's the adjective I would use.
+
+167
+00:13:52,320 --> 00:13:54,480
+Thank you, thank you.
+
+168
+00:13:54,480 --> 00:14:00,240
+Yeah, and again, you know, thanks to Asif for looping me in on this project.
+
+169
+00:14:00,240 --> 00:14:03,520
+And thanks to y'all for listening.
+
+170
+00:14:03,600 --> 00:14:06,320
+Yeah, go read the paper, it'll be in the notes.
+
+171
+00:14:06,320 --> 00:14:07,480
+It's a super cool approach.
+
+172
+00:14:07,480 --> 00:14:08,000
+I love it.
+
+173
+00:14:08,000 --> 00:14:10,480
+I'm super excited that you guys did this.
+
+174
+00:14:10,480 --> 00:14:10,960
+Yes.
+
+175
+00:14:10,960 --> 00:14:12,560
+Yeah, thanks.
+
+176
+00:14:12,560 --> 00:14:14,080
+All right, thank you.
+
+177
+00:14:14,080 --> 00:14:14,600
+Bye.
+

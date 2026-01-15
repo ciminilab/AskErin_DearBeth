@@ -1,0 +1,472 @@
+1
+00:00:16,000 --> 00:00:07,000
+Erin, hello.
+
+2
+00:00:07,000 --> 00:00:10,000
+Hello, Beth.
+
+3
+00:00:10,000 --> 00:00:12,000
+Good to see you.
+
+4
+00:00:12,000 --> 00:00:21,000
+I have something super exciting to tell you.
+
+5
+00:00:21,000 --> 00:00:22,000
+Tell me.
+
+6
+00:00:22,000 --> 00:00:26,000
+So you know how the name of the show is Ask Erin Dearbeth?
+
+7
+00:00:26,000 --> 00:00:38,000
+And our original idea was we're going to do a fake question thing where people were asking us questions.
+
+8
+00:00:38,000 --> 00:00:45,000
+Well, we put up when we started making the show a Ask Us a Question and somebody finally asked us a question.
+
+9
+00:00:45,000 --> 00:00:46,000
+We have a question.
+
+10
+00:00:46,000 --> 00:00:50,000
+That's from a listener question.
+
+11
+00:00:50,000 --> 00:00:54,000
+We now have a real advice column, not just a fake advice column.
+
+12
+00:00:54,000 --> 00:00:55,000
+I love it.
+
+13
+00:00:55,000 --> 00:00:57,000
+Oh my gosh, so exciting.
+
+14
+00:00:57,000 --> 00:00:59,000
+Yeah, I know.
+
+15
+00:00:59,000 --> 00:01:05,000
+So I would love to tell you about the question that Susan has asked us.
+
+16
+00:01:05,000 --> 00:01:06,000
+Wonderful.
+
+17
+00:01:06,000 --> 00:01:07,000
+I can't wait.
+
+18
+00:01:07,000 --> 00:01:08,000
+Yeah.
+
+19
+00:01:08,000 --> 00:01:19,000
+And so Susan wrote us in the form, which the form is always linked in the show notes and on our website, but you can feel free to ask us your own questions.
+
+20
+00:01:19,000 --> 00:01:30,000
+Susan wrote us and said, my images come from a Fox P1 IF on mouse embryo brain tissue comparing GFP Fox P1 signal in wild type and mutant sectioned samples.
+
+21
+00:01:30,000 --> 00:01:33,000
+I'm using a Kiance Wide Field Microscope to capture images.
+
+22
+00:01:33,000 --> 00:01:36,000
+There's eastact and stitched at high resolution.
+
+23
+00:01:36,000 --> 00:01:41,000
+We're segmenting and counting the Dapi-Stain nuclei using a CellProfiler pipeline.
+
+24
+00:01:41,000 --> 00:01:46,000
+And from there, measuring the intensity of the GFP signal to determine Fox P1 positive nuclei.
+
+25
+00:01:46,000 --> 00:01:53,000
+The issue is that there is unequal signal and illumination in the Dapi images with the boundaries brighter in the center dimmer.
+
+26
+00:01:53,000 --> 00:01:57,000
+I'm attaching both the Dapi image and the corresponding GFP image.
+
+27
+00:01:57,000 --> 00:02:00,000
+First of all, Susan, you are great at writing questions.
+
+28
+00:02:00,000 --> 00:02:01,000
+Like this is great.
+
+29
+00:02:01,000 --> 00:02:11,000
+So often when we talk to people on the image on a C-form, if you look, we have a previous episode encouraging people to give us more information because oftentimes people are just like, it's broke, it's not working.
+
+30
+00:02:11,000 --> 00:02:13,000
+Because they don't know what to ask.
+
+31
+00:02:13,000 --> 00:02:15,000
+But this is a great example of a question.
+
+32
+00:02:15,000 --> 00:02:17,000
+I'm so excited that this is our first question.
+
+33
+00:02:17,000 --> 00:02:19,000
+This is a beautiful question.
+
+34
+00:02:19,000 --> 00:02:22,000
+Five star question.
+
+35
+00:02:22,000 --> 00:02:25,000
+Thank you, Susan. You rock.
+
+36
+00:02:25,000 --> 00:02:33,000
+So I have taken the liberty of loading up Susan's images into CellProfiler into the workspace viewer.
+
+37
+00:02:34,000 --> 00:02:49,000
+And so here is her, which is being a little bit slow and cranky because these images are touch big and so profile, so profiler was born in a 256 by 256 world like so profiler little cranky on stitched images, but thankfully this isn't too too big.
+
+38
+00:02:49,000 --> 00:02:50,000
+Yeah.
+
+39
+00:02:50,000 --> 00:02:57,000
+And so you can definitely, even though everything is white because that's the default though not in so profile five.
+
+40
+00:02:57,000 --> 00:03:10,000
+You can definitely get a sense of just brightness like, okay, like here, things are much brighter and here things are much dimmer, which is exactly what Susan described.
+
+41
+00:03:10,000 --> 00:03:19,000
+And so you could imagine like differences in intensity coming from different sources. This doesn't look like this is something where it's like unequal illumination.
+
+42
+00:03:19,000 --> 00:03:25,000
+If it were, I would, you know, send Susan or anybody to our episode about illumination correction.
+
+43
+00:03:25,000 --> 00:03:43,000
+This doesn't look like that this looks like these nuclei are maybe just smaller or brighter or whatever and so these are truly brighter, and these are truly dimmer, but we actually want to treat them both the same.
+
+44
+00:03:43,000 --> 00:04:02,000
+So in zooming in, I have sort of a couple of thoughts in general. The first is just, you know, these are stitched and actually when they originally sent us their centers as JPEG so like, if I were going to be segmenting these and trying to count them in general, I would probably just do Cellpose rather than like, I mean Cellpose inside
+
+45
+00:04:02,000 --> 00:04:14,000
+or is totally a thing you can do but rather than trying to do CellProfiler segmentation just because when stuff gets this crowded, so profiler segmentation is often going to be not ideal.
+
+46
+00:04:14,000 --> 00:04:28,000
+The other thing you could think about if you didn't want to do deep learning segmentation for whatever reason, maybe you're not comfortable maybe just your computer's really slow is you can you could do something like a proxy metric.
+
+47
+00:04:28,000 --> 00:04:36,000
+Where we often tell people like, okay, if you can't measure the exact thing you want what's a close thing that you could measure that's easier to measure.
+
+48
+00:04:36,000 --> 00:04:54,000
+So like you could measure the percent of the image that's the DAPI positive and GFP positive. And since each nucleus is about the same size, if what you care about is like percent positive, the percent area positive should be very correlated with the percent number positive.
+
+49
+00:04:55,000 --> 00:05:13,000
+Actually segmenting individual nuclei, assuming that the individual nuclei are about the same size which they seem to me at a first class to be sort of 15 ish 20 ish pixels across in both areas, I think would probably actually kind of work.
+
+50
+00:05:13,000 --> 00:05:20,000
+But that's ultimately up to Susan and her biological question which she can figure out later.
+
+51
+00:05:20,000 --> 00:05:30,000
+I want to jump and just sort of actually answer the specific things she's having a problem with which is, well, some of these are brighter than these are dimmer what do I do about it.
+
+52
+00:05:30,000 --> 00:05:40,000
+So here I'm showing you the threshold module. I'm not sure you identify primary objects just because I really want to sort of emphasize like where the the issue is coming from.
+
+53
+00:05:40,000 --> 00:05:49,000
+But identify primary objects uses all of the same settings as the threshold module. In fact, it literally just brings the threshold module in sneakily under the hood.
+
+54
+00:05:49,000 --> 00:06:02,000
+So you'll get the same effect here. So this is what describes in her question. If I just threshold this, she didn't specify exactly which threshold method she uses, but I suspect it's going to be the same no matter what.
+
+55
+00:06:02,000 --> 00:06:07,000
+Here is what you get.
+
+56
+00:06:07,000 --> 00:06:20,000
+And if I zoom in here, zoom in a little bit more, like everything is being picked up, even things that like are really definitely like not nuclear they're between nuclei.
+
+57
+00:06:20,000 --> 00:06:29,000
+But that's going to make it really hard to segment because CellProfiler like thinks it should be counting these areas and it shouldn't. It's that's wrong.
+
+58
+00:06:29,000 --> 00:06:38,000
+And that's what you get in the bright areas and then in the dim areas you end up with the opposite problem, which is there's totally real stuff there.
+
+59
+00:06:38,000 --> 00:06:51,000
+But so profiler isn't finding it, because it's just a little bit different. So like this nucleus here or piece of a nucleus or whatever is just totally missing.
+
+60
+00:06:51,000 --> 00:06:55,000
+Thankfully, there's actually really simple solution for this.
+
+61
+00:06:55,000 --> 00:07:13,000
+And so this is actually going to kick off. We're going to talk a few of the next several episodes about the thresholding settings in CellProfiler and why they're actually really important to understand all of them, even though there's a bunch of them, because you can actually solve a lot of problems just with changes in how you do thresholding.
+
+62
+00:07:13,000 --> 00:07:19,000
+And the key setting here for Susan is this threshold strategy.
+
+63
+00:07:19,000 --> 00:07:24,000
+Here the default in CellProfiler is global.
+
+64
+00:07:24,000 --> 00:07:28,000
+But there's actually two options here there's global and there's adaptive.
+
+65
+00:07:28,000 --> 00:07:37,000
+And if you're ever not sure what a particular setting is doing in CellProfiler reminder that the most important button in CellProfiler are these little help buttons, which are next to every single setting.
+
+66
+00:07:37,000 --> 00:07:41,000
+Every single setting has biologists written help texts.
+
+67
+00:07:41,000 --> 00:07:48,000
+And it actually tells you what these two different modes are and when you should use them.
+
+68
+00:07:48,000 --> 00:07:54,000
+And so the global calculates a single threshold value based on the whole image.
+
+69
+00:07:54,000 --> 00:07:57,000
+And that's much faster, which is why it's our default.
+
+70
+00:07:57,000 --> 00:08:07,000
+But if you need a different threshold in different regions, you can go to this adaptive mode and then you can say in different regions pick a different threshold.
+
+71
+00:08:07,000 --> 00:08:13,000
+And then you can get different thresholds across different parts of the image.
+
+72
+00:08:13,000 --> 00:08:18,000
+So I went ahead and I set up an adaptive threshold here.
+
+73
+00:08:18,000 --> 00:08:24,000
+And I picked, so the major sort of configurable thing here is the size of the window.
+
+74
+00:08:24,000 --> 00:08:29,000
+So I picked a sort of 200 by 200 window of the image.
+
+75
+00:08:29,000 --> 00:08:35,000
+So in theory, each sort of 200 by 200 block gets thresholded independently.
+
+76
+00:08:35,000 --> 00:08:45,000
+And so profiler just some like magic stuff under the hood that I won't go into in terms of making sure that it's not like you have a threshold of like 0.5 here and 0.001 over here.
+
+77
+00:08:45,000 --> 00:08:53,000
+It tries to actually make all of the thresholds kind of coherent so that it's not you get, if your window is too small, you get crazy things to happen.
+
+78
+00:08:53,000 --> 00:08:57,000
+But you can actually see here what the threshold values are that it's picking.
+
+79
+00:08:57,000 --> 00:09:00,000
+And I love that this is actually part of the module display.
+
+80
+00:09:00,000 --> 00:09:08,000
+And so what you can immediately visually get the sense of is you have higher threshold values that have to be passed up here where the things are bright.
+
+81
+00:09:08,000 --> 00:09:12,000
+And the lowest threshold values down here where the things are dim.
+
+82
+00:09:12,000 --> 00:09:19,000
+So down here it's picking a threshold of something like 0.02 and up here a threshold of something like 0.04.
+
+83
+00:09:19,000 --> 00:09:22,000
+And so if I zoom in.
+
+84
+00:09:22,000 --> 00:09:31,000
+Yeah, I love that because you can see, you know, you can see the pattern of the threshold values, changing the pattern of the brightness.
+
+85
+00:09:31,000 --> 00:09:32,000
+Yeah.
+
+86
+00:09:32,000 --> 00:09:51,000
+And so immediately you can have this intuition of like, oh yeah, that that worked or like that certainly is going to work better than by global thresholding you can see like, and if if that pops up and your patterns are not matching like oh I need to you know before I even dive in I know I need to adjust my
+
+87
+00:09:51,000 --> 00:09:56,000
+background to go or some other settings because it should be similar.
+
+88
+00:09:56,000 --> 00:09:57,000
+Yeah.
+
+89
+00:09:57,000 --> 00:10:06,000
+And so this I just assumed in a super dim area this area looks like it's actually fully capturing everything now.
+
+90
+00:10:06,000 --> 00:10:12,000
+And if I zoom in on a really bright area.
+
+91
+00:10:12,000 --> 00:10:17,000
+It's still picking up a lot it's picking up a lot more than I would really prefer.
+
+92
+00:10:17,000 --> 00:10:26,000
+But there is a lot of out of focus light that's going on here so like, it is at least like that this big region where there aren't nuclei it is now like catching that there isn't.
+
+93
+00:10:26,000 --> 00:10:29,000
+And some of the other breaks between them.
+
+94
+00:10:29,000 --> 00:10:40,000
+There are definitely more things and we're going to talk in further episodes about how you can tweak the thresholding algorithm even more to try and get even more like more strict or less strict or things like that.
+
+95
+00:10:40,000 --> 00:10:54,000
+And I think to answer Susan's overall original question. This is a super common thing. The solution to it is adaptive thresholding and in the identify primary objects module.
+
+96
+00:10:54,000 --> 00:11:02,000
+If you go ahead and you turn advanced settings on when you have when you go to do the thresholding and if a primary objects you have the same global adaptive.
+
+97
+00:11:02,000 --> 00:11:12,000
+And so, assuming you don't decide to just go do something like Cellpose which you possibly should switching or identify primary objects from global to adaptive will get you what you want to get.
+
+98
+00:11:12,000 --> 00:11:17,000
+Love it. So simple, like one button change.
+
+99
+00:11:17,000 --> 00:11:23,000
+But you have to know which of the which of the 1000 buttons which I'm so glad that Susan read in because you can tell her.
+
+100
+00:11:23,000 --> 00:11:26,000
+Yes, absolutely.
+
+101
+00:11:26,000 --> 00:11:28,000
+Anything else you'd add.
+
+102
+00:11:28,000 --> 00:11:40,000
+No, I think this is a great, a great start. I mean, and as you said, exactly like a love that is just one button and CellProfiler but CellProfiler has so many buttons and it's literally almost 1000 buttons.
+
+103
+00:11:40,000 --> 00:11:42,000
+Yeah, yeah.
+
+104
+00:11:42,000 --> 00:11:49,000
+That is a fun, a fun thing for us to get to do work on those buttons and help explain.
+
+105
+00:11:49,000 --> 00:11:55,000
+You know, so 1027 we know.
+
+106
+00:11:55,000 --> 00:11:57,000
+We won't do that.
+
+107
+00:11:57,000 --> 00:12:20,000
+No, no, but I do you know I do think I do think that is one of those things that like as sort of advanced image analysts that we have, you know, the, the benefit of anybody like working collaborating with working with or training as an actual image analyst is that you know we have this immediate
+
+108
+00:12:20,000 --> 00:12:28,000
+intuition that we, you know, we immediately know what is that one button you should change.
+
+109
+00:12:28,000 --> 00:12:39,000
+And so, yeah, just put a plot, you know, ask us for Ask Erin Dear Beth oh my gosh. Yeah, questions, but we also have as you mentioned an episode about asking questions for the forum.
+
+110
+00:12:39,000 --> 00:12:54,000
+So that's another great place to, you know, like get help from expert image analysts who can, you know, again, you know, and I think another cool thing we've sort of touched on at other points is like we don't need to know your biology.
+
+111
+00:12:54,000 --> 00:13:06,000
+I don't need to know the names of your genes or your labels, or in this case you don't because you know I mean we have them but that didn't actually come into play so as an analyst.
+
+112
+00:13:06,000 --> 00:13:22,000
+We're going to have lots of expertise, totally independent of that is applicable sort of regardless of what the underlying biology is applicable to so many different underlying biologists because it's a similar image task.
+
+113
+00:13:22,000 --> 00:13:33,000
+And so it's and it's not always clear. If you don't know these things like how how certain image tasks relate to one another which is why we have office hours there's the forum.
+
+114
+00:13:33,000 --> 00:13:46,000
+There's the Ask Erin Dear Beth Q&A form which people have actually filled out now so totally ask us things. This is an advice column for real now.
+
+115
+00:13:46,000 --> 00:13:54,000
+Awesome. Well, that thank you for kicking off our real advice.
+
+116
+00:13:54,000 --> 00:13:59,000
+All right, and we'll be back in future episodes to talk more about the threshold module because it's a cool module.
+
+117
+00:13:59,000 --> 00:14:01,000
+Can't wait.
+
+118
+00:14:16,000 --> 00:14:19,000
+you
+

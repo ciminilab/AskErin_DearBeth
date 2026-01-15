@@ -1,0 +1,560 @@
+1
+00:00:16,000 --> 00:00:05,000
+Hello!
+
+2
+00:00:05,000 --> 00:00:07,000
+Hello!
+
+3
+00:00:07,000 --> 00:00:20,000
+Um, I hope you're doing good.
+
+4
+00:00:20,000 --> 00:00:23,000
+Um, I hope it's a good day.
+
+5
+00:00:23,000 --> 00:00:27,000
+Um, it's an even better day now that I'm hanging out with you, Beth.
+
+6
+00:00:27,000 --> 00:00:28,000
+Yeah.
+
+7
+00:00:28,000 --> 00:00:44,000
+Um, so I thought based on, um, the episodes before we were talking about where the Threshold module and how it has lots of buttons and how actually sometimes it's just like the one right button is like makes your image analysis task so much easier.
+
+8
+00:00:44,000 --> 00:00:49,000
+Um, that we'd spend a couple more episodes actually talking just about this one module.
+
+9
+00:00:49,000 --> 00:01:03,000
+Um, because Threshold is like where you live and die in image analysis, especially if you're doing classical segmentation. So I mean like not self-posed, not stardust, not instance ag, but like good old identify primary objects.
+
+10
+00:01:03,000 --> 00:01:14,000
+Um, so it's a super important module. And if you know exactly how to use it, like your image analysis gets so much better so fast.
+
+11
+00:01:14,000 --> 00:01:29,000
+Um, so to keep it from being like overwhelmingly mathy, you're going to talk about just a couple of the settings about Threshold module today and we'll talk about a couple more in a future episode.
+
+12
+00:01:29,000 --> 00:01:31,000
+All right, shall we dig in?
+
+13
+00:01:31,000 --> 00:01:33,000
+Yes, let's do it.
+
+14
+00:01:33,000 --> 00:01:34,000
+All right.
+
+15
+00:01:34,000 --> 00:01:35,000
+One slump.
+
+16
+00:01:35,000 --> 00:01:39,000
+Yes, there will be no math.
+
+17
+00:01:39,000 --> 00:01:40,000
+No math.
+
+18
+00:01:40,000 --> 00:01:41,000
+No math.
+
+19
+00:01:41,000 --> 00:01:42,000
+Wow.
+
+20
+00:01:42,000 --> 00:01:45,000
+There will be concepts of a math, but no.
+
+21
+00:01:45,000 --> 00:01:46,000
+Okay.
+
+22
+00:01:46,000 --> 00:01:51,000
+I'm here. I'm here for that. We can do concepts of a math.
+
+23
+00:01:51,000 --> 00:02:03,000
+All right. So if we have an image that is a fluorescence image and we look at the histogram of the pixel intensity values.
+
+24
+00:02:03,000 --> 00:02:12,000
+So we say like these are dim pixels and these are super bright pixels and we just count how many dim pixels are there, how many bright pixels there are.
+
+25
+00:02:12,000 --> 00:02:17,000
+Often you will end up with something that looks like this.
+
+26
+00:02:17,000 --> 00:02:22,000
+You have lots of dim pixels and a few bright pixels.
+
+27
+00:02:22,000 --> 00:02:27,000
+Now, of course, the relative ratio of those things is going to depend how much bright stuff is in your picture.
+
+28
+00:02:27,000 --> 00:02:34,000
+But like this is as mathy as we get.
+
+29
+00:02:34,000 --> 00:02:53,000
+So because this is ultimately kind of as mathy as we need to get because all thresholding essentially comes down to if I am trying to fit curves and you don't need to understand how, but if you just are trying to fit curves onto this, where do you draw the line?
+
+30
+00:02:53,000 --> 00:02:59,000
+Like where do you say like this curve falls and this curve falls.
+
+31
+00:02:59,000 --> 00:03:08,000
+And like different algorithms will do different maths and will come up with different answers.
+
+32
+00:03:08,000 --> 00:03:14,000
+Now, if there was one true way of staining things, that would be bad.
+
+33
+00:03:14,000 --> 00:03:18,000
+Like we would have one and we would only use it.
+
+34
+00:03:18,000 --> 00:03:26,000
+But thankfully biology is weird and wild and wonderful and staining looks lots of totally different ways.
+
+35
+00:03:26,000 --> 00:03:37,000
+So there's different algorithms we can pick from that depending on the exact shape of this histogram will be the right one for us.
+
+36
+00:03:37,000 --> 00:03:41,000
+And so choice of which algorithm you're going to use.
+
+37
+00:03:41,000 --> 00:03:47,000
+And again, you really don't need to understand the math.
+
+38
+00:03:47,000 --> 00:04:03,000
+But if you understand what certain ones are good for and not good for that will often be the difference between your image analysis going super quickly and super easily versus being like super painful.
+
+39
+00:04:03,000 --> 00:04:10,000
+So I'm just going to list the ones that CellProfiler uses.
+
+40
+00:04:10,000 --> 00:04:23,000
+Self profile also has manual thresholding though like it's pretty rare you would ever want to use that I generally do not suggest you manually threshold things, except for like very particular cases that we will not go into.
+
+41
+00:04:23,000 --> 00:04:32,000
+But if assuming that you're just like trying to separate like parts of your image that have stuff versus not stuff you want an algorithmic threshold.
+
+42
+00:04:32,000 --> 00:04:44,000
+And the default and CellProfiler if you've ever used CellProfiler in identify primary objects with no threshold being shown and just like advanced settings set to know what it's using is something called minimum press entropy.
+
+43
+00:04:44,000 --> 00:04:50,000
+And minimum press entropy is good for when there's readily identifiable foreground and background.
+
+44
+00:04:50,000 --> 00:05:10,000
+If it's look super different between the two. Probably you want either minimum press entropy, or you want to which is was previously that a fault and CellProfiler is still the traditional to class out to really really good, especially if your there's very little
+
+45
+00:05:10,000 --> 00:05:15,000
+sort of variability in both your background and your foreground.
+
+46
+00:05:15,000 --> 00:05:23,000
+What's really fun about Otsu is it comes in two flavors. It comes in two class flavor and three class flavor.
+
+47
+00:05:23,000 --> 00:05:32,000
+And the three class flavor I'll just quickly draw on my own slide for a second.
+
+48
+00:05:32,000 --> 00:05:34,000
+Let's get a nice.
+
+49
+00:05:34,000 --> 00:05:39,000
+No, I don't want a vanishing pen I want just a pen.
+
+50
+00:05:39,000 --> 00:05:45,000
+So what if my histogram looked like this instead.
+
+51
+00:05:45,000 --> 00:05:54,000
+So this might be like background auto fluorescence and then like your actual signal.
+
+52
+00:05:54,000 --> 00:05:55,000
+Yeah.
+
+53
+00:05:55,000 --> 00:06:09,000
+Or this might be like background your dim cells and your bright cells right. And so like, depending on your biology, like, you might want to draw the threshold here you might want to draw the threshold here.
+
+54
+00:06:09,000 --> 00:06:22,000
+And with three class out so you can do that you can say hey look there's going to be three peaks there, try to find three peaks and actually like, either put the middle one as signal or put the middle one as background.
+
+55
+00:06:22,000 --> 00:06:41,000
+So I just like, I just got to throw it out there like that is my yeah that you know when if anything if I'm struggling I'm like alright let's just have a rough time like let's just start with a three class Otsu and see if that fixes it and like, yeah, yeah, I love me a good three class Otsu just putting that
+
+56
+00:06:41,000 --> 00:06:47,000
+Yeah, we're the kind of people who have favorite thresholding algorithms.
+
+57
+00:06:47,000 --> 00:06:59,000
+Yeah, totally. In case there was any confusion about how big of nerds we are like, yes, we do have favorite thresholding algorithms.
+
+58
+00:06:59,000 --> 00:07:13,000
+Mine actually because I used to work on a lot of specular stuff and I'll show you some specular stuff in just a second is actually robust background, which is a thresholding method that and Carpenter just like vibe invented when she was making so profiler.
+
+59
+00:07:13,000 --> 00:07:18,000
+So robust background is great. If most of your image is background.
+
+60
+00:07:18,000 --> 00:07:30,000
+So this like fitting two curves or three curves or whatever like trick can get really hard if like only like one or 2% of your image is signal and the rest of it is background.
+
+61
+00:07:30,000 --> 00:07:41,000
+So like the robust background method does and again you don't have to sort of like be super clear on the math but you can just know it says I'm going to ignore the whole right side of the histogram.
+
+62
+00:07:41,000 --> 00:07:45,000
+I'm only going to fit this peak here.
+
+63
+00:07:45,000 --> 00:07:58,000
+And then I'm going to say like, okay, let's go a couple standard deviations above this background noise and just if it's if it's much much brighter, brighter than the background which there's tons of, then probably it's a real signal.
+
+64
+00:07:58,000 --> 00:08:05,000
+It doesn't actually try to look for signal at all. It just says, hey, what can I know about the background.
+
+65
+00:08:05,000 --> 00:08:15,000
+And I think we talked about this a little bit also in our sparkle slash special episode a while back so you can drop that Lincoln show notes to yes.
+
+66
+00:08:15,000 --> 00:08:19,000
+Well, which is exactly the images that I was just about to pull out.
+
+67
+00:08:19,000 --> 00:08:22,000
+Thank you for the excellent excellent segue.
+
+68
+00:08:22,000 --> 00:08:24,000
+Look at that segue.
+
+69
+00:08:24,000 --> 00:08:25,000
+It's like we planned it or something.
+
+70
+00:08:25,000 --> 00:08:27,000
+Yeah, we really didn't.
+
+71
+00:08:27,000 --> 00:08:30,000
+I had no idea.
+
+72
+00:08:30,000 --> 00:08:35,000
+So,
+
+73
+00:08:35,000 --> 00:08:42,000
+here are our images from our speckles slash sparkles episode.
+
+74
+00:08:42,000 --> 00:08:48,000
+And if you think back to that episode, we had some images that were nuclei.
+
+75
+00:08:48,000 --> 00:08:52,000
+And we had some images that were speckly.
+
+76
+00:08:52,000 --> 00:08:56,000
+Those are both channel one.
+
+77
+00:08:56,000 --> 00:09:01,000
+Let me change so super super good CellProfiler prayer tip here.
+
+78
+00:09:01,000 --> 00:09:08,000
+If you're looking at something and like the channels are just all like really dim, you can go to settings.
+
+79
+00:09:08,000 --> 00:09:13,000
+And you can change the normalization.
+
+80
+00:09:13,000 --> 00:09:20,000
+So if you put it in like log normalization and I'm going to just like completely guess the number here, often something like 20 is good.
+
+81
+00:09:20,000 --> 00:09:27,000
+Then stuff seems brighter and then if you if stuff is too bright, yeah, so now that's too bright.
+
+82
+00:09:27,000 --> 00:09:29,000
+So now I'm going to have to like drop that number down.
+
+83
+00:09:29,000 --> 00:09:41,000
+I can actually check in my contrast thing like what a good number would be three.
+
+84
+00:09:41,000 --> 00:09:46,000
+Whatever, three is fine.
+
+85
+00:09:46,000 --> 00:09:55,000
+Oh, now this is stuck under the same bar.
+
+86
+00:09:55,000 --> 00:10:04,000
+It's cool. I think the other one is a little dimmer. So I'm going to go with five. But anyway, so now we can see nuclei.
+
+87
+00:10:04,000 --> 00:10:08,000
+And we can see speckly stuff.
+
+88
+00:10:08,000 --> 00:10:10,000
+Great.
+
+89
+00:10:10,000 --> 00:10:16,000
+So this is actually the same pipeline that I used.
+
+90
+00:10:16,000 --> 00:10:21,000
+I just took out all of the modules we didn't need here.
+
+91
+00:10:21,000 --> 00:10:33,000
+And if I do identify parameters on my nuclei, I just said if if I'm using those sort of advanced settings being off, that's minimum cross entropy.
+
+92
+00:10:33,000 --> 00:10:36,000
+And if I hit step.
+
+93
+00:10:36,000 --> 00:10:38,000
+I said beautifully identified nuclei.
+
+94
+00:10:38,000 --> 00:10:40,000
+Beautiful.
+
+95
+00:10:40,000 --> 00:10:49,000
+I said when there's lots of like good single noise, OTSU is usually also pretty good to class OTSU. If I do to class OTSU here.
+
+96
+00:10:49,000 --> 00:10:52,000
+Also still beautifully identified nuclei.
+
+97
+00:10:52,000 --> 00:10:55,000
+Yeah.
+
+98
+00:10:55,000 --> 00:11:04,000
+Those settings often behave super super similarly though, I will definitely show you in a second some cases where they don't.
+
+99
+00:11:04,000 --> 00:11:15,000
+But for our speckles here, most of our signal is background. And so we definitely want the robust background module.
+
+100
+00:11:15,000 --> 00:11:27,000
+And so what this is doing is it's saying let's take the mean and standard deviation of the histogram of this image which you can see is like a big line with nothing.
+
+101
+00:11:27,000 --> 00:11:44,000
+And look for the mean and standard deviation of the histogram and then say here we picked a super because these are really great gorgeous bright spots on a really dim background because we've used enhancers press features to make it that way.
+
+102
+00:11:44,000 --> 00:12:01,000
+Then I say I can go 10 standard deviations above the mean. And again, I promise like only concepts of math, make this number bigger. If the thing isn't is too isn't strict enough and make the number smaller if it's too strict.
+
+103
+00:12:01,000 --> 00:12:26,000
+And you'll notice that most of the explanations in the subpar filer like settings are all sort of like that it's about like, how do you fix different categories of problems it's not usually like, here's the equation for standard deviation, it's like, use standard deviation versus median deviation in certain situations so the settings are written to try to help be like super practical.
+
+104
+00:12:26,000 --> 00:12:36,000
+If I had used OTSU here, because OTSU isn't right for images that look like this.
+
+105
+00:12:36,000 --> 00:12:42,000
+Of course, like, in this one case, it is fine.
+
+106
+00:12:42,000 --> 00:12:50,000
+But if I had used it not on the enhanced image but just like before I had done the enhancement and I had picked OTSU.
+
+107
+00:12:50,000 --> 00:13:14,000
+Now I get insanity versus with robust background, even when this isn't as clean this should still be better than. Yeah, so now this is still picking out some of the spec was that we want also some crud because we haven't done crud filtering, which we did in the enhancers press features, but even with all this background there.
+
+108
+00:13:14,000 --> 00:13:25,000
+It's getting only the things that we care about and if I adjusted the diameter settings a little bit I right now have discard things outside the diameter range to know because that's what it was set to in the previous pipeline.
+
+109
+00:13:25,000 --> 00:13:34,000
+If I dropped that back to yes, now we've lost all the crazy stuff and even with a lot of background we're still mostly only getting the speckles we want.
+
+110
+00:13:34,000 --> 00:13:42,000
+So that one choice of like which setting, which algorithm to use is like the difference between success and failure.
+
+111
+00:13:43,000 --> 00:13:49,000
+Yeah, so that feels like enough math for one episode.
+
+112
+00:13:49,000 --> 00:13:55,000
+Though again please do if you're looking at if you're like I'm not really sure what to do with like the settings.
+
+113
+00:13:55,000 --> 00:14:03,000
+This is probably like which thresholding algorithm should I use is probably the longest help text in sub-profiler settings.
+
+114
+00:14:04,000 --> 00:14:16,000
+But it has these like thumbs up thumbs downs of like this is when you should use this like this is what it's good for this is what it's not good for it's really trying to not be mappy but instead to be like very practical.
+
+115
+00:14:16,000 --> 00:14:32,000
+Yeah, yeah, and it's biologists that wrote this, not computer programmers so it's you know it is us saying like hey when I you know when I'd use this tool I am a user of this tool and this is what I know about it.
+
+116
+00:14:32,000 --> 00:14:34,000
+Anything else we should we should add.
+
+117
+00:14:34,000 --> 00:14:36,000
+I think that's a great.
+
+118
+00:14:36,000 --> 00:14:43,000
+Oh, I forgot I want to I forgot to show you three class out soon give me one second.
+
+119
+00:14:43,000 --> 00:14:52,000
+Yeah, I will wait for three class out to again remember you know I have I have favorites.
+
+120
+00:14:52,000 --> 00:15:05,000
+So here I'm going to show you some Cell Painting images, which you may have seen our recent episodes about Cell Painting.
+
+121
+00:15:05,000 --> 00:15:13,000
+And I'm going to specifically use what we sometimes have now started calling the AGP channel but the one that has acting and Golgi.
+
+122
+00:15:13,000 --> 00:15:28,000
+I'm picking that because it's got two different kinds of intensity here so now let me me adjust this visualization so that everything we look at looks nice and pretty. Yeah, see sometimes 20 is a good number.
+
+123
+00:15:28,000 --> 00:15:32,000
+And it can be a good number depending on what we're looking at.
+
+124
+00:15:32,000 --> 00:15:40,000
+When in doubt just just check don't try to guess.
+
+125
+00:15:40,000 --> 00:15:44,000
+So here, if I know run this again.
+
+126
+00:15:44,000 --> 00:15:57,000
+So this is two class out to on this image where you can see there are definitely three classes of intensity. There's, you know, the background, the cell, which is like full of phalloid and stuff.
+
+127
+00:15:57,000 --> 00:16:13,000
+And for some reason that I'm not totally sure why in these images, it might have been they were playing with a different sting configuration or something, or there's just more bleed through because this is a different microscope than the ones air and showed in some of the previous ones, where you get more
+
+128
+00:16:13,000 --> 00:16:25,000
+bleed through from the site O channel. We actually see a fair amount of the nucleus which is not what we see usually in Cell Painting but we can see it here and like it's clearly there it exists.
+
+129
+00:16:25,000 --> 00:16:34,000
+So if I look at my image histogram here, like there's definitely like a bump a bump and then like a third bump going on.
+
+130
+00:16:34,000 --> 00:16:40,000
+So three class out to generally doesn't do what we want.
+
+131
+00:16:40,000 --> 00:16:50,000
+So maybe here does a kind of okay job, though that's definitely like image set dependent.
+
+132
+00:16:50,000 --> 00:17:07,000
+Sometimes it does a much worse job because it's just not really designed for cases where you have these three intensity things, but three class out to and in this case we've said we do want this middle class because what we're trying to do here is actually identify the cells.
+
+133
+00:17:07,000 --> 00:17:12,000
+So three class out to does a much better job.
+
+134
+00:17:12,000 --> 00:17:17,000
+And if I go back to that,
+
+135
+00:17:17,000 --> 00:17:24,000
+this other image,
+
+136
+00:17:24,000 --> 00:17:45,000
+here, the mce is not doing a very good job at all but the three class out to is like yeah no I see three peaks like and I know what to do with the middle one and so it does a much much better job of then either of the ones that are designed for sort of two peaks.
+
+137
+00:17:45,000 --> 00:17:51,000
+You might have noticed in the last one that it wasn't quite as clean a separation as this one.
+
+138
+00:17:51,000 --> 00:17:57,000
+And spoiler alert the next time we talk about thresholding, I will tell you why.
+
+139
+00:17:57,000 --> 00:18:03,000
+Oh, can't wait. That's a cliffhanger.
+
+140
+00:18:03,000 --> 00:18:09,000
+All right, until then. Until then, I'll talk to you later. Can't wait.
+

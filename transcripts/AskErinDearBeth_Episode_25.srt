@@ -1,0 +1,1196 @@
+1
+00:00:16,000 --> 00:00:05,000
+Hello Beth.
+
+2
+00:00:05,000 --> 00:00:18,800
+Hello Erin, always lovely to see you.
+
+3
+00:00:18,800 --> 00:00:19,800
+I agree.
+
+4
+00:00:19,800 --> 00:00:28,280
+Yeah, so recently we actually gave a quick overview, well as quick as I'm able to do
+
+5
+00:00:28,280 --> 00:00:30,280
+when I'm talking about it.
+
+6
+00:00:30,280 --> 00:00:32,800
+Of the Cell Painting Assay.
+
+7
+00:00:32,800 --> 00:00:41,440
+And so today I thought it would be interesting to dive into like what do Cell Painting features
+
+8
+00:00:41,440 --> 00:00:43,440
+mean.
+
+9
+00:00:43,440 --> 00:00:53,000
+There's a lot of discussion in particularly, you know, right now in morphological profiling,
+
+10
+00:00:53,000 --> 00:00:58,200
+which again as I sort of said in the Cell Painting episode is kind of like the omics
+
+11
+00:00:58,200 --> 00:01:03,160
+of looking at cell shape that we're doing in Cell Painting Assay.
+
+12
+00:01:03,160 --> 00:01:04,160
+And.
+
+13
+00:01:04,160 --> 00:01:07,560
+And intensity and textures and crazy.
+
+14
+00:01:07,560 --> 00:01:09,840
+Yes, yes, absolutely.
+
+15
+00:01:09,840 --> 00:01:10,840
+Yeah.
+
+16
+00:01:10,840 --> 00:01:17,960
+But in our, I mean, I think in probably in every field, but I can only speak knowledgeably
+
+17
+00:01:17,960 --> 00:01:21,960
+about our particular field, you know, there's lots of discussion at the moment of like,
+
+18
+00:01:21,960 --> 00:01:24,120
+okay, everybody wants to do deep learning.
+
+19
+00:01:24,120 --> 00:01:30,080
+And one of the major drawbacks of many deep learning techniques is that the features that
+
+20
+00:01:30,080 --> 00:01:36,240
+come out at the end that are, you know, describing your condition are not interpretable.
+
+21
+00:01:36,240 --> 00:01:42,440
+And so the Cell Painting Assay and the sort of more traditional features that we're getting
+
+22
+00:01:42,440 --> 00:01:47,240
+out of CellProfiler are quite interpretable.
+
+23
+00:01:48,200 --> 00:01:55,000
+And so I thought it would be helpful though to kind of like dive into the feature names
+
+24
+00:01:55,000 --> 00:02:01,880
+and explain like, great, people say, oh yeah, CellProfiler is interpretable, but like,
+
+25
+00:02:01,880 --> 00:02:03,360
+how do we actually interpret them?
+
+26
+00:02:03,360 --> 00:02:05,000
+Let's look at them.
+
+27
+00:02:05,000 --> 00:02:16,040
+So yeah, with that, I am sharing here, this is a page in, so the 2023 Simony Nature Protocols
+
+28
+00:02:16,040 --> 00:02:28,480
+paper was a giant work led by my dear, dear Beth right here.
+
+29
+00:02:28,480 --> 00:02:30,680
+That was optimizing the Cell Painting Assay.
+
+30
+00:02:30,680 --> 00:02:36,160
+So this is the second time that we had a major protocol paper published on the Cell Painting
+
+31
+00:02:36,160 --> 00:02:37,160
+assay.
+
+32
+00:02:37,160 --> 00:02:43,880
+But here in this repository, and we'll drop the Lincoln show notes, we have a wiki that
+
+33
+00:02:43,880 --> 00:02:50,680
+has just sort of some extra like casual, more casual information about the Cell Painting
+
+34
+00:02:50,680 --> 00:02:51,680
+assay.
+
+35
+00:02:51,680 --> 00:02:57,920
+And one of the things we have in here is what do Cell Painting features even mean?
+
+36
+00:02:57,920 --> 00:03:03,080
+And so I thought this was just a great thing to like scroll through chat through and explain
+
+37
+00:03:03,080 --> 00:03:04,080
+what they mean.
+
+38
+00:03:04,080 --> 00:03:08,880
+Well, and because I mean capable of taking credit for anything, this is basically copied
+
+39
+00:03:08,880 --> 00:03:16,160
+verbatim from like the wiki for the Cell Painting v2 paper and was built over like many years
+
+40
+00:03:16,160 --> 00:03:17,280
+by lots of people.
+
+41
+00:03:17,280 --> 00:03:20,920
+This is not a thing that I personally made.
+
+42
+00:03:20,920 --> 00:03:25,640
+But it is a really great resource that the lab has made over the years.
+
+43
+00:03:25,640 --> 00:03:26,640
+Yes.
+
+44
+00:03:26,640 --> 00:03:27,640
+Yeah.
+
+45
+00:03:27,640 --> 00:03:30,480
+All right, fine.
+
+46
+00:03:30,480 --> 00:03:33,080
+You can refuse to take credit, sole credit on this.
+
+47
+00:03:33,080 --> 00:03:37,560
+Didn't mean to, but yeah, did not mean to imply this was all the last work because so
+
+48
+00:03:37,640 --> 00:03:44,160
+many fabulous, wonderful scientists have worked to lead us to this point.
+
+49
+00:03:44,160 --> 00:03:45,160
+Yes.
+
+50
+00:03:45,160 --> 00:03:51,120
+But it is in a repository for the paper that that led.
+
+51
+00:03:51,120 --> 00:03:53,560
+So that is true.
+
+52
+00:03:53,560 --> 00:03:55,680
+I'm just I'm just putting that out there.
+
+53
+00:03:55,680 --> 00:03:56,680
+Okay.
+
+54
+00:03:56,680 --> 00:03:58,680
+Here we go.
+
+55
+00:03:58,680 --> 00:04:04,840
+So if you need a refresher on the Cell Painting Assay, you know, go go check out the that episode
+
+56
+00:04:04,920 --> 00:04:08,120
+will drop it in in show notes.
+
+57
+00:04:08,120 --> 00:04:13,160
+But basically, we as a reminder, we have pictures of cells.
+
+58
+00:04:13,160 --> 00:04:14,840
+We identify nuclei.
+
+59
+00:04:14,840 --> 00:04:16,720
+We identify cell bodies.
+
+60
+00:04:16,720 --> 00:04:21,680
+We define the cytoplasm, which is the cell minus the nucleus.
+
+61
+00:04:21,680 --> 00:04:29,160
+And then there are a number of channels that we are making measurements in.
+
+62
+00:04:29,160 --> 00:04:37,040
+So we are identifying the cell, for example, and then making a whole series of measurements
+
+63
+00:04:37,040 --> 00:04:38,760
+using that same object.
+
+64
+00:04:38,760 --> 00:04:44,040
+So one thing I want to emphasize here is that the object that we are identifying, we may
+
+65
+00:04:44,040 --> 00:04:49,680
+use some comBINAtion of channels for identifying like a cell object.
+
+66
+00:04:49,680 --> 00:04:55,680
+But then that object is independent of the channels that we used to identify it.
+
+67
+00:04:55,720 --> 00:05:00,800
+It is just now like a mathematical squiggle, right?
+
+68
+00:05:00,800 --> 00:05:07,040
+And we're saying, okay, now I can place that squiggle on top of any of these images and
+
+69
+00:05:07,040 --> 00:05:10,400
+make measurements about what is inside that squiggle.
+
+70
+00:05:10,400 --> 00:05:16,840
+Sorry, in any of, yeah, in any of these images independently of what I used to create that
+
+71
+00:05:16,840 --> 00:05:17,840
+cell object.
+
+72
+00:05:17,840 --> 00:05:21,400
+Yeah, that's a super important point to emphasize.
+
+73
+00:05:21,400 --> 00:05:22,400
+Yeah.
+
+74
+00:05:22,400 --> 00:05:26,600
+So we have these five channels.
+
+75
+00:05:26,600 --> 00:05:28,600
+We give them names.
+
+76
+00:05:28,600 --> 00:05:35,720
+Usually we name them based on what we are looking at, the expected structure.
+
+77
+00:05:35,720 --> 00:05:43,320
+So DNA, RNA, ER, mito, AGP, standing for actin, Golgi, and plasma membrane.
+
+78
+00:05:43,320 --> 00:05:50,000
+So that is our description for the image itself, because it's the structure that we are expecting
+
+79
+00:05:50,000 --> 00:05:56,520
+to see in that image based on the stain that should be showing in that channel that we
+
+80
+00:05:56,520 --> 00:05:59,800
+imaged.
+
+81
+00:05:59,800 --> 00:06:08,520
+We have, right, so then many, many, many measurements, thousands of measurements.
+
+82
+00:06:08,520 --> 00:06:14,320
+And yeah, this is an older version, because back then we were only doing like 2000 features,
+
+83
+00:06:14,320 --> 00:06:17,200
+and now we tend to do closer to like 8000.
+
+84
+00:06:17,200 --> 00:06:18,200
+Yeah.
+
+85
+00:06:18,200 --> 00:06:19,200
+Yeah.
+
+86
+00:06:19,200 --> 00:06:20,840
+And it's kind of, it's kind of nuts.
+
+87
+00:06:20,840 --> 00:06:22,840
+All the things.
+
+88
+00:06:22,840 --> 00:06:25,320
+I like it.
+
+89
+00:06:25,320 --> 00:06:26,320
+Yeah.
+
+90
+00:06:26,320 --> 00:06:35,360
+So we then, again, we take measurements in individual channels, in the different objects,
+
+91
+00:06:35,360 --> 00:06:41,360
+and then we can also make extra measurements, right, that are features looking at the relationship
+
+92
+00:06:41,360 --> 00:06:42,800
+between channels.
+
+93
+00:06:42,800 --> 00:06:50,480
+So that's an extra set where we then have correlation features that then are describing
+
+94
+00:06:50,480 --> 00:06:54,800
+multiple channels, the mathematical relationship between information and multiple images within
+
+95
+00:06:54,800 --> 00:06:56,400
+those objects.
+
+96
+00:06:56,400 --> 00:07:02,280
+So yeah, I mentioned we have the cells, the cytoplasm and the nuclei as our objects, and
+
+97
+00:07:02,280 --> 00:07:09,200
+then we have a bunch of categories of features that we're measuring.
+
+98
+00:07:09,200 --> 00:07:17,040
+So these are links to the CellProfiler documentation telling you more details about the exact measurements
+
+99
+00:07:17,040 --> 00:07:20,160
+in each of these categories.
+
+100
+00:07:20,160 --> 00:07:26,960
+But just to note, you know, there are different categories of measurements, and they can be
+
+101
+00:07:26,960 --> 00:07:34,880
+things such as shape, area shape, describing, that's not actually looking at fluorescent,
+
+102
+00:07:34,880 --> 00:07:39,880
+you know, pixel intensities, it's telling you just about the shape itself, but then
+
+103
+00:07:39,880 --> 00:07:45,520
+something like intensity, like that's telling us all about pixel intensities within that
+
+104
+00:07:45,520 --> 00:07:51,920
+shape, and often includes things that are quite simple, like the total intensity or
+
+105
+00:07:51,920 --> 00:07:54,480
+the mean pixel intensity within there.
+
+106
+00:07:54,480 --> 00:07:59,120
+But it can also be more complex, like talking about the distribution or the patterns of
+
+107
+00:07:59,120 --> 00:08:00,960
+those intensities.
+
+108
+00:08:00,960 --> 00:08:07,640
+So sort of a full range of like very easily understandable to like, actually I can wave
+
+109
+00:08:07,640 --> 00:08:13,640
+my hands and tell you what it's doing, but it's, but digging into the very specifics
+
+110
+00:08:13,640 --> 00:08:14,800
+is complicated.
+
+111
+00:08:14,800 --> 00:08:23,480
+And then some of these, like texture and granularity, again, are quite easily on a sort of conceptual
+
+112
+00:08:23,480 --> 00:08:26,960
+level of we're looking at how much texture is in an image.
+
+113
+00:08:26,960 --> 00:08:31,920
+And you know, granularity is if I erode a part of the image, you know, a piece at a
+
+114
+00:08:31,920 --> 00:08:33,560
+time, how much is left.
+
+115
+00:08:33,560 --> 00:08:40,160
+So it's also kind of like a very similar to a texture conceptually, but mathematically
+
+116
+00:08:40,160 --> 00:08:42,680
+quite different.
+
+117
+00:08:42,680 --> 00:08:47,400
+And mathematically, you know, so we get the sort of like the biologist hand waving, oh,
+
+118
+00:08:47,400 --> 00:08:53,240
+it's looking at texture, but in terms of like, what does that mean?
+
+119
+00:08:53,240 --> 00:08:54,760
+You know, there's a bit of a disconnect.
+
+120
+00:08:54,880 --> 00:08:55,760
+Likewise.
+
+121
+00:08:55,760 --> 00:09:01,680
+So I think also talking about interpretability, like these all are interpretable in that we
+
+122
+00:09:01,680 --> 00:09:03,800
+can tell you the exact math.
+
+123
+00:09:03,800 --> 00:09:08,760
+So lots of deep learning is a black box of what math is happening here.
+
+124
+00:09:08,760 --> 00:09:13,240
+We can tell you the exact math, like you can go to the CellProfiler code, you can look
+
+125
+00:09:13,240 --> 00:09:15,320
+and see like what are numbers.
+
+126
+00:09:15,320 --> 00:09:21,040
+Yeah, if you really want to, you know, what numbers go in and what numbers come out.
+
+127
+00:09:21,600 --> 00:09:28,360
+Um, and, but a biologist is going to have a much easier time telling you like, oh, cell
+
+128
+00:09:28,360 --> 00:09:30,960
+area, like I know exactly what that means.
+
+129
+00:09:30,960 --> 00:09:37,440
+At first it's like, oh, the granularity, you know, of this structure in this, you know,
+
+130
+00:09:37,440 --> 00:09:40,440
+like it gets a little more hand wavy what that could actually mean.
+
+131
+00:09:40,440 --> 00:09:46,920
+So, but so that is, we have these feature categories, different kinds of measurements.
+
+132
+00:09:47,560 --> 00:09:53,400
+Um, also some of them have extra things tacked on the end.
+
+133
+00:09:53,400 --> 00:10:01,000
+Um, so like, Xernikis, those are a math, a math for describing.
+
+134
+00:10:01,000 --> 00:10:04,320
+I was going to say, maybe we should do a Xerniki episode someday, but no, we probably should
+
+135
+00:10:04,320 --> 00:10:05,320
+not.
+
+136
+00:10:05,320 --> 00:10:07,120
+Maybe you could do a Xerniki episode.
+
+137
+00:10:07,120 --> 00:10:11,920
+Um, I mean, I do think like, I think that would actually be awesome.
+
+138
+00:10:11,920 --> 00:10:14,400
+It's, it's really interesting what he's doing.
+
+139
+00:10:14,400 --> 00:10:22,120
+I understand it to the level of it's telling us, you know, how, how things are, it is math
+
+140
+00:10:22,120 --> 00:10:24,920
+that tells us like how things were arranged.
+
+141
+00:10:24,920 --> 00:10:26,840
+Um, I think that's all you need to know.
+
+142
+00:10:26,840 --> 00:10:28,680
+I think you just did the Xerniki episode.
+
+143
+00:10:28,680 --> 00:10:29,680
+Congratulations.
+
+144
+00:10:29,680 --> 00:10:35,880
+Um, but so, you know, some features, right, have different parameters at the very end
+
+145
+00:10:35,880 --> 00:10:43,400
+of the feature name saying like, okay, this is, um, additional, additional pieces of information
+
+146
+00:10:43,400 --> 00:10:46,200
+and you need to know mathematically, you know, to understand the math.
+
+147
+00:10:46,200 --> 00:10:49,880
+Um, so like the scale at which these things are measured.
+
+148
+00:10:49,880 --> 00:10:58,360
+Um, so that is like how we get to these features in a nutshell.
+
+149
+00:10:58,360 --> 00:11:04,000
+And then, um, I just wanted to show like, I can show you really quickly.
+
+150
+00:11:04,000 --> 00:11:11,680
+Um, just a few examples, you know, of, we can just dive into a couple of features here.
+
+151
+00:11:12,680 --> 00:11:13,760
+Um, do, do, do.
+
+152
+00:11:14,080 --> 00:11:19,440
+So, um, you know, here is opening an Excel.
+
+153
+00:11:19,440 --> 00:11:25,480
+So it's not the most beautiful, but if we, okay, see, I know, ah, there we go.
+
+154
+00:11:25,760 --> 00:11:30,880
+Um, to make this readable, you know, just picking some random features here.
+
+155
+00:11:31,440 --> 00:11:37,040
+Um, again, this is just totally at random, but the way that we under, so all of the
+
+156
+00:11:37,040 --> 00:11:41,600
+Excel profiler features are named in a consistent way.
+
+157
+00:11:42,120 --> 00:11:51,680
+So we, it starts by telling you what compartment, um, this was what object this was measured in.
+
+158
+00:11:51,880 --> 00:11:54,400
+So we measured it in the object we call the cells.
+
+159
+00:11:55,160 --> 00:12:00,120
+Then this is the category, um, of measurement that we made.
+
+160
+00:12:00,560 --> 00:12:02,160
+So we made a texture measurement.
+
+161
+00:12:03,000 --> 00:12:06,040
+This is the specific measurement that we made.
+
+162
+00:12:06,840 --> 00:12:12,960
+I don't know what an info measurement one is necessarily other than it is one math.
+
+163
+00:12:13,440 --> 00:12:14,600
+So just for the texture.
+
+164
+00:12:15,480 --> 00:12:22,240
+Um, then it's telling us the name of the image that we measured it in.
+
+165
+00:12:22,240 --> 00:12:29,640
+So again, we named this image actin because it was the structure that we expected to see
+
+166
+00:12:29,640 --> 00:12:30,360
+given our stains.
+
+167
+00:12:30,360 --> 00:12:32,640
+You could name it what you can name it whatever.
+
+168
+00:12:32,640 --> 00:12:36,440
+There's many ways that one could name, but this is our standard for the Cell Painting.
+
+169
+00:12:37,120 --> 00:12:42,120
+Um, and then this is just some extra parameters that have to do with the info measure one.
+
+170
+00:12:42,680 --> 00:12:43,960
+Oh, this is a fun example.
+
+171
+00:12:43,960 --> 00:12:48,960
+And this leads right into why don't I want to say, okay, so this is saying, um, within the nuclei.
+
+172
+00:12:49,920 --> 00:12:52,840
+Um, we measured an intensity feature.
+
+173
+00:12:53,480 --> 00:12:58,520
+That specific feature is the standard deviation of the intensity at the edge of the object.
+
+174
+00:12:59,000 --> 00:13:00,640
+And we measured it in the actin channel.
+
+175
+00:13:01,480 --> 00:13:06,000
+But wait, you might say there shouldn't be any actin within the nucleus.
+
+176
+00:13:06,080 --> 00:13:06,720
+What?
+
+177
+00:13:06,760 --> 00:13:08,280
+That doesn't make any sense.
+
+178
+00:13:08,440 --> 00:13:16,960
+And so here I think this is a really important point that I want to make, um, about, uh, about
+
+179
+00:13:16,960 --> 00:13:18,320
+CellProfiler features.
+
+180
+00:13:18,600 --> 00:13:20,320
+So we will get questions about this.
+
+181
+00:13:20,320 --> 00:13:22,120
+Like, okay, but how is that interpretable?
+
+182
+00:13:22,120 --> 00:13:24,480
+You can't interpret actin in the nucleus.
+
+183
+00:13:24,480 --> 00:13:26,400
+There is no actin within the nucleus.
+
+184
+00:13:27,400 --> 00:13:30,320
+But wait a little bit, but you shouldn't be effected and shouldn't be fluid.
+
+185
+00:13:30,320 --> 00:13:33,640
+And we should not see effected within the nucleus.
+
+186
+00:13:33,720 --> 00:13:41,680
+So what I want to point out is here, this beautiful illustration, I clearly spent hours on, you know,
+
+187
+00:13:42,000 --> 00:13:43,400
+um, I love it.
+
+188
+00:13:43,560 --> 00:13:43,880
+Yeah.
+
+189
+00:13:43,880 --> 00:13:44,280
+Yeah.
+
+190
+00:13:44,320 --> 00:13:45,040
+Absolutely.
+
+191
+00:13:45,080 --> 00:13:50,440
+You know, not to scale, but if we think of, we have an objective and we have a cell growing
+
+192
+00:13:50,440 --> 00:13:56,360
+on a cover slip and what, you know, so cells, even the beautiful, even cell
+
+193
+00:13:56,360 --> 00:14:01,280
+cells that are beautiful for microscopy that like pancake out nice and flat for imaging,
+
+194
+00:14:01,440 --> 00:14:04,600
+even those kinds of cells, they are in three dimensions.
+
+195
+00:14:05,880 --> 00:14:10,320
+Um, yeah, like, whoa, we don't live in flatland cells are three dimensional.
+
+196
+00:14:10,600 --> 00:14:18,600
+Um, so what that means is, um, in this example, I have blue nucleus and I have some cellular
+
+197
+00:14:18,600 --> 00:14:24,280
+compartment we can pretend it's ER, you know, that's like perinuclear here.
+
+198
+00:14:24,280 --> 00:14:26,880
+Um, I mean, it's red, so it's the mitochondria, but sure.
+
+199
+00:14:26,880 --> 00:14:27,440
+I know.
+
+200
+00:14:27,440 --> 00:14:28,120
+I know.
+
+201
+00:14:28,120 --> 00:14:28,440
+Okay.
+
+202
+00:14:28,440 --> 00:14:28,720
+Right.
+
+203
+00:14:28,720 --> 00:14:28,960
+I know.
+
+204
+00:14:28,960 --> 00:14:29,640
+My nose is red.
+
+205
+00:14:29,680 --> 00:14:35,680
+Um, so, you know, uh, it's some unknown cellular structure here.
+
+206
+00:14:35,720 --> 00:14:36,160
+Um, yeah.
+
+207
+00:14:37,040 --> 00:14:43,880
+But if we look at that from the top, what we see is that, um, so we have, you know,
+
+208
+00:14:43,880 --> 00:14:48,080
+can clearly see the nucleus is this nice round thing here in the middle of the cell from
+
+209
+00:14:48,080 --> 00:14:49,760
+the top, the majority of the signal.
+
+210
+00:14:49,760 --> 00:14:50,120
+Yes.
+
+211
+00:14:50,120 --> 00:14:55,880
+The majority of this red is going to show up as in a circle around the nucleus, but
+
+212
+00:14:56,080 --> 00:15:01,160
+because the cell is three dimensional, there is actually some structure that when we are,
+
+213
+00:15:01,200 --> 00:15:06,200
+you know, looking sort of the top view or I guess a bottom view, because we have a bottom
+
+214
+00:15:06,200 --> 00:15:14,080
+here, bottom view of the cell, um, you know, you do see some of this compartment that is
+
+215
+00:15:14,080 --> 00:15:18,000
+outside of the cell, um, looks like it's overlapping with the nucleus.
+
+216
+00:15:18,000 --> 00:15:24,400
+And so when we're looking at features here, these measured features, so hooks tends to
+
+217
+00:15:24,400 --> 00:15:29,960
+be a very nice tight stain that doesn't drift cytoplasmically.
+
+218
+00:15:29,960 --> 00:15:34,920
+So we'll see, you know, the intensity of our DNA within the cell.
+
+219
+00:15:34,920 --> 00:15:36,480
+We basically see nothing.
+
+220
+00:15:36,840 --> 00:15:41,400
+And if we look at the intensity of the DNA within the nucleus, it's very, very bright.
+
+221
+00:15:42,040 --> 00:15:46,360
+And if we look here at my pretend ER, that even though it's ER should be, you know,
+
+222
+00:15:46,480 --> 00:15:49,520
+green and my door, red, bear with me.
+
+223
+00:15:50,400 --> 00:15:53,200
+So I have very particular feelings about what color different organ.
+
+224
+00:15:53,200 --> 00:15:58,000
+I know it's kind of ridiculous, but also like, yeah, it is what it is.
+
+225
+00:15:58,040 --> 00:16:03,080
+Um, so then if we look in the cell, we see, right, like clearly that makes sense.
+
+226
+00:16:03,080 --> 00:16:05,840
+We see the ER here is mostly perinuclear.
+
+227
+00:16:05,840 --> 00:16:07,240
+Like that's biologically true.
+
+228
+00:16:07,240 --> 00:16:13,040
+But then if I look at features in measured in the nucleus, right, because it is this,
+
+229
+00:16:14,000 --> 00:16:20,680
+you know, it is this object that is a circle of a, you know, a three dimensional
+
+230
+00:16:20,680 --> 00:16:21,400
+compressed thing.
+
+231
+00:16:21,400 --> 00:16:27,560
+Like we're seeing some of this stain is actually, actually there in our nucleus
+
+232
+00:16:27,600 --> 00:16:36,440
+object, which doesn't reflect completely real biology, you know, nucleus, like in the
+
+233
+00:16:36,440 --> 00:16:42,200
+cell, we don't have endoplasmic reticulum inside of the nucleus in a cell.
+
+234
+00:16:42,320 --> 00:16:47,920
+But our stain, because we're going from 3D to 2D measurements, we will measure some
+
+235
+00:16:47,920 --> 00:16:48,120
+there.
+
+236
+00:16:48,120 --> 00:16:49,520
+So that's how to interpret.
+
+237
+00:16:50,000 --> 00:16:56,240
+If you get this sort of nonsensical feature, um, well, yeah, go back.
+
+238
+00:16:56,960 --> 00:17:01,800
+Can you go back to the, I just want to make one microscopy point, which is like, and
+
+239
+00:17:01,800 --> 00:17:04,960
+some of this has to do with sort of how thick of what's called an optical section that
+
+240
+00:17:04,960 --> 00:17:05,480
+we're taking.
+
+241
+00:17:05,760 --> 00:17:05,880
+Yeah.
+
+242
+00:17:05,880 --> 00:17:09,320
+So we tend to do Cell Painting in wide field, though you can't do it in either
+
+243
+00:17:09,320 --> 00:17:10,440
+wide field or confocal.
+
+244
+00:17:10,840 --> 00:17:14,560
+And what that means is if I draw on Erin's lovely drawing here with my
+
+245
+00:17:14,560 --> 00:17:21,120
+annotator, um, with wide field microscopy, you don't tend to get a lot of Z
+
+246
+00:17:21,120 --> 00:17:21,760
+resolution.
+
+247
+00:17:21,760 --> 00:17:26,000
+You tend to take light from a lot of different Z points in your sample.
+
+248
+00:17:26,360 --> 00:17:28,560
+And so that's why we have this effect.
+
+249
+00:17:28,760 --> 00:17:33,360
+If we really, really, really, really, really only wanted a very thin one, if we
+
+250
+00:17:33,360 --> 00:17:37,720
+did something like confocal microscopy, we could take a thinner Z section and then
+
+251
+00:17:37,720 --> 00:17:42,440
+we wouldn't see much or at all of this stuff that's on top of the nucleus.
+
+252
+00:17:42,880 --> 00:17:46,880
+Um, but for Cell Painting, we typically want to gather as much information as possible.
+
+253
+00:17:47,200 --> 00:17:51,640
+And so that's why generally we prefer to use wide field so that we get more of
+
+254
+00:17:51,640 --> 00:17:55,720
+the stuff, even if it makes it a little bit more jumbled, because we're seeing a
+
+255
+00:17:55,720 --> 00:18:00,000
+three thing compressed into 2d, but it is totally possible to take a thin section
+
+256
+00:18:00,000 --> 00:18:00,960
+where this doesn't happen.
+
+257
+00:18:01,280 --> 00:18:03,600
+If that's what you want for whatever asset you're doing.
+
+258
+00:18:03,960 --> 00:18:04,280
+Yeah.
+
+259
+00:18:04,440 --> 00:18:05,040
+Absolutely.
+
+260
+00:18:05,040 --> 00:18:05,720
+Good point.
+
+261
+00:18:06,440 --> 00:18:11,440
+And, you know, we can go, like, we'll also coming up soon have an episode about, like,
+
+262
+00:18:11,440 --> 00:18:15,520
+how can you modify the Cell Painting Assay and, you know, and talk about wide
+
+263
+00:18:15,520 --> 00:18:16,600
+field versus confocal.
+
+264
+00:18:16,960 --> 00:18:22,520
+Um, but in terms of, you know, what is our, our standard Cell Painting Assay is
+
+265
+00:18:22,520 --> 00:18:23,320
+wide field.
+
+266
+00:18:23,480 --> 00:18:28,400
+So we are getting all of this extra, all of this extra information, but like, again,
+
+267
+00:18:28,400 --> 00:18:29,240
+great point.
+
+268
+00:18:29,400 --> 00:18:34,440
+It could be handled differently such that you could, um, end up.
+
+269
+00:18:35,440 --> 00:18:39,240
+With, you know, with different, a different way of imaging here.
+
+270
+00:18:39,280 --> 00:18:42,520
+Um, this is just not what we're usually working with.
+
+271
+00:18:43,040 --> 00:18:44,880
+Um, yeah.
+
+272
+00:18:46,080 --> 00:18:46,600
+It's a great point.
+
+273
+00:18:47,440 --> 00:18:51,960
+And I think that's what I wanted to say about CellProfiler features and
+
+274
+00:18:52,080 --> 00:18:53,480
+understanding and interpreting them.
+
+275
+00:18:54,080 --> 00:18:54,520
+Yeah.
+
+276
+00:18:54,920 --> 00:18:55,320
+No.
+
+277
+00:18:55,360 --> 00:18:58,640
+And, and definitely some of them will give you a picture in your head.
+
+278
+00:18:58,920 --> 00:19:03,240
+Like if I say my cell got has an area two times as big, you know, to your point
+
+279
+00:19:03,440 --> 00:19:06,520
+earlier, like some of the things definitely like the picture, like the info
+
+280
+00:19:06,520 --> 00:19:10,720
+measure, it's like, okay, the texture is kind of something about this, but I
+
+281
+00:19:10,720 --> 00:19:16,440
+don't really, but it should be enough to at least give you an idea of like what's
+
+282
+00:19:16,440 --> 00:19:19,880
+going on in the cell to try to give you idea of what's the next experiment to do.
+
+283
+00:19:20,160 --> 00:19:20,680
+Yes.
+
+284
+00:19:20,720 --> 00:19:21,080
+Yeah.
+
+285
+00:19:21,200 --> 00:19:27,320
+And certainly way more informative than, you know, feature 732, which might be the
+
+286
+00:19:27,320 --> 00:19:29,400
+name of the future you would get out of a deep learning model.
+
+287
+00:19:29,440 --> 00:19:29,680
+Right.
+
+288
+00:19:29,680 --> 00:19:32,400
+Like, um, so there is definitely always.
+
+289
+00:19:32,600 --> 00:19:38,160
+Some level of interpretability because you know what image, you know, what
+
+290
+00:19:38,160 --> 00:19:43,680
+compartment, um, and what category of measurement it is, even if it's, even if
+
+291
+00:19:43,680 --> 00:19:47,400
+it's not to get there is, is a big.
+
+292
+00:19:49,520 --> 00:19:49,960
+Awesome.
+
+293
+00:19:50,000 --> 00:19:50,400
+Well, thank you.
+
+294
+00:19:50,400 --> 00:19:50,920
+That was great.
+
+295
+00:19:50,920 --> 00:19:52,560
+And I love, I love your illustration.
+
+296
+00:19:52,640 --> 00:19:53,160
+Thank you.
+
+297
+00:19:53,240 --> 00:19:53,840
+Thank you.
+
+298
+00:19:54,640 --> 00:19:57,120
+Um, thanks for being here and thanks for joining.
+
+299
+00:19:57,520 --> 00:19:58,080
+Talk to you later.
+

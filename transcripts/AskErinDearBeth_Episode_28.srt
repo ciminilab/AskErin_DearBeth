@@ -1,0 +1,628 @@
+1
+00:00:16,000 --> 00:00:01,000
+Hello.
+
+2
+00:00:01,000 --> 00:00:02,000
+Hello.
+
+3
+00:00:02,000 --> 00:00:03,000
+Good to see you.
+
+4
+00:00:03,000 --> 00:00:04,000
+Wonderful to see you.
+
+5
+00:00:04,000 --> 00:00:05,000
+Are you ready for the thrilling conclusion of my cliffhanger about thresholding?
+
+6
+00:00:05,000 --> 00:00:06,000
+Oh my gosh.
+
+7
+00:00:06,000 --> 00:00:11,000
+Like this, the level of anticipation about the thresholding cliffhanger has just kept me
+
+8
+00:00:11,000 --> 00:00:15,000
+with a big breath.
+
+9
+00:00:15,000 --> 00:00:18,000
+The anticipation?
+
+10
+00:00:18,000 --> 00:00:19,000
+Oh yeah.
+
+11
+00:00:19,000 --> 00:00:20,000
+All right.
+
+12
+00:00:20,000 --> 00:00:24,000
+So I mentioned the thresholding cliffhanger.
+
+13
+00:00:24,000 --> 00:00:28,000
+So you're ready for the thrilling conclusion of my cliffhanger about thresholding.
+
+14
+00:00:28,000 --> 00:00:29,000
+Oh my gosh.
+
+15
+00:00:29,000 --> 00:00:30,000
+Like this.
+
+16
+00:00:30,000 --> 00:00:34,000
+The level of anticipation about the thresholding cliffhanger has just kept me with a big breath.
+
+17
+00:00:34,000 --> 00:00:35,000
+The anticipation?
+
+18
+00:00:35,000 --> 00:00:37,000
+Oh yeah.
+
+19
+00:00:37,000 --> 00:00:38,000
+All right.
+
+20
+00:00:38,000 --> 00:00:44,000
+So I mentioned that the thresholding settings weren't quite doing everything that I wanted
+
+21
+00:00:44,000 --> 00:00:47,000
+the last time.
+
+22
+00:00:47,000 --> 00:00:51,000
+Like they were definitely still like it made sense like when some of them were better and
+
+23
+00:00:51,000 --> 00:00:56,000
+some of them were worse, but they weren't quite everything that Erin had promised and dreamed
+
+24
+00:00:56,000 --> 00:01:00,000
+of that like, you know, and so I want to explain a little bit more about what are the other
+
+25
+00:01:00,000 --> 00:01:04,000
+threshold settings we haven't talked about yet.
+
+26
+00:01:04,000 --> 00:01:11,000
+And why we sometimes even like just picking the right algorithm and just sort of applying
+
+27
+00:01:11,000 --> 00:01:22,000
+it globally versus locally might not be quite enough.
+
+28
+00:01:22,000 --> 00:01:26,000
+So here is our same data set we were looking at last time.
+
+29
+00:01:26,000 --> 00:01:29,000
+Here is our lovely three class OZU.
+
+30
+00:01:29,000 --> 00:01:31,000
+It is lovely-ish.
+
+31
+00:01:31,000 --> 00:01:33,000
+It is kind of lovely.
+
+32
+00:01:33,000 --> 00:01:37,000
+You know, it's not so bad.
+
+33
+00:01:37,000 --> 00:01:42,000
+It's definitely not awful three class OZU.
+
+34
+00:01:42,000 --> 00:01:49,000
+It's definitely also like not perfect.
+
+35
+00:01:49,000 --> 00:01:51,000
+And often that will happen.
+
+36
+00:01:51,000 --> 00:01:55,000
+Like one of the algorithms like consistently does like a pretty good job.
+
+37
+00:01:55,000 --> 00:01:59,000
+And definitely as we talked about last time for this data set, for this data set, like
+
+38
+00:01:59,000 --> 00:02:02,000
+three class is the right solution.
+
+39
+00:02:02,000 --> 00:02:06,000
+It just like it tends to err on one side versus the other.
+
+40
+00:02:06,000 --> 00:02:11,000
+Like it tends to always be a little too strict or always be a little too lenient.
+
+41
+00:02:11,000 --> 00:02:16,000
+And we can fix, there's a setting for that in self-prophylarity where we can fix that.
+
+42
+00:02:16,000 --> 00:02:20,000
+And it's called the threshold correction factor.
+
+43
+00:02:20,000 --> 00:02:26,000
+So this is literally just a number we multiply times the threshold.
+
+44
+00:02:26,000 --> 00:02:32,000
+And so if the threshold is 0.5, if your threshold correction factor is 1, which is the default, it stays 0.5.
+
+45
+00:02:32,000 --> 00:02:38,000
+But if you want it to be like 0.6, you could multiply the threshold times 1.2.
+
+46
+00:02:38,000 --> 00:02:42,000
+And if you want to be 0.4 times 0.8.
+
+47
+00:02:42,000 --> 00:02:46,000
+And you don't want to be adjusting this for every single image.
+
+48
+00:02:46,000 --> 00:02:51,000
+What you want to be using this when like in general an algorithm is usually doing a pretty good job.
+
+49
+00:02:51,000 --> 00:02:54,000
+It's just not quite right.
+
+50
+00:02:54,000 --> 00:03:02,000
+Or if you have to set this to like 27 or like 0.01, you're also not using the right threshold algorithm.
+
+51
+00:03:02,000 --> 00:03:06,000
+This should usually be between like, I don't know, I like 0.5 and 2.
+
+52
+00:03:06,000 --> 00:03:10,000
+Do you have strong feelings about like correction factor ranges?
+
+53
+00:03:10,000 --> 00:03:14,000
+I would say 0.5 is definitely like a floor.
+
+54
+00:03:14,000 --> 00:03:22,000
+And yeah, I mean, it's funny because I feel like
+
+55
+00:03:22,000 --> 00:03:27,000
+usually I'm pushing the threshold correction factor down.
+
+56
+00:03:27,000 --> 00:03:28,000
+I'm not sure.
+
+57
+00:03:28,000 --> 00:03:33,000
+Like I would have, it's funny, like I absolutely have the intuition of like, oh yeah, 0.5 absolute floor on threshold correction factor.
+
+58
+00:03:33,000 --> 00:03:37,000
+But I don't have a ceiling because I rarely go up.
+
+59
+00:03:37,000 --> 00:03:41,000
+But you know, vibes, this is all vibes.
+
+60
+00:03:41,000 --> 00:03:44,000
+So yeah, this isn't art as much as it's a science.
+
+61
+00:03:44,000 --> 00:03:49,000
+But this is clearly so this threshold is a little higher than we want it.
+
+62
+00:03:49,000 --> 00:03:56,000
+So I'm going to multiply this times a number less than one.
+
+63
+00:03:56,000 --> 00:03:59,000
+And it's going to make the value go down.
+
+64
+00:03:59,000 --> 00:04:06,000
+So here we have the same odd two three class but with a threshold correction factor of 0.8.
+
+65
+00:04:06,000 --> 00:04:09,000
+Oh yeah, that's much prettier.
+
+66
+00:04:09,000 --> 00:04:12,000
+Yeah, that's much more what we like.
+
+67
+00:04:12,000 --> 00:04:16,000
+And it just a reminder to folks like CellProfiler.
+
+68
+00:04:16,000 --> 00:04:25,000
+So if you hover your mouse on, you know, on the image on the left, it shows you the values right there with the intensity of that pixel.
+
+69
+00:04:25,000 --> 00:04:31,000
+So you can get some amount of intuition just by hovering.
+
+70
+00:04:31,000 --> 00:04:43,000
+And as you'll notice, the CellProfiler works in the range of zero to one generally, sweeping blanket statement.
+
+71
+00:04:43,000 --> 00:05:07,000
+But usually when we're working on such things, you know, even if in your very your raw image, as it comes off of the microscope might be saved, you know, with integer large up to large integer values, when it's loaded into CellProfiler, and we're doing stuff on those images, they are reskilled zero to one.
+
+72
+00:05:07,000 --> 00:05:16,000
+So that's why that's why this threshold correction factor, why the thresholds that we're talking about are all starting less than one.
+
+73
+00:05:16,000 --> 00:05:26,000
+Yeah, yeah, I mean the math applies whether you're doing integers or decimals which are I was about to say floats which is computer scientist for decimal.
+
+74
+00:05:26,000 --> 00:05:28,000
+Yeah, yeah.
+
+75
+00:05:28,000 --> 00:05:36,000
+And that is why it's not zero to 255 or zero to 65535 it's like this is a thing of.
+
+76
+00:05:36,000 --> 00:05:52,000
+And in reasons that aren't going to make sense yet but will hopefully make sense in just a minute I'm actually going to write down the final threshold that we're using, which is a trick that I sometimes do when I'm trying to figure out the thresholds for a bunch of different images.
+
+77
+00:05:52,000 --> 00:06:06,000
+So profile has these module notes. So you can literally just use them as a place to take notes. And so if I'm trying to figure out good thresholding settings I will often just like keep track of thresholds that I like here.
+
+78
+00:06:06,000 --> 00:06:12,000
+So if we go to our next image that
+
+79
+00:06:12,000 --> 00:06:34,000
+again our three class OZU is this one isn't as bad but it's still a little bit strict for what I would prefer on this image. So if we sort of correct it and we get it down a little bit like this is much smoother this is much nicer like this is much closer to what we would want.
+
+80
+00:06:34,000 --> 00:06:37,000
+So I'm going to write this one down too.
+
+81
+00:06:43,000 --> 00:06:45,000
+Or six.
+
+82
+00:06:45,000 --> 00:06:48,000
+That's enough decimal points.
+
+83
+00:06:48,000 --> 00:06:58,000
+So if we go to our next image.
+
+84
+00:06:58,000 --> 00:07:05,000
+So what happens when there aren't any cells in your image.
+
+85
+00:07:05,000 --> 00:07:21,000
+Yeah, well, and like there are things you can do to try to quality control these away but ultimately at the end of the day, what CellProfiler is going to try to do if you give it an image and you tell it to threshold it so it's going to threshold it.
+
+86
+00:07:21,000 --> 00:07:30,000
+It's going to come up with some division of stuff from non stuff and it's going to give you ultimately this.
+
+87
+00:07:30,000 --> 00:07:34,000
+It's saying almost everything is signal.
+
+88
+00:07:34,000 --> 00:07:39,000
+Because we took a number and then we also made the number even smaller.
+
+89
+00:07:39,000 --> 00:07:43,000
+So this is not what we want.
+
+90
+00:07:43,000 --> 00:07:48,000
+And you can, if you look at the threshold value that was picked here.
+
+91
+00:07:48,000 --> 00:07:54,000
+This number is much smaller than the numbers that we picked that were good.
+
+92
+00:07:54,000 --> 00:08:02,000
+The numbers were this point 002 is bad.
+
+93
+00:08:02,000 --> 00:08:08,000
+But we know that we know that point 002 is just always bad it's just never the number that we want.
+
+94
+00:08:08,000 --> 00:08:22,000
+And so there's actually one more set of settings that I want to introduce you to which are these lower and upper bounds, where I can say, actually, point 002 is a stupid threshold and I never want it.
+
+95
+00:08:22,000 --> 00:08:34,000
+So I can tell CellProfiler, look, like the background signal, if I just hover over like completely empty areas of background here is like point 002 something it's like close to point 003.
+
+96
+00:08:34,000 --> 00:08:38,000
+So that was always going to be a threshold that I don't want.
+
+97
+00:08:38,000 --> 00:08:43,000
+Don't get me out of bed for thresholds that are less than point 004.
+
+98
+00:08:43,000 --> 00:08:48,000
+Like, I just never am going to want a threshold is that low.
+
+99
+00:08:48,000 --> 00:08:50,000
+And so I can do that.
+
+100
+00:08:50,000 --> 00:08:52,000
+And I can get rid of almost all of the crud.
+
+101
+00:08:52,000 --> 00:09:03,000
+I mean, there's still some crud here, but if I were doing identify primary objects for cells here, this would all get filtered away as like way too small to be cells compared to the other images we looked at.
+
+102
+00:09:03,000 --> 00:09:09,000
+And so it would have put this threshold at point 0266.
+
+103
+00:09:09,000 --> 00:09:13,000
+But because I told it point 004 is the absolute minimum.
+
+104
+00:09:13,000 --> 00:09:16,000
+And so this is a great way to handle.
+
+105
+00:09:16,000 --> 00:09:26,000
+Sometimes you have images with no stuff in them, like especially if you're doing automated image analysis and you're not like, beautifully picking out every cell that you're imaging.
+
+106
+00:09:26,000 --> 00:09:31,000
+We need when we do automated stuff the ability to say like, Nope, some thresholds are wrong.
+
+107
+00:09:31,000 --> 00:09:40,000
+Like, you might think this is the threshold but like this is a biologically stupid threshold and therefore I don't want it.
+
+108
+00:09:40,000 --> 00:09:46,000
+And I think that's something that you know, something to keep in mind that like mathematically it's correct.
+
+109
+00:09:46,000 --> 00:09:52,000
+So profiler is correct in that like the math and separated out the peaks it could find.
+
+110
+00:09:52,000 --> 00:10:02,000
+But then there's the level of the biology like we are here to override that saying like, No, actually, I know biology and I know that image is empty.
+
+111
+00:10:02,000 --> 00:10:04,000
+And therefore, I'm going to make some changes.
+
+112
+00:10:04,000 --> 00:10:07,000
+There was nothing wrong about so profiler's math.
+
+113
+00:10:07,000 --> 00:10:09,000
+Yeah, math was fine.
+
+114
+00:10:09,000 --> 00:10:15,000
+And you'll notice that like the number that I picked is smaller than the tune like it's still smaller than the numbers I said were good.
+
+115
+00:10:15,000 --> 00:10:19,000
+Like, I don't want to like just like push the threshold really high for no reason.
+
+116
+00:10:19,000 --> 00:10:36,000
+But it was between like what I knew the background to be and what the sort of thresholds it picked as good before so that like when the threshold is good, it leaves it alone and when the threshold is bad, it, you know, so gives it a better one.
+
+117
+00:10:36,000 --> 00:10:39,000
+And we can do the same thing at the top end of the spectrum here too.
+
+118
+00:10:39,000 --> 00:10:45,000
+So here I've picked an image where we've got a giant piece of crud.
+
+119
+00:10:45,000 --> 00:10:47,000
+It happens.
+
+120
+00:10:47,000 --> 00:11:01,000
+And I mean, there is some good stuff getting thresholded here but like this is also a big old piece of crud that is now driving the thresholding we're missing a lot of cells, even after we've done our nice correction factor of 0.8.
+
+121
+00:11:01,000 --> 00:11:09,000
+Because if we look at the histogram, we have this big stupid thing that's like in our picture that we don't want.
+
+122
+00:11:09,000 --> 00:11:17,000
+So in the same way that like, and this isn't cheating, like this is this is okay, we're telling you this is okay to do.
+
+123
+00:11:17,000 --> 00:11:29,000
+You can tell CellProfiler like if you think that the threshold is like that high, also you're still wrong, like it's it's it's bad.
+
+124
+00:11:29,000 --> 00:11:40,000
+I can say if the threshold is higher than, you know, 0.055 or, you know, 0.006 I think was the one that I had found before.
+
+125
+00:11:40,000 --> 00:11:43,000
+Like, don't ever let the threshold be higher than that.
+
+126
+00:11:43,000 --> 00:11:46,000
+Like, is that threshold still a little bit too high in places?
+
+127
+00:11:46,000 --> 00:11:48,000
+Yeah, it kind of looks like it is.
+
+128
+00:11:48,000 --> 00:11:59,000
+And I don't want this area that's crud anyway, but like that we have you can go back to our episodes on crud detectors to like, look at how to get rid of that.
+
+129
+00:11:59,000 --> 00:12:04,000
+But it means we still have most of the image that's good.
+
+130
+00:12:04,000 --> 00:12:16,000
+And these upper bounds aren't just important for crud maybe you're like, oh my images are always beautiful and crud free, which congratulations if that's true like that's awesome.
+
+131
+00:12:16,000 --> 00:12:23,000
+My images are always beautiful and crud free but also sometimes my images are fully confluent.
+
+132
+00:12:23,000 --> 00:12:35,000
+So if I just let CellProfiler pick a threshold without doing any changes to it, it tries to separate areas where there's stuff from areas where there isn't stuff.
+
+133
+00:12:35,000 --> 00:12:40,000
+But there's actually no regions in this image that I would say is a biologist have no stuff.
+
+134
+00:12:40,000 --> 00:12:45,000
+My cells are fully covering the field of view and I want all of it.
+
+135
+00:12:45,000 --> 00:12:50,000
+So I can tell CellProfiler like hey, I know math wise this is right.
+
+136
+00:12:50,000 --> 00:13:02,000
+But actually, if you think that I want a threshold higher than 0.06 you're wrong like I only want I'm only interested in thresholds that fall here.
+
+137
+00:13:02,000 --> 00:13:11,000
+And so what again what I'm doing is I'm letting the algorithm pick the threshold most of the time because we hopefully spent time picking an algorithm that's good.
+
+138
+00:13:11,000 --> 00:13:20,000
+But I'm giving it guardrails I'm saying like there are going to be times where like math isn't everything and biology is more important.
+
+139
+00:13:20,000 --> 00:13:27,000
+And where I know like what the biology's limits should be on the math like respect biology's limits.
+
+140
+00:13:27,000 --> 00:13:35,000
+And then you know if you want to like within that do some smart algorithmic things for me great thank you I appreciate it.
+
+141
+00:13:35,000 --> 00:13:45,000
+But you can give it guardrails so that most of the time and if you set these carefully most of the time it won't be using those limits.
+
+142
+00:13:45,000 --> 00:13:55,000
+So if I just now grab a bunch of like random images from the same data set.
+
+143
+00:13:55,000 --> 00:14:03,000
+And I just even uncheck these other ones so that this happens fast and I decided to change this to 0.06.
+
+144
+00:14:03,000 --> 00:14:23,000
+Like if I hit test mode and I just let it pick thresholds in that particular case it would have chosen 0.89 but then it went down to 0.6 but I bet if I tell it to just give me some random ones will find some cases where here I needed the minimum this is
+
+145
+00:14:23,000 --> 00:14:28,000
+a data set that we use because it's got a lot of bad images in it.
+
+146
+00:14:28,000 --> 00:14:44,000
+So you'll see over representation of it picking like good like the edges of the threshold but like here here's a case where it's a perfectly reasonable image with no crud in it and it use the algorithmic threshold and it did a lovely job because three class odds it was great.
+
+147
+00:14:45,000 --> 00:14:59,000
+But when the cases where I had a super confluent image or a super debris filled image or where I had an empty image it still did things that were reasonable so that all of my fields of view are reasonable.
+
+148
+00:14:59,000 --> 00:15:24,000
+Yeah I think that's lovely and just you know one final emphasis on the bounds being guardrails that you don't want to hit right your only one thing to them in rare occasions that that should not be you know that's not how you should be adjusting up you know like if you're to it should not be hitting that a lot.
+
+149
+00:15:24,000 --> 00:15:38,000
+Something is wrong with another setting that you have. Yeah. It's like if you're a kid and you're going bowling or you're like me and you're sort of bad at bowling and you're going bowling like they put the bumpers in like these are your bumpers like you don't want to hit the bumper the goal is not to hit the bumper.
+
+150
+00:15:38,000 --> 00:15:50,000
+It's just to make sure that when you when you do hit the hit the edges you don't end up with nothing. Yeah like you still get something good to happen so these are basically bowling bumpers. I love it great analogy.
+
+151
+00:15:51,000 --> 00:16:01,000
+So try not to hit the bumpers but let the bumpers save you when otherwise you would have ended up in the gutter. That's that's my analogy.
+
+152
+00:16:02,000 --> 00:16:04,000
+I'm here for it. I love it.
+
+153
+00:16:05,000 --> 00:16:20,000
+Yes so with all of those things together and with the sort of help buttons that are next to all the settings like you should now be a threshold wizard and be able to like pick the right threshold and it will make your image analysis just be so much easier.
+
+154
+00:16:21,000 --> 00:16:30,000
+And if you're ever not sure what to do you can ask us you can ask or do you love it. Thanks bet anything else you dad.
+
+155
+00:16:30,000 --> 00:16:46,000
+I think it's a lovely lovely summary of you know especially now over several episodes go to go do you know make sure you watch all of our thresholding episodes now really helpful in understanding like practically how do we do this.
+
+156
+00:16:48,000 --> 00:16:57,000
+Well thank you for hanging out while I did concepts of math and you know have a lovely rest of your day. Thanks you too babe talk to you later.
+
+157
+00:17:00,000 --> 00:17:01,000
+Thank you.
+

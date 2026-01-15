@@ -1,0 +1,572 @@
+1
+00:00:00,000 --> 00:00:18,640
+Hey Beth! Hey Erin, how are you?
+
+2
+00:00:18,640 --> 00:00:22,320
+Peachie keen, it is so good to see your lovely face this morning.
+
+3
+00:00:22,320 --> 00:00:26,080
+Always great to see you as well. Wonderful. Well I thought
+
+4
+00:00:26,080 --> 00:00:33,360
+that it was about time that we talk about just give an overview about the Cell Painting Assay
+
+5
+00:00:33,360 --> 00:00:39,680
+because it's something I feel like we've name dropped at least a handful of times at this point
+
+6
+00:00:39,680 --> 00:00:45,280
+but haven't actually said what what is the Cell Painting Assay? I can't believe we've gotten this
+
+7
+00:00:45,280 --> 00:00:51,280
+far into the podcast and never actually done that. That's crazy. Yeah, yeah it's it's funny
+
+8
+00:00:51,280 --> 00:00:56,240
+because it's really I mean I'd say like it's our bread and butter in our lab in in that like
+
+9
+00:00:56,240 --> 00:01:04,880
+something we do a lot you know run the image analysis of the the Cell Painting Assay for
+
+10
+00:01:04,880 --> 00:01:14,000
+lots of collaborators and you know the most latest protocol paper was simony at all and you know we've
+
+11
+00:01:14,000 --> 00:01:20,960
+been we are heavily involved in the Cell Painting Assay but like we should probably talk about
+
+12
+00:01:20,960 --> 00:01:27,760
+what it actually is. Is it making cells look beautiful like my background here?
+
+13
+00:01:27,760 --> 00:01:34,160
+I mean that's certainly part of it. Not that you know not that cells aren't beautiful in
+
+14
+00:01:34,160 --> 00:01:39,680
+their own native state but we do we do add some more color to make them even more visibly beautiful.
+
+15
+00:01:39,680 --> 00:01:51,760
+Yeah so to keep this quick because you know we're always able to give a long answer to anything
+
+16
+00:01:51,760 --> 00:02:00,480
+but to make this brief a brief introduction to Cell Painting so Cell Painting was originally
+
+17
+00:02:00,480 --> 00:02:10,480
+developed by Anne Carpenter in collaboration with Stuart Shreiber's lab and the it's a single
+
+18
+00:02:10,480 --> 00:02:19,760
+specific assay that is a high content assay and you can sort of one way to think about it is the
+
+19
+00:02:19,760 --> 00:02:32,560
+omics of morphology so it is a way of doing high throughput assay and looking at cells so morphology
+
+20
+00:02:32,560 --> 00:02:43,440
+being shape of cells and getting answers at the other end and so this is a schematic that I
+
+21
+00:02:43,840 --> 00:02:50,800
+stole from a recent slide deck of Ann's so I think this is you know pieced together from
+
+22
+00:02:50,800 --> 00:02:55,040
+several different publications and resources at this point but most recently stolen from an Ann
+
+23
+00:02:55,040 --> 00:03:03,200
+Carpenter slide deck and but I think a pretty basic overview of what this is as a concept for
+
+24
+00:03:03,200 --> 00:03:10,640
+the Cell Painting Assay you take cells they can be healthy cells they can be diseased cells
+
+25
+00:03:11,360 --> 00:03:19,440
+they can be cell culture sometimes they're on patient derived cell lines and then
+
+26
+00:03:21,280 --> 00:03:27,440
+generally we add a treatment that can be drugs drug screening is probably the most common use
+
+27
+00:03:28,000 --> 00:03:34,080
+for the Cell Painting Assay particularly this is an assay that's done in lots of pharma companies
+
+28
+00:03:34,080 --> 00:03:40,320
+for early stage drug discovery and so very easy for you know high content drug screening but also
+
+29
+00:03:41,200 --> 00:03:50,080
+very much also used academically with genetic treatments and it's done in a high content manner
+
+30
+00:03:50,080 --> 00:03:58,560
+so generally the cells are grown in well in an academic lab 384 well plates I know that in pharma
+
+31
+00:03:58,560 --> 00:04:08,160
+that have robots more robots you end up with you know higher density plates yeah we don't you know
+
+32
+00:04:08,160 --> 00:04:13,280
+we don't have lots of robots available to us in most of our academic collaborations other than
+
+33
+00:04:13,280 --> 00:04:22,080
+what we can awkwardly do ourselves and so you grow lots of cells lots of and most importantly
+
+34
+00:04:22,080 --> 00:04:28,960
+like lots of different treatment conditions then a specific staining panel that I'll get to
+
+35
+00:04:29,520 --> 00:04:37,040
+in the next slide but where we are adding dyes that are so so the Cell Painting Assay was optimized
+
+36
+00:04:37,040 --> 00:04:48,480
+to be cheap and easy and so we fix cells and then drop drop dyes into you know in with them so
+
+37
+00:04:50,080 --> 00:04:54,160
+and it labels a bunch of cellular compartments then we do image analysis
+
+38
+00:04:56,400 --> 00:05:02,160
+where we are identifying individual cells and making a bunch of measurements and then what you
+
+39
+00:05:02,160 --> 00:05:10,320
+end up with is downstream data that is much like you would get with any omics experiment
+
+40
+00:05:10,320 --> 00:05:19,200
+where you have a single cell is each row in this matrix and columns that in our case are morphological
+
+41
+00:05:19,200 --> 00:05:25,680
+features so there's some way of describing the cell if you think of other sorts of omics like
+
+42
+00:05:25,680 --> 00:05:32,880
+proteomics you would have the columns would be proteins and the values would be the amount of
+
+43
+00:05:32,880 --> 00:05:40,720
+that protein in the cell so in our case it's some value some mathematical description of
+
+44
+00:05:42,240 --> 00:05:48,480
+you know of a feature that's describing the morphology of a cell and these stains in it
+
+45
+00:05:49,120 --> 00:05:54,880
+can I ask a question absolutely so you've used the word or the term high content a couple times so
+
+46
+00:05:55,440 --> 00:05:59,600
+does that relate to the fact that there's just lots and lots of features here so we're doing
+
+47
+00:05:59,600 --> 00:06:07,600
+sort of many features all at once yes so we're measuring I mean so I can definitely
+
+48
+00:06:09,040 --> 00:06:14,320
+yes that is definitely one important part of this we are we'd say like measure everything ask
+
+49
+00:06:14,320 --> 00:06:20,560
+questions later so we are measuring hundreds two thousands of features the current you know
+
+50
+00:06:20,560 --> 00:06:25,520
+Cell Painting protocol is thousands although there's very you know variations
+
+51
+00:06:28,000 --> 00:06:36,400
+also we think of like high so high content and high throughput being sometimes sort of intermingled
+
+52
+00:06:37,200 --> 00:06:43,680
+where we also are doing this you know having the perturbations the different treatment conditions
+
+53
+00:06:43,760 --> 00:06:51,440
+are also at scale like sort of as as large as a reasonable depending on you know the skill level
+
+54
+00:06:51,440 --> 00:06:59,120
+of your technician or your robot again depending on who's doing this assay so you know both of those
+
+55
+00:06:59,120 --> 00:07:04,000
+we are measuring as many conditions as we can and as many features as we can sort of all in
+
+56
+00:07:04,000 --> 00:07:12,000
+once so this is a lot of data all at once so big times big equals real big real big yep yep
+
+57
+00:07:12,000 --> 00:07:18,480
+that's bad as math that I can do in my head too big times big real big love that one you know
+
+58
+00:07:18,480 --> 00:07:22,800
+and then this final little bit of the panel is just to illustrate you can then do any sort of
+
+59
+00:07:22,800 --> 00:07:30,000
+biological discovery that you would do on an omics level experiment you can look at relationships
+
+60
+00:07:30,000 --> 00:07:36,160
+between perturbations you can look at you know however you would handle omics data you can do
+
+61
+00:07:36,160 --> 00:07:43,600
+that on Cell Painting data so that's sort of the big picture of the experiment and then the
+
+62
+00:07:44,640 --> 00:07:51,520
+details of what we're actually looking at so this is from one of the earlier Cell Painting
+
+63
+00:07:52,240 --> 00:08:01,120
+papers but we have uh you know so this is a single example of a single condition a single cell line
+
+64
+00:08:01,120 --> 00:08:07,840
+um you know I'll put the asterisk of coming up in a future episode at some point you know we get
+
+65
+00:08:07,840 --> 00:08:12,720
+asked like oh how can you modify the Cell Painting Assay like what what can you do to change it and
+
+66
+00:08:12,720 --> 00:08:18,080
+we'll have an episode on that coming up in the future you know the punchline is whatever
+
+67
+00:08:18,080 --> 00:08:25,120
+you want basically it still works so spoiler alert but this is an example of a single cell line
+
+68
+00:08:25,680 --> 00:08:35,680
+and the standard panel of of dies that are labeling the standard panel of cellular structures
+
+69
+00:08:35,680 --> 00:08:45,040
+so it's this is like any generic wide field microscope where we have five channels
+
+70
+00:08:45,760 --> 00:08:51,680
+and we put in six stains and they measure eight or the and they label eight cellular
+
+71
+00:08:51,680 --> 00:09:00,240
+compartments in those channels and so here you see you know we have nucleus endoplasmic
+
+72
+00:09:00,240 --> 00:09:09,680
+reticulum so okay so nucleus is stained with hoaxed although again yeah i'm not going to
+
+73
+00:09:09,680 --> 00:09:13,440
+go into what what you can swap that's a whole other episode right i'm staying on target staying on
+
+74
+00:09:13,440 --> 00:09:19,680
+task here you can do it i believe in you yeah so we have endoplasmic reticulum stained with
+
+75
+00:09:19,680 --> 00:09:30,880
+concanavalin a nucleoli and cytoplasmic RNA that we see with cytoh actin which we see with
+
+76
+00:09:30,880 --> 00:09:37,760
+phylloidin and the Golgi and plasma membrane which we see with wheat germ aglutinin and
+
+77
+00:09:37,760 --> 00:09:44,400
+mitochondria that we see with mitotracker and so that is the standard like a lot that's a lot of
+
+78
+00:09:44,400 --> 00:09:50,720
+different cellular parts that we're seeing here labeled and again this is optimized to be
+
+79
+00:09:51,280 --> 00:09:59,200
+just all dyes that you just drop in without any you know awful fixation conditions for for getting
+
+80
+00:09:59,200 --> 00:10:05,360
+stuff that you know none of the none of the very complicated things you might do to to label specific
+
+81
+00:10:05,360 --> 00:10:12,960
+proteins or or specific molecules within the cell and then there are a couple pipelines
+
+82
+00:10:13,040 --> 00:10:18,720
+that we run they are CellProfiler pipelines is standard and we'll drop you know have links in
+
+83
+00:10:18,720 --> 00:10:26,880
+the show notes available you know our our current optimized pipelines one of them we start with
+
+84
+00:10:26,880 --> 00:10:33,120
+making illumination correction function which like for flat field correction and so we see um
+
+85
+00:10:33,120 --> 00:10:40,080
+depending on your microscope there are you know in this example like pretty heavily vignetting
+
+86
+00:10:40,080 --> 00:10:45,760
+so the corners are darker than the center so we do some math then we have another episode of
+
+87
+00:10:45,760 --> 00:10:52,000
+ask Erin Dear Beth all about this so we'll link that too to figure out how to correct that so
+
+88
+00:10:52,000 --> 00:10:57,920
+that the corners are no longer dark so that if you are measuring differences in intensities between
+
+89
+00:10:58,560 --> 00:11:03,760
+a cell in the middle of the image and a cell in the corner of the image differences are actually
+
+90
+00:11:03,760 --> 00:11:10,160
+due to biology not due to location in the picture yeah that would that would make things hard yes
+
+91
+00:11:10,160 --> 00:11:17,920
+yeah so we do that then we do assay dev assay development which is just refining
+
+92
+00:11:19,840 --> 00:11:26,720
+the parameters you need to segment nuclei and cell bodies and so here's that we also have another
+
+93
+00:11:26,720 --> 00:11:31,680
+ask Erin Dear Beth episode about how we do this at scale that shows so many episodes
+
+94
+00:11:32,000 --> 00:11:39,680
+I know I know so I can you know we'll have this link in show notes as well showing how
+
+95
+00:11:40,240 --> 00:11:46,800
+what we do you know in again like at scale with high content high you know lots of data finding
+
+96
+00:11:46,800 --> 00:11:53,920
+making sure that we have good segmentation across all of our data but uh it means you know
+
+97
+00:11:53,920 --> 00:12:00,560
+tweaking a little bit because depending on the batch depending on the cell line depending on the
+
+98
+00:12:01,200 --> 00:12:06,400
+you know just the day on the microscope uh you might need to change your parameters a tiny bit
+
+99
+00:12:06,400 --> 00:12:11,920
+to get the most accurate nuclei and cell segmentations but once we've optimized that
+
+100
+00:12:12,880 --> 00:12:19,200
+then we run an analysis pipeline so this is a CellProfiler pipeline just wanted to highlight
+
+101
+00:12:19,200 --> 00:12:24,640
+that here we have in green like this is find our objects and all of these pink boxes are make
+
+102
+00:12:24,640 --> 00:12:29,520
+measurements so we have you know measurements on the images themselves to get some basic information
+
+103
+00:12:29,520 --> 00:12:36,480
+on the image these are all images measurements that we make on the objects so we're making
+
+104
+00:12:36,480 --> 00:12:42,800
+measurements on the nuclei on the cells and on the cytoplasm which is cell minus nucleus
+
+105
+00:12:44,080 --> 00:12:52,160
+so lots of object measurements this likewise is some specific handling for the mito stain to get
+
+106
+00:12:52,160 --> 00:12:58,800
+some mito mitochondria specific measurements and this is for looking specifically at the
+
+107
+00:12:58,800 --> 00:13:05,200
+background of images measuring some further you know image information about that so we you
+
+108
+00:13:05,200 --> 00:13:12,080
+know potentially you can use that for qc or or other such things so just lots of measurements
+
+109
+00:13:12,080 --> 00:13:20,880
+are made and this is an example of what comes out so we have yeah that's that's kind of scary
+
+110
+00:13:21,360 --> 00:13:28,800
+yeah so this is you know this is a tiny little crop of a you know a single csv opened up an excel
+
+111
+00:13:28,800 --> 00:13:38,000
+here where each row is a cell and we have actually thousands of features going going across um
+
+112
+00:13:38,000 --> 00:13:44,080
+but you can see these are you know features measured in the cell in the nucleus in the cytoplasm
+
+113
+00:13:44,080 --> 00:13:47,600
+and we'll have another episode coming up very soon talking about like how do you actually
+
+114
+00:13:47,600 --> 00:13:54,720
+understand these feature names that's another thing but uh and we and we actually have a
+
+115
+00:13:54,720 --> 00:14:01,840
+workflow for how do we take these you know these individual numbers that we have measured in these
+
+116
+00:14:01,840 --> 00:14:08,400
+objects and how do we make profiles right which is to say it involves some normalization it
+
+117
+00:14:08,400 --> 00:14:16,880
+involves aggregation to say you know for if i'm doing a you know for this drug what is the
+
+118
+00:14:16,880 --> 00:14:22,960
+set of features and numbers the vector as you you know if you're thinking mathematically that
+
+119
+00:14:22,960 --> 00:14:30,720
+describes this drug treatment because we have you know thousands of single cells and we need to
+
+120
+00:14:31,360 --> 00:14:35,920
+you know of measurements made in many compartment thousands of measurements thousands of single
+
+121
+00:14:35,920 --> 00:14:41,600
+cells we want to condense them into something that is not really big times really big so
+
+122
+00:14:41,680 --> 00:14:46,880
+slightly smaller than really big times really big to be able to to work downstream and so that
+
+123
+00:14:46,880 --> 00:14:52,720
+is just like our big picture overview uh my big picture overview i did all of the talking here sorry
+
+124
+00:14:52,720 --> 00:15:00,160
+that anything else you wanted to add in about the Cell Painting Assay big picture no i think the
+
+125
+00:15:00,160 --> 00:15:06,560
+only thing i would say is make it even one picture bigger which is there's tons of great assays
+
+126
+00:15:06,560 --> 00:15:10,160
+out there if you know exactly what you want to find like if you know that you care about
+
+127
+00:15:10,160 --> 00:15:16,480
+phosphosome protein like that's great you should measure phosphosome protein but what this lets you
+
+128
+00:15:16,480 --> 00:15:21,600
+do is kind of just find your unknown unknowns like i'm not sure exactly which proteins connect with
+
+129
+00:15:21,600 --> 00:15:26,000
+one another or which patient samples look like each other like let's do something that's instead of
+
+130
+00:15:26,000 --> 00:15:31,680
+really specific really broad and catch as many connections as possible so that's where it kind
+
+131
+00:15:31,680 --> 00:15:37,440
+of differs from a lot of other assays you might usually think about yeah absolutely absolutely
+
+132
+00:15:37,440 --> 00:15:43,280
+and i think that's a great point that it's it's sort of the you know exploring the unknown space
+
+133
+00:15:44,080 --> 00:15:52,320
+um at more you know much more general discovery than asking which then you can dive into and ask
+
+134
+00:15:52,320 --> 00:15:58,320
+more specific questions once you're in deep diving but it's not set it's set up to capture
+
+135
+00:15:59,360 --> 00:16:05,840
+as broad uh so you're certainly missing specific things with this assay like this does not capture
+
+136
+00:16:05,840 --> 00:16:10,000
+every single you know every single part of a cell like smells so pretty complex i don't know if
+
+137
+00:16:10,000 --> 00:16:15,360
+anybody else has picked up on that yet but you know but you are capturing a sort of optimized
+
+138
+00:16:15,360 --> 00:16:22,400
+view as broad of you as possible yeah totally great point awesome well thank you for that
+
+139
+00:16:22,400 --> 00:16:32,400
+fantastic overview yeah yeah and uh yeah thanks for thanks for joining me along on this again
+
+140
+00:16:32,400 --> 00:16:37,760
+now and then i have a an episode we can point to you know the next 400 times we name drop the
+
+141
+00:16:37,760 --> 00:16:44,560
+Cell Painting Assay indeed this might be one of our better linked ones yes yeah awesome well talk to
+
+142
+00:16:44,560 --> 00:16:56,960
+you later babes bye
+
+143
+00:17:02,400 --> 00:17:04,720
+you
+
