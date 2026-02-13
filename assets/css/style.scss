@@ -2,6 +2,8 @@
 ---
 $header-bg-color: #e96687;
 $header-bg-color-secondary: #421c5e;
+$section-headings-color: #421c5e !default;
+$body-link-color: #421c5e !default;
 
 @import "{{ site.theme }}";
 
