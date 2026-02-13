@@ -75,3 +75,5 @@ TEMPLATE ROW
 | Episode X.5 - TITLE - Coming Soon! <!-- [TITLE](link) --> | [TITLE](LINK) / Coming soon! | 
 
 </p>
+
+<script src="https://blueskytimeline.com/timeline.js" async data-handle="askerindearbeth.bsky.social" data-theme="light" data-width="420" data-height="500" data-lang="en" data-ui="0" data-prof="0" data-pin="0" data-rp="0" data-thread="0"></script>
