@@ -76,4 +76,6 @@ TEMPLATE ROW
 
 </p>
 
+## Find us on [Bluesky](https://bsky.app/profile/askerindearbeth.bsky.social) and [LinkedIn](https://www.linkedin.com/company/ask-erin-dear-beth/)
+
 <script src="https://blueskytimeline.com/timeline.js" async data-handle="askerindearbeth.bsky.social" data-theme="light" data-width="420" data-height="500" data-lang="en" data-ui="0" data-prof="0" data-pin="0" data-rp="0" data-thread="0"></script>
