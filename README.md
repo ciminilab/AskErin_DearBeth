@@ -1,6 +1,8 @@
 # Ask Erin / Dear Beth files 
 Files related to Ask Erin/Dear Beth episodes - Now available on a YouTube near You!
 
+Find us on [Bluesky](https://bsky.app/profile/askerindearbeth.bsky.social) and [LinkedIn](https://www.linkedin.com/company/ask-erin-dear-beth/)
+
 ## Got a question for Erin and Beth?
 
 Want to see Erin and Beth explain or demo your (least) favorite image analysis conundrum? [Submit a question here!](http://broad.io/AskErinDearBeth)
@@ -33,12 +35,12 @@ Want to see Erin and Beth explain or demo your (least) favorite image analysis c
 | Episode 22 - [Overview of CellProfiler's Input Modules](https://youtu.be/AZi18trmQhE) |  |  |  | [CellProfiler tutorials](http://tutorials.cellprofiler.org), [Full-length CellProfiler Input Modules video](https://www.youtube.com/watch?v=Z_pUWuOV06Q), [CellProfiler Input Modules written tutorial](https://carpenter-singh-lab.broadinstitute.org/blog/input-modules-tutorial) |
 | Episode 23 - [Introduction to the Cell Painting Assay](https://youtu.be/9-d6DoHtgUY) |  |  |  | [Cimini et al. Cell Painting Protocol Paper](https://doi.org/10.1038/s41596-023-00840-9), [CellProfiler pipelines for Cell Painting](https://github.com/broadinstitute/imaging-platform-pipelines/tree/master/JUMP_production) |
 | Episode 24 - [Thresholding in CellProfiler Part 1: Adaptive Thresholding for Uneven Illumination](https://youtu.be/ynrPqsOZVYE) | [Pipeline available here](https://github.com/ciminilab/AskErin_DearBeth/tree/main/files/Ep24) | [Images here](https://drive.google.com/drive/folders/1PDPeTDEvSpIOe7a_qQ3X7tgzWl0xlHnR?usp=sharing) |  |  |
-
+| Episode 25 - [Interpreting Cell Painting Features: Classic Cell Profiler Features](https://youtu.be/13KDkqLhDRQ) |  |  |  | [Cimini et al. Cell Painting Protocol Paper](https://doi.org/10.1038/s41596-023-00840-9), [Cell Painting Assay wiki](https://github.com/carpenter-singh-lab/2023_Cimini_NatureProtocols/wiki), [CellProfiler manual](https://cellprofiler.org/manuals), [CellProfiler codebase](https://github.com/CellProfiler/CellProfiler) |
 
 
 <!-- 
 
-| Episode 25 - [Interpreting Cell Painting Features: Classic Cell Profiler Features](https://youtu.be/13KDkqLhDRQ) |  |  |  | [Cimini et al. Cell Painting Protocol Paper](https://doi.org/10.1038/s41596-023-00840-9), [Cell Painting Assay wiki](https://github.com/carpenter-singh-lab/2023_Cimini_NatureProtocols/wiki), [CellProfiler manual](https://cellprofiler.org/manuals), [CellProfiler codebase](https://github.com/CellProfiler/CellProfiler) |
+
 | Episode 26 - [Thresholding in CellProfiler Part 2: Picking the Right Algorithm](https://youtu.be/07Bp3m5Obio) |  |  |  |  |
 | Episode 27 - [Interpretable Deep Learning Features in Cell Painting: Anomaly Profiles](https://youtu.be/kJ-rlm6j8m0) |  |  |  | [Shpigler et al. Paper](https://doi.org/10.1016/j.cels.2025.101429), [Cell Painting Gallery](http://broadinstitute.github.io/cellpainting-gallery/) |
 | Episode 28 - [Thresholding in CellProfiler Part 3: Threshold Correction Factor and Limits](https://youtu.be/GJS5EI-mpY4) |  |  |  |  |
