@@ -37,15 +37,11 @@ Want to see Erin and Beth explain or demo your (least) favorite image analysis c
 | Episode 24 - [Thresholding in CellProfiler Part 1: Adaptive Thresholding for Uneven Illumination](https://youtu.be/ynrPqsOZVYE) | [Pipeline available here](https://github.com/ciminilab/AskErin_DearBeth/tree/main/files/Ep24) | [Images here](https://drive.google.com/drive/folders/1PDPeTDEvSpIOe7a_qQ3X7tgzWl0xlHnR?usp=sharing) |  |  |
 | Episode 25 - [Interpreting Cell Painting Features: Classic Cell Profiler Features](https://youtu.be/13KDkqLhDRQ) |  |  |  | [Cimini et al. Cell Painting Protocol Paper](https://doi.org/10.1038/s41596-023-00840-9), [Cell Painting Assay wiki](https://github.com/carpenter-singh-lab/2023_Cimini_NatureProtocols/wiki), [CellProfiler manual](https://cellprofiler.org/manuals), [CellProfiler codebase](https://github.com/CellProfiler/CellProfiler) |
 | Episode 26 - [Thresholding in CellProfiler Part 2: Picking the Right Algorithm](https://youtu.be/07Bp3m5Obio) | [Pipeline available here](https://github.com/ciminilab/AskErin_DearBeth/tree/main/files/Ep26) | [Cell Painting images from the Broad Bioimage Benchmark Collection BBBC022](https://bbbc.broadinstitute.org/BBBC022), [download from CellProfiler's Advanced Segmentation tutorial here](https://drive.google.com/file/d/1qVaQiPZKqOPEsa62lYEpm7ot3th7ADqE/view) ;[Speckle images from idr0123-mota-mifish/experimentA](https://idr.openmicroscopy.org/webclient/?show=dataset-16553), [folder here](https://drive.google.com/drive/folders/1Iq59UTGt_adWOjYUeNbIv1xVXyEdfzek) | BBBC022 is [CC-0](https://creativecommons.org/public-domain/cc0/); Speckles are [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |  |
+| Episode 27 - [Interpretable Deep Learning Features in Cell Painting: Anomaly Profiles](https://youtu.be/kJ-rlm6j8m0) |  |  |  | [Shpigler et al. Paper](https://doi.org/10.1016/j.cels.2025.101429), [Cell Painting Gallery](http://broadinstitute.github.io/cellpainting-gallery/) |
 
 <!-- 
 
-
-
-| Episode 27 - [Interpretable Deep Learning Features in Cell Painting: Anomaly Profiles](https://youtu.be/kJ-rlm6j8m0) |  |  |  | [Shpigler et al. Paper](https://doi.org/10.1016/j.cels.2025.101429), [Cell Painting Gallery](http://broadinstitute.github.io/cellpainting-gallery/) |
 | Episode 28 - [Thresholding in CellProfiler Part 3: Threshold Correction Factor and Limits](https://youtu.be/GJS5EI-mpY4) | [Pipeline available here](https://github.com/ciminilab/AskErin_DearBeth/tree/main/files/Ep28) | [Cell Painting images from the Broad Bioimage Benchmark Collection BBBC022](https://bbbc.broadinstitute.org/BBBC022), [download from CellProfiler's Advanced Segmentation tutorial here](https://drive.google.com/file/d/1qVaQiPZKqOPEsa62lYEpm7ot3th7ADqE/view) | [CC-0](https://creativecommons.org/public-domain/cc0/) |  |
-
-
 
 --> 
 
