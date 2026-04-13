@@ -1,0 +1,1224 @@
+1
+00:00:16,000 --> 00:00:05,000
+Hello, Erin!
+
+2
+00:00:05,000 --> 00:00:06,000
+Hello, Beth!
+
+3
+00:00:06,000 --> 00:00:11,000
+Lovely to see you, my dear.
+
+4
+00:00:11,000 --> 00:00:22,160
+It is great to see you, always!
+
+5
+00:00:22,160 --> 00:00:25,400
+What are we going to talk about today?
+
+6
+00:00:25,400 --> 00:00:30,200
+So I thought I would talk a little bit about data and metadata.
+
+7
+00:00:30,200 --> 00:00:34,080
+I know that's one of your favorite things to talk about.
+
+8
+00:00:34,080 --> 00:00:40,880
+And this is actually a talk that I gave at CZI a few months back, but when I was talking
+
+9
+00:00:40,880 --> 00:00:43,960
+with friends there, they were like, this is the sort of information that is actually useful.
+
+10
+00:00:43,960 --> 00:00:49,160
+And I think a lot of people don't understand in terms of like, how do we actually put data
+
+11
+00:00:49,160 --> 00:00:53,920
+together for deep learning models and like what kind of data is useful for deep learning
+
+12
+00:00:53,920 --> 00:00:56,560
+models and how does metadata change that?
+
+13
+00:00:56,560 --> 00:00:59,320
+So I thought that was a topic worth covering.
+
+14
+00:00:59,320 --> 00:01:03,400
+That sounds lovely and helpful and interesting.
+
+15
+00:01:03,400 --> 00:01:11,120
+I mean, you think everything that has metadata is interesting, so you might be slightly biased.
+
+16
+00:01:11,120 --> 00:01:16,200
+I will admit admittedly more than a little biased, yes.
+
+17
+00:01:16,200 --> 00:01:17,200
+All right.
+
+18
+00:01:17,200 --> 00:01:21,920
+Well, hopefully it is useful and helpful and interesting for others as well.
+
+19
+00:01:21,920 --> 00:01:26,880
+But what I was asked to talk about at this conference was about adopting data from new
+
+20
+00:01:26,880 --> 00:01:31,880
+imaging technologies.
+
+21
+00:01:31,880 --> 00:01:37,040
+So if we're talking about adopting data from imaging technologies and making it work for
+
+22
+00:01:37,040 --> 00:01:41,000
+deep learning, the question I'm always going to start with asking is, what do you want
+
+23
+00:01:41,000 --> 00:01:43,880
+your deep learning model to do?
+
+24
+00:01:43,880 --> 00:01:47,960
+Because it turns out deep learning models can do a lot of different things.
+
+25
+00:01:47,960 --> 00:01:50,000
+They can do activity prediction.
+
+26
+00:01:50,000 --> 00:01:53,040
+They can be used for virtual staining.
+
+27
+00:01:53,040 --> 00:02:00,120
+Most commonly they're used for segmentation, but there's a whole lot of things and exactly
+
+28
+00:02:00,120 --> 00:02:04,080
+what you want your deep learning model to do will determine the data that you need for
+
+29
+00:02:04,080 --> 00:02:05,080
+it.
+
+30
+00:02:05,080 --> 00:02:07,080
+That makes sense?
+
+31
+00:02:07,080 --> 00:02:08,080
+Yeah.
+
+32
+00:02:08,080 --> 00:02:16,160
+But so we've talked a lot as a field, not so much really on the podcast, but certainly
+
+33
+00:02:16,160 --> 00:02:19,200
+a lot in the field about collecting lots of data and data repositories.
+
+34
+00:02:19,400 --> 00:02:23,240
+And we've talked about the idea on this whole painting gallery for sure.
+
+35
+00:02:23,240 --> 00:02:31,120
+But as there's this push to deposit your data, deposit your data, your data is only probably
+
+36
+00:02:31,120 --> 00:02:37,480
+actually useful if it has biology I know that I care about and I understand how your
+
+37
+00:02:37,480 --> 00:02:43,160
+image works, a.k.a. if it's annotated with good metadata, or if I'm making a big foundation
+
+38
+00:02:43,160 --> 00:02:44,160
+model.
+
+39
+00:02:44,160 --> 00:02:47,560
+And we'll talk a bit about what actually a foundation model means in a minute.
+
+40
+00:02:47,560 --> 00:02:48,560
+Yeah.
+
+41
+00:02:48,560 --> 00:02:55,000
+I think it fits nicely with my hot take that data without metadata is useless.
+
+42
+00:02:55,000 --> 00:02:57,240
+That's my fight me statement.
+
+43
+00:02:57,240 --> 00:02:58,240
+Yeah.
+
+44
+00:02:58,240 --> 00:03:00,640
+I mean, it's useless for case one.
+
+45
+00:03:00,640 --> 00:03:02,640
+It can be useful for case two.
+
+46
+00:03:02,640 --> 00:03:05,280
+But case one is way more common.
+
+47
+00:03:05,280 --> 00:03:09,640
+Case one is way more common and I'll still fight.
+
+48
+00:03:09,640 --> 00:03:11,000
+I'll still fight on that statement.
+
+49
+00:03:11,000 --> 00:03:12,000
+That's my...
+
+50
+00:03:12,000 --> 00:03:13,000
+That's fine.
+
+51
+00:03:13,000 --> 00:03:14,200
+You can fight whoever you want.
+
+52
+00:03:14,200 --> 00:03:16,560
+I am not here to stop you from fighting people.
+
+53
+00:03:16,560 --> 00:03:17,560
+Okay.
+
+54
+00:03:17,560 --> 00:03:19,560
+I have big feelings when it comes to metadata.
+
+55
+00:03:19,560 --> 00:03:21,320
+We'll just leave it at that.
+
+56
+00:03:21,320 --> 00:03:25,800
+I think everybody who watches the podcast knows that at this point.
+
+57
+00:03:25,800 --> 00:03:34,440
+I think that we all know and love your love of metadata.
+
+58
+00:03:34,440 --> 00:03:40,160
+So if I can align your data to my data, there are lots of interesting approaches.
+
+59
+00:03:40,160 --> 00:03:45,200
+And this is some preliminary data from work that we're doing in the lab about trying to
+
+60
+00:03:45,200 --> 00:03:51,040
+align data taken on two different microscopes and use clever features of deep learning
+
+61
+00:03:51,040 --> 00:03:52,040
+models.
+
+62
+00:03:52,040 --> 00:03:57,800
+I won't talk too much about what this is because this work is still in preparation.
+
+63
+00:03:57,800 --> 00:04:03,960
+But there are things we can do if we know how your data lines up with my data.
+
+64
+00:04:03,960 --> 00:04:11,200
+And I say that a little bit flippantly.
+
+65
+00:04:11,200 --> 00:04:12,880
+There's often things we can do.
+
+66
+00:04:12,880 --> 00:04:16,560
+It's not always that there are things we can do.
+
+67
+00:04:16,560 --> 00:04:19,520
+Being able to align even data that we know should align.
+
+68
+00:04:19,520 --> 00:04:24,200
+So this is a figure from John Revolo's paper describing some of the jump data sets and
+
+69
+00:04:24,200 --> 00:04:28,560
+some of the benchmarks he put together out of the jump data sets.
+
+70
+00:04:28,560 --> 00:04:32,600
+Even in cases where we know we should be able to align the data together.
+
+71
+00:04:32,600 --> 00:04:38,360
+In this case, we have data of the same plate of compounds that was then subdivided and
+
+72
+00:04:38,360 --> 00:04:43,720
+distributed to many companies who were all using the exact same lot of cells and the
+
+73
+00:04:43,720 --> 00:04:47,600
+exact same lot of dies to create images.
+
+74
+00:04:47,600 --> 00:04:55,240
+If we tried to align everybody's data to each other, the goodness of data alignment,
+
+75
+00:04:55,240 --> 00:04:59,680
+which you should read, goodness of data alignment as like individual distinct colored blobs in
+
+76
+00:04:59,680 --> 00:05:06,960
+the top row, is really different even just across different batch alignment methods that
+
+77
+00:05:07,040 --> 00:05:10,000
+the field agrees are good.
+
+78
+00:05:10,000 --> 00:05:15,520
+And we can see that in some cases are lower things, which is like essentially which set
+
+79
+00:05:15,520 --> 00:05:20,120
+of hands or robots made the data and what microscope did they make it on.
+
+80
+00:05:20,120 --> 00:05:24,480
+In some cases that is predominating and the data is not well mixed.
+
+81
+00:05:24,480 --> 00:05:28,400
+So I'm being a little bit flippant when I say we can totally do it if we can align our
+
+82
+00:05:28,400 --> 00:05:30,160
+data to your data.
+
+83
+00:05:30,160 --> 00:05:33,240
+That's still a hard problem, but smart people are working hard on it.
+
+84
+00:05:33,240 --> 00:05:38,640
+So I want to not say that it's going to be easy to align to somebody else's data, but
+
+85
+00:05:38,640 --> 00:05:43,960
+it often can be done.
+
+86
+00:05:43,960 --> 00:05:47,520
+But again, we can only do that.
+
+87
+00:05:47,520 --> 00:05:51,080
+The technical things are going to get worked out and smart people are working hard.
+
+88
+00:05:51,080 --> 00:05:57,560
+They can't be worked out fully if the data isn't fair and annotated with metadata.
+
+89
+00:05:57,560 --> 00:06:00,000
+So what do I mean by fair?
+
+90
+00:06:00,000 --> 00:06:03,800
+You probably heard this term several times at this point, I certainly hope.
+
+91
+00:06:03,800 --> 00:06:10,760
+Findable accessible, intrapropable, reproducible and reusable.
+
+92
+00:06:10,760 --> 00:06:12,880
+And the F here is really important.
+
+93
+00:06:12,880 --> 00:06:13,880
+The data has to be findable.
+
+94
+00:06:13,880 --> 00:06:15,960
+We have to be able to know what it is.
+
+95
+00:06:15,960 --> 00:06:19,560
+We have to be able to open it and access it.
+
+96
+00:06:19,560 --> 00:06:26,160
+And so in order to have the data be fair to be used, it has to be all of these things
+
+97
+00:06:26,160 --> 00:06:28,120
+or otherwise we can't use it.
+
+98
+00:06:28,120 --> 00:06:33,320
+We can't use it if we can't find it.
+
+99
+00:06:33,320 --> 00:06:40,920
+And right now a lot of our data repositories are sort of overrepresented with data from
+
+100
+00:06:40,920 --> 00:06:45,560
+places like the Broad where Erin and I work that make big data and the Allen Institute
+
+101
+00:06:45,560 --> 00:06:50,720
+and CSI Engine and other places that make gorgeous, huge, clean data.
+
+102
+00:06:50,720 --> 00:06:54,680
+But I would like to argue here in my Vibes graph that actually there's probably a lot
+
+103
+00:06:54,680 --> 00:07:00,520
+more data out there if we collect it from old biologists everywhere if only we could
+
+104
+00:07:00,520 --> 00:07:03,080
+compile it.
+
+105
+00:07:03,080 --> 00:07:09,840
+And so I think that we're missing out on actually a gazillion data sets that would be great
+
+106
+00:07:09,840 --> 00:07:11,880
+if we could collect them.
+
+107
+00:07:11,880 --> 00:07:18,360
+But we can't collect them fairly yet.
+
+108
+00:07:18,360 --> 00:07:25,640
+And so we currently can't use a lot of the data that's being made because we are lacking
+
+109
+00:07:25,640 --> 00:07:33,800
+this ability to have commonly annotated metadata that exists in fair repositories.
+
+110
+00:07:33,800 --> 00:07:38,600
+And just knowing that the data exists and making the data be findable is often the really
+
+111
+00:07:38,600 --> 00:07:45,120
+hard part there.
+
+112
+00:07:45,120 --> 00:07:50,760
+But having it be well annotated is not a trivial task and it's not like that the community
+
+113
+00:07:50,760 --> 00:07:52,840
+doesn't care about this and that's why this isn't done yet.
+
+114
+00:07:52,840 --> 00:07:56,280
+Some of which is like we have to figure out where all this data is going to live and data
+
+115
+00:07:56,280 --> 00:07:59,600
+storage is not inexpensive.
+
+116
+00:07:59,600 --> 00:08:07,880
+But also some of this is about the fact that microscopy is not actually just one thing.
+
+117
+00:08:07,880 --> 00:08:10,240
+There are many kinds of devices in a trench coat.
+
+118
+00:08:10,240 --> 00:08:14,840
+It is many modalities in a trench coat that we all call microscopes.
+
+119
+00:08:14,840 --> 00:08:18,760
+And some of you might have something that looks like any of these different devices
+
+120
+00:08:18,760 --> 00:08:21,840
+inside this trench coat.
+
+121
+00:08:21,840 --> 00:08:28,000
+So it is a really hard thing to come up with a set of metadata that everybody agrees on.
+
+122
+00:08:28,000 --> 00:08:34,680
+Again, smart people are working hard, but this is really non-turbial because some people
+
+123
+00:08:34,680 --> 00:08:36,520
+here are microscoping and they think electron microscope.
+
+124
+00:08:36,520 --> 00:08:40,760
+Some people think microscope and they think something where I'm capturing one molecule
+
+125
+00:08:40,760 --> 00:08:45,360
+at a time and some people are like confocal in a box that gives me hundreds of samples
+
+126
+00:08:45,360 --> 00:08:50,040
+per day.
+
+127
+00:08:50,040 --> 00:08:52,120
+And the metadata at the moment is a mess.
+
+128
+00:08:52,120 --> 00:08:57,640
+When we ask people how do you annotate your data, do you annotate it by color or by the
+
+129
+00:08:57,640 --> 00:09:04,280
+name of the dye or by what the dye is targeting or by what part of the cell the dye is targeting?
+
+130
+00:09:04,280 --> 00:09:09,600
+The answer we usually get is yes.
+
+131
+00:09:09,600 --> 00:09:12,880
+We as a field have not decided how we want to do this.
+
+132
+00:09:12,880 --> 00:09:17,760
+And so we as a field should start coming up with ways to do this.
+
+133
+00:09:17,760 --> 00:09:25,080
+I love this example because also none of these are actually wrong, which I think helps illustrate
+
+134
+00:09:25,080 --> 00:09:29,280
+what a hard issue this is.
+
+135
+00:09:29,280 --> 00:09:34,280
+Because it's not like any biologist giving you any of these answers is worse than the
+
+136
+00:09:34,280 --> 00:09:38,760
+other or these are all valid responses.
+
+137
+00:09:38,920 --> 00:09:45,760
+As a field, as those of us who are passionate about metadata, the challenge really becomes
+
+138
+00:09:45,760 --> 00:09:53,920
+how do we guide people to record the answer that we are looking for?
+
+139
+00:09:53,920 --> 00:09:59,960
+We need to ask a very specific question, not just what do you name it?
+
+140
+00:09:59,960 --> 00:10:03,480
+Here you have it in four different examples rather than just what's its name, what is
+
+141
+00:10:03,480 --> 00:10:07,880
+its color, what is the dye, the channel, etc.
+
+142
+00:10:08,000 --> 00:10:13,760
+And even me as the person who is doing this might care about different things on different
+
+143
+00:10:13,760 --> 00:10:14,760
+days.
+
+144
+00:10:14,760 --> 00:10:21,680
+If I want to check if I think that there is auto fluorescence that is coming in, I care
+
+145
+00:10:21,680 --> 00:10:25,560
+about the name or the color of the dye and the name because I can then figure out what
+
+146
+00:10:25,560 --> 00:10:27,680
+the color is.
+
+147
+00:10:27,680 --> 00:10:32,960
+But then if I want to know what is the biology of my sample, maybe I don't care which DNA
+
+148
+00:10:32,960 --> 00:10:35,000
+damage dye somebody used.
+
+149
+00:10:35,000 --> 00:10:37,840
+I just care that it is a DNA damage dye.
+
+150
+00:10:37,840 --> 00:10:41,600
+Maybe I don't care if somebody did phylloidin or an anti-actin antibody.
+
+151
+00:10:41,600 --> 00:10:43,360
+Maybe I just care that it is the actin.
+
+152
+00:10:43,360 --> 00:10:48,320
+So even the same person at two different points might care about two completely different
+
+153
+00:10:48,320 --> 00:10:49,320
+properties here.
+
+154
+00:10:49,320 --> 00:10:50,320
+Yes.
+
+155
+00:10:51,320 --> 00:10:56,320
+So we are working on it but there is still a long way to go because the question is hard.
+
+156
+00:10:59,320 --> 00:11:01,960
+And yeah, smart people are working hard.
+
+157
+00:11:01,960 --> 00:11:08,560
+This is a draft of a thing that people on the team such as Erin and a great former student
+
+158
+00:11:08,560 --> 00:11:13,800
+of hers, Guy Grbaka, have put together for trying to make this hierarchical.
+
+159
+00:11:13,800 --> 00:11:17,040
+But there is a lot of different versions of this at this point.
+
+160
+00:11:17,040 --> 00:11:20,600
+People are working on different ones and not everybody has agreed yet.
+
+161
+00:11:20,600 --> 00:11:23,880
+So we are working to come towards it as a community.
+
+162
+00:11:23,880 --> 00:11:28,320
+There is hope in sight.
+
+163
+00:11:28,320 --> 00:11:29,800
+So what about the other case?
+
+164
+00:11:29,840 --> 00:11:36,480
+The case where what can we do with the data if I am making a big foundation model?
+
+165
+00:11:36,480 --> 00:11:41,400
+Nobody agrees on what a foundation model is for the record.
+
+166
+00:11:41,400 --> 00:11:45,960
+So if you are not sure what people mean when they say foundation models, people generally
+
+167
+00:11:45,960 --> 00:11:49,280
+just mean model that works on lots of different stuff.
+
+168
+00:11:49,280 --> 00:11:56,080
+And I don't think we have come to a better definition as a field than that.
+
+169
+00:11:56,080 --> 00:12:01,560
+So mostly write explanations about what I mean.
+
+170
+00:12:01,560 --> 00:12:07,000
+We have a deep neural network where we have inputs come in and we have outputs come out.
+
+171
+00:12:07,000 --> 00:12:09,680
+They might be words, they might be measurements.
+
+172
+00:12:09,680 --> 00:12:12,000
+The inputs might be words or measurements or things.
+
+173
+00:12:12,000 --> 00:12:17,600
+The diversity of neural networks now is insane and this is sort of depicting probably something
+
+174
+00:12:17,600 --> 00:12:22,960
+that is meant to be convolutional neural network and there are whole many flavors now.
+
+175
+00:12:22,960 --> 00:12:28,080
+But this is at its heart the basic idea.
+
+176
+00:12:28,080 --> 00:12:33,720
+And in a deep neural network we have neurons that talk to each other that are grouped into
+
+177
+00:12:33,720 --> 00:12:40,480
+layers and they might connect to each other in complex fashions.
+
+178
+00:12:40,480 --> 00:12:46,200
+And that's really all that this means is we have individual sort of algorithms that might
+
+179
+00:12:46,200 --> 00:12:51,520
+fire if like the sum of all of these things is greater than a certain number.
+
+180
+00:12:51,520 --> 00:12:55,160
+This will put out a yes and if not it will put out a no.
+
+181
+00:12:55,160 --> 00:13:00,000
+And so this really was actually inspired by how neurons work and how brains work.
+
+182
+00:13:00,000 --> 00:13:04,440
+But the fact that we have all of these different connections that we can tune how important
+
+183
+00:13:04,440 --> 00:13:13,240
+they are is what makes deep neural networks so powerful.
+
+184
+00:13:13,240 --> 00:13:17,120
+There's a few emergent properties here from the fact that that is all we're doing is just
+
+185
+00:13:17,120 --> 00:13:19,960
+sort of changing the weights of those connections.
+
+186
+00:13:19,960 --> 00:13:25,760
+You'll sometimes hear people talk about weights and saying like okay based on those weights
+
+187
+00:13:25,760 --> 00:13:29,400
+you know do I get the right answer yes or no.
+
+188
+00:13:29,400 --> 00:13:33,680
+Because all we're doing is sort of randomly changing the weights we can't control what
+
+189
+00:13:33,680 --> 00:13:36,440
+the model learns.
+
+190
+00:13:36,440 --> 00:13:41,360
+It will find whatever associations we optimize for with our loss function which is what we're
+
+191
+00:13:41,360 --> 00:13:45,520
+trying to get the model to learn.
+
+192
+00:13:45,520 --> 00:13:48,080
+And whatever associations exist in our trading data.
+
+193
+00:13:48,080 --> 00:13:53,480
+One of the famous ones is like if an animal is standing on grass it's more likely to be
+
+194
+00:13:53,480 --> 00:13:58,320
+a dog than a cat because most pictures of animals on grass are dogs.
+
+195
+00:13:58,320 --> 00:14:02,720
+So it will learn associations that are in our data that maybe we never intended.
+
+196
+00:14:02,720 --> 00:14:08,480
+If it's not in the data we have no reason to believe it's going to be emergently learned.
+
+197
+00:14:08,480 --> 00:14:13,920
+It could be but there's no reason to believe that it is going that anything that the model
+
+198
+00:14:13,920 --> 00:14:18,320
+is spitting out that it's never seen before is true.
+
+199
+00:14:18,320 --> 00:14:21,040
+We have no reason to believe that that's true.
+
+200
+00:14:21,040 --> 00:14:24,880
+And the bigger the model the more complex the associations between our inputs and our
+
+201
+00:14:24,880 --> 00:14:30,240
+outputs the more data we need to check all of these and set the value of all of these
+
+202
+00:14:30,240 --> 00:14:32,840
+arrows to something reasonable.
+
+203
+00:14:32,840 --> 00:14:41,120
+In big models we routinely have billions of arrows here and billions is lots.
+
+204
+00:14:41,120 --> 00:14:48,400
+And so the way deep learning works is we in this case this is a convolutional like we
+
+205
+00:14:48,400 --> 00:14:55,840
+sort of say hey network take an image and then I want it to come out looking like this
+
+206
+00:14:55,840 --> 00:14:59,760
+go through the thing and see if it comes out looking like this.
+
+207
+00:14:59,760 --> 00:15:06,080
+If it doesn't change all of the sort of strength of those arrows that I had in my previous
+
+208
+00:15:06,240 --> 00:15:12,080
+slide and then try again and then try again and then try again and then try again and
+
+209
+00:15:12,080 --> 00:15:15,960
+our loss function our thing we're trying to get the model to learn is how similar are
+
+210
+00:15:15,960 --> 00:15:18,000
+these two images.
+
+211
+00:15:18,000 --> 00:15:21,960
+That's all deep learning is.
+
+212
+00:15:21,960 --> 00:15:27,600
+Now in order to know what the right answer is we need to have a right answer we need
+
+213
+00:15:27,600 --> 00:15:33,560
+to have a question that we can answer and having cell masks for good jillions of data
+
+214
+00:15:33,560 --> 00:15:39,480
+sets is the thing that we wish that we had but we certainly don't for most of biology.
+
+215
+00:15:39,480 --> 00:15:43,240
+So usually when people are doing things that are called foundation models these days they're
+
+216
+00:15:43,240 --> 00:15:50,600
+relying heavily on unsupervised learning which really isn't unsupervised so much as
+
+217
+00:15:50,600 --> 00:15:55,600
+we've come up with clever ways of getting around making our supervising data and not
+
+218
+00:15:55,600 --> 00:15:58,760
+really unsupervised.
+
+219
+00:15:58,760 --> 00:16:05,280
+A lot of times I hear people talk about self supervised data where we haven't had to beautifully
+
+220
+00:16:05,280 --> 00:16:09,920
+make ground truth by hand.
+
+221
+00:16:09,920 --> 00:16:18,080
+And so we can come up with the task that will make the network pretty good at stuff and then
+
+222
+00:16:18,080 --> 00:16:21,000
+just fine tune the arrows a little bit.
+
+223
+00:16:21,000 --> 00:16:26,960
+If we're sure that our arrows are close to right then we don't have to actually do that
+
+224
+00:16:27,000 --> 00:16:32,000
+much to change our arrows with our real data because our arrows are already pretty good
+
+225
+00:16:32,000 --> 00:16:36,360
+based on some like almost as good task.
+
+226
+00:16:36,360 --> 00:16:38,800
+So what do I mean what's a good example?
+
+227
+00:16:38,800 --> 00:16:45,920
+So like for the large language models of the world they didn't actually just sort of like
+
+228
+00:16:45,920 --> 00:16:52,320
+stick all the sentences in and say like okay I'm gonna like how did they train chat Jpt
+
+229
+00:16:52,320 --> 00:16:58,440
+for example so that what came out was actually sentences that made sense.
+
+230
+00:16:58,440 --> 00:17:06,080
+So it trained it on tasks like I'm gonna sort of omit a word guess what the missing word
+
+231
+00:17:06,080 --> 00:17:08,120
+should be.
+
+232
+00:17:08,120 --> 00:17:12,560
+This word should probably not be tennis.
+
+233
+00:17:12,560 --> 00:17:18,320
+If it gets tennis it's probably wrong compared to if it gets eat it's probably right.
+
+234
+00:17:18,320 --> 00:17:23,920
+Look would also probably it's probably less right but it's probably also right.
+
+235
+00:17:23,920 --> 00:17:29,400
+Tennis is also probably not the right word here.
+
+236
+00:17:29,400 --> 00:17:34,280
+Or they came up with sort of yes or no tasks that they could do easily and automatically
+
+237
+00:17:34,280 --> 00:17:39,400
+which is you know take pairs of sentences you know give it either the right or the wrong
+
+238
+00:17:39,400 --> 00:17:44,160
+second sentence and then say did the model and ask the model what is this the right second
+
+239
+00:17:44,160 --> 00:17:45,440
+sentence.
+
+240
+00:17:45,440 --> 00:17:48,680
+So that's something you can do in an automated fashion without a human having to sit there
+
+241
+00:17:48,680 --> 00:17:53,520
+and like come up with pairs of sentences.
+
+242
+00:17:53,520 --> 00:18:02,440
+So we can do this in bioimaging also by doing things like so this is from a version of dyno
+
+243
+00:18:02,440 --> 00:18:07,800
+which is an image transformer we can say all right I've taken the whole image and a crop
+
+244
+00:18:07,800 --> 00:18:13,920
+from an image is the crop from the same image yes or no.
+
+245
+00:18:13,920 --> 00:18:19,080
+And so we can get the model to say OK I get stuff about images I understand what images
+
+246
+00:18:19,080 --> 00:18:23,520
+are like without having to go through and manually make a bunch of data because we can
+
+247
+00:18:23,520 --> 00:18:28,880
+create crops randomly as we go.
+
+248
+00:18:28,880 --> 00:18:32,120
+And this is super powerful because it means we don't have to sit there sort of making
+
+249
+00:18:32,120 --> 00:18:40,600
+the right answers all the time but it means that we need tons of data and tons of compute.
+
+250
+00:18:40,600 --> 00:18:50,820
+So this was trained on 256 A 100s which were the state of the art for three days on billions
+
+251
+00:18:50,820 --> 00:18:55,280
+of data points when we talk about segment anything which underlies things like cell
+
+252
+00:18:55,280 --> 00:19:00,840
+post Sam and micro Sam and the first version was pretty good though it definitely was was
+
+253
+00:19:00,840 --> 00:19:05,280
+not perfect.
+
+254
+00:19:05,280 --> 00:19:16,280
+But this was 11 million images with one billion masks billion objects it took to do this.
+
+255
+00:19:16,280 --> 00:19:19,600
+And the only thing we're aware of this close in size is the painting gallery but that's
+
+256
+00:19:19,600 --> 00:19:24,000
+all one essay we don't have that for biology.
+
+257
+00:19:24,000 --> 00:19:28,760
+Like I said 250 GPUs for 68 hours.
+
+258
+00:19:28,760 --> 00:19:33,520
+It's the carbon equivalent of driving a car from me in Boston to Erin in Seattle and
+
+259
+00:19:33,520 --> 00:19:39,240
+back again just for one training run of this model.
+
+260
+00:19:39,240 --> 00:19:43,360
+And at the time those GPUs were like 10 grand a pop.
+
+261
+00:19:43,360 --> 00:19:49,400
+So like this is a couple million dollars worth of GPUs which your traditional academic lab
+
+262
+00:19:49,400 --> 00:19:50,520
+does not have.
+
+263
+00:19:50,520 --> 00:19:54,840
+I do not have two million dollars of GPUs in my lab if only.
+
+264
+00:19:54,840 --> 00:20:02,080
+Yeah no but yeah no I won't even go there but a girl can dream.
+
+265
+00:20:02,080 --> 00:20:06,760
+And we can take foundation models and we can reuse them in other clever ways and so foundation
+
+266
+00:20:06,760 --> 00:20:12,000
+models are doing what they've promised to do which is you train a big thing once and
+
+267
+00:20:12,000 --> 00:20:14,800
+then you can use it in lots of other applications.
+
+268
+00:20:14,800 --> 00:20:19,520
+And so we can start doing this with unlabeled image data by doing things like these dino
+
+269
+00:20:19,520 --> 00:20:26,880
+transformers but you know they're not everything and they often need to be tuned to exactly
+
+270
+00:20:26,880 --> 00:20:31,400
+and so one of the reasons we like self-post-sam is it does in our experience a good mix of
+
+271
+00:20:31,400 --> 00:20:36,040
+getting it pretty good on the first try but then being easily retrainable to exactly the
+
+272
+00:20:36,040 --> 00:20:41,000
+right thing.
+
+273
+00:20:41,000 --> 00:20:48,160
+So our conclusions are foundation models are going to need to have everything in them
+
+274
+00:20:48,160 --> 00:20:52,720
+we want to find the good the bad and the ugly so if we need them to handle ugly data they're
+
+275
+00:20:52,720 --> 00:20:58,680
+going to need to handle ugly data.
+
+276
+00:20:58,680 --> 00:21:04,200
+Most groups are not going to be able to train these yet so we need to sort of rely on having
+
+277
+00:21:04,200 --> 00:21:12,240
+good commercial collaborators or big national or international collaborations and we probably
+
+278
+00:21:12,240 --> 00:21:18,400
+don't have all the data that we're going to need for it yet.
+
+279
+00:21:18,400 --> 00:21:21,800
+They're going to be powerful because then even if you don't have the you know two and
+
+280
+00:21:21,800 --> 00:21:31,920
+a half million dollars in GPUs you can absolutely go forward and sort of make great things out
+
+281
+00:21:31,920 --> 00:21:40,080
+of these foundation models that can be smaller and lighter weight but if we don't keep collecting
+
+282
+00:21:40,080 --> 00:21:47,840
+all of the data and preferably annotating it things aren't going to advance as fast
+
+283
+00:21:47,840 --> 00:21:53,040
+as they could and so my argument and where I'll stop here is the way forward for now
+
+284
+00:21:53,040 --> 00:22:02,600
+is to hopefully make lots more fair data and make it possible to do this by having repositories
+
+285
+00:22:02,600 --> 00:22:06,920
+and having standardized metadata that biologists could contribute to.
+
+286
+00:22:06,920 --> 00:22:12,320
+We make it attractive for people to contribute to it by saying like hey look if you give
+
+287
+00:22:12,320 --> 00:22:16,240
+us your data you're going to have models that work on your data because they're part of
+
+288
+00:22:16,240 --> 00:22:21,040
+some big training set and we make it actually attractive to sort of we tell people what's
+
+289
+00:22:21,040 --> 00:22:28,600
+in it for them and just keep making clever and clever models with the smallest data that
+
+290
+00:22:28,600 --> 00:22:36,040
+we can and hope that these big commercial entities or our collaborative things come
+
+291
+00:22:36,040 --> 00:22:40,760
+together and we can keep making great big models that can then be sort of turned into
+
+292
+00:22:40,760 --> 00:22:44,840
+small clever models.
+
+293
+00:22:44,840 --> 00:22:53,280
+So that's really what the talk was about and I hope it is a useful overview of where we
+
+294
+00:22:53,280 --> 00:23:00,120
+are now in terms of like what bio-images can do and what we hope that they'll be able to
+
+295
+00:23:00,120 --> 00:23:04,600
+do even more going forward but what work we need to do to get there.
+
+296
+00:23:05,360 --> 00:23:06,640
+Yeah I think so.
+
+297
+00:23:06,640 --> 00:23:17,360
+I mean I think I don't know again a little biased over here but you know hearing that
+
+298
+00:23:17,360 --> 00:23:22,480
+tracking metadata and depositing images you know two things that I am very passionate
+
+299
+00:23:22,480 --> 00:23:29,840
+about actually I think you know did a lovely job of explaining why those are so important
+
+300
+00:23:29,840 --> 00:23:36,800
+and why I and you and many other people care so deeply about this.
+
+301
+00:23:36,800 --> 00:23:45,840
+Yeah well thanks for listening I hope it was it delivered but yeah please think about depositing
+
+302
+00:23:45,840 --> 00:23:49,920
+your data somewhere annotated whether that's the bio-image archive, IDR, the Selpington
+
+303
+00:23:49,920 --> 00:23:54,840
+Gallery we would love to have your data because we would love to make models that work for
+
+304
+00:23:54,840 --> 00:23:55,840
+you.
+
+305
+00:23:55,840 --> 00:23:57,840
+Awesome thanks Beth.
+
+306
+00:23:59,840 --> 00:24:00,840
+Thanks.
+

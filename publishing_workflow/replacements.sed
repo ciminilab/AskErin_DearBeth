@@ -48,4 +48,6 @@ s/Fitzy/FITC/g
 s/fitzy/FITC/g
 s/ um / /g
 s/Lincoln/link in/g
+s/essay/assay/g
+s/dies/dyes/g
 s/00:00:00,000/00:00:16,000/g

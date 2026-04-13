@@ -1,0 +1,464 @@
+1
+00:00:16,000 --> 00:00:07,000
+Hello Beth!
+
+2
+00:00:07,000 --> 00:00:08,000
+Hello!
+
+3
+00:00:08,000 --> 00:00:09,000
+Wonderful to see you.
+
+4
+00:00:09,000 --> 00:00:10,000
+Oh my gosh.
+
+5
+00:00:10,000 --> 00:00:11,000
+I agree.
+
+6
+00:00:11,000 --> 00:00:12,000
+It's delightful to see you my dear.
+
+7
+00:00:12,000 --> 00:00:14,000
+Are we talking about something fun today?
+
+8
+00:00:14,000 --> 00:00:15,000
+I think so.
+
+9
+00:00:15,000 --> 00:00:17,000
+I think it's pretty fun.
+
+10
+00:00:17,000 --> 00:00:18,000
+Yeah.
+
+11
+00:00:18,000 --> 00:00:19,000
+We've been...
+
+12
+00:00:19,000 --> 00:00:20,000
+We've been...
+
+13
+00:00:20,000 --> 00:00:21,000
+We've been...
+
+14
+00:00:21,000 --> 00:00:22,000
+We've been...
+
+15
+00:00:22,000 --> 00:00:23,000
+We've been...
+
+16
+00:00:23,000 --> 00:00:24,000
+We've been...
+
+17
+00:00:24,000 --> 00:00:25,000
+We've been...
+
+18
+00:00:25,000 --> 00:00:26,000
+We've been...
+
+19
+00:00:26,000 --> 00:00:27,000
+We've been...
+
+20
+00:00:27,000 --> 00:00:28,000
+We've been...
+
+21
+00:00:28,000 --> 00:00:29,000
+We've been...
+
+22
+00:00:29,000 --> 00:00:50,000
+We've been talking quite a bit recently in recent episodes on Cell Painting, which is an assay that our lab, you know, runs a lot and is involved in, in many, in many ways in the continued growth and development of Cell Painting as an assay.
+
+23
+00:00:51,000 --> 00:01:03,000
+And I wanted to really, really, really quickly surface overview talk about a variant of the Cell Painting assay called pooled Cell Painting.
+
+24
+00:01:03,000 --> 00:01:04,000
+Yeah.
+
+25
+00:01:04,000 --> 00:01:05,000
+Yeah.
+
+26
+00:01:05,000 --> 00:01:06,000
+Yeah.
+
+27
+00:01:06,000 --> 00:01:09,000
+So like it's like sipping a margarita, like, you know.
+
+28
+00:01:09,000 --> 00:01:14,000
+If only it was that simple.
+
+29
+00:01:14,000 --> 00:01:19,000
+I think actually the regular Cell Painting assay is easy enough at this point.
+
+30
+00:01:19,000 --> 00:01:23,000
+You can sip a margarita by a pool while, while working on it.
+
+31
+00:01:23,000 --> 00:01:28,000
+Pooled Cell Painting, not quite there, but we're working on it.
+
+32
+00:01:28,000 --> 00:01:38,000
+Our lab is working very hard on some, some tech dev behind the scenes to make it a more accessible assay in general.
+
+33
+00:01:39,000 --> 00:01:44,000
+But, but no, let's, let's talk about what actually makes it pooled.
+
+34
+00:01:44,000 --> 00:01:58,000
+So here this is a picture of pooled Cell Painting and what makes this different from regular Cell Painting.
+
+35
+00:01:58,000 --> 00:02:02,000
+So you see, and if, and I'm not going to dive into details of Cell Painting.
+
+36
+00:02:02,000 --> 00:02:07,000
+So in the show notes, there are links to other Cell Painting episodes.
+
+37
+00:02:07,000 --> 00:02:13,000
+So go catch up on those first if you're not familiar with the cell paint, you know, the, the OG Cell Painting assay.
+
+38
+00:02:13,000 --> 00:02:21,000
+And, but here what we have an example of painted cells on the left and barcodes on the right.
+
+39
+00:02:21,000 --> 00:02:30,000
+And these barcodes are representing the fact that so this is just reading reading a barcode.
+
+40
+00:02:30,000 --> 00:02:46,000
+This is one the cycle, but you can see that there are different colors representing different nucleotides in that barcode that are, you know, different for different cells in this single image.
+
+41
+00:02:46,000 --> 00:02:59,000
+So what that is in effect is that rather than having let's, you know, rather would jump ahead here to, you know, a standard standard.
+
+42
+00:02:59,000 --> 00:03:18,000
+Pictures of of plates that cells are grown in rather than, you know, Cell Painting, often being done in a 384 well, where each well has its own perturbation.
+
+43
+00:03:18,000 --> 00:03:24,000
+So whether that is a genetic knockout or a chemical that we're putting in there.
+
+44
+00:03:24,000 --> 00:03:35,000
+Each one is has its own. And so we know what every perturbation what's what perturbation is in the cell based on where it is in this plate.
+
+45
+00:03:35,000 --> 00:03:43,000
+And so, pulled Cell Painting, instead, is done in much larger plates.
+
+46
+00:03:43,000 --> 00:03:57,000
+And the perturbations in this case, genetic perturbations are quite literally pulled together, and then applied into this entire well of cells at once.
+
+47
+00:03:57,000 --> 00:04:03,000
+And then plate is bigger. It's that we're using bigger, bigger wells, your fewer wells in each place, bigger fewer wells.
+
+48
+00:04:03,000 --> 00:04:10,000
+In fact, it doesn't have to be six well, we, you know, we're working with collaborators that are working on a single well plate.
+
+49
+00:04:10,000 --> 00:04:18,000
+And we've done screens with other collaborators that have done it in 96 well format. So it's not that it has to be different.
+
+50
+00:04:18,000 --> 00:04:32,000
+It's just that because you have a whole pool, you want to make sure you have enough representation in any given well that you are able to see images of the correct number of cells.
+
+51
+00:04:32,000 --> 00:04:39,000
+And so you can see images from this pool, which is when you only have one perturbation in the well, it's much easier.
+
+52
+00:04:39,000 --> 00:04:44,000
+You can you can find enough representation in a smaller well.
+
+53
+00:04:44,000 --> 00:05:00,000
+So what this looks like, what makes this different is, so the Cell Painting arm of pulled Cell Painting is actually basically the same can be basically the same, or can be shifted around in minor ways.
+
+54
+00:05:00,000 --> 00:05:04,000
+Much as you can do in an arrayed manner.
+
+55
+00:05:04,000 --> 00:05:10,000
+And we also have an upcoming episode talking about all of the ways that you can shift around Cell Painting.
+
+56
+00:05:10,000 --> 00:05:17,000
+So this is one example of a minor shift that is irrelevant.
+
+57
+00:05:17,000 --> 00:05:25,000
+You know, not to say that we didn't have wet lab collaborators that did lots and lots and lots of hard work to figure out the exact shift to make this all work.
+
+58
+00:05:25,000 --> 00:05:32,000
+But for our purposes here in understanding what's going on, you can just think of it as Cell Painting.
+
+59
+00:05:32,000 --> 00:05:41,000
+And then this is an example of taking a so there's a library of cells.
+
+60
+00:05:41,000 --> 00:05:53,000
+Sorry, a library of sgRNAs that are packaged into virus, and they are put into cells that express cast nine.
+
+61
+00:05:53,000 --> 00:05:59,000
+So this is to do a crisper knockout screen, which is what this example that I'm showing you.
+
+62
+00:05:59,000 --> 00:06:06,000
+Again, in wet lab, there are many variations of ways this can happen.
+
+63
+00:06:06,000 --> 00:06:15,000
+But what this what effectively happens is this whole pool, again, as I was talking about this whole pool is all together in one.
+
+64
+00:06:15,000 --> 00:06:18,000
+I don't know, Epidorf tube, right?
+
+65
+00:06:18,000 --> 00:06:31,000
+And really big to put into the cells so that each cell hopefully ends up with roughly one infection.
+
+66
+00:06:31,000 --> 00:06:35,000
+And that infection causes a single genetic perturbation.
+
+67
+00:06:35,000 --> 00:06:54,000
+And within that lentivirus, there is a barcode associated with whatever the specific perturbation is, so that then we can read out that barcode in subsequent cycles of imaging.
+
+68
+00:06:54,000 --> 00:07:06,000
+So we are doing in situ sequencing, ISS, using sequencing by synthesis, SBS, also known as barcoding so ISS, SBS, and barcode.
+
+69
+00:07:06,000 --> 00:07:12,000
+Acronyms, although slightly meaning slightly different things all kind of used interchangeably sometimes.
+
+70
+00:07:12,000 --> 00:07:17,000
+So you hear any of those, it just applies to this arm.
+
+71
+00:07:17,000 --> 00:07:27,000
+And we can do that. So it's, you know, same same set of reagents that that one can do.
+
+72
+00:07:27,000 --> 00:07:38,000
+You know, in sequencing DNA, we are the sequencing by synthesis like actually doing it with in a microscope with subsequent washes in a microscope and imaging.
+
+73
+00:07:38,000 --> 00:07:55,000
+And for simplicity's sake, I will say that we read in each, you know, we have channel four channels of fluorescence microscopy and we can read if it's fluorescent in channel one, it's an A if it's fluorescent in channel two, it's a C.
+
+74
+00:07:55,000 --> 00:08:00,000
+It's slightly more complicated than that, depending on the microscope and the reagent kit.
+
+75
+00:08:00,000 --> 00:08:14,000
+But conceptually, you can picture, you know, based on what the color is, we can tell, you know, based on which channel it's fluorescent in that spot, we can tell what that barcode is.
+
+76
+00:08:14,000 --> 00:08:29,000
+And so, again, this specific example had a slight modification to the Cell Painting panel, so that we could basically free up a couple of the middle channels by washing those stains out.
+
+77
+00:08:29,000 --> 00:08:45,000
+So that there wasn't spectral overlap. But there's lots of cool tech dev in the field going on. And lots of other alternative phenotypic assays that are, you know, that one could swap in and out details here.
+
+78
+00:08:45,000 --> 00:08:53,000
+Yeah. And as we've pointed out before, and probably will again the Cell Painting dies themselves aren't magic. So you can you could use any dies you wanted to use.
+
+79
+00:08:53,000 --> 00:08:55,000
+Yeah. Yeah.
+
+80
+00:08:55,000 --> 00:09:05,000
+And then this is just this is the, you know, the first example that we developed this tech in a large collaboration.
+
+81
+00:09:05,000 --> 00:09:14,000
+But, you know, for this particular particular screen in nine six well plates.
+
+82
+00:09:14,000 --> 00:09:38,000
+And then 72,000 very standard Cell Painting images. And this was all very standard Cell Painting. And then also had a stack of 205,000 barcoding images in which we identified all the individual foci that we then read out a barcode sequence.
+
+83
+00:09:38,000 --> 00:09:49,000
+You know, 10 to 12 nucleotide sequence so 10 to 12 cycles of putting the plate on and off the microscope to read out a new nucleotide each time.
+
+84
+00:09:49,000 --> 00:09:53,000
+And washes and heating and cooling and heating and.
+
+85
+00:09:53,000 --> 00:10:11,000
+Yeah, I mean, and tons, tons of very careful, brilliant wet lab work from our collaborators to actually do, you know, be the human robot that is that is going through all of these subsequent cycles and tons of opportunity for technical failure.
+
+86
+00:10:11,000 --> 00:10:29,000
+And, you know, huge, huge failure space through often no fault of the talented wet lab collaborators where, you know, cycle 10 the glue melted and but we still needed to more I mean it you know lots of lots of things can go wrong.
+
+87
+00:10:29,000 --> 00:10:44,000
+And again, the this is the thing that makes this different from a raid Cell Painting. And this is one example of a workflow this was the workflow we developed for that first run.
+
+88
+00:10:44,000 --> 00:11:02,000
+One can do this workflow very differently we are also doing some tech dev right now to come up with several different variations of this workflow. But I just wanted to illustrate that the Cell Painting is almost entirely the same here in that we would do illumination
+
+89
+00:11:03,000 --> 00:11:08,000
+and then check segmentation and then run analysis.
+
+90
+00:11:08,000 --> 00:11:31,000
+So, conceptually not much actually changes there. It's and then separately we're handling barcode images, also doing illumination correction, some pre processing and this is where I don't want to dive into technical details but it gets depending on, depending on things this is where you, you know, we're doing stuff to be able to call the barcodes.
+
+91
+00:11:32,000 --> 00:11:50,000
+Then, often, these are measured at 10x or acquired in sorry 20x to have the resolution for the Cell Painting but 10x for the barcoding to have speed. So we have to do some tricky things to get the images to align.
+
+92
+00:11:50,000 --> 00:12:08,000
+And that's, you know, tricky stuff we're doing here. And then we just put them all into an analysis pipeline that is doing the standard Cell Painting analysis, but also taking the information of the barcode and adding that on sort of as extra measurements we're making in the pipeline,
+
+93
+00:12:08,000 --> 00:12:22,000
+and then associating the barcodes that we call in those spots with every single cell. So we come out with standard Cell Painting measurements and an extra set of measurements saying this is the barcode.
+
+94
+00:12:22,000 --> 00:12:26,000
+These are the, you know, these are all the spots within the cell.
+
+95
+00:12:26,000 --> 00:12:33,000
+And this is what what that call maps to in our library of known barcodes.
+
+96
+00:12:34,000 --> 00:13:00,000
+And yeah, so for a single image, what you start with, rather than just the five Cell Painting images, like any single site field of view, you have then you just a much larger stack instead of these five channels, you have all of these cycles, you know, 10 to 12 cycles, depending on how many barcodes, you know, how many
+
+97
+00:13:00,000 --> 00:13:15,000
+channels you've made. And five channels. So you've got your DAPI channels so you can align them all. And you have one, you know, here in the simple example, one channel for each possible nucleotide.
+
+98
+00:13:15,000 --> 00:13:24,000
+So it just means that to get the Cell Painting information, we have a much, much larger stack of images.
+
+99
+00:13:24,000 --> 00:13:37,000
+And so what we do is pool Cell Painting in a nutshell. It's really Cell Painting, but with a bunch of extra hard fancy stuff going on to tell us what is in each cell.
+
+100
+00:13:37,000 --> 00:13:46,000
+Do I remember correctly that it took us from something like a whole genome screen needing 200 plates to something like 20 or 10 plates?
+
+101
+00:13:46,000 --> 00:13:51,000
+Depending on the size of the cell, even less than 10. Yeah, it's pretty cool.
+
+102
+00:13:51,000 --> 00:14:06,000
+And having made a lot of lentivirus in grad school, that is not the most automatable or fun process. So not having to make that for thousands or tens of thousands of constructs one at a time.
+
+103
+00:14:06,000 --> 00:14:07,000
+Yes.
+
+104
+00:14:07,000 --> 00:14:08,000
+Feels like a huge advantage.
+
+105
+00:14:08,000 --> 00:14:17,000
+Yeah, certainly huge advantage, like way easier to scale this assay at the level of a standard academic lab.
+
+106
+00:14:17,000 --> 00:14:23,000
+Then, then one can with an array, an array of assay.
+
+107
+00:14:23,000 --> 00:14:27,000
+So does that mean everyone should just throw out their Cell Painting and just do pool Cell Painting?
+
+108
+00:14:27,000 --> 00:14:38,000
+Absolutely not. Not yet. We're working very hard to make this easier behind the scenes, the computation and like the image analysis is actually pretty complicated still.
+
+109
+00:14:38,000 --> 00:14:43,000
+We're working really hard to make it much more accessible for an average image analyst.
+
+110
+00:14:43,000 --> 00:14:47,000
+So stay tuned. Give us another couple years maybe.
+
+111
+00:14:47,000 --> 00:14:57,000
+But I think there's still a whole lot of value in arrayed Cell Painting and it's technically way, way, way easier. So don't throw everything out yet.
+
+112
+00:14:57,000 --> 00:14:58,000
+So both are great.
+
+113
+00:14:58,000 --> 00:15:00,000
+Both are great. Yep.
+
+114
+00:15:00,000 --> 00:15:03,000
+All right. Thank you so much for that tour. That was great.
+
+115
+00:15:03,000 --> 00:15:05,000
+Of course. Talk to you later.
+
+116
+00:15:13,000 --> 00:15:15,000
+Thank you.
+

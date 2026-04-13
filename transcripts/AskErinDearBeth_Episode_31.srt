@@ -1,0 +1,464 @@
+1
+00:00:16,000 --> 00:00:05,000
+Hello Beth!
+
+2
+00:00:05,000 --> 00:00:07,000
+Hello Erin!
+
+3
+00:00:07,000 --> 00:00:19,000
+It's always so great to see you.
+
+4
+00:00:19,000 --> 00:00:21,000
+It's great to be on the podcast.
+
+5
+00:00:21,000 --> 00:00:22,000
+I agree.
+
+6
+00:00:22,000 --> 00:00:29,000
+Another fun bit of hanging out and nerding out about bioimage analysis.
+
+7
+00:00:29,000 --> 00:00:34,000
+I think bioimage analysis is a great way to get to know what could be better.
+
+8
+00:00:34,000 --> 00:00:36,000
+Nothing as far as I'm concerned.
+
+9
+00:00:36,000 --> 00:00:40,000
+Yeah.
+
+10
+00:00:40,000 --> 00:00:52,000
+Today I wanted to show a CellProfiler pipeline to do just a quick task of filtering objects touching the edge of the cell.
+
+11
+00:00:52,000 --> 00:00:58,000
+There have been plenty of different biological utility for this.
+
+12
+00:00:58,000 --> 00:01:09,000
+One that I have worked on in the past is when we had foci in the cells that had each was a barcode.
+
+13
+00:01:09,000 --> 00:01:19,000
+We were reading barcodes from them and we needed to be very, very sure that the barcodes we were reading were in the cell that we were reading it from.
+
+14
+00:01:19,000 --> 00:01:22,000
+We did some experiments.
+
+15
+00:01:22,000 --> 00:01:33,000
+Since we were not going to manually annotate every cell in our many million cell screen, we had pre-contact mutation.
+
+16
+00:01:33,000 --> 00:01:43,000
+No, I didn't have a whole fleet of undergrads for several years to do that task.
+
+17
+00:01:43,000 --> 00:02:08,000
+We wanted to test whether we got more confident assignments of these spots by filtering to only ones that were clearly in the interior of the cell that weren't touching the very edge of the cell because the ones touching the edge of the cell were more likely to accidentally belong to a neighboring cell if there were slight issues in segmentation.
+
+18
+00:02:08,000 --> 00:02:11,000
+That's a really clever way around that.
+
+19
+00:02:11,000 --> 00:02:20,000
+Yeah, so that's just one use case that I thought I would show you this pipeline and how that worked.
+
+20
+00:02:20,000 --> 00:02:25,000
+So I have three images that I've brought in here.
+
+21
+00:02:25,000 --> 00:02:34,000
+One is DNA, one is mito, and I'm just using that to find the cell body, and one has spots in it.
+
+22
+00:02:34,000 --> 00:02:42,000
+So I used names and types to say, hey, if it says mito in the file name, call it mito.
+
+23
+00:02:42,000 --> 00:02:45,000
+If it says cycle, this is my image of spots.
+
+24
+00:02:45,000 --> 00:02:49,000
+And if it says DNA, then call it DNA.
+
+25
+00:02:49,000 --> 00:02:52,000
+Pretty simple ingestion here.
+
+26
+00:02:52,000 --> 00:02:54,000
+The great use of names and types.
+
+27
+00:02:54,000 --> 00:02:55,000
+Yeah, yeah.
+
+28
+00:02:55,000 --> 00:02:56,000
+The great module.
+
+29
+00:02:56,000 --> 00:02:57,000
+Yeah, it really is.
+
+30
+00:02:57,000 --> 00:03:03,000
+So I am going to start test mode.
+
+31
+00:03:03,000 --> 00:03:07,000
+And these images are actually pretty big.
+
+32
+00:03:07,000 --> 00:03:19,000
+So quickly, I'm just going to step through cropping them so that we're working on smaller images, easier to see stuff or to handle stuff.
+
+33
+00:03:19,000 --> 00:03:24,000
+And then my first thing is identifying primary objects.
+
+34
+00:03:24,000 --> 00:03:26,000
+So here we have nuclei.
+
+35
+00:03:26,000 --> 00:03:30,000
+I found them in the images that have the nuclei stained.
+
+36
+00:03:30,000 --> 00:03:33,000
+Pretty good start.
+
+37
+00:03:33,000 --> 00:03:36,000
+Then I'm doing secondary objects.
+
+38
+00:03:36,000 --> 00:03:44,000
+So the nuclei are seeds to then expand out and find the edges of the cells.
+
+39
+00:03:44,000 --> 00:03:49,000
+And you can see if I adjust the contrast here.
+
+40
+00:03:49,000 --> 00:03:51,000
+Pretty good job of the edge of the cell.
+
+41
+00:03:51,000 --> 00:03:56,000
+For this demo, it doesn't matter if they're exactly perfectly perfect.
+
+42
+00:03:56,000 --> 00:03:59,000
+But I think that looks a pretty good starting point.
+
+43
+00:03:59,000 --> 00:04:05,000
+And it definitely is going to help with our demonstration here.
+
+44
+00:04:05,000 --> 00:04:10,000
+So then I also wanted to identify spots.
+
+45
+00:04:10,000 --> 00:04:13,000
+And so here we go in this image.
+
+46
+00:04:13,000 --> 00:04:24,000
+I'm going to blow out the contrast just to make it easy to see on this by our screen capture here that we have these spots.
+
+47
+00:04:24,000 --> 00:04:26,000
+And I have identified them.
+
+48
+00:04:26,000 --> 00:04:27,000
+Those are spots.
+
+49
+00:04:27,000 --> 00:04:29,000
+Those are absolutely spots.
+
+50
+00:04:29,000 --> 00:04:30,000
+Absolutely spots.
+
+51
+00:04:30,000 --> 00:04:32,000
+Cannot deny this.
+
+52
+00:04:32,000 --> 00:04:33,000
+Yeah.
+
+53
+00:04:33,000 --> 00:04:41,000
+So then here is this bit of tricky fun logic that I'm going to use to actually do my filtering.
+
+54
+00:04:41,000 --> 00:04:47,000
+So what I am doing now is I am making a cell outline image.
+
+55
+00:04:47,000 --> 00:04:52,000
+So I am going to this is the overlay outlines module.
+
+56
+00:04:52,000 --> 00:04:59,000
+And I'm saying on a blank image, overlay the outlines of the cells.
+
+57
+00:04:59,000 --> 00:05:00,000
+There we go.
+
+58
+00:05:00,000 --> 00:05:01,000
+That's it.
+
+59
+00:05:01,000 --> 00:05:08,000
+So if I do that, then where we go, there we go.
+
+60
+00:05:08,000 --> 00:05:10,000
+This is what I get.
+
+61
+00:05:10,000 --> 00:05:14,000
+It is a blank image.
+
+62
+00:05:14,000 --> 00:05:16,000
+So zero.
+
+63
+00:05:16,000 --> 00:05:18,000
+All in the background.
+
+64
+00:05:18,000 --> 00:05:26,000
+And then one where it is the outline pixel of a cell.
+
+65
+00:05:26,000 --> 00:05:42,000
+So I can then measure object intensity of this image in my objects of interest.
+
+66
+00:05:42,000 --> 00:05:52,000
+So I can show you here what that looks like in my.
+
+67
+00:05:52,000 --> 00:05:57,000
+So I can show you in the workspace here now that I have done that.
+
+68
+00:05:57,000 --> 00:06:04,000
+So here I have the outlines drawn in white and my spots outlined in green.
+
+69
+00:06:04,000 --> 00:06:11,000
+And I have measured the object intensity so we can add a measurement here.
+
+70
+00:06:11,000 --> 00:06:16,000
+So in my spots, I'm going to look at the intensity.
+
+71
+00:06:16,000 --> 00:06:23,000
+And what we're going to be using to filter is this max intensity.
+
+72
+00:06:23,000 --> 00:06:31,000
+So I'm going to show you what that looks like here the max intensity that I measured in the cell outline image.
+
+73
+00:06:31,000 --> 00:06:41,000
+Then if we display that we don't need that many significant digits there.
+
+74
+00:06:41,000 --> 00:06:43,000
+So there we go.
+
+75
+00:06:43,000 --> 00:06:55,000
+Okay, so what we can see is in each of these in each of these foci and we can kind of do a really big zoom in here.
+
+76
+00:06:55,000 --> 00:07:02,000
+So this spot does overlap the cell outline.
+
+77
+00:07:02,000 --> 00:07:08,000
+So the maximum intensity of the outline image in this spot is one.
+
+78
+00:07:08,000 --> 00:07:13,000
+This spot does not have any outline going through it.
+
+79
+00:07:13,000 --> 00:07:17,000
+So the maximum intensity of the outline image would be zero.
+
+80
+00:07:17,000 --> 00:07:26,000
+So even beyond these beyond just the outlines I can actually show you the outline image here to make that even more clear.
+
+81
+00:07:26,000 --> 00:07:28,000
+So now this outline.
+
+82
+00:07:28,000 --> 00:07:30,000
+Gorgeous.
+
+83
+00:07:30,000 --> 00:07:34,000
+Yeah, well, there's a yeah so now we have this this outline image.
+
+84
+00:07:34,000 --> 00:07:39,000
+This is that those exact pixels.
+
+85
+00:07:39,000 --> 00:07:42,000
+And you can see the workspace here is great.
+
+86
+00:07:42,000 --> 00:07:44,000
+It's so great. It's so great.
+
+87
+00:07:44,000 --> 00:07:49,000
+So you can see it is being measured in this spot not in this one and in this spot.
+
+88
+00:07:49,000 --> 00:08:01,000
+So we have, you know, zeros and ones now for the question of, you know, touching outline not touching outline, which is pretty cool.
+
+89
+00:08:01,000 --> 00:08:08,000
+And then I can use this filter to just filter out things that are touching the outline.
+
+90
+00:08:08,000 --> 00:08:15,000
+So here I'm saying I want to filter the spots using limits of these measurements.
+
+91
+00:08:15,000 --> 00:08:21,000
+So the intensity max intensity measured in the cell outline image.
+
+92
+00:08:21,000 --> 00:08:33,000
+If it has a maximum value of more than point five, this could be anything between zero and one, but point five is a is a number in between zero and one.
+
+93
+00:08:33,000 --> 00:08:39,000
+So I'm saying filter out anything that has a value larger than point five.
+
+94
+00:08:39,000 --> 00:08:52,000
+There we go. I can keep those filtered ones as a separate object set if I wanted to so I could say, you know, spots cell edge.
+
+95
+00:08:52,000 --> 00:08:56,000
+So I have two different populations saved there.
+
+96
+00:08:56,000 --> 00:09:09,000
+And, and, you know, here just finally also it doesn't have to be foci it could even be something as simple as nuclei so I've just run the same thing on the nuclei.
+
+97
+00:09:09,000 --> 00:09:15,000
+And now just back to the workspace viewer to show you what that looks like.
+
+98
+00:09:15,000 --> 00:09:20,000
+So zoom back out here and we don't need those measurements necessarily.
+
+99
+00:09:20,000 --> 00:09:35,000
+But I've got my outline image and you can see, starting with the spots in green, if I then overlay the not touching spots in pink on top of those green ones.
+
+100
+00:09:35,000 --> 00:09:47,000
+Now we can see the difference between the original spots and the spots in green and the spots that are not touching the cell edge in pink.
+
+101
+00:09:47,000 --> 00:10:03,000
+And likewise, one could you know it doesn't have to be, you don't even need another object if you, you know, maybe your maybe your biology of interest is just position of your nuclei within the cell so here's just a quick example.
+
+102
+00:10:03,000 --> 00:10:08,000
+Since I had the modules up and running already if we look at all the nuclei in blue.
+
+103
+00:10:08,000 --> 00:10:25,000
+So I can overlay the ones that are not touching the cell edge here in yellow and we can see, oh, most of my nuclei are not, but here I have particular here where the cells are even closer together, the nuclei are more likely to be touching the cell edge.
+
+104
+00:10:25,000 --> 00:10:38,000
+And so this was just to illustrate that, you know, you can apply the same idea to a variety of objects, and however suits your biological task.
+
+105
+00:10:38,000 --> 00:10:46,000
+Yeah. Oh, this is this is great. Yeah, because definitely sometimes, you know, our boundaries are perfect.
+
+106
+00:10:46,000 --> 00:10:54,000
+And being able to sort of sanity check ourselves and only give ourselves objects we're super confident in this. This is awesome.
+
+107
+00:10:54,000 --> 00:10:58,000
+Absolutely. Well, thanks for joining me.
+
+108
+00:10:58,000 --> 00:11:03,000
+Now, is there are there ways we could do it like that are like how far is it from the edge.
+
+109
+00:11:03,000 --> 00:11:12,000
+There are ways we can do how far and I will be showing that in an upcoming episode of Ask Erin to your best so I can't wait.
+
+110
+00:11:12,000 --> 00:11:21,000
+Yeah, hold your breath. Don't hold your breath. Don't hold your breath. It's probably a little bit. But wait, you know, do just a little bit.
+
+111
+00:11:21,000 --> 00:11:31,000
+I can't wait. Yeah. And we, you know, soon will explain how to instead of you know here this is just a binary filter yes no.
+
+112
+00:11:31,000 --> 00:11:38,000
+In an upcoming episode we can actually calculate distances from objects to objects.
+
+113
+00:11:38,000 --> 00:11:40,000
+Great. Awesome. Looking forward to it.
+
+114
+00:11:40,000 --> 00:11:42,000
+All right. Thanks, babe. Talk to you later.
+
+115
+00:11:42,000 --> 00:11:43,000
+Bye.
+
+116
+00:11:51,000 --> 00:11:54,000
+Yeah.
+

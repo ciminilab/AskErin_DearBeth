@@ -1,0 +1,664 @@
+1
+00:00:16,000 --> 00:00:07,000
+Hello!
+
+2
+00:00:07,000 --> 00:00:09,600
+Hello!
+
+3
+00:00:09,600 --> 00:00:20,540
+So wonderful to see you as always.
+
+4
+00:00:20,540 --> 00:00:23,080
+I agree!
+
+5
+00:00:23,080 --> 00:00:26,840
+So I thought we might talk about Cell Painting.
+
+6
+00:00:26,840 --> 00:00:30,760
+I know, I think we never talked about it.
+
+7
+00:00:30,760 --> 00:00:35,000
+But actually what I figured I would talk about is like we've talked a lot about Cell Painting
+
+8
+00:00:35,000 --> 00:00:37,480
+and what it is.
+
+9
+00:00:37,480 --> 00:00:44,600
+But a lot of people might realistically be thinking like, I don't know, like I have particular
+
+10
+00:00:44,600 --> 00:00:46,000
+biology I want to see.
+
+11
+00:00:46,000 --> 00:00:49,640
+This whole idea of Cell Painting is kind of weird.
+
+12
+00:00:49,640 --> 00:00:56,640
+And so what I thought I might talk about is what we know about the Cell Painting essay
+
+13
+00:00:56,640 --> 00:01:06,840
+and how you can modify it and therefore whether or not you can use it for data that includes
+
+14
+00:01:06,840 --> 00:01:08,840
+your own stuff.
+
+15
+00:01:08,840 --> 00:01:09,840
+Cool.
+
+16
+00:01:09,840 --> 00:01:11,720
+Yeah, I mean I think that's true.
+
+17
+00:01:11,720 --> 00:01:19,760
+It's like a question we get all the time of like, okay, can I, you know, fill in the
+
+18
+00:01:19,760 --> 00:01:20,760
+blank here?
+
+19
+00:01:20,760 --> 00:01:23,680
+Like, can I change it in this way?
+
+20
+00:01:23,680 --> 00:01:26,760
+Like great starting point, love the essay, but.
+
+21
+00:01:26,760 --> 00:01:31,680
+So now we're going to like fill in the information about the but part.
+
+22
+00:01:31,680 --> 00:01:34,440
+Or people might be like, well, I don't have the same microscope you have.
+
+23
+00:01:34,440 --> 00:01:35,440
+Like does that matter?
+
+24
+00:01:35,440 --> 00:01:38,400
+Like that's a totally reasonable, like you don't want to go buy a new microscope.
+
+25
+00:01:38,400 --> 00:01:39,400
+Absolutely.
+
+26
+00:01:39,400 --> 00:01:43,280
+I mean the whole point of this, one of the whole points of this essay when it was developed
+
+27
+00:01:43,280 --> 00:01:50,240
+is to make it as accessible to as many average microscopists as possible.
+
+28
+00:01:50,240 --> 00:01:53,560
+Cool.
+
+29
+00:01:53,560 --> 00:02:01,440
+So let me just quickly talk about and try to make a little separation between their
+
+30
+00:02:01,440 --> 00:02:06,720
+Cell Painting and Cell Painting means this particular set of dies.
+
+31
+00:02:06,720 --> 00:02:16,240
+It means Huxed, Concanavalan A, Mitotracker Red, Wheat Germaglutinin, Filoiden, and Cytophoreteen.
+
+32
+00:02:16,240 --> 00:02:22,760
+So like when we say Cell Painting, like we specifically mean this.
+
+33
+00:02:22,760 --> 00:02:25,960
+Whereas image based profiling is sort of like the broader approach.
+
+34
+00:02:25,960 --> 00:02:35,960
+Like can we measure things about cells and do like high dimensional clustering basically.
+
+35
+00:02:35,960 --> 00:02:41,680
+So how much of the magic in Cell Painting is the Cell Painting and how much of it is
+
+36
+00:02:41,680 --> 00:02:46,280
+the image based profiling.
+
+37
+00:02:46,280 --> 00:02:50,640
+So that was actually a thing that we thought was going to be really important to measure
+
+38
+00:02:50,640 --> 00:02:54,640
+when we did the whole jump which was a joint undertaking in morphological profiling but
+
+39
+00:02:54,640 --> 00:02:57,840
+where we did a big consortium where we had lots of companies doing this together.
+
+40
+00:02:57,840 --> 00:03:03,680
+We figured we should figure out and so we did a ton of experiments to talk about like
+
+41
+00:03:03,680 --> 00:03:11,080
+what aspects of this actually matter.
+
+42
+00:03:11,080 --> 00:03:18,080
+And one reason that you know it's important to sort of know like do we need all of these
+
+43
+00:03:18,120 --> 00:03:22,120
+dies is because we have like completely taken up the spectrum.
+
+44
+00:03:22,120 --> 00:03:25,240
+Like there's no part of the spectrum that is left.
+
+45
+00:03:25,240 --> 00:03:32,120
+Like most microscopes don't have good filter sets here but like we're totally covering
+
+46
+00:03:32,120 --> 00:03:36,520
+everything that so we can't add anything else.
+
+47
+00:03:36,520 --> 00:03:40,260
+So very often the question is do we need all of these dies?
+
+48
+00:03:40,260 --> 00:03:44,880
+Could I get rid of some so I could put something else in?
+
+49
+00:03:44,880 --> 00:03:49,680
+So we want to know like do we actually need all of those dies?
+
+50
+00:03:49,680 --> 00:03:55,600
+And so let me walk you through how to read this figure.
+
+51
+00:03:55,600 --> 00:03:59,320
+So at the top left is what if we only have size and shape measurements?
+
+52
+00:03:59,320 --> 00:04:04,000
+When we pretend we have no dies at all obviously you can't get cell size and shape from like
+
+53
+00:04:04,000 --> 00:04:09,520
+no dies but what we did is we measured all of the dies but then we computationally dropped
+
+54
+00:04:09,520 --> 00:04:13,800
+out the measurements of some of them.
+
+55
+00:04:13,840 --> 00:04:20,400
+And then as we go across on the top or on the sides we add more dies back in.
+
+56
+00:04:20,400 --> 00:04:26,280
+So we go from measurements of none of the dies just things like shape and neighbor features
+
+57
+00:04:26,280 --> 00:04:31,640
+to every single die here.
+
+58
+00:04:31,640 --> 00:04:37,040
+And what you'll probably notice is like there is a gradient in general sort of like as we
+
+59
+00:04:37,040 --> 00:04:42,240
+go from top left to bottom right like we get darker.
+
+60
+00:04:42,280 --> 00:04:50,240
+But also it's not actually that strict of a gradient like some combinations of features
+
+61
+00:04:50,240 --> 00:04:54,240
+sort of just look particularly good.
+
+62
+00:04:54,240 --> 00:05:02,000
+And also in general this scale bar goes from 49 which in this case is percent of compounds
+
+63
+00:05:02,000 --> 00:05:06,560
+we can sort of reliably retrieve to 57.
+
+64
+00:05:07,000 --> 00:05:13,000
+Like it's actually not a huge difference between having as many of the dies possible
+
+65
+00:05:13,000 --> 00:05:20,840
+and the best result possible and no particular features at all besides size and shape.
+
+66
+00:05:20,840 --> 00:05:24,520
+So and we did a whole lot of other things that are in the paper that's in the bottom
+
+67
+00:05:24,520 --> 00:05:27,880
+right there to sort of say like our different classes of features more important in size
+
+68
+00:05:27,880 --> 00:05:33,200
+and shape aren't especially important features but what it turns out is like none of these
+
+69
+00:05:33,200 --> 00:05:35,840
+features especially are important.
+
+70
+00:05:35,920 --> 00:05:41,600
+We can get rid of any of them and be totally fine and not be penalized like it's not that
+
+71
+00:05:41,600 --> 00:05:44,480
+we're only have good performance down here at the bottom right.
+
+72
+00:05:44,480 --> 00:05:49,160
+So you can take out any of our dies and put your own in.
+
+73
+00:05:49,160 --> 00:05:55,160
+These dies are not magical they're not special it really just seems like it's the total amount
+
+74
+00:05:55,160 --> 00:06:00,680
+but not actually like that these dies are beautiful and magical and special.
+
+75
+00:06:01,080 --> 00:06:07,520
+And can you are you going to say anything like I've always I think many people once they
+
+76
+00:06:07,520 --> 00:06:15,520
+start diving into this figure then get surprised right like why is it that the highest value
+
+77
+00:06:17,520 --> 00:06:24,440
+isn't is actually a subset of the stains like how is it better to have fewer what's going on there.
+
+78
+00:06:25,240 --> 00:06:29,920
+Yeah I wasn't going to talk about that but I can tell you and I can say we don't know for sure
+
+79
+00:06:30,480 --> 00:06:38,880
+but what we suspect is happening in those cases is just we're always balancing between like
+
+80
+00:06:38,880 --> 00:06:46,240
+are more features adding more biology or adding more noise and it might be that once you get beyond
+
+81
+00:06:46,240 --> 00:06:54,160
+sort of a certain amount of biology that's captured you actually just start confusing
+
+82
+00:06:54,160 --> 00:06:58,480
+the ability to separate these particular sets of compounds so this is 90 particular
+
+83
+00:06:58,520 --> 00:07:03,280
+compounds that cover 47 different sort of biological things so they certainly do not
+
+84
+00:07:03,280 --> 00:07:10,960
+cover everything in biology but we suspect that it starts becoming in some of these cases a like
+
+85
+00:07:10,960 --> 00:07:15,600
+signal to noise balance and that there's just so many things that could be different but
+
+86
+00:07:15,600 --> 00:07:23,040
+aren't actually important that the models start having a harder time figuring out what is the
+
+87
+00:07:23,280 --> 00:07:30,160
+real thing that matters. So that's our hypothesis we don't actually know for sure we don't think
+
+88
+00:07:30,160 --> 00:07:35,360
+any of these days are bad and as I'll sort of talk about in a little bit like even if this
+
+89
+00:07:35,360 --> 00:07:42,400
+dye was bad for this task it might be good for other tasks but yeah that's our hypothesis I wish
+
+90
+00:07:42,400 --> 00:07:48,480
+I could say for sure. Well and it's you know it's always really interesting again we sort of
+
+91
+00:07:49,200 --> 00:07:54,960
+looking carefully at there are many spots that hit the highest value of 57 and even more that are
+
+92
+00:07:54,960 --> 00:08:01,680
+hitting 56 right which again isn't all that far away from the starting point of 49 but if you were
+
+93
+00:08:01,680 --> 00:08:07,280
+to filter it to just things hitting the best you know performing the best the combinations of 56
+
+94
+00:08:07,280 --> 00:08:16,720
+or 57 it's actually sort of very non-consistent combinations right yeah like it's not that so
+
+95
+00:08:16,720 --> 00:08:22,720
+again it's not that AGP, mito, and bright field high right are the exact perfect combination and
+
+96
+00:08:22,720 --> 00:08:28,720
+everything. I think you know again as you're saying that's why part of why our guess is it's
+
+97
+00:08:30,240 --> 00:08:37,200
+some but not too you know like capture a bunch but not too much or sort of hand waving. Yeah
+
+98
+00:08:37,920 --> 00:08:45,840
+but as long as the biology is diverse like none of these particular stains are like the stain
+
+99
+00:08:46,000 --> 00:08:51,120
+that when we get rid of it like everything is different. Absolutely absolutely which you know
+
+100
+00:08:51,120 --> 00:08:56,800
+again to your major point here the major the major thing to take away from this is yeah get rid of
+
+101
+00:08:56,800 --> 00:09:02,000
+whatever in here get rid of several whatever's if you have a specific thing you want to put in
+
+102
+00:09:02,000 --> 00:09:12,080
+instead do that. Yeah and so we actually found a lot of things that didn't matter when we when the
+
+103
+00:09:12,080 --> 00:09:20,160
+more of these kinds of experiments we did during jump. So what we found doesn't matter include
+
+104
+00:09:20,160 --> 00:09:24,320
+things like what magnification you take the images at after you're talking about if you're
+
+105
+00:09:24,320 --> 00:09:31,840
+taking them at 10x or 20x or 40x it doesn't really matter. Whether you're using a higher exposure
+
+106
+00:09:31,840 --> 00:09:37,920
+time or a lower exposure time and these are just in all of these cases like two different measurements
+
+107
+00:09:37,920 --> 00:09:45,120
+of like being able to match profiles with each other like doesn't particularly matter.
+
+108
+00:09:47,760 --> 00:09:53,120
+If you're doing this on whitefield or if you're doing this on confocal doesn't especially matter.
+
+109
+00:09:55,440 --> 00:10:00,800
+If you're doing this in two different cancer cell lines at a couple of different densities
+
+110
+00:10:01,760 --> 00:10:03,520
+it does not especially matter.
+
+111
+00:10:06,400 --> 00:10:12,080
+If you're doing this with your binning turned on or turned off it doesn't particularly matter.
+
+112
+00:10:14,000 --> 00:10:19,680
+Who you bought your dies from does not really particularly matter.
+
+113
+00:10:20,400 --> 00:10:28,720
+Nothing really actually matters. This was my proposed but internally rejected
+
+114
+00:10:28,720 --> 00:10:37,840
+graphical abstract for this paper. But I do just want to say before I say one last thing like
+
+115
+00:10:37,840 --> 00:10:46,880
+what do I mean by doesn't matter. When I say that these things don't matter I mean four tasks like
+
+116
+00:10:47,840 --> 00:10:53,440
+this where what we're saying is what fraction of compounds can we sort of match up with themselves.
+
+117
+00:10:54,160 --> 00:10:58,960
+So for this clustering task which is what image based profiling is for
+
+118
+00:11:02,160 --> 00:11:12,080
+those sorts of things don't matter. But every other measurement that we take in image based
+
+119
+00:11:12,080 --> 00:11:14,960
+profile like we've talked before about that we can take thousands of measurements
+
+120
+00:11:15,680 --> 00:11:18,880
+is still a microscopy measurement is still a biological measurement.
+
+121
+00:11:20,240 --> 00:11:26,720
+And if ultimately you care about your clustering but also why your things are clustering the way
+
+122
+00:11:26,720 --> 00:11:30,320
+you are and we've talked in the past about trying to make Cell Painting interpretable and trying
+
+123
+00:11:30,320 --> 00:11:36,880
+to figure out what features matter. If you want to be able to trust the features mattering
+
+124
+00:11:37,680 --> 00:11:43,440
+of course doing things like making sure you're working at a magnification where you can see
+
+125
+00:11:43,440 --> 00:11:49,760
+the things you care about matters that your exposure time is not completely saturating
+
+126
+00:11:49,760 --> 00:11:56,000
+your objects or you know completely you know unable to see them of course it matters.
+
+127
+00:11:57,280 --> 00:12:02,160
+So don't take from this please that what Beth is saying is like you can do bad microscopy
+
+128
+00:12:02,720 --> 00:12:09,280
+and do Cell Painting. I'm not saying that like I'm saying within reasonable microscopy choices
+
+129
+00:12:09,280 --> 00:12:14,800
+and the good thing is if you've done much microscopy you can tell if your brightness is in a good
+
+130
+00:12:14,800 --> 00:12:20,080
+regime if it seems like your images are clean or not so clean they don't have to be perfect.
+
+131
+00:12:20,960 --> 00:12:26,560
+We've done other episodes about like things you can do to clean up or find things that are out of
+
+132
+00:12:26,560 --> 00:12:30,800
+focus or stuff like that like we're not saying your experiment has to be perfect but as long as
+
+133
+00:12:30,880 --> 00:12:38,480
+your experiment is reasonable you can get to do this image based profiling assay and think about it
+
+134
+00:12:38,480 --> 00:12:45,440
+as like a free bonus assay. So there's really no reason to not if you're taking images and you have
+
+135
+00:12:45,440 --> 00:12:51,280
+a spare part of the spectrum Cell Painting dyes come in all parts of the spectrum you might as well
+
+136
+00:12:52,240 --> 00:12:57,680
+just throw in a couple more dyes that you carefully check don't perturb you know the biology you want
+
+137
+00:12:57,680 --> 00:13:02,240
+to make sure that you measure but measure the biology that you make sure you want to measure
+
+138
+00:13:02,880 --> 00:13:08,160
+and then you can add in image based profiling and get all this information about clustering and get
+
+139
+00:13:08,160 --> 00:13:15,200
+these potentially interesting patterns in the extra dyes that you didn't know about for almost
+
+140
+00:13:15,200 --> 00:13:23,520
+free because these dyes are really cheap and the analysis approach is free. So don't worry that if
+
+141
+00:13:23,520 --> 00:13:28,560
+you want to try image based profiling but you're not sure you have the right cell type or the right
+
+142
+00:13:28,560 --> 00:13:35,280
+microscope or you know you're not sure exactly if you can afford one of the fancy reagent kits and
+
+143
+00:13:35,280 --> 00:13:41,440
+you're just like well can I use stuff I already have the magic is in the approach the magic is not
+
+144
+00:13:41,440 --> 00:13:49,520
+in you buying a particular die kit or following our exact protocol if you do generally good microscopy
+
+145
+00:13:50,320 --> 00:13:54,720
+you can do image based profiling too and you might get cool results that you might not have
+
+146
+00:13:54,720 --> 00:14:01,920
+gotten if you hadn't thought to do this. I love it and and in the Cell Painting gallery we have
+
+147
+00:14:02,560 --> 00:14:08,960
+many example data sets of people that have done just that you know adapted the classic Cell Painting
+
+148
+00:14:08,960 --> 00:14:16,400
+assay a little bit to add on specific biology that they wanted to capture in their screen along with
+
+149
+00:14:16,400 --> 00:14:25,120
+the basic morphological panel. So we have you know lipositic a lipositic derivation to specifically
+
+150
+00:14:25,120 --> 00:14:32,320
+look at fat distribution we have neuro painting we have ones that you once that swapped out
+
+151
+00:14:32,320 --> 00:14:39,360
+mitotracker for lysotracker yeah yeah you know or the variant painting ones where they wanted to
+
+152
+00:14:39,360 --> 00:14:45,040
+look for where individual proteins were so they have a flagged tagged antibody as one of the channels
+
+153
+00:14:45,040 --> 00:14:52,080
+but the rest are like Cell Painting channels. Yeah lots of lots of cool examples of people
+
+154
+00:14:53,360 --> 00:15:00,800
+doing exact you know doing exactly what you just set up showing you know swapping enough around
+
+155
+00:15:00,800 --> 00:15:06,720
+to make sure they captured their specific biological question but then also add it on top
+
+156
+00:15:06,720 --> 00:15:10,960
+like okay since I'm looking for my question let's fill up the rest of the space then
+
+157
+00:15:10,960 --> 00:15:18,800
+with things that I can then also do the morphological profiling. Yeah and so it's worth
+
+158
+00:15:19,360 --> 00:15:22,960
+it's not that much more money in terms of dyes in fact it might be nothing because a lot of
+
+159
+00:15:22,960 --> 00:15:29,760
+these are dyes you already have and you might learn something extra and so we would say don't be
+
+160
+00:15:29,760 --> 00:15:35,840
+scared try it out you know optimize for your biology but then maybe get some extra cool dyes in there too.
+
+161
+00:15:36,800 --> 00:15:43,840
+I love it and it's the most like the take home here is like the combination of the most nihilistic
+
+162
+00:15:44,480 --> 00:15:50,080
+and yet optimistic like yeah like nothing matters but isn't that exciting you know.
+
+163
+00:15:51,360 --> 00:15:55,760
+Nothing matters which means no matter sort of what the rest of your experiment needs to look like
+
+164
+00:15:56,400 --> 00:16:01,600
+probably Cell Painting will work for you too so nothing matters is actually a message of hope.
+
+165
+00:16:01,600 --> 00:16:11,920
+Yeah I love it. Well thanks for letting me talk about you know non-canonical Cell Painting but
+
+166
+00:16:12,480 --> 00:16:18,560
+all image based profiling is great no matter what dyes you use. I love it thanks Beth. Yeah thank you.
+
