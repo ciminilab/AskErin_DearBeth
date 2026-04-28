@@ -41,9 +41,9 @@ Want to see Erin and Beth explain or demo your (least) favorite image analysis c
 | Episode 27 - [Interpretable Deep Learning Features in Cell Painting: Anomaly Profiles](https://youtu.be/kJ-rlm6j8m0) |  |  |  | [Shpigler et al. Paper](https://doi.org/10.1016/j.cels.2025.101429), [Cell Painting Gallery](http://broadinstitute.github.io/cellpainting-gallery/) |
 | Episode 28 - [Thresholding in CellProfiler Part 3: Threshold Correction Factor and Limits](https://youtu.be/GJS5EI-mpY4) | [Pipeline available here](https://github.com/ciminilab/AskErin_DearBeth/tree/main/files/Ep28) | [Cell Painting images from the Broad Bioimage Benchmark Collection BBBC022](https://bbbc.broadinstitute.org/BBBC022), [download from CellProfiler's Advanced Segmentation tutorial here](https://drive.google.com/file/d/1qVaQiPZKqOPEsa62lYEpm7ot3th7ADqE/view) | [CC-0](https://creativecommons.org/public-domain/cc0/) |  |
 | Episode 29 - [Intro to Pooled Cell Painting](https://youtu.be/xhYO_ZX3z44) |  |  |  | [PERISCOPE paper](https://doi.org/10.1038/s41592-024-02537-7) |
+| Episode 30 - [Modifying the Cell Painting Assay](https://youtu.be/0PNmjJrmbG8) |  |  |  | [Paper here](https://doi.org/10.1038/s41596-023-00840-9) |
 
 <!--
-| Episode 30 - [Modifying the Cell Painting Assay](https://youtu.be/0PNmjJrmbG8) |  |  |  | [Paper here](https://doi.org/10.1038/s41596-023-00840-9) |
 | Episode 31 - [Filtering Objects that Touch the Cell Edge in CellProfiler](https://youtu.be/TrHwQPMmhiI) | [Pipeline available here](https://github.com/ciminilab/AskErin_DearBeth/tree/main/files/Ep31) | [Image download instructions here](https://github.com/ciminilab/AskErin_DearBeth/tree/main/files/Ep31/README.md) | [CC0](https://creativecommons.org/public-domain/cc0/) |  |
 | Episode 32 - [What Kinds of Bioimaging Data Does AI Need?](https://youtu.be/OQdJSrgu-Zg) |  |  |  |  |
 -->
