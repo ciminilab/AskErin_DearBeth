@@ -7,3 +7,17 @@ $body-link-color: #421c5e !default;
 
 @import "{{ site.theme }}";
 
+/* Custom Table Formatting */
+table {
+  font-size: 0.85em !important;
+}
+
+table th, table td {
+  padding: 4px 8px !important;
+}
+
+/* Hide the View on GitHub button in the header */
+.page-header .btn,
+header .btn {
+  display: none !important;
+}
