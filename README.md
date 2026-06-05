@@ -52,9 +52,7 @@ Want to see Erin and Beth explain or demo your (least) favorite image analysis c
 | Episode 37 - [Working with Collaborators Part 2/3 - Tools](https://youtu.be/DDzU8tAr1cY) | | | | |
 | Episode 38 - [Running a Custom Cellpose Model in CellProfiler](https://youtu.be/Q004hyxCeYE) | | | | [Translocation tutorial](https://tutorials.cellprofiler.org/#translocation), [CellProfiler plugins](https://plugins.cellprofiler.org/overview.html) |
 | Episode 39 - [Working with Collaborators Part 3/3 - Difficult Collaboratorations](https://youtu.be/b974BY9sLUw) | | | | |
-
-
-
+</div>
 <style>
   /* Target the table headers based on their column number */
   .custom-table table th:nth-child(1) { width: 400px; }
@@ -87,7 +85,7 @@ Check out our bonus episodes where we talk about *other* stuff we love, like:
 | ------------------------ | ----------------------- |
 | Episode 6.5 - [In which we tell the story of how we know each other](https://youtu.be/9gKE9euaUJo) | N/A |
 | Episode 13.5 - [In which we talk about our love of GBBO - The Great British Bake Off](https://youtu.be/hKEO9UeP1yw) | [Erin's favorite Devonshire Splits recipe](https://thegreatbritishbakeoff.co.uk/recipes/all/paul-hollywoods-devonshire-splits/), [Beth's favorite Smoked Salmon Soda Bread recipe](https://thegreatbritishbakeoff.co.uk/recipes/all/hermine-smoked-salmon-and-chive-soda-bread/) |
-| Episode 20.5 - HalfwayToI2K 2025 Crossover Event (some science, some talk about pizza) - [Image Analysis Ask Us Anything - A special LIVE Ask Erin/Dear Beth event!](https://youtu.be/__dJlksUwkc?si=qhX17fh-1vzXLyCP)| [Check out the I2K conference website](https://www.i2kconference.org/) / [Check out the HalfwayToI2K YouTube playlist!](https://www.youtube.com/playlist?list=PLdA9Vgd1gxTaNwGJHTMOUU_efVOq0C8jq) |
+| Episode 20.5 - HalfwayToI2K 2025 Crossover Event (some science, some talk about pizza) - [Image Analysis Ask Us Anything - A special LIVE Ask Erin/Dear Beth event!](https://youtu.be/__dJlksUwkc?si=qhX17fh-1vzXLyCP) | [Check out the I2K conference website](https://www.i2kconference.org/) / [Check out the HalfwayToI2K YouTube playlist!](https://www.youtube.com/playlist?list=PLdA9Vgd1gxTaNwGJHTMOUU_efVOq0C8jq) |
 
 <p hidden>
 More commented out text not shown on the page
