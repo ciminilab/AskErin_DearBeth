@@ -10,7 +10,9 @@ Want to see Erin and Beth explain or demo your (least) favorite image analysis c
 
 ## Episode List
 
-| <div style="width: 400px;">Episode with link</div> | <div style="width: 100px;">Links to pipelines, models, or other files</div> | <div style="width: 100px;">Link to images</div> | <div style="width: 100px;">Images are licensed</div> | <div style="width: 200px;">Links to other resources</div> |
+<div class="custom-table">
+
+| Episode with link | Links to pipelines, models, or other files | Link to images | Images are licensed | Links to other resources |
 | ----------------- | ------------------------------------------ | -------------- | ------------------- | ------------------------ |
 | Episode 1 - [Identifying Objects in Out-of-Focus Images in CellProfiler](https://www.youtube.com/watch?v=JcfPQ44p3pc) | | [folder here](https://drive.google.com/drive/folders/1iGU0V7KW0AZBKOs-Hx15VAxYeNChPcln) | [CC-0](https://creativecommons.org/public-domain/cc0/) | |
 | Episode 2 - [Downloading Data from the IDR](https://youtu.be/7LUrF3JTfV4) | | | | [Cyberduck](https://cyberduck.io), [IDR](https://idr.openmicroscopy.org), [IDR download instructions - with great updates since we last filmed!](https://idr.openmicroscopy.org/about/download.html) |
@@ -51,6 +53,17 @@ Want to see Erin and Beth explain or demo your (least) favorite image analysis c
 | Episode 38 - [Running a Custom Cellpose Model in CellProfiler](https://youtu.be/Q004hyxCeYE) | | | | [Translocation tutorial](https://tutorials.cellprofiler.org/#translocation), [CellProfiler plugins](https://plugins.cellprofiler.org/overview.html) |
 | Episode 39 - [Working with Collaborators Part 3/3 - Difficult Collaboratorations](https://youtu.be/b974BY9sLUw) | | | | |
 
+
+
+<style>
+  /* Target the table headers based on their column number */
+  .custom-table table th:nth-child(1) { width: 400px; }
+  .custom-table table th:nth-child(2) { width: 100px; }
+  .custom-table table th:nth-child(3) { width: 100px; }
+  .custom-table table th:nth-child(4) { width: 100px; }
+  .custom-table table th:nth-child(5) { width: 200px; }
+</style>
+
 <!--
 
 -->
@@ -71,7 +84,7 @@ Want to hang out with Erin and Beth without talking science?
 Check out our bonus episodes where we talk about *other* stuff we love, like:
 
 | Bonus episodes with link | Links to any fun things |
-|--------------------------|-------------------------|
+| ------------------------ | ----------------------- |
 | Episode 6.5 - [In which we tell the story of how we know each other](https://youtu.be/9gKE9euaUJo) | N/A |
 | Episode 13.5 - [In which we talk about our love of GBBO - The Great British Bake Off](https://youtu.be/hKEO9UeP1yw) | [Erin's favorite Devonshire Splits recipe](https://thegreatbritishbakeoff.co.uk/recipes/all/paul-hollywoods-devonshire-splits/), [Beth's favorite Smoked Salmon Soda Bread recipe](https://thegreatbritishbakeoff.co.uk/recipes/all/hermine-smoked-salmon-and-chive-soda-bread/) |
 | Episode 20.5 - HalfwayToI2K 2025 Crossover Event (some science, some talk about pizza) - [Image Analysis Ask Us Anything - A special LIVE Ask Erin/Dear Beth event!](https://youtu.be/__dJlksUwkc?si=qhX17fh-1vzXLyCP)| [Check out the I2K conference website](https://www.i2kconference.org/) / [Check out the HalfwayToI2K YouTube playlist!](https://www.youtube.com/playlist?list=PLdA9Vgd1gxTaNwGJHTMOUU_efVOq0C8jq) |
