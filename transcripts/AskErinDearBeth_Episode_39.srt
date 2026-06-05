@@ -1,0 +1,672 @@
+1
+00:00:16,000 --> 00:00:22,960
+Hey Beth, hello! So good to see you. You too. Thank you for joining me here on part three
+
+2
+00:00:22,960 --> 00:00:29,120
+of three in talking about working with collaborators. So if you have not yet watched one and two
+
+3
+00:00:30,000 --> 00:00:35,760
+do go back and do that because they think it'll be really helpful. But this one in particular,
+
+4
+00:00:36,720 --> 00:00:42,240
+we're going to be talking about working with difficult collaborators. So go watch the first
+
+5
+00:00:42,240 --> 00:00:48,880
+parts because they definitely set up what I'm going to be talking about here. But hopefully
+
+6
+00:00:48,880 --> 00:00:56,800
+this will be helpful for those of you who have a difficult collaborator, difficult situation,
+
+7
+00:00:57,600 --> 00:01:03,600
+give you some ideas about what to do. Yeah, it's hard because you want to like everybody that
+
+8
+00:01:03,600 --> 00:01:08,240
+you work with. But sometimes priorities are misaligned or communication didn't happen
+
+9
+00:01:08,880 --> 00:01:13,520
+in the lovely ways that you've laid out before and you're just ending up in a situation that
+
+10
+00:01:13,520 --> 00:01:17,920
+isn't good. And while we try to avoid ending up there, sometimes that's where you are.
+
+11
+00:01:17,920 --> 00:01:24,320
+Yeah, yeah. So go back and watch the first two episodes because they talk about
+
+12
+00:01:25,280 --> 00:01:30,880
+setting expectations and then sharing some tools for setting expectations that will hopefully help
+
+13
+00:01:30,880 --> 00:01:40,320
+you avoid difficult collaborations. But sometimes that still happens, even with best intentions,
+
+14
+00:01:40,320 --> 00:01:44,720
+sometimes situations end up being difficult. So now I'm going to talk about that for a minute.
+
+15
+00:01:45,280 --> 00:01:56,720
+So I guess first I just wanted to say, you know, like a little bit of brainstorming on like what
+
+16
+00:01:56,720 --> 00:02:02,480
+makes a difficult collaboration because this may look different for different people.
+
+17
+00:02:04,560 --> 00:02:10,640
+You're, you know, my view of like what is difficult, maybe different than somebody
+
+18
+00:02:10,640 --> 00:02:21,200
+else's view. I think the things I'm going to say apply to any form of difficult, right?
+
+19
+00:02:22,480 --> 00:02:27,440
+But, but, you know, I guess I just want to say here that like your version of what is difficult
+
+20
+00:02:28,560 --> 00:02:34,960
+may be different. And therefore the help that you need in figuring out this difficult relationship
+
+21
+00:02:35,360 --> 00:02:43,680
+may be different and that's okay. And sometimes somebody is not, it is a difficult collaboration
+
+22
+00:02:43,680 --> 00:02:49,360
+without somebody being a difficult collaborator. Absolutely. Like sometimes, like somebody is
+
+23
+00:02:49,360 --> 00:02:54,160
+a perfectly loving collaborator for somebody else, but not for you. Yes. Not saying that if you find
+
+24
+00:02:54,160 --> 00:02:58,800
+it difficult to work with somebody, they're a bad person. Absolutely. Absolutely. And they're
+
+25
+00:02:59,440 --> 00:03:06,720
+might not work well with you. Yes. Totally. And maybe even, you know, with you under the
+
+26
+00:03:06,720 --> 00:03:10,320
+certain circumstances, like we have certainly encountered times where we have loved working
+
+27
+00:03:10,320 --> 00:03:15,280
+with a collaborator and it has been fine. And then something about the circumstances changed.
+
+28
+00:03:15,280 --> 00:03:21,520
+Like it turns out they're great when we have no time limit, like then things go really well. But
+
+29
+00:03:22,240 --> 00:03:31,120
+when there is a hard deadline, things get too stressful and unearths some, you know,
+
+30
+00:03:31,120 --> 00:03:39,120
+difficult interactions. And so even the circumstances can change and make a collaboration
+
+31
+00:03:39,120 --> 00:03:50,000
+difficult in one scenario when it is not in another. Yeah. So I just wanted to, I mean,
+
+32
+00:03:50,080 --> 00:03:54,960
+unfortunately, difficult collaborations, difficult collaborators, it happens. And
+
+33
+00:03:55,840 --> 00:04:04,880
+as I said, go watch the first two episodes because there are, hopefully, there are a lot of ways to
+
+34
+00:04:04,880 --> 00:04:08,960
+avoid these situations. But when you end up in a difficult situation, I have just a couple tools
+
+35
+00:04:08,960 --> 00:04:21,920
+here to help. So the first one being find your champion or your protector. This can be very
+
+36
+00:04:21,920 --> 00:04:28,960
+different depending on the setting that you are in. You know, when I initially put, you know,
+
+37
+00:04:28,960 --> 00:04:33,200
+when I initially gave a presentation like this to our lab, there was, you know, a picture,
+
+38
+00:04:34,160 --> 00:04:41,280
+a picture of Beth front and center and then, you know, and then me and Nodar as team leads
+
+39
+00:04:41,280 --> 00:04:48,080
+within the lab, you know, so we are, you know, we want to be the champions and protectors of people
+
+40
+00:04:48,960 --> 00:04:55,280
+that are working in our lab in our team. And so if a postdoc or RA in our team is having a hard
+
+41
+00:04:55,280 --> 00:05:01,040
+time having a difficult interaction, difficult collaboration, you know, we want to be the person
+
+42
+00:05:01,040 --> 00:05:09,040
+to be able to step in and help resolve the situation, help ease the situation. We want to do what we
+
+43
+00:05:09,040 --> 00:05:20,000
+can, what is within our power to make that not good go away. And so that may be your PI. That's
+
+44
+00:05:20,000 --> 00:05:26,720
+great or boss. That's great. You may not have that relationship with your PI or boss. You may need
+
+45
+00:05:26,720 --> 00:05:32,960
+to look elsewhere. If you are in graduate school, that could be staff in your graduate program,
+
+46
+00:05:32,960 --> 00:05:40,000
+that could be your thesis committee. That could be, you know, if you were in academia, an ombuds person,
+
+47
+00:05:41,440 --> 00:05:48,960
+you know, or a union, a department head, like any of any of these things, it could be
+
+48
+00:05:49,040 --> 00:05:57,040
+an external mentor, somebody that is not directly in a, you know, a reporting structure
+
+49
+00:05:58,000 --> 00:06:05,280
+or hierarchy within your organization. It could be somebody else entirely. And in fact, we encourage
+
+50
+00:06:05,280 --> 00:06:12,160
+people in our lab to build relationships with mentors that are totally outside of our immediate
+
+51
+00:06:12,800 --> 00:06:20,480
+structure. Because they can, you know, even for purely good reasons, they can provide networking
+
+52
+00:06:20,480 --> 00:06:25,600
+opportunities that are totally separate maybe from what we can provide. They can provide experience
+
+53
+00:06:25,600 --> 00:06:32,480
+and mentorship coming from a very different perspective than we can provide given that the
+
+54
+00:06:32,480 --> 00:06:40,320
+constraints that we're in. So having an external mentor can be very helpful. So hopefully, if you
+
+55
+00:06:40,320 --> 00:06:45,120
+were in a difficult situation dealing with a difficult collaborator, you have somebody
+
+56
+00:06:45,920 --> 00:06:54,080
+that you can turn to and ask for advice or ask for them to step in, you know, depending on what
+
+57
+00:06:54,080 --> 00:07:01,120
+the situation is. But the big thing I want to point out with this is that like you are not alone,
+
+58
+00:07:01,680 --> 00:07:10,800
+you should not be alone. And somebody should be able to help you. And if it's not, you know, if
+
+59
+00:07:10,800 --> 00:07:19,680
+you don't have a boss as amazing as Beth, then, you know, I'm sorry, that may not be it. It may not
+
+60
+00:07:19,680 --> 00:07:25,360
+be, again, the person you directly report to and that's a bummer, because I wish for everyone
+
+61
+00:07:25,360 --> 00:07:28,880
+that they directly reported to somebody who they felt like they always had their back.
+
+62
+00:07:29,520 --> 00:07:35,520
+But even if you don't, you find somebody that can help you in this situation.
+
+63
+00:07:37,120 --> 00:07:41,280
+And they don't necessarily have to intervene, but just someone to advise you and help you and
+
+64
+00:07:41,280 --> 00:07:52,880
+make you feel heard. Yes, yes, absolutely. That sometimes, sometimes even having somebody say
+
+65
+00:07:52,880 --> 00:07:58,800
+to you, like outside, like in life, big picture statement here, having somebody say to you like
+
+66
+00:07:58,960 --> 00:08:07,520
+yeah, I hear you, that stinks. I'm sorry, you're in that situation. That is not good. I hear you
+
+67
+00:08:07,520 --> 00:08:14,400
+and I understand why that feels not good. Sometimes that makes a huge difference. Just
+
+68
+00:08:14,400 --> 00:08:20,960
+hearing like you are not alone. Like, I am here for you. I care about you. I see that this is crummy.
+
+69
+00:08:21,760 --> 00:08:25,120
+I don't want that for you. Totally.
+
+70
+00:08:25,760 --> 00:08:36,880
+No. This is a really important word and it's a really hard word. And sometimes the solution
+
+71
+00:08:36,880 --> 00:08:48,080
+to a difficult collaboration is saying no. And what that can look like can be different. The
+
+72
+00:08:48,080 --> 00:08:54,240
+situation may need like, there are both very gentle nose and very assertive nose. And
+
+73
+00:08:55,680 --> 00:09:04,960
+both what comes naturally to you as a person and what is suited for the situation can be different.
+
+74
+00:09:06,000 --> 00:09:16,160
+So, you know, a gentle no, like, I'm sorry, I can't do that. You know, I apologize for this.
+
+75
+00:09:16,160 --> 00:09:20,880
+Thank you for your, you know, thank you for your suggestion. But like, unfortunately,
+
+76
+00:09:21,440 --> 00:09:28,800
+oh, here's an alternative. Right. Like, gently saying, no, but, right. Like,
+
+77
+00:09:29,840 --> 00:09:35,440
+that maybe something that, you know, you can again, like going to your mentor or getting some
+
+78
+00:09:35,440 --> 00:09:44,480
+coaching on, okay, how do I politely and gently tell this person no, like, I don't know, I can't
+
+79
+00:09:44,480 --> 00:09:49,920
+do what they were asking for. No, I don't think it's reasonable. No, it's not within the scope of
+
+80
+00:09:49,920 --> 00:09:56,800
+what I can and should do. Or, you know, no, you can't treat me that way. That's not kind.
+
+81
+00:09:57,520 --> 00:10:04,640
+Like, no, I, you know, no, stop that. Maybe you need some coaching about how to say that gently
+
+82
+00:10:04,640 --> 00:10:12,320
+to a person so that the relationship and conversation remains friendly and professional.
+
+83
+00:10:12,960 --> 00:10:18,640
+On the other hand, some people also need coaching on how to be assertive about it.
+
+84
+00:10:19,200 --> 00:10:28,320
+Like, how to say directly, no, period, no is a full sentence. I can't do that. No, that is not my
+
+85
+00:10:28,320 --> 00:10:36,560
+priority. No, that is not what we talked about in the beginning. I need to follow the initial set of
+
+86
+00:10:36,560 --> 00:10:42,560
+expectations that we set, period. And if that doesn't come naturally or comfortably to you,
+
+87
+00:10:42,560 --> 00:10:47,920
+again, if you have a champion, hopefully that's something that they can help you with, either
+
+88
+00:10:47,920 --> 00:10:55,600
+coaching you, practicing with you, or even just giving you the boost of support of actually,
+
+89
+00:10:55,600 --> 00:11:02,480
+that's okay to do. If you're not naturally assertive enough in these situations, and somebody is pushing
+
+90
+00:11:02,480 --> 00:11:10,240
+you and pushing you in a way that is not comfortable, it is okay to be direct in response.
+
+91
+00:11:11,440 --> 00:11:14,880
+Having them read a draft of an email and help you make it more assertive?
+
+92
+00:11:16,480 --> 00:11:24,800
+Yeah, absolutely. So in a difficult, in a difficult collaboration, it is okay to say no.
+
+93
+00:11:26,000 --> 00:11:31,920
+And again, like, maybe one way or the other is better, maybe one way or the other is more natural
+
+94
+00:11:31,920 --> 00:11:36,880
+to you. But big picture, it is okay to say no. If somebody is asking for more and more and more,
+
+95
+00:11:37,520 --> 00:11:44,320
+or if somebody is telling you, you know, like, this needs to be done next, you know, this week,
+
+96
+00:11:44,320 --> 00:11:49,360
+I have a grant deadline. But the initial expectation that you outlined was next month.
+
+97
+00:11:50,160 --> 00:11:56,000
+You don't need to work nights. And you don't need to drop all your other things necessarily,
+
+98
+00:11:56,000 --> 00:12:00,320
+like again, hopefully you have a relationship with your boss or your mentor, you know, whatever
+
+99
+00:12:00,320 --> 00:12:04,000
+that you can figure this out together. But like, just because a difficult person says,
+
+100
+00:12:04,000 --> 00:12:10,880
+do this thing, like, oftentimes, sometimes the right response, like it is just okay to say no,
+
+101
+00:12:10,880 --> 00:12:16,400
+that is not the expectation we set. I cannot do that for you. Period.
+
+102
+00:12:20,160 --> 00:12:27,200
+Putting it in writing. So sort of directly follows up with what Beth said, like putting it in writing
+
+103
+00:12:27,200 --> 00:12:34,560
+is both a way that you can make it very clear. So if you have a hard time with this
+
+104
+00:12:35,200 --> 00:12:40,000
+in conversation, like in a meeting, right, somebody's like, I need you to do this thing,
+
+105
+00:12:40,000 --> 00:12:44,960
+and we're talking face to face, and it can be a little bit overwhelming to try to be direct
+
+106
+00:12:45,680 --> 00:12:48,800
+to them and say no to them. Putting it in writing is a great way to do it.
+
+107
+00:12:49,360 --> 00:12:56,560
+And it's a way then you can point back. If they push further, like, I'm sorry,
+
+108
+00:12:56,560 --> 00:13:03,360
+as per my previous email, I cannot do this. I already told you this, and you can say this
+
+109
+00:13:03,360 --> 00:13:12,240
+all very nicely. But I already told you, it's still a no. And as Beth said, like putting it
+
+110
+00:13:12,240 --> 00:13:17,840
+in writing is a great way to then get help from some sort of mentor champion protector,
+
+111
+00:13:18,560 --> 00:13:26,400
+that can look at it and say, yeah, good job, or let's soften it a little bit, or you know what,
+
+112
+00:13:26,400 --> 00:13:31,840
+no, you can be more assertive on this and help you say the word no in the way that it should
+
+113
+00:13:31,840 --> 00:13:46,000
+be said in the situation. And finally, it is okay to end collaborations. Of course, this all depends
+
+114
+00:13:46,000 --> 00:13:52,000
+on the scenario and situation. Sometimes this is a very hard thing, especially if you don't have
+
+115
+00:13:52,000 --> 00:14:00,400
+the support of a boss that is set up a collaboration, you know, there's lots of scenarios. But we really
+
+116
+00:14:00,400 --> 00:14:09,040
+hope for you that you can be in a situation where you can go to the champion and say, you know what,
+
+117
+00:14:10,000 --> 00:14:16,720
+this just does not work for me. This person's style doesn't work for me. This setup doesn't work for me.
+
+118
+00:14:17,760 --> 00:14:24,320
+I am being hurt in this situation. I'm not able to do my best work in this situation. I feel
+
+119
+00:14:24,320 --> 00:14:30,560
+uncomfortable in this situation, whatever it is. And then the answer is no to the collaboration.
+
+120
+00:14:30,560 --> 00:14:39,760
+And we have done that before. We have wrapped up collaborations and then said, thank you.
+
+121
+00:14:40,720 --> 00:14:45,600
+We are not interested in processing the next batch. Like, thank you. We're done with this.
+
+122
+00:14:47,440 --> 00:14:48,000
+That's okay.
+
+123
+00:14:51,840 --> 00:14:58,000
+And it's not often, but it is sometimes, you know, the best thing for everybody
+
+124
+00:14:58,720 --> 00:15:05,200
+is this set of people working together is not producing functional collaboration.
+
+125
+00:15:05,760 --> 00:15:15,600
+Yeah. Yeah. You know, obviously, like we try to avoid this point. And again, the tools we've got in
+
+126
+00:15:15,600 --> 00:15:23,520
+the first two talks in this series, hopefully, will help you avoid reaching this point. But I think
+
+127
+00:15:24,000 --> 00:15:41,040
+particularly trainees, people earlier in their careers end up feeling less able to say no,
+
+128
+00:15:42,080 --> 00:15:50,800
+less like they have less agency to be in these sorts of situations. And again, I hope for you
+
+129
+00:15:51,600 --> 00:15:59,440
+that you can find a situation where you have a boss, a mentor, somebody that can help you
+
+130
+00:16:01,120 --> 00:16:09,200
+not go forward, you know, end situations that really are not tenable, because you shouldn't
+
+131
+00:16:09,200 --> 00:16:21,120
+end up being stuck in that situation. And if the, you know, if you feel that way, again, like,
+
+132
+00:16:21,120 --> 00:16:29,680
+go find a mentor, someone else in this list, right, that there are, or a different list,
+
+133
+00:16:29,680 --> 00:16:38,160
+expand this list, let us know who else should be in this list. Because there should be somebody
+
+134
+00:16:38,160 --> 00:16:43,120
+there for you to help you with these difficult situations and to help be your champion to get
+
+135
+00:16:43,120 --> 00:16:46,480
+you out of these difficult situations if you're feeling trapped in them.
+
+136
+00:16:49,360 --> 00:16:55,360
+And I just want to sort of say, if you're getting towards the point where you feel like
+
+137
+00:16:55,360 --> 00:16:59,120
+ending it, even if you haven't put in some of the things that Erin talked about at the beginning,
+
+138
+00:16:59,120 --> 00:17:04,880
+some of the tools, like, it's never too late to try to get back on the same page.
+
+139
+00:17:04,880 --> 00:17:12,480
+Well, it's sometimes too late. It can take a while, but you can always see if something can be
+
+140
+00:17:12,480 --> 00:17:17,440
+corrected. But if you feel like there's not, you've done everything, you've used all the tools,
+
+141
+00:17:17,440 --> 00:17:21,040
+you've talked to all the people, and you're just never going to be back on the same page,
+
+142
+00:17:21,040 --> 00:17:28,880
+then ending it is how you protect yourself. Yeah. Yeah. And, you know, protecting,
+
+143
+00:17:29,440 --> 00:17:36,560
+I mean, even, yeah, protect yourself. I mean, I guess that's, you know, an important,
+
+144
+00:17:36,560 --> 00:17:42,640
+important thing that we try and emphasize in our lab all the time, right? Like, the people that work
+
+145
+00:17:42,640 --> 00:17:52,560
+in our lab are human. And their human needs are important, right? And sometimes, particularly at
+
+146
+00:17:52,560 --> 00:18:00,880
+some stages in your career, like, in some lab situations, it may end up feeling like
+
+147
+00:18:04,080 --> 00:18:10,160
+humans are treated more like a cog in a machine. And we don't want that to be true for anyone.
+
+148
+00:18:11,760 --> 00:18:19,840
+And so somewhat buried in here, I guess, is a little pep talk, like that. You should be treated
+
+149
+00:18:19,840 --> 00:18:28,960
+like a human, regardless of your career stage, regardless of your lab. And if you are not,
+
+150
+00:18:30,640 --> 00:18:40,080
+hopefully, you can find the support you need to help you be treated like a human again.
+
+151
+00:18:43,360 --> 00:18:46,480
+Really important. Thank you so much for putting that together.
+
+152
+00:18:47,280 --> 00:18:50,400
+Yeah. Yeah, my pleasure. I think, you know,
+
+153
+00:18:53,120 --> 00:18:57,920
+it's, it's funny, I feel like this is less of a, I mean, I had lots of tools,
+
+154
+00:18:58,800 --> 00:19:04,960
+again, watch the previous talks, but, you know, almost feels like this turns into more of a
+
+155
+00:19:05,520 --> 00:19:09,040
+therapy session than, you know,
+
+156
+00:19:09,040 --> 00:19:11,280
+Nothing wrong with a different therapy session.
+
+157
+00:19:11,280 --> 00:19:17,680
+Yeah. Yeah. But, but again, I think that's something that we really, really emphasize in our lab that
+
+158
+00:19:17,680 --> 00:19:32,320
+is not emphasized in all labs, in all situations, in or out of science, right? But if, I don't know,
+
+159
+00:19:32,320 --> 00:19:35,360
+I'm just going to start repeating myself. I want everybody in the world to be in a happy,
+
+160
+00:19:35,360 --> 00:19:40,480
+healthy, productive environment in which they can be respected as humans and grow the skills they
+
+161
+00:19:40,480 --> 00:19:45,760
+want to grow while being treated in, you know, a respectful manner, period. Amen.
+
+162
+00:19:48,400 --> 00:19:55,360
+Yeah. Thank you. You are, you are a great advocate for those folks, for all the ones that I,
+
+163
+00:19:55,360 --> 00:20:01,360
+that we know personally, and I think this will help some folks. Maybe don't have great advocates
+
+164
+00:20:01,360 --> 00:20:08,320
+close to hand. I hope so. I hope so. And anyone out there, if you have other tools or ideas,
+
+165
+00:20:08,320 --> 00:20:15,440
+like please do let, let us know. Leave a comment or, you know, drop, drop some info in the,
+
+166
+00:20:16,320 --> 00:20:23,440
+in the Ask Erin Dearbeth episode request. We would, I would love to dive more into this. Like,
+
+167
+00:20:23,440 --> 00:20:31,360
+I really, I really like caring for the human part of the scientist. So any other ideas or
+
+168
+00:20:31,360 --> 00:20:38,400
+resources you all have, like, please share. All right. Bye.
+

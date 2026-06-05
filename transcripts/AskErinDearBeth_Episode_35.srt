@@ -1,0 +1,656 @@
+1
+00:00:16,000 --> 00:00:17,000
+Hey Beth!
+
+2
+00:00:17,000 --> 00:00:18,000
+Hey Erin, how are you?
+
+3
+00:00:18,000 --> 00:00:20,280
+Oh I'm great, how are you?
+
+4
+00:00:20,280 --> 00:00:21,280
+Good!
+
+5
+00:00:21,280 --> 00:00:24,280
+It is lovely to get to talk to you.
+
+6
+00:00:24,280 --> 00:00:26,400
+As always, I agree.
+
+7
+00:00:26,400 --> 00:00:27,400
+So fun.
+
+8
+00:00:28,400 --> 00:00:33,400
+So today, this is the start of a series.
+
+9
+00:00:33,400 --> 00:00:35,400
+I love when we do series.
+
+10
+00:00:35,400 --> 00:00:37,400
+I know, it's fun.
+
+11
+00:00:37,400 --> 00:00:42,400
+You know, the leave people hanging, come back for more.
+
+12
+00:00:42,400 --> 00:00:46,400
+Or it's just that we actually have so much to say,
+
+13
+00:00:46,400 --> 00:00:49,400
+can squeeze it into a single episode.
+
+14
+00:00:49,400 --> 00:00:55,400
+So I've got a series now on working with collaborators.
+
+15
+00:00:55,400 --> 00:01:00,400
+And this started from a presentation I gave to the lab.
+
+16
+00:01:00,400 --> 00:01:13,400
+Because in our lab, we have, I think, an unusually high number of collaborations compared to most academic research labs.
+
+17
+00:01:13,400 --> 00:01:18,400
+In part, that's because we are also partially a specialized service facility or core facility.
+
+18
+00:01:18,400 --> 00:01:22,400
+So that certainly increases the number of collaborations that we have,
+
+19
+00:01:22,400 --> 00:01:27,400
+but that's also kind of the nature of being a bio-image analyst.
+
+20
+00:01:27,400 --> 00:01:31,400
+We are not working in the wet lab directly.
+
+21
+00:01:31,400 --> 00:01:33,400
+We are not producing our own images.
+
+22
+00:01:33,400 --> 00:01:41,400
+And so we end up in the position of helping lots of other people who are,
+
+23
+00:01:41,400 --> 00:01:44,400
+and helping them get the best data out of their images.
+
+24
+00:01:44,400 --> 00:01:49,400
+So lots and lots of collaborations.
+
+25
+00:01:49,400 --> 00:02:00,400
+And so I want to talk a bit about working with collaborators and what we have learned over many years of working with many collaborators.
+
+26
+00:02:00,400 --> 00:02:03,400
+So that seems incredibly helpful.
+
+27
+00:02:03,400 --> 00:02:04,400
+Yeah.
+
+28
+00:02:04,400 --> 00:02:05,400
+People are always the hardest part.
+
+29
+00:02:05,400 --> 00:02:07,400
+Yes.
+
+30
+00:02:07,400 --> 00:02:08,400
+Yeah.
+
+31
+00:02:08,400 --> 00:02:12,400
+So here we are working with collaborators.
+
+32
+00:02:12,400 --> 00:02:24,400
+So when starting any collaboration, the first thing that I always want to think about is why.
+
+33
+00:02:24,400 --> 00:02:25,400
+Why are we doing this?
+
+34
+00:02:25,400 --> 00:02:29,400
+Because this sets the stage for the collaboration.
+
+35
+00:02:29,400 --> 00:02:35,400
+This really informs what the collaboration should look like.
+
+36
+00:02:35,400 --> 00:02:41,400
+It informs what the collaboration can end up being.
+
+37
+00:02:41,400 --> 00:02:51,400
+And sort of helps you prepare for the, you know, making the best of the collaboration and making everybody happy on both ends.
+
+38
+00:02:51,400 --> 00:02:57,400
+And so why did this collaborator come to you?
+
+39
+00:02:57,400 --> 00:03:00,400
+Did they need our expertise?
+
+40
+00:03:00,400 --> 00:03:03,400
+Is this something they are unable to do themselves?
+
+41
+00:03:03,400 --> 00:03:06,400
+Did they come to us because they need it fast?
+
+42
+00:03:06,400 --> 00:03:11,400
+Maybe they couldn't have done themselves, but they just like, they got to get this project cranked out.
+
+43
+00:03:11,400 --> 00:03:13,400
+And so like, get it done.
+
+44
+00:03:13,400 --> 00:03:18,400
+Or did they come to us because somebody told them they needed to?
+
+45
+00:03:18,400 --> 00:03:19,400
+Right?
+
+46
+00:03:19,400 --> 00:03:25,400
+That the like, somebody working hard and a boss is like, you know what, like go talk to them, go do that thing.
+
+47
+00:03:25,400 --> 00:03:35,400
+And so each of those different scenarios very much sets the tone for how the collaborator will be interacting with us and what they will be expecting from us.
+
+48
+00:03:35,400 --> 00:03:40,400
+Also important for us to keep in mind, why did we join this collaboration?
+
+49
+00:03:40,400 --> 00:03:46,400
+Is it because they paid us money and we need money to pay the people in our lab?
+
+50
+00:03:46,400 --> 00:03:47,400
+That's fine.
+
+51
+00:03:47,400 --> 00:03:48,400
+Right.
+
+52
+00:03:48,400 --> 00:03:50,400
+Sometimes that's why.
+
+53
+00:03:50,400 --> 00:04:00,400
+Is it because we were told to or is it, you know, like a postdoc in our lab did Beth and I go, hey, here you need to do this, right?
+
+54
+00:04:00,400 --> 00:04:05,400
+I mean, we try not try to make it a little nicer than just like, do this thing, right?
+
+55
+00:04:05,400 --> 00:04:12,400
+But like, is the, you know, is this person doing it because they were told to or are they doing it because they're really interested in the project?
+
+56
+00:04:12,400 --> 00:04:17,400
+Maybe it's an area of biology that they're an expert in or an area that they really want to grow into.
+
+57
+00:04:17,400 --> 00:04:21,400
+And so they've asked to work on this collaboration.
+
+58
+00:04:21,400 --> 00:04:23,400
+Oh, yeah, that's the next bullet points.
+
+59
+00:04:23,400 --> 00:04:31,400
+Is it, you know, is it a using an existing skill set that this person has or is it driving the development of a new skill set?
+
+60
+00:04:31,400 --> 00:04:37,400
+And again, both of those are going to inform what this looks like.
+
+61
+00:04:37,400 --> 00:04:45,400
+Is this really a way to grow and learn and might be challenging and, you know, and pushing comfort zones?
+
+62
+00:04:45,400 --> 00:04:47,400
+Or is it, yeah, I got this.
+
+63
+00:04:47,400 --> 00:04:50,400
+I can do this in my sleep.
+
+64
+00:04:50,400 --> 00:05:01,400
+So once you've really thought about all those questions, it's really important to set shared expectations with the collaborator.
+
+65
+00:05:01,400 --> 00:05:18,400
+So once you've thought through all these wise expectations, like expectation setting, if you like take one thing away, one topic sentence from all three of this three part series, it is set shared expectations.
+
+66
+00:05:18,400 --> 00:05:28,400
+If you know what you're expecting and the collaborator knows what they're expecting, then like you set yourself up the best you can.
+
+67
+00:05:28,400 --> 00:05:36,400
+So that, like, technically can be who is doing what in the collaboration?
+
+68
+00:05:36,400 --> 00:05:42,400
+What what is being done when when does this thing need to be done?
+
+69
+00:05:42,400 --> 00:05:46,400
+How what tools or methods?
+
+70
+00:05:46,400 --> 00:05:48,400
+Who what when how?
+
+71
+00:05:48,400 --> 00:05:56,400
+And having a conversation with your collaborator at the start of the collaboration to set these expectations together.
+
+72
+00:05:56,400 --> 00:06:03,400
+So diving into each of these just a little bit more, like who in this collaboration who is a part of it?
+
+73
+00:06:03,400 --> 00:06:08,400
+Is it just, you know, the postdoc in our lab that is helping a postdoc in another lab?
+
+74
+00:06:08,400 --> 00:06:25,400
+Or is it a bigger thing where it's an entire lab and a set of PIs or a group of labs and a bunch, you know, a bunch of RAs and postdocs doing the work and PIs chiming in, you know, it's going to look really different depending on who's involved,
+
+75
+00:06:25,400 --> 00:06:41,400
+both like who gets to make the decisions and who is driving the work. And that can often look very different depending on the dynamic that you have with your PI or your collaborator has with their PI or boss.
+
+76
+00:06:41,400 --> 00:07:10,400
+And who's helping in the work? Is it just one lone postdoc doing their thing on their own? It is their own project or do they have a super talented RA that is also helping them and, you know, a collaborating postdoc that is teaching them the technique, you know, so there's knowing who is doing what is really helpful to understand from the very beginning.
+
+77
+00:07:10,400 --> 00:07:29,400
+And specifically, like, who is doing what part of the work. So not just the decision making, but the work itself. So what will the data look like when it is handed to you, and who directly should you expect to get it from?
+
+78
+00:07:29,400 --> 00:07:32,400
+That's important to know.
+
+79
+00:07:32,400 --> 00:07:54,400
+And then when you're done with your work, who exactly should you be giving the data to? And you would think this would be obvious, but there have absolutely been situations, especially the more people you have in the room, the more people you have coming into the collaboration where different people have different ideas about what the handbuffs are.
+
+80
+00:07:54,400 --> 00:08:03,400
+And making very clear about what the handbuffs are going into it can be really important.
+
+81
+00:08:03,400 --> 00:08:06,400
+What?
+
+82
+00:08:06,400 --> 00:08:29,400
+What exactly is being given to you? Is it already done? Or do you have a say on the acquisition? So this comes up a lot when either people involve us from the very beginning and say, you know, hey, I want to run a pilot, I don't know how to set up this assay, can you help me, you know, help me build and develop, and we do a lot of back and forth.
+
+83
+00:08:29,400 --> 00:08:46,400
+That's great. That's the scenario we want to be working in. But sometimes people come to us and say like, I have this data, I need it analyzed. We say to them, okay, but actually, that's not really going to work with the way you've set it up. And the answer is like, that's the data I've got.
+
+84
+00:08:46,400 --> 00:08:58,400
+So do the best you can. But that's a really different conversation of what is the best I can get out of the data I've got because I can't get more data versus how can I get my best data from the beginning?
+
+85
+00:08:58,400 --> 00:09:01,400
+Yeah, those are super potentially different things.
+
+86
+00:09:01,400 --> 00:09:20,400
+Absolutely. And without knowing this from the beginning, there can be miscommunications and hurt feelings. You know, if we don't know that somebody has no chance to get new data, like it doesn't feel good for us to go to them and be like, Oh, this isn't any good. Let's try again.
+
+87
+00:09:21,400 --> 00:09:33,400
+Right. Like, I mean, there's more to say about how one has difficult conversations. But, but, you know, again, expectations are important.
+
+88
+00:09:33,400 --> 00:09:38,400
+Even knowing how will this data be structured so you can be prepared.
+
+89
+00:09:38,400 --> 00:09:54,400
+How is the metadata considered or included? Is it going to be coming, you know, as a separate spreadsheet that they send to you? Or did they not actually even think about getting you the metadata and maybe we need to have a conversation about that?
+
+90
+00:09:54,400 --> 00:10:01,400
+You know, knowing can we ask for changes? Or is this it?
+
+91
+00:10:01,400 --> 00:10:22,400
+Also, the flip side of setting clear expectations about what we're delivering. So, are we giving them do they just want the end results, the shiny pretty here's a figure for my paper, or do they want all of the intermediates, all of the output files, all of the steps along the way.
+
+92
+00:10:22,400 --> 00:10:36,400
+How much should we be customizing the workflow? Do they want it to, you know, we've had collaborations where it's like, Hey, we just have a new batch, and I need it run through the same pipeline as old batches because we want to be able to compare them as directly as possible.
+
+93
+00:10:36,400 --> 00:10:44,400
+And we have collaborations like, Hey, tune this as much as you can to make it as best as it is for this exact batch of data.
+
+94
+00:10:44,400 --> 00:10:51,400
+Neither is bad, but knowing what that collaborator wants. Again, is very important from the beginning.
+
+95
+00:10:51,400 --> 00:11:12,400
+Then also knowing kind of like, what beyond the data, what is expected to do they want documentation about what you did shared in a way that they can understand and write a paper, or do they expect that you would write up the method section for their paper for what you did.
+
+96
+00:11:12,400 --> 00:11:36,400
+Or is it just no just hand it back and they'll handle it. Because knowing, you know, if they're expecting to come back a year later, when they put when they're ready to publish, and say, Okay, now write my method section, right, that's actually something that should be established up front, because maybe the person in our lab who did the details of the handling isn't in the lab.
+
+97
+00:11:36,400 --> 00:11:47,400
+A year or two later when they want to publish. And if we knew ahead of time, we could have asked that person to write that up before they leave.
+
+98
+00:11:47,400 --> 00:11:53,400
+And when when is also really important.
+
+99
+00:11:53,400 --> 00:12:02,400
+When the data is coming to us. So do we know, like, is this a hard date like you will send it to us by this day no matter what.
+
+100
+00:12:02,400 --> 00:12:08,400
+Or is it. Ah, that's our best guess, but like best guesses.
+
+101
+00:12:08,400 --> 00:12:13,400
+You know, who knows it's things happen in the wet lab.
+
+102
+00:12:13,400 --> 00:12:20,400
+But once or it will be will it be coming in batches that helps us prepare for how we're going to handle this.
+
+103
+00:12:20,400 --> 00:12:29,400
+When are they expecting data from us. Is it, you know, is it a hard or soft deadline.
+
+104
+00:12:29,400 --> 00:12:39,400
+Do our results actually impact their ability to collect future data, or is it just they want it back as fast as possible because they're excited.
+
+105
+00:12:39,400 --> 00:12:50,400
+Because the like, I want it back ASAP is different than I actually need this back ASAP, because I'm paused another experiment that I need this results from to be able to scale up.
+
+106
+00:12:50,400 --> 00:13:02,400
+Those are really different scenarios and we may handle the conversations about our ability to return data in a certain timeframe can look really different based on those things.
+
+107
+00:13:02,400 --> 00:13:27,400
+And finally, you know, hear this how is this is this considered asset development. Are we working together to give them feedback about their their wet lab role and then they're incorporating that and giving us a new batch and back and forth, or is their data like is this what it is, and there's nothing we can do.
+
+108
+00:13:27,400 --> 00:13:36,400
+Also, on the flip side, like, do the collaborators care about our methods. So is it something they need to be able to run themselves in the future.
+
+109
+00:13:36,400 --> 00:13:45,400
+That can affect what software we choose, what languages we choose to code in if we're coding.
+
+110
+00:13:45,400 --> 00:13:54,400
+Or, you know, and it can affect, you know, so all of these, all of these, who what, what, you know, all of these conversations are kind of intermashed, right.
+
+111
+00:13:54,400 --> 00:14:10,400
+Like, but are they locked into a specific method a specific tool, or, hey, since we process their first batch, it turns out that there's been a new version of a software that's come out that we think would be a lot better at this specific task.
+
+112
+00:14:10,400 --> 00:14:13,400
+Can we try that.
+
+113
+00:14:13,400 --> 00:14:18,400
+These, these again, important things to talk about.
+
+114
+00:14:18,400 --> 00:14:28,400
+Also, so once you've said all of that, something to keep in mind that you might want to directly communicate is, we need to know the priorities.
+
+115
+00:14:28,400 --> 00:14:32,400
+So things can be high quality.
+
+116
+00:14:32,400 --> 00:14:35,400
+They can be reproducible.
+
+117
+00:14:35,400 --> 00:14:46,400
+They can have, you know, prioritize costs, or maybe a specific method or tool, or maybe as fast as possible.
+
+118
+00:14:46,400 --> 00:15:12,400
+But also, these can't all be priorities, right, like, you cannot try to minimize cost, while also saying choose the very best method, and the very best quality, and build me this beautifully documented pipeline that is completely reusable and reproducible, like, that takes time and time costs money right so so it's
+
+119
+00:15:12,400 --> 00:15:17,400
+like, I have a lot of tension between all of these things.
+
+120
+00:15:17,400 --> 00:15:23,400
+Having a conversation ahead of time with the collaborator is what of these is the most important to you.
+
+121
+00:15:23,400 --> 00:15:33,400
+And I will make that my top priority. And certainly I want all of these things right like it's not like I'm going to be like, Oh yeah, you know, like, intentionally low quality.
+
+122
+00:15:33,400 --> 00:15:38,400
+Yeah, like let me just give you bad data because you want it fast right like that's not, that's not our vibe.
+
+123
+00:15:38,400 --> 00:15:44,400
+Um, if it is get this back to me as fast and as cheap as possible.
+
+124
+00:15:44,400 --> 00:16:02,400
+I may not do a I may go through one round of quality control tuning, instead of the if it was this needs to be the most accurate possible I may go through four rounds of tuning right and and knowing what is important to the collaborator.
+
+125
+00:16:02,400 --> 00:16:09,400
+One round and then probably telling them these are the things that I've noticed that and here's how you would fix them yourself.
+
+126
+00:16:09,400 --> 00:16:25,400
+Absolutely, absolutely. Or the caveats of like, Hey, maybe right so we've definitely talked about this in other episodes but um, there are like what you are what you are measuring.
+
+127
+00:16:25,400 --> 00:16:40,400
+And how good your data needs to be is very much affected by what your biology question is right so if the question is, is my protein my gfp labeled protein in the nucleus or the cytoplasm.
+
+128
+00:16:40,400 --> 00:17:04,400
+That's a really, really different question than what is the, you know, gradient of distribution throughout the cytoplasm and does that chain, you know, like, is the ratio of stuff that is perinuclear different than the stuff that is, you know, close to the cell border right like for the second question, the
+
+129
+00:17:04,400 --> 00:17:18,400
+ladder, you need really, really careful nuclear and cellular segmentation, you need to know you are measuring like, exactly the protein in exactly the components of the cell that you think it is but if the question is nuclear cytoplasmic.
+
+130
+00:17:18,400 --> 00:17:34,400
+That's a heck of a lot easier and requires a heck of a lot less tuning so maybe your biological question doesn't actually need the most perfect segmentation ever existing like maybe it is actually totally valid to just find the nucleus and a ring around it.
+
+131
+00:17:34,400 --> 00:17:45,400
+Maybe that's fine. Maybe it's not. And that again is a part of all of the expectation setting that happens earlier.
+
+132
+00:17:45,400 --> 00:18:01,400
+So here, you know, so we have this ideal of here's this like tension of the five main thing but that's really not even it right there's so many other things that come into the you know the tensions the push and polls and you know and maybe,
+
+133
+00:18:01,400 --> 00:18:18,400
+maybe one of these is actually the priority. There are so many things to think about and so just setting setting expectations with a collaborator having the conversation like, what is your top priority for this, so we can optimize that.
+
+134
+00:18:18,400 --> 00:18:25,400
+And, you know, it may affect our ability to do other things.
+
+135
+00:18:25,400 --> 00:18:38,400
+Finally, here about expectations setting some expectations about backup plans. If, if you have these conversations before things go wrong.
+
+136
+00:18:38,400 --> 00:18:45,400
+Everybody's never go wrong. Yeah, yeah, right like who.
+
+137
+00:18:45,400 --> 00:18:57,400
+If somebody you know if the person working on this gets sick and has to be out for a couple weeks. Can they hand it off to somebody else in lab or does it need to be that person.
+
+138
+00:18:57,400 --> 00:19:14,400
+What if it doesn't work. What do we do, you know what if we can't distinguish between their to their positive and negative control populations what if this setup just doesn't produce a biology result that we can interpret or do something with like what
+
+139
+00:19:14,400 --> 00:19:33,400
+do we do about that when. Okay, things have gone off the rail, I got sick for two weeks and nobody else could work on it. So we can't hit our timeline. What, what will that look like if we can't hit the timeline that we thought we could we didn't anticipate Erin getting pneumonia.
+
+140
+00:19:33,400 --> 00:19:49,400
+Okay, what if the things that we have talked about doesn't work. Do we want to try a whole other workflow a whole other set of softwares a whole other XYZ, or do we say oh actually, we learned a thing.
+
+141
+00:19:49,400 --> 00:20:01,400
+We learned that this doesn't work period like that may be an okay outcome, but knowing these backup plans before you have to hit them can be really helpful.
+
+142
+00:20:01,400 --> 00:20:20,400
+And the very, I think the very last thing I wanted to say about expectations, things that are often the hardest conversations to have, but so so important to have from the very beginning credit so much harder to have later, so much worse when it's at the end like credit and money.
+
+143
+00:20:20,400 --> 00:20:35,400
+So, will this be published. Is that the goal, I mean, one can never know right but is the goal publication, and if so, how are we going to be credited.
+
+144
+00:20:35,400 --> 00:20:54,400
+You know, will. What do we expect do we expect to have authorship on this because of the intellectual, you know, intellectual work we have done, or do we think, hey, you know, we'd used some tools we already had like an acknowledgement is plenty.
+
+145
+00:20:54,400 --> 00:21:03,400
+Thank you, you know, thank you for acknowledging us, but as even as like as a core facility, super important that we do get credit.
+
+146
+00:21:03,400 --> 00:21:17,400
+And, but setting, you know, setting expect again expectations in advance of whether this is something that we feel merits authorship, or even saying like reminding people, we do need to be acknowledged.
+
+147
+00:21:17,400 --> 00:21:35,400
+And here is how you can acknowledge our work directly in acknowledgments please use this phrase so that we can track this, and we can show to others the hard work that we do as a core facility and prove that we are worth supporting.
+
+148
+00:21:35,400 --> 00:21:39,400
+Likewise money, money socks, nobody likes talking about money.
+
+149
+00:21:39,400 --> 00:21:50,400
+And it's really important to set very clearly in advance was paying how much can be paid. How, how is that going to be paid.
+
+150
+00:21:50,400 --> 00:21:59,400
+And what is actually covered, because again, things you know they might come back a year later and be like oh we're ready to publish.
+
+151
+00:21:59,400 --> 00:22:11,400
+And, oh, oh, can you remake figure four, and actually can you write the method section again, and, oh, now we need supplementary five, right that can actually eat up a lot of time.
+
+152
+00:22:11,400 --> 00:22:21,400
+So knowing in it, you know, setting from the very beginning, like, yes, we will help you with your paper, but also when that happens we will be charging you.
+
+153
+00:22:21,400 --> 00:22:37,400
+So far, that can be set up in the beginning of like we'll hand you back the data, and we're just really excited, we have the bandwidth we're excited to help you with this publication, we won't charge you for that component because we can factor that into our operating costs of getting the publication.
+
+154
+00:22:37,400 --> 00:22:52,400
+So, at different times, depending on funding, depending on personnel, depending on our relationship with the lab that we're collaborating with, but it's really important and hard, but important to set this up from the very beginning.
+
+155
+00:22:52,400 --> 00:22:59,400
+So, that is what I have to say about working with collaborators and setting expectations.
+
+156
+00:22:59,400 --> 00:23:17,400
+Yeah, I mean, it just all comes down to communication, right, and like mutual respect and mutual communication, and those are some great guidelines for how to in practice think about that so that everybody comes out of a collaboration feeling good about it as opposed to feeling, you know, mistreated or misunderstood.
+
+157
+00:23:17,400 --> 00:23:19,400
+Absolutely.
+
+158
+00:23:19,400 --> 00:23:21,400
+Thank you so much that was great.
+
+159
+00:23:21,400 --> 00:23:23,400
+Yeah, my pleasure.
+
+160
+00:23:23,400 --> 00:23:24,400
+Can't wait for the next bit.
+
+161
+00:23:24,400 --> 00:23:42,400
+Yes. There's more, you know, coming up. We've got in the series, we've got some tools we use to help us with collaborations. And I have a whole bit on dealing with difficult collaborations so triggered some balloons there with that.
+
+162
+00:23:42,400 --> 00:23:48,400
+So, hey, figuring out how to deal with difficult collaborators is worthy of balloons. Yeah, absolutely.
+
+163
+00:23:48,400 --> 00:23:50,400
+All right. Talk to you later.
+
+164
+00:23:50,400 --> 00:23:52,400
+Thank you. Bye.
+

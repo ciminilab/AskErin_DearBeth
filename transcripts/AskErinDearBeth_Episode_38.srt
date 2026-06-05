@@ -1,0 +1,548 @@
+1
+00:00:16,000 --> 00:00:07,000
+Hello!
+
+2
+00:00:07,000 --> 00:00:10,000
+Hello!
+
+3
+00:00:10,000 --> 00:00:20,000
+How are you?
+
+4
+00:00:20,000 --> 00:00:21,000
+Wonderful!
+
+5
+00:00:21,000 --> 00:00:23,240
+Even better now that I see your lovely face!
+
+6
+00:00:23,240 --> 00:00:24,240
+How about you?
+
+7
+00:00:24,240 --> 00:00:26,000
+I always love podcast day.
+
+8
+00:00:26,000 --> 00:00:28,000
+Podcast day is a great day.
+
+9
+00:00:28,000 --> 00:00:29,000
+Absolutely.
+
+10
+00:00:29,000 --> 00:00:32,000
+Especially because I think today's one is going to be fun.
+
+11
+00:00:32,000 --> 00:00:36,000
+Today we want to talk about custom cell post models.
+
+12
+00:00:36,000 --> 00:00:41,000
+Specifically, I want to show running a custom cell post model in CellProfiler.
+
+13
+00:00:41,000 --> 00:00:44,000
+But also, I have a lot of fun making this model.
+
+14
+00:00:44,000 --> 00:00:50,000
+So I wanted to talk a little bit about how I made it and why I made it and sort of go from there.
+
+15
+00:00:50,000 --> 00:00:51,000
+Nice.
+
+16
+00:00:51,000 --> 00:00:57,000
+I mean, that is to say, I think most of our podcasts are pretty fun, just to be clear.
+
+17
+00:00:57,000 --> 00:00:58,000
+Yes.
+
+18
+00:00:58,000 --> 00:01:01,000
+We try to not do unfun podcasts.
+
+19
+00:01:01,000 --> 00:01:05,000
+You, the viewer, can tell us.
+
+20
+00:01:05,000 --> 00:01:07,000
+But this also sounds like fun.
+
+21
+00:01:07,000 --> 00:01:08,000
+Let's do it.
+
+22
+00:01:08,000 --> 00:01:09,000
+Yeah.
+
+23
+00:01:09,000 --> 00:01:20,000
+So this is data from the Brebarimage Benchmark Collection that if you've ever done our translocation
+
+24
+00:01:20,000 --> 00:01:24,000
+tutorials in CellProfiler or Pyxome, you may have seen before.
+
+25
+00:01:24,000 --> 00:01:27,000
+And I think we've used before on the podcast.
+
+26
+00:01:27,000 --> 00:01:31,000
+So in this particular data set, we have two channels.
+
+27
+00:01:31,000 --> 00:01:36,000
+We have a nuclear channel and we have a GFP channel.
+
+28
+00:01:36,000 --> 00:01:43,000
+And it is on a transcription factor that under certain conditions is cytoplasmic and under
+
+29
+00:01:43,000 --> 00:01:45,000
+certain conditions is nuclear.
+
+30
+00:01:45,000 --> 00:01:48,000
+So this is a negative control untreated image.
+
+31
+00:01:48,000 --> 00:01:53,000
+And if I zoom in on my cells here, my GFP is in the cytoplasm.
+
+32
+00:01:53,000 --> 00:02:00,000
+If I go into my positive control image and then I zoom in, my GFP is very much nuclear.
+
+33
+00:02:00,000 --> 00:02:01,000
+Oh, yeah.
+
+34
+00:02:01,000 --> 00:02:02,000
+Look at that.
+
+35
+00:02:02,000 --> 00:02:03,000
+Yeah.
+
+36
+00:02:03,000 --> 00:02:08,000
+So we have the full spectrum between fully cytoplasmic and fully nuclear.
+
+37
+00:02:08,000 --> 00:02:15,000
+And so we have some different tutorials in CellProfiler and Pyxome for how can you find these, how can you
+
+38
+00:02:15,000 --> 00:02:17,000
+detect translocation?
+
+39
+00:02:17,000 --> 00:02:27,000
+How can you detect which doses of drug give you sort of nuclear versus cytoplasmic GFP?
+
+40
+00:02:27,000 --> 00:02:36,000
+And in the tutorial, the CellProfiler tutorial, what we do is because we don't have a third channel to sort of
+
+41
+00:02:36,000 --> 00:02:38,000
+segment the cell body.
+
+42
+00:02:38,000 --> 00:02:41,000
+We say it should be a cell body.
+
+43
+00:02:41,000 --> 00:02:46,000
+We have a third channel to sort of segment the cell body.
+
+44
+00:02:46,000 --> 00:02:54,000
+We say it should be totally good enough for these purposes to call the cytoplasm or the cell as just a 10 pixel
+
+45
+00:02:54,000 --> 00:02:57,000
+donut around the nucleus.
+
+46
+00:02:57,000 --> 00:03:03,000
+And that is good enough because if you're 10 pixels around the nucleus, now let me just sort of go forward again to
+
+47
+00:03:03,000 --> 00:03:08,000
+another negative control image.
+
+48
+00:03:08,000 --> 00:03:14,000
+You know, these aren't especially good cells, but they're cell-ish.
+
+49
+00:03:14,000 --> 00:03:16,000
+Yeah, cell enough.
+
+50
+00:03:16,000 --> 00:03:24,000
+You would know, like, is the area between the green and the pink bright or not bright?
+
+51
+00:03:24,000 --> 00:03:27,000
+And that's all you need for this.
+
+52
+00:03:27,000 --> 00:03:33,000
+But that's always very unsatisfying to people when we do the tutorials.
+
+53
+00:03:33,000 --> 00:03:44,000
+And it turns out that there's a secret here, which is, let me zoom in a little bit.
+
+54
+00:03:44,000 --> 00:03:57,000
+If you actually blow out this nuclear channel, you can actually see the cell.
+
+55
+00:03:57,000 --> 00:04:03,000
+So there's information that's present here about where the cell boundaries are.
+
+56
+00:04:03,000 --> 00:04:08,000
+It's just really hard to get at using classical methods.
+
+57
+00:04:08,000 --> 00:04:12,000
+Like, do-do-do-do-do-do-do.
+
+58
+00:04:12,000 --> 00:04:17,000
+Like, you know, secret mission here, hidden cells.
+
+59
+00:04:17,000 --> 00:04:20,000
+Exactly.
+
+60
+00:04:20,000 --> 00:04:36,000
+So what I want, and crucially, that, so our GFP is sort of differentially localized in our sort of negative controls
+
+61
+00:04:36,000 --> 00:04:47,000
+and our positive controls, but this, like, if we blow out the DNA channel, we can see the cell bodyes.
+
+62
+00:04:47,000 --> 00:04:49,000
+That is not different.
+
+63
+00:04:49,000 --> 00:04:59,000
+And all we need for segmentation is A, to be able to find the thing, and B, to have the underlying pixel information be fair between our conditions.
+
+64
+00:04:59,000 --> 00:05:04,000
+The reason that in the classical workflow we do a donut is a donut is the most fair thing.
+
+65
+00:05:04,000 --> 00:05:16,000
+But this sure seems like something where we can, there's underlying pixel information that we maybe can't easily turn into a cell segmentation, but it might be possible.
+
+66
+00:05:17,000 --> 00:05:21,000
+So there are classical tricks you could do, and I have done, and they do actually work pretty well.
+
+67
+00:05:21,000 --> 00:05:27,000
+But for this, I decided what might be fun is to train a custom Cellpose model.
+
+68
+00:05:27,000 --> 00:05:34,000
+So if you've never trained a Cellpose model before, here is the Cellpose interface.
+
+69
+00:05:34,000 --> 00:05:43,000
+But what I actually did, because I'm lazy, was a little bit tricky.
+
+70
+00:05:43,000 --> 00:05:55,000
+So in order to train Cellpose, what you need are the image you want to train on and then some, the masks.
+
+71
+00:05:55,000 --> 00:06:03,000
+So you need to tell Cellpose, you know, what the correct answers are for your segmentation.
+
+72
+00:06:03,000 --> 00:06:11,000
+And in about half of our images, that's really easy to do, because we have good cell segmentation here.
+
+73
+00:06:11,000 --> 00:06:34,000
+So I used the Cellpose Cytoh3 model for a few different negative control images and saved out the masks, which I could do, for example, like this.
+
+74
+00:06:35,000 --> 00:06:40,000
+And I saved out the masks here.
+
+75
+00:06:40,000 --> 00:06:47,000
+And the way this data is structured is W1 is our GFP channel, Wavelength 1 and W2 is our DNA channel.
+
+76
+00:06:47,000 --> 00:06:53,000
+So I did this for four, only four negative control images.
+
+77
+00:06:54,000 --> 00:07:08,000
+And then I copied those images into a folder and I changed the DNA channel into a folder and I changed the names here to be W2 instead of W1.
+
+78
+00:07:08,000 --> 00:07:13,000
+So I made my masks initially with the GFP channel.
+
+79
+00:07:13,000 --> 00:07:26,000
+But then I said, hey, Cellpose, I would like you to train a custom model based on the nuclear channel and the nuclear channel masks.
+
+80
+00:07:26,000 --> 00:07:28,000
+Tricky.
+
+81
+00:07:28,000 --> 00:07:44,000
+I can try to get Cellpose to learn to use this really dim signal that's in the DNA channel since it's present in both conditions to learn my cell mask from only the DNA.
+
+82
+00:07:44,000 --> 00:07:46,000
+Love it.
+
+83
+00:07:46,000 --> 00:07:50,000
+That is just a bonkers trick.
+
+84
+00:07:50,000 --> 00:07:52,000
+Yeah.
+
+85
+00:07:52,000 --> 00:07:56,000
+I think that this actually works pretty okay.
+
+86
+00:07:56,000 --> 00:08:00,000
+So let me pull up the Cellpose workspace view right here.
+
+87
+00:08:00,000 --> 00:08:05,000
+So let's start with a negative control image.
+
+88
+00:08:05,000 --> 00:08:08,000
+So here is our image.
+
+89
+00:08:08,000 --> 00:08:11,000
+Let's sort of zoom in.
+
+90
+00:08:11,000 --> 00:08:25,000
+In the run Cellpose module, here I'm using this. This is a copy of CellProfiler where I have CellProfiler and Cellpose installed in the same environment using a tool called Pixie to do that.
+
+91
+00:08:25,000 --> 00:08:34,000
+And you can on the CellProfiler plugins website, you can access a Pixie environment for installing CellProfiler and Cellpose together.
+
+92
+00:08:34,000 --> 00:09:03,000
+And then when I had run, when I had trained my Cellpose model by going to models, train new model, and just getting the and running the training from there, Cellpose gave me a model file that was named with the date and time stamp of the model.
+
+93
+00:09:03,000 --> 00:09:22,000
+So all I did is just point this at this particular Cellpose model.
+
+94
+00:09:22,000 --> 00:09:23,000
+Look at that.
+
+95
+00:09:23,000 --> 00:09:26,000
+I can see.
+
+96
+00:09:26,000 --> 00:09:27,000
+Wow.
+
+97
+00:09:27,000 --> 00:09:31,000
+Here is my DNA channel, and then there is my cell mask.
+
+98
+00:09:31,000 --> 00:09:38,000
+Now this is the DNA, like this is the DNA channel. So what does this actually look like overlaid on the GFP channel?
+
+99
+00:09:38,000 --> 00:09:42,000
+It looks like this.
+
+100
+00:09:42,000 --> 00:09:56,000
+So we can see that overall Cellpose with just sort of four images has done a really good job of figuring out where the cell boundaries are.
+
+101
+00:09:56,000 --> 00:10:11,000
+And it does a better job of doing that. I can duplicate this with my custom model, because of course, usually there isn't enough information in the DNA channel to do this.
+
+102
+00:10:11,000 --> 00:10:25,000
+If I just use, you know, CYTO3 on the DNA channel.
+
+103
+00:10:25,000 --> 00:10:51,000
+It's actually not terrible, but it's definitely if I add the masks here, nowhere near as good as my custom model that is trained to, you know, know that there is, you know, this information that goes out sort of further.
+
+104
+00:10:51,000 --> 00:10:56,000
+This was only four images of training, so it didn't take very much at all to do.
+
+105
+00:10:56,000 --> 00:10:58,000
+Yeah.
+
+106
+00:10:58,000 --> 00:11:11,000
+And so just as a sort of bring my point home, because, you know, I can now use this on negative control and positive control data and it should make cell masks sort of just as well for either of them.
+
+107
+00:11:11,000 --> 00:11:35,000
+So we could use this in our translocation tutorial if we wanted, because it is now treating everything fairly. It is now saying, I can, even though we as biologists can't really fully be certainly exact boundaries, though we can
+
+108
+00:11:35,000 --> 00:11:45,000
+switch to putting this on top of the DNA image and then blowing the DNA image out so that we can.
+
+109
+00:11:45,000 --> 00:11:54,000
+Yeah. Like, so there it is overlaid on the DNA blown out.
+
+110
+00:11:54,000 --> 00:11:56,000
+Those I think are pretty good boundaries.
+
+111
+00:11:56,000 --> 00:12:00,000
+Yeah, be sure that's exactly where the cell boundaries are.
+
+112
+00:12:00,000 --> 00:12:16,000
+Of course, we can't without having a stain but considering what we have to work with, if it was really important to get the exact cell boundaries right, which for a translocation question it wasn't but for plenty of other biological questions that might be this trick of sort of saying
+
+113
+00:12:16,000 --> 00:12:37,000
+there's information in the DNA channel that we weren't taking full advantage of let's take more advantage of it actually helps us much better than with a pre trained cell post model helps us come up with a clever way of getting the whole cell and CellProfiler made it easy to run that model because all I had to do was just point at it.
+
+114
+00:12:37,000 --> 00:13:04,000
+I love it. It's so creative and you know, I think a great, again a great point that we hit home often, you know that the best answer right there like best or perfect or right answer can be really different depending on your biological question so as you mentioned the translocation, the donut was fine because it was basically you know nuclear or something outside of
+
+115
+00:13:04,000 --> 00:13:31,000
+nuclear you know roughly nuclear but this opens up a lot more possibilities for different biological questions that care a lot more about the cell shape and maybe like even this. I mean good to keep in mind that there will still be biological questions, but this isn't sufficient to answer right if I really care about how much protein is at the cell surface and only the cell surface.
+
+116
+00:13:31,000 --> 00:13:47,000
+That's not you know the cell edge is not going to be captured by this because we're not super confident about our cell edge but we're certainly a lot more confident about much of the cytoplasm than if we just did a donut.
+
+117
+00:13:47,000 --> 00:14:03,000
+Yeah. So, and this only worked because we had the same information and all of our treatment conditions, which is not what we had in our GFP condition. But this is a nice way to sort of get the most out of the data that we do have.
+
+118
+00:14:03,000 --> 00:14:13,000
+Yes. And a trick that works on a lot of data sets right this you know the blowing out the DNA you know here's the here's a secret.
+
+119
+00:14:13,000 --> 00:14:30,000
+I know blowing out the DNA channel to get some approximation of a cell body, like is actually something we do on a surprisingly regular basis.
+
+120
+00:14:30,000 --> 00:14:31,000
+Yeah.
+
+121
+00:14:31,000 --> 00:14:32,000
+So,
+
+122
+00:14:32,000 --> 00:14:51,000
+It really helps. Yeah. Yeah. And often when you're looking at fluorescently stained samples, you know, in part I think because having either Dabby or hooked in, you know, to mark the nucleus is a really, really, really common thing to do when you're using fluorescent
+
+123
+00:14:52,000 --> 00:15:07,000
+of some manner. You know, the what other stains or markers are there can be so very variable, but so many data sets have that in common is so a pretty cool trick to have in your belt as an image analyst.
+
+124
+00:15:07,000 --> 00:15:27,000
+And having access to a case where we had some cases where we did have the cells sort of nicely outlined, made it fast, this would have been really slow had I had to annotate every cell by hand because we can see Cytoh three is, you know, better than nothing but certainly not great, but
+
+125
+00:15:27,000 --> 00:15:32,000
+because Cellpose is so easy to retrain with very small numbers of images.
+
+126
+00:15:32,000 --> 00:15:45,000
+We could I could take literally just four images, use the built inside a three model to predict where the cell boundaries were, and then be able to take that model into the rest of my data set.
+
+127
+00:15:45,000 --> 00:15:47,000
+Yes, absolutely.
+
+128
+00:15:47,000 --> 00:15:56,000
+But we have done it with more classical methods. I mean, this is certainly elegant and fast and easy but even you know in data sets we don't have structured like this.
+
+129
+00:15:56,000 --> 00:16:06,000
+Yes, we do math on the image, you know, to blow it out, and then can sort of approximate in the in a similar way that we have here.
+
+130
+00:16:07,000 --> 00:16:25,000
+Yeah, there's always more than one way to get to the right answer but I thought this was a fun way to show that you can think about the fact that we have multiple channels and sometimes use those in ways to get quickly to the answer that you want by just little
+
+131
+00:16:25,000 --> 00:16:30,000
+tricks like training with a different channel than you used for generating your ground truth.
+
+132
+00:16:30,000 --> 00:16:39,000
+Yeah, super fun and a way to sort of take what could be a downside of this data set and actually turn it into a strength. Really fun.
+
+133
+00:16:39,000 --> 00:16:43,000
+Yeah. Well, thank you for letting me show you a cool trick.
+
+134
+00:16:43,000 --> 00:16:45,000
+My pleasure. Thanks for showing it.
+
+135
+00:16:45,000 --> 00:16:48,000
+Yeah, have a wonderful rest of your day.
+
+136
+00:16:48,000 --> 00:16:50,000
+You too, hon. Bye.
+
+137
+00:17:00,000 --> 00:17:03,000
+Yeah.
+

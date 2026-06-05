@@ -1,0 +1,348 @@
+1
+00:00:16,000 --> 00:00:05,000
+Hello.
+
+2
+00:00:05,000 --> 00:00:07,000
+Hello, Beth.
+
+3
+00:00:07,000 --> 00:00:19,000
+Good to see you.
+
+4
+00:00:19,000 --> 00:00:20,000
+How are you?
+
+5
+00:00:20,000 --> 00:00:21,000
+Pee-chee-keen.
+
+6
+00:00:21,000 --> 00:00:22,000
+How about yourself?
+
+7
+00:00:22,000 --> 00:00:23,000
+Doing great.
+
+8
+00:00:23,000 --> 00:00:26,000
+Doing great because we have yet another viewer question.
+
+9
+00:00:26,000 --> 00:00:28,000
+Woohoo!
+
+10
+00:00:28,000 --> 00:00:32,000
+So we have another question from Kavia from Helsinki.
+
+11
+00:00:32,000 --> 00:00:34,000
+Who wanted to know,
+
+12
+00:00:34,000 --> 00:00:37,000
+I've been trying out feature transformations for Cell Painting data.
+
+13
+00:00:37,000 --> 00:00:40,000
+I see that even broad publications have multiple methods.
+
+14
+00:00:40,000 --> 00:00:48,000
+How do you decide on this and also automate it so that any new features you measure in the future can also be transformed to have a Gaussian distribution?
+
+15
+00:00:48,000 --> 00:00:50,000
+Woo.
+
+16
+00:00:50,000 --> 00:00:52,000
+Kavia's pulled out the hard ones.
+
+17
+00:00:52,000 --> 00:00:54,000
+Yeah, I'm glad you took this one.
+
+18
+00:00:54,000 --> 00:00:57,000
+Yeah.
+
+19
+00:00:57,000 --> 00:01:02,000
+This is where my catchphrase comes out, which is the, it depends.
+
+20
+00:01:02,000 --> 00:01:13,000
+And unfortunately, I wish we had a really good answer for why features get treated in certain ways, but this is something that's an active research area.
+
+21
+00:01:13,000 --> 00:01:16,000
+It's also something that's different for different kinds of features.
+
+22
+00:01:16,000 --> 00:01:24,000
+And so I've pulled together a couple of papers to just briefly highlight some important aspects here, but I'm not really going to answer your question.
+
+23
+00:01:24,000 --> 00:01:27,000
+I'm sorry.
+
+24
+00:01:27,000 --> 00:01:36,000
+Other than we try to find a best practice and then we stick with it, but then every so often we reevaluate our best practices.
+
+25
+00:01:36,000 --> 00:01:47,000
+So this is from the Kaisedo et al. Nature Methods 2017 paper, which is a very popular well-cited paper.
+
+26
+00:01:47,000 --> 00:01:52,000
+And is the paper that sort of was based on the first meeting of the Cytodata Society.
+
+27
+00:01:52,000 --> 00:02:00,000
+And basically actually everybody, almost everybody in the world who was working on image based profiling at the time, like got together and wrote this paper of like, what are we doing?
+
+28
+00:02:00,000 --> 00:02:03,000
+Like there's this new field of image based profiling.
+
+29
+00:02:03,000 --> 00:02:06,000
+Like what are we doing?
+
+30
+00:02:06,000 --> 00:02:15,000
+And there's a lot of really great stuff in here about what are the sort of workflows that people do, but specifically here.
+
+31
+00:02:15,000 --> 00:02:26,000
+One of the things that was pointed out is different features actually can behave super differently and can have very different data shapes.
+
+32
+00:02:26,000 --> 00:02:36,000
+So things like this particular texture measurement looks pretty a pretty normal distribution and I say that like in the mathematical definition of normal.
+
+33
+00:02:36,000 --> 00:02:41,000
+Whereas this one is normal ish but right shifted.
+
+34
+00:02:41,000 --> 00:02:50,000
+And some of these are bimodal. Some of these are, you know, very, you know, it's something where it's a particular number.
+
+35
+00:02:50,000 --> 00:02:55,000
+And so there's a finite set of values that it can be. There's not a continuous distribution.
+
+36
+00:02:55,000 --> 00:03:05,000
+You know, here's, you know, a beautiful intensity histogram that will look very familiar to any biologist who's ever done facts or anything like that, where we can see we have a G1 population and a G2 population.
+
+37
+00:03:05,000 --> 00:03:10,000
+So all of these things are different.
+
+38
+00:03:10,000 --> 00:03:21,000
+And there often aren't good ways to necessarily say, how are we going to transform all of these.
+
+39
+00:03:21,000 --> 00:03:31,000
+So what are the common things so one of the most common things is just while we say, oh, we're going to take the median and the mad and we're going to normalize these measurements.
+
+40
+00:03:31,000 --> 00:03:38,000
+And yes, in some of the cases the median is going to not be where the mode is.
+
+41
+00:03:38,000 --> 00:03:41,000
+But that's just something that we deal with.
+
+42
+00:03:41,000 --> 00:03:58,000
+And the fact that we take so many features and that these features do have these distributions again I come back to like, here are two different texture measurements that have different distributions, we can then say, well, by looking at all of these,
+
+43
+00:03:58,000 --> 00:04:09,000
+and by normalizing them with media to sort of at least make sure they're in the same scale since some of these are go from negative to positive some of these are minus 100 to plus 100 some of these are zero one.
+
+44
+00:04:09,000 --> 00:04:19,000
+We can at least get a sense of how far we are away from, you know, the middle of the response whatever that is.
+
+45
+00:04:19,000 --> 00:04:32,000
+Obviously, median isn't perfect here and you're not going to get a Gaussian just by doing a median normalization, but you will therefore have things that respond differently and you will therefore have lots of measurements that are contributing.
+
+46
+00:04:32,000 --> 00:04:36,000
+That's kind of an unsatisfying answer.
+
+47
+00:04:36,000 --> 00:04:45,000
+Other things that folks at it burn the done have done in the past so this is from Robon at all.
+
+48
+00:04:45,000 --> 00:05:04,000
+Where they said, well, we have cases where the sort of mean and standard deviation are the same and so like the individual feature distributions will cover the same thing but maybe one is, you know, very sort of
+
+49
+00:05:04,000 --> 00:05:23,000
+full distribution and some of them are very sort of bimodal in population. So let's just throw out trying to sort of look at these things together at all but instead, we will say, let's look at how the medians change between all of our samples and say, which, which
+
+50
+00:05:23,000 --> 00:05:41,000
+perturbations cause changes in median, which perturbations cause changes in mad and trying to draw connections between samples in all of these different spaces, all of which will behave slightly differently, and then say, we'll use in this case a technique called similarity
+
+51
+00:05:41,000 --> 00:05:57,000
+fusion to say, and then what we'll look for our connections that persist over time so like this connection here persists across multiple interpretations of the data and different ways of shaping the data.
+
+52
+00:05:57,000 --> 00:06:10,000
+And so therefore this is probably a stronger connection than, you know, a connection that you only see in some ways of looking at the data but not others.
+
+53
+00:06:11,000 --> 00:06:13,000
+So other.
+
+54
+00:06:13,000 --> 00:06:31,000
+So doing that, rather than so in the very first example, you're basically saying, okay, we're condensing condensing the information for this single feature, you know, in a single feature to its remaining one feature we're picking, you know, median, right here, you're
+
+55
+00:06:31,000 --> 00:06:46,000
+actually increasing the number of features, because each feature, you're finding the median of that value, the mad of that value, and, you know, so you're actually expanding the number of features that you have when you're
+
+56
+00:06:46,000 --> 00:06:52,000
+Yeah, and looking at the data from essentially multiple angles.
+
+57
+00:06:52,000 --> 00:07:13,000
+This is a recent paper from Alex lose team at Microsoft, and what they said is, in their case, PCA, you know, helped a lot by just saying, okay, let's forget about the individual features for the purposes of making clusters, because really what we care about is the
+
+58
+00:07:13,000 --> 00:07:24,000
+clustering and not so much the individual features. And so we will do principal component analysis which will allow us to sort of say, these sets of features all report on similar things.
+
+59
+00:07:24,000 --> 00:07:32,000
+And rather than sort of worrying about the distribution of any of them we will just sort of say, well let's look at principal component analysis.
+
+60
+00:07:32,000 --> 00:07:53,000
+And they did this for a bunch of different kinds of features. And what they said in the paper is for CellProfiler features which can have these sort of like very crazy distributions PCA helped a lot more than these ones that are deep learning based and so that therefore are usually starting in a normal
+
+61
+00:07:53,000 --> 00:08:01,000
+distribution because deep learning features are often in a normal distribution.
+
+62
+00:08:01,000 --> 00:08:07,000
+So we might do transformations on our features so PCA is one way of doing it.
+
+63
+00:08:07,000 --> 00:08:17,000
+This is from the a revelo at all batch correction paper and there they just said, let's try a bunch of different batch correction methods.
+
+64
+00:08:17,000 --> 00:08:23,000
+We will do feature selection but then we will either essentially do nothing to the features.
+
+65
+00:08:23,000 --> 00:08:38,000
+We will do a lot of different transformations some of which are sort of reversible things that are algorithmic some of them are deep learning transformations.
+
+66
+00:08:38,000 --> 00:08:50,000
+And we will see how well we can sort of keep our biological knowledge and remove our batch correction knowledge with all of these different kinds of transformations.
+
+67
+00:08:50,000 --> 00:08:59,000
+What they showed is no one thing was better than the other. Unfortunately.
+
+68
+00:08:59,000 --> 00:09:15,000
+And we also did a we previously talked about this particular paper from us of Zuritsky's group, but one option also would be to rather than saying let's keep the original feature distribution at all.
+
+69
+00:09:15,000 --> 00:09:33,000
+Let's say, can we predict how the feature would change, and then do these anomaly profiles, and that will possibly allow us to have a distribution that is easier for us to deal with or is easier to sort of integrate.
+
+70
+00:09:33,000 --> 00:09:51,000
+And there are lots of so space transcriptomics also deals with things like this because you know gene counts can be very unequally distributed and so there are libraries like mofa that sort of have methods in there to sort of account for things like underlying distributions
+
+71
+00:09:51,000 --> 00:10:09,000
+that have different shapes. But the field and both the field of image profiling in the field of bioinformatics has really not settled on exactly the one best way to handle it because you might, how much you care that the shapes of the distributions are different,
+
+72
+00:10:09,000 --> 00:10:18,000
+really different in different scenarios. And so the answer to how do you pick which one is a little bit.
+
+73
+00:10:18,000 --> 00:10:27,000
+You look to see when people have evaluated lots of other things so here they evaluated some things and you know they say what works best in here.
+
+74
+00:10:27,000 --> 00:10:43,000
+And then you look at the things you work best and come up with the best practice for you, you know, based on data, not just based on vibes, and then go from there and reevaluate when new methods come out to see if it does something better to your data but
+
+75
+00:10:43,000 --> 00:11:00,000
+that's a really detailed question and how we bring together features that have all these different shapes is just mathematically hard, because they all contribute something. And we don't always know what's most important for a particular piece of biology.
+
+76
+00:11:00,000 --> 00:11:21,000
+Yeah, I think that's great. And you know, I think we've certainly see, you know, even in those right with some, you know, like I helped on the Zuritsky paper we saw, you know, saw that that method worked well, particularly well on some data sets, but not others, and wouldn't have
+
+77
+00:11:21,000 --> 00:11:34,000
+necessarily predicted that in advance and maybe it had to do with the number of negative controls, you know, there's lots of ways, you know, post hoc to guess why it worked better or worse on some data sets.
+
+78
+00:11:34,000 --> 00:11:39,000
+But sometimes you just can't know until you've tried it.
+
+79
+00:11:39,000 --> 00:11:40,000
+Yeah.
+
+80
+00:11:40,000 --> 00:11:43,000
+So that's my non answer.
+
+81
+00:11:43,000 --> 00:11:58,000
+I'm really sorry that for both of your questions, Kavya. My answers are a little bit non answers but it's because you're asking great hard questions like right at the limits of what are the things that we know and sometimes we're just operating the limit of things that we know.
+
+82
+00:11:58,000 --> 00:12:06,000
+Yeah, well thank you so much for asking the questions Kavya and thank you bet for leading the charge to answer them. Yeah.
+
+83
+00:12:06,000 --> 00:12:08,000
+Thank you for joining me.
+
+84
+00:12:08,000 --> 00:12:09,000
+Talk to you later.
+
+85
+00:12:09,000 --> 00:12:10,000
+Talk to you later.
+
+86
+00:12:10,000 --> 00:12:12,000
+Bye.
+
+87
+00:12:13,000 --> 00:12:15,000
+Bye.
+

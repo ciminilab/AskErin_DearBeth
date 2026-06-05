@@ -1,0 +1,1560 @@
+2
+00:00:16,000 --> 00:00:18,000
+Hello, my dear. 
+
+4
+00:00:18,000 --> 00:00:20,000
+Oh, it's going pretty well.
+
+5
+00:00:20,000 --> 00:00:23,000
+I'm excited because we have questions from viewers.
+
+6
+00:00:23,000 --> 00:00:26,000
+Yay! Viewer questions! I love it!
+
+9
+00:00:26,000 --> 00:00:28,000
+I know. I always love when we have viewer questions.
+
+11
+00:00:28,000 --> 00:00:32,000
+In fact, we have two great viewer questions from Kavya from Helsinki.
+
+12
+00:00:32,000 --> 00:00:36,000
+So, for the next two of my episodes, we will be answering Kavi's question.
+
+13
+00:00:36,000 --> 00:00:40,000
+So Kavya, thank you for submitting these questions.
+
+14
+00:00:40,000 --> 00:00:43,000
+I love it! International, international image analysis questions
+
+24
+00:00:44,040 --> 00:00:45,360
+How fun.
+
+25
+00:00:45,360 --> 00:00:46,720
+Absolutely.
+
+26
+00:00:46,720 --> 00:00:48,040
+And they're really good questions too.
+
+27
+00:00:48,040 --> 00:00:49,840
+So I'm excited to talk about them.
+
+28
+00:00:51,360 --> 00:00:54,040
+So you too, please submit your really great questions
+
+29
+00:00:54,040 --> 00:00:55,440
+to Ask Arantier Path.
+
+30
+00:00:55,440 --> 00:00:57,440
+We'd love to feature them on the show.
+
+31
+00:01:00,680 --> 00:01:02,720
+So Kavya's first question.
+
+32
+00:01:02,720 --> 00:01:04,480
+I have been trying to implement QC
+
+33
+00:01:04,480 --> 00:01:06,040
+on my Cell Painting images
+
+34
+00:01:06,040 --> 00:01:08,320
+using features from Measure Image Quality.
+
+35
+00:01:08,320 --> 00:01:10,600
+I've been using PCA on the measured features.
+
+36
+00:01:10,600 --> 00:01:12,440
+I seem to have measured about 107.
+
+37
+00:01:12,440 --> 00:01:14,080
+And it seems like one of my cell types
+
+38
+00:01:14,080 --> 00:01:15,680
+is consistently different from the other
+
+39
+00:01:15,680 --> 00:01:17,920
+based on local focus score features.
+
+40
+00:01:17,920 --> 00:01:19,040
+What does this mean?
+
+41
+00:01:19,040 --> 00:01:21,880
+How do I interpret what some of these features mean?
+
+42
+00:01:21,880 --> 00:01:22,880
+Yes.
+
+43
+00:01:22,880 --> 00:01:23,720
+Yeah.
+
+44
+00:01:23,720 --> 00:01:24,560
+And that's a great question.
+
+45
+00:01:24,560 --> 00:01:26,920
+Because what do features mean in general
+
+46
+00:01:26,920 --> 00:01:28,040
+can be really difficult,
+
+47
+00:01:28,040 --> 00:01:29,760
+but it can be especially difficult
+
+48
+00:01:29,760 --> 00:01:31,400
+for some of these things like image quality.
+
+49
+00:01:31,400 --> 00:01:33,440
+And some of them get a little mathy.
+
+50
+00:01:33,440 --> 00:01:34,280
+Yeah.
+
+51
+00:01:35,200 --> 00:01:37,040
+So when in doubt,
+
+52
+00:01:37,040 --> 00:01:40,480
+I always start with going to the CellProfiler manual.
+
+53
+00:01:40,480 --> 00:01:42,360
+And this is the same exact information
+
+54
+00:01:42,360 --> 00:01:44,360
+that's in the CellProfiler module help.
+
+55
+00:01:44,360 --> 00:01:47,080
+So if you pull up the CellProfiler module help,
+
+56
+00:01:47,080 --> 00:01:50,960
+you will find all the same exact text
+
+57
+00:01:50,960 --> 00:01:53,360
+that's actually built from the same exact thing.
+
+58
+00:01:54,200 --> 00:02:01,200
+So there's a few different kinds of quality measurements
+
+59
+00:02:01,200 --> 00:02:04,240
+that CellProfiler makes in Measure Image Quality.
+
+60
+00:02:04,240 --> 00:02:05,920
+I'm going to start with some of the easier ones
+
+61
+00:02:05,920 --> 00:02:06,920
+to talk about,
+
+62
+00:02:06,920 --> 00:02:11,600
+which are not the blur ones that were in the original question,
+
+63
+00:02:11,600 --> 00:02:13,920
+but just because it's important to sort of mention them.
+
+64
+00:02:13,920 --> 00:02:17,920
+The intensity metrics can tell you again,
+
+65
+00:02:17,920 --> 00:02:20,120
+like how much intensity is going on.
+
+66
+00:02:20,120 --> 00:02:21,720
+And generally speaking,
+
+67
+00:02:21,720 --> 00:02:23,480
+that's not going to be a problem,
+
+68
+00:02:23,480 --> 00:02:26,560
+but these are great metrics for seeing
+
+69
+00:02:26,560 --> 00:02:29,040
+if some of your images are really different from the others.
+
+70
+00:02:29,040 --> 00:02:31,640
+So maybe they have a different maximum or a different minimum,
+
+71
+00:02:31,640 --> 00:02:34,880
+or maybe there's some accident of metadata going on
+
+72
+00:02:34,880 --> 00:02:36,160
+and they're scaled differently.
+
+73
+00:02:36,160 --> 00:02:38,320
+That would be potentially really dangerous.
+
+74
+00:02:38,320 --> 00:02:43,440
+So these aren't ones that are going to be good
+
+75
+00:02:43,440 --> 00:02:45,800
+for checking things like, you know, is my image blurry,
+
+76
+00:02:45,800 --> 00:02:47,680
+but they might indicate sort of overall problems
+
+77
+00:02:47,680 --> 00:02:50,800
+with maybe you've accidentally mixed in some eight-bit images
+
+78
+00:02:50,800 --> 00:02:53,040
+with your 16-bit images or something like that.
+
+79
+00:02:55,680 --> 00:02:57,520
+Threshold metrics.
+
+80
+00:02:57,520 --> 00:03:01,720
+So Threshold, CellProfiler can calculate the thresholds
+
+81
+00:03:01,720 --> 00:03:03,720
+as part of the Measure Image Quality module
+
+82
+00:03:03,720 --> 00:03:07,400
+for a bunch of the different thresholding methods that it uses.
+
+83
+00:03:07,400 --> 00:03:10,920
+And again, no individual threshold is wrong,
+
+84
+00:03:10,920 --> 00:03:12,960
+but it can help you see if there are patterns
+
+85
+00:03:12,960 --> 00:03:15,360
+where the thresholds are consistently different
+
+86
+00:03:15,360 --> 00:03:18,080
+between, you know, for a particular set of images,
+
+87
+00:03:18,080 --> 00:03:19,760
+where is the threshold being set?
+
+88
+00:03:21,800 --> 00:03:24,040
+Saturation metrics.
+
+89
+00:03:24,040 --> 00:03:29,720
+So what fraction of the images,
+
+90
+00:03:29,720 --> 00:03:30,920
+of the pixels in your image,
+
+91
+00:03:30,920 --> 00:03:33,120
+are either the maximal possible value
+
+92
+00:03:33,120 --> 00:03:36,160
+or the minimal possible value?
+
+93
+00:03:36,160 --> 00:03:38,520
+Because if you're at the ends of the spectrum,
+
+94
+00:03:38,520 --> 00:03:41,080
+you're no longer measuring quantitatively, right?
+
+95
+00:03:41,080 --> 00:03:43,000
+And so at that point, like,
+
+96
+00:03:43,000 --> 00:03:45,120
+there could be lower signal or higher signal
+
+97
+00:03:45,120 --> 00:03:47,600
+and you've lost the ability to detect it.
+
+98
+00:03:47,680 --> 00:03:51,960
+So no, trying to keep as little of your image as possible
+
+99
+00:03:51,960 --> 00:03:55,280
+above the camera maximum or below the camera minimum,
+
+100
+00:03:55,280 --> 00:03:58,000
+you know, helps make sure that, you know,
+
+101
+00:03:58,000 --> 00:03:59,600
+you're always in a quantitative range
+
+102
+00:03:59,600 --> 00:04:01,400
+when that's important.
+
+103
+00:04:01,400 --> 00:04:02,360
+Yeah, yeah.
+
+104
+00:04:02,360 --> 00:04:07,160
+It can also be the intensity metrics and or, you know,
+
+105
+00:04:07,160 --> 00:04:09,000
+saturation percent maximal,
+
+106
+00:04:09,000 --> 00:04:12,480
+found those really helpful for when there is some amount
+
+107
+00:04:12,480 --> 00:04:15,400
+of debris, like fluorescent debris in an image
+
+108
+00:04:15,400 --> 00:04:19,440
+that accidentally, you know, particularly fibrous sweater
+
+109
+00:04:19,440 --> 00:04:22,400
+dropping onto your sample someday,
+
+110
+00:04:22,400 --> 00:04:25,120
+will often be easily flagged.
+
+111
+00:04:25,120 --> 00:04:26,800
+The images that have, you know,
+
+112
+00:04:26,800 --> 00:04:28,920
+some chunk of very fluorescent,
+
+113
+00:04:28,920 --> 00:04:31,080
+something that's not supposed to be there,
+
+114
+00:04:31,080 --> 00:04:33,840
+will often be easily flagged by those metrics.
+
+115
+00:04:35,120 --> 00:04:35,960
+Great point.
+
+116
+00:04:37,480 --> 00:04:39,600
+And the last set of metrics are the blur metrics.
+
+117
+00:04:39,600 --> 00:04:43,240
+So blur can be kind of difficult to define.
+
+118
+00:04:43,240 --> 00:04:46,280
+So there's a few different mathematical approaches
+
+119
+00:04:46,280 --> 00:04:47,720
+that are here.
+
+120
+00:04:48,720 --> 00:04:52,880
+One of them is saying, what is the correlation
+
+121
+00:04:52,880 --> 00:04:55,520
+within particular areas?
+
+122
+00:04:55,520 --> 00:04:59,400
+So if I say, if I take a square of, you know, 50 pixels,
+
+123
+00:04:59,400 --> 00:05:03,280
+how likely is it that all the pixels are the same,
+
+124
+00:05:03,280 --> 00:05:04,680
+like are highly similar?
+
+125
+00:05:06,280 --> 00:05:08,720
+Because real biological objects
+
+126
+00:05:08,720 --> 00:05:11,160
+probably have a lot of variability if they're in focus.
+
+127
+00:05:11,200 --> 00:05:15,200
+If they're not in focus, they might have more sameness
+
+128
+00:05:16,480 --> 00:05:18,400
+because they're out of focus.
+
+129
+00:05:18,400 --> 00:05:23,400
+And so increased correlation can actually mean
+
+130
+00:05:24,000 --> 00:05:25,400
+that your image is blurry.
+
+131
+00:05:31,480 --> 00:05:36,480
+The focus score sort of operates on a similar principle.
+
+132
+00:05:36,560 --> 00:05:41,000
+It actually operates based on how much is the variance
+
+133
+00:05:41,000 --> 00:05:44,560
+in the image, the idea being if your image is blurry,
+
+134
+00:05:44,560 --> 00:05:47,120
+if the amount of like variance across the image
+
+135
+00:05:47,120 --> 00:05:50,400
+is very little, probably something is wrong.
+
+136
+00:05:50,400 --> 00:05:53,840
+It's not in focus because real biology sort of jitters.
+
+137
+00:05:55,040 --> 00:05:58,520
+And there's some great citations here for a bunch of these.
+
+138
+00:05:58,520 --> 00:06:03,320
+That one, they actually compared a whole bunch
+
+139
+00:06:03,320 --> 00:06:08,320
+of different methods across a whole bunch of,
+
+140
+00:06:08,560 --> 00:06:09,400
+oh, wrong paper.
+
+141
+00:06:10,280 --> 00:06:12,480
+No, no, something went wrong, of course.
+
+142
+00:06:16,440 --> 00:06:19,480
+They actually tried a whole bunch of different methods
+
+143
+00:06:20,320 --> 00:06:25,320
+and then they tested them across DIC images
+
+144
+00:06:25,720 --> 00:06:29,080
+and Brightfield and fluorescence and a whole bunch of things.
+
+145
+00:06:29,080 --> 00:06:32,840
+And actually we're able to say like across all kinds
+
+146
+00:06:32,840 --> 00:06:37,840
+of different things, like this particular method
+
+147
+00:06:38,840 --> 00:06:43,840
+often produces really good sort of measurement of blurriness.
+
+148
+00:06:46,960 --> 00:06:51,360
+So that is what CellProfiler refers to as the focus score.
+
+149
+00:06:52,480 --> 00:06:56,880
+The local focus score is just that and do it in tiles.
+
+150
+00:06:56,880 --> 00:06:59,480
+So this is the particular metric we were asked about.
+
+151
+00:07:01,320 --> 00:07:06,320
+So if I break the image into tiles, maybe parts of it
+
+152
+00:07:07,320 --> 00:07:09,800
+are in focus and parts of it are out of focus.
+
+153
+00:07:12,040 --> 00:07:14,400
+And so we can say what is that focus score
+
+154
+00:07:14,400 --> 00:07:18,000
+across the whole image and then get the focus score
+
+155
+00:07:18,000 --> 00:07:19,840
+for each and take the average.
+
+156
+00:07:22,400 --> 00:07:25,680
+There's also the power log log slope,
+
+157
+00:07:25,680 --> 00:07:29,160
+which I won't go too deep into the math for,
+
+158
+00:07:29,160 --> 00:07:33,400
+but basically it goes into the frequency space
+
+159
+00:07:33,480 --> 00:07:36,440
+of the textures in the image
+
+160
+00:07:36,440 --> 00:07:39,240
+and then takes the log of a couple of different metrics
+
+161
+00:07:39,240 --> 00:07:43,160
+and you say what is the slope of these particular lines
+
+162
+00:07:43,160 --> 00:07:45,280
+of measurements in frequency space?
+
+163
+00:07:46,400 --> 00:07:49,320
+If you think back to your Fourier optics,
+
+164
+00:07:50,160 --> 00:07:53,920
+high intensity information or high sort of noise information
+
+165
+00:07:53,920 --> 00:07:55,880
+is encoded in a different part of frequency space
+
+166
+00:07:55,880 --> 00:07:58,880
+than like big patterns.
+
+167
+00:07:58,880 --> 00:08:03,320
+And so the slope of this line actually helps indicate,
+
+168
+00:08:04,320 --> 00:08:06,760
+if the image is changing a lot,
+
+169
+00:08:06,760 --> 00:08:08,520
+if the textures change a lot
+
+170
+00:08:08,520 --> 00:08:11,720
+or if the textures are actually pretty smooth.
+
+171
+00:08:11,720 --> 00:08:13,880
+So the slope of that line changes.
+
+172
+00:08:15,480 --> 00:08:19,920
+So, self-prophetic provides you all of these.
+
+173
+00:08:21,520 --> 00:08:25,120
+And I wanna call up this paper in particular,
+
+174
+00:08:25,120 --> 00:08:26,400
+which is from the imaging platform
+
+175
+00:08:26,400 --> 00:08:29,160
+from a bit ago now from 2012,
+
+176
+00:08:29,160 --> 00:08:32,240
+that goes through some quality control workflows
+
+177
+00:08:32,240 --> 00:08:33,560
+and they actually did a really lovely job
+
+178
+00:08:33,560 --> 00:08:35,320
+doing some things with synthetic blurring
+
+179
+00:08:35,320 --> 00:08:37,640
+as well as taking some images
+
+180
+00:08:37,640 --> 00:08:39,760
+and then like physically,
+
+181
+00:08:39,760 --> 00:08:41,040
+figuring out the right focal plane
+
+182
+00:08:41,040 --> 00:08:45,280
+and then going 32 microns below and 32 microns above
+
+183
+00:08:45,280 --> 00:08:48,320
+to actually do a bunch of measurements to say,
+
+184
+00:08:48,320 --> 00:08:51,760
+well, like how far out of focus can we be
+
+185
+00:08:51,760 --> 00:08:54,160
+before we start losing our ability to detect
+
+186
+00:08:54,160 --> 00:08:56,840
+like our quantitative measurement and things like that
+
+187
+00:08:56,840 --> 00:09:01,360
+and measuring a bunch of these CellProfiler quality metrics
+
+188
+00:09:01,400 --> 00:09:02,640
+in these different conditions.
+
+189
+00:09:02,640 --> 00:09:04,520
+So this is a really nice paper.
+
+190
+00:09:07,080 --> 00:09:08,320
+And we in fact have,
+
+191
+00:09:08,320 --> 00:09:10,080
+and we'll put a link in the show notes,
+
+192
+00:09:10,080 --> 00:09:15,080
+a tutorial for looking at image quality
+
+193
+00:09:15,360 --> 00:09:18,360
+in CellProfiler that sort of uses some of these
+
+194
+00:09:18,360 --> 00:09:19,840
+measurement quality metrics.
+
+195
+00:09:20,920 --> 00:09:23,320
+But a couple of things that I wanna point out
+
+196
+00:09:25,440 --> 00:09:26,720
+are just that,
+
+197
+00:09:28,720 --> 00:09:30,880
+generally speaking, when you are doing these,
+
+198
+00:09:30,880 --> 00:09:33,320
+it's hard to draw hard cutoffs.
+
+199
+00:09:33,320 --> 00:09:36,760
+It's hard to say like one of the sort of
+
+200
+00:09:38,360 --> 00:09:40,800
+counter examples to that is you might be able
+
+201
+00:09:40,800 --> 00:09:42,120
+to draw a hard cutoff and say,
+
+202
+00:09:42,120 --> 00:09:46,320
+if more than 2% of my images is saturated,
+
+203
+00:09:46,320 --> 00:09:48,760
+I think there's too much saturation.
+
+204
+00:09:48,760 --> 00:09:52,280
+I can't get good quantification of intensity from here.
+
+205
+00:09:52,280 --> 00:09:54,600
+You know, I don't want this image anymore.
+
+206
+00:09:54,600 --> 00:09:57,640
+But for things like blurring and things like correlation,
+
+207
+00:09:57,640 --> 00:10:00,200
+especially channel to channel,
+
+208
+00:10:00,200 --> 00:10:01,800
+these things can be really different
+
+209
+00:10:01,800 --> 00:10:03,240
+and certainly experiment to experiment.
+
+210
+00:10:03,240 --> 00:10:06,360
+And they can be affected by things like confluency
+
+211
+00:10:07,720 --> 00:10:10,680
+because that will change the amount of intensity variation
+
+212
+00:10:10,680 --> 00:10:12,040
+in your image.
+
+213
+00:10:12,040 --> 00:10:15,000
+So usually we're not so much looking for a hard cutoff
+
+214
+00:10:15,000 --> 00:10:17,200
+as we're looking for the outliers.
+
+215
+00:10:18,520 --> 00:10:23,600
+So this is some CellProfiler analyst data
+
+216
+00:10:23,600 --> 00:10:28,600
+from the CellProfiler quality control tutorial.
+
+217
+00:10:28,600 --> 00:10:31,560
+And here we're looking at one of the image quality metrics,
+
+218
+00:10:31,560 --> 00:10:34,320
+which is correlation in the ER channel
+
+219
+00:10:34,320 --> 00:10:36,600
+at a scale of 20 pixels.
+
+220
+00:10:36,600 --> 00:10:38,760
+The higher this number is,
+
+221
+00:10:38,760 --> 00:10:41,760
+the more likely we think there might be a focal problem.
+
+222
+00:10:42,560 --> 00:10:47,240
+And so we can check a really low image.
+
+223
+00:10:47,240 --> 00:10:50,720
+For some reason, all of these look bad in linear scale.
+
+224
+00:10:52,280 --> 00:10:55,360
+That looks indeed like a perfectly fine image.
+
+225
+00:10:55,360 --> 00:11:00,240
+And then something with a really high value.
+
+226
+00:11:04,560 --> 00:11:06,840
+That indeed looks like a blurry image.
+
+227
+00:11:06,840 --> 00:11:07,800
+Yeah, totally.
+
+228
+00:11:07,800 --> 00:11:12,440
+One cannot deny that that image could be better.
+
+229
+00:11:14,760 --> 00:11:18,120
+But here's the next highest one.
+
+230
+00:11:18,120 --> 00:11:22,160
+And this doesn't strike me as terribly blurry.
+
+231
+00:11:22,160 --> 00:11:24,720
+There's a sort of out of focus-y guy
+
+232
+00:11:24,720 --> 00:11:27,720
+or like piece of debris there.
+
+233
+00:11:27,720 --> 00:11:29,600
+Let's check the other one.
+
+234
+00:11:29,600 --> 00:11:31,800
+But so this is where I say,
+
+235
+00:11:31,800 --> 00:11:34,680
+it can be really difficult to define exactly what's the cutoff
+
+236
+00:11:34,680 --> 00:11:38,360
+because this is the second highest well.
+
+237
+00:11:38,360 --> 00:11:41,680
+And this is fine, but this one is clearly not.
+
+238
+00:11:41,680 --> 00:11:42,520
+Yeah.
+
+239
+00:11:44,600 --> 00:11:48,640
+And to my point about channels,
+
+240
+00:11:48,640 --> 00:11:52,040
+so here, for example, is that power log slope
+
+241
+00:11:52,040 --> 00:11:55,200
+metric across two different channels,
+
+242
+00:11:55,200 --> 00:11:57,600
+the nuclear channel and the Golgi channel.
+
+243
+00:11:58,520 --> 00:12:00,280
+And the first thing I'll draw your attention to
+
+244
+00:12:00,280 --> 00:12:02,920
+is just the scales of these are different.
+
+245
+00:12:02,920 --> 00:12:06,040
+And even like this central blob here
+
+246
+00:12:06,040 --> 00:12:09,020
+is not like perfectly on a diagonal.
+
+247
+00:12:10,840 --> 00:12:12,480
+There is some scatter around here
+
+248
+00:12:12,480 --> 00:12:14,440
+that the power log log slope in one channel
+
+249
+00:12:14,440 --> 00:12:17,440
+versus the other might be different.
+
+250
+00:12:18,400 --> 00:12:21,040
+We can look at some of the outliers here.
+
+251
+00:12:23,040 --> 00:12:28,000
+And say, yep, this image sure looks terrible.
+
+252
+00:12:28,000 --> 00:12:30,520
+It's basically empty.
+
+253
+00:12:30,520 --> 00:12:32,800
+So clearly this is a bad image.
+
+254
+00:12:35,240 --> 00:12:37,040
+But some of these,
+
+255
+00:12:45,200 --> 00:12:50,200
+they might just be perfectly analyzable
+
+256
+00:12:51,080 --> 00:12:52,440
+but a little bit empty.
+
+257
+00:12:56,880 --> 00:12:59,680
+Or they might have a different metric
+
+258
+00:12:59,680 --> 00:13:02,560
+just because of a little piece of debris
+
+259
+00:13:02,560 --> 00:13:06,960
+that's off to the edge that wouldn't for me say,
+
+260
+00:13:06,960 --> 00:13:10,080
+I'm totally uninterested in this image.
+
+261
+00:13:11,960 --> 00:13:14,080
+I would just say, maybe I wanna mask
+
+262
+00:13:14,080 --> 00:13:15,680
+that part of the image out.
+
+263
+00:13:17,720 --> 00:13:18,640
+And it's hard, right?
+
+264
+00:13:18,640 --> 00:13:21,040
+Because we always want to try to figure out
+
+265
+00:13:21,040 --> 00:13:23,520
+how we can keep most of our data in.
+
+266
+00:13:23,520 --> 00:13:27,360
+Nobody takes data just so that they can throw it away.
+
+267
+00:13:30,320 --> 00:13:32,560
+That's not why we spend all of this time
+
+268
+00:13:32,560 --> 00:13:35,080
+sort of lovingly doing all these experiments
+
+269
+00:13:35,080 --> 00:13:36,240
+only to throw them away.
+
+270
+00:13:37,480 --> 00:13:41,760
+So I just wanna do one more here.
+
+271
+00:13:41,760 --> 00:13:45,000
+Oh, I didn't mean to move that.
+
+272
+00:13:45,880 --> 00:13:48,760
+Which is to show the one that Erin mentioned
+
+273
+00:13:48,760 --> 00:13:50,400
+which is percent maximal.
+
+274
+00:13:51,920 --> 00:13:56,240
+Cause that we can definitely use to find things like debris.
+
+275
+00:13:58,760 --> 00:14:00,720
+Yep, there we go.
+
+276
+00:14:00,720 --> 00:14:02,280
+That's a big old piece of debris.
+
+277
+00:14:02,280 --> 00:14:03,640
+That should not be there.
+
+278
+00:14:05,520 --> 00:14:09,280
+But these metrics can all help.
+
+279
+00:14:09,280 --> 00:14:11,320
+They can certainly be used to find things
+
+280
+00:14:11,320 --> 00:14:15,320
+but they can be really hard to sort of set hard limits on.
+
+281
+00:14:16,280 --> 00:14:18,440
+You can certainly decide to sort of say,
+
+282
+00:14:18,440 --> 00:14:20,720
+I'm gonna make a central clump based on some metrics
+
+283
+00:14:20,720 --> 00:14:22,240
+that I've checked in my data.
+
+284
+00:14:23,160 --> 00:14:28,160
+But for things like how consistent is the data
+
+285
+00:14:28,360 --> 00:14:30,280
+for different channels,
+
+286
+00:14:30,280 --> 00:14:32,720
+maybe really different for a nuclear channel
+
+287
+00:14:32,720 --> 00:14:34,920
+where we know it's not gonna be fully confluent
+
+288
+00:14:34,920 --> 00:14:36,240
+and a cell membrane channel
+
+289
+00:14:36,240 --> 00:14:38,600
+where we know if the cells are fully confluent,
+
+290
+00:14:38,600 --> 00:14:41,000
+there will be no background present in the image.
+
+291
+00:14:41,120 --> 00:14:43,520
+So we should be careful about setting hard cutoffs
+
+292
+00:14:43,520 --> 00:14:45,720
+and we should be careful about sort of
+
+293
+00:14:45,720 --> 00:14:47,760
+overly relying on these metrics
+
+294
+00:14:48,720 --> 00:14:51,200
+because they can be really hard to interpret.
+
+295
+00:14:51,200 --> 00:14:54,000
+But used carefully, they can help you identify
+
+296
+00:14:54,000 --> 00:14:56,240
+some of the real problems in your image.
+
+297
+00:14:56,240 --> 00:14:59,280
+And if you do the self-proferred quality control tutorial,
+
+298
+00:14:59,280 --> 00:15:01,200
+you can see how you can create classifiers
+
+299
+00:15:01,200 --> 00:15:04,040
+to throw them out if you do find hard limits
+
+300
+00:15:04,040 --> 00:15:07,160
+that work for you for your particular data set,
+
+301
+00:15:07,160 --> 00:15:08,920
+for your particular day.
+
+302
+00:15:08,960 --> 00:15:12,880
+Yeah, I think also what I found really interesting
+
+303
+00:15:12,880 --> 00:15:17,080
+is I think, okay, this is over time,
+
+304
+00:15:17,080 --> 00:15:20,960
+how we have used these QC metrics has changed.
+
+305
+00:15:20,960 --> 00:15:25,840
+I think some of that is changes in the field
+
+306
+00:15:25,840 --> 00:15:28,080
+and some of it is changes in the microscopy, right?
+
+307
+00:15:28,080 --> 00:15:32,040
+So we've found like the data sets that we are given now
+
+308
+00:15:32,040 --> 00:15:36,320
+are often have less debris and focus issues
+
+309
+00:15:36,320 --> 00:15:38,080
+than they used to, right?
+
+310
+00:15:38,480 --> 00:15:41,320
+Just autofocus on microscopes is better
+
+311
+00:15:41,320 --> 00:15:44,160
+than it was in 2012, right?
+
+312
+00:15:44,160 --> 00:15:47,440
+Things have changed technology-wise there.
+
+313
+00:15:47,440 --> 00:15:51,920
+So we are much less likely to get a giant set of images
+
+314
+00:15:51,920 --> 00:15:55,200
+in which there is a systematic focus issue,
+
+315
+00:15:56,080 --> 00:16:00,360
+meaning we are less reliant on actually pulling out
+
+316
+00:16:00,360 --> 00:16:02,760
+bad images from our data.
+
+317
+00:16:02,760 --> 00:16:07,600
+And I think we have also sort of moved then a lot further
+
+318
+00:16:07,640 --> 00:16:12,640
+from whole image rules and QC and filtering
+
+319
+00:16:14,640 --> 00:16:18,960
+into looking at the single cell level and saying,
+
+320
+00:16:18,960 --> 00:16:23,960
+okay, I've got some single cells like at the cellular level
+
+321
+00:16:24,360 --> 00:16:26,800
+where my measurements are crazy far off.
+
+322
+00:16:26,800 --> 00:16:30,120
+And maybe it's because, oh, this cell was totally out of focus
+
+323
+00:16:30,120 --> 00:16:33,560
+or this cell was underneath a giant piece of debris
+
+324
+00:16:33,560 --> 00:16:35,120
+and filtering that way.
+
+325
+00:16:35,160 --> 00:16:37,880
+But that requires a level of compute
+
+326
+00:16:39,200 --> 00:16:44,200
+that we, again, was totally different in access in 2012.
+
+327
+00:16:44,480 --> 00:16:49,480
+And so even what, not that I joined the lab in 2012,
+
+328
+00:16:50,760 --> 00:16:55,120
+but even when I joined the lab in 2019, right?
+
+329
+00:16:55,120 --> 00:16:58,960
+What we do now as common practice versus then
+
+330
+00:16:58,960 --> 00:17:01,800
+is still even shifted.
+
+331
+00:17:01,800 --> 00:17:02,640
+Yeah.
+
+332
+00:17:03,640 --> 00:17:05,520
+So all of that is a very long way to say,
+
+333
+00:17:05,520 --> 00:17:09,880
+I'm not sure exactly what the local focus score
+
+334
+00:17:09,880 --> 00:17:12,520
+being different for a particular phenotype means for you.
+
+335
+00:17:12,520 --> 00:17:13,840
+It could be something as different
+
+336
+00:17:13,840 --> 00:17:15,720
+as it's changing the confluence.
+
+337
+00:17:15,720 --> 00:17:19,840
+And so this metric, which says how consistent is,
+
+338
+00:17:19,840 --> 00:17:23,640
+you know, a particular region in its intensity
+
+339
+00:17:23,640 --> 00:17:25,480
+and then averaging that across the whole thing,
+
+340
+00:17:25,480 --> 00:17:27,760
+maybe there are more regions that are empty
+
+341
+00:17:27,760 --> 00:17:29,600
+or more regions that are full.
+
+342
+00:17:29,680 --> 00:17:33,040
+And therefore we're changing this value.
+
+343
+00:17:33,040 --> 00:17:34,240
+It could be something like that.
+
+344
+00:17:34,240 --> 00:17:38,320
+It could be that it's changing the height of your cell,
+
+345
+00:17:38,320 --> 00:17:41,760
+which is making it sort of be out of focus
+
+346
+00:17:41,760 --> 00:17:45,040
+like or seem more out of focus, even though it is in focus.
+
+347
+00:17:45,040 --> 00:17:47,160
+There's a lot of things that this could be,
+
+348
+00:17:48,200 --> 00:17:53,200
+but there's a lot of ways you can use this data.
+
+349
+00:17:54,160 --> 00:17:56,600
+It can just be a little hard to interpret.
+
+350
+00:17:56,600 --> 00:17:57,440
+Yeah.
+
+351
+00:17:58,440 --> 00:18:00,520
+I think that's everything I wanted to say
+
+352
+00:18:00,520 --> 00:18:01,640
+about quality control.
+
+353
+00:18:03,080 --> 00:18:03,920
+Yeah.
+
+354
+00:18:03,920 --> 00:18:05,840
+I think that's a great amount of information.
+
+355
+00:18:05,840 --> 00:18:09,880
+And, you know, we do have Ask Air and Dear Beth episode
+
+356
+00:18:09,880 --> 00:18:13,520
+on like interpreting CellProfiler features.
+
+357
+00:18:13,520 --> 00:18:18,080
+So there are certainly some that are very interpretable,
+
+358
+00:18:18,960 --> 00:18:24,080
+but the QC metrics, you know, as you mentioned,
+
+359
+00:18:24,080 --> 00:18:26,080
+are sometimes less so.
+
+360
+00:18:27,560 --> 00:18:29,960
+That doesn't mean they're not helpful.
+
+361
+00:18:29,960 --> 00:18:34,960
+And I think an interesting example of,
+
+362
+00:18:36,760 --> 00:18:38,200
+you know, you popped up the papers,
+
+363
+00:18:38,200 --> 00:18:40,960
+they had lots of deep math in them.
+
+364
+00:18:40,960 --> 00:18:45,960
+Like one does not need to understand the math behind these
+
+365
+00:18:48,160 --> 00:18:50,800
+to still know how to use them
+
+366
+00:18:50,800 --> 00:18:55,160
+or how not to use them that that's definitely,
+
+367
+00:18:55,160 --> 00:18:58,760
+but one can, you know, if you really want to,
+
+368
+00:18:58,760 --> 00:19:00,000
+the math is there.
+
+369
+00:19:00,840 --> 00:19:03,720
+And the CellProfiler manual tries to make it very clear
+
+370
+00:19:03,720 --> 00:19:05,680
+how to use them without necessarily needing
+
+371
+00:19:05,680 --> 00:19:08,200
+to sort of deeply study the equations.
+
+372
+00:19:08,200 --> 00:19:09,640
+Yes, absolutely.
+
+373
+00:19:11,280 --> 00:19:12,360
+Great.
+
+374
+00:19:12,360 --> 00:19:15,000
+Thank you so much for joining me on a viewer question.
+
+375
+00:19:15,000 --> 00:19:16,720
+We'll have another viewer question coming up
+
+376
+00:19:16,720 --> 00:19:18,880
+in an episode very soon.
+
+377
+00:19:18,880 --> 00:19:20,280
+Thanks for diving in with us
+
+378
+00:19:20,280 --> 00:19:25,120
+and thank you to our viewer for writing in a question.
+
+379
+00:19:25,160 --> 00:19:29,080
+To all our other viewers, please ask us questions.
+
+380
+00:19:29,080 --> 00:19:30,760
+Can we find them exciting?
+
+381
+00:19:30,760 --> 00:19:31,600
+Yeah.
+
+382
+00:19:31,600 --> 00:19:32,440
+Great.
+
+383
+00:19:32,440 --> 00:19:33,280
+Yeah.
+
+384
+00:19:33,280 --> 00:19:34,120
+Yeah.
+
+385
+00:19:34,120 --> 00:19:34,960
+Yeah.
+
+386
+00:19:34,960 --> 00:19:35,800
+Yeah.
+
+387
+00:19:35,800 --> 00:19:36,640
+Yeah.
+
+388
+00:19:36,640 --> 00:19:37,480
+Yeah.
+
+389
+00:19:37,480 --> 00:19:38,320
+Yeah.
+
+390
+00:19:38,320 --> 00:19:39,160
+Yeah.
+
+391
+00:19:39,160 --> 00:19:40,000
+Yeah.
+
+392
+00:19:40,000 --> 00:19:40,840
+Yeah.
+
+393
+00:19:40,840 --> 00:19:41,680
+Yeah.
+
+394
+00:19:41,680 --> 00:19:42,520
+Yeah.
+
+395
+00:19:42,520 --> 00:19:43,360
+Yeah.
+
+396
+00:19:43,360 --> 00:19:44,200
+Yeah.
+
+397
+00:19:44,200 --> 00:19:45,040
+Yeah.
+
+398
+00:19:45,040 --> 00:19:45,880
+Yeah.
+
+399
+00:19:45,880 --> 00:19:46,720
+Yeah.
+
+400
+00:19:46,720 --> 00:19:47,560
+Yeah.
+
+401
+00:19:47,560 --> 00:19:48,400
+Yeah.
+
+402
+00:19:48,400 --> 00:19:49,240
+Yeah.
+
+403
+00:19:49,240 --> 00:19:50,080
+Yeah.
+
+404
+00:19:50,080 --> 00:19:50,920
+Yeah.
+
