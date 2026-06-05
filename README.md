@@ -10,8 +10,6 @@ Want to see Erin and Beth explain or demo your (least) favorite image analysis c
 
 ## Episode List
 
-<div class="custom-table">
-
 | Episode with link | Links to pipelines, models, or other files | Link to images | Images are licensed | Links to other resources |
 | ----------------- | ------------------------------------------ | -------------- | ------------------- | ------------------------ |
 | Episode 1 - [Identifying Objects in Out-of-Focus Images in CellProfiler](https://www.youtube.com/watch?v=JcfPQ44p3pc) | | [folder here](https://drive.google.com/drive/folders/1iGU0V7KW0AZBKOs-Hx15VAxYeNChPcln) | [CC-0](https://creativecommons.org/public-domain/cc0/) | |
@@ -52,15 +50,6 @@ Want to see Erin and Beth explain or demo your (least) favorite image analysis c
 | Episode 37 - [Working with Collaborators Part 2/3 - Tools](https://youtu.be/DDzU8tAr1cY) | | | | |
 | Episode 38 - [Running a Custom Cellpose Model in CellProfiler](https://youtu.be/Q004hyxCeYE) | | | | [Translocation tutorial](https://tutorials.cellprofiler.org/#translocation), [CellProfiler plugins](https://plugins.cellprofiler.org/overview.html) |
 | Episode 39 - [Working with Collaborators Part 3/3 - Difficult Collaboratorations](https://youtu.be/b974BY9sLUw) | | | | |
-</div>
-<style>
-  /* Target the table headers based on their column number */
-  .custom-table table th:nth-child(1) { width: 400px; }
-  .custom-table table th:nth-child(2) { width: 100px; }
-  .custom-table table th:nth-child(3) { width: 100px; }
-  .custom-table table th:nth-child(4) { width: 100px; }
-  .custom-table table th:nth-child(5) { width: 200px; }
-</style>
 
 <!--
 
