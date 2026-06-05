@@ -21,3 +21,9 @@ table th, table td {
 header .btn {
   display: none !important;
 }
+
+/* Reduce the depth of the page header */
+.page-header {
+  padding-top: 3.3rem !important;
+  padding-bottom: 3.3rem !important;
+}
