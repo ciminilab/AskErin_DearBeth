@@ -46,10 +46,11 @@ Want to see Erin and Beth explain or demo your (least) favorite image analysis c
 | Episode 33 - [Guide to Cell Painting for Biologists](https://youtu.be/L8TSEg1E3Vk) | | | | [Guide to Cell Painting for Biologists](https://ciminilab.github.io/GuideToCellPainting/) |
 | Episode 34 - [Interpreting CellProfiler's Image Quality Features](https://youtu.be/k7maQY2wT-U) | | | | [CellProfiler manual](https://cellprofiler-manual.s3.amazonaws.com/CellProfiler-4.2.8/modules/measurement.html#measureimagequality), [CellProfiler Quality Control Tutorial](https://tutorials.cellprofiler.org/#quality-control), [Bray et al., 2012](https://www.slas-discovery.org/article/S2472-5552(22)07594-3/fulltext) |
 | Episode 35 - [Working with Collaborators Part 1/3](https://youtu.be/Ec6jG5iOgOM) | | | | |
+| Episode 36 - [Cell Painting Feature Transformations](https://youtu.be/uE6dLzns6ns) | | | | [Caicedo et al. 2017](https://www.nature.com/articles/nmeth.4397), [Rohban et al. 2019](https://carpenter-singh-lab.broadinstitute.org/files/anne/files/121_Rohban_NatComm_2019.pdf), [Hayir et al. 2026](https://arxiv.org/pdf/2605.15383), [Arevalo et al. 2024](https://www.nature.com/articles/s41467-024-50613-5/figures/5) |
 
 <!--
 
-| Episode 36 - [Cell Painting Feature Transformations](https://youtu.be/uE6dLzns6ns) | | | | [Caicedo et al. 2017](https://www.nature.com/articles/nmeth.4397), [Rohban et al. 2019](https://carpenter-singh-lab.broadinstitute.org/files/anne/files/121_Rohban_NatComm_2019.pdf), [Hayir et al. 2026](https://arxiv.org/pdf/2605.15383), [Arevalo et al. 2024](https://www.nature.com/articles/s41467-024-50613-5/figures/5) |
+
 | Episode 37 - [Working with Collaborators Part 2/3 - Tools](https://youtu.be/DDzU8tAr1cY) | | | | |
 | Episode 38 - [Running a Custom Cellpose Model in CellProfiler](https://youtu.be/Q004hyxCeYE) | | | | [Translocation tutorial](https://tutorials.cellprofiler.org/#translocation), [CellProfiler plugins](https://plugins.cellprofiler.org/overview.html) |
 | Episode 39 - [Working with Collaborators Part 3/3 - Difficult Collaboratorations](https://youtu.be/b974BY9sLUw) | | | | |
