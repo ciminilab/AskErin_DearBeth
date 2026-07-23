@@ -54,6 +54,7 @@ Want to see Erin and Beth explain or demo your (least) favorite image analysis c
 | Episode 37 - [Working with Collaborators Part 2/3 - Tools](https://youtu.be/DDzU8tAr1cY) | | | | |
 | Episode 38 - [Running a Custom Cellpose Model in CellProfiler](https://youtu.be/Q004hyxCeYE) | | | | [Translocation tutorial](https://tutorials.cellprofiler.org/#translocation), [CellProfiler plugins](https://plugins.cellprofiler.org/overview.html) |
 | Episode 39 - [Working with Collaborators Part 3/3 - Difficult Collaboratorations](https://youtu.be/b974BY9sLUw) | | | | |
+| Episode 40 - []() | [Pipeline and metadata file available here](https://github.com/ciminilab/AskErin_DearBeth/tree/main/files/Ep40) | [BBBC015](https://bbbc.broadinstitute.org/BBBC015) | [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/) | [ilastik website](https://www.ilastik.org/), [Molab Marimo+Pygwalker data exploration notebook](https://molab.marimo.io/notebooks/nb_oWoa8e2bqQJ7qydD4DNmr6) - to run this, you'll need to hit "Run it now" and log in with a free account|
 -->
 
 <p hidden>
