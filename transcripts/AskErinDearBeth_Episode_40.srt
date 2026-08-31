@@ -1,0 +1,1224 @@
+1
+00:00:16,000 --> 00:00:05,000
+Erin, hey!
+
+2
+00:00:05,000 --> 00:00:19,320
+Beth, lovely to see you, my dear.
+
+3
+00:00:19,320 --> 00:00:20,960
+Always lovely to see you.
+
+4
+00:00:20,960 --> 00:00:23,120
+I'm excited about today's episode.
+
+5
+00:00:23,120 --> 00:00:24,880
+What have you got on deck for us?
+
+6
+00:00:25,200 --> 00:00:31,560
+I have a question that we get asked a lot that hopefully I'm going to show some ways
+
+7
+00:00:31,560 --> 00:00:37,000
+to sort of figure out how to answer, which is quantifying your staining, especially quantifying
+
+8
+00:00:37,000 --> 00:00:41,800
+if your staining is punctate, like how many puncta do you have, things like that.
+
+9
+00:00:41,800 --> 00:00:45,200
+So I've got a little sub-parfile pipeline, I've got a little sort of data exploration
+
+10
+00:00:45,200 --> 00:00:46,200
+demo.
+
+11
+00:00:46,200 --> 00:00:47,200
+Nice.
+
+12
+00:00:47,200 --> 00:00:54,760
+Though, you know, clarifying question, when we're talking about puncta, do you mean sparkles,
+
+13
+00:00:54,760 --> 00:00:56,240
+can we call them sparkles?
+
+14
+00:00:56,240 --> 00:00:58,240
+We can absolutely call them sparkles.
+
+15
+00:00:58,240 --> 00:01:00,680
+How sparkly are our cells?
+
+16
+00:01:00,680 --> 00:01:01,680
+Love it.
+
+17
+00:01:01,680 --> 00:01:02,680
+Yes.
+
+18
+00:01:02,680 --> 00:01:04,280
+Asking the real important questions.
+
+19
+00:01:04,280 --> 00:01:05,280
+Yes.
+
+20
+00:01:05,280 --> 00:01:09,560
+So, to quantify how sparkly our cells are, I grabbed some data from the Brode Bio-Image
+
+21
+00:01:09,560 --> 00:01:18,960
+Benchmark Collection, where we have some U2OS cells that have a reporter that has GFP
+
+22
+00:01:18,960 --> 00:01:24,200
+and it has from very small amounts of drug to huge amounts of drug, and the more drug,
+
+23
+00:01:24,640 --> 00:01:25,640
+the more sparkly.
+
+24
+00:01:25,640 --> 00:01:27,640
+Love it.
+
+25
+00:01:27,640 --> 00:01:29,640
+Yeah.
+
+26
+00:01:29,640 --> 00:01:37,120
+So, I threw together a quick CellProfiler pipeline.
+
+27
+00:01:37,120 --> 00:01:40,120
+There's a couple extra steps that you wouldn't necessarily always need.
+
+28
+00:01:40,120 --> 00:01:44,160
+Specifically, there's a couple of smoothing steps here, because this is pretty old data
+
+29
+00:01:44,160 --> 00:01:45,160
+and it's JPEG.
+
+30
+00:01:45,160 --> 00:01:48,160
+Oh my goodness.
+
+31
+00:01:49,120 --> 00:01:54,640
+So, just to get rid of some of those compression artifacts and things like that, if you're
+
+32
+00:01:54,640 --> 00:01:56,840
+saving data, please don't use JPEGs.
+
+33
+00:01:56,840 --> 00:01:58,640
+JPEGs make your data sad.
+
+34
+00:01:58,640 --> 00:02:04,120
+I think we even have a podcast episode about, like, why does my data look bad?
+
+35
+00:02:04,120 --> 00:02:05,120
+We do.
+
+36
+00:02:05,120 --> 00:02:06,120
+That's true.
+
+37
+00:02:06,120 --> 00:02:07,120
+We call out JPEGs.
+
+38
+00:02:07,120 --> 00:02:10,120
+So, we can link that in the show notes.
+
+39
+00:02:10,120 --> 00:02:11,120
+Yes.
+
+40
+00:02:11,120 --> 00:02:15,280
+So, here's some not-so-pretty-looking data.
+
+41
+00:02:15,280 --> 00:02:17,400
+And here it is sort of a little bit smoothed out.
+
+42
+00:02:17,640 --> 00:02:22,240
+So, these two smoothing steps are not things you would normally need to do.
+
+43
+00:02:22,240 --> 00:02:25,520
+I've got an identify primary objects module.
+
+44
+00:02:25,520 --> 00:02:28,920
+So, I wanted to sort of give us a few different ways to look at this.
+
+45
+00:02:28,920 --> 00:02:32,640
+So, we'll count the number of spots, but we're also going to just look at, like, nuclei
+
+46
+00:02:32,640 --> 00:02:33,640
+cells inside of plasm.
+
+47
+00:02:33,640 --> 00:02:37,080
+So, I have my nuclei.
+
+48
+00:02:37,080 --> 00:02:43,360
+I then use identify secondary objects to turn those nuclei into cells.
+
+49
+00:02:43,360 --> 00:02:44,360
+Nice.
+
+50
+00:02:44,360 --> 00:02:45,360
+Yeah.
+
+51
+00:02:46,320 --> 00:02:48,160
+Looks like cells.
+
+52
+00:02:48,160 --> 00:02:50,480
+Looks like cells.
+
+53
+00:02:50,480 --> 00:02:55,680
+We have some tertiary objects to make cytoplasms.
+
+54
+00:02:55,680 --> 00:03:01,760
+And then, as we've talked about before in terms of finding sparkles, the enhancer-suppressed
+
+55
+00:03:01,760 --> 00:03:04,880
+features module can be really nice for that.
+
+56
+00:03:04,880 --> 00:03:13,920
+And so, let me zoom in and adjust my contrast just to make it nice and bright.
+
+57
+00:03:16,640 --> 00:03:20,760
+You can see that lets us get rid of all of this background signal and leave only the
+
+58
+00:03:20,760 --> 00:03:23,840
+puncta that are left.
+
+59
+00:03:23,840 --> 00:03:31,320
+I then chose to mask the puncta to only what's inside the cytoplasm.
+
+60
+00:03:31,320 --> 00:03:36,360
+And that's because we get this nuclear rim effect around the nuclei, which isn't really
+
+61
+00:03:36,360 --> 00:03:37,360
+the thing we want to measure.
+
+62
+00:03:37,360 --> 00:03:39,920
+So, I eventually want to be able to get rid of that.
+
+63
+00:03:39,920 --> 00:03:45,080
+And so, masking with the cytoplasms will help in a way that I'll show you right now.
+
+64
+00:03:45,080 --> 00:03:50,560
+So, when I do my puncta identification, I do a couple of things.
+
+65
+00:03:50,560 --> 00:03:56,320
+The first thing is you might notice a bunch of orange here in the bottom left.
+
+66
+00:03:56,320 --> 00:03:59,840
+Orange is for things being thrown out that are touching the edge.
+
+67
+00:03:59,840 --> 00:04:03,400
+These are all the things that are touching the edge of my nucleus and things that I don't
+
+68
+00:04:03,400 --> 00:04:07,000
+necessarily want because I'm mostly just getting the nuclear rims here.
+
+69
+00:04:07,000 --> 00:04:11,800
+And so, by doing that masking, I mean it allows me to turn that setting on and just get rid
+
+70
+00:04:11,800 --> 00:04:15,800
+of the nuclear rim like one shot easy peasy.
+
+71
+00:04:15,800 --> 00:04:21,240
+That is such a creative trick and a way to take advantage of.
+
+72
+00:04:21,240 --> 00:04:24,880
+So, I mean, even recently, I forgot about this setting.
+
+73
+00:04:24,880 --> 00:04:29,680
+So, I know in CP5, we're changing our language on our module a tiny bit just to make this
+
+74
+00:04:29,680 --> 00:04:31,560
+even more clear.
+
+75
+00:04:31,560 --> 00:04:39,560
+But in the module settings, filtering objects that touch edges, most of the time you think
+
+76
+00:04:39,560 --> 00:04:46,720
+of the edge of an image, which makes sense of, oh, I don't want to make measurements
+
+77
+00:04:46,720 --> 00:04:52,200
+about this object if most of it is cut, if part of it is cut off in my image.
+
+78
+00:04:52,200 --> 00:04:53,200
+That makes total sense.
+
+79
+00:04:53,200 --> 00:04:58,720
+But sort of forget that that also includes masks.
+
+80
+00:04:58,720 --> 00:05:05,800
+And so, you can get tricked by, I mean, here, we're using that trick to our advantage, a
+
+81
+00:05:05,800 --> 00:05:10,040
+perfect thing here where actually, yeah, brilliant use of that.
+
+82
+00:05:10,040 --> 00:05:17,520
+I had not thought of taking this thing that sometimes currently trips me up even despite
+
+83
+00:05:17,520 --> 00:05:24,720
+many years of expertise and using it to do exactly what we want in a relevant manner.
+
+84
+00:05:24,720 --> 00:05:29,200
+Yeah, I mean, there's a reason every setting is in CellProfiler and sometimes it's a
+
+85
+00:05:29,200 --> 00:05:32,840
+bad reason and sometimes it's a good reason, but we can always sort of try to use our powers
+
+86
+00:05:32,840 --> 00:05:35,240
+for good.
+
+87
+00:05:35,240 --> 00:05:38,680
+I then added a bunch of measurement modules.
+
+88
+00:05:38,680 --> 00:05:42,560
+We've got size and shape of both the cells in the punta.
+
+89
+00:05:42,560 --> 00:05:47,400
+We've got the intensity of the cells in the punta in that GFP channel.
+
+90
+00:05:47,400 --> 00:05:48,800
+And then I added some other.
+
+91
+00:05:48,800 --> 00:05:51,600
+I noticed a thing here, Beth, that I want to call out.
+
+92
+00:05:51,600 --> 00:05:58,200
+So usually when we do things that are pipe out, I mean, people, if you've watched more
+
+93
+00:05:58,200 --> 00:06:02,800
+than one episode, I'm sure you've heard us say more than once, you know, all is fair
+
+94
+00:06:02,800 --> 00:06:06,840
+in love and war and image analysis for object identification.
+
+95
+00:06:06,840 --> 00:06:13,280
+But when you're making measurements, they always need to be on the input image.
+
+96
+00:06:13,280 --> 00:06:16,120
+But what I notice here is that you're not acting.
+
+97
+00:06:16,120 --> 00:06:17,120
+Yeah, I broke the rules.
+
+98
+00:06:17,360 --> 00:06:18,640
+You broke a rule.
+
+99
+00:06:18,640 --> 00:06:20,640
+I'm bad.
+
+100
+00:06:20,640 --> 00:06:24,600
+But I think that's a really important thing to call out.
+
+101
+00:06:24,600 --> 00:06:32,520
+While this may be an absolute must rule, almost every single time.
+
+102
+00:06:32,520 --> 00:06:36,880
+You know, here there's an exception for that very reason that you called out in the beginning.
+
+103
+00:06:36,880 --> 00:06:44,240
+This is you're actually getting rid of an artifact by using this smooth, not just doing
+
+104
+00:06:44,240 --> 00:06:46,000
+tricks to find objects.
+
+105
+00:06:46,000 --> 00:06:47,000
+Yeah.
+
+106
+00:06:47,880 --> 00:06:51,680
+When we do our bootcamp, I usually caveat that rule with unless you're doing a measured
+
+107
+00:06:51,680 --> 00:06:53,160
+correction or things like that.
+
+108
+00:06:53,160 --> 00:06:57,520
+Like if you're doing something that you know is a correction and you can specify exactly
+
+109
+00:06:57,520 --> 00:07:01,920
+why it is and what it is and it's calibrated, then you might not need to be working on the
+
+110
+00:07:01,920 --> 00:07:02,920
+raw image.
+
+111
+00:07:02,920 --> 00:07:06,360
+And that's, you know, how we often measure on illumination corrected images.
+
+112
+00:07:06,360 --> 00:07:09,520
+But here there is an artifact coming from the JPEG compression.
+
+113
+00:07:09,520 --> 00:07:15,520
+And so the most sort of pure representation of the image I can get is this one that actually
+
+114
+00:07:15,560 --> 00:07:17,560
+has a tiny bit of something like that.
+
+115
+00:07:17,560 --> 00:07:18,560
+Yeah.
+
+116
+00:07:18,560 --> 00:07:20,320
+So that's good to point out.
+
+117
+00:07:20,320 --> 00:07:28,560
+I also added some texture and granularity measurements in that same smooth JFP channel
+
+118
+00:07:28,560 --> 00:07:35,520
+just so that we can sort of take a look at, you know, what those are.
+
+119
+00:07:35,520 --> 00:07:39,640
+So texture is going to sort of tell us, you know, at different spacings throughout the
+
+120
+00:07:39,640 --> 00:07:40,640
+data.
+
+121
+00:07:40,760 --> 00:07:46,280
+Essentially, you know, here I have a spacing of three, like in any given pixel, like how
+
+122
+00:07:46,280 --> 00:07:52,800
+similar is the intensity in the pixel three pixels away from it in every direction.
+
+123
+00:07:52,800 --> 00:07:55,200
+Granularity is a little bit harder to explain.
+
+124
+00:07:55,200 --> 00:08:01,680
+But thankfully, someone has made a lovely diagram helping explain it.
+
+125
+00:08:01,680 --> 00:08:06,480
+With granularity, what we're doing is we're actually iteratively removing sort of dots
+
+126
+00:08:06,480 --> 00:08:08,080
+of various sizes.
+
+127
+00:08:08,080 --> 00:08:14,000
+And so we're seeing how much of our signal is in very small spots versus slightly small
+
+128
+00:08:14,000 --> 00:08:19,320
+spots versus, you know, even bigger spots versus even bigger, bigger spots.
+
+129
+00:08:19,320 --> 00:08:24,160
+And so it gives us a level of punctaiteness.
+
+130
+00:08:24,160 --> 00:08:28,760
+It's a little harder to interpret because these steps are done iteratively.
+
+131
+00:08:28,760 --> 00:08:35,920
+And so if we say that our stuff has lost some, as we'll see in a minute, lost some signal
+
+132
+00:08:35,920 --> 00:08:40,400
+of size one, that might be just because it has signals of a different size.
+
+133
+00:08:40,400 --> 00:08:46,160
+And so we kind of have to look at many granularity measurements together.
+
+134
+00:08:46,160 --> 00:08:49,680
+But it is a really fun way to sort of see what are the size distributions of things that
+
+135
+00:08:49,680 --> 00:08:50,680
+you have.
+
+136
+00:08:50,680 --> 00:08:51,680
+Yeah.
+
+137
+00:08:51,680 --> 00:08:59,120
+And another thing to note, I think there's also a configurable downscaling that happens
+
+138
+00:08:59,120 --> 00:09:01,680
+on the image before measuring the granularity.
+
+139
+00:09:01,680 --> 00:09:09,080
+And so depending on what you have set there, you're not necessarily measuring the erosion
+
+140
+00:09:09,080 --> 00:09:11,720
+of a single pixel in the original image.
+
+141
+00:09:11,720 --> 00:09:18,720
+So a further level of abstraction means you want to follow the patterns through the granularities
+
+142
+00:09:18,720 --> 00:09:25,760
+and not think of it as necessarily always as representing individual pixel increments.
+
+143
+00:09:25,760 --> 00:09:27,800
+Yes, absolutely correct.
+
+144
+00:09:27,800 --> 00:09:30,720
+Here I did choose a grid to not subsample.
+
+145
+00:09:30,760 --> 00:09:35,240
+So my ones are ones and my twos are twos, but you're absolutely right there.
+
+146
+00:09:35,240 --> 00:09:39,400
+And then because it's always a good thing to do, I made some overlays so we could take
+
+147
+00:09:39,400 --> 00:09:42,800
+a look at our data because we always want to look at our data and just make sure before
+
+148
+00:09:42,800 --> 00:09:48,200
+we sort of evaluate the quantitative stuff that our data looks right.
+
+149
+00:09:48,200 --> 00:09:55,320
+So here I made a color overlay of just the two channels together and then the same thing
+
+150
+00:09:55,320 --> 00:09:58,600
+with the sort of outlines drawn on top.
+
+151
+00:09:58,600 --> 00:10:04,960
+So my cells are in yellow, my spots are in white, and here lots of spots and it seems
+
+152
+00:10:04,960 --> 00:10:09,960
+like it's maybe not getting every spot, but I'm getting overall spotness.
+
+153
+00:10:09,960 --> 00:10:13,520
+And even if it isn't getting every spot, that's kind of okay because I'm going to be looking
+
+154
+00:10:13,520 --> 00:10:16,080
+at other metrics too, which might capture it.
+
+155
+00:10:16,080 --> 00:10:21,680
+And then when I get to the lower levels of drug, much less spottingness going on.
+
+156
+00:10:21,680 --> 00:10:22,680
+Nice.
+
+157
+00:10:22,680 --> 00:10:25,680
+But yeah, I think that pipeline's doing a good job.
+
+158
+00:10:25,680 --> 00:10:26,680
+Yeah.
+
+159
+00:10:27,280 --> 00:10:29,400
+Lovely little pipeline there.
+
+160
+00:10:29,400 --> 00:10:32,400
+Thank you.
+
+161
+00:10:32,400 --> 00:10:36,720
+So how can we actually take a look at that data?
+
+162
+00:10:36,720 --> 00:10:42,280
+So I put together just a little visualization here in Marimo using their MoLab tool, which
+
+163
+00:10:42,280 --> 00:10:47,120
+is kind of like Google CoLab, but for Marimo, so it's called MoLab.
+
+164
+00:10:47,120 --> 00:10:54,280
+And I'm using a tool called PigWalker here, PyG Walker, which allows you to do data frame
+
+165
+00:10:54,280 --> 00:10:59,640
+explanation and like graphing on the fly, and I think is so neat.
+
+166
+00:10:59,640 --> 00:11:02,280
+So here I've got the data frame that came out of that.
+
+167
+00:11:02,280 --> 00:11:04,280
+We can see we have our CellProfiler measurements.
+
+168
+00:11:04,280 --> 00:11:07,480
+We have our area shape, our granularity.
+
+169
+00:11:07,480 --> 00:11:09,240
+I loaded just the cell measurements here.
+
+170
+00:11:09,240 --> 00:11:13,040
+So we have like the children punked account and we have all of our mean punked measurements
+
+171
+00:11:13,040 --> 00:11:16,240
+per cell.
+
+172
+00:11:16,240 --> 00:11:17,240
+And we can take a look.
+
+173
+00:11:17,240 --> 00:11:23,520
+So do you have a measurement you think would be a good one to start with?
+
+174
+00:11:24,320 --> 00:11:28,280
+I mean, I think just punked account is a lovely, very basic thing to start with.
+
+175
+00:11:28,280 --> 00:11:29,280
+All right.
+
+176
+00:11:29,280 --> 00:11:34,120
+Start from the very beginning, a very good place to start.
+
+177
+00:11:34,120 --> 00:11:39,560
+Let's start with DOS in here on the X-axis and also color, because we like pretty colors
+
+178
+00:11:39,560 --> 00:11:40,560
+around here.
+
+179
+00:11:40,560 --> 00:11:42,360
+We certainly do.
+
+180
+00:11:42,360 --> 00:11:50,560
+And because this is on a log scale, I'm going to actually make sure that I specify that
+
+181
+00:11:50,600 --> 00:11:57,160
+those are going to be on a log scale, because it looks pretty ugly if I don't do that.
+
+182
+00:11:57,160 --> 00:11:58,880
+The drug addition was added.
+
+183
+00:11:58,880 --> 00:12:02,000
+Yes, the drug addition was on a log scale.
+
+184
+00:12:02,000 --> 00:12:07,480
+So it starts at micromolar and then goes down threefold all the way down to picomolar
+
+185
+00:12:07,480 --> 00:12:08,480
+every three.
+
+186
+00:12:08,480 --> 00:12:15,000
+And so everything gets very smushed up if we don't look at this on a log scale.
+
+187
+00:12:15,000 --> 00:12:18,640
+So I'm going to specify that column and color, which are where I'm putting my DOS, are log
+
+188
+00:12:18,720 --> 00:12:19,720
+scale.
+
+189
+00:12:21,520 --> 00:12:25,960
+And we have our punked account.
+
+190
+00:12:28,640 --> 00:12:30,520
+And I'm going to put that on the Y-axis.
+
+191
+00:12:32,360 --> 00:12:36,640
+So by default, it's aggregating everything, but let's turn that off.
+
+192
+00:12:37,840 --> 00:12:40,560
+And we have our punked account.
+
+193
+00:12:40,920 --> 00:12:41,920
+Look at that.
+
+194
+00:12:42,280 --> 00:12:47,040
+And we can make it a box plot to make it a little bit easier to see.
+
+195
+00:12:47,080 --> 00:12:48,760
+And there we go.
+
+196
+00:12:48,760 --> 00:12:51,280
+There's our on the fly punked account.
+
+197
+00:12:52,360 --> 00:12:53,360
+Love it.
+
+198
+00:12:54,680 --> 00:12:57,600
+So if I want to throw some other measurements in there, too, I can.
+
+199
+00:12:57,600 --> 00:13:00,760
+So I mentioned that texture measurements.
+
+200
+00:13:00,760 --> 00:13:02,920
+Let me go down and grab one of those.
+
+201
+00:13:04,440 --> 00:13:08,880
+And so here, you know, if I was worried about my punked calling maybe not being perfect or
+
+202
+00:13:08,880 --> 00:13:13,040
+not being good, I could just try and see if I can get around it entirely by looking for
+
+203
+00:13:13,040 --> 00:13:14,040
+other measurements.
+
+204
+00:13:15,040 --> 00:13:22,440
+And so this is and I only picked one texture scale and I did it in a semi informed way,
+
+205
+00:13:22,440 --> 00:13:26,040
+but it's possible there are other texture scales that would have been even better.
+
+206
+00:13:26,040 --> 00:13:28,720
+But if we look at this is that the entropy.
+
+207
+00:13:28,720 --> 00:13:34,000
+So essentially how bad is how bad a job will we do of predicting the pixel three pixels
+
+208
+00:13:34,000 --> 00:13:35,000
+away?
+
+209
+00:13:35,000 --> 00:13:36,000
+Is my understanding anyway?
+
+210
+00:13:37,520 --> 00:13:44,000
+And we'll do a we have much higher entropy and when we have punked up because the role
+
+211
+00:13:44,000 --> 00:13:51,000
+relationship, which makes sense if you think about like when I don't have many spots, like
+
+212
+00:13:51,000 --> 00:13:55,600
+if I know this pixel value, I probably know the pixel value three pixels away because
+
+213
+00:13:55,600 --> 00:13:58,000
+it's probably pretty similar to me.
+
+214
+00:14:00,000 --> 00:14:06,480
+But when I'm in one of these cases where there's tons of spots, like if I'm in here,
+
+215
+00:14:06,480 --> 00:14:09,800
+I don't really know what the pixel value is going to be over here.
+
+216
+00:14:09,800 --> 00:14:15,400
+And if I'm, you know, over here, I don't know if there's going to be a spot near me or or not.
+
+217
+00:14:15,400 --> 00:14:22,400
+So the entropy of the texture is actually much higher in this case where we have a lot of spots.
+
+218
+00:14:25,400 --> 00:14:27,200
+Should we look at the granularity too?
+
+219
+00:14:27,200 --> 00:14:32,920
+Yes, I actually I love me some granularity, despite the fact it's a struggle to explain
+
+220
+00:14:32,920 --> 00:14:34,400
+it every single time.
+
+221
+00:14:34,400 --> 00:14:39,600
+But okay, let's do one.
+
+222
+00:14:40,600 --> 00:14:45,600
+Two and three.
+
+223
+00:14:45,600 --> 00:14:50,600
+So one, two.
+
+224
+00:14:52,600 --> 00:14:57,600
+And I do love this on the fly graphing.
+
+225
+00:14:57,600 --> 00:14:58,600
+It's pretty great.
+
+226
+00:14:58,600 --> 00:14:59,600
+That is pretty great.
+
+227
+00:15:00,600 --> 00:15:01,600
+Oh, I dropped it.
+
+228
+00:15:05,600 --> 00:15:07,600
+Only I knew how to operate a computer.
+
+229
+00:15:08,400 --> 00:15:12,400
+All right, so that I've got granularity one, two and three.
+
+230
+00:15:13,400 --> 00:15:20,400
+And so granularity one goes is highest when we have don't have any spots and everything
+
+231
+00:15:20,400 --> 00:15:26,400
+goes down just a little bit when we get into our sort of bigger things.
+
+232
+00:15:26,400 --> 00:15:29,400
+But we get to our granularities two and three.
+
+233
+00:15:29,400 --> 00:15:33,400
+We can see why we, you know, where some of this intensity went.
+
+234
+00:15:34,200 --> 00:15:39,200
+It went into spot sizes two and three where now we have a ton of pixels that are about
+
+235
+00:15:39,200 --> 00:15:45,200
+that spot size and therefore our granularity responses there are super high.
+
+236
+00:15:45,200 --> 00:15:52,200
+Yeah, which which makes total sense because, you know, again, with a sort of a diffuse
+
+237
+00:15:52,200 --> 00:15:58,200
+background, right, if you're eroding the small, you know, the smallest shape one erosion
+
+238
+00:15:59,000 --> 00:16:05,000
+you're able to erode a lot more of the intensity than when there are those bright
+
+239
+00:16:05,000 --> 00:16:11,000
+shapes that form larger structures because if you erode from those larger, brighter
+
+240
+00:16:11,000 --> 00:16:15,000
+spots, some of the larger, brighter spots still remains.
+
+241
+00:16:15,000 --> 00:16:16,000
+Yeah.
+
+242
+00:16:16,000 --> 00:16:23,000
+So and I bet if we plot these things against each other, so I could even I could take
+
+243
+00:16:23,000 --> 00:16:30,000
+dose off the x-axis and put like our punct account on the x-axis and which I'll now have
+
+244
+00:16:32,000 --> 00:16:38,000
+to take out of log scale because now it's not a log scale thing anymore.
+
+245
+00:16:38,000 --> 00:16:41,000
+Pop that back to linear.
+
+246
+00:16:41,000 --> 00:16:48,000
+And if we look at our granularity two and granularity three, we look at punct account
+
+247
+00:16:49,000 --> 00:16:56,000
+versus granularity, you can see there's such a clear relationship there.
+
+248
+00:16:56,000 --> 00:16:57,000
+Yeah.
+
+249
+00:16:57,000 --> 00:17:03,000
+The more punct that we have that are which happened to be about that size, then the more
+
+250
+00:17:03,000 --> 00:17:06,000
+granularity sort of pop there.
+
+251
+00:17:06,000 --> 00:17:07,000
+Nice.
+
+252
+00:17:07,000 --> 00:17:12,000
+So we really didn't even need to find the punct unless we wanted to specifically say something
+
+253
+00:17:12,000 --> 00:17:17,000
+about like each cell has 10 punct and maybe maybe we do.
+
+254
+00:17:18,000 --> 00:17:23,000
+But I'm able to get sort of the smoothness or roughness of the cells based on some of
+
+255
+00:17:23,000 --> 00:17:28,000
+these other metrics instead and not worry about having to do my punct of, you know,
+
+256
+00:17:28,000 --> 00:17:31,000
+segmentation and did I do a good job?
+
+257
+00:17:31,000 --> 00:17:32,000
+Did I find everything?
+
+258
+00:17:32,000 --> 00:17:35,000
+Did I miss the ones that were touching the nucleus edge that I really did want?
+
+259
+00:17:35,000 --> 00:17:36,000
+Yeah.
+
+260
+00:17:36,000 --> 00:17:40,000
+All of that's still captured in my other measurements too.
+
+261
+00:17:40,000 --> 00:17:41,000
+Yeah.
+
+262
+00:17:41,000 --> 00:17:42,000
+Yeah.
+
+263
+00:17:42,000 --> 00:17:45,000
+And also, you know, really nice to have.
+
+264
+00:17:46,000 --> 00:17:49,000
+I mean, so nice when you have a visual phenotype, right?
+
+265
+00:17:49,000 --> 00:17:55,000
+Where you're like, okay, I know that over, you know, across my drug doses here, I absolutely
+
+266
+00:17:55,000 --> 00:17:59,000
+should be able to find something, you know, something, right?
+
+267
+00:17:59,000 --> 00:18:02,000
+There must be some metric that's going to capture this.
+
+268
+00:18:02,000 --> 00:18:09,000
+And so to have that sort of known fact then allows you to, I think, have confidence in
+
+269
+00:18:09,000 --> 00:18:18,000
+exploring other features, other mathematical ways of capturing this with a level of confidence
+
+270
+00:18:18,000 --> 00:18:24,000
+that if it is not, I guess, of the inverse, you know, if it is not showing a difference
+
+271
+00:18:24,000 --> 00:18:31,000
+across this drug dosage, then it is definitely not a metric that is helping you capture
+
+272
+00:18:31,000 --> 00:18:33,000
+your phenotype in any way.
+
+273
+00:18:33,000 --> 00:18:34,000
+Yeah.
+
+274
+00:18:34,000 --> 00:18:39,000
+And like the granularity one there definitely didn't seem like it was doing that much.
+
+275
+00:18:39,000 --> 00:18:48,000
+Let me put dose back on the X axis and yeah, just pop count out for now.
+
+276
+00:18:48,000 --> 00:18:55,000
+Like granularity one was only kind of, you know, like there's a change there, but our
+
+277
+00:18:55,000 --> 00:18:57,000
+box plots are overlapping.
+
+278
+00:18:57,000 --> 00:19:01,000
+Like you wouldn't say that that was a like big change there.
+
+279
+00:19:01,000 --> 00:19:06,000
+I would not want to set up a big screen using just that metric.
+
+280
+00:19:06,000 --> 00:19:09,000
+But for two and three, like heck yeah, screen away.
+
+281
+00:19:09,000 --> 00:19:10,000
+Yeah.
+
+282
+00:19:10,000 --> 00:19:15,000
+I mean, you can basically even kind of see where the IC 50 for this drug is.
+
+283
+00:19:15,000 --> 00:19:19,000
+It's like somewhere between like this dose and this dose.
+
+284
+00:19:19,000 --> 00:19:22,000
+Yeah, pretty cool.
+
+285
+00:19:22,000 --> 00:19:23,000
+Yeah.
+
+286
+00:19:23,000 --> 00:19:29,000
+So that was so if you're trying to sort of get a sense of how punctate your signal is, this
+
+287
+00:19:29,000 --> 00:19:32,000
+is just some of the ways that you can do it.
+
+288
+00:19:32,000 --> 00:19:35,000
+Feel free to comment with any others that you can think of.
+
+289
+00:19:35,000 --> 00:19:36,000
+I love it.
+
+290
+00:19:36,000 --> 00:19:38,000
+Thanks for sharing that, Beth.
+
+291
+00:19:38,000 --> 00:19:43,000
+I mean, again, anytime there's an episode involving sparkly cells, I'm here for it.
+
+292
+00:19:43,000 --> 00:19:45,000
+Always better when things are sparkly.
+
+293
+00:19:45,000 --> 00:19:46,000
+Always better.
+
+294
+00:19:46,000 --> 00:19:53,000
+But the fact that we have now a number of episodes talking about puncta within cells,
+
+295
+00:19:53,000 --> 00:20:01,000
+shows how interesting this question is in so many different biologically relevant models.
+
+296
+00:20:01,000 --> 00:20:02,000
+Yeah.
+
+297
+00:20:02,000 --> 00:20:07,000
+That capture might be lysosomes or, you know, Golgi or, you know, nucleolite or whatever.
+
+298
+00:20:07,000 --> 00:20:12,000
+But yeah, no matter your punta, no matter how your cell is sparkly, you know, we'll help
+
+299
+00:20:12,000 --> 00:20:14,000
+you figure out exactly how sparkly.
+
+300
+00:20:14,000 --> 00:20:15,000
+Absolutely.
+
+301
+00:20:15,000 --> 00:20:16,000
+Thanks, babe.
+
+302
+00:20:16,000 --> 00:20:17,000
+Thanks.
+
+303
+00:20:17,000 --> 00:20:18,000
+See you later.
+
+304
+00:20:18,000 --> 00:20:19,000
+Bye.
+
+305
+00:20:19,000 --> 00:20:20,000
+Bye.
+
+306
+00:20:23,000 --> 00:20:24,000
+Bye.
+
