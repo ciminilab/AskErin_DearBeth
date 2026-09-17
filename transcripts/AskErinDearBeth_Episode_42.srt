@@ -1,0 +1,900 @@
+1
+00:00:16,000 --> 00:00:19,360
+Hey, Erin! Hey, Beth! Good to see you!
+
+2
+00:00:19,360 --> 00:00:22,760
+It is so good to see you. Always love podcasting.
+
+3
+00:00:22,760 --> 00:00:26,080
+Me too.
+
+4
+00:00:26,080 --> 00:00:34,240
+So I thought what I would like to talk about today is about image corrections. So I know
+
+5
+00:00:34,240 --> 00:00:39,440
+we've mentioned in a few episodes things about like, you know, measuring only on, you
+
+6
+00:00:39,440 --> 00:00:46,320
+know, non-transformed images and things like that. That doesn't necessarily mean though
+
+7
+00:00:46,320 --> 00:00:53,240
+we always want the most raw image possible. We might want to correct our image. And so
+
+8
+00:00:53,240 --> 00:00:58,280
+I want to talk about illumination correction today because we've also talked about that
+
+9
+00:00:58,280 --> 00:01:02,880
+in previous episodes where we said like, hey, like sometimes you might want to do a background
+
+10
+00:01:02,880 --> 00:01:09,600
+correction and things like that, but not really gone into the like when and why and why is
+
+11
+00:01:09,600 --> 00:01:15,640
+it important. So I wanted to talk about like when are corrections important in general?
+
+12
+00:01:15,640 --> 00:01:19,680
+When are like, when should you care about these sorts of things and how can we develop
+
+13
+00:01:19,680 --> 00:01:21,680
+some ideas about that?
+
+14
+00:01:22,120 --> 00:01:24,120
+Nice.
+
+15
+00:01:24,120 --> 00:01:29,280
+Yeah, nice to have a, you know, a caveat to the rule that we're like, this is a firm
+
+16
+00:01:29,280 --> 00:01:33,120
+rule. Always do this. And now a whole episode of Except.
+
+17
+00:01:33,120 --> 00:01:45,360
+Well, it's always it depends, right? It depends on our pitch raise.
+
+18
+00:01:45,360 --> 00:01:54,840
+In full disclosure, reasonable people may disagree on some parts here. So big picture
+
+19
+00:01:54,840 --> 00:01:59,200
+thinking, first of all, it depends what kinds of measurements might we want to make because
+
+20
+00:01:59,200 --> 00:02:04,440
+when we need to think about, you know, illumination corrections, you know, depends on how important
+
+21
+00:02:04,440 --> 00:02:12,440
+it is for that particular kind of measurement. And so, you know, when I've tried to come
+
+22
+00:02:12,520 --> 00:02:17,520
+up this before this list is definitely not exhaustive, you know, you might care about
+
+23
+00:02:17,520 --> 00:02:21,840
+the number of objects, you might care about the size of the objects, you might care about
+
+24
+00:02:21,840 --> 00:02:29,080
+their intensity, co-localization, texture, spoiler alert, we definitely plan to do a
+
+25
+00:02:29,080 --> 00:02:35,080
+co-localization episode at some point, but co-localization, everything's important for
+
+26
+00:02:36,080 --> 00:02:43,080
+you. But exactly how much you care about certain kinds of precision, which will include like
+
+27
+00:02:43,080 --> 00:02:50,080
+image correction will depend on what you're measuring. And so I wanted to actually start
+
+28
+00:02:50,520 --> 00:02:54,680
+with segmentation first because I feel like segmentation is a little bit easier to sort
+
+29
+00:02:54,680 --> 00:03:01,680
+of think about. So which kinds of measurements rely on having like super accurate, I mean
+
+30
+00:03:01,760 --> 00:03:08,760
+pixel accurate, obviously you want your segmentation to not be garbage, but in terms of thinking
+
+31
+00:03:11,160 --> 00:03:18,160
+about which ones rely more or less, and even here we're not, I'm not fully able to say
+
+32
+00:03:19,280 --> 00:03:25,280
+like for every category, but you know, if all you care about is the count, probably
+
+33
+00:03:25,280 --> 00:03:31,040
+like pixel accurate segmentation, not super important. If you want to know things like
+
+34
+00:03:31,120 --> 00:03:35,880
+what are the branching and stuff like having pixel accurate segmentation might be super
+
+35
+00:03:35,880 --> 00:03:42,480
+important to figure out where branches are. If you want to test the speed of things, if
+
+36
+00:03:42,480 --> 00:03:45,760
+the things are small, you kind of need to know how much they've moved, which means kind
+
+37
+00:03:45,760 --> 00:03:52,760
+of need to know where they are. And yeah, I don't know, anything you disagree with here?
+
+38
+00:03:53,760 --> 00:04:00,760
+No, no, I mean, I think it's, you know, this, we kind of put together this list based on
+
+39
+00:04:00,840 --> 00:04:05,840
+brainstorm consensus over several different large groups of people chatting through this
+
+40
+00:04:05,840 --> 00:04:11,840
+very thing. And again, to have sort of end up with the like up arrow, down arrow, it
+
+41
+00:04:11,840 --> 00:04:16,840
+depends, you know, again, like, as you say, reasonable people can totally disagree on
+
+42
+00:04:16,840 --> 00:04:23,840
+this. Because even, you know, I love the idea of like here intensity, right? Like, well,
+
+43
+00:04:23,840 --> 00:04:29,360
+maybe it doesn't matter at all if what your cell boundary is, how perfect that is, if
+
+44
+00:04:29,360 --> 00:04:34,880
+you're measuring the intensity of a nuclear stain in your cell, right? Because, but if
+
+45
+00:04:34,880 --> 00:04:41,880
+you're looking very carefully at, you know, something at the very cell membrane, then
+
+46
+00:04:42,680 --> 00:04:48,680
+oh my gosh, yes, it totally matters if you're off by a pixel or two, because that's, you
+
+47
+00:04:48,680 --> 00:04:52,760
+know, it's either you have your stain in there or not. And so
+
+48
+00:04:52,760 --> 00:04:56,280
+if you ever meet Erin in real life, and you find her at a bar somewhere, if you can tell
+
+49
+00:04:56,320 --> 00:05:00,480
+you some horror stories about how to cell membrane measurements.
+
+50
+00:05:00,520 --> 00:05:05,840
+Oh my gosh. Yeah, don't get me started or, you know, buy me a beer first because
+
+51
+00:05:07,280 --> 00:05:08,520
+it's the polite thing to do.
+
+52
+00:05:08,520 --> 00:05:16,520
+Yeah. Yeah. But I think, I think it certainly does go back to the very root of what we always
+
+53
+00:05:16,520 --> 00:05:21,600
+say about like, it depends, right? Like, we can't give you a blanket answer for anything.
+
+54
+00:05:21,640 --> 00:05:28,480
+And so thinking really carefully about what am I trying to do and why am I doing it this way
+
+55
+00:05:29,840 --> 00:05:35,760
+will give you the answer of how important is X, Y or Z. And, you know, in this case, we're
+
+56
+00:05:35,760 --> 00:05:37,480
+starting with segmentation, but
+
+57
+00:05:42,000 --> 00:05:49,000
+And, you know, how much it depends will also depend on the kinds of errors, you know, is
+
+58
+00:05:49,000 --> 00:05:53,800
+it pixel accurate? Is it, you know, too many things are split too many things are merged?
+
+59
+00:05:53,840 --> 00:05:59,400
+And again, depending on the kind of measurement that you're making, you know, for tracking
+
+60
+00:05:59,400 --> 00:06:06,680
+splits and mergers might matter quite a bit more than than some of the other broader categories
+
+61
+00:06:06,680 --> 00:06:10,480
+like mean intensity, you know, you'll have two objects instead of one or one instead of two,
+
+62
+00:06:10,480 --> 00:06:14,360
+but the mean might be much less tolerant or much more tolerant.
+
+63
+00:06:19,640 --> 00:06:28,280
+But there's going to be lots of cases where we get into intensity and I talked about segmentation
+
+64
+00:06:28,280 --> 00:06:32,200
+first because segmentation is a little bit easier because segmentation because intensity is going
+
+65
+00:06:32,200 --> 00:06:38,920
+to then also impact segmentation. So when we say intensity errors in our image, like how much do
+
+66
+00:06:38,920 --> 00:06:49,000
+those, you know, impact things, some of it will impact segmentation. And so there might be, you
+
+67
+00:06:49,000 --> 00:06:54,920
+know, there's offset on your camera, you know, your camera doesn't literally start at zero.
+
+68
+00:06:54,920 --> 00:07:01,160
+There is read noise. There is out of focus light that might come from your room, it might come from,
+
+69
+00:07:01,160 --> 00:07:05,320
+you know, something else that's in your sample, you might have bleed through between your channels.
+
+70
+00:07:06,040 --> 00:07:15,000
+All of these things might cause intensity errors. The one that as people doing high content screens,
+
+71
+00:07:15,000 --> 00:07:19,480
+you and I think a lot about Erin is flat field correction and the fact that, you know,
+
+72
+00:07:20,440 --> 00:07:28,680
+the light is more likely to travel through the center of a lens when we have a non ideal lens
+
+73
+00:07:29,320 --> 00:07:35,880
+made of glass as opposed to a lens made of physics. Reality gets in the way, unfortunately. Yes.
+
+74
+00:07:37,720 --> 00:07:42,760
+So things that are at the very edge are less likely to follow this beautiful light plane.
+
+75
+00:07:43,400 --> 00:07:49,000
+And therefore, our images are actually dimmer and we get this vignetting effect
+
+76
+00:07:50,520 --> 00:07:57,080
+at the edge rather than, you know, in the middle. And so this is a really common source of intensity
+
+77
+00:07:57,160 --> 00:08:04,600
+that is correctable, but is something that a lot of times you don't necessarily think about the fact
+
+78
+00:08:04,600 --> 00:08:11,720
+that, you know, the physics of lenses will cause a cell that sits in the corner to be dimmer than
+
+79
+00:08:11,720 --> 00:08:18,760
+a cell that sits in the edge. Yeah. And we have one of our original Ask Erin Dearbeth episodes,
+
+80
+00:08:18,760 --> 00:08:22,840
+one of the very first ones, all about this flat field correction. So if you're like, oh,
+
+81
+00:08:22,840 --> 00:08:26,120
+that's interesting. Go watch that one. We'll link it in the show notes.
+
+82
+00:08:29,720 --> 00:08:34,840
+And all of these things are correctable. And generally speaking, we want to correct them
+
+83
+00:08:34,840 --> 00:08:41,160
+in the order that they happen to our sample. So this is a great cartoon made by a great postdoc,
+
+84
+00:08:41,720 --> 00:08:48,200
+a step on McGlear, showing if you when you add the background and you add the illumination and
+
+85
+00:08:48,200 --> 00:08:53,560
+you add the offset, all of these things multiply with each other. And since we know the order that
+
+86
+00:08:53,560 --> 00:09:00,360
+errors happen, we can remove the errors just sort of by reversing that process and saying if errors
+
+87
+00:09:00,360 --> 00:09:10,680
+happen one, two, three, we reverse them, you know, in the order of three, two, one. So that, you know,
+
+88
+00:09:10,680 --> 00:09:15,560
+each we're removing each error before it gets compounded with everything else so that eventually
+
+89
+00:09:15,560 --> 00:09:26,280
+we get back to the sort of most pure raw image. Yeah. But again, how much should you care about that?
+
+90
+00:09:27,400 --> 00:09:37,160
+To some degree, it will depend. But if you're a lot of your biology is happening at the edge
+
+91
+00:09:37,160 --> 00:09:41,240
+of the image, and there's no way to stop that versus if you are taking images of one cell at a
+
+92
+00:09:41,240 --> 00:09:47,400
+time and you can always center that cell, maybe you care a little bit less. But overall, especially
+
+93
+00:09:47,400 --> 00:09:52,040
+if the image errors that we're talking about are things like bleed through or things like
+
+94
+00:09:52,040 --> 00:09:58,040
+your camera offset, you know, if your camera doesn't start at zero, it starts at 200. And
+
+95
+00:09:58,920 --> 00:10:05,400
+dim signal versus bright signal for you is 300 versus 500. You know, that's going to make a huge
+
+96
+00:10:05,400 --> 00:10:10,200
+difference because actually it's a difference between one and 300. So you're you're looking at
+
+97
+00:10:10,200 --> 00:10:14,440
+something that pretends to be a sort of 60% change but is actually a threefold change.
+
+98
+00:10:15,080 --> 00:10:21,960
+That's huge from the purposes of your metrics. And so if you're thinking about intensity or
+
+99
+00:10:21,960 --> 00:10:29,800
+especially co-localization, these sorts of image corrections can really matter
+
+100
+00:10:31,800 --> 00:10:33,880
+for doing these intensity corrections.
+
+101
+00:10:34,680 --> 00:10:44,200
+Yeah. And I was just going to say again that like, I think,
+
+102
+00:10:47,960 --> 00:10:53,400
+how am I trying to say this? There are many, you know, many things that we do,
+
+103
+00:10:54,600 --> 00:10:58,200
+many assays that we run regularly in my lab, like for example, the Cell Painting assay, right,
+
+104
+00:10:58,280 --> 00:11:06,920
+which we talk a ton about on this podcast, based on that, like that assay, we actually do very
+
+105
+00:11:06,920 --> 00:11:10,600
+little correction, right? We're not, we don't correct, like we do fly-field correction, but we
+
+106
+00:11:10,600 --> 00:11:16,920
+don't correct for offsets. We don't, I mean, there's lots of things that we don't do, even though we
+
+107
+00:11:16,920 --> 00:11:23,800
+are expert image analysts, right? We probably could, could certainly add those into our pipelines,
+
+108
+00:11:23,880 --> 00:11:28,280
+but our assay readout doesn't need it. So it's extra computation, it's extra,
+
+109
+00:11:29,160 --> 00:11:33,320
+you know, extra time, extra energy for something that we don't actually need in that assay. We
+
+110
+00:11:33,320 --> 00:11:40,120
+get plenty of signal without it. Whereas some of the other bespoke pipelines that we end up building
+
+111
+00:11:41,160 --> 00:11:47,880
+for other kinds of collaborations, we absolutely are thinking about these. So I think it's sort of,
+
+112
+00:11:48,440 --> 00:11:52,840
+when you see, you see like, oh, here's the things I need to correct and I need to do them in this
+
+113
+00:11:52,840 --> 00:11:57,480
+order, like that's great to know, absolutely great, like super important to have that conceptually,
+
+114
+00:11:58,200 --> 00:12:05,560
+but also in the end, kind of like we repeat this a lot too, like what matters is your,
+
+115
+00:12:05,560 --> 00:12:10,440
+your phenotype that you're reading out. And so if you can get your phenotype nicely read out,
+
+116
+00:12:11,080 --> 00:12:14,280
+I mean, again, that's sort of what this is saying, you know, for the importance of segmentation,
+
+117
+00:12:14,840 --> 00:12:18,360
+in that case, the segmentation is the phenotype you're reading out here, the importance of image
+
+118
+00:12:18,360 --> 00:12:22,360
+correction, you know, in terms of like finding a phenotype, if you don't need to do this,
+
+119
+00:12:23,240 --> 00:12:26,840
+you don't need to bother. But you very well might. And so,
+
+120
+00:12:28,600 --> 00:12:33,480
+and it will be hard for you to know if you need to do this, unless you sort of try doing it once
+
+121
+00:12:33,480 --> 00:12:38,680
+with and without the corrections, and see if it changes. The best way to figure out that you
+
+122
+00:12:38,680 --> 00:12:43,240
+don't need to do the correction is trying the same thing corrected and uncorrected, and then
+
+123
+00:12:43,240 --> 00:12:47,960
+seeing, do you need to do the correction? Does it actually change things? But thinking about
+
+124
+00:12:48,040 --> 00:12:52,600
+what are you trying to measure will, will absolutely sort of help you get there.
+
+125
+00:12:52,600 --> 00:12:59,160
+Absolutely. Yeah, it's funny. I think people seem to be surprised by how often our answer is,
+
+126
+00:12:59,800 --> 00:13:06,840
+like, just be empirical about it, try it, right? Like, sure, we can sit here and talk conceptually
+
+127
+00:13:06,840 --> 00:13:11,560
+about what it should and shouldn't be indefinitely, but, but try it.
+
+128
+00:13:12,280 --> 00:13:17,400
+Yeah. And what I want to sort of finish by saying is these image corrections will also
+
+129
+00:13:17,400 --> 00:13:21,000
+affect segmentation. And I've prepped a sort of quick little demo of that and a quick little
+
+130
+00:13:21,000 --> 00:13:25,960
+demo of the like, but you should just try it and figure out and see how much it changes things.
+
+131
+00:13:27,800 --> 00:13:33,800
+And to Erin's point about profiling, which I love that she brought up, because for that we are
+
+132
+00:13:34,680 --> 00:13:40,840
+measuring sort of the average of cases where it matters a ton and things where it really doesn't
+
+133
+00:13:40,840 --> 00:13:47,160
+matter at all. When we've, when people have looked for profiling at does, in this case,
+
+134
+00:13:47,160 --> 00:13:55,080
+law field correction matter, the answer is kind of, it kind of matters. So this is a, an image
+
+135
+00:13:55,080 --> 00:13:59,800
+based profiling as I, it's not Cell Painting, but it's sort of one of the precursor assays to it.
+
+136
+00:13:59,800 --> 00:14:05,560
+And they showed that they could get 84% accuracy on classification task without doing illumination
+
+137
+00:14:05,560 --> 00:14:12,280
+correction and they could get 90% with. So like, got better, but it didn't, you know, didn't take
+
+138
+00:14:12,280 --> 00:14:19,880
+it from 84 to 100. And it was 84 without it. So it absolutely can make a difference. And again,
+
+139
+00:14:19,880 --> 00:14:24,520
+I'll show you an example of exactly where it makes a difference right here right now. But
+
+140
+00:14:26,440 --> 00:14:30,600
+I wouldn't necessarily have had any way to predict exactly how much it would be here,
+
+141
+00:14:31,240 --> 00:14:33,400
+unless somebody tried it out and did it. Yeah.
+
+142
+00:14:35,560 --> 00:14:42,760
+So I've got here a CellProfilerd pipeline from a data set that if you watch the podcast,
+
+143
+00:14:42,760 --> 00:14:50,280
+you've seen lots of times before this is BBBC 22. It has, it is a Cell Painting assay.
+
+144
+00:14:52,040 --> 00:14:58,680
+And it has some little bit wacky illumination. So here's an illumination correction function.
+
+145
+00:14:59,480 --> 00:15:05,880
+And it's very dark at the edge. And here, these images are scaled such that
+
+146
+00:15:06,600 --> 00:15:13,560
+the intensity is one at the dimmest point, and then multiples of one beyond that. And I'm seeing
+
+147
+00:15:13,560 --> 00:15:20,760
+sort of top numbers about 1.6. So a cell that is here versus solid is here that are actually in
+
+148
+00:15:20,760 --> 00:15:27,720
+sample land, you know, in sample land, these guys are, you know, actually the same intensity
+
+149
+00:15:27,800 --> 00:15:38,200
+are showing as 60% different in measurement land. But so what I've done here is I've
+
+150
+00:15:41,080 --> 00:15:49,400
+done cell segmentation three ways. I've done it on the corrected image here.
+
+151
+00:15:49,800 --> 00:15:57,880
+I've done it. When you've applied, you, you, when you've applied the flat field correction.
+
+152
+00:15:57,880 --> 00:15:59,800
+When I've applied the flat field correction.
+
+153
+00:16:02,840 --> 00:16:07,880
+When I haven't applied the flat field correction, and now I start to lose these cells up here.
+
+154
+00:16:08,520 --> 00:16:14,200
+And I've also added in one where I've changed some of the segmentation settings to intentionally
+
+155
+00:16:14,200 --> 00:16:20,360
+try to make them worse. And so starting just by looking at what we can see in terms of like
+
+156
+00:16:20,360 --> 00:16:25,800
+the number of cells that we're finding, the sort of best settings that I validated across a few
+
+157
+00:16:25,800 --> 00:16:33,240
+different images were I found 100 cells. When I don't do my illumination correction, I get 94
+
+158
+00:16:34,280 --> 00:16:39,880
+cells. So it is different, but it's not, you know, incredibly super different for this particular
+
+159
+00:16:39,960 --> 00:16:47,560
+kind of correction. Whereas with this, I get 179. So I having bad segmentation settings in this case
+
+160
+00:16:47,560 --> 00:16:56,440
+is sort of more perturbed than not doing the corrections. We can actually use CellProfilers
+
+161
+00:16:56,440 --> 00:17:02,920
+workspace viewer to take a look at what this looks like in terms of like where the cell settings are.
+
+162
+00:17:03,800 --> 00:17:13,720
+And so if we look at the just the uncorrected, there's nothing up here at all in this whole top
+
+163
+00:17:13,720 --> 00:17:21,400
+region is getting like very like weird and sparse. Whereas we're doing a much better job up there
+
+164
+00:17:22,600 --> 00:17:27,960
+when we actually have correction and the correction is sort of bringing all of those cells back.
+
+165
+00:17:28,920 --> 00:17:36,760
+When we have bad settings, we then have some sort of like weird tiny objects and things like that.
+
+166
+00:17:36,760 --> 00:17:43,080
+And this wasn't a case where the cell segmentation was doing a particularly great job compared to
+
+167
+00:17:43,080 --> 00:17:48,840
+those a couple of others that I demoed it with. But we can definitely it definitely gets worse
+
+168
+00:17:49,720 --> 00:17:54,520
+in the other settings. And we can see the segmentation parameter choice. In this case,
+
+169
+00:17:54,920 --> 00:18:02,040
+is affected also by our illumination correction. So these things have to be evaluated together.
+
+170
+00:18:03,160 --> 00:18:10,280
+We lose some cells, we lose six out of our hundred cells when our illumination isn't corrected.
+
+171
+00:18:10,840 --> 00:18:14,520
+And it's going to sort of interact with our overall segmentation settings too.
+
+172
+00:18:15,480 --> 00:18:24,760
+And one of the nice things with CellProfiler is we can also look directly at things like the
+
+173
+00:18:24,760 --> 00:18:32,280
+intensity distribution that's measured. And so here I've used CellProfiler as measure object
+
+174
+00:18:32,280 --> 00:18:42,600
+intensity distribution module to say in the corrected image for the the real cells versus
+
+175
+00:18:42,600 --> 00:18:48,600
+the uncorrected image for the cells that are segmented also in the uncorrected image,
+
+176
+00:18:49,320 --> 00:18:54,200
+how much of the intensity is sort of present in the inside versus the outside of the cell.
+
+177
+00:18:56,760 --> 00:19:03,240
+And again, one of the first things that you'll probably notice is just the cell segmentations
+
+178
+00:19:03,880 --> 00:19:07,560
+are different. And that's going to drive some of the differences that we see at a measurement
+
+179
+00:19:07,560 --> 00:19:14,040
+level because here we're seeing a really dark color, which means this is the outside bin of a
+
+180
+00:19:14,040 --> 00:19:19,400
+lot of the cells because these cells have just gotten big being sort of marked as oh these cells
+
+181
+00:19:19,400 --> 00:19:24,600
+have all of their intensity concentrated at the edge. And that's kind of not true. It's just that
+
+182
+00:19:24,600 --> 00:19:30,520
+these cells are sort of like making weird shapes. And so therefore it's messing with our ability to
+
+183
+00:19:30,520 --> 00:19:40,360
+sort of say is the cell intensity at the center or at the edge. But even in cases where we we do have
+
+184
+00:19:42,360 --> 00:19:48,280
+a cell that's in both places again like how accurate we can get those boundaries and how
+
+185
+00:19:48,360 --> 00:19:51,560
+dark it says like those outside things are
+
+186
+00:19:55,240 --> 00:20:04,040
+really can be pretty different. Again, maybe enough to matter, maybe not. But if we look up here,
+
+187
+00:20:04,760 --> 00:20:11,800
+here this cell is present in both places. And it says that the outside bin of the cell has 50%
+
+188
+00:20:11,800 --> 00:20:18,600
+of the intensity here. But it has 70% of the intensity here. Because the outside bin of the
+
+189
+00:20:18,600 --> 00:20:24,120
+cell is not drawn correctly. And because you know the intensity hasn't been corrected. So 50% versus
+
+190
+00:20:24,120 --> 00:20:29,880
+70% you might come to a very different conclusion about like whether the cell has all of its intensity
+
+191
+00:20:29,880 --> 00:20:35,160
+in the center or in the edge. So for an intensity measurement having this correction like makes a
+
+192
+00:20:35,160 --> 00:20:39,480
+huge difference both to our segmentation but also to our ability to just do good measurements
+
+193
+00:20:39,480 --> 00:20:46,600
+even when the segmentation is right. Yeah. That's an awesome example. And then I think
+
+194
+00:20:47,640 --> 00:20:49,800
+to take it one step further if we think about
+
+195
+00:20:53,160 --> 00:20:58,680
+the experiment as a whole. So as we've zoomed in in the corner here and if this was our whole
+
+196
+00:21:00,200 --> 00:21:07,400
+population of cells, we would probably whatever our readout is, with this readout in particular
+
+197
+00:21:07,400 --> 00:21:14,200
+that you're showing be getting really different answers in terms of whatever our biological task
+
+198
+00:21:14,200 --> 00:21:19,800
+was, whether it was counting things at a single cell level or categorizing ourselves or whatever.
+
+199
+00:21:21,640 --> 00:21:28,040
+But maybe if you know so again if this is really happening in just this one
+
+200
+00:21:28,920 --> 00:21:34,200
+region and we have all of the cells in the rest of the image are unaffected,
+
+201
+00:21:34,840 --> 00:21:41,640
+like maybe this will sort of math out in the wash, which is often what we talk about in
+
+202
+00:21:41,640 --> 00:21:47,240
+sort of our profile like as you mentioned like in our profiling assays where we have so many cells,
+
+203
+00:21:48,920 --> 00:21:56,920
+it doesn't matter if a small fraction of them have not super accurate measurements because
+
+204
+00:21:56,920 --> 00:22:02,360
+it will also convene around a nice median and we're looking at the median of a huge population.
+
+205
+00:22:03,320 --> 00:22:09,000
+But here if you're looking at sort of single cell distribution, that may matter a whole lot.
+
+206
+00:22:09,000 --> 00:22:13,480
+So again like thinking your very most downstream task, what are you doing?
+
+207
+00:22:14,600 --> 00:22:20,200
+Yeah and we can look here because CellProfiler reports the per image means. So if we compare the
+
+208
+00:22:20,200 --> 00:22:30,360
+top four rows to the bottom four rows, it goes 0388 versus 0385 pretty close.
+
+209
+00:22:31,080 --> 00:22:44,440
+1,345, 1,335 again pretty close. 0277 versus 0275 pretty close and 5502 versus 5533. So again we
+
+210
+00:22:44,440 --> 00:22:50,200
+haven't really changed anything past like until we get to the third decimal point. We're pretty close
+
+211
+00:22:51,400 --> 00:22:55,880
+but you know if we're looking for really small changes maybe that amount makes a difference,
+
+212
+00:22:55,880 --> 00:22:56,680
+maybe it doesn't.
+
+213
+00:23:01,000 --> 00:23:06,680
+Yeah so that was all I wanted to say about corrections. When do you do them? How do you
+
+214
+00:23:06,680 --> 00:23:11,720
+decide if you want to do them? But I do think Erin's advice of just try doing it and see.
+
+215
+00:23:12,280 --> 00:23:19,320
+Like see if it makes a difference. If you can do, if you don't have to do all of those corrections,
+
+216
+00:23:19,320 --> 00:23:23,560
+they're never bad to do but they will, you might have to measure some of them, you might have to
+
+217
+00:23:23,560 --> 00:23:27,720
+like take die slides and doing that and some of them may be impossible to do depending on your setup.
+
+218
+00:23:28,680 --> 00:23:36,920
+You know if you want to measure changes in sort of intensity over the course of a plate without
+
+219
+00:23:36,920 --> 00:23:40,440
+how you can't do that without being able to sort of take the plate off and put it back and then
+
+220
+00:23:40,440 --> 00:23:48,680
+you're not, that may have been more perturbative than you know just not doing that correction in
+
+221
+00:23:48,680 --> 00:23:56,360
+the first place. But you can see certainly some cases where in subtle change in some ways it will
+
+222
+00:23:56,360 --> 00:24:01,240
+make subtle changes that you can tell whether or not they affect your ability to measure your biology.
+
+223
+00:24:01,960 --> 00:24:08,920
+Again let's do the catchphrase. It depends. But hopefully this gives you some ways to think about
+
+224
+00:24:09,560 --> 00:24:14,760
+corrections when we do them, why we do them, and when they might be important for you.
+
+225
+00:24:15,720 --> 00:24:26,200
+Awesome thanks Bop. Yeah thanks for having me. Bye.
+

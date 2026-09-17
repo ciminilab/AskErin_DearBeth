@@ -1,0 +1,556 @@
+1
+00:00:16,000 --> 00:00:17,000
+Hey Beth!
+
+2
+00:00:17,000 --> 00:00:20,000
+Hello! How's it going?
+
+4
+00:00:20,000 --> 00:00:21,000
+Great! Now that we're here.
+
+7
+00:00:21,000 --> 00:00:23,000
+How are you?
+
+8
+00:00:23,000 --> 00:00:27,000
+Oh, so good. So happy to be here with you.
+
+10
+00:00:27,000 --> 00:00:35,000
+I thought that we would talk today about image analysis as a career.
+
+11
+00:00:35,000 --> 00:00:37,000
+How do you get into it as a career?
+
+12
+00:00:37,000 --> 00:00:41,000
+So this is sort of a question we get from folks.
+
+13
+00:00:41,000 --> 00:00:44,000
+You know, hey, I've done a bunch of, you know, I've done a bunch of
+
+14
+00:00:44,000 --> 00:00:48,000
+image analysis in grad school or in my postdoc or what
+
+15
+00:00:48,000 --> 00:00:53,000
+this is a thing i'm actually really interested in
+
+23
+00:00:53,000 --> 00:00:56,000
+And I think I want to be an image analyst.
+
+24
+00:00:56,000 --> 00:01:00,000
+But I don't know how to make this transition from having
+
+25
+00:01:00,000 --> 00:01:04,000
+done image analysis to being an image analyst.
+
+26
+00:01:04,000 --> 00:01:11,000
+What do I do?
+
+27
+00:01:11,000 --> 00:01:13,000
+Yeah, that's that's so hard because it's a career that a lot of us fall into by accident
+
+28
+00:01:13,000 --> 00:01:15,000
+I'd love to hear what I should have done to do it on purpose.
+
+28
+00:01:15,000 --> 00:01:25,160
+Yeah, exactly. Yeah, so here and some adorable little AI-generated woodland creatures
+
+29
+00:01:25,160 --> 00:01:31,960
+are going to help give us some answers to the question of like, so you want to be an image
+
+30
+00:01:31,960 --> 00:01:45,960
+analyst? What do you do? So informational interviews were the starting point, that idea that I had here,
+
+31
+00:01:45,960 --> 00:01:53,720
+just reach out to current image analysts, people who are doing the thing that you want to do,
+
+32
+00:01:53,720 --> 00:02:03,000
+ask them about what do they actually do on a day-to-day basis. This might help you understand
+
+33
+00:02:03,000 --> 00:02:07,320
+like, yeah, this is actually the path I want to follow or it's like, oh, that's what that looks
+
+34
+00:02:07,320 --> 00:02:14,360
+like. Maybe I don't really want to be an image analyst. Yeah, the amount of data cleaning,
+
+35
+00:02:14,360 --> 00:02:18,920
+then like stuff that comes into it that you don't think is much about with your own data,
+
+36
+00:02:18,920 --> 00:02:23,880
+because you know your own data. Yes, yeah. Yeah, so you may learn things. You're like, oh, actually,
+
+37
+00:02:23,880 --> 00:02:31,640
+the day-to-day practicality of this job is not something that I really think I'm going to enjoy.
+
+38
+00:02:31,640 --> 00:02:37,480
+So maybe I'll explore other things or you may see like, yeah, there's some technical skills there.
+
+39
+00:02:37,480 --> 00:02:44,440
+Like, I've certainly built up category A of technical skills, but now that I hear what this
+
+40
+00:02:44,520 --> 00:02:51,480
+person does, I see like, oh, yes, I'm missing that set of skills. So you have a, you know, a target
+
+41
+00:02:51,480 --> 00:02:56,920
+of what to work on. You know, and again, just hearing what is their career path? How did they
+
+42
+00:02:56,920 --> 00:03:02,200
+get to where they want to be? Can give you some ideas about how do you get there as well? Even if
+
+43
+00:03:02,200 --> 00:03:09,320
+lots of the time it's, well, I kind of stumbled into it. Hearing enough people stumbling may give
+
+44
+00:03:09,400 --> 00:03:15,400
+you some ideas. If enough people stumble in the same direction, a path may start to be formed.
+
+45
+00:03:16,920 --> 00:03:26,840
+Yeah. Likewise, you'd, informational interviews, you can reach out to like hiring managers,
+
+46
+00:03:26,840 --> 00:03:33,320
+recruiters, you know, senior scientists who have image analysts on their team.
+
+47
+00:03:33,800 --> 00:03:41,160
+I would say, first of all, like, do this not connected to a specific job position,
+
+48
+00:03:42,040 --> 00:03:46,120
+especially if you're interested in applying for that specific job. Oftentimes,
+
+49
+00:03:47,960 --> 00:03:53,640
+you know, I can say for people who are, you know, have applied to a job that we are hiring,
+
+50
+00:03:54,280 --> 00:03:59,160
+we are not allowed to tell them anything specific because they have applied to that job. We cannot
+
+51
+00:03:59,160 --> 00:04:03,000
+tell them like, this is the skill you're missing. This is what we were looking for. Like, once you've
+
+52
+00:04:03,080 --> 00:04:11,160
+applied, our tongues are bound. Yeah. And it's so frustrating because we would love to be able
+
+53
+00:04:11,160 --> 00:04:18,120
+to be more candid, but legally we cannot. Yes. Yeah. So, but if somebody reaches out to us
+
+54
+00:04:18,920 --> 00:04:29,480
+outside of a specific job to say, you know, hey, this is where I'm at. Like, what are you looking
+
+55
+00:04:29,480 --> 00:04:34,840
+for? Even, and even less, actually, I sort of take back that very first sentence, don't tell us about
+
+56
+00:04:34,840 --> 00:04:43,720
+yourself. Ask us about what we're looking for because, you know, it's a hard line to balance,
+
+57
+00:04:44,360 --> 00:04:50,600
+but particularly if you go in talking about yourself in an informational interview, it sounds
+
+58
+00:04:50,600 --> 00:04:56,040
+like you're asking for a job. And so immediately, you know, if that's the case, my answer is usually
+
+59
+00:04:56,040 --> 00:05:01,400
+like, actually, we're not hiring right now. Sorry. And that's kind of end of conversation. But if it's
+
+60
+00:05:02,440 --> 00:05:08,840
+showing a really genuine interest in, I'm really excited about what your team does. And I want to
+
+61
+00:05:08,840 --> 00:05:15,240
+know more about how one would get there. Like, what are you looking for? What do people that you have
+
+62
+00:05:15,240 --> 00:05:23,000
+hired? What are they great at? What skills might any person want to develop to get there? That's
+
+63
+00:05:23,080 --> 00:05:27,240
+how you'll have the most success navigating that kind of conversation. Yeah.
+
+64
+00:05:30,920 --> 00:05:38,440
+Then, in terms of like accelerating your own learning, like, hopefully you have figured out
+
+65
+00:05:38,440 --> 00:05:42,760
+where your strengths and not strengths are. And so,
+
+66
+00:05:43,960 --> 00:05:52,040
+growth areas. Growth areas. Yeah. And so once you find a growth area, grow it, right? Bootcamps are
+
+67
+00:05:52,120 --> 00:05:57,080
+a great way to do that. I mean, there's lots of other ways to get skills. But sometimes,
+
+68
+00:05:58,600 --> 00:06:06,040
+if you have a day job, that takes, you know, there's only so much that you can necessarily
+
+69
+00:06:06,040 --> 00:06:11,720
+branch out in within your day to day, right? You have other work that you must do. And if that is
+
+70
+00:06:11,720 --> 00:06:20,760
+not all do image analysis, right? Like, well, how do I build those skills? And so, lots of bootcamps
+
+71
+00:06:20,840 --> 00:06:27,480
+out there. You know, we have one a few times a year. So, you can certainly look at our lab
+
+72
+00:06:27,480 --> 00:06:35,240
+website for more on that. But we are not the only team that does bootcamps. And yeah.
+
+73
+00:06:35,800 --> 00:06:41,880
+I'm seeing more and more. And it's great. And I think just the, however it's structured, just
+
+74
+00:06:41,880 --> 00:06:46,760
+like having a schedule to learn something. Like, it's so easy to be like, oh, gosh, I wish I had
+
+75
+00:06:46,760 --> 00:06:52,200
+time to learn, you know, X. And then you're like, I will. But if you don't schedule it, at least
+
+76
+00:06:52,200 --> 00:06:56,280
+for me, I know it's never gonna, like, I'm never gonna get around to that long list of things I
+
+77
+00:06:56,280 --> 00:07:01,160
+wish I had time to learn. Like, scheduling it, whatever that looks like for you. And again,
+
+78
+00:07:01,160 --> 00:07:06,920
+there's more and more bootcamps I'm seeing out there, which is great. Like, really can be the
+
+79
+00:07:06,920 --> 00:07:12,280
+difference between actually getting over that, that busyness barrier or not. Absolutely.
+
+80
+00:07:12,680 --> 00:07:23,800
+Yeah. The forum, image.sc, this comes up in, again, lots of our podcast episodes, but it's a great
+
+81
+00:07:23,800 --> 00:07:31,000
+place to hang out online for many reasons. You can hear about training opportunities,
+
+82
+00:07:31,000 --> 00:07:37,480
+like bootcamps, and such are announced there. Likewise, like developments in the field,
+
+83
+00:07:37,480 --> 00:07:44,120
+people will announce like, Hey, here's a brand new software, or here's, you know, a new tool,
+
+84
+00:07:44,120 --> 00:07:50,280
+or a new workflow, or hey, here's a conversation that experts in the field are having, and we're
+
+85
+00:07:50,280 --> 00:07:56,520
+wrestling with this right now. So you have the opportunity to see what is going on in the field.
+
+86
+00:07:57,400 --> 00:08:00,440
+How can I learn, you know, what is out there for me to be able to learn more?
+
+87
+00:08:02,280 --> 00:08:07,240
+This is the thing that experts are really wrestling with. So that's a place I want to dive in. So I
+
+88
+00:08:07,240 --> 00:08:12,600
+can be state of the field and have, you know, really state of the field things to say when I do
+
+89
+00:08:12,600 --> 00:08:20,200
+have an interview for an image analysis position. You can ask questions. It's a place where, you
+
+90
+00:08:20,200 --> 00:08:26,040
+know, not only can you ask questions about a specific image analysis task that you're trying
+
+91
+00:08:26,040 --> 00:08:32,440
+to perform. And we have a great podcast episode about how do you ask good questions in terms of
+
+92
+00:08:32,440 --> 00:08:38,760
+getting help about your specific biology. But you can network there to meet other people in the field.
+
+93
+00:08:40,040 --> 00:08:46,040
+And I definitely know I am way like the few times that we've had where somebody applies to a job with
+
+94
+00:08:46,040 --> 00:08:50,280
+us. And I'm like, they include their forum handle, and I can go and look and see that they've been
+
+95
+00:08:50,280 --> 00:08:56,360
+helpful on the forum. Like that that raises them up so much in my like, Oh, look, like, this person
+
+96
+00:08:56,440 --> 00:09:02,840
+already knows how to do what we do. Yeah. Yeah. And even, you know, already knows and cares, like
+
+97
+00:09:02,840 --> 00:09:07,800
+clearly, they want, you know, they want to engage, they want to be an image analyst. It's not just,
+
+98
+00:09:09,080 --> 00:09:15,720
+Oh, this is a job. I need a job. Oh, yeah, they have to be quality posts. It can't just be like a
+
+99
+00:09:15,720 --> 00:09:21,000
+whole bunch of like, bump me to like, but if you see that they're going in and helping people, like,
+
+100
+00:09:21,640 --> 00:09:27,080
+that for me is a huge like, yes, I have so much Tristan, this person's knowledge, but also this
+
+101
+00:09:27,080 --> 00:09:35,960
+person being a good team player. Yeah. Yeah. And yeah. And then finally, professional networks and
+
+102
+00:09:35,960 --> 00:09:45,720
+conferences. So another way of interacting with other bio image analysts, go to conferences that
+
+103
+00:09:45,720 --> 00:09:52,440
+are heavy on bio imaging. Even if you're at a conference that is not necessarily, you know,
+
+104
+00:09:52,440 --> 00:09:58,200
+if you go to ASCB, which is a giant just sort of cell biology conference, go to the talks
+
+105
+00:09:58,760 --> 00:10:03,320
+that are about imaging, meet other people, you know, introduce yourself, say, Hey,
+
+106
+00:10:04,520 --> 00:10:10,040
+awesome talk. I want to learn more about your image analysis pipeline that you showed, you know,
+
+107
+00:10:10,040 --> 00:10:15,560
+can I can I hear more about that? Yeah, poster sessions, like if somebody's got images and
+
+108
+00:10:15,560 --> 00:10:21,000
+then a graph next to it on their poster, how did you get from there to there? Yeah, absolutely.
+
+109
+00:10:22,520 --> 00:10:26,440
+And, you know, and there's a bunch of professional societies as well, all around the world,
+
+110
+00:10:27,560 --> 00:10:36,200
+that are focused around bio image analysis and microscopy. And we have another podcast episode,
+
+111
+00:10:36,200 --> 00:10:40,680
+we'll drop it in the show notes that talking about these conferences and societies. So I'm not
+
+112
+00:10:40,680 --> 00:10:50,280
+going to say it, but I do have a whole list of recommendations there. But that is, you know,
+
+113
+00:10:50,280 --> 00:10:56,440
+another way to, again, hear about what's going on the field, meet other people that are doing the
+
+114
+00:10:56,440 --> 00:11:04,040
+same thing, a great way to meet, to make connections, meet people, learn things and show that you're
+
+115
+00:11:04,040 --> 00:11:13,720
+really interested in this area. Yeah, I think that's the one, the one sort of extra thing that I
+
+116
+00:11:13,720 --> 00:11:17,880
+will say on here, and you kind of alluded to it already is just like, with all of these things,
+
+117
+00:11:17,880 --> 00:11:23,080
+you'll need to understand that like, people are busy, like, generally speaking, this is a super
+
+118
+00:11:23,080 --> 00:11:30,200
+kind and helpful community. And so many people I know, including me, like, have gotten into this
+
+119
+00:11:30,200 --> 00:11:35,960
+community based on like, they talked to somebody, they got a leg up, and like, you know, people are
+
+120
+00:11:35,960 --> 00:11:40,760
+very willing to help you, but somebody might not be able to help you right now. And if you come in
+
+121
+00:11:40,760 --> 00:11:48,040
+with an attitude of like, you need to help me, a, like, you know, you're not going to be predisposed
+
+122
+00:11:48,040 --> 00:11:52,200
+person to it, but also like, this is a career that's really about working well with others,
+
+123
+00:11:52,200 --> 00:11:58,360
+like, demonstrate when you go to ask people for help that you can work well with others and a,
+
+124
+00:11:58,360 --> 00:12:03,000
+they're more like that help you, but be also like, you will demonstrate that you're a great fit for
+
+125
+00:12:03,000 --> 00:12:07,960
+this community. One of the great things about this group is everybody is so helpful, and people
+
+126
+00:12:07,960 --> 00:12:13,240
+will almost certainly want to help you, but make it make it easy for them to do it. And if someone's
+
+127
+00:12:13,240 --> 00:12:18,280
+like, you know, I'm sorry, I'm really busy right now, you know, have a couple other names on your
+
+128
+00:12:18,280 --> 00:12:23,640
+list, you can reach out to, but if you do that, I guarantee like, so many kind people in this community
+
+129
+00:12:23,640 --> 00:12:29,320
+will want to help. Yeah, yeah, absolutely. And I think just triggered another thought of, you know,
+
+130
+00:12:29,320 --> 00:12:35,800
+if you are reaching out to somebody, reach out with bounded specifics, you know, hey,
+
+131
+00:12:36,600 --> 00:12:46,200
+can I have 15 minutes of your time? I'd like to ask you question x, y and z, period. And then
+
+132
+00:12:46,200 --> 00:12:51,320
+stick to that, right? Like, great, here's a Zoom meeting. How, you know, here's my agenda, and
+
+133
+00:12:51,320 --> 00:12:56,920
+here's our 15 minutes. And because, you know, you and I both wish we had hours to give every
+
+134
+00:12:56,920 --> 00:13:02,440
+single person who ever reached out to us. And sometimes there are times when we don't even
+
+135
+00:13:02,440 --> 00:13:07,960
+have those 15 minutes. But there's other times when we absolutely do. But by making a clear,
+
+136
+00:13:07,960 --> 00:13:15,800
+concrete, respectful ask, it's much easier to get somebody to agree to it than the like, you know.
+
+137
+00:13:15,800 --> 00:13:24,280
+Yeah. And I will add one more thing there, which is authentic. In the age of generative AI,
+
+138
+00:13:25,160 --> 00:13:30,760
+nothing makes me less excited to give more of my time than to somebody who clearly like,
+
+139
+00:13:30,760 --> 00:13:37,080
+just asked a chatbot what they should ask me and doesn't seem like they have genuine excitement
+
+140
+00:13:37,080 --> 00:13:40,520
+that is their own. It seems like their excitement is borrowed from a chatbot.
+
+141
+00:13:41,480 --> 00:13:46,760
+Which is not to say you can't use them again. They're very useful, especially if English is not
+
+142
+00:13:46,760 --> 00:13:51,400
+your first language and things like that. But make sure that you're not, that you sound like you.
+
+143
+00:13:51,960 --> 00:13:59,000
+That you don't sound like the current flavor of large language model. Because people who get
+
+144
+00:13:59,000 --> 00:14:03,640
+lots of these requests will notice that yours sounds exactly like everybody else's and will assume
+
+145
+00:14:04,440 --> 00:14:09,000
+that you're not actually as excited as you say you are. Yeah, absolutely. Great point.
+
+146
+00:14:10,760 --> 00:14:14,520
+Well, thank you. This is going to help so many people. I'm so excited that you did this.
+
+147
+00:14:14,520 --> 00:14:20,920
+I hope so. I really hope so. Because, you know, image analysts are great and this is an awesome
+
+148
+00:14:20,920 --> 00:14:28,360
+career and I want to help more people get here. Yeah, absolutely. We need more great colleagues
+
+149
+00:14:28,360 --> 00:14:32,200
+come hang out with us. Yeah. All right. Bye, hon.
+

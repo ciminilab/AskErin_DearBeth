@@ -50,10 +50,13 @@ Want to see Erin and Beth explain or demo your (least) favorite image analysis c
 | Episode 37 - [Working with Collaborators Part 2/3 - Tools](https://youtu.be/DDzU8tAr1cY) | | | | |
 | Episode 38 - [Running a Custom Cellpose Model in CellProfiler](https://youtu.be/Q004hyxCeYE) | | | | [Translocation tutorial](https://tutorials.cellprofiler.org/#translocation), [CellProfiler plugins](https://plugins.cellprofiler.org/overview.html) |
 | Episode 39 - [Working with Collaborators Part 3/3 - Difficult Collaboratorations](https://youtu.be/b974BY9sLUw) | | | | |
-
-<!--
-| Episode 40 - []() | [Pipeline and metadata file available here](https://github.com/ciminilab/AskErin_DearBeth/tree/main/files/Ep40) | [BBBC015](https://bbbc.broadinstitute.org/BBBC015) | [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/) | [ilastik website](https://www.ilastik.org/), [Molab Marimo+Pygwalker data exploration notebook](https://molab.marimo.io/notebooks/nb_kRakaH3d7fhVQt6gzxPfCy/app) - if it doesn't work or shows an error, you'll need to hit "Run it now" and log in with a free account|
--->
+| Episode 40 - [How Sparkly are My Cells? Or How to Quantify Punctate Signal in Cells](https://youtu.be/vf1FOfZbz6c) | [Pipeline and metadata file available here](https://github.com/ciminilab/AskErin_DearBeth/tree/main/files/Ep40) | [BBBC015](https://bbbc.broadinstitute.org/BBBC015) | [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/) | [ilastik website](https://www.ilastik.org/), [Molab Marimo+Pygwalker data exploration notebook](https://molab.marimo.io/notebooks/nb_kRakaH3d7fhVQt6gzxPfCy/app) - if it doesn't work or shows an error, you'll need to hit "Run it now" and log in with a free account |
+| Episode 41 - [Understanding and Using Distance Transforms in CellProfiler](https://youtu.be/cE5QViBVKRY) | [Pipeline and images](https://github.com/ciminilab/AskErin_DearBeth/tree/main/files/Ep41). | DNA image originally from cpg0021-periscope in the [Cell Painting Gallery](https://broadinstitute.github.io/cellpainting-gallery/overview.html). | [CC-0](https://creativecommons.org/public-domain/cc0/) | |
+| Episode 42 - [Image corrections - When Do You Need Them?](https://youtu.be/FHXuFIZUvP8) | | | | |
+| Episode 43 - [So You Want to Be an Image Analyst - Career Advice](https://youtu.be/k5Xt3vPuPp8) | | | | |
+| Episode 44 - [Finding the Right Starting Point 1/2: What Matters In An Existing Workflow?](https://youtu.be/iw8oZxmhJhk) | | | | |
+| Episode 45 - | | | | |
+| Episode 46 - [Finding the Right Starting Point 2/2: Where to find existing image analysis workflows?](https://youtu.be/96uey_Ffj2E) | | | | [PubMed](https://pubmed.ncbi.nlm.nih.gov), [CellProfiler Tutorials](https://tutorials.cellprofiler.org), [Image.sc Forum](https://forum.image.sc), [Published CellProfiler Pipelines](https://cellprofiler.org/published-pipelines), [Napari Gallery](https://napari.org/stable/gallery.html), [BioImage Archive Galleries](https://beta.bioimagearchive.org/bioimage-archive/galleries), [SSDB Similarity Search](https://ssbd.riken.jp/similarity-search/) |
 
 <p hidden>
 Commented out text not shown on the page- stuff in the arrow brackets with the ! is also a hidden comment
