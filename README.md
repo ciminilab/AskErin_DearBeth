@@ -57,12 +57,11 @@ Want to see Erin and Beth explain or demo your (least) favorite image analysis c
 <p hidden>
 Commented out text not shown on the page- stuff in the arrow brackets with the ! is also a hidden comment
 
-
-
-| Episode 43 - [So You Want to Be an Image Analyst - Career Advice](https://youtu.be/k5Xt3vPuPp8) | | | | |
-| Episode 44 - [Finding the Right Starting Point 1/2: What Matters In An Existing Workflow?](https://youtu.be/iw8oZxmhJhk) | | | | |
-| Episode 45 - | | | | |
-| Episode 46 - [Finding the Right Starting Point 2/2: Where to find existing image analysis workflows?](https://youtu.be/96uey_Ffj2E) | | | | [PubMed](https://pubmed.ncbi.nlm.nih.gov), [CellProfiler Tutorials](https://tutorials.cellprofiler.org), [Image.sc Forum](https://forum.image.sc), [Published CellProfiler Pipelines](https://cellprofiler.org/published-pipelines), [Napari Gallery](https://napari.org/stable/gallery.html), [BioImage Archive Galleries](https://beta.bioimagearchive.org/bioimage-archive/galleries), [SSDB Similarity Search](https://ssbd.riken.jp/similarity-search/) |
+| Episode 43 - [Live from I2K/BINA 2026: Potpourri of Questions](https://youtu.be/-DnckuJcT0M) | | | | [Images To Knowledge (I2K) conference](https://www.i2kconference.org), [Bioimaging North America (BINA)](https://www.bioimagingnorthamerica.org), [The Good Place TV Show](https://en.wikipedia.org/wiki/The_Good_Place), [How to Be Perfect: The Correct Answer to Every Moral Question (2022) - by Michael Schur](https://en.wikipedia.org/wiki/How_to_Be_Perfect) |
+| Episode 44 - [Live from I2K/BINA 2026: LLM's, Image Analysis, and Moral Philosophy](https://youtu.be/M3hAPrFmBNs)| | | | [Images To Knowledge (I2K) conference](https://www.i2kconference.org), [Bioimaging North America (BINA)](https://www.bioimagingnorthamerica.org) |
+| Episode 45 - [Finding the Right Starting Point 1/2: What Matters In An Existing Workflow?](https://youtu.be/iw8oZxmhJhk) | | | | |
+| Episode 46 - [So You Want to Be an Image Analyst - Career Advice](https://youtu.be/k5Xt3vPuPp8) | | | | |
+| Episode 47 - [Finding the Right Starting Point 2/2: Where to find existing image analysis workflows?](https://youtu.be/96uey_Ffj2E) | | | | [PubMed](https://pubmed.ncbi.nlm.nih.gov), [CellProfiler Tutorials](https://tutorials.cellprofiler.org), [Image.sc Forum](https://forum.image.sc), [Published CellProfiler Pipelines](https://cellprofiler.org/published-pipelines), [Napari Gallery](https://napari.org/stable/gallery.html), [BioImage Archive Galleries](https://beta.bioimagearchive.org/bioimage-archive/galleries), [SSDB Similarity Search](https://ssbd.riken.jp/similarity-search/) |
 
 TEMPLATE ROW
 | Episode X - TITLE - Coming Soon! <!-- [TITLE](link) --> | [Pipelines available here](LINK) / Coming soon! | [LINK to host](), [folder here](LINK_TO_OUR_FOLDER) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) / SOME OTHER LICENSE | [SOME_OTHER_RESOURCE]() |

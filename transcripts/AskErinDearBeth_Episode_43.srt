@@ -1,556 +1,1600 @@
 1
-00:00:16,000 --> 00:00:17,000
-Hey Beth!
+00:00:16,000 --> 00:00:21,560
+Welcome to Ask Erin Dearbeth live from Bina I2K.
 
 2
-00:00:17,000 --> 00:00:20,000
-Hello! How's it going?
+00:00:21,560 --> 00:00:22,560
+We are back with...
+
+3
+00:00:22,560 --> 00:00:23,560
+Hi, I'm Marky Zlatko.
 
 4
-00:00:20,000 --> 00:00:21,000
-Great! Now that we're here.
+00:00:23,560 --> 00:00:26,560
+I'm a software engineer at the Daily Beast Campus.
+
+5
+00:00:26,560 --> 00:00:29,520
+All right, so you have a choice of two questions.
+
+6
+00:00:29,520 --> 00:00:33,440
+So our favorite floor floor or your, or your favorite programming language?
 
 7
-00:00:21,000 --> 00:00:23,000
-How are you?
+00:00:33,440 --> 00:00:35,960
+You can answer either or both.
 
 8
-00:00:23,000 --> 00:00:27,000
-Oh, so good. So happy to be here with you.
+00:00:35,960 --> 00:00:36,960
+Favorite floor floor.
+
+9
+00:00:36,960 --> 00:00:41,600
+I think my favorite floor floor might be M-sharing.
 
 10
-00:00:27,000 --> 00:00:35,000
-I thought that we would talk today about image analysis as a career.
+00:00:41,600 --> 00:00:46,040
+I think it was kind of one of the first root floor floors I ever used.
 
 11
-00:00:35,000 --> 00:00:37,000
-How do you get into it as a career?
+00:00:46,040 --> 00:00:52,320
+So I have fun numbers, fun memories of music, but I also remember it's very frustrating.
 
 12
-00:00:37,000 --> 00:00:41,000
-So this is sort of a question we get from folks.
+00:00:52,320 --> 00:00:55,560
+I've flown it to many things myself.
 
 13
-00:00:41,000 --> 00:00:44,000
-You know, hey, I've done a bunch of, you know, I've done a bunch of
+00:00:55,560 --> 00:00:57,760
+Yeah, yeah, good choice.
 
 14
-00:00:44,000 --> 00:00:48,000
-image analysis in grad school or in my postdoc or what
+00:00:58,760 --> 00:01:01,760
+Yeah, how's the conference feeling?
 
 15
-00:00:48,000 --> 00:00:53,000
-this is a thing i'm actually really interested in
+00:01:01,760 --> 00:01:02,760
+It's great.
+
+16
+00:01:02,760 --> 00:01:04,760
+Yeah, having fun being here.
+
+17
+00:01:04,760 --> 00:01:06,760
+No, it's, it's great.
+
+18
+00:01:06,760 --> 00:01:11,760
+There's not that many chances for people in the Microsoft community to all meet up with each other.
+
+19
+00:01:11,760 --> 00:01:15,760
+I feel like a lot of the times we're sort of scattered in other institutions.
+
+20
+00:01:15,760 --> 00:01:19,760
+And so it's really nice to have a place like Bina that we can meet and then having it be
+
+21
+00:01:19,760 --> 00:01:25,760
+joint with I2K where image analysts even more so like we're, and I'm curious to your experience
+
+22
+00:01:25,760 --> 00:01:29,760
+with Jonellia, definitely at Broad we're lucky we have a bunch of image analysts together.
 
 23
-00:00:53,000 --> 00:00:56,000
-And I think I want to be an image analyst.
+00:01:29,760 --> 00:01:34,760
+And I feel like Jonellia, that's sort of the case, but I think most other image analysts are doing it by themselves.
 
 24
-00:00:56,000 --> 00:01:00,000
-But I don't know how to make this transition from having
+00:01:34,760 --> 00:01:39,760
+Yeah, I definitely at Jonellia we, we work more as consultants and so often we are kind of scattered
 
 25
-00:01:00,000 --> 00:01:04,000
-done image analysis to being an image analyst.
+00:01:39,760 --> 00:01:40,760
+through the labs.
 
 26
-00:01:04,000 --> 00:01:11,000
-What do I do?
+00:01:40,760 --> 00:01:47,760
+There is some ability for us to share knowledge between each other.
 
 27
-00:01:11,000 --> 00:01:13,000
-Yeah, that's that's so hard because it's a career that a lot of us fall into by accident
+00:01:47,760 --> 00:01:51,760
+And I'm actually trying to restart that at Jonellia.
 
 28
-00:01:13,000 --> 00:01:15,000
-I'd love to hear what I should have done to do it on purpose.
-
-28
-00:01:15,000 --> 00:01:25,160
-Yeah, exactly. Yeah, so here and some adorable little AI-generated woodland creatures
+00:01:51,760 --> 00:01:53,760
+There's this thing called donut.
 
 29
-00:01:25,160 --> 00:01:31,960
-are going to help give us some answers to the question of like, so you want to be an image
+00:01:53,760 --> 00:01:55,760
+I don't know if you've ever heard of that.
 
 30
-00:01:31,960 --> 00:01:45,960
-analyst? What do you do? So informational interviews were the starting point, that idea that I had here,
+00:01:55,760 --> 00:02:01,760
+So basically it's a program that kind of does random pairings to people on a random period.
 
 31
-00:01:45,960 --> 00:01:53,720
-just reach out to current image analysts, people who are doing the thing that you want to do,
+00:02:01,760 --> 00:02:07,760
+We did it before it was like our pair programming initiative where we would pair people off randomly.
 
 32
-00:01:53,720 --> 00:02:03,000
-ask them about what do they actually do on a day-to-day basis. This might help you understand
+00:02:07,760 --> 00:02:10,760
+And we did that mainly there at the end of it.
 
 33
-00:02:03,000 --> 00:02:07,320
-like, yeah, this is actually the path I want to follow or it's like, oh, that's what that looks
+00:02:10,760 --> 00:02:14,760
+So that was a great way for me to be like, meet people would be good at to be in the same space.
 
 34
-00:02:07,320 --> 00:02:14,360
-like. Maybe I don't really want to be an image analyst. Yeah, the amount of data cleaning,
+00:02:14,760 --> 00:02:17,760
+But then eventually you kind of phase out.
 
 35
-00:02:14,360 --> 00:02:18,920
-then like stuff that comes into it that you don't think is much about with your own data,
+00:02:17,760 --> 00:02:28,760
+But I really wanted to bring it back yet because there's a lot of new people at Jonellia we've done a lot of expansion like our AI initiative which was surprisingly needed a lot more
 
 36
-00:02:18,920 --> 00:02:23,880
-because you know your own data. Yes, yeah. Yeah, so you may learn things. You're like, oh, actually,
+00:02:28,760 --> 00:02:30,760
+research software.
 
 37
-00:02:23,880 --> 00:02:31,640
-the day-to-day practicality of this job is not something that I really think I'm going to enjoy.
+00:02:30,760 --> 00:02:38,760
+And so I said bring it back because I wanted to figure out to be new people in the top sense of old turtle to what they've been working on.
 
 38
-00:02:31,640 --> 00:02:37,480
-So maybe I'll explore other things or you may see like, yeah, there's some technical skills there.
+00:02:38,760 --> 00:02:39,760
+It's a really fun idea.
 
 39
-00:02:37,480 --> 00:02:44,440
-Like, I've certainly built up category A of technical skills, but now that I hear what this
+00:02:39,760 --> 00:02:40,760
+Yeah.
 
 40
-00:02:44,520 --> 00:02:51,480
-person does, I see like, oh, yes, I'm missing that set of skills. So you have a, you know, a target
+00:02:40,760 --> 00:02:45,760
+Now community is so important. Have you been enjoying the conference?
 
 41
-00:02:51,480 --> 00:02:56,920
-of what to work on. You know, and again, just hearing what is their career path? How did they
+00:02:45,760 --> 00:02:52,760
+Yeah, I think it's you know, if you say this is the one conference in the wild, I didn't have any responsibilities.
 
 42
-00:02:56,920 --> 00:03:02,200
-get to where they want to be? Can give you some ideas about how do you get there as well? Even if
+00:02:52,760 --> 00:03:04,760
+So I kind of was able to come here and already just like, not thinking about what I was going to do but just focus on the workshops and my day one and that's been really great experience and on the side and I've been able to like fix things.
 
 43
-00:03:02,200 --> 00:03:09,320
-lots of the time it's, well, I kind of stumbled into it. Hearing enough people stumbling may give
+00:03:04,760 --> 00:03:34,760
+I mean, I think it's really important to be able to be in a conference and be able to feel like you're in a good position to be able to feel like you're in a good position to feel like you're in a good position to feel like you're in a good position to feel like you're in a good position to feel like you're in a good position to feel like you're in a good position to feel like you're in a good position to feel like you're in a good position to feel like you're in a good position to feel like you're in a good position to feel like you're in a good position to feel like you're in a good position to feel like you're in a good position to feel like you're in a good position to feel like you're in a good position to feel like you're in a good position to feel like you're in a good position to feel like you're in a good position to feel like you're in a good position to feel like you're in a good position to feel like you're in a good position
 
 44
-00:03:09,400 --> 00:03:15,400
-you some ideas. If enough people stumble in the same direction, a path may start to be formed.
+00:03:34,760 --> 00:03:49,320
+in tight position to feel like you're in a good position to feel like you're in a good position to feel like you're in a good position to feel like you're in a good position to feel like you're in a good position to feel like you're in a good position to feel like you're in a good position to feel like a prime ...
 
 45
-00:03:16,920 --> 00:03:26,840
-Yeah. Likewise, you'd, informational interviews, you can reach out to like hiring managers,
+00:03:49,320 --> 00:03:51,920
+to see the kind of this diversity.
 
 46
-00:03:26,840 --> 00:03:33,320
-recruiters, you know, senior scientists who have image analysts on their team.
+00:03:51,920 --> 00:03:53,700
+So really excited to see that.
 
 47
-00:03:33,800 --> 00:03:41,160
-I would say, first of all, like, do this not connected to a specific job position,
+00:03:55,080 --> 00:03:56,560
+Yeah, as I kind of come every,
 
 48
-00:03:42,040 --> 00:03:46,120
-especially if you're interested in applying for that specific job. Oftentimes,
+00:03:56,560 --> 00:03:58,920
+as I do have a bunch of things I need to talk to,
 
 49
-00:03:47,960 --> 00:03:53,640
-you know, I can say for people who are, you know, have applied to a job that we are hiring,
+00:03:58,920 --> 00:03:59,760
+good people.
 
 50
-00:03:54,280 --> 00:03:59,160
-we are not allowed to tell them anything specific because they have applied to that job. We cannot
+00:04:00,760 --> 00:04:01,720
+You know, at Janelia,
 
 51
-00:03:59,160 --> 00:04:03,000
-tell them like, this is the skill you're missing. This is what we were looking for. Like, once you've
+00:04:01,720 --> 00:04:04,240
+we've been starting to do some more AI stuff.
 
 52
-00:04:03,080 --> 00:04:11,160
-applied, our tongues are bound. Yeah. And it's so frustrating because we would love to be able
+00:04:04,240 --> 00:04:05,720
+I've been working with this product lately
 
 53
-00:04:11,160 --> 00:04:18,120
-to be more candid, but legally we cannot. Yes. Yeah. So, but if somebody reaches out to us
+00:04:05,720 --> 00:04:08,520
+and some of the model hardware standard.
 
 54
-00:04:18,920 --> 00:04:29,480
-outside of a specific job to say, you know, hey, this is where I'm at. Like, what are you looking
+00:04:08,520 --> 00:04:10,160
+That's been a very different experience for us.
 
 55
-00:04:29,480 --> 00:04:34,840
-for? Even, and even less, actually, I sort of take back that very first sentence, don't tell us about
+00:04:10,160 --> 00:04:15,160
+But I'm excited to share that with the imageBouse community.
 
 56
-00:04:34,840 --> 00:04:43,720
-yourself. Ask us about what we're looking for because, you know, it's a hard line to balance,
+00:04:16,000 --> 00:04:17,040
+Awesome, awesome.
 
 57
-00:04:44,360 --> 00:04:50,600
-but particularly if you go in talking about yourself in an informational interview, it sounds
+00:04:17,040 --> 00:04:18,040
+That sounds great.
 
 58
-00:04:50,600 --> 00:04:56,040
-like you're asking for a job. And so immediately, you know, if that's the case, my answer is usually
+00:04:18,040 --> 00:04:19,920
+We'll look forward to hearing more about that.
 
 59
-00:04:56,040 --> 00:05:01,400
-like, actually, we're not hiring right now. Sorry. And that's kind of end of conversation. But if it's
+00:04:19,920 --> 00:04:20,760
+Yeah.
 
 60
-00:05:02,440 --> 00:05:08,840
-showing a really genuine interest in, I'm really excited about what your team does. And I want to
+00:04:20,760 --> 00:04:21,600
+It was quite exciting.
 
 61
-00:05:08,840 --> 00:05:15,240
-know more about how one would get there. Like, what are you looking for? What do people that you have
+00:04:21,600 --> 00:04:24,920
+Yeah, I think it's something for us that we see as like
 
 62
-00:05:15,240 --> 00:05:23,000
-hired? What are they great at? What skills might any person want to develop to get there? That's
+00:04:24,920 --> 00:04:26,600
+something that helps us to run microscopes
 
 63
-00:05:23,080 --> 00:05:27,240
-how you'll have the most success navigating that kind of conversation. Yeah.
+00:04:26,600 --> 00:04:28,520
+and do the research analysis.
 
 64
-00:05:30,920 --> 00:05:38,440
-Then, in terms of like accelerating your own learning, like, hopefully you have figured out
+00:04:28,520 --> 00:04:30,760
+But maybe even do the research analysis as we are
 
 65
-00:05:38,440 --> 00:05:42,760
-where your strengths and not strengths are. And so,
+00:04:30,760 --> 00:04:32,360
+on the microscope.
 
 66
-00:05:43,960 --> 00:05:52,040
-growth areas. Growth areas. Yeah. And so once you find a growth area, grow it, right? Bootcamps are
+00:04:32,360 --> 00:04:33,760
+That's a very exciting thing.
 
 67
-00:05:52,120 --> 00:05:57,080
-a great way to do that. I mean, there's lots of other ways to get skills. But sometimes,
+00:04:33,760 --> 00:04:35,640
+And so we're, I mean,
 
 68
-00:05:58,600 --> 00:06:06,040
-if you have a day job, that takes, you know, there's only so much that you can necessarily
+00:04:35,640 --> 00:04:37,640
+we're trying to see like what other people's have been doing
 
 69
-00:06:06,040 --> 00:06:11,720
-branch out in within your day to day, right? You have other work that you must do. And if that is
+00:04:37,640 --> 00:04:40,720
+with AI and LMS in conjunction with PyCrospy.
 
 70
-00:06:11,720 --> 00:06:20,760
-not all do image analysis, right? Like, well, how do I build those skills? And so, lots of bootcamps
+00:04:40,720 --> 00:04:43,960
+And we're trying to see if we can take that to the next level.
 
 71
-00:06:20,840 --> 00:06:27,480
-out there. You know, we have one a few times a year. So, you can certainly look at our lab
+00:04:43,960 --> 00:04:46,960
+That requires us kind of trying to pull in some of the vendors
 
 72
-00:06:27,480 --> 00:06:35,240
-website for more on that. But we are not the only team that does bootcamps. And yeah.
+00:04:47,000 --> 00:04:48,040
+to kind of cooperate with that,
 
 73
-00:06:35,800 --> 00:06:41,880
-I'm seeing more and more. And it's great. And I think just the, however it's structured, just
+00:04:48,040 --> 00:04:50,000
+but also kind of with a tool lover,
 
 74
-00:06:41,880 --> 00:06:46,760
-like having a schedule to learn something. Like, it's so easy to be like, oh, gosh, I wish I had
+00:04:50,000 --> 00:04:51,520
+trying to figure out how to meet the schools
 
 75
-00:06:46,760 --> 00:06:52,200
-time to learn, you know, X. And then you're like, I will. But if you don't schedule it, at least
+00:04:51,520 --> 00:04:52,960
+and to do this framework.
 
 76
-00:06:52,200 --> 00:06:56,280
-for me, I know it's never gonna, like, I'm never gonna get around to that long list of things I
+00:04:52,960 --> 00:04:53,960
+Yeah, yeah.
 
 77
-00:06:56,280 --> 00:07:01,160
-wish I had time to learn. Like, scheduling it, whatever that looks like for you. And again,
+00:04:53,960 --> 00:04:56,760
+It really needs to have a particular challenge,
 
 78
-00:07:01,160 --> 00:07:06,920
-there's more and more bootcamps I'm seeing out there, which is great. Like, really can be the
+00:04:56,760 --> 00:05:00,920
+I would imagine, to be pulling in such disparate groups
 
 79
-00:07:06,920 --> 00:07:12,280
-difference between actually getting over that, that busyness barrier or not. Absolutely.
+00:05:00,920 --> 00:05:03,120
+from within a community and to try and get them,
 
 80
-00:07:12,680 --> 00:07:23,800
-Yeah. The forum, image.sc, this comes up in, again, lots of our podcast episodes, but it's a great
+00:05:03,120 --> 00:05:05,560
+you know, all aligned on a single project.
 
 81
-00:07:23,800 --> 00:07:31,000
-place to hang out online for many reasons. You can hear about training opportunities,
+00:05:05,560 --> 00:05:06,880
+Exactly.
 
 82
-00:07:31,000 --> 00:07:37,480
-like bootcamps, and such are announced there. Likewise, like developments in the field,
+00:05:06,880 --> 00:05:07,720
+Awesome.
 
 83
-00:07:37,480 --> 00:07:44,120
-people will announce like, Hey, here's a brand new software, or here's, you know, a new tool,
+00:05:07,720 --> 00:05:08,720
+But thank you so much for joining us.
 
 84
-00:07:44,120 --> 00:07:50,280
-or a new workflow, or hey, here's a conversation that experts in the field are having, and we're
+00:05:08,720 --> 00:05:09,560
+Oh yeah, thank you.
 
 85
-00:07:50,280 --> 00:07:56,520
-wrestling with this right now. So you have the opportunity to see what is going on in the field.
+00:05:09,560 --> 00:05:11,080
+I think it's been a lot of fun,
 
 86
-00:07:57,400 --> 00:08:00,440
-How can I learn, you know, what is out there for me to be able to learn more?
+00:05:11,080 --> 00:05:12,120
+very fun conference so far,
 
 87
-00:08:02,280 --> 00:08:07,240
-This is the thing that experts are really wrestling with. So that's a place I want to dive in. So I
+00:05:12,120 --> 00:05:13,480
+especially when I don't have to do anything.
 
 88
-00:08:07,240 --> 00:08:12,600
-can be state of the field and have, you know, really state of the field things to say when I do
+00:05:13,480 --> 00:05:14,320
+Yeah.
 
 89
-00:08:12,600 --> 00:08:20,200
-have an interview for an image analysis position. You can ask questions. It's a place where, you
+00:05:14,320 --> 00:05:15,160
+Thank you.
 
 90
-00:08:20,200 --> 00:08:26,040
-know, not only can you ask questions about a specific image analysis task that you're trying
+00:05:15,160 --> 00:05:16,000
+Thank you for stopping by.
 
 91
-00:08:26,040 --> 00:08:32,440
-to perform. And we have a great podcast episode about how do you ask good questions in terms of
+00:05:16,000 --> 00:05:16,840
+Yeah.
 
 92
-00:08:32,440 --> 00:08:38,760
-getting help about your specific biology. But you can network there to meet other people in the field.
+00:05:17,600 --> 00:05:18,760
+Hi, hello.
 
 93
-00:08:40,040 --> 00:08:46,040
-And I definitely know I am way like the few times that we've had where somebody applies to a job with
+00:05:18,760 --> 00:05:21,200
+We're back here at Vina I2K with...
 
 94
-00:08:46,040 --> 00:08:50,280
-us. And I'm like, they include their forum handle, and I can go and look and see that they've been
+00:05:21,200 --> 00:05:22,840
+Sarah McCartney.
 
 95
-00:08:50,280 --> 00:08:56,360
-helpful on the forum. Like that that raises them up so much in my like, Oh, look, like, this person
+00:05:22,840 --> 00:05:25,400
+Sarah, favorite floor floor
 
 96
-00:08:56,440 --> 00:09:02,840
-already knows how to do what we do. Yeah. Yeah. And even, you know, already knows and cares, like
+00:05:25,400 --> 00:05:27,400
+or favorite thresholding algorithm?
 
 97
-00:09:02,840 --> 00:09:07,800
-clearly, they want, you know, they want to engage, they want to be an image analyst. It's not just,
+00:05:27,400 --> 00:05:29,000
+Or both, if you want to.
 
 98
-00:09:09,080 --> 00:09:15,720
-Oh, this is a job. I need a job. Oh, yeah, they have to be quality posts. It can't just be like a
+00:05:29,000 --> 00:05:31,520
+Oh, favorite floor floor.
 
 99
-00:09:15,720 --> 00:09:21,000
-whole bunch of like, bump me to like, but if you see that they're going in and helping people, like,
+00:05:31,520 --> 00:05:32,360
+You know what?
 
 100
-00:09:21,640 --> 00:09:27,080
-that for me is a huge like, yes, I have so much Tristan, this person's knowledge, but also this
+00:05:32,360 --> 00:05:33,520
+I'm going classic, I'm going fancy.
 
 101
-00:09:27,080 --> 00:09:35,960
-person being a good team player. Yeah. Yeah. And yeah. And then finally, professional networks and
+00:05:33,520 --> 00:05:34,360
+Oh yeah.
 
 102
-00:09:35,960 --> 00:09:45,720
-conferences. So another way of interacting with other bio image analysts, go to conferences that
+00:05:34,360 --> 00:05:35,200
+Yeah.
 
 103
-00:09:45,720 --> 00:09:52,440
-are heavy on bio imaging. Even if you're at a conference that is not necessarily, you know,
+00:05:35,200 --> 00:05:36,040
+Like I...
 
 104
-00:09:52,440 --> 00:09:58,200
-if you go to ASCB, which is a giant just sort of cell biology conference, go to the talks
+00:05:36,040 --> 00:05:36,880
+Tried and true.
 
 105
-00:09:58,760 --> 00:10:03,320
-that are about imaging, meet other people, you know, introduce yourself, say, Hey,
+00:05:36,880 --> 00:05:37,720
+It's tried and true.
 
 106
-00:10:04,520 --> 00:10:10,040
-awesome talk. I want to learn more about your image analysis pipeline that you showed, you know,
+00:05:37,720 --> 00:05:39,400
+I know there's fancier, but...
 
 107
-00:10:10,040 --> 00:10:15,560
-can I can I hear more about that? Yeah, poster sessions, like if somebody's got images and
+00:05:39,400 --> 00:05:40,240
+Yeah.
 
 108
-00:10:15,560 --> 00:10:21,000
-then a graph next to it on their poster, how did you get from there to there? Yeah, absolutely.
+00:05:40,240 --> 00:05:41,680
+It's just...
 
 109
-00:10:22,520 --> 00:10:26,440
-And, you know, and there's a bunch of professional societies as well, all around the world,
+00:05:41,680 --> 00:05:43,240
+Also, I know that those stuff was just so nice.
 
 110
-00:10:27,560 --> 00:10:36,200
-that are focused around bio image analysis and microscopy. And we have another podcast episode,
+00:05:43,240 --> 00:05:44,080
+Yeah, yeah.
 
 111
-00:10:36,200 --> 00:10:40,680
-we'll drop it in the show notes that talking about these conferences and societies. So I'm not
+00:05:44,080 --> 00:05:46,520
+Yeah, it's there, it works, it's pretty.
 
 112
-00:10:40,680 --> 00:10:50,280
-going to say it, but I do have a whole list of recommendations there. But that is, you know,
+00:05:47,400 --> 00:05:48,760
+Good choice, good choice.
 
 113
-00:10:50,280 --> 00:10:56,440
-another way to, again, hear about what's going on the field, meet other people that are doing the
+00:05:50,440 --> 00:05:53,000
+I wanted to ask you a question.
 
 114
-00:10:56,440 --> 00:11:04,040
-same thing, a great way to meet, to make connections, meet people, learn things and show that you're
+00:05:54,600 --> 00:05:55,800
+I had a lot of these conferences
 
 115
-00:11:04,040 --> 00:11:13,720
-really interested in this area. Yeah, I think that's the one, the one sort of extra thing that I
+00:05:55,800 --> 00:05:58,240
+that there's a really huge focus on
 
 116
-00:11:13,720 --> 00:11:17,880
-will say on here, and you kind of alluded to it already is just like, with all of these things,
+00:05:58,240 --> 00:06:01,400
+comfortable monoculture cell ejection,
 
 117
-00:11:17,880 --> 00:11:23,080
-you'll need to understand that like, people are busy, like, generally speaking, this is a super
+00:06:01,400 --> 00:06:03,280
+which obviously is great for cell biology,
 
 118
-00:11:23,080 --> 00:11:30,200
-kind and helpful community. And so many people I know, including me, like, have gotten into this
+00:06:03,280 --> 00:06:06,760
+but in my work I do a lot more pathology and histology.
 
 119
-00:11:30,200 --> 00:11:35,960
-community based on like, they talked to somebody, they got a leg up, and like, you know, people are
+00:06:06,760 --> 00:06:09,560
+So how would you use your favorite software programs
 
 120
-00:11:35,960 --> 00:11:40,760
-very willing to help you, but somebody might not be able to help you right now. And if you come in
+00:06:09,560 --> 00:06:11,640
+to do something like an etymology?
 
 121
-00:11:40,760 --> 00:11:48,040
-with an attitude of like, you need to help me, a, like, you know, you're not going to be predisposed
+00:06:11,640 --> 00:06:12,800
+How would you...
 
 122
-00:11:48,040 --> 00:11:52,200
-person to it, but also like, this is a career that's really about working well with others,
+00:06:12,800 --> 00:06:14,760
+I'm good question.
 
 123
-00:11:52,200 --> 00:11:58,360
-like, demonstrate when you go to ask people for help that you can work well with others and a,
+00:06:14,840 --> 00:06:17,400
+Yeah, that's definitely something that I think
 
 124
-00:11:58,360 --> 00:12:03,000
-they're more like that help you, but be also like, you will demonstrate that you're a great fit for
+00:06:17,400 --> 00:06:19,480
+probably the least about.
 
 125
-00:12:03,000 --> 00:12:07,960
-this community. One of the great things about this group is everybody is so helpful, and people
+00:06:19,480 --> 00:06:23,800
+Like I am mostly on the biggest of the cell culture screams,
 
 126
-00:12:07,960 --> 00:12:13,240
-will almost certainly want to help you, but make it make it easy for them to do it. And if someone's
+00:06:23,800 --> 00:06:25,240
+like my expertise in the lab.
 
 127
-00:12:13,240 --> 00:12:18,280
-like, you know, I'm sorry, I'm really busy right now, you know, have a couple other names on your
+00:06:25,240 --> 00:06:27,400
+So I very rarely, you know,
 
 128
-00:12:18,280 --> 00:12:23,640
-list, you can reach out to, but if you do that, I guarantee like, so many kind people in this community
+00:06:27,400 --> 00:06:29,800
+but I get to admire when other people in the lab are like,
 
 129
-00:12:23,640 --> 00:12:29,320
-will want to help. Yeah, yeah, absolutely. And I think just triggered another thought of, you know,
+00:06:29,800 --> 00:06:33,000
+oh, I take, you know, here's tissue and I'm like, tissue.
 
 130
-00:12:29,320 --> 00:12:35,800
-if you are reaching out to somebody, reach out with bounded specifics, you know, hey,
+00:06:33,000 --> 00:06:35,040
+What is that?
 
 131
-00:12:36,600 --> 00:12:46,200
-can I have 15 minutes of your time? I'd like to ask you question x, y and z, period. And then
+00:06:35,040 --> 00:06:35,960
+Cell?
 
 132
-00:12:46,200 --> 00:12:51,320
-stick to that, right? Like, great, here's a Zoom meeting. How, you know, here's my agenda, and
+00:06:35,960 --> 00:06:36,800
+Puffy?
 
 133
-00:12:51,320 --> 00:12:56,920
-here's our 15 minutes. And because, you know, you and I both wish we had hours to give every
+00:06:36,800 --> 00:06:38,560
+Yeah, they touch each other on purpose.
 
 134
-00:12:56,920 --> 00:13:02,440
-single person who ever reached out to us. And sometimes there are times when we don't even
+00:06:41,280 --> 00:06:44,400
+I mean, CellProfiler has an unmixed colors module
 
 135
-00:13:02,440 --> 00:13:07,960
-have those 15 minutes. But there's other times when we absolutely do. But by making a clear,
+00:06:44,440 --> 00:06:46,600
+that has color deconvolution that's based on imagejays.
 
 136
-00:13:07,960 --> 00:13:15,800
-concrete, respectful ask, it's much easier to get somebody to agree to it than the like, you know.
+00:06:46,600 --> 00:06:50,480
+So if you're doing H&E stuff there, you can,
 
 137
-00:13:15,800 --> 00:13:24,280
-Yeah. And I will add one more thing there, which is authentic. In the age of generative AI,
+00:06:50,480 --> 00:06:53,560
+but CellProfiler is definitely, as of CellProfiler 4,
 
 138
-00:13:25,160 --> 00:13:30,760
-nothing makes me less excited to give more of my time than to somebody who clearly like,
+00:06:54,520 --> 00:06:56,400
+hopefully CellProfiler 5 is coming at some point
 
 139
-00:13:30,760 --> 00:13:37,080
-just asked a chatbot what they should ask me and doesn't seem like they have genuine excitement
+00:06:56,400 --> 00:06:59,320
+and it will fix that, not great for that.
 
 140
-00:13:37,080 --> 00:13:40,520
-that is their own. It seems like their excitement is borrowed from a chatbot.
+00:06:59,320 --> 00:07:01,600
+Generally speaking, we push people to QuPath
 
 141
-00:13:41,480 --> 00:13:46,760
-Which is not to say you can't use them again. They're very useful, especially if English is not
+00:07:01,600 --> 00:07:04,360
+when we're talking about stuff like that,
 
 142
-00:13:46,760 --> 00:13:51,400
-your first language and things like that. But make sure that you're not, that you sound like you.
+00:07:04,360 --> 00:07:06,600
+because it is really a tool that's designed
 
 143
-00:13:51,960 --> 00:13:59,000
-That you don't sound like the current flavor of large language model. Because people who get
+00:07:06,600 --> 00:07:08,600
+for doing tissue stuff.
 
 144
-00:13:59,000 --> 00:14:03,640
-lots of these requests will notice that yours sounds exactly like everybody else's and will assume
+00:07:10,080 --> 00:07:13,200
+And I think one of the things that I feel,
 
 145
-00:14:04,440 --> 00:14:09,000
-that you're not actually as excited as you say you are. Yeah, absolutely. Great point.
+00:07:13,200 --> 00:07:15,000
+and I would be curious enough if you feel the same,
 
 146
-00:14:10,760 --> 00:14:14,520
-Well, thank you. This is going to help so many people. I'm so excited that you did this.
+00:07:15,000 --> 00:07:16,840
+is like when we've had folks who've asked us,
 
 147
-00:14:14,520 --> 00:14:20,920
-I hope so. I really hope so. Because, you know, image analysts are great and this is an awesome
+00:07:16,840 --> 00:07:19,840
+like can we help them do like multi marker stuff
 
 148
-00:14:20,920 --> 00:14:28,360
-career and I want to help more people get here. Yeah, absolutely. We need more great colleagues
+00:07:19,840 --> 00:07:21,200
+now that that's possible?
 
 149
-00:14:28,360 --> 00:14:32,200
-come hang out with us. Yeah. All right. Bye, hon.
+00:07:22,120 --> 00:07:23,600
+I almost don't want to,
+
+150
+00:07:23,600 --> 00:07:24,760
+I want to teach them to use the software,
+
+151
+00:07:24,760 --> 00:07:25,600
+but let them do it,
+
+152
+00:07:25,600 --> 00:07:28,160
+because I feel like the biology is really hard
+
+153
+00:07:28,160 --> 00:07:29,680
+in those experiments to figure out what's right
+
+154
+00:07:29,680 --> 00:07:31,720
+and what's not, is that your experience also?
+
+155
+00:07:31,720 --> 00:07:35,240
+Yeah, I would say two or three years ago,
+
+156
+00:07:36,240 --> 00:07:38,080
+LJI hired a pathologist,
+
+157
+00:07:38,080 --> 00:07:39,240
+and at the time when we were partying,
+
+158
+00:07:39,240 --> 00:07:41,120
+we were like, I don't know, do we need a pathologist?
+
+159
+00:07:41,120 --> 00:07:42,960
+Like we have a lot of biologists here,
+
+160
+00:07:42,960 --> 00:07:44,320
+do we need that?
+
+161
+00:07:44,320 --> 00:07:45,760
+And oh my God, yes we did.
+
+162
+00:07:45,760 --> 00:07:48,960
+We have some, like just the fact that he can,
+
+163
+00:07:48,960 --> 00:07:51,280
+like he just knows things.
+
+164
+00:07:51,280 --> 00:07:52,120
+Yeah.
+
+165
+00:07:53,240 --> 00:07:54,720
+And so the fact that I could just like,
+
+166
+00:07:54,720 --> 00:07:56,080
+show him a slide and he could tell me,
+
+167
+00:07:56,080 --> 00:07:57,320
+like this is what this means,
+
+168
+00:07:57,320 --> 00:07:58,320
+and this is what this means,
+
+169
+00:07:58,320 --> 00:08:00,040
+and to see this tiny little feature here,
+
+170
+00:08:00,040 --> 00:08:04,920
+that's important, is a really big deal.
+
+171
+00:08:04,920 --> 00:08:06,080
+And he prefers actually,
+
+172
+00:08:06,080 --> 00:08:07,320
+but he'll do it for four lessons too,
+
+173
+00:08:07,320 --> 00:08:09,720
+if you're like, we're not,
+
+174
+00:08:09,720 --> 00:08:11,440
+and then he'll like, yeah,
+
+175
+00:08:11,440 --> 00:08:14,400
+it is super important to get actual experts.
+
+176
+00:08:14,400 --> 00:08:17,680
+I'd say like, hopefully annotate our slides,
+
+177
+00:08:17,680 --> 00:08:18,720
+or if you can't afford that,
+
+178
+00:08:18,720 --> 00:08:20,800
+at least annotate a couple,
+
+179
+00:08:20,800 --> 00:08:23,920
+and give you some training data.
+
+180
+00:08:23,920 --> 00:08:24,760
+So, yeah.
+
+181
+00:08:26,320 --> 00:08:27,720
+Yeah, well thanks for joining us.
+
+182
+00:08:27,720 --> 00:08:29,800
+Hello.
+
+183
+00:08:29,800 --> 00:08:33,400
+Welcome back from the BINA I2K meeting here in Madison,
+
+184
+00:08:33,400 --> 00:08:34,760
+and we're here with?
+
+185
+00:08:35,600 --> 00:08:38,520
+Sarah Kruelman and John Bogovic.
+
+186
+00:08:38,520 --> 00:08:40,440
+All right, so,
+
+187
+00:08:40,480 --> 00:08:41,960
+pick any of these three,
+
+188
+00:08:41,960 --> 00:08:43,440
+favorite floor floor,
+
+189
+00:08:43,440 --> 00:08:44,920
+favorite programming language,
+
+190
+00:08:44,920 --> 00:08:46,440
+favorite thresholding algorithm,
+
+191
+00:08:46,440 --> 00:08:47,800
+or you can do some of the...
+
+192
+00:08:47,800 --> 00:08:49,120
+Like...
+
+193
+00:08:49,120 --> 00:08:50,280
+Okay.
+
+194
+00:08:50,280 --> 00:08:51,720
+Oh, this is a tough question.
+
+195
+00:08:53,840 --> 00:08:55,200
+This wasn't me the softball.
+
+196
+00:08:55,200 --> 00:08:56,200
+Yeah, I don't know.
+
+197
+00:08:57,400 --> 00:09:01,200
+I'm gonna go with possibly programming language,
+
+198
+00:09:01,200 --> 00:09:02,920
+but maybe not for the normal reasons.
+
+199
+00:09:02,920 --> 00:09:04,080
+I actually have a lot of love
+
+200
+00:09:04,080 --> 00:09:05,640
+thinking back to when I was a child.
+
+201
+00:09:05,640 --> 00:09:08,160
+Let's go with like, logo and Lego logo.
+
+202
+00:09:08,160 --> 00:09:10,080
+The idea that you could control robotics
+
+203
+00:09:10,120 --> 00:09:11,920
+in programming language.
+
+204
+00:09:11,920 --> 00:09:15,240
+So this is probably circa 97,
+
+205
+00:09:15,240 --> 00:09:16,560
+so 87, 88.
+
+206
+00:09:18,400 --> 00:09:20,120
+And a pretty cool way that you control robotics,
+
+207
+00:09:20,120 --> 00:09:22,640
+and as a kid understand the link between sensors
+
+208
+00:09:22,640 --> 00:09:24,440
+and motor control.
+
+209
+00:09:24,440 --> 00:09:25,280
+I like that.
+
+210
+00:09:25,280 --> 00:09:27,040
+Awesome answer.
+
+211
+00:09:27,040 --> 00:09:27,880
+I can't top that.
+
+212
+00:09:27,880 --> 00:09:30,960
+So, and I think I can't choose programming language,
+
+213
+00:09:30,960 --> 00:09:33,560
+so I will choose my favorite thresholding algorithm.
+
+214
+00:09:33,560 --> 00:09:34,520
+And you know what?
+
+215
+00:09:34,520 --> 00:09:36,840
+I'm gonna say threshold at zero.
+
+216
+00:09:36,840 --> 00:09:39,040
+There is no other choice,
+
+217
+00:09:39,040 --> 00:09:40,400
+which one is threshold.
+
+218
+00:09:40,400 --> 00:09:42,040
+And if zero is not your threshold,
+
+219
+00:09:42,040 --> 00:09:43,720
+it's your image that is wrong.
+
+220
+00:09:46,440 --> 00:09:47,680
+We love hot takes.
+
+221
+00:09:47,680 --> 00:09:49,000
+We love hot takes.
+
+222
+00:09:49,000 --> 00:09:50,520
+Let's not throw any data away.
+
+223
+00:09:50,520 --> 00:09:51,920
+Let's just go in there.
+
+224
+00:09:54,040 --> 00:09:54,880
+Love this.
+
+225
+00:09:54,880 --> 00:09:55,960
+Yes.
+
+226
+00:09:55,960 --> 00:09:58,720
+All right, so what brings you on the podcast?
+
+227
+00:09:58,720 --> 00:10:00,320
+What questions do you have for us?
+
+228
+00:10:00,320 --> 00:10:01,160
+Awesome.
+
+229
+00:10:01,160 --> 00:10:05,600
+I would love to know what you all believe that a pixel is.
+
+230
+00:10:05,600 --> 00:10:06,440
+What is a pixel?
+
+231
+00:10:06,440 --> 00:10:07,800
+There's controversy about this,
+
+232
+00:10:07,920 --> 00:10:10,200
+and I need to know what you all think it's a pixel is.
+
+233
+00:10:10,200 --> 00:10:12,200
+I didn't know that was a hot question.
+
+234
+00:10:12,200 --> 00:10:13,320
+Yeah.
+
+235
+00:10:13,320 --> 00:10:14,680
+What do I not know?
+
+236
+00:10:14,680 --> 00:10:16,560
+All people argue about whether it's a square
+
+237
+00:10:16,560 --> 00:10:17,960
+or not most famously.
+
+238
+00:10:17,960 --> 00:10:18,800
+Okay.
+
+239
+00:10:18,800 --> 00:10:19,640
+I don't know, is it?
+
+240
+00:10:19,640 --> 00:10:23,240
+Well, but I don't need to know if you think it's a square
+
+241
+00:10:23,240 --> 00:10:25,840
+or not, but I want to know what a pixel is for you.
+
+242
+00:10:25,840 --> 00:10:28,760
+I mean, at one level it's, you know,
+
+243
+00:10:28,760 --> 00:10:30,960
+the part of the camera that's being activated,
+
+244
+00:10:30,960 --> 00:10:33,640
+but yeah, I know my friends in Splineland,
+
+245
+00:10:33,640 --> 00:10:36,320
+like Virginia Oman and other people in Splineland.
+
+246
+00:10:36,320 --> 00:10:37,160
+Virginia Oman.
+
+247
+00:10:39,240 --> 00:10:40,800
+Well, we'll be like, there is no,
+
+248
+00:10:40,800 --> 00:10:42,480
+like why is your image made of squares?
+
+249
+00:10:42,480 --> 00:10:44,360
+The real world is not made of squares.
+
+250
+00:10:44,360 --> 00:10:47,600
+So we often don't move beyond the pixel
+
+251
+00:10:47,600 --> 00:10:49,000
+because we like the convenience of the pixel,
+
+252
+00:10:49,000 --> 00:10:50,320
+but I understand we're wrong.
+
+253
+00:10:50,320 --> 00:10:51,440
+Okay, I see.
+
+254
+00:10:52,680 --> 00:10:54,440
+Like it's a lie that we tell ourselves
+
+255
+00:10:54,440 --> 00:10:55,680
+that is a useful lie perhaps.
+
+256
+00:10:55,680 --> 00:10:59,000
+Yeah, I mean, like every model is helpful,
+
+257
+00:10:59,000 --> 00:11:00,520
+but also wrong, right?
+
+258
+00:11:00,520 --> 00:11:05,520
+Like a pixel is just a model, you know, a way of modeling.
+
+259
+00:11:06,280 --> 00:11:07,480
+Whatever we're capturing.
+
+260
+00:11:07,480 --> 00:11:08,680
+I actually think very much like that.
+
+261
+00:11:08,680 --> 00:11:09,680
+A pixel is a model.
+
+262
+00:11:09,680 --> 00:11:10,880
+Yeah, yeah.
+
+263
+00:11:10,880 --> 00:11:11,760
+All models are wrong.
+
+264
+00:11:11,760 --> 00:11:12,680
+Some models are useful.
+
+265
+00:11:12,680 --> 00:11:13,600
+Yeah, cool.
+
+266
+00:11:13,600 --> 00:11:16,160
+I assume this extends to boxes as well.
+
+267
+00:11:16,160 --> 00:11:17,600
+Yes.
+
+268
+00:11:17,600 --> 00:11:18,440
+But more Ds.
+
+269
+00:11:18,440 --> 00:11:19,280
+I'm sorry.
+
+270
+00:11:20,800 --> 00:11:21,640
+More Ds.
+
+271
+00:11:23,560 --> 00:11:27,200
+I'm curious if there's any aspects of image analysis
+
+272
+00:11:27,200 --> 00:11:30,280
+that have affected parts of your,
+
+273
+00:11:30,280 --> 00:11:32,360
+other parts of your life outside of the lab
+
+274
+00:11:32,360 --> 00:11:33,480
+and outside of science.
+
+275
+00:11:33,480 --> 00:11:36,560
+Like things that came from working with scientific data
+
+276
+00:11:36,560 --> 00:11:37,760
+to your everyday life.
+
+277
+00:11:41,200 --> 00:11:43,200
+I mean, besides the fact that
+
+278
+00:11:43,200 --> 00:11:45,400
+that's how Erin and I now get to hang out
+
+279
+00:11:45,400 --> 00:11:46,240
+and work together.
+
+280
+00:11:49,840 --> 00:11:53,920
+It really, I think gave working in the image analysis
+
+281
+00:11:53,920 --> 00:11:55,320
+community, which is such a friendly community,
+
+282
+00:11:55,320 --> 00:11:57,240
+is a community that's really about helping other people.
+
+283
+00:11:57,240 --> 00:11:59,920
+Like I came out of a field, a scientific field
+
+284
+00:11:59,920 --> 00:12:01,720
+that was relatively like scoopy
+
+285
+00:12:01,720 --> 00:12:04,760
+and everybody hides their data and stuff in grad school.
+
+286
+00:12:04,760 --> 00:12:06,640
+And like seeing that there was a different way
+
+287
+00:12:06,640 --> 00:12:10,320
+and a better way, I feel so much happier as a scientist
+
+288
+00:12:10,320 --> 00:12:12,040
+working in image analysis than I did
+
+289
+00:12:12,040 --> 00:12:14,120
+in like a regular scientific field.
+
+290
+00:12:15,800 --> 00:12:20,080
+I think the thing that feels biggest to me at the moment
+
+291
+00:12:20,080 --> 00:12:24,400
+is like, I am the mom to a currently 10 year old daughter.
+
+292
+00:12:24,400 --> 00:12:29,400
+And just being able to see her,
+
+293
+00:12:30,400 --> 00:12:33,160
+I mean, like all kids are born scientists, right?
+
+294
+00:12:33,160 --> 00:12:34,600
+Like, I mean, that's serious.
+
+295
+00:12:34,600 --> 00:12:38,000
+That is, you know, curious and touching things to,
+
+296
+00:12:38,000 --> 00:12:41,600
+you know, like experiencing things to understand them.
+
+297
+00:12:41,600 --> 00:12:43,920
+And I think kids lose the most,
+
+298
+00:12:43,920 --> 00:12:47,800
+most kids eventually lose that being a scientist.
+
+299
+00:12:48,720 --> 00:12:53,520
+And so it's a really, really fun experiencing
+
+300
+00:12:53,520 --> 00:12:56,200
+having my daughter's amazing, right?
+
+301
+00:12:56,200 --> 00:12:58,800
+Like at Landy, she just is.
+
+302
+00:12:58,800 --> 00:13:01,400
+But like also getting to like experience like her
+
+303
+00:13:01,400 --> 00:13:06,400
+being a scientist, being excited to have me as a scientist.
+
+304
+00:13:06,520 --> 00:13:09,160
+And I think all of the things that come with that.
+
+305
+00:13:09,160 --> 00:13:12,280
+So even into the questions of like, you know,
+
+306
+00:13:12,280 --> 00:13:17,200
+we talk about like, what does it mean to be a woman?
+
+307
+00:13:17,200 --> 00:13:18,920
+Like what can you do?
+
+308
+00:13:18,920 --> 00:13:21,320
+Like, well, it's like not even a question.
+
+309
+00:13:21,320 --> 00:13:23,120
+Obviously you can be a scientist, right?
+
+310
+00:13:23,120 --> 00:13:27,280
+Like obviously because mom is, like this is not even a,
+
+311
+00:13:27,280 --> 00:13:29,600
+like why would anybody, you know,
+
+312
+00:13:29,600 --> 00:13:32,640
+why would you would think that was a gender bound thing?
+
+313
+00:13:32,640 --> 00:13:33,720
+Like duh.
+
+314
+00:13:34,880 --> 00:13:38,080
+And then just like every subsequent thing that follows that,
+
+315
+00:13:38,080 --> 00:13:41,520
+it's like, okay, you know, you can be strong.
+
+316
+00:13:41,520 --> 00:13:42,960
+You can be loud.
+
+317
+00:13:42,960 --> 00:13:45,240
+You can be, I mean, you can be whatever.
+
+318
+00:13:45,240 --> 00:13:47,760
+And it's just like the single starting point
+
+319
+00:13:47,760 --> 00:13:50,440
+that gets to be the starting point
+
+320
+00:13:50,440 --> 00:13:52,800
+of so many bigger conversations.
+
+321
+00:13:55,520 --> 00:13:56,360
+How has image and office?
+
+322
+00:13:56,760 --> 00:13:57,600
+Yeah.
+
+323
+00:13:57,600 --> 00:13:59,440
+I'm very lucky to have you here.
+
+324
+00:13:59,440 --> 00:14:00,280
+Me too.
+
+325
+00:14:03,280 --> 00:14:05,280
+How does image and office affect your life?
+
+326
+00:14:07,640 --> 00:14:09,560
+I mean, other than setting me on this roller coaster
+
+327
+00:14:09,560 --> 00:14:12,480
+of the last 15 years of career
+
+328
+00:14:14,120 --> 00:14:17,080
+into places I had no idea it could go,
+
+329
+00:14:17,080 --> 00:14:20,320
+like working with various labs and awesome people.
+
+330
+00:14:23,000 --> 00:14:24,560
+I don't know, every now and then I will do something
+
+331
+00:14:24,600 --> 00:14:28,280
+with data, like calculating how many laps
+
+332
+00:14:28,280 --> 00:14:30,120
+around a traffic circle.
+
+333
+00:14:30,120 --> 00:14:31,960
+You know, that wasn't quite an analysis,
+
+334
+00:14:31,960 --> 00:14:33,760
+but it was still was data analysis.
+
+335
+00:14:33,760 --> 00:14:36,080
+And I was looking at the orientations of the GPS track.
+
+336
+00:14:36,080 --> 00:14:38,360
+You know, every time I went from like this to this
+
+337
+00:14:38,360 --> 00:14:40,600
+and adding a count there and then coming up with speeds
+
+338
+00:14:40,600 --> 00:14:42,760
+and things like that, you know,
+
+339
+00:14:42,760 --> 00:14:46,240
+it sort of changes the way that we look at data.
+
+340
+00:14:46,240 --> 00:14:49,080
+And I probably, you know, countless personal scripts
+
+341
+00:14:49,080 --> 00:14:52,240
+for looking at weird parts of data.
+
+342
+00:14:52,240 --> 00:14:54,800
+I don't know, everything from a credit card statement
+
+343
+00:14:54,800 --> 00:14:58,480
+to frequent flyer muscles to trying to, you know,
+
+344
+00:14:58,480 --> 00:15:02,800
+figure out the longness route I could get
+
+345
+00:15:02,800 --> 00:15:04,520
+between two points on an airplane,
+
+346
+00:15:04,520 --> 00:15:06,240
+but that amount of money, you know,
+
+347
+00:15:06,240 --> 00:15:07,840
+it's all still sort of the same.
+
+348
+00:15:07,840 --> 00:15:08,680
+Yeah.
+
+349
+00:15:10,960 --> 00:15:14,440
+For me, I guess, this will be shaped by the fact
+
+350
+00:15:14,440 --> 00:15:16,960
+that I had a very cool experience just now,
+
+351
+00:15:16,960 --> 00:15:19,120
+having people use tools that I wrote.
+
+352
+00:15:19,120 --> 00:15:22,920
+And initially, my experience doing image analysis
+
+353
+00:15:22,920 --> 00:15:26,560
+as a job is weird in the sense that I have to solve
+
+354
+00:15:26,560 --> 00:15:28,400
+tough problems and when you're dealing
+
+355
+00:15:28,400 --> 00:15:30,560
+with something challenging, like there was constant
+
+356
+00:15:30,560 --> 00:15:32,640
+frustration and run into a challenge
+
+357
+00:15:32,640 --> 00:15:35,440
+and just bang your head against the wall repeatedly
+
+358
+00:15:35,440 --> 00:15:38,680
+until like sometimes you break through the wall
+
+359
+00:15:38,680 --> 00:15:39,800
+and sometimes not.
+
+360
+00:15:41,200 --> 00:15:43,840
+And many of these challenges are being solved by me,
+
+361
+00:15:43,840 --> 00:15:46,560
+I guess, for either a problem I'm facing myself
+
+362
+00:15:46,560 --> 00:15:49,200
+or my like direct collaborators are facing,
+
+363
+00:15:49,200 --> 00:15:52,080
+but it is super rewarding when you share
+
+364
+00:15:52,080 --> 00:15:54,600
+the results of your work that the challenges
+
+365
+00:15:54,600 --> 00:15:57,440
+that you overcame can be helpful to somebody else.
+
+366
+00:15:57,440 --> 00:15:59,240
+And that's just, it's super rewarding
+
+367
+00:15:59,240 --> 00:16:02,160
+when someone sees your name or like recognize your face
+
+368
+00:16:02,160 --> 00:16:04,200
+from like a YouTube tutorial you did,
+
+369
+00:16:04,200 --> 00:16:06,040
+well, maybe perhaps and say like,
+
+370
+00:16:06,040 --> 00:16:09,640
+oh, I learned a tool because of your YouTube thing.
+
+371
+00:16:09,640 --> 00:16:10,520
+Thank you so much.
+
+372
+00:16:10,520 --> 00:16:12,360
+Now it saved my life because I had this problem
+
+373
+00:16:12,360 --> 00:16:13,280
+and I didn't know how to solve it,
+
+374
+00:16:13,280 --> 00:16:15,960
+but then I found my, like whatever a collaborator said,
+
+375
+00:16:17,040 --> 00:16:19,000
+use such and such tool and it helped me
+
+376
+00:16:19,000 --> 00:16:20,640
+and that's really, really rewarding.
+
+377
+00:16:20,640 --> 00:16:21,480
+It feels so good.
+
+378
+00:16:21,480 --> 00:16:22,320
+Yeah.
+
+379
+00:16:25,120 --> 00:16:26,600
+Yeah, I would say the three of you have had a lot
+
+380
+00:16:26,600 --> 00:16:28,600
+of impact on a lot of people.
+
+381
+00:16:28,600 --> 00:16:30,200
+You as well.
+
+382
+00:16:30,200 --> 00:16:32,440
+Only if you wanna like and act out.
+
+383
+00:16:32,440 --> 00:16:35,160
+But I thought I was doing something.
+
+384
+00:16:35,160 --> 00:16:36,240
+From what I've seen on the internet,
+
+385
+00:16:36,240 --> 00:16:37,640
+lots of people are really like,
+
+386
+00:16:37,640 --> 00:16:39,040
+like the flags and act out.
+
+387
+00:16:39,040 --> 00:16:41,680
+Which is about what happens when your work turns into a meme
+
+388
+00:16:41,680 --> 00:16:43,200
+and then it turns into a meme.
+
+389
+00:16:44,200 --> 00:16:46,960
+I know like I did so many friends from all parts of my life
+
+390
+00:16:46,960 --> 00:16:48,080
+are sending me videos of like,
+
+391
+00:16:48,080 --> 00:16:50,320
+it was a giant concert with flies on stage
+
+392
+00:16:50,320 --> 00:16:51,520
+and then, oh my God.
+
+393
+00:16:51,520 --> 00:16:53,320
+They're making flies like you.
+
+394
+00:16:53,320 --> 00:16:54,600
+You did this to us.
+
+395
+00:16:54,600 --> 00:16:55,440
+Yeah.
+
+396
+00:16:56,840 --> 00:16:57,680
+Yes.
+
+397
+00:16:59,000 --> 00:17:00,880
+Well, thank you guys so much for stopping by.
+
+398
+00:17:00,880 --> 00:17:02,520
+Stopping by and joining us on the podcast.
+
+399
+00:17:02,520 --> 00:17:03,880
+Thank you for doing this.
+
+400
+00:17:03,880 --> 00:17:04,720
+Thank you.
 

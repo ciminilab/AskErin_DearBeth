@@ -1,0 +1,516 @@
+1
+00:00:16,000 --> 00:00:17,880
+I'm excited to talk about today's topic.
+
+2
+00:00:17,880 --> 00:00:19,880
+What do we get to talk about?
+
+3
+00:00:19,880 --> 00:00:28,000
+We're going to talk about how do you find the right workflow for you.
+
+4
+00:00:28,000 --> 00:00:30,320
+I think that's a thing that's really hard for you.
+
+5
+00:00:30,320 --> 00:00:33,320
+You're like, okay, I'm going to do image analysis.
+
+6
+00:00:33,320 --> 00:00:35,440
+Where do I start?
+
+7
+00:00:35,440 --> 00:00:39,680
+I guess I'll just take a software and just mash on it until something comes out.
+
+8
+00:00:39,680 --> 00:00:44,560
+That's a thing you can totally do, but that often ends up feeling really stressful.
+
+9
+00:00:44,560 --> 00:00:45,560
+Yeah.
+
+10
+00:00:45,560 --> 00:00:48,920
+You mean you don't always have to start everything from scratch?
+
+11
+00:00:48,920 --> 00:00:49,920
+No.
+
+12
+00:00:49,920 --> 00:00:51,720
+In fact, you do not.
+
+13
+00:00:51,720 --> 00:00:55,960
+There's a lot of dimensions to the right workflow.
+
+14
+00:00:55,960 --> 00:01:00,040
+You can think about is this in the tool that you want to use?
+
+15
+00:01:00,040 --> 00:01:02,040
+First of all, of course, is it giving you accurate results?
+
+16
+00:01:02,040 --> 00:01:07,360
+If it's not giving you accurate results, then you know.
+
+17
+00:01:07,360 --> 00:01:10,640
+It is perfectly okay to see something that somebody else has published and decide that's
+
+18
+00:01:10,640 --> 00:01:13,800
+not what I want to do.
+
+19
+00:01:13,800 --> 00:01:19,200
+What I would rather do is adopt something else that wasn't really published for my system.
+
+20
+00:01:19,200 --> 00:01:24,880
+I wanted to just talk about some of the resources that are out there in terms of being able
+
+21
+00:01:24,880 --> 00:01:31,760
+to actually find the right workflow for you.
+
+22
+00:01:31,760 --> 00:01:35,600
+Knowing how to find workflows, then if you know how to find several of them, you can
+
+23
+00:01:35,600 --> 00:01:39,640
+figure out, well, this one is in the best tool for me because it matches the programming
+
+24
+00:01:39,640 --> 00:01:43,440
+language I'm already using or things like that, or because I already know somebody who's
+
+25
+00:01:43,440 --> 00:01:51,200
+good at that and I can go down the hall and ask them.
+
+26
+00:01:51,200 --> 00:01:54,880
+If you can find multiple potential places to start, then you can find the best place
+
+27
+00:01:54,880 --> 00:01:59,400
+to start.
+
+28
+00:01:59,400 --> 00:02:06,440
+The first one, and it seems kind of obvious, but just, you know, is PubMed.
+
+29
+00:02:06,440 --> 00:02:11,640
+It is completely reasonable and we talk to people all the time to just say, what do people
+
+30
+00:02:11,640 --> 00:02:13,720
+in my field do already?
+
+31
+00:02:13,720 --> 00:02:19,920
+Generally speaking, there are no cookies for reinventing the wheel.
+
+32
+00:02:19,920 --> 00:02:26,040
+If there's already a great thing in your field for, you know, say you study, I feel
+
+33
+00:02:26,040 --> 00:02:29,800
+like this is always my example, but it's just a protein that I like and there's a lot of
+
+34
+00:02:29,800 --> 00:02:33,800
+study like H2IX.
+
+35
+00:02:33,800 --> 00:02:40,080
+I can look at recent papers in my field that if I search H2IX and then maybe add microscopy
+
+36
+00:02:40,080 --> 00:02:44,480
+if there's a ton of results, which here there are a ton of results.
+
+37
+00:02:44,480 --> 00:02:49,760
+Currently, the people, especially recently are being asked to share their image analysis
+
+38
+00:02:49,760 --> 00:02:57,040
+workflows and are not just saying images were analyzed in an image check.
+
+39
+00:02:57,040 --> 00:03:02,920
+But if you have colleagues who are publishing in your system, talk to them, see what they
+
+40
+00:03:02,920 --> 00:03:04,680
+do.
+
+41
+00:03:04,680 --> 00:03:06,840
+You don't have to do exactly what the colleagues in your field do.
+
+42
+00:03:06,840 --> 00:03:10,280
+You might be able to figure out something better than what's currently the state of
+
+43
+00:03:10,280 --> 00:03:13,120
+the art or the state of the field.
+
+44
+00:03:13,120 --> 00:03:18,320
+But absolutely start by just seeing, you know, okay, this person says that they have a cell
+
+45
+00:03:18,320 --> 00:03:23,640
+profiler pipeline that I can use or they've made actually a whole Nepari plug-in that's
+
+46
+00:03:23,640 --> 00:03:28,400
+exactly for, you know, counting yeast cells, things like that.
+
+47
+00:03:28,400 --> 00:03:30,000
+Absolutely great.
+
+48
+00:03:30,000 --> 00:03:33,720
+If that works for you and it seems to produce great results, you know, since you're going
+
+49
+00:03:33,720 --> 00:03:38,680
+to be reading these papers anyway, nothing wrong with going to the methods section first
+
+50
+00:03:38,680 --> 00:03:42,400
+and seeing hopefully that there is a good method section that gets you exactly what
+
+51
+00:03:42,400 --> 00:03:48,240
+you need.
+
+52
+00:03:48,240 --> 00:03:52,600
+If that doesn't work out for you for one reason or another, either it doesn't work or you
+
+53
+00:03:52,600 --> 00:03:56,800
+do just want to sort of cast a wider net.
+
+54
+00:03:56,800 --> 00:04:01,880
+One thing I think is important to note and we've noted it in previous episodes, so this
+
+55
+00:04:01,880 --> 00:04:06,840
+is actually our blog post from our example forum post from our episode on how to make
+
+56
+00:04:06,840 --> 00:04:11,720
+great forum post.
+
+57
+00:04:11,720 --> 00:04:16,240
+Certainly one thing you can do is sort of look for people who study your biology do.
+
+58
+00:04:16,240 --> 00:04:20,480
+But the second that you're not doing that anymore, you can expand to far beyond your
+
+59
+00:04:20,480 --> 00:04:23,920
+biology and it won't change your image analysis much.
+
+60
+00:04:23,920 --> 00:04:30,720
+So again, we talked about this in the forum episode that saying to people, I study H2AX
+
+61
+00:04:30,720 --> 00:04:32,840
+and it's normal in DNA damage.
+
+62
+00:04:32,840 --> 00:04:37,480
+Because anyone who has a workflow for studying H2AX will hopefully maybe get you what you
+
+63
+00:04:37,480 --> 00:04:42,680
+want but that it's actually, you know, from an image analysis standpoint just as good
+
+64
+00:04:42,680 --> 00:04:49,640
+if not better to say, hi, I have nuclei and small dots that sit inside the nucleus, can
+
+65
+00:04:49,640 --> 00:04:52,000
+anybody help me with that?
+
+66
+00:04:52,000 --> 00:04:56,840
+Because the number of people who study things that make dots is bigger than the number of
+
+67
+00:04:56,840 --> 00:05:04,880
+people who study H2AX specifically and their workflows might totally work for you.
+
+68
+00:05:04,880 --> 00:05:11,120
+So not getting too constrained by your biology, you know, is a really important thing for
+
+69
+00:05:11,120 --> 00:05:15,440
+when you want to find somebody else's workflow to adopt to be your own.
+
+70
+00:05:15,440 --> 00:05:17,080
+Some ideas for resources.
+
+71
+00:05:17,080 --> 00:05:23,400
+Obviously, the thing we know best is CellProfiler and CellProfiler has examples pages
+
+72
+00:05:23,400 --> 00:05:30,080
+and tutorial pages that all start with, here's a picture of the thing that's segmented.
+
+73
+00:05:30,080 --> 00:05:36,800
+And so if you are a bacterial colony researcher, this yeast colony thing, again, it's a different
+
+74
+00:05:36,800 --> 00:05:42,200
+species but if the dots are about the right size and about the right pattern and your
+
+75
+00:05:42,200 --> 00:05:47,680
+stuff is bright field microscopy, this will probably work for you.
+
+76
+00:05:47,680 --> 00:05:51,480
+It might need some tuning but it will work better for you than, you know, something that
+
+77
+00:05:51,480 --> 00:06:00,760
+was bacterial specific but meant for fluorescence, you know, not in a dish.
+
+78
+00:06:00,760 --> 00:06:08,440
+And the things go from like, here's a mouse lung to here are yeast plates to tissue to
+
+79
+00:06:08,440 --> 00:06:14,240
+wound healing and bright field to C. elegans, tons of different starting places.
+
+80
+00:06:14,240 --> 00:06:18,880
+And hopefully one of them looks kind of like where you need to start from.
+
+81
+00:06:18,880 --> 00:06:22,840
+It might not be the exact same biology but you can sort of ignore the biology and just
+
+82
+00:06:22,840 --> 00:06:28,120
+look at the image and think about the properties we talked about.
+
+83
+00:06:28,120 --> 00:06:33,320
+And the same thing for our tutorials page, you can sort of scroll through and see are
+
+84
+00:06:33,320 --> 00:06:38,680
+any of these, you know, kind of similar to things you need to identify.
+
+85
+00:06:38,680 --> 00:06:45,120
+Yeah, and so the difference between, as we say, the difference between our examples
+
+86
+00:06:45,120 --> 00:06:46,600
+and our tutorials.
+
+87
+00:06:47,040 --> 00:06:51,800
+The examples, so the tutorials are much, have a lot of extra content in there.
+
+88
+00:06:51,800 --> 00:06:53,960
+You can see, you know, download the materials.
+
+89
+00:06:53,960 --> 00:06:59,440
+So like here we have lots of extra information actually stepping you through every single
+
+90
+00:06:59,440 --> 00:07:02,920
+module so you understand what does every single module do?
+
+91
+00:07:02,920 --> 00:07:04,400
+Why is it in the pipeline?
+
+92
+00:07:04,400 --> 00:07:10,880
+You know, really fully understand all the moving pieces end to end.
+
+93
+00:07:10,880 --> 00:07:13,640
+Whereas examples are much more, here's a pipeline.
+
+94
+00:07:13,640 --> 00:07:14,640
+It does the thing.
+
+95
+00:07:15,640 --> 00:07:17,640
+Yeah, great point.
+
+96
+00:07:19,640 --> 00:07:24,040
+And maybe if you're lucky for a CellProfiler, like you will find somebody who has published
+
+97
+00:07:24,040 --> 00:07:27,240
+a pipeline that is sort of similar to something that you've done.
+
+98
+00:07:27,240 --> 00:07:31,480
+And we, you are always welcome if you publish a CellProfiler pipeline in a paper to contact
+
+99
+00:07:31,480 --> 00:07:35,080
+us and we will put it on our website and people can find your work well.
+
+100
+00:07:35,080 --> 00:07:39,320
+Yeah, this is certainly not comprehensive in terms of what is out there.
+
+101
+00:07:39,320 --> 00:07:40,960
+So help us make it better.
+
+102
+00:07:40,960 --> 00:07:41,960
+Let us know.
+
+103
+00:07:41,960 --> 00:07:43,960
+You have something you want to join.
+
+104
+00:07:44,760 --> 00:07:46,760
+But not only CellProfiler.
+
+105
+00:07:48,280 --> 00:07:54,280
+So Napari has a gallery and so you can look and see, okay, these are some things for 3D.
+
+106
+00:07:55,960 --> 00:08:00,760
+These are some things for, you know, photograph type objects where they're bright and dark.
+
+107
+00:08:02,280 --> 00:08:07,280
+You know, here's things where we're looking for points and so you can look through the gallery on those.
+
+108
+00:08:07,280 --> 00:08:13,440
+A lot of soft version will describe things as a gallery, which is not necessarily what
+
+109
+00:08:13,440 --> 00:08:14,920
+we're used to thinking about.
+
+110
+00:08:17,640 --> 00:08:23,840
+But you can see one in, for example, the bio image archive where they also have galleries
+
+111
+00:08:23,840 --> 00:08:29,120
+where you can sort of browse through and these are for data sets, but you can follow the data set to a paper
+
+112
+00:08:29,120 --> 00:08:34,720
+because this only takes data that's associated with papers and hopefully, again, the paper will have its workflow.
+
+113
+00:08:37,320 --> 00:08:42,640
+One thing that's fun that just came out is the folks at SSBD.
+
+114
+00:08:43,640 --> 00:08:51,120
+The Riken Institute in Japan put out an image similarity search that you can search by the text of what you're searching for
+
+115
+00:08:51,120 --> 00:08:57,920
+or you can upload a sort of small picture and have it say, give me pictures that look like this.
+
+116
+00:08:59,120 --> 00:09:05,520
+Again, this is going to get you data, not a workflow, but hopefully some of these data sets have workflows associated with them
+
+117
+00:09:05,520 --> 00:09:10,720
+and they'll help you sort of figure out beyond your biology where you might find things.
+
+118
+00:09:14,120 --> 00:09:22,520
+And the last and I think always most important, image.sc, you can either sort of search if,
+
+119
+00:09:22,520 --> 00:09:27,920
+so here I'm just looking at the image analysis category and just in the past month or so,
+
+120
+00:09:27,920 --> 00:09:35,120
+people who want things for FRAP, people who want things with RGB, people who want things for fibers,
+
+121
+00:09:35,120 --> 00:09:40,520
+all kinds of things like cytological smears, like all kinds of things.
+
+122
+00:09:40,600 --> 00:09:46,680
+But you can also just, as we talked about in our forum episode, post something like,
+
+123
+00:09:46,680 --> 00:09:50,200
+here are my images, here are my dots and let experts sort of say,
+
+124
+00:09:50,200 --> 00:09:55,200
+oh, I've worked on something like that before, it's totally different biology to yours.
+
+125
+00:09:55,200 --> 00:09:56,800
+And here's how you do it.
+
+126
+00:09:58,000 --> 00:10:00,480
+Love it. Those are some great examples.
+
+127
+00:10:00,480 --> 00:10:05,720
+Yeah. So there's lots of resources out there. You shouldn't have to start from scratch
+
+128
+00:10:05,720 --> 00:10:09,960
+unless you really, if you want to start from scratch and learn, be our guest.
+
+129
+00:10:09,960 --> 00:10:14,440
+Thanks, Beth. Thanks. See you later. Bye.
+

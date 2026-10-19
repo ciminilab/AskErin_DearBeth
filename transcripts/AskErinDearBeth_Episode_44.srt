@@ -1,1112 +1,1804 @@
 1
-00:00:16,000 --> 00:00:05,000
-Hey Erin!
+00:00:16,000 --> 00:00:01,000
+Hello!
 
 2
-00:00:05,000 --> 00:00:10,000
-Hey Matt!
+00:00:01,000 --> 00:00:22,200
+Welcome to Ask Erin Dear Beth live from BINA I2K.
 
 3
-00:00:10,000 --> 00:00:15,000
-Good to see ya!
+00:00:22,200 --> 00:00:24,000
+Not actually live.
 
 4
-00:00:15,000 --> 00:00:20,000
-Great to see you!
+00:00:24,000 --> 00:00:27,000
+We'll be posting this in a second.
 
 5
-00:00:20,000 --> 00:00:22,000
-I thought maybe we would...
+00:00:27,000 --> 00:00:30,000
+But we are in three dimensions together.
 
 6
-00:00:22,000 --> 00:00:24,000
-Game might be too strong over here,
+00:00:30,000 --> 00:00:31,000
+Yeah.
 
 7
-00:00:24,000 --> 00:00:27,000
-but we would maybe do a little exercise,
+00:00:31,000 --> 00:00:32,000
+It doesn't happen most of the time.
 
 8
-00:00:27,000 --> 00:00:29,000
-because yeah, if you're not used to
+00:00:32,000 --> 00:00:33,000
+Yeah.
 
 9
-00:00:29,000 --> 00:00:32,000
-sort of doing the switch and thinking,
+00:00:33,000 --> 00:00:39,320
+And we are very excited to have guest slash friends on the podcast episode who are also
 
 10
-00:00:32,000 --> 00:00:35,000
-knowing what's important to be the same
+00:00:39,320 --> 00:00:41,000
+here with us in three dimensions.
 
 11
-00:00:35,000 --> 00:00:37,000
-between your images and somebody else's
+00:00:41,000 --> 00:00:42,000
+Yeah.
 
 12
-00:00:37,000 --> 00:00:40,000
-workflows images, like what actually
+00:00:42,000 --> 00:00:43,000
+Would you introduce yourself, gentlemen?
 
 13
-00:00:40,000 --> 00:00:42,000
-matters versus what doesn't matter,
+00:00:43,000 --> 00:00:44,000
+Yeah.
 
 14
-00:00:42,000 --> 00:00:44,000
-is not something that probably most people
+00:00:44,000 --> 00:00:48,000
+And please tell us either your favorite programming language or your favorite thresholding operation.
 
 15
-00:00:44,000 --> 00:00:46,000
-immediately have intuition about.
+00:00:48,000 --> 00:00:49,000
+Well, thresholding algorithm.
 
 16
-00:00:46,000 --> 00:00:47,000
-Yeah, absolutely.
+00:00:49,000 --> 00:00:50,000
+Oh, I'll do both.
 
 17
-00:00:47,000 --> 00:00:49,000
-I certainly didn't.
+00:00:50,000 --> 00:00:51,000
+Yeah.
 
 18
-00:00:49,000 --> 00:00:52,000
-So again, I thought we might talk
+00:00:51,000 --> 00:00:52,000
+I'll do both.
 
 19
-00:00:52,000 --> 00:00:54,000
-through some examples of like,
+00:00:52,000 --> 00:00:53,000
+Yeah.
 
 20
-00:00:54,000 --> 00:00:58,000
-how would we figure this out?
+00:00:53,000 --> 00:00:55,000
+Hi, I'm Ed.
 
 21
-00:00:58,000 --> 00:01:00,000
-I love it.
+00:00:55,000 --> 00:00:59,600
+I work with Kevin Ellis-Sarri here at Los Angeles University in Wisconsin, Madison.
 
 22
-00:01:00,000 --> 00:01:03,000
-So let's start with,
+00:00:59,600 --> 00:01:04,000
+And I'm on the MSJ PG development team with Mark Heiner.
 
 23
-00:01:03,000 --> 00:01:07,000
-is it important that they use the same microscope as me?
+00:01:04,000 --> 00:01:06,000
+Who will introduce themselves.
 
 24
-00:01:07,000 --> 00:01:10,000
-No. I say no, not at all.
+00:01:06,000 --> 00:01:08,200
+But yeah, I do a lot of stuff.
 
 25
-00:01:10,000 --> 00:01:13,000
-Yeah.
+00:01:08,200 --> 00:01:10,000
+My background is in virology.
 
 26
-00:01:13,000 --> 00:01:14,000
-It might matter in terms of things like
+00:01:10,000 --> 00:01:15,000
+So I sort of was a scientist and became a software developer later on in my scientific career.
 
 27
-00:01:14,000 --> 00:01:16,000
-figuring out image loading and stuff,
+00:01:15,000 --> 00:01:17,000
+And it's been having a lot of fun.
 
 28
-00:01:16,000 --> 00:01:18,000
-like your file names might be slightly different,
+00:01:17,000 --> 00:01:24,000
+My favorite thresholding algorithm is Yen because I wouldn't work with a lot of punks.
 
 29
-00:01:18,000 --> 00:01:20,000
-but otherwise, yeah, really doesn't matter.
+00:01:24,000 --> 00:01:26,000
+And punks are really great with that.
 
 30
-00:01:20,000 --> 00:01:23,000
-Yeah.
+00:01:26,000 --> 00:01:28,000
+Also like many intricate things also.
 
 31
-00:01:23,000 --> 00:01:25,000
-Yeah, so that's to say...
+00:01:28,000 --> 00:01:32,000
+And then my favorite programming language is Rust.
 
 32
-00:01:25,000 --> 00:01:28,000
-I was going to say, I mean, I think for any of these,
+00:01:32,000 --> 00:01:33,000
+Rust and Rust.
 
 33
-00:01:28,000 --> 00:01:30,000
-it is a good distinction.
+00:01:33,000 --> 00:01:34,000
+It's two years ago.
 
 34
-00:01:30,000 --> 00:01:33,000
-Like probably it will make some amount of difference, right?
+00:01:34,000 --> 00:01:35,000
+Cool.
 
 35
-00:01:33,000 --> 00:01:36,000
-For any of these, it's like you will,
+00:01:35,000 --> 00:01:36,000
+Hi.
 
 36
-00:01:36,000 --> 00:01:39,000
-you are unlikely to take a pipeline that you find
+00:01:36,000 --> 00:01:37,000
+My name is Mark.
 
 37
-00:01:39,000 --> 00:01:42,000
-in somebody's repository and just be able to press
+00:01:37,000 --> 00:01:39,000
+I guess there's a camera there.
 
 38
-00:01:42,000 --> 00:01:45,000
-go and have it work exactly how you want
+00:01:39,000 --> 00:01:40,000
+Okay.
 
 39
-00:01:45,000 --> 00:01:49,000
-on your images, but the amount of,
+00:01:40,000 --> 00:01:41,000
+Yeah.
 
 40
-00:01:49,000 --> 00:01:52,000
-like how close it will get you and how much work
+00:01:41,000 --> 00:01:42,000
+Yeah.
 
 41
-00:01:52,000 --> 00:01:55,000
-it will take to get it to work on your,
+00:01:42,000 --> 00:01:45,000
+So I work in the MSJ PG team.
 
 42
-00:01:55,000 --> 00:01:58,000
-to handle your images, to work on your images.
+00:01:45,000 --> 00:01:46,000
+Yeah.
 
 43
-00:01:58,000 --> 00:02:00,000
-I think that's what we're talking about here, right?
+00:01:46,000 --> 00:01:50,000
+So if there's bugs in PG or MSJ, you can probably yell at me and maybe I'll fix them.
 
 44
-00:02:00,000 --> 00:02:03,000
-So as you mentioned, like same microscope, right?
+00:01:50,000 --> 00:01:53,000
+My, what else do I do?
 
 45
-00:02:03,000 --> 00:02:05,000
-If you're dropping something in CellProfiler
+00:01:53,000 --> 00:01:55,000
+You do PG travel.
 
 46
-00:02:05,000 --> 00:02:07,000
-and it's an ND2 file from one microscope
+00:01:55,000 --> 00:01:56,000
+I do PG chat. Yeah.
 
 47
-00:02:07,000 --> 00:02:10,000
-and a TIFF file from the other,
+00:01:56,000 --> 00:01:59,000
+If you want to use LLMs and PG into that.
 
 48
-00:02:10,000 --> 00:02:12,000
-CellProfiler will load it and run it for you.
+00:01:59,000 --> 00:02:02,000
+That's a new thing. And my favorite programming language.
 
 49
-00:02:12,000 --> 00:02:15,000
-You just might have to change one line
+00:02:02,000 --> 00:02:04,000
+Does anyone say Java ever?
 
 50
-00:02:15,000 --> 00:02:18,000
-in your image import specifications to say,
+00:02:04,000 --> 00:02:05,000
+Is that a thing?
 
 51
-00:02:18,000 --> 00:02:20,000
-hey, look at my folder of images.
+00:02:05,000 --> 00:02:06,000
+People say Java.
 
 52
-00:02:20,000 --> 00:02:23,000
-I have TIFF files, not ND2s, right?
+00:02:06,000 --> 00:02:07,000
+It's not.
 
 53
-00:02:23,000 --> 00:02:27,000
-But that's, you know, but that's easy.
+00:02:07,000 --> 00:02:13,000
+My favorite programming language is LLMs because I just asked the chat to do it.
 
 54
-00:02:27,000 --> 00:02:29,000
-You can do that.
+00:02:13,000 --> 00:02:14,000
+In English.
 
 55
-00:02:29,000 --> 00:02:31,000
-You absolutely can.
+00:02:14,000 --> 00:02:15,000
+Yes.
 
 56
-00:02:31,000 --> 00:02:34,000
-And I think one that's related to exactly the point
+00:02:15,000 --> 00:02:16,000
+Yeah.
 
 57
-00:02:34,000 --> 00:02:36,000
-you just made is like the number of channels.
+00:02:16,000 --> 00:02:17,000
+Spoken word.
 
 58
-00:02:36,000 --> 00:02:38,000
-Like if it's something is expecting to split
+00:02:17,000 --> 00:02:18,000
+Yeah.
 
 59
-00:02:38,000 --> 00:02:41,000
-into four channels as opposed to three,
+00:02:18,000 --> 00:02:19,000
+Cool.
 
 60
-00:02:41,000 --> 00:02:44,000
-like it might be, this is sort of in a,
+00:02:19,000 --> 00:02:20,000
+Oh, yes.
 
 61
-00:02:44,000 --> 00:02:47,000
-it depends if it's important.
+00:02:20,000 --> 00:02:21,000
+You questions now.
 
 62
-00:02:47,000 --> 00:02:50,000
-If you only care about one of the channels
+00:02:21,000 --> 00:02:22,000
+Yeah.
 
 63
-00:02:50,000 --> 00:02:53,000
-that is being used to like measure or find objects
+00:02:22,000 --> 00:02:23,000
+Yeah.
 
 64
-00:02:53,000 --> 00:02:55,000
-and nothing like you don't,
+00:02:23,000 --> 00:02:28,000
+So what do you think of LLMs and the ways that they're changing our world today?
 
 65
-00:02:55,000 --> 00:02:58,000
-they have extra channels that you don't need,
+00:02:28,000 --> 00:02:30,000
+Yeah.
 
 66
-00:02:58,000 --> 00:03:01,000
-then you can totally adopt somebody else's workflow
+00:02:30,000 --> 00:02:31,000
+Yeah.
 
 67
-00:03:01,000 --> 00:03:04,000
-and just sort of throw those extra channels away.
+00:02:31,000 --> 00:02:32,000
+Yeah.
 
 68
-00:03:04,000 --> 00:03:06,000
-If it's like, well, they're doing something
+00:02:32,000 --> 00:02:33,000
+Yeah.
 
 69
-00:03:06,000 --> 00:03:09,000
-where like they identify the Golgi and then some spots
+00:02:33,000 --> 00:02:39,000
+Erin and I have different experiences using that.
 
 70
-00:03:09,000 --> 00:03:12,000
-and like they only look for spots inside the Golgi
+00:02:39,000 --> 00:02:42,000
+So Erin can, yeah, I don't use them at all.
 
 71
-00:03:12,000 --> 00:03:15,000
-and you don't have a Golgi marker.
+00:02:42,000 --> 00:02:44,000
+Erin uses them for some things.
 
 72
-00:03:16,000 --> 00:03:19,000
-If you're missing channels, that might matter.
+00:02:44,000 --> 00:02:49,000
+I think that.
 
 73
-00:03:19,000 --> 00:03:22,000
-It depends how those channels are used in the workflow.
+00:02:49,000 --> 00:02:50,000
+Yeah.
 
 74
-00:03:22,000 --> 00:03:25,000
-And it's kind of the only thing that you'll know
+00:02:50,000 --> 00:02:53,000
+I think that's great is that you can generate a ton of stuff without needing to
 
 75
-00:03:25,000 --> 00:03:27,000
-until you look at it.
+00:02:53,000 --> 00:02:54,000
+understand it deeply.
 
 76
-00:03:27,000 --> 00:03:31,000
-But if you don't need, if the channels that they're sort of
+00:02:54,000 --> 00:02:57,000
+I think what's terrible is you can generate a ton of stuff without needing to
 
 77
-00:03:31,000 --> 00:03:34,000
-using aren't controlling segmentation,
+00:02:57,000 --> 00:02:58,000
+understand it deeply.
 
 78
-00:03:34,000 --> 00:03:36,000
-probably it doesn't matter.
+00:02:58,000 --> 00:02:59,000
+Yeah.
 
 79
-00:03:36,000 --> 00:03:38,000
-It certainly doesn't matter if you don't need
+00:02:59,000 --> 00:03:01,000
+And so it's one of those like.
 
 80
-00:03:38,000 --> 00:03:39,000
-their extra channels.
+00:03:01,000 --> 00:03:04,000
+It's supposed to be with great power comes great responsibility and like,
 
 81
-00:03:39,000 --> 00:03:41,000
-Yeah.
+00:03:04,000 --> 00:03:08,000
+we're giving people power without necessarily giving them the ability to do it
 
 82
-00:03:41,000 --> 00:03:44,000
-Yeah. And likewise, you know, any workflow,
+00:03:08,000 --> 00:03:09,000
+responsibly.
 
 83
-00:03:44,000 --> 00:03:47,000
-but even just in thinking about like the number of channels,
+00:03:09,000 --> 00:03:10,000
+Yeah.
 
 84
-00:03:47,000 --> 00:03:49,000
-right, importing in your data,
+00:03:10,000 --> 00:03:14,000
+And so I see the very cool things that like my friends make and I'm like,
 
 85
-00:03:49,000 --> 00:03:53,000
-whether it can handle an image stack of three channels
+00:03:14,000 --> 00:03:18,000
+these are awesome, but I worry what kind of future we're setting ourselves up
 
 86
-00:03:53,000 --> 00:03:55,000
-versus an image stack of six channels,
+00:03:18,000 --> 00:03:19,000
+for.
 
 87
-00:03:55,000 --> 00:03:59,000
-that part, like just the number is likely to be in the,
+00:03:19,000 --> 00:03:21,000
+That makes a lot of sense.
 
 88
-00:03:59,000 --> 00:04:00,000
-yeah, don't worry about it.
+00:03:21,000 --> 00:03:22,000
+Yeah.
 
 89
-00:04:00,000 --> 00:04:02,000
-Because again, like, you know, tiny modifications
+00:03:22,000 --> 00:03:23,000
+Yeah.
 
 90
-00:04:02,000 --> 00:04:05,000
-to bring the data in.
+00:03:23,000 --> 00:03:26,000
+I think, I mean, on the spectrum of opinions about LLMs,
 
 91
-00:04:05,000 --> 00:04:07,000
-Yeah.
+00:03:26,000 --> 00:03:28,000
+I am much closer to Beth than not.
 
 92
-00:04:08,000 --> 00:04:10,000
-One thing that, you know, again, just sort of say,
-
-93
-00:04:10,000 --> 00:04:12,000
-like we will say that some things are important,
-
-94
-00:04:12,000 --> 00:04:15,000
-like something that's built for white light,
-
-95
-00:04:15,000 --> 00:04:18,000
-either sort of bright field microscopy or chromogenic stains,
-
-96
-00:04:18,000 --> 00:04:20,000
-you know, your tissue stains through H&E.
-
-97
-00:04:20,000 --> 00:04:23,000
-There are certainly ways to adapt workflows like that
-
-98
-00:04:23,000 --> 00:04:26,000
-to them be fluoresced, to work for fluorescence,
-
-99
-00:04:26,000 --> 00:04:27,000
-but they're often not simple.
-
-100
-00:04:27,000 --> 00:04:30,000
-Generally speaking, a lot of software specializes in one
-
-101
-00:04:30,000 --> 00:04:35,000
-or the other, and its capabilities in the other are not as strong.
-
-102
-00:04:35,000 --> 00:04:37,000
-Which is not to say it can't be done,
-
-103
-00:04:37,000 --> 00:04:40,000
-but you will probably have a harder time adapting a workflow
-
-104
-00:04:40,000 --> 00:04:42,000
-if you have, you know, H&E,
-
-105
-00:04:42,000 --> 00:04:44,000
-and this is meant for fluorescence or vice versa.
-
-106
-00:04:44,000 --> 00:04:45,000
+00:03:28,000 --> 00:03:29,000
 Yeah.
 
+93
+00:03:29,000 --> 00:03:32,000
+You know, I will say I have started using it.
+
+94
+00:03:32,000 --> 00:03:34,000
+To help me code.
+
+95
+00:03:34,000 --> 00:03:36,000
+And it has been.
+
+96
+00:03:36,000 --> 00:03:39,000
+Once I figured it out.
+
+97
+00:03:39,000 --> 00:03:40,000
+Yeah.
+
+98
+00:03:40,000 --> 00:03:44,000
+I think it's super, super helpful for things where, you know,
+
+99
+00:03:44,000 --> 00:03:47,000
+I'm like working on a next flow workflow right now.
+
+100
+00:03:47,000 --> 00:03:50,000
+And like, I don't know groovy at all.
+
+101
+00:03:50,000 --> 00:03:52,000
+And I don't really want to learn groovy.
+
+102
+00:03:52,000 --> 00:03:54,000
+And like this script, you know,
+
+103
+00:03:54,000 --> 00:03:58,000
+the actual scripts that are doing my image processing are Python and that I
+
+104
+00:03:58,000 --> 00:04:00,000
+can read and understand.
+
+105
+00:04:00,000 --> 00:04:05,000
+But when I, you know, like, it's pretty cool to be able to say like, Hey,
+
+106
+00:04:05,000 --> 00:04:09,000
+I need you to group things on a different piece of metadata.
+
 107
-00:04:45,000 --> 00:04:47,000
-Yeah, that makes a lot of sense.
+00:04:09,000 --> 00:04:10,000
+Yeah.
 
 108
-00:04:47,000 --> 00:04:51,000
-That's definitely a, you know, advanced image analysis task.
+00:04:10,000 --> 00:04:11,000
+Yeah.
 
 109
+00:04:11,000 --> 00:04:14,000
+Right. And so you had to find it like an amazing tool to have in my belt
+
+110
+00:04:14,000 --> 00:04:17,000
+when I can give it very discreet.
+
+111
+00:04:17,000 --> 00:04:18,000
+Yeah.
+
+112
+00:04:18,000 --> 00:04:24,000
+Concrete things to do within a system that is already built.
+
+113
+00:04:24,000 --> 00:04:26,000
+And that I already understand how it works.
+
+114
+00:04:26,000 --> 00:04:28,000
+And so like within that framework.
+
+115
+00:04:28,000 --> 00:04:29,000
+I'm still.
+
+116
+00:04:29,000 --> 00:04:30,000
+Yeah.
+
+117
+00:04:30,000 --> 00:04:34,000
+All of the sort of bigger picture caveats.
+
+118
+00:04:34,000 --> 00:04:37,000
+I'm not sure if I mentioned that I feel very strongly.
+
+119
+00:04:37,000 --> 00:04:41,000
+And I think especially as people who love.
+
+120
+00:04:41,000 --> 00:04:43,000
+Educating.
+
+121
+00:04:43,000 --> 00:04:48,000
+You know, worry a lot about.
+
+122
+00:04:48,000 --> 00:04:50,000
+Like where people get their answers.
+
+123
+00:04:50,000 --> 00:04:51,000
+Yeah.
+
+124
 00:04:51,000 --> 00:04:52,000
 Yeah.
 
-110
-00:04:52,000 --> 00:04:53,000
-Yeah.
-
-111
-00:04:54,000 --> 00:05:00,000
-But the specifics exactly of, you know,
-
-112
-00:05:00,000 --> 00:05:02,000
-what, how they're doing it,
-
-113
-00:05:02,000 --> 00:05:05,000
-not actually really important at all.
-
-114
-00:05:05,000 --> 00:05:07,000
-What's your late ruling reagent?
-
-115
-00:05:07,000 --> 00:05:08,000
-Doesn't really matter.
-
-116
-00:05:08,000 --> 00:05:09,000
-What's your floor for?
-
-117
-00:05:09,000 --> 00:05:11,000
-Doesn't really matter.
-
-118
-00:05:11,000 --> 00:05:12,000
-Yeah.
-
-119
-00:05:12,000 --> 00:05:13,000
-Yeah.
-
-120
-00:05:13,000 --> 00:05:18,000
-So if you are, you know, wanting, wanting to look at the ER, right,
-
-121
-00:05:18,000 --> 00:05:21,000
-it doesn't matter if somebody has dropped, you know,
-
-122
-00:05:21,000 --> 00:05:27,000
-dropped a dye in or that's going to stain, you know,
-
-123
-00:05:27,000 --> 00:05:30,000
-concavalin A and you've just got it accumulating in your ER
-
-124
-00:05:30,000 --> 00:05:31,000
-and staining all of it.
-
 125
-00:05:31,000 --> 00:05:34,000
-Or if you've got a protein and antibody to a protein that's in
+00:04:52,000 --> 00:04:56,000
+Both like the general public not understanding and not even like general
 
 126
-00:05:34,000 --> 00:05:37,000
-the ER and so you've like carefully labeled just sex 61
+00:04:56,000 --> 00:05:00,000
+public, many, like many very educated people, like not understanding the
 
 127
-00:05:37,000 --> 00:05:41,000
-or something and it's there, like if it's labeling the ER,
+00:05:00,000 --> 00:05:03,000
+limitations in terms of like, Oh, an LLM told me.
 
 128
-00:05:41,000 --> 00:05:43,000
-it's labeling the ER and if you're interested in the ER,
+00:05:03,000 --> 00:05:04,000
+Yeah.
 
 129
-00:05:43,000 --> 00:05:44,000
-it doesn't matter.
+00:05:04,000 --> 00:05:05,000
+And I think that's a good thing.
 
 130
-00:05:44,000 --> 00:05:49,000
-Likewise, if it's, you know, GFP or RFP or whatever,
+00:05:05,000 --> 00:05:06,000
+Yeah.
 
 131
-00:05:49,000 --> 00:05:54,000
-doesn't, doesn't really matter generally.
+00:05:06,000 --> 00:05:07,000
+I think that's a good thing.
 
 132
-00:05:54,000 --> 00:05:55,000
-Right.
+00:05:07,000 --> 00:05:08,000
+Yeah.
 
 133
-00:05:55,000 --> 00:05:59,000
-So again, here in the always, it depends if you,
+00:05:08,000 --> 00:05:09,000
+I think that's a good thing.
 
 134
-00:05:59,000 --> 00:06:04,000
-if you are very interested in, like I'm interested in a specific
+00:05:09,000 --> 00:05:10,000
+Yeah.
 
 135
-00:06:04,000 --> 00:06:05,000
-protein, right?
+00:05:10,000 --> 00:05:13,000
+Well, actually that may be based on some reality that's there and not,
 
 136
-00:06:05,000 --> 00:06:08,000
-Or your earlier example, like H2AX, right?
+00:05:13,000 --> 00:05:15,000
+it may have just made that up for you.
 
 137
-00:06:08,000 --> 00:06:12,000
-If that is the protein and I am interested in, then actually it
+00:05:15,000 --> 00:05:18,000
+And you need to have enough of an understanding.
 
 138
-00:06:12,000 --> 00:06:16,000
-really does matter that somebody's used that exact antibody,
+00:05:18,000 --> 00:05:19,000
+To know how to even evaluate.
 
 139
-00:06:16,000 --> 00:06:18,000
-but if it's, you know,
+00:05:19,000 --> 00:05:20,000
+Yeah.
 
 140
-00:06:18,000 --> 00:06:24,000
-So yeah, but it's, we're not saying for any of these that you
+00:05:20,000 --> 00:05:21,000
+Even evaluate that.
 
 141
-00:06:24,000 --> 00:06:26,000
-can use somebody's thing without checking that it works in yours.
+00:05:21,000 --> 00:05:22,000
+Yeah.
 
 142
-00:06:26,000 --> 00:06:29,000
-We're just saying like how easy it's going to be to pour like
+00:05:22,000 --> 00:05:23,000
+Yeah.
 
 143
-00:06:29,000 --> 00:06:30,000
-don't just assume.
+00:05:23,000 --> 00:05:24,000
+Sorry.
 
 144
-00:06:30,000 --> 00:06:31,000
+00:05:24,000 --> 00:05:25,000
 Yeah.
 
 145
-00:06:31,000 --> 00:06:34,000
-And somebody might, if you study sex 61 and you get something
+00:05:25,000 --> 00:05:26,000
+No, it's okay.
 
 146
-00:06:34,000 --> 00:06:37,000
-from somebody who studyes sex 61, that doesn't mean that it will
+00:05:26,000 --> 00:05:27,000
+We should be good on.
 
 147
-00:06:37,000 --> 00:06:39,000
-actually work for your data.
+00:05:27,000 --> 00:05:28,000
+On power.
 
 148
-00:06:39,000 --> 00:06:42,000
-It is none of these things are guaranteed that it will or won't
+00:05:28,000 --> 00:05:29,000
+Yeah.
 
 149
-00:06:42,000 --> 00:06:43,000
-work.
+00:05:29,000 --> 00:05:30,000
+Yeah.
 
 150
-00:06:43,000 --> 00:06:45,000
-These are just things that tend to matter versus tend not to.
+00:05:30,000 --> 00:05:32,000
+This is an important conversation.
 
 151
-00:06:45,000 --> 00:06:46,000
-Yes, absolutely.
+00:05:32,000 --> 00:05:33,000
+Yeah.
 
 152
-00:06:46,000 --> 00:06:51,000
-When I was a new image analyst, sort of mind boggling to think
+00:05:33,000 --> 00:05:34,000
+Yeah.
 
 153
-00:06:51,000 --> 00:06:55,000
-that actually even a species doesn't even matter, right?
+00:05:34,000 --> 00:05:35,000
+Yeah.
 
 154
-00:06:55,000 --> 00:06:59,000
-If I have a workflow for finding spots, right?
+00:05:35,000 --> 00:05:37,000
+So I'm the same.
 
 155
-00:06:59,000 --> 00:07:03,000
-Like it could very well be that this workflow set up for spots is
+00:05:37,000 --> 00:05:41,000
+In the sense that I think that you need to understand your limitations
 
 156
-00:07:03,000 --> 00:07:09,000
-to find gut granules inside of a C elegans nematode the same way
+00:05:41,000 --> 00:05:45,000
+and that there's basically no training going into how to understand
 
 157
-00:07:09,000 --> 00:07:14,000
-that it's going to find H2A X spots in a human cell to a mirror,
+00:05:45,000 --> 00:05:47,000
+those limitations.
 
 158
-00:07:14,000 --> 00:07:15,000
-right?
+00:05:47,000 --> 00:05:48,000
+I see.
 
 159
-00:07:15,000 --> 00:07:17,000
-Like what?
+00:05:48,000 --> 00:05:53,000
+So I see my role as a software developer to connect users to LLM.
 
 160
-00:07:17,000 --> 00:07:18,000
-What?
+00:05:53,000 --> 00:05:55,000
+In a way that will benefit them,
 
 161
-00:07:18,000 --> 00:07:20,000
-That's crazy.
+00:05:55,000 --> 00:06:01,000
+but also with the guidance and controls to try and protect them from,
 
 162
-00:07:20,000 --> 00:07:22,000
-Crazy, but true.
+00:06:01,000 --> 00:06:02,000
+from making.
 
 163
-00:07:22,000 --> 00:07:23,000
+00:06:02,000 --> 00:06:03,000
 Yeah.
 
 164
-00:07:23,000 --> 00:07:26,000
-Go ahead.
+00:06:03,000 --> 00:06:05,000
+Especially in the scientific field,
 
 165
-00:07:26,000 --> 00:07:29,000
-And so I put the cell light over there too, because yeah, absolutely.
+00:06:05,000 --> 00:06:11,000
+because there's so little of LLMs that is reproducible and that is
 
 166
-00:07:29,000 --> 00:07:32,000
-Which is not to say that some like, you know, something that's made
+00:06:11,000 --> 00:06:15,000
+geared towards a long-term scientific reproducibility.
 
 167
-00:07:32,000 --> 00:07:35,000
-for an adipocyte is going to necessarily work with no tweaks
+00:06:15,000 --> 00:06:20,000
+Like it's geared towards rapid change, rapid iteration and being outdated
 
 168
-00:07:35,000 --> 00:07:40,000
-whatsoever in terms of like a neuron, but we reuse lots of things
+00:06:20,000 --> 00:06:23,000
+and moving on to the next product for sale in a lot of cases.
 
 169
-00:07:40,000 --> 00:07:44,000
-for different cancer lines or fibroblast lines and they're
+00:06:23,000 --> 00:06:24,000
+Yeah.
 
 170
-00:07:44,000 --> 00:07:46,000
-pretty easy to adapt from one to another.
+00:06:24,000 --> 00:06:25,000
+Yeah.
 
 171
-00:07:46,000 --> 00:07:47,000
-Yeah.
+00:06:25,000 --> 00:06:26,000
+That's what we have.
 
 172
-00:07:47,000 --> 00:07:52,000
-So if we think about, you know, sort of a generic CellProfiler
+00:06:26,000 --> 00:06:27,000
+Yeah.
 
 173
-00:07:52,000 --> 00:07:55,000
-pipeline that has lots of modules that are measuring lots of
+00:06:27,000 --> 00:06:31,000
+That's why I hope that you're planning on taking things into account.
 
 174
-00:07:55,000 --> 00:07:58,000
-things and lots of channels, and we think about like what would
+00:06:31,000 --> 00:06:32,000
+Yeah.
 
 175
-00:07:58,000 --> 00:08:01,000
-be different between, again, you said like an adipocyte,
+00:06:32,000 --> 00:06:33,000
+Yeah.
 
 176
-00:08:01,000 --> 00:08:06,000
-versus, you know, another cell line like he was cells or just
+00:06:33,000 --> 00:06:36,000
+Guiding people to solutions that are stable.
 
 177
-00:08:06,000 --> 00:08:09,000
-little in brain or neurons, right?
+00:06:36,000 --> 00:06:38,000
+Long-term, I think, really important.
 
 178
-00:08:09,000 --> 00:08:11,000
-Which can be all projections and weird, right?
+00:06:38,000 --> 00:06:39,000
+Yeah.
 
 179
-00:08:11,000 --> 00:08:16,000
-So of this entire pipeline, it might actually just end up being
+00:06:39,000 --> 00:06:43,000
+I have a, I think a mixed experience because I wear two hats where I'm
 
 180
-00:08:16,000 --> 00:08:21,000
-one module that identify secondary objects module that were tuning.
+00:06:43,000 --> 00:06:45,000
+both a scientist and his fellow.
 
 181
-00:08:21,000 --> 00:08:25,000
-So in this case, it can actually be a lot of aggravation sometimes
+00:06:45,000 --> 00:06:49,000
+As a scientist, I think he hit it totally right on, you know,
 
 182
-00:08:25,000 --> 00:08:29,000
-tuning that module to get really, you know, if you need really
+00:06:49,000 --> 00:06:52,600
+with that, like roll of the dice when you get entered on chat.
 
 183
-00:08:29,000 --> 00:08:32,000
-accurate segmentation and what you're starting from is this
+00:06:52,600 --> 00:06:54,760
+Sometimes it is roll of dice.
 
 184
-00:08:32,000 --> 00:08:35,000
-cute little nice round cell and then I'm trying to move into
+00:06:54,760 --> 00:06:55,560
+Yeah.
 
 185
-00:08:35,000 --> 00:08:37,000
-something with crazy projections or tons of lipid droplets or
+00:06:55,720 --> 00:07:00,040
+And, you know, I'm not really sure how we're going to do that well as a community.
 
 186
-00:08:37,000 --> 00:08:41,000
-whatever, in terms of the overall workflow, right?
+00:07:00,040 --> 00:07:02,680
+Obviously, we need to communicate better and is, you know,
 
 187
-00:08:41,000 --> 00:08:44,000
-Like that's just one module that I'm tuning and the whole rest
+00:07:02,680 --> 00:07:07,160
+having guidelines was guidelines or bar drills are often done by yourself.
 
 188
-00:08:44,000 --> 00:08:48,000
-of the workflow can remain totally untouched.
+00:07:07,160 --> 00:07:09,240
+And there's no consistency there.
 
 189
-00:08:48,000 --> 00:08:49,000
-Mm-hmm.
+00:07:09,240 --> 00:07:11,320
+Like what you do for yourself is different for someone else.
 
 190
-00:08:49,000 --> 00:08:52,000
-Yep, absolutely.
+00:07:12,520 --> 00:07:14,120
+And so, yeah, that's kind of how I feel about that.
 
 191
-00:08:53,000 --> 00:09:02,000
-And again, thinking about things in pixel space, like in terms
+00:07:14,120 --> 00:07:18,760
+As a developer, I'm pretty, I think I have a really interesting relationship
 
 192
-00:09:02,000 --> 00:09:05,000
-of difficult of adaptability, you know, we also don't care about,
+00:07:18,760 --> 00:07:23,000
+with LLMs. I don't use them to write my code because I enjoy writing code.
 
 193
-00:09:05,000 --> 00:09:08,000
-we don't really care about how big the objects are in sort of
+00:07:23,000 --> 00:07:25,880
+And that's what I want to do with most of my time if I wasn't here.
 
 194
-00:09:08,000 --> 00:09:13,000
-truth, true size, like, because something that is huge and your
+00:07:28,280 --> 00:07:34,440
+But at the same time, I would be foolish to not use them for their knowledge.
 
 195
-00:09:13,000 --> 00:09:17,000
-hundred X objective, lots of magnification is pretty small
+00:07:34,440 --> 00:07:40,600
+So what I do is I use the free credits I get on GitHub to have the LLMs write me
 
 196
-00:09:17,000 --> 00:09:19,000
-in your 10 X objective.
+00:07:40,600 --> 00:07:44,040
+really massive documents about how to do something.
 
 197
-00:09:19,000 --> 00:09:24,000
-And so if it's a five pixel size thing, something that's built
+00:07:44,040 --> 00:07:48,440
+So recently I was learning about spatial geometry and how to, you know,
 
 198
-00:09:24,000 --> 00:09:29,000
-to find five pixel size things will probably work.
+00:07:48,440 --> 00:07:51,960
+compute half planes and past spaces and convex hulls.
 
 199
-00:09:29,000 --> 00:09:32,000
-I even put this only as kind of important because for lots of
+00:07:51,960 --> 00:07:53,080
+And I didn't know how to do any of that.
 
 200
-00:09:32,000 --> 00:09:36,000
-things you can change the expected size pretty easily.
+00:07:53,080 --> 00:07:54,280
+And I wanted to learn how to do it.
 
 201
-00:09:36,000 --> 00:09:42,000
-It's not undemported, but it's generally not like the hardest
+00:07:54,280 --> 00:07:55,480
+And I wanted to do it myself.
 
 202
-00:09:42,000 --> 00:09:43,000
-thing to tune.
+00:07:55,480 --> 00:07:58,840
+And so now I have this markdown file that exists on my computer.
 
 203
-00:09:43,000 --> 00:09:44,000
-Yeah.
+00:07:58,840 --> 00:08:02,360
+I can always reference it that gives me super detailed.
 
 204
-00:09:44,000 --> 00:09:47,000
-I mean, especially if we're comparing it to, you know, real
+00:08:02,360 --> 00:08:03,000
+Here's a math.
 
 205
-00:09:47,000 --> 00:09:48,000
-physics, right?
+00:08:03,000 --> 00:08:03,880
+Here's how this works.
 
 206
-00:09:48,000 --> 00:09:53,000
-Where we don't care about the real object size at all whatsoever.
+00:08:03,880 --> 00:08:05,240
+And I went through it.
 
 207
-00:09:53,000 --> 00:09:54,000
-Mm-hmm.
+00:08:05,240 --> 00:08:06,600
+So I verified that it works.
 
 208
-00:09:57,000 --> 00:10:00,000
-Other things that sort of fall into the kind of, for me at
+00:08:06,600 --> 00:08:07,640
+And I wrote the tests.
 
 209
-00:10:00,000 --> 00:10:02,000
-least anyway, and again, this is going to be the ones where
+00:08:07,640 --> 00:08:08,680
+So I know it's good code.
 
 210
-00:10:02,000 --> 00:10:06,000
-reasonable people may disagree.
+00:08:09,720 --> 00:08:11,800
+And then I read some books too.
 
 211
-00:10:06,000 --> 00:10:12,000
-The shape, like some things will work really well for dots
+00:08:11,800 --> 00:08:14,760
+Like I found the books I wanted to learn more because it, you know,
 
 212
-00:10:12,000 --> 00:10:14,000
-versus rods and stuff.
+00:08:14,760 --> 00:08:17,400
+you can ask you to say, Hey, give me a citation for this.
 
 213
-00:10:14,000 --> 00:10:18,000
-To some degree it depends on if your deep learning tends to be
+00:08:17,400 --> 00:08:18,680
+And sometimes they're fakes.
 
 214
-00:10:18,000 --> 00:10:21,000
-a little bit better at not caring too much about shape than
+00:08:18,680 --> 00:08:19,560
+Check them.
 
 215
-00:10:21,000 --> 00:10:22,000
-classical segmentation.
+00:08:19,560 --> 00:08:22,920
+But I found some really cool books that I shared in our Zulab chat.
 
 216
-00:10:22,000 --> 00:10:27,000
-But so if you're looking at something that's act in filaments,
+00:08:22,920 --> 00:08:26,200
+And they were helpful for me to understand all of that.
 
 217
-00:10:27,000 --> 00:10:29,000
-you might not want to take something that somebody's thing
+00:08:26,200 --> 00:08:30,680
+So I really encourage people that I meet who are like me.
 
 218
-00:10:29,000 --> 00:10:31,000
-for finding small round blobs.
+00:08:30,680 --> 00:08:32,920
+I'm like, Hey, have them teach you.
 
 219
-00:10:31,000 --> 00:10:35,000
-Like, they might be pretty different.
+00:08:32,920 --> 00:08:33,960
+Don't let them write the code.
 
 220
-00:10:35,000 --> 00:10:36,000
-Yeah.
+00:08:33,960 --> 00:08:35,560
+Because I let them do that a little bit.
 
 221
-00:10:36,000 --> 00:10:40,000
-Yeah, I probably would have put shape in the super important.
+00:08:35,560 --> 00:08:38,840
+And I found myself very quickly not remembering how to do stuff.
 
 222
-00:10:40,000 --> 00:10:41,000
-All right, let's do it.
+00:08:38,840 --> 00:08:40,040
+And I didn't like that experience.
 
 223
-00:10:41,000 --> 00:10:42,000
-Yeah.
+00:08:40,040 --> 00:08:40,920
+It's true.
 
 224
-00:10:42,000 --> 00:10:46,000
-Just because the light source is lonely, it needs a friend.
+00:08:41,000 --> 00:08:41,720
+Now it's just for me, though.
 
 225
-00:10:46,000 --> 00:10:47,000
-So we might, you know.
+00:08:41,720 --> 00:08:42,920
+It's a very personal experience.
 
 226
-00:10:47,000 --> 00:10:48,000
-It does.
+00:08:42,920 --> 00:08:46,040
+I love to sit here and stare at and rust.
 
 227
-00:10:48,000 --> 00:10:50,000
-But again, like, same thing.
+00:08:48,200 --> 00:08:48,680
+Yeah.
 
 228
-00:10:50,000 --> 00:10:52,000
-Yeah, I would also give it this friend too.
+00:08:48,680 --> 00:08:48,840
+Yeah.
 
 229
-00:10:52,000 --> 00:10:53,000
-Yeah.
+00:08:50,360 --> 00:08:53,640
+I think there's also like, there's issues with like,
 
 230
-00:10:53,000 --> 00:10:54,000
-Yeah.
+00:08:53,640 --> 00:08:55,720
+how they were trained, were they trained ethically?
 
 231
-00:10:54,000 --> 00:10:58,000
-Which is if your things are like beautifully spaced apart or
+00:08:55,720 --> 00:08:56,920
+Like what are the business models?
 
 232
-00:10:58,000 --> 00:11:01,000
-there's maybe even only one thing, you're probably going to
+00:08:56,920 --> 00:08:58,280
+Where are they pushing us towards?
 
 233
-00:11:01,000 --> 00:11:04,000
-make a very different pipeline or workflow than like one where
+00:08:58,280 --> 00:08:59,800
+That are the other parts like,
 
 234
-00:11:04,000 --> 00:11:07,000
-everything is super clustered and you're having to like find
+00:08:59,800 --> 00:09:03,320
+even if we found them like very useful today and like with no downsides,
 
 235
-00:11:07,000 --> 00:11:10,000
-things that are crawling all on top of each other and like
+00:09:03,320 --> 00:09:04,920
+I would worry about those sorts of things.
 
 236
-00:11:10,000 --> 00:11:11,000
-angle them.
+00:09:04,920 --> 00:09:05,480
+Yes.
 
 237
-00:11:11,000 --> 00:11:13,000
-That is one of the hardest things to do.
+00:09:05,480 --> 00:09:09,000
+But I do love that some people are now coming up with like fully
 
 238
-00:11:13,000 --> 00:11:16,000
-And so if your stuff is super clustered, something that is for
+00:09:09,720 --> 00:09:13,640
+trained on like legit data sets, like fully open weight models that like
 
 239
-00:11:16,000 --> 00:11:18,000
-single or well spaced objects will almost certainly not work
+00:09:14,360 --> 00:09:19,240
+can actually hopefully sort of show us an ethical path forward through this.
 
 240
-00:11:18,000 --> 00:11:19,000
-for you.
+00:09:19,240 --> 00:09:22,120
+But we'll still need to figure out all of the other stuff too.
 
 241
-00:11:19,000 --> 00:11:20,000
-Yeah.
+00:09:22,120 --> 00:09:23,800
+I think that's an important point.
 
 242
-00:11:20,000 --> 00:11:23,000
-Likewise, if your stuff is super well spaced, somebody who's
+00:09:23,800 --> 00:09:29,480
+Like as consumers, where scientists of models is to like demand open weight
 
 243
-00:11:23,000 --> 00:11:27,000
-made something from clustered might, will probably work for
+00:09:29,480 --> 00:09:30,360
+ethically trained.
 
 244
-00:11:27,000 --> 00:11:31,000
-you, but it might also be doing lots of stuff to force like
+00:09:30,360 --> 00:09:30,680
+Yeah.
 
 245
-00:11:31,000 --> 00:11:35,000
-separations and force breaking into sub objects, which for you
+00:09:30,680 --> 00:09:30,840
+Yeah.
 
 246
-00:11:35,000 --> 00:11:37,000
-isn't true and you don't need and actually makes your workflow
+00:09:30,840 --> 00:09:30,920
+Yeah.
 
 247
-00:11:37,000 --> 00:11:38,000
-worse.
+00:09:30,920 --> 00:09:31,400
+Yeah.
 
 248
-00:11:38,000 --> 00:11:39,000
-Yeah.
+00:09:31,400 --> 00:09:32,600
+And that's what we can.
 
 249
-00:11:39,000 --> 00:11:43,000
-And so one versus many is kind of important, but mostly just
+00:09:32,600 --> 00:09:32,840
+Yeah.
 
 250
-00:11:43,000 --> 00:11:48,000
-because it might affect this like patterning and you know, if
+00:09:32,840 --> 00:09:34,760
+I don't see enough of people asking for that though.
 
 251
-00:11:48,000 --> 00:11:53,000
-there's one and you've put in assumptions that say there will
+00:09:34,760 --> 00:09:35,480
+No, absolutely.
 
 252
-00:11:53,000 --> 00:11:55,000
-only ever be one.
+00:09:35,480 --> 00:09:35,960
+No.
 
 253
-00:11:55,000 --> 00:11:58,000
-In cell part, for example, in the filter objects module, you
+00:09:35,960 --> 00:09:38,680
+It's really easy just to go to the cloud or whatever that's paid.
 
 254
-00:11:58,000 --> 00:12:00,000
-can say keep only, you know, the biggest thing or the smallest
+00:09:38,760 --> 00:09:40,280
+And it's mean it works.
 
 255
-00:12:00,000 --> 00:12:03,000
-thing or the brightest thing, but like keep only one.
+00:09:40,280 --> 00:09:40,440
+Yeah.
 
 256
-00:12:03,000 --> 00:12:04,000
-Yeah.
+00:09:40,440 --> 00:09:43,480
+That's hard for humans to not do that.
 
 257
-00:12:05,000 --> 00:12:09,000
-Which is easy enough to remove, but the assumptions might be
+00:09:43,480 --> 00:09:48,520
+And buying your own GPU and like setting up an upload model is so expensive.
 
 258
-00:12:09,000 --> 00:12:10,000
-different.
+00:09:48,520 --> 00:09:49,320
+That's not pretty big.
 
 259
-00:12:10,000 --> 00:12:11,000
-Yeah.
+00:09:49,320 --> 00:09:50,360
+Especially in this day and age.
 
 260
-00:12:11,000 --> 00:12:13,000
-So that's my sorting.
-
-261
-00:12:13,000 --> 00:12:15,000
-Reasonable people made a disagree.
-
-262
-00:12:15,000 --> 00:12:17,000
-Sometimes we disagree with ourselves from five minutes ago,
-
-263
-00:12:17,000 --> 00:12:22,000
-but the biology, like most of the stuff that's in this we don't
-
-264
-00:12:22,000 --> 00:12:24,000
-care about is actually the biology.
-
-265
-00:12:24,000 --> 00:12:27,000
-Like we actually don't care about biology very much.
-
-266
-00:12:27,000 --> 00:12:31,000
-Really what we care about are things in pixel space like are
-
-267
-00:12:31,000 --> 00:12:34,000
-things light on dark versus dark on bright?
-
-268
-00:12:34,000 --> 00:12:40,000
-How many pixels across are things and you know, are things
-
-269
-00:12:40,000 --> 00:12:43,000
-kind of all on top of each other or separated?
-
-270
-00:12:43,000 --> 00:12:44,000
+00:09:50,360 --> 00:09:50,600
 Yeah.
 
+261
+00:09:50,600 --> 00:09:51,160
+Yeah.
+
+262
+00:09:51,160 --> 00:09:51,240
+Yeah.
+
+263
+00:09:51,240 --> 00:09:51,960
+Stuff.
+
+264
+00:09:51,960 --> 00:10:01,240
+I mean, I think that it's such an interesting hand of worms to open to say like,
+
+265
+00:10:01,240 --> 00:10:05,160
+I want to do everything as ethically as possible, which I completely agree.
+
+266
+00:10:05,160 --> 00:10:07,160
+I mean, like I am a moral person.
+
+267
+00:10:07,240 --> 00:10:07,720
+Like I.
+
+268
+00:10:07,720 --> 00:10:08,920
+I agree too.
+
+269
+00:10:08,920 --> 00:10:09,400
+She is.
+
+270
+00:10:09,400 --> 00:10:11,880
+I believe in that.
+
 271
-00:12:44,000 --> 00:12:50,000
-This is sort of switching from thinking like a biologist just in
+00:10:11,880 --> 00:10:13,640
+But we've had this conversation.
 
 272
-00:12:50,000 --> 00:12:54,000
-general to thinking like an image analyst, right?
+00:10:15,560 --> 00:10:17,480
+I mean, this is, it comes up, right?
 
 273
-00:12:54,000 --> 00:13:00,000
-Like this switch of let me think about the analysis task of
+00:10:17,480 --> 00:10:22,360
+When you're like, oh, we're running a lab, we're running a team, like we're working on projects.
 
 274
-00:13:00,000 --> 00:13:01,000
-the project.
+00:10:22,360 --> 00:10:23,000
+Yeah.
 
 275
-00:13:01,000 --> 00:13:05,000
-So we're thinking about the task that we're performing here and
+00:10:23,000 --> 00:10:24,920
+That we very much think are for the good of humanity.
 
 276
-00:13:05,000 --> 00:13:08,000
-having that switch, which is a hard switch to do.
+00:10:24,920 --> 00:10:25,800
+Sure.
 
 277
-00:13:08,000 --> 00:13:12,000
-If you're new to image analysis, it really is a different way of
+00:10:25,800 --> 00:10:30,040
+But when you start to inspect every single decision, it's like, okay, I have to pay
 
 278
-00:13:12,000 --> 00:13:14,000
-thinking about the problem.
+00:10:31,080 --> 00:10:32,520
+somehow pay for computers.
+
+279
+00:10:32,520 --> 00:10:33,160
+Yeah.
+
+280
+00:10:33,160 --> 00:10:34,280
+To do the things.
+
+281
+00:10:34,280 --> 00:10:36,200
+Like what company do I pay?
+
+282
+00:10:36,200 --> 00:10:36,680
+Yeah.
+
+283
+00:10:37,320 --> 00:10:41,960
+Money who has the computers that I'm using their computers?
+
+284
+00:10:41,960 --> 00:10:45,560
+Like is it should I not do that company?
+
+285
+00:10:45,560 --> 00:10:48,440
+Because I don't believe in a decision that they've made.
+
+286
+00:10:48,440 --> 00:10:54,280
+But like, if that makes it so I can't do my science.
+
+287
+00:10:54,280 --> 00:10:55,000
+It's benefit.
+
+288
+00:10:55,000 --> 00:10:55,160
+It's benefit.
+
+289
+00:10:55,160 --> 00:10:55,720
+We're used to the board.
+
+290
+00:10:55,720 --> 00:10:56,200
+Yeah.
+
+291
+00:10:56,200 --> 00:10:59,480
+But like how do we find, it's hard.
+
+292
+00:10:59,480 --> 00:10:59,960
+Yeah.
+
+293
+00:10:59,960 --> 00:11:01,640
+It's really hard to be moral in.
+
+294
+00:11:01,640 --> 00:11:02,760
+It's hard to be moral.
+
+295
+00:11:02,760 --> 00:11:03,560
+Yeah.
+
+296
+00:11:03,560 --> 00:11:05,160
+In our world these days.
+
+297
+00:11:05,240 --> 00:11:10,600
+When like I was like total, total, total divergence.
+
+298
+00:11:10,600 --> 00:11:11,800
+But I know it's not though.
+
+299
+00:11:11,800 --> 00:11:14,600
+But I'm waiting for it.
+
+300
+00:11:14,600 --> 00:11:15,880
+I am going to diverge us.
+
+301
+00:11:15,880 --> 00:11:16,280
+You know what?
+
+302
+00:11:16,280 --> 00:11:17,240
+We should be talking enough.
+
+303
+00:11:18,200 --> 00:11:21,640
+So the, okay.
+
+304
+00:11:23,560 --> 00:11:24,200
+TV show.
+
+305
+00:11:25,160 --> 00:11:25,640
+A good place.
+
+306
+00:11:25,640 --> 00:11:26,360
+A good place.
+
+307
+00:11:26,360 --> 00:11:26,680
+Yes.
+
+308
+00:11:26,680 --> 00:11:27,160
+Thank you.
+
+309
+00:11:27,160 --> 00:11:28,040
+Yeah.
+
+310
+00:11:28,040 --> 00:11:28,680
+So the.
+
+311
+00:11:29,480 --> 00:11:32,280
+The moral calculus of like everybody's failing now.
+
+312
+00:11:32,280 --> 00:11:32,680
+Yes.
+
+313
+00:11:32,680 --> 00:11:33,240
+Yes.
+
+314
+00:11:33,240 --> 00:11:38,040
+And the person who made the TV show wrote a book.
+
+315
+00:11:39,400 --> 00:11:41,800
+How to be good, I think.
+
+316
+00:11:42,840 --> 00:11:44,760
+Look that up and I'll link it in show notes.
+
+317
+00:11:45,560 --> 00:11:45,880
+But it's.
+
+318
+00:11:45,880 --> 00:11:46,440
+Ask your favorite.
+
+319
+00:11:46,440 --> 00:11:46,840
+Oh.
+
+320
+00:11:46,840 --> 00:11:47,080
+Yeah.
+
+321
+00:11:48,120 --> 00:11:50,040
+But may or may not give you the correct answer.
+
+322
+00:11:50,040 --> 00:11:50,440
+Yeah.
+
+323
+00:11:50,440 --> 00:11:54,840
+Um, but I did like such a good job of breaking down like.
+
+324
+00:11:56,680 --> 00:12:01,400
+Philosophy, which I have no background in like the philosophy of ethics and
+
+325
+00:12:01,400 --> 00:12:05,240
+explaining them to just an average person of like, if you're putting in the context of like,
+
+326
+00:12:05,240 --> 00:12:06,440
+I have a shopping cart.
+
+327
+00:12:06,440 --> 00:12:06,760
+Yes.
+
+328
+00:12:06,760 --> 00:12:08,920
+You know, do I return it to the trolley?
+
+329
+00:12:09,640 --> 00:12:14,760
+You know, like, um, and, and, and sort of putting these like really big picture questions in.
+
+330
+00:12:16,120 --> 00:12:18,920
+In very understandable frameworks and so, but like, I think.
+
+331
+00:12:19,560 --> 00:12:25,160
+We currently live in a day and I mean, the end conclusion of it is like, oh my God, it's just
+
+332
+00:12:25,160 --> 00:12:25,720
+impossible.
+
+333
+00:12:26,360 --> 00:12:28,360
+And I think that's the day and age we live in.
+
+334
+00:12:28,440 --> 00:12:34,840
+And so if we're, we're thinking about like, I mean, yes, I want to be ethical in anything I do and
+
+335
+00:12:34,840 --> 00:12:41,000
+maybe a low end usage isn't ethical at all or isn't, you know, we can make it more ethical.
+
+336
+00:12:41,000 --> 00:12:41,800
+Like, I don't even know.
+
+337
+00:12:42,360 --> 00:12:42,600
+Right.
+
+338
+00:12:42,600 --> 00:12:47,160
+And, but like, it's not as simple as I have a shopping cart and do I return it to the parking
+
+339
+00:12:47,160 --> 00:12:48,680
+dock or not?
+
+340
+00:12:48,680 --> 00:12:49,000
+I'm sorry.
+
+341
+00:12:49,000 --> 00:12:50,680
+That's like, no, no, no, far.
+
+342
+00:12:52,200 --> 00:12:53,080
+Divergence there.
+
+343
+00:12:53,080 --> 00:12:57,720
+I mean, I think that's fundamental to like life, right?
+
+344
+00:12:57,720 --> 00:12:59,400
+Like this, it's all related.
+
+345
+00:13:00,040 --> 00:13:01,160
+Do you have a question?
+
+346
+00:13:01,160 --> 00:13:02,920
+But I thought, but do you want to ask a question?
+
+347
+00:13:02,920 --> 00:13:03,320
+No, no, no.
+
+348
+00:13:04,280 --> 00:13:13,000
+So how, how Erin and us, are you kind to yourselves in this world where it is impossible
+
+349
+00:13:13,000 --> 00:13:16,920
+to be complete, to reach moral purity?
+
+350
+00:13:16,920 --> 00:13:17,160
+Yeah.
+
+351
+00:13:17,160 --> 00:13:17,240
+Yeah.
+
+352
+00:13:17,240 --> 00:13:17,800
+Yeah.
+
+353
+00:13:17,800 --> 00:13:18,040
+Yeah.
+
+354
+00:13:18,040 --> 00:13:18,920
+Oh, to different.
+
+355
+00:13:19,880 --> 00:13:26,360
+Um, I have a really good friend who reminds me to be nice to myself.
+
+356
+00:13:27,320 --> 00:13:31,160
+And who reminds me to be, I have a good friend who reminds me to be nice to myself.
+
+357
+00:13:31,160 --> 00:13:33,240
+Often we trade tasks that work.
+
+358
+00:13:33,240 --> 00:13:36,680
+So sometimes we trade being nice to ourselves, being nice to each other.
+
+359
+00:13:39,960 --> 00:13:40,200
+Yeah.
+
+360
+00:13:41,000 --> 00:13:41,560
+It's hard.
+
+361
+00:13:42,360 --> 00:13:47,800
+And it's hard to feel like any, all of the choices we make are so uncertain, right?
+
+362
+00:13:47,800 --> 00:13:51,560
+Like, and any hour that we spend in the day doing this, we're not doing something else.
+
+363
+00:13:51,800 --> 00:13:52,040
+Yeah.
+
+364
+00:13:53,320 --> 00:13:59,240
+And if we want to put the most like good, good science and like empower the most science out
+
+365
+00:13:59,240 --> 00:14:03,480
+there, like how do we do it maximally effectively?
+
+366
+00:14:04,680 --> 00:14:05,640
+It's really hard.
+
+367
+00:14:05,640 --> 00:14:11,000
+But I think I am trying to be better about just saying like, today I did the best that I could.
+
+368
+00:14:12,600 --> 00:14:13,000
+Yeah.
+
+369
+00:14:13,000 --> 00:14:13,240
+Yeah.
+
+370
+00:14:13,240 --> 00:14:20,600
+I mean, there needs to be a level of self self care and self preservation as well.
+
+371
+00:14:20,680 --> 00:14:26,120
+Right. Like, yes, you know, I could stay up all night writing another grant to try to get,
+
+372
+00:14:26,120 --> 00:14:32,600
+you know, funds more of the people and you like, and also that's not sustainable for my
+
+373
+00:14:32,600 --> 00:14:34,040
+physical or mental health.
+
+374
+00:14:34,040 --> 00:14:43,240
+You have to be able to put the oxygen mask on yourself before trying to get more oxygen
+
+375
+00:14:43,240 --> 00:14:47,720
+in the rest of the world, like much less, you know, like the people next to you, but people like,
+
+376
+00:14:47,960 --> 00:14:50,600
+it's really hard.
+
+377
+00:14:52,360 --> 00:14:56,760
+But I think doing this job, at least to me, like that you can see that you helped people,
+
+378
+00:14:56,760 --> 00:15:01,000
+like that helps me refill my and that like some of the choices that we're making are
+
+379
+00:15:01,000 --> 00:15:02,760
+doing are making tools that help people.
+
+380
+00:15:02,760 --> 00:15:04,520
+And that's, I don't know about how you guys feel.
+
+381
+00:15:04,520 --> 00:15:09,000
+That's one of my favorite things about working in this field and making tools for other people
+
+382
+00:15:09,000 --> 00:15:11,000
+is like, you can see the people that you're helping.
+
+383
+00:15:11,000 --> 00:15:11,640
+Yeah.
+
+384
+00:15:11,640 --> 00:15:11,800
+Yeah.
+
+385
+00:15:13,480 --> 00:15:15,720
+No, I really, I put that sentiment.
+
+386
+00:15:15,720 --> 00:15:21,240
+My goal is to, for the things that I make to be like the brick you can vote, you know,
+
+387
+00:15:21,240 --> 00:15:24,200
+they use it every day, you depend on it.
+
+388
+00:15:24,200 --> 00:15:28,760
+You don't have to know who the heck I am, but it makes me thrilled that I'm like part of
+
+389
+00:15:28,760 --> 00:15:30,360
+the ecosystem that you depend on.
+
+390
+00:15:31,560 --> 00:15:33,000
+Yeah, that makes that fills up my stuff.
+
+391
+00:15:33,000 --> 00:15:33,480
+Yeah.
+
+392
+00:15:34,840 --> 00:15:35,160
+Sure.
+
+393
+00:15:35,160 --> 00:15:35,640
+Makes sense.
+
+394
+00:15:37,400 --> 00:15:37,960
+What about you?
+
+395
+00:15:39,960 --> 00:15:41,000
+Well, I gotta go.
+
+396
+00:15:41,000 --> 00:15:41,400
+I'm sorry.
+
+397
+00:15:41,720 --> 00:15:45,480
+Don't open the can for him to run.
+
+398
+00:15:46,440 --> 00:15:46,680
+Yep.
+
+399
+00:15:46,680 --> 00:15:48,440
+That's smoke bomb.
+
+400
+00:15:48,440 --> 00:15:48,920
+Yeah.
+
+401
+00:15:48,920 --> 00:15:49,480
+Yeah, there you go.
+
+402
+00:15:50,520 --> 00:15:53,560
+No, I actually connecting with people.
+
+403
+00:15:53,560 --> 00:16:01,080
+I mean, I think that is essential for me just like coming to events like this and yeah,
+
+404
+00:16:01,080 --> 00:16:04,040
+sitting on a couch and not eating my lunch, but
+
+405
+00:16:06,040 --> 00:16:07,080
+You can eat your lunch.
+
+406
+00:16:07,080 --> 00:16:09,080
+No, they said I couldn't eat my lunch.
+
+407
+00:16:09,080 --> 00:16:10,920
+So that's what happened.
+
+408
+00:16:11,960 --> 00:16:12,520
+Howdy.
+
+409
+00:16:12,520 --> 00:16:13,160
+That's what happened.
+
+410
+00:16:13,160 --> 00:16:14,760
+Yeah, no, just
+
+411
+00:16:16,440 --> 00:16:23,480
+finding what connections and, you know, sometimes a Netflix documentary about the
+
+412
+00:16:23,960 --> 00:16:29,240
+historical mass extinction events and things like that to put just help putting up everything
+
+413
+00:16:29,240 --> 00:16:30,200
+in context for me.
+
+414
+00:16:31,240 --> 00:16:32,360
+But it doesn't matter.
+
+415
+00:16:32,360 --> 00:16:37,400
+Like, no, a lot of things on a grand scale don't have to matter.
+
+416
+00:16:37,400 --> 00:16:40,600
+I don't have to take responsibility for everything.
+
+417
+00:16:40,680 --> 00:16:45,960
+I can take responsibility for connecting with people around me and just trying to get my
+
+418
+00:16:45,960 --> 00:16:46,360
+guts there.
+
+419
+00:16:47,320 --> 00:16:48,120
+I can be human.
+
+420
+00:16:48,120 --> 00:16:49,720
+I'm getting myself permission to be human.
+
+421
+00:16:49,720 --> 00:16:49,960
+Yeah.
+
+422
+00:16:52,200 --> 00:16:53,320
+I love that message.
+
+423
+00:16:53,320 --> 00:16:55,480
+I think we can all try and work on it.
+
+424
+00:16:56,680 --> 00:16:57,400
+Exactly.
+
+425
+00:16:57,400 --> 00:16:57,720
+I know.
+
+426
+00:16:57,720 --> 00:16:59,720
+Maybe maybe maybe some of you haven't figured out.
+
+427
+00:17:00,120 --> 00:17:00,360
+Yeah.
+
+428
+00:17:00,920 --> 00:17:01,160
+Yeah.
+
+429
+00:17:02,120 --> 00:17:03,240
+Thank you gentlemen.
+
+430
+00:17:03,240 --> 00:17:04,120
+Thank you so much.
+
+431
+00:17:04,120 --> 00:17:04,520
+Thank you.
+
+432
+00:17:04,520 --> 00:17:06,200
+This is I'm so pleased.
+
+433
+00:17:06,200 --> 00:17:06,920
+Yeah.
+
+434
+00:17:06,920 --> 00:17:07,960
+Don't be strangers.
+
+435
+00:17:07,960 --> 00:17:08,200
+Yeah.
+
+436
+00:17:08,920 --> 00:17:11,160
+If there are bugs in Fiji and Himejie, let us know.
+
+437
+00:17:11,160 --> 00:17:12,280
+That's how we know.
+
+438
+00:17:12,280 --> 00:17:13,240
+Don't yell at Mark though.
+
+439
+00:17:13,240 --> 00:17:13,960
+So you do it kind of.
+
+440
+00:17:13,960 --> 00:17:14,360
+Yeah.
+
+441
+00:17:14,360 --> 00:17:14,520
+Yeah.
+
+442
+00:17:14,520 --> 00:17:15,080
+Yeah.
+
+443
+00:17:15,080 --> 00:17:15,880
+He's only human.
+
+444
+00:17:15,880 --> 00:17:16,200
+We're people.
+
+445
+00:17:18,600 --> 00:17:20,600
+Or yes, that's it.
+
+446
+00:17:20,600 --> 00:17:21,240
+Yeah.
+
+447
+00:17:21,240 --> 00:17:21,480
+Cool.
+
+448
+00:17:22,280 --> 00:17:22,680
+Awesome.
+
+449
+00:17:22,680 --> 00:17:23,320
+Thank you so much.
+
+450
+00:17:23,320 --> 00:17:23,800
+Thanks so much.
+
+451
+00:17:23,800 --> 00:17:24,280
+Thanks so much.
 

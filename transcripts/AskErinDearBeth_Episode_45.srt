@@ -1,0 +1,1112 @@
+1
+00:00:16,000 --> 00:00:05,000
+Hey Erin!
+
+2
+00:00:05,000 --> 00:00:10,000
+Hey Matt!
+
+3
+00:00:10,000 --> 00:00:15,000
+Good to see ya!
+
+4
+00:00:15,000 --> 00:00:20,000
+Great to see you!
+
+5
+00:00:20,000 --> 00:00:22,000
+I thought maybe we would...
+
+6
+00:00:22,000 --> 00:00:24,000
+Game might be too strong over here,
+
+7
+00:00:24,000 --> 00:00:27,000
+but we would maybe do a little exercise,
+
+8
+00:00:27,000 --> 00:00:29,000
+because yeah, if you're not used to
+
+9
+00:00:29,000 --> 00:00:32,000
+sort of doing the switch and thinking,
+
+10
+00:00:32,000 --> 00:00:35,000
+knowing what's important to be the same
+
+11
+00:00:35,000 --> 00:00:37,000
+between your images and somebody else's
+
+12
+00:00:37,000 --> 00:00:40,000
+workflows images, like what actually
+
+13
+00:00:40,000 --> 00:00:42,000
+matters versus what doesn't matter,
+
+14
+00:00:42,000 --> 00:00:44,000
+is not something that probably most people
+
+15
+00:00:44,000 --> 00:00:46,000
+immediately have intuition about.
+
+16
+00:00:46,000 --> 00:00:47,000
+Yeah, absolutely.
+
+17
+00:00:47,000 --> 00:00:49,000
+I certainly didn't.
+
+18
+00:00:49,000 --> 00:00:52,000
+So again, I thought we might talk
+
+19
+00:00:52,000 --> 00:00:54,000
+through some examples of like,
+
+20
+00:00:54,000 --> 00:00:58,000
+how would we figure this out?
+
+21
+00:00:58,000 --> 00:01:00,000
+I love it.
+
+22
+00:01:00,000 --> 00:01:03,000
+So let's start with,
+
+23
+00:01:03,000 --> 00:01:07,000
+is it important that they use the same microscope as me?
+
+24
+00:01:07,000 --> 00:01:10,000
+No. I say no, not at all.
+
+25
+00:01:10,000 --> 00:01:13,000
+Yeah.
+
+26
+00:01:13,000 --> 00:01:14,000
+It might matter in terms of things like
+
+27
+00:01:14,000 --> 00:01:16,000
+figuring out image loading and stuff,
+
+28
+00:01:16,000 --> 00:01:18,000
+like your file names might be slightly different,
+
+29
+00:01:18,000 --> 00:01:20,000
+but otherwise, yeah, really doesn't matter.
+
+30
+00:01:20,000 --> 00:01:23,000
+Yeah.
+
+31
+00:01:23,000 --> 00:01:25,000
+Yeah, so that's to say...
+
+32
+00:01:25,000 --> 00:01:28,000
+I was going to say, I mean, I think for any of these,
+
+33
+00:01:28,000 --> 00:01:30,000
+it is a good distinction.
+
+34
+00:01:30,000 --> 00:01:33,000
+Like probably it will make some amount of difference, right?
+
+35
+00:01:33,000 --> 00:01:36,000
+For any of these, it's like you will,
+
+36
+00:01:36,000 --> 00:01:39,000
+you are unlikely to take a pipeline that you find
+
+37
+00:01:39,000 --> 00:01:42,000
+in somebody's repository and just be able to press
+
+38
+00:01:42,000 --> 00:01:45,000
+go and have it work exactly how you want
+
+39
+00:01:45,000 --> 00:01:49,000
+on your images, but the amount of,
+
+40
+00:01:49,000 --> 00:01:52,000
+like how close it will get you and how much work
+
+41
+00:01:52,000 --> 00:01:55,000
+it will take to get it to work on your,
+
+42
+00:01:55,000 --> 00:01:58,000
+to handle your images, to work on your images.
+
+43
+00:01:58,000 --> 00:02:00,000
+I think that's what we're talking about here, right?
+
+44
+00:02:00,000 --> 00:02:03,000
+So as you mentioned, like same microscope, right?
+
+45
+00:02:03,000 --> 00:02:05,000
+If you're dropping something in CellProfiler
+
+46
+00:02:05,000 --> 00:02:07,000
+and it's an ND2 file from one microscope
+
+47
+00:02:07,000 --> 00:02:10,000
+and a TIFF file from the other,
+
+48
+00:02:10,000 --> 00:02:12,000
+CellProfiler will load it and run it for you.
+
+49
+00:02:12,000 --> 00:02:15,000
+You just might have to change one line
+
+50
+00:02:15,000 --> 00:02:18,000
+in your image import specifications to say,
+
+51
+00:02:18,000 --> 00:02:20,000
+hey, look at my folder of images.
+
+52
+00:02:20,000 --> 00:02:23,000
+I have TIFF files, not ND2s, right?
+
+53
+00:02:23,000 --> 00:02:27,000
+But that's, you know, but that's easy.
+
+54
+00:02:27,000 --> 00:02:29,000
+You can do that.
+
+55
+00:02:29,000 --> 00:02:31,000
+You absolutely can.
+
+56
+00:02:31,000 --> 00:02:34,000
+And I think one that's related to exactly the point
+
+57
+00:02:34,000 --> 00:02:36,000
+you just made is like the number of channels.
+
+58
+00:02:36,000 --> 00:02:38,000
+Like if it's something is expecting to split
+
+59
+00:02:38,000 --> 00:02:41,000
+into four channels as opposed to three,
+
+60
+00:02:41,000 --> 00:02:44,000
+like it might be, this is sort of in a,
+
+61
+00:02:44,000 --> 00:02:47,000
+it depends if it's important.
+
+62
+00:02:47,000 --> 00:02:50,000
+If you only care about one of the channels
+
+63
+00:02:50,000 --> 00:02:53,000
+that is being used to like measure or find objects
+
+64
+00:02:53,000 --> 00:02:55,000
+and nothing like you don't,
+
+65
+00:02:55,000 --> 00:02:58,000
+they have extra channels that you don't need,
+
+66
+00:02:58,000 --> 00:03:01,000
+then you can totally adopt somebody else's workflow
+
+67
+00:03:01,000 --> 00:03:04,000
+and just sort of throw those extra channels away.
+
+68
+00:03:04,000 --> 00:03:06,000
+If it's like, well, they're doing something
+
+69
+00:03:06,000 --> 00:03:09,000
+where like they identify the Golgi and then some spots
+
+70
+00:03:09,000 --> 00:03:12,000
+and like they only look for spots inside the Golgi
+
+71
+00:03:12,000 --> 00:03:15,000
+and you don't have a Golgi marker.
+
+72
+00:03:16,000 --> 00:03:19,000
+If you're missing channels, that might matter.
+
+73
+00:03:19,000 --> 00:03:22,000
+It depends how those channels are used in the workflow.
+
+74
+00:03:22,000 --> 00:03:25,000
+And it's kind of the only thing that you'll know
+
+75
+00:03:25,000 --> 00:03:27,000
+until you look at it.
+
+76
+00:03:27,000 --> 00:03:31,000
+But if you don't need, if the channels that they're sort of
+
+77
+00:03:31,000 --> 00:03:34,000
+using aren't controlling segmentation,
+
+78
+00:03:34,000 --> 00:03:36,000
+probably it doesn't matter.
+
+79
+00:03:36,000 --> 00:03:38,000
+It certainly doesn't matter if you don't need
+
+80
+00:03:38,000 --> 00:03:39,000
+their extra channels.
+
+81
+00:03:39,000 --> 00:03:41,000
+Yeah.
+
+82
+00:03:41,000 --> 00:03:44,000
+Yeah. And likewise, you know, any workflow,
+
+83
+00:03:44,000 --> 00:03:47,000
+but even just in thinking about like the number of channels,
+
+84
+00:03:47,000 --> 00:03:49,000
+right, importing in your data,
+
+85
+00:03:49,000 --> 00:03:53,000
+whether it can handle an image stack of three channels
+
+86
+00:03:53,000 --> 00:03:55,000
+versus an image stack of six channels,
+
+87
+00:03:55,000 --> 00:03:59,000
+that part, like just the number is likely to be in the,
+
+88
+00:03:59,000 --> 00:04:00,000
+yeah, don't worry about it.
+
+89
+00:04:00,000 --> 00:04:02,000
+Because again, like, you know, tiny modifications
+
+90
+00:04:02,000 --> 00:04:05,000
+to bring the data in.
+
+91
+00:04:05,000 --> 00:04:07,000
+Yeah.
+
+92
+00:04:08,000 --> 00:04:10,000
+One thing that, you know, again, just sort of say,
+
+93
+00:04:10,000 --> 00:04:12,000
+like we will say that some things are important,
+
+94
+00:04:12,000 --> 00:04:15,000
+like something that's built for white light,
+
+95
+00:04:15,000 --> 00:04:18,000
+either sort of bright field microscopy or chromogenic stains,
+
+96
+00:04:18,000 --> 00:04:20,000
+you know, your tissue stains through H&E.
+
+97
+00:04:20,000 --> 00:04:23,000
+There are certainly ways to adapt workflows like that
+
+98
+00:04:23,000 --> 00:04:26,000
+to them be fluoresced, to work for fluorescence,
+
+99
+00:04:26,000 --> 00:04:27,000
+but they're often not simple.
+
+100
+00:04:27,000 --> 00:04:30,000
+Generally speaking, a lot of software specializes in one
+
+101
+00:04:30,000 --> 00:04:35,000
+or the other, and its capabilities in the other are not as strong.
+
+102
+00:04:35,000 --> 00:04:37,000
+Which is not to say it can't be done,
+
+103
+00:04:37,000 --> 00:04:40,000
+but you will probably have a harder time adapting a workflow
+
+104
+00:04:40,000 --> 00:04:42,000
+if you have, you know, H&E,
+
+105
+00:04:42,000 --> 00:04:44,000
+and this is meant for fluorescence or vice versa.
+
+106
+00:04:44,000 --> 00:04:45,000
+Yeah.
+
+107
+00:04:45,000 --> 00:04:47,000
+Yeah, that makes a lot of sense.
+
+108
+00:04:47,000 --> 00:04:51,000
+That's definitely a, you know, advanced image analysis task.
+
+109
+00:04:51,000 --> 00:04:52,000
+Yeah.
+
+110
+00:04:52,000 --> 00:04:53,000
+Yeah.
+
+111
+00:04:54,000 --> 00:05:00,000
+But the specifics exactly of, you know,
+
+112
+00:05:00,000 --> 00:05:02,000
+what, how they're doing it,
+
+113
+00:05:02,000 --> 00:05:05,000
+not actually really important at all.
+
+114
+00:05:05,000 --> 00:05:07,000
+What's your late ruling reagent?
+
+115
+00:05:07,000 --> 00:05:08,000
+Doesn't really matter.
+
+116
+00:05:08,000 --> 00:05:09,000
+What's your floor for?
+
+117
+00:05:09,000 --> 00:05:11,000
+Doesn't really matter.
+
+118
+00:05:11,000 --> 00:05:12,000
+Yeah.
+
+119
+00:05:12,000 --> 00:05:13,000
+Yeah.
+
+120
+00:05:13,000 --> 00:05:18,000
+So if you are, you know, wanting, wanting to look at the ER, right,
+
+121
+00:05:18,000 --> 00:05:21,000
+it doesn't matter if somebody has dropped, you know,
+
+122
+00:05:21,000 --> 00:05:27,000
+dropped a dye in or that's going to stain, you know,
+
+123
+00:05:27,000 --> 00:05:30,000
+concavalin A and you've just got it accumulating in your ER
+
+124
+00:05:30,000 --> 00:05:31,000
+and staining all of it.
+
+125
+00:05:31,000 --> 00:05:34,000
+Or if you've got a protein and antibody to a protein that's in
+
+126
+00:05:34,000 --> 00:05:37,000
+the ER and so you've like carefully labeled just sex 61
+
+127
+00:05:37,000 --> 00:05:41,000
+or something and it's there, like if it's labeling the ER,
+
+128
+00:05:41,000 --> 00:05:43,000
+it's labeling the ER and if you're interested in the ER,
+
+129
+00:05:43,000 --> 00:05:44,000
+it doesn't matter.
+
+130
+00:05:44,000 --> 00:05:49,000
+Likewise, if it's, you know, GFP or RFP or whatever,
+
+131
+00:05:49,000 --> 00:05:54,000
+doesn't, doesn't really matter generally.
+
+132
+00:05:54,000 --> 00:05:55,000
+Right.
+
+133
+00:05:55,000 --> 00:05:59,000
+So again, here in the always, it depends if you,
+
+134
+00:05:59,000 --> 00:06:04,000
+if you are very interested in, like I'm interested in a specific
+
+135
+00:06:04,000 --> 00:06:05,000
+protein, right?
+
+136
+00:06:05,000 --> 00:06:08,000
+Or your earlier example, like H2AX, right?
+
+137
+00:06:08,000 --> 00:06:12,000
+If that is the protein and I am interested in, then actually it
+
+138
+00:06:12,000 --> 00:06:16,000
+really does matter that somebody's used that exact antibody,
+
+139
+00:06:16,000 --> 00:06:18,000
+but if it's, you know,
+
+140
+00:06:18,000 --> 00:06:24,000
+So yeah, but it's, we're not saying for any of these that you
+
+141
+00:06:24,000 --> 00:06:26,000
+can use somebody's thing without checking that it works in yours.
+
+142
+00:06:26,000 --> 00:06:29,000
+We're just saying like how easy it's going to be to pour like
+
+143
+00:06:29,000 --> 00:06:30,000
+don't just assume.
+
+144
+00:06:30,000 --> 00:06:31,000
+Yeah.
+
+145
+00:06:31,000 --> 00:06:34,000
+And somebody might, if you study sex 61 and you get something
+
+146
+00:06:34,000 --> 00:06:37,000
+from somebody who studyes sex 61, that doesn't mean that it will
+
+147
+00:06:37,000 --> 00:06:39,000
+actually work for your data.
+
+148
+00:06:39,000 --> 00:06:42,000
+It is none of these things are guaranteed that it will or won't
+
+149
+00:06:42,000 --> 00:06:43,000
+work.
+
+150
+00:06:43,000 --> 00:06:45,000
+These are just things that tend to matter versus tend not to.
+
+151
+00:06:45,000 --> 00:06:46,000
+Yes, absolutely.
+
+152
+00:06:46,000 --> 00:06:51,000
+When I was a new image analyst, sort of mind boggling to think
+
+153
+00:06:51,000 --> 00:06:55,000
+that actually even a species doesn't even matter, right?
+
+154
+00:06:55,000 --> 00:06:59,000
+If I have a workflow for finding spots, right?
+
+155
+00:06:59,000 --> 00:07:03,000
+Like it could very well be that this workflow set up for spots is
+
+156
+00:07:03,000 --> 00:07:09,000
+to find gut granules inside of a C elegans nematode the same way
+
+157
+00:07:09,000 --> 00:07:14,000
+that it's going to find H2A X spots in a human cell to a mirror,
+
+158
+00:07:14,000 --> 00:07:15,000
+right?
+
+159
+00:07:15,000 --> 00:07:17,000
+Like what?
+
+160
+00:07:17,000 --> 00:07:18,000
+What?
+
+161
+00:07:18,000 --> 00:07:20,000
+That's crazy.
+
+162
+00:07:20,000 --> 00:07:22,000
+Crazy, but true.
+
+163
+00:07:22,000 --> 00:07:23,000
+Yeah.
+
+164
+00:07:23,000 --> 00:07:26,000
+Go ahead.
+
+165
+00:07:26,000 --> 00:07:29,000
+And so I put the cell light over there too, because yeah, absolutely.
+
+166
+00:07:29,000 --> 00:07:32,000
+Which is not to say that some like, you know, something that's made
+
+167
+00:07:32,000 --> 00:07:35,000
+for an adipocyte is going to necessarily work with no tweaks
+
+168
+00:07:35,000 --> 00:07:40,000
+whatsoever in terms of like a neuron, but we reuse lots of things
+
+169
+00:07:40,000 --> 00:07:44,000
+for different cancer lines or fibroblast lines and they're
+
+170
+00:07:44,000 --> 00:07:46,000
+pretty easy to adapt from one to another.
+
+171
+00:07:46,000 --> 00:07:47,000
+Yeah.
+
+172
+00:07:47,000 --> 00:07:52,000
+So if we think about, you know, sort of a generic CellProfiler
+
+173
+00:07:52,000 --> 00:07:55,000
+pipeline that has lots of modules that are measuring lots of
+
+174
+00:07:55,000 --> 00:07:58,000
+things and lots of channels, and we think about like what would
+
+175
+00:07:58,000 --> 00:08:01,000
+be different between, again, you said like an adipocyte,
+
+176
+00:08:01,000 --> 00:08:06,000
+versus, you know, another cell line like he was cells or just
+
+177
+00:08:06,000 --> 00:08:09,000
+little in brain or neurons, right?
+
+178
+00:08:09,000 --> 00:08:11,000
+Which can be all projections and weird, right?
+
+179
+00:08:11,000 --> 00:08:16,000
+So of this entire pipeline, it might actually just end up being
+
+180
+00:08:16,000 --> 00:08:21,000
+one module that identify secondary objects module that were tuning.
+
+181
+00:08:21,000 --> 00:08:25,000
+So in this case, it can actually be a lot of aggravation sometimes
+
+182
+00:08:25,000 --> 00:08:29,000
+tuning that module to get really, you know, if you need really
+
+183
+00:08:29,000 --> 00:08:32,000
+accurate segmentation and what you're starting from is this
+
+184
+00:08:32,000 --> 00:08:35,000
+cute little nice round cell and then I'm trying to move into
+
+185
+00:08:35,000 --> 00:08:37,000
+something with crazy projections or tons of lipid droplets or
+
+186
+00:08:37,000 --> 00:08:41,000
+whatever, in terms of the overall workflow, right?
+
+187
+00:08:41,000 --> 00:08:44,000
+Like that's just one module that I'm tuning and the whole rest
+
+188
+00:08:44,000 --> 00:08:48,000
+of the workflow can remain totally untouched.
+
+189
+00:08:48,000 --> 00:08:49,000
+Mm-hmm.
+
+190
+00:08:49,000 --> 00:08:52,000
+Yep, absolutely.
+
+191
+00:08:53,000 --> 00:09:02,000
+And again, thinking about things in pixel space, like in terms
+
+192
+00:09:02,000 --> 00:09:05,000
+of difficult of adaptability, you know, we also don't care about,
+
+193
+00:09:05,000 --> 00:09:08,000
+we don't really care about how big the objects are in sort of
+
+194
+00:09:08,000 --> 00:09:13,000
+truth, true size, like, because something that is huge and your
+
+195
+00:09:13,000 --> 00:09:17,000
+hundred X objective, lots of magnification is pretty small
+
+196
+00:09:17,000 --> 00:09:19,000
+in your 10 X objective.
+
+197
+00:09:19,000 --> 00:09:24,000
+And so if it's a five pixel size thing, something that's built
+
+198
+00:09:24,000 --> 00:09:29,000
+to find five pixel size things will probably work.
+
+199
+00:09:29,000 --> 00:09:32,000
+I even put this only as kind of important because for lots of
+
+200
+00:09:32,000 --> 00:09:36,000
+things you can change the expected size pretty easily.
+
+201
+00:09:36,000 --> 00:09:42,000
+It's not undemported, but it's generally not like the hardest
+
+202
+00:09:42,000 --> 00:09:43,000
+thing to tune.
+
+203
+00:09:43,000 --> 00:09:44,000
+Yeah.
+
+204
+00:09:44,000 --> 00:09:47,000
+I mean, especially if we're comparing it to, you know, real
+
+205
+00:09:47,000 --> 00:09:48,000
+physics, right?
+
+206
+00:09:48,000 --> 00:09:53,000
+Where we don't care about the real object size at all whatsoever.
+
+207
+00:09:53,000 --> 00:09:54,000
+Mm-hmm.
+
+208
+00:09:57,000 --> 00:10:00,000
+Other things that sort of fall into the kind of, for me at
+
+209
+00:10:00,000 --> 00:10:02,000
+least anyway, and again, this is going to be the ones where
+
+210
+00:10:02,000 --> 00:10:06,000
+reasonable people may disagree.
+
+211
+00:10:06,000 --> 00:10:12,000
+The shape, like some things will work really well for dots
+
+212
+00:10:12,000 --> 00:10:14,000
+versus rods and stuff.
+
+213
+00:10:14,000 --> 00:10:18,000
+To some degree it depends on if your deep learning tends to be
+
+214
+00:10:18,000 --> 00:10:21,000
+a little bit better at not caring too much about shape than
+
+215
+00:10:21,000 --> 00:10:22,000
+classical segmentation.
+
+216
+00:10:22,000 --> 00:10:27,000
+But so if you're looking at something that's act in filaments,
+
+217
+00:10:27,000 --> 00:10:29,000
+you might not want to take something that somebody's thing
+
+218
+00:10:29,000 --> 00:10:31,000
+for finding small round blobs.
+
+219
+00:10:31,000 --> 00:10:35,000
+Like, they might be pretty different.
+
+220
+00:10:35,000 --> 00:10:36,000
+Yeah.
+
+221
+00:10:36,000 --> 00:10:40,000
+Yeah, I probably would have put shape in the super important.
+
+222
+00:10:40,000 --> 00:10:41,000
+All right, let's do it.
+
+223
+00:10:41,000 --> 00:10:42,000
+Yeah.
+
+224
+00:10:42,000 --> 00:10:46,000
+Just because the light source is lonely, it needs a friend.
+
+225
+00:10:46,000 --> 00:10:47,000
+So we might, you know.
+
+226
+00:10:47,000 --> 00:10:48,000
+It does.
+
+227
+00:10:48,000 --> 00:10:50,000
+But again, like, same thing.
+
+228
+00:10:50,000 --> 00:10:52,000
+Yeah, I would also give it this friend too.
+
+229
+00:10:52,000 --> 00:10:53,000
+Yeah.
+
+230
+00:10:53,000 --> 00:10:54,000
+Yeah.
+
+231
+00:10:54,000 --> 00:10:58,000
+Which is if your things are like beautifully spaced apart or
+
+232
+00:10:58,000 --> 00:11:01,000
+there's maybe even only one thing, you're probably going to
+
+233
+00:11:01,000 --> 00:11:04,000
+make a very different pipeline or workflow than like one where
+
+234
+00:11:04,000 --> 00:11:07,000
+everything is super clustered and you're having to like find
+
+235
+00:11:07,000 --> 00:11:10,000
+things that are crawling all on top of each other and like
+
+236
+00:11:10,000 --> 00:11:11,000
+angle them.
+
+237
+00:11:11,000 --> 00:11:13,000
+That is one of the hardest things to do.
+
+238
+00:11:13,000 --> 00:11:16,000
+And so if your stuff is super clustered, something that is for
+
+239
+00:11:16,000 --> 00:11:18,000
+single or well spaced objects will almost certainly not work
+
+240
+00:11:18,000 --> 00:11:19,000
+for you.
+
+241
+00:11:19,000 --> 00:11:20,000
+Yeah.
+
+242
+00:11:20,000 --> 00:11:23,000
+Likewise, if your stuff is super well spaced, somebody who's
+
+243
+00:11:23,000 --> 00:11:27,000
+made something from clustered might, will probably work for
+
+244
+00:11:27,000 --> 00:11:31,000
+you, but it might also be doing lots of stuff to force like
+
+245
+00:11:31,000 --> 00:11:35,000
+separations and force breaking into sub objects, which for you
+
+246
+00:11:35,000 --> 00:11:37,000
+isn't true and you don't need and actually makes your workflow
+
+247
+00:11:37,000 --> 00:11:38,000
+worse.
+
+248
+00:11:38,000 --> 00:11:39,000
+Yeah.
+
+249
+00:11:39,000 --> 00:11:43,000
+And so one versus many is kind of important, but mostly just
+
+250
+00:11:43,000 --> 00:11:48,000
+because it might affect this like patterning and you know, if
+
+251
+00:11:48,000 --> 00:11:53,000
+there's one and you've put in assumptions that say there will
+
+252
+00:11:53,000 --> 00:11:55,000
+only ever be one.
+
+253
+00:11:55,000 --> 00:11:58,000
+In cell part, for example, in the filter objects module, you
+
+254
+00:11:58,000 --> 00:12:00,000
+can say keep only, you know, the biggest thing or the smallest
+
+255
+00:12:00,000 --> 00:12:03,000
+thing or the brightest thing, but like keep only one.
+
+256
+00:12:03,000 --> 00:12:04,000
+Yeah.
+
+257
+00:12:05,000 --> 00:12:09,000
+Which is easy enough to remove, but the assumptions might be
+
+258
+00:12:09,000 --> 00:12:10,000
+different.
+
+259
+00:12:10,000 --> 00:12:11,000
+Yeah.
+
+260
+00:12:11,000 --> 00:12:13,000
+So that's my sorting.
+
+261
+00:12:13,000 --> 00:12:15,000
+Reasonable people made a disagree.
+
+262
+00:12:15,000 --> 00:12:17,000
+Sometimes we disagree with ourselves from five minutes ago,
+
+263
+00:12:17,000 --> 00:12:22,000
+but the biology, like most of the stuff that's in this we don't
+
+264
+00:12:22,000 --> 00:12:24,000
+care about is actually the biology.
+
+265
+00:12:24,000 --> 00:12:27,000
+Like we actually don't care about biology very much.
+
+266
+00:12:27,000 --> 00:12:31,000
+Really what we care about are things in pixel space like are
+
+267
+00:12:31,000 --> 00:12:34,000
+things light on dark versus dark on bright?
+
+268
+00:12:34,000 --> 00:12:40,000
+How many pixels across are things and you know, are things
+
+269
+00:12:40,000 --> 00:12:43,000
+kind of all on top of each other or separated?
+
+270
+00:12:43,000 --> 00:12:44,000
+Yeah.
+
+271
+00:12:44,000 --> 00:12:50,000
+This is sort of switching from thinking like a biologist just in
+
+272
+00:12:50,000 --> 00:12:54,000
+general to thinking like an image analyst, right?
+
+273
+00:12:54,000 --> 00:13:00,000
+Like this switch of let me think about the analysis task of
+
+274
+00:13:00,000 --> 00:13:01,000
+the project.
+
+275
+00:13:01,000 --> 00:13:05,000
+So we're thinking about the task that we're performing here and
+
+276
+00:13:05,000 --> 00:13:08,000
+having that switch, which is a hard switch to do.
+
+277
+00:13:08,000 --> 00:13:12,000
+If you're new to image analysis, it really is a different way of
+
+278
+00:13:12,000 --> 00:13:14,000
+thinking about the problem.
+
